@@ -18,5 +18,4 @@ Output: mean_it_ident_pep.csv with a summary of all the ouput parameters.
 
 ```
 knime --launcher.suppressErrors -nosplash -application org.knime.product.KNIME_BATCH_APPLICATION -reset -nosave -workflowFile="/path/to/module_parameter_mean_it.knwf" -workflow.variable=input_featurexml_file,/path/to/180308_Q_QC1X_01_01.featureXML,String -workflow.variable=input_mzml_file,/path/to/180308_Q_QC1X_01_01.mzML,String
-
 ```
