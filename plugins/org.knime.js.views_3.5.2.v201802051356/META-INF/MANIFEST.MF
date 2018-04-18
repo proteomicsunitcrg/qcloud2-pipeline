@@ -1,0 +1,97 @@
+Manifest-Version: 1.0
+Bundle-SymbolicName: org.knime.js.views;singleton:=true
+Require-Bundle: org.knime.base;bundle-version="[3.5.0,4.0.0)",org.knim
+ e.js.core;bundle-version="[3.5.0,4.0.0)",org.apache.commons.lang3;bun
+ dle-version="[3.2.1,4.0.0)",com.google.guava;bundle-version="[19.0.0,
+ 20.0.0)",org.knime.ext.svg;bundle-version="[3.0.0,4.0.0)",org.apache.
+ commons.codec;bundle-version="[1.6.0,2.0.0)",org.knime.ext.phantomjs;
+ bundle-version="[3.3.0,4.0.0)",com.fasterxml.jackson.core.jackson-ann
+ otations;bundle-version="[2.4.3,3.0.0)",com.fasterxml.jackson.core.ja
+ ckson-core;bundle-version="[2.4.3,3.0.0)",com.fasterxml.jackson.core.
+ jackson-databind;bundle-version="[2.4.3,3.0.0)",com.fifesoft.autocomp
+ lete;bundle-version="[2.5.7,3.0.0)",com.fifesoft.languagesupport;bund
+ le-version="[2.5.7,3.0.0)",com.fifesoft.rstaui;bundle-version="[2.5.7
+ ,3.0.0)",com.fifesoft.rsyntaxtextarea;bundle-version="[2.5.7,3.0.0)",
+ com.fifesoft.spellchecker;bundle-version="[2.5.7,3.0.0)",say.swing.jf
+ ontchooser;bundle-version="[1.0.5,2.0.0)",org.knime.core.pmml;bundle-
+ version="[3.5.0,4.0.0)"
+Bundle-ManifestVersion: 2
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ActivationPolicy: lazy
+Bundle-Vendor: KNIME AG, Zurich, Switzerland
+Ant-Version: Apache Ant 1.9.6
+Export-Package: org.knime.js.base.node.viz.decisiontree.classification
+Bundle-Name: KNIME JavaScript Base Views
+Bundle-Version: 3.5.2.v201802051356
+Bundle-ClassPath: js-views.jar
+Created-By: 1.8.0_131-b11 (Oracle Corporation)
+
+Name: js-src/org/knime/js/base/node/viz/pagedTable/knime-paged-table.j
+ s
+SHA-256-Digest: yhR5hZKm1Kseeho80B0vF6skR/PBoX7OW1YPwe4XrWw=
+
+Name: plugin.xml
+SHA-256-Digest: vs1vzwoGwFZmY52DOOaIyGc6c74HTgdWkR47ep13bUE=
+
+Name: js-src/org/knime/js/base/util/decisionTree/decTreeDrawer.js
+SHA-256-Digest: Q7hLXb3W4hb60spd7I8P3RpM0BphLTbsuD5BUUEXUbE=
+
+Name: js-src/org/knime/js/base/node/viz/plotter/roc/knime-roc-plot.js
+SHA-256-Digest: zAYdq0xCvcG/HsP59wjLgFClChS7YG66zqN8bMal7Us=
+
+Name: js-src/org/knime/js/base/util/table/view/styles.css
+SHA-256-Digest: qQJ5QiYnKl997boCT+Ki+0oI4owd5OA5HzYEgdkW+ok=
+
+Name: js-src/org/knime/js/base/node/viz/generic/knime-generic-view.js
+SHA-256-Digest: P87yzaBmStA5TqhU9X3IAPYANN33xOBQAwA3vXH2FO8=
+
+Name: js-src/org/knime/js/base/node/viz/table/web-template.js
+SHA-256-Digest: QeidcuilOCRROicNKzHXqKC1AqLNu3nyq7Oyk47MO7w=
+
+Name: js-src/org/knime/js/base/node/viz/plotter/scatterSelectionAppend
+ er/knime-scatter-plot.css
+SHA-256-Digest: Nevpy/sH9XiGL8F/yzKjtAgZdmZiP7oiZT9D5Yszxx8=
+
+Name: js-src/org/knime/js/base/node/viz/decisiontree/decisiontree.js
+SHA-256-Digest: cYcwTQFxqqb8FywfrCHtgYejtQDHATFfgbHAMToDtpU=
+
+Name: js-src/org/knime/js/base/node/viz/generic/knime-generic-view-v3.
+ js
+SHA-256-Digest: Il93atc9qBDO1HftfFqVmx/Xh3XxkWOKNcBjnHJyFMI=
+
+Name: js-src/org/knime/js/base/node/viz/plotter/lift/knime-lift-chart.
+ js
+SHA-256-Digest: dArM0r4wW0IJ7eI/FLtpdeY2G28CVGp9UAvKxXogQaQ=
+
+Name: js-src/org/knime/js/base/util/decisionTree/decTreeDrawer.css
+SHA-256-Digest: IDXjZKlKZ380Z/3UazhQ7OIoYPI3oC67nleJ8cN2HJM=
+
+Name: js-src/org/knime/js/base/node/viz/plotter/line/knime-line-plot.j
+ s
+SHA-256-Digest: JZLGESpSpt2aYVWxIUCfLL+5Ujy/IJiQ1IYlFl9j1m4=
+
+Name: js-src/org/knime/js/base/node/viz/plotter/scatter/knime-scatter-
+ plot.js
+SHA-256-Digest: JaiXB3/G7VUk9factyrfyTi5l9fxw7aayzFYfbXTG7g=
+
+Name: js-views.jar
+SHA-256-Digest: h45U9feNGRVwqf0qDk/pPn2vvgl27ygkvEzIsNsH+hk=
+
+Name: js-src/org/knime/js/base/util/dateFormat/date-format.js
+SHA-256-Digest: hl9+pimVfviEK97t6Ru+rw3YUgG31pM/pvRcHgwyqco=
+
+Name: js-src/org/knime/js/base/node/viz/plotter/scatterSelectionAppend
+ er/knime-scatter-plot.js
+SHA-256-Digest: n7oxMFKoYnG2c7RIBSryML8L5wH9Sf6XIjiqyKRqD8Y=
+
+Name: js-src/org/knime/js/base/node/viz/pagedTable/knime-paged-table.c
+ ss
+SHA-256-Digest: Vy0ZPXlpwToyCdyhL1pSGu0Fym84Voysdlgk9WLOga8=
+
+Name: icons/js.png
+SHA-256-Digest: yor9MzBqXcUEcjb2xxu65mfVJnmnp5rfpsrTh0FVn4s=
+
+Name: js-src/org/knime/js/base/util/table/view/knime_table_view_1_0_0.
+ js
+SHA-256-Digest: XwCyPs1c+DBFgzpBwugtzalaRAlp8hdic3qWYUzq35s=
+

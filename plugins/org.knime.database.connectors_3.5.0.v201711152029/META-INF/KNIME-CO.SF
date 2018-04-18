@@ -1,0 +1,48 @@
+Signature-Version: 1.0
+SHA-256-Digest-Manifest-Main-Attributes: mQO3k+sOdxz9Fnc6d9xUOMiqjwoLv
+ 3R1OQhy6k3nm/4=
+SHA-256-Digest-Manifest: m6GGl2dS0KYkGthwqAVLu/iotefnw7Kh1j4dVK7gaJs=
+Created-By: 1.8.0_131 (Oracle Corporation)
+
+Name: tocs/database_database-connector$nodes.xml
+SHA-256-Digest: LsQ8Sx++N5wcjeCEMOtivA/E2GZuK5s2a+82xozbUJM=
+
+Name: plugin.xml
+SHA-256-Digest: s54zOiN9Si3FzhKg/Z2LFPKzEjSuQij3wIwQU49R41I=
+
+Name: README.txt
+SHA-256-Digest: Yt7vFEwgCl7jxA6NPEK1wOuJfSqpa3GfYi1IO8XtSj0=
+
+Name: html/nodes/32ec555a.PostgreSQLConnectorNodeFactory.html
+SHA-256-Digest: 5l40qk10iW96WlNgY8CimeVwF23pOhzelPrRl6pF1qk=
+
+Name: html/nodes/4274fe46.H2ConnectorNodeFactory.html
+SHA-256-Digest: 6Dd8UAcG0JnQaygw1QQ3+rt8jBUbBGKztos7O1psVgA=
+
+Name: html/nodes/63f77882.MySQLConnectorNodeFactory.html
+SHA-256-Digest: vqCgZjBGv+oQ6SeK2leTmn0veM5yCdQDtEe551sGccg=
+
+Name: lib/jtds-1.3.1.jar
+SHA-256-Digest: PYA0YAHFJBKedmvBtbU5wG5n3v9CpIlIJiOT2g61qEE=
+
+Name: lib/mysql-connector-java-5.1.39-bin.jar
+SHA-256-Digest: 7fVS6G0iHTbwRRaPM6rbLvH7GfHPirgEyGxzxKhDOAc=
+
+Name: knime-db-connectors.jar
+SHA-256-Digest: Btx8b062rFNv2LByDe0GTsH1yYyNfMCwsQvP2EGdSqU=
+
+Name: html/nodes/33fd5420.SQLServerConnectorNodeFactory.html
+SHA-256-Digest: Ru4thQcuKR2HI1kLEWzFEdoTgzZAQpCfZnSGHP7FjTs=
+
+Name: LICENSE.txt
+SHA-256-Digest: AINBnlxD6j1hoUJCdbqJDDXIUInSr72BED0xfnoxdrY=
+
+Name: html/nodes/bb1ab86.SQLiteConnectorNodeFactory.html
+SHA-256-Digest: sjvvq0sFPsgBxl8GwfiE6uO1hfVIRldst1KikfvJFbg=
+
+Name: lib/postgresql-9.4-1201.jdbc41.jar
+SHA-256-Digest: URYkIaKJ2DSQsOjVoXu+cXqgcMBOLg+IMp/GfvUzRVo=
+
+Name: lib/sqlite-jdbc-3.8.11.2.jar
+SHA-256-Digest: S/xZtsK5GgJJFw90aktgTij1itJq23nLEOXNqlbbTAs=
+

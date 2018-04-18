@@ -1,0 +1,1488 @@
+<?xml version="1.0" encoding="UTF-8"?><html xmlns:t="http://knime.org/node2012" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>
+                    Node description for
+                    Decision Tree Learner</title>
+<style type="text/css">/* Import font */
+/* @import url(https://fonts.googleapis.com/css?family=Roboto:400,700);*/
+/* New way ton load Fonts locally */
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../roboto-regular_1.woff2') format('woff2');
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../roboto-regular_2.woff2') format('woff2');
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../roboto-regular_3.woff2') format('woff2');
+}
+/* greek */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../roboto-regular_4.woff2') format('woff2');
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../roboto-regular_5.woff2') format('woff2');
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../roboto-regular_6.woff2') format('woff2');;
+}
+/* latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../roboto-regular_7.woff2') format('woff2');;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../roboto-medium_1.woff2') format('woff2');
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../roboto-medium_2.woff2') format('woff2');
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../roboto-medium_3.woff2') format('woff2');
+}
+/* greek */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../roboto-medium_4.woff2') format('woff2');
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../roboto-medium_5.woff2') format('woff2');
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../roboto-medium_6.woff2') format('woff2');
+}
+/* latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../roboto-medium_7.woff2') format('woff2');
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../roboto-bold_1.woff2') format('woff2');
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../roboto-bold_2.woff2') format('woff2');
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../roboto-bold_3.woff2') format('woff2');
+}
+/* greek */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../roboto-bold_4.woff2') format('woff2');
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../roboto-bold_5.woff2') format('woff2');
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../roboto-bold_6.woff2') format('woff2');
+}
+/* latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../roboto-bold_7.woff2') format('woff2');
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 900;
+  src: url('../roboto-black_1.woff2') format('woff2');
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 900;
+  src: url('../roboto-black_2.woff2') format('woff2');
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 900;
+  src: url('../roboto-black_3.woff2') format('woff2');
+}
+/* greek */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 900;
+  src: url('../roboto-black_4.woff2') format('woff2');
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 900;
+  src: url('../roboto-black_5.woff2') format('woff2');
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 900;
+  src: url('../roboto-black_6.woff2') format('woff2');
+}
+/* latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 900;
+  src: url('../roboto-black_7.woff2') format('woff2');
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 400;
+  src: url('../roboto-italic_1.woff2') format('woff2');
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 400;
+  src: url('../roboto-italic_2.woff2') format('woff2');
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 400;
+  src: url('../roboto-italic_3.woff2') format('woff2');
+}
+/* greek */
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 400;
+  src: url('../roboto-italic_4.woff2') format('woff2');
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 400;
+  src: url('../roboto-italic_5.woff2') format('woff2');
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 400;
+  src: url('../roboto-italic_6.woff2') format('woff2');
+}
+/* latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 400;
+  src: url('../roboto-italic_7.woff2') format('woff2');
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 500;
+  src: url('../roboto-medium-italic_1.woff2') format('woff2');
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 500;
+  src: url('../roboto-medium-italic_2.woff2') format('woff2');
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 500;
+  src: url('../roboto-medium-italic_3.woff2') format('woff2');
+}
+/* greek */
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 500;
+  src: url('../roboto-medium-italic_4.woff2') format('woff2');
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 500;
+  src: url('../roboto-medium-italic_5.woff2') format('woff2');
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 500;
+  src: url('../roboto-medium-italic_6.woff2') format('woff2');
+}
+/* latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 500;
+  src: url('../roboto-medium-italic_7.woff2') format('woff2');
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 700;
+  src: url('../roboto-bold-italic_1.woff2') format('woff2');
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 700;
+  src: url('../roboto-bold-italic_2.woff2') format('woff2');
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 700;
+  src: url('../roboto-bold-italic_3.woff2') format('woff2');
+}
+/* greek */
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 700;
+  src: url('../roboto-bold-italic_4.woff2') format('woff2');
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 700;
+  src: url('../roboto-bold-italic_5.woff2') format('woff2');
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 700;
+  src: url('../roboto-bold-italic_6.woff2') format('woff2');
+}
+/* latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 700;
+  src: url('../roboto-bold-italic_7.woff2') format('woff2');
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 900;
+  src: url('../roboto-black-italic_1.woff2') format('woff2');
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 900;
+  src: url('../roboto-black-italic_2.woff2') format('woff2');
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 900;
+  src: url('../roboto-black-italic_3.woff2') format('woff2');
+}
+/* greek */
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 900;
+  src: url('../roboto-black-italic_4.woff2') format('woff2');
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 900;
+  src: url('../roboto-black-italic_5.woff2') format('woff2');
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 900;
+  src: url('../roboto-black-italic_6.woff2') format('woff2');
+}
+/* latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 900;
+  src: url('../roboto-black-italic_7.woff2') format('woff2');
+}
+/* END */
+
+/* Default font size for old or unscaled browsers. */
+html {
+	font-size: 10px;
+}
+
+/* Catching scaled font sizes and/or retina displays for modern browsers only.
+   Setting font size to 62.5%, so that the default (usually 16px unscaled) is reset to 10px. */
+@media	only screen and (-webkit-min-device-pixel-ratio: 1.2),
+		only screen and (-o-min-device-pixel-ratio: 12/10),
+		only screen and (min-resolution: 115dpi),
+		only screen and (min-resolution: 1.2dppx) {
+	
+	html {
+    	font-size: 62.5%;
+	}
+
+}
+
+body.origin {
+     
+     font-family: 'Roboto',sans-serif;
+     font-size: 12px;
+     font-size: 1.2rem;
+	 color: #3E3A39;
+	 margin: 0px;
+	 padding: 0px;
+	 height: 100%;
+	 width: 100%;
+	 overflow-y: auto;
+	 background: #FFF none repeat scroll 0% 0%;
+	 border:0;
+}
+
+body {
+     
+     font-family: 'Roboto',sans-serif;
+     font-size: 12px;
+     font-size: 1.2rem;
+	 color: #3E3A39;
+	 margin: 0px;
+	 padding: 0px;
+	 height: 80%;
+	 width: 100%;
+	 background: #FFF none repeat scroll 0% 0%;
+	 border:0;
+	 overflow-y: auto;
+	 margin-top: 70px;
+}
+
+iframe {
+	border: none;
+}
+
+
+/* Media Queries */
+
+
+@media screen and (max-width: 800px){
+
+	div.k-footer {
+		width: 100% !important;
+	}
+	
+}
+
+@media screen and (min-width: 800px) and (max-width: 1000px){
+
+	div.k-footer {
+		width: 100% !important;
+	}
+	
+}
+
+@media screen and (min-width: 1000px) and (max-width: 1200px){
+
+	div.node-main-div {
+		width: 58%;
+	}
+
+	div.k-footer {
+		width: 100% !important;
+	}
+	
+	div#node-menu-div {
+		margin-left: 8px !important;
+	}
+		
+}
+
+
+
+
+
+@media all and (min-width: 600px) and (max-width: 960px){
+
+	div.node-main-div {
+		width: 43%;
+	}
+	
+	div.k-footer {
+		width: 100% !important;
+	}
+}
+@media all and (min-width: 800px) and (max-width: 1280px){
+	
+	div.node-main-div {
+		width: 64%;
+	}
+	
+	div.k-footer {
+		width: 100% !important;
+	}
+}
+@media all and (min-width: 768px) and (max-width: 1024px){
+	
+	div.node-main-div {
+		width: 47%;
+	}
+	
+	div.k-footer {
+		width: 100% !important;
+	}
+
+}
+
+
+@media all and (max-width: 1417px){
+
+	div.node-main-div {
+		width: 74%;
+	}
+	
+	div.k-footer {
+		width: 100% !important;
+	}
+	
+	div#node-menu-div {
+		margin-left: 8px !important;
+	}
+}
+
+@media all and (max-width: 960px){
+
+	div.node-main-div {
+		width: 41%;
+	}
+	
+	div.k-footer {
+		width: 100% !important;
+	}
+	
+	div#node-menu-div {
+		margin-left: 8px !important;
+	}
+}
+
+@media all and (max-width: 1150px){
+
+	div.node-main-div {
+		width: 55%;
+	}
+	
+	div.k-footer {
+		width: 100% !important;
+	}
+	
+	div#node-menu-div {
+		margin-left: 8px !important;
+	}
+}
+
+@media screen and (max-width: 1200px){
+	
+	div.groupClass {
+		width: 100%;
+	}
+	
+	div.container {
+		width: 100%;
+	}
+	
+}
+
+@media screen {
+  body {
+    width: 100%;
+  }
+}
+@media print {
+  body {
+    width: 100%;
+  }
+}
+
+@media all and (min-width: 1151px) and (max-width: 1380px){
+	
+		div.node-main-div {
+		width: 58%;
+	}
+	
+	div.k-footer {
+		width: 100% !important;
+	}
+
+}
+
+
+
+@media all and (min-width: 1100px) and (max-width: 1260px){
+	
+		div.node-main-div {
+		width: 60%;
+	}
+	
+	div.k-footer {
+		width: 100% !important;
+	}
+	
+	div#node-menu-div {
+		margin-left: 8px !important;
+	}
+	
+
+
+}
+
+
+
+@media all and (min-width: 1300px) and (max-width: 1460px){
+
+	div#node-container-div {
+		width: 100% !important;
+	}
+	
+	div.node-main-div {
+		width: 74%;
+	}
+	
+	div.k-footer {
+		width: 100% !important;
+	}
+	
+	div#node-menu-div {
+		margin-left: 8px !important;
+	}
+	
+
+}
+
+@media all and (min-width: 1460px) and (max-width: 1560px){
+	
+	div.node-main-div {
+		width: 72%;
+	}
+	
+	div.k-footer {
+		width: 93% !important;
+	}
+	
+	div#node-menu-div {
+		margin-left: 8px !important;
+	}
+	
+
+}
+
+@media all and (min-width: 800px) and (max-width: 960px){
+
+	div#node-container-div {
+		width: 100% !important;
+	}
+	
+	div.node-main-div {
+		width: 71%;
+		min-width:71%;
+	}
+	
+	div.k-footer {
+		width: 100% !important;
+	}
+	
+	div#node-menu-div {
+		margin-left: 8px !important;
+	}
+	
+
+}
+
+@media all and (min-width: 960px) and (max-width: 1024px){
+
+	div#node-container-div {
+		width: 100% !important;
+	}
+	
+	div.node-main-div {
+		width: 71%;
+	}
+	
+	div.k-footer {
+		width: 100% !important;
+	}
+	
+	div#node-menu-div {
+		margin-left: 8px !important;
+	}
+	
+}
+@media all and (min-width: 1024px) and (max-width: 1100px){
+	
+	div#node-container-div {
+		width: 100% !important;
+	}
+	
+	div.node-main-div {
+		width: 71%;
+	}
+	
+	div.k-footer {
+		width: 100% !important;
+	}
+	
+	div#node-menu-div {
+		margin-left: 8px !important;
+	}
+	
+}
+
+@media all and (min-width: 1100px) and (max-width: 1180px){
+	div#node-container-div {
+		width: 100% !important;
+	}
+	
+	div.node-main-div {
+		width: 71%;
+	}
+	
+	div.k-footer {
+		width: 100% !important;
+	}
+	
+	div#node-menu-div {
+		margin-left: 8px !important;
+	}
+	
+}
+
+@media all and (min-width: 1180px) and (max-width: 1210px){
+
+	div#node-container-div {
+		width: 100% !important;
+	}
+	
+	div.node-main-div {
+		width: 71%;
+	}
+	
+	div.k-footer {
+		width: 100% !important;
+	}
+	
+	div#node-menu-div {
+		margin-left: 8px !important;
+	}
+	
+}
+
+@media all and (min-width: 1210px) and (max-width: 1300px){
+
+	div#node-container-div {
+		width: 100% !important;
+	}
+	
+	div.node-main-div {
+		width: 71%;
+	}
+	
+	div.k-footer {
+		width: 100% !important;
+	}
+	
+	div#node-menu-div {
+		margin-left: 8px !important;
+	}
+	
+}
+
+@media all and (min-width: 1310px) and (max-width: 1400px){
+
+	div#node-container-div {
+		width: 100% !important;
+	}
+	
+	div.node-main-div {
+		width: 74%;
+	}
+	
+	div.k-footer {
+		width: 100% !important;
+	}
+	
+	div#node-menu-div {
+		margin-left: 8px !important;
+	}
+	
+}
+
+@media all and (min-width: 288px) and (max-width: 800px){
+	
+		div#node-container-div {
+		width: 100% !important;
+	}
+	
+	div.node-main-div {
+		width: 68%;
+	}
+	
+	div.k-footer {
+		width: 100% !important;
+	}
+	
+	div#node-menu-div {
+		width: 29% !important;
+		margin-left: 2px !important;
+		margin-right: 5px;
+	}
+	
+}
+
+
+
+
+
+/* ENd Media Queries */
+
+div.container {
+	width: 100%;
+}
+
+tt, pre {
+	font-family: monospace; 
+	color: #3E3A39;
+}
+
+.node-content-div p {
+	margin: 0 0 1em 0;
+}
+
+p {
+	text-align: justify;
+	font-size: 12px;
+	font-size:1.2rem;
+	margin: 8px;
+	line-height: 1.6em;
+}
+
+
+h1 {  
+	font-size: 18px;
+	font-size: 1.8rem;
+	text-align: center;
+	color: #575757;
+	margin: 10px 15px 10px 15px;
+ }
+
+h2{
+	font-size: 16px;
+	font-size: 1.6rem;
+	margin:8px;
+	border-bottom: 1px solid #e5e5e5;
+  	color: #ff9f00;
+	
+}
+
+h2 &gt; div {
+	font-size: 12px;
+	font-size: 1.2rem;
+}
+
+.deprecated {
+	color: red; font-style: italic;
+}
+
+dl{
+	padding: 0;
+	margin: 8px;
+	font-size: 12px;
+	font-size: 1.2rem;
+}
+
+dt {
+	font-weight: bold;
+	margin-bottom: 0.3em;
+}
+
+dd{
+	margin-bottom: 1em;
+	margin-left: 1.5em;
+	line-height: 1.6em; 
+}
+
+table{
+	font-size: 12px;
+	font-size: 1.2rem;
+}
+
+table.introtable {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid #666666;
+    border-collapse:collapse;
+}
+
+table.introtable table {
+	margin: -0.5em;
+	border: none;
+	border-collapse: collapse;
+}
+
+
+table.introtable tr td, 
+table.introtable tr th {
+    padding: 0.5em 0.5em;
+    border: 1px solid #666666;
+}
+
+table.introtable table tr:not(:last-child) {
+	border: none;
+	border-bottom: 1px solid #666666;
+}
+
+table.introtable table tr td,
+table.introtable table tr th {
+	border: none;
+}
+    
+table.introtable table tr td:not(:last-child),
+table.introtable table tr th:not(:last-child) {
+    border-right: 1px solid #666666;
+}
+
+
+table.introtable tr th {
+    background-color: #EEEEEE;
+}
+
+
+td{
+	padding: 0.5em 0.5em;
+	vertical-align:top;
+}
+
+
+.dt {
+	font-weight: bold;
+}
+
+a{
+	color: #FF9000;
+	text-decoration: none;
+}
+	
+a:hover{
+	text-decoration: underline;
+}
+
+.warn{
+	color: #cf0000;
+}
+
+div.group {
+    border: 2px solid #e5e5e5;
+    padding: 0.2em;
+    margin-bottom: 0.5em;
+    border-radius: 5px;
+}
+
+div.dlGroup {
+	border: 2px solid #ffd600;
+    padding: 0.2em;
+    margin-bottom: 0.5em;
+    border-radius: 5px;
+}
+
+
+div.groupname {
+    text-align: center;
+    font-weight: bold;
+    background-color: #EEEEEE;
+    padding: 0.3em;
+}
+
+
+div.group-description {
+    background-color: #F8F8F8;
+    padding: 0.4em;
+    border-top: 1px solid #AAAAAA;
+}
+
+
+div#origin-bundle {
+	color: #3E3A39;
+    /*font-size: 83.03%;*/
+    font-size: 12px;
+    font-size: 1.2rem;
+    margin-top: 2em;
+    padding-top: 0.5em;
+    border-top: 1px solid #bbbbbb;
+    text-align: right;
+}
+
+span#source_info {
+	font-style: italic;
+	color: #FFD900;
+}
+
+span#node_provider {
+	font-style: italic;
+	color: #3E3A39;
+}
+
+/* Styles for Header Div*/
+
+.header_docu {
+	margin: 0 auto;
+	width: 64%;
+}
+
+#logo {
+	float:left;
+}
+
+#docu_version {
+	float: right;
+	margin-right: -400px;
+	margin-top:0px;
+}
+	
+
+/* Styles for Vertical Menu*/
+
+ul.tabs{
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+
+ul.tabs li{
+    background: none;
+    color: #222;
+    display: table-cell;
+    width: auto;
+    text-align: center;
+    padding: 10px 15px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+ul.tabs li.current{
+    background: #ededed;
+    color: #222;
+}
+
+
+}
+
+
+
+.tab-content{
+    display: none;
+    padding: 2px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.tab-content.current{
+    display: inherit;
+    border: 1px solid #000;
+    padding-left: 20px;
+}
+
+.node-container-div {
+	margin: 0 auto;
+	width: 1460px;
+	min-width: 748px !important;
+	
+}
+
+.groupClass:before,
+.groupClass:after {
+	content: "";
+	display: table;
+}
+
+.groupClass:after{
+	clear:both;
+}
+
+.groupClass {
+	clear: both;
+	*zoom : 1;
+}
+
+#node-menu-div {
+	float: left;
+	width: 26%;
+	max-width: 312px;
+	max-height: 100%;
+	margin-right: 1em;
+}
+
+#node-main-div {
+
+}
+
+
+.node-main-div {
+	float: left;
+	position: relative;
+	min-width: 509px !important;
+	max-height: 100%;
+	width: 77%;
+}
+
+
+
+/*************** Custom Style for Node Repository *********************/
+/* format of the menu tree */
+span.childs {
+	cursor: pointer;
+}
+  
+/* Klassen für das öffnen und schließen eines Knotens */
+
+li.treeMenu_opened ul {
+	display: block;
+}
+    
+li.treeMenu_closed ul {
+	display: none;
+}
+  
+ul {
+	margin-left: 8px;
+}
+
+ul li {
+	font-size: 12px;
+	font-size: 1.2rem;
+
+}
+  
+li {
+	padding: 0em;
+	margin: 0em;
+	margin-bottom: 0.4em;
+}
+
+li.knime-node {
+	margin-left: 4px;
+}
+
+.container a {
+	color: #000;
+}
+
+#menu_header{
+	border-top: 1px solid #000;
+	border-right: 1px solid #000;
+	border-left: 1px solid #000;
+	width: 50%;
+}
+
+.container first-half{
+	width:50%;
+}
+
+.container second-half{
+	width:50%;
+	border-top: 1px solid #000;
+}
+
+#headerObj {
+	min-width: 509px !important;
+}
+
+#node-header-div {
+	min-width: 509px !important;
+}
+ 	
+/******************************* END *************************/
+
+/* Footer Style here */
+
+div.k-footer {
+	width: 1460px;
+	min-width: 748px !important;
+	padding-bottom: 25px;
+	position: absolute;
+	bottom: 0;
+	background: white;
+	margin: 0 auto;
+	clear: both;
+}
+
+div.footer-inner {
+	height: auto;
+	width: 100%;
+	min-width:100%;
+	max-width: 100%;
+	margin: 0 auto;
+}
+
+#footer {
+	margin: 0px 10px;
+	border-top: #ccc 1px solid;
+	font-size: 82.33% !important;
+}
+
+.content {
+	margin:0.5em 0;
+}
+
+
+.col1 h3, .col2 h3, .col3 h3, .col4 h3, .col-adress h3 {
+	text-transform: uppercase;
+}
+
+
+.col1, .col2, .col3,.col4 {
+	float: left;
+	margin: 0 1.5em;
+	width: 15%;
+}
+
+.col-adress {
+	float: right;
+	margin: 0 1.5em;
+}
+
+.m-footer {
+    padding: 0px !important;
+    padding-top: 0.4em !important;
+    padding-left: 0px !important;
+    list-style-type: none !important;
+} 
+
+.m-footer li {
+	padding: 0 !important;
+	margin:0 !important;
+	font-size: 140% !important;
+}
+
+.m-footer li a {
+	color: #aaa;
+	text-decoration: none;
+	font-size: 13px !important;
+	font-size: 1.3rem !important;
+	line-height: 1.8em;
+} 
+/* End */
+/* Header */
+
+.fix-header {
+	  border: solid 1px #e5e5e5;
+  	  border-top-left-radius: 5px;
+  	  border-top-right-radius: 5px;
+  	  padding: 3px;
+  	  background-color: #f0f0f2;
+}
+
+#fix-header {
+	  position: fixed;
+  	  margin-top: -70px;
+  	  width: 100%;
+  	  z-index: 5;
+}
+
+
+
+
+</style>
+</head>
+<body>
+<div class="fix-header" id="fix-header">
+<h1>Decision Tree Learner</h1>
+</div>
+<p>
+			This node induces a classification decision tree in main memory.
+			The target attribute must be nominal. The other attributes used for
+			decision making can be either nominal or numerical. Numeric splits
+			are always binary (two outcomes), dividing the domain in two partitions at a 
+			given split point. Nominal splits can be either binary (two outcomes) or 
+			they can have as many outcomes as nominal values. In the 
+			case of a binary split the nominal values are divided into two subsets.
+			The algorithm provides two quality measures for split calculation;
+			the gini index and the gain ratio. Further, there exist a
+			post pruning method to reduce the tree size and increase prediction
+			accuracy. The pruning method is based on the minimum
+			description length principle.<br/>
+			The algorithm can be run in multiple threads, and thus, exploit multiple
+			processors or cores.<br/>
+			Most of the techniques used in this decision tree implementation
+			can be found in "C4.5 Programs for machine learning", by J.R. Quinlan
+			and in "SPRINT: A Scalable Parallel Classifier for Data Mining", by
+			J. Shafer, R. Agrawal, M. Mehta (<a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.104.152&amp;rep=rep1&amp;type=pdf">http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.104.152&amp;rep=rep1&amp;type=pdf</a>)<br/>
+		</p>
+<h2>Dialog Options</h2>
+<dl>
+<dt>Class column</dt>
+<dd>To select the target attribute. 
+			Only nominal attributes are allowed</dd>
+<dt>Quality measure</dt>
+<dd>
+			To select the quality measure according to which the 
+			split is calculated. Available are the "Gini Index" and the "Gain Ratio".
+		</dd>
+<dt>Pruning method</dt>
+<dd>
+			Pruning reduces tree size and avoids overfitting which increases 
+			the generalization performance, and thus, the prediction quality
+			(for predictions, use the "Decision Tree Predictor" node).
+			Available is the "Minimal Description Length" (MDL) pruning or
+			it can also be switched off.
+		</dd>
+<dt>Reduced Error Pruning</dt>
+<dd>
+			If checked (default), a simple pruning method is used to cut the tree in a post-processing step: Starting at the leaves, each node is 
+			replaced with its most popular class, but only if the prediction accuracy doesn't decrease. Reduced error pruning has the advantage of 
+			simplicity and speed.
+		</dd>
+<dt>Min number records per node</dt>
+<dd>
+			To select the minimum number of records at least required in each node. If 
+			the number of records is smaller or equal to this number the tree
+			is not grown any further. This corresponds to a stopping criteria (pre pruning).
+		</dd>
+<dt>Number records to store for view</dt>
+<dd>
+			To select the number of records stored in the tree for the view.
+			The records are necessary to enable highlighting.
+		</dd>
+<dt>Average split point</dt>
+<dd>
+			If checked (default), the split value for numeric attributes is determined according to the mean
+			value of the two attribute values that separate the two partitions.
+			If unchecked, the split value is set to the largest value of the lower partition (like C4.5).
+		</dd>
+<dt>Number threads</dt>
+<dd>
+            This node can exploit multiple threads and thus multiple processors
+            or cores. This can improve performance. The default value is set to 
+            the number of processors or cores that are available to KNIME. If
+            set to 1, the algorithm is performed sequentially.
+        </dd>
+<dt>Skip nominal columns without domain information</dt>
+<dd>
+            If checked, nominal columns containing no domain value information are
+            skipped. This is generally the case for nominal columns that have
+            too many different values.
+        </dd>
+<dt>Force root split column</dt>
+<dd>
+        	If checked, the first split is calculated on the chosen column without 
+            evaluating any other column for possible splits. This is sometimes
+            useful if the user has additional information as to which column is best 
+            to split on even if it does not have the numeric best split quality. In
+            case the selected column does not contain valid splits (e.g. because it
+            has a constant value in all rows) a warning message will be displayed.
+            If uncertain, leave unselected.
+        </dd>
+<dt>Binary nominal splits</dt>
+<dd>
+			If checked, nominal attributes are split in a binary fashion. Binary
+			splits are more difficult to calculate but result also in more 
+			accurate trees. The nominal values are divided in two subsets (one
+			for each child). If unchecked, for each nominal value one child is
+			created. 
+		</dd>
+<dt>Max #nominal</dt>
+<dd>
+			The subsets for the binary nominal splits are difficult to calculate.
+			To find the best subsets for n nominal values there must be 
+			performed 2^n calculations. In case of many different nominal values
+			this can be prohibitive expensive. Thus the maximum number of nominal
+			values can be defined for which all possible subsets are calculated.
+			Above this threshold, a heuristic is applied that first calculates the
+			best nominal value for the second partition, then the second best value, 
+			and so on; until no improvement can be achieved.
+		</dd>
+<dt>Filter invalid attribute values in child nodes</dt>
+<dd>
+		    Binary splits on nominal values may lead to tests for attribute 
+		    values, which have been filtered out by a parent tree node.
+		    This is due to the fact that the learning algorithm is consistently
+		    using the table's domain information instead of the data in a tree
+		    node to define the split sets. These duplicate checks do not harm
+		    (the tree is the same and and will classify unknown data the exact
+		    same way), though they are confusing when the tree is inspected
+		    in the tree viewer. Enabling this option will post-process the tree
+		    and filter invalid checks.    
+		</dd>
+<dt>No true child strategy</dt>
+<dd>
+		If the scoring reaches a node, at which its attributes value is unknown, one of the two following strategies can be used:
+		<br/>
+		<b>returnNullPrediciton:</b> predict a missing value <br/>
+		<b>returnLastPrediction:</b> return the majority class of the last node
+		</dd>
+<dt>Missing value strategy</dt>
+<dd>
+		If there are missing values in the data to be predicted, a strategy can be chosen how to handle 
+		them:<br/>
+			    <b>lastPrediction:</b> use the last known class <br/>
+	<!--<b>nullPrediction:</b> predict a missing value<br/>--><!-- not supported -->
+		<b>defaultChild:</b> use the default child and continue traversing its path<br/>
+	<!--  	<b>weightedConfidence:</b> weight the output of each subtree<br/>--><!-- not supported -->
+	<!--  	<b>aggregateNodes:</b> <br/>--><!-- not supported -->
+		<b>NONE:</b> use the noTrueChildStrategy
+		</dd>
+</dl>
+<h2>Ports</h2>
+<dl>
+<div class="group dlGroup">
+<div class="groupname">Input Ports</div>
+<table>
+<tr>
+<td class="dt">0</td>
+<td>
+				The pre-classified data that should be used to induce the decision tree.
+				At least one attribute must be nominal.
+		</td>
+</tr>
+</table>
+</div>
+<div class="group dlGroup">
+<div class="groupname">Output Ports</div>
+<table>
+<tr>
+<td class="dt">0</td>
+<td>
+			The induced decision tree. The model can be used to classify
+			data with unknown target (class) attribute. To do so, connect the 
+			model out port to the "Decision Tree Predictor" node.
+		</td>
+</tr>
+</table>
+</div>
+</dl>
+<h2>Views</h2>
+<dl>
+<dt>Decision Tree View</dt>
+<dd>
+            Visualizes the learned decision tree. The tree can be expanded and
+            collapsed with the plus/minus signs. 		
+		</dd>
+<dt>Decision Tree View (simple)</dt>
+<dd>
+            Visualizes the learned decision tree. The tree can be expanded and
+            collapsed with the plus/minus signs. The squared brackets show the
+            splitting criteria. This is the attribute name on which the parent
+            node was split and the value (numeric) and nominal value (set) that
+            has led to this child. The class value in single quotes states the
+            majority class in this node. The value in round brackets states
+            (x of y) where x is the quantity of the majority class and y is the
+            total count of examples in this node. The bar with the black border
+            and partly filled with yellow color represents the amount
+            of records that belongs to the node relatively to the parent node.
+            The colored pie chart renders the distribution of the color attribute
+            associated with the input data table. NOTE: the colors not necessarily 
+            reflect the class attribute. If the color distribution  and the 
+            target attribute should correspond to each other, ensure that the 
+            "Color Manager" node colors the same attribute as selected in this
+            decision tree node as target attribute.
+        </dd>
+</dl>
+<div id="origin-bundle">
+                    This node is contained in <em>KNIME Base Nodes</em>
+                    provided by <em>KNIME AG, Zurich, Switzerland</em>.
+                </div>
+</body>
+</html>

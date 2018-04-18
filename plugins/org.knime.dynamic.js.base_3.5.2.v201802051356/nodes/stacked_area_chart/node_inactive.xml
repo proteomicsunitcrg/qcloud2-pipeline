@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<js:knimeNode xmlns:js="http://knime.org/dynamicjsnode/v2.12"
+	xmlns="http://knime.org/dynamicnode/v2.12" xmlns:n="http://knime.org/node/v2.12"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://knime.org/dynamicjsnode/v2.12 http://www.knime.org/node/dynamicJSNode_v2.12.xsd"
+	jsNamespace="boxplot_namespace" nodeID="boxplotJS" categoryPath="/flowcontrol/quickforms/view"
+    icon="../js.png" type="Visualizer">
+
+	<name>Stacked Area Chart (JavaScript)</name>
+	<shortDescription>This node provides a view with a Stacked Area Chart implemented with D3.js.</shortDescription>
+	<fullDescription>
+		<intro>
+			This d3 chart shows multiple columns as stacked areas.
+			The chart normalizes the data across columns so that the largest sum is shown as 1.0.
+			By selecting the interpolation method "step" the chart can be made to look similar to a stacked bar chart.
+		</intro>
+		<tab name="Options">
+			<options>
+				<columnFilterOption name="Included columns"
+					id="columns" inPortIndex="0" label="Included columns" filterClasses="org.knime.core.data.DoubleValue">
+					Select the columns for which you wish to plot boxes.
+				</columnFilterOption>
+			</options>
+		</tab>
+		<tab name="General Plot Options">
+			<options>
+				<stringOption name="Title" id="title" label="Title"
+					defaultValue="Title of Graph" optional="true" saveInView="true">
+					The chart title.
+				</stringOption>
+				
+				<stringOption name="Subtitle" id="subtitle" label="Subtitle"
+                    defaultValue="Subtitle of Graph" optional="true" saveInView="true">
+                    The chart subtitle.
+                </stringOption>
+
+				<svgOption name="Create image at outport" id="svg" portIndex="0" label="Create image at output port"></svgOption>
+				
+				<colorOption name="Background color" id="backgroundColor" label="Background color"
+                    format="HexString" defaultR="255" defaultG="255" defaultB="255"></colorOption>
+                    
+                    <colorOption name="Data area color" id="daColor" label="Data area color"
+                    format="HexString" defaultR="255" defaultG="255" defaultB="255"></colorOption>
+
+			    <checkBoxOption name="Show X Grid" id="showXGrid" label="Show X Grid" saveInView="true"></checkBoxOption>
+			    
+			    <checkBoxOption name="Show Y Grid" id="showYGrid" label="Show Y Grid" saveInView="true"></checkBoxOption>
+			     
+			    <stringListOption name="Interpolation" id="interpolation" possibleValues="linear basis cardinal step" defaultValues="linear" label="Interpolation" saveInView="true"></stringListOption>
+			</options>
+		</tab>
+		
+		<tab name="Control Options">
+          <options>
+              <checkBoxOption name="Enable view controls" id="enableViewControls"
+                   label="Enable view controls" defaultValue="true">
+                   Check to enable controls in the chart.
+               </checkBoxOption>
+               <checkBoxOption name="Enable Title editing" id="enableTitleEdit"
+                   label="Enable Title editing" defaultValue="true" enableDependency="enableViewControls" enableValue="true">
+                   Check to enable the editing of the title within the view.
+               </checkBoxOption>
+               <checkBoxOption name="Enable Subtitle editing" id="enableSubtitleEdit"
+                   label="Enable Subtitle editing" defaultValue="true" enableDependency="enableViewControls" enableValue="true">
+                   Check to enable the editing of the subtitle within the view.
+               </checkBoxOption>
+               <checkBoxOption name="Enable Display Options" id="enableInterpolationChooser"
+                   label="Enable Display Options" defaultValue="true" enableDependency="enableViewControls" enableValue="true">
+                   Check to enable the selection of an interpolation method and whether to show a grid in the view.
+               </checkBoxOption>
+           </options>
+        </tab>
+
+	</fullDescription>
+	<outputOptions>
+		<dataOutputOption outPortIndex="0" id="chartImage" />
+	</outputOptions>
+	<interactiveView name="D3 Stacked Area Chart">
+		A D3.js implementation of a Stacked Area Chart.
+	</interactiveView>
+	<ports>
+		<inPort portType="Data" name="Input Data" index="0">
+			Data table containing the values.
+		</inPort>
+		<outPort portType="Image" name="Stacked Area Chart image" index="0">
+			SVG image of the stacked area chart.
+		</outPort>
+	</ports>
+	<js:resources>
+		<js:resource type="js" path="stackedareachart.js" />
+		<js:resource type="css" path="styles.css" />
+	</js:resources>
+	<js:dependencies>
+		<js:dependency name="D3" path="D3_3.2.8" type="local" />
+		<js:dependency name="jQuery" path="jQuery_1.11.0" type="local" />
+	</js:dependencies>
+</js:knimeNode>

@@ -1,0 +1,15 @@
+Signature-Version: 1.0
+SHA-256-Digest-Manifest-Main-Attributes: /JF6xmUX3SYM2PkGFYvyDFhP1lfbp
+ af1zz59vBdFaP8=
+SHA-256-Digest-Manifest: eMgXpSLlHsvAo9ScfDpQffztTOCna/9/w3H8u77MXZI=
+Created-By: 1.8.0_131 (Oracle Corporation)
+
+Name: META-INF/p2.inf
+SHA-256-Digest: ittkmOU7hJnJyfcaEOR4dfUtObKGDvIctKnhGLT6AlI=
+
+Name: linux/x86_64/chromedriver
+SHA-256-Digest: pgtZP2W4bu6cgwU6joLEISYGQOqEMRnzzOHHVWaar6U=
+
+Name: LICENSE.txt
+SHA-256-Digest: CsxBVmAvVjOTKCyCLvf7sC/jHM5KTlJ7DBJm5jwQuP8=
+

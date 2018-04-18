@@ -1,0 +1,241 @@
+html, body {
+	/* This will most likely be overwritten by view implementations,
+	 it provides a sensible default in any case. */
+	font-family: sans-serif;
+	font-size: 14px;
+}
+
+/* TODO: Initialize margins etc.? */
+
+#knime-service-header {
+	width: 100%;
+	padding: 12px;
+	box-sizing: border-box;
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1000;
+	font-family: sans-serif;
+    pointer-events: none;
+}
+
+#knime-service-header * {
+	box-sizing: border-box;
+}
+
+#knime-service-header .service-button,
+#knime-service-header #knime-service-menu,
+#knime-service-header #knime-service-overlay {
+	pointer-events: auto;
+}
+
+#knime-service-header .service-button {
+	float: right;
+	height: 20px;
+	width: 20px;
+	padding: 2px;
+	margin-left: 4px;
+	background-color: rgba(0, 0, 0, 0.2);
+	border: thin solid rgba(128, 128, 128, 0.2);
+	border-radius: 4px;
+	font-size: 14px;
+	color: rgba(128, 128, 128, 0.5);
+	cursor: pointer;
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+#knime-service-header .service-button:hover,
+#knime-service-header .service-button.active {
+	background-color: rgba(100, 100, 100, 1);
+    border-color: rgba(80, 80, 80, 1);
+    color: rgba(230, 230, 230, 1);
+}
+
+#knime-service-header .service-button.inactive {
+    pointer-events: none;
+}
+
+#knime-service-header .service-button.warn-button {
+	background-color: rgba(255, 170, 0, 0.2);
+	border-color: rgba(255, 170, 0, 0.5);
+	color: rgba(255, 170, 0, 1);
+}
+
+#knime-service-header .service-button.warn-button:hover {
+	background-color: rgba(255, 170, 0, 0.5);
+	border-color: rgba(255, 170, 0, 1);
+	color: rgba(255, 170, 0, 1);
+}
+
+#knime-service-header .service-button .ficon {
+    display: table-cell;
+    text-align: center;
+	vertical-align: middle;
+}
+
+#knime-service-header .service-button .uicon {
+	display: block;
+	margin-top: -4px;
+}
+
+#knime-service-header .service-nav-spacer {
+	float: right;
+	width: 20px;
+	height: 20px;
+	margin-left: 4px;
+}
+
+#knime-service-header #knime-service-overlay {
+	position: fixed;
+	display: none;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+#knime-service-header #knime-service-overlay.open {
+	display: block;
+	z-index: 1999;
+}
+
+#knime-service-header #knime-service-menu {
+	position: absolute;
+	display: none;
+	top: 34px;
+	right: 0px;
+	margin-right: 12px;
+	padding: 4px 8px;
+	background-color: rgba(255, 255, 255, 1);
+	font-size: 14px;
+	border: 1px solid rgba(0, 0, 0, 0.15);
+	border-radius: 4px;
+	-webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+    outline: none;
+}
+
+#knime-service-header #knime-service-menu.open {
+	display: block;
+	z-index: 2000;
+}
+
+@-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+
+.cssanimations #knime-service-header #knime-service-menu.open {
+	opacity: 0;
+	
+	-webkit-animation: fadeIn ease-in 1;
+	-webkit-animation-fill-mode: forwards;
+	-webkit-animation-duration: 0.2s;
+	
+	-moz-animation: fadeIn ease-in 1;
+	-moz-animation-fill-mode: forwards;
+	-moz-animation-duration: 0.2s;
+	
+	animation: fadeIn ease-in 1;
+	animation-fill-mode: forwards;
+	animation-duration: 0.2s;
+}
+
+#knime-service-header #knime-service-menu ul {
+	margin: 4px 0 0 0;
+	padding: 0;
+	list-style: none;
+	text-align: left;
+}
+
+#knime-service-header #knime-service-menu li {
+	overflow: hidden;
+	clear: both;
+	margin: 0 0 4px 0;
+	font-weight: normal;
+    line-height: 1.42857143;
+    color: #333;
+    white-space: nowrap;
+}
+
+#knime-service-header #knime-service-menu li i.fa {
+	margin-right: 6px;
+}
+
+#knime-service-header #knime-service-menu li i.fa.small {
+	font-size: 0.8em;
+	position: relative;
+	top: -1px;
+	left: 2px;
+	margin-right: 10px;
+}
+
+#knime-service-header #knime-service-menu li span.fa-stack {
+	width: 1.28571429em;
+    height: 1.28571429em;
+    line-height: normal;
+	margin-right: 6px;
+}
+
+#knime-service-header #knime-service-menu li span.fa-stack .left {
+	text-align: left;
+}
+
+#knime-service-header #knime-service-menu li span.fa-stack .right {
+	text-align: right;
+}
+
+#knime-service-header #knime-service-menu li span.fa-stack .faded {
+	color: gray;
+}
+
+#knime-service-header #knime-service-menu li span.fa-stack .sm {
+	font-size: 0.8em;
+	line-height: 1.6em;
+}
+
+#knime-service-header #knime-service-menu li span.fa-stack .bold {
+	font-weight: bold;
+}
+
+#knime-service-header #knime-service-menu li.divider {
+    height: 1px;
+    margin: 6px 0;
+    clear: both;
+    overflow: hidden;
+    background-color: #e5e5e5;
+}
+
+#knime-service-header #knime-service-menu li label {
+	font-weight: normal;
+	margin: 0;
+	padding: 0;
+}
+
+#knime-service-header #knime-service-menu .radioGroup label {
+	margin-left: 2px;
+	margin-right: 8px;
+}
+
+#knime-service-header #knime-service-menu .radioGroup label:last-child {
+	margin-right: 0;
+}
+
+#knime-service-header #knime-service-menu li a {
+	display: block;
+    /* padding: 3px 12px; */
+    clear: both;
+    text-decoration: none;
+    overflow: hidden;
+}
+
+#knime-service-header #knime-service-menu li.menuItem a {
+	cursor: pointer;
+}
+
+#knime-service-header #knime-service-menu li.menuItem a:hover {
+    color: #262626;
+    background-color: #f5f5f5;
+    outline: 0;
+}
+

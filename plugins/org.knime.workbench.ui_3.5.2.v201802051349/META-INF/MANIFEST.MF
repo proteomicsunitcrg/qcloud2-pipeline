@@ -1,0 +1,162 @@
+Manifest-Version: 1.0
+Bundle-SymbolicName: org.knime.workbench.ui;singleton:=true
+Require-Bundle: org.eclipse.core.runtime;bundle-version="[3.6.0,4.0.0)
+ ",org.eclipse.ui;bundle-version="[3.6.1,4.0.0)",org.eclipse.core.reso
+ urces;bundle-version="[3.6.0,4.0.0)",org.eclipse.ui.ide;bundle-versio
+ n="[3.4.2,4.0.0)",org.knime.workbench.core;bundle-version="[3.0.0,4.0
+ .0)",org.knime.workbench.repository;bundle-version="[3.0.0,4.0.0)",or
+ g.eclipse.ui.forms;bundle-version="[3.5.2,4.0.0)",org.eclipse.ui.edit
+ ors;bundle-version="[3.6.0,4.0.0)",org.eclipse.equinox.p2.ui;bundle-v
+ ersion="[2.0.0,3.0.0)",org.eclipse.equinox.p2.operations;bundle-versi
+ on="[2.0.0,3.0.0)",org.eclipse.equinox.p2.metadata;bundle-version="[2
+ .0.0,3.0.0)",org.eclipse.core.filesystem;bundle-version="[1.3.1,2.0.0
+ )",org.knime.core.ui;bundle-version="[3.5.0,4.0.0)"
+Bundle-ManifestVersion: 2
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ActivationPolicy: lazy
+Bundle-Vendor: KNIME AG, Zurich, Switzerland
+Ant-Version: Apache Ant 1.9.6
+Export-Package: org.knime.workbench.ui,org.knime.workbench.ui.builder,
+ org.knime.workbench.ui.database,org.knime.workbench.ui.favorites,org.
+ knime.workbench.ui.favorites.actions,org.knime.workbench.ui.masterkey
+ ,org.knime.workbench.ui.metainfo.editor,org.knime.workbench.ui.metain
+ fo.model,org.knime.workbench.ui.nature,org.knime.workbench.ui.navigat
+ or,org.knime.workbench.ui.navigator.actions,org.knime.workbench.ui.na
+ vigator.actions.selection,org.knime.workbench.ui.p2.actions,org.knime
+ .workbench.ui.perspective,org.knime.workbench.ui.preferences,org.knim
+ e.workbench.ui.startup,org.knime.workbench.ui.wfvars,org.knime.workbe
+ nch.ui.wizards.export,org.knime.workbench.ui.wizards.imports,org.knim
+ e.workbench.ui.wizards.project,org.knime.workbench.ui.wizards.workflo
+ wgroup,org.knime.workbench.ui.wrapper
+Bundle-Name: KNIME Workbench UI
+Bundle-Version: 3.5.2.v201802051349
+Bundle-ClassPath: workbench-ui.jar
+Bundle-Activator: org.knime.workbench.ui.KNIMEUIPlugin
+Created-By: 1.8.0_131-b11 (Oracle Corporation)
+
+Name: icons/new_knime48.png
+SHA-256-Digest: Dn71JNbF0z6BbeloRPqRx/sI5nQGgCMti9x/3WmtXrg=
+
+Name: schema/startupMessages.exsd
+SHA-256-Digest: nvNqMSwsZKvn/OzVqGaoiUoIcRGTHalcTcwosMys3P0=
+
+Name: plugin.xml
+SHA-256-Digest: 8FZcZn6FpUXbkXfW6nvf24d1u2oHltAgzxYKdcUvomY=
+
+Name: icons/fav/expandall.png
+SHA-256-Digest: GmZVdVWm+tFRPoflB9meuxGKbv686tdCE8H9r56MIp4=
+
+Name: icons/fav/remove_fav_disabled.png
+SHA-256-Digest: GLr2vO8Wd3c0OQhjk/tUHztE7VTfSyn2/5Cg53RqtxU=
+
+Name: icons/node.png
+SHA-256-Digest: Swew27r5wEoXDUVUsNvpCXWerdTTF3cuphxY5XFs0nY=
+
+Name: icons/fav/collapseall.png
+SHA-256-Digest: IHQxk6089s1NZu8kw5rFBeDxGQuU8yEblr94czlMV9E=
+
+Name: icons/startupMessages.png
+SHA-256-Digest: WWxN841+KcEB+YrDqAFV8j9ttsvpdL8cXQpodw1Imds=
+
+Name: icons/knime_export.png
+SHA-256-Digest: ayfJ7ADqRXZwMNK/nTBCnIWF2YbpEXMu7RXQ+ZQBAQw=
+
+Name: icons/meta_info_edit.png
+SHA-256-Digest: KvgrbLmnyM8XBIwL2J4xXgNURwRJzjoPvDVGadI7Ewk=
+
+Name: icons/knime_import55.png
+SHA-256-Digest: aP52998G/T1JJ/aeUi8goehQu58c2TbwMDhmE4kRnl8=
+
+Name: icons/prefs_export.png
+SHA-256-Digest: wbia9o0WGHhhUUQ8D0Q7oGOWSG1WO1SdxyMWDnCPSeE=
+
+Name: icons/wf_group_new.png
+SHA-256-Digest: /Zdqo4CMHW1ktymqiLyd2BPZoz4D+yDLjLUzU30Elr4=
+
+Name: icons/open_logfile.png
+SHA-256-Digest: m1fAoj654sByTFO4ebBaRBxFU6DQ+I9TTHuWaQnYyj0=
+
+Name: icons/knime_default.png
+SHA-256-Digest: PIa6Q/ZTP9eFm0H5Y1xF8BssPRt/YkuqRTTDINZJM/E=
+
+Name: icons/sync.png
+SHA-256-Digest: 7Xr5x1IJmx4u1M8uKPQslYdgm20mCf7j38BBBN5HWNU=
+
+Name: icons/knime_unknown.png
+SHA-256-Digest: 4ti3hlsJKxGugm8uxBJ2KC8zaMB49FNHUYQCyDOyWrI=
+
+Name: icons/fav/clear_history.png
+SHA-256-Digest: 3oWbzx12jCcodGyCc+O3NhkBn50E2gf6iuX4AL/7Lco=
+
+Name: icons/knime_unknown_red.png
+SHA-256-Digest: Q0kjgl7fR8f1YsAAIjHO/YVQVYc7nUPzsjd0drg+ATA=
+
+Name: icons/project_executed.png
+SHA-256-Digest: MmFPLdCbjIsLSNFEOR2zcpx8qXe5e5w7MDAJpJl3CRc=
+
+Name: icons/fav/remove_fav.png
+SHA-256-Digest: zyqwVLTzWmPpm3MZPcbTdnzJdJay0yiJidmaTGSpZoA=
+
+Name: icons/new_knime16.png
+SHA-256-Digest: ArimrAF50wSxTm94Kn1NbUzhN0hJ5+lgxcdZrHZTAvA=
+
+Name: icons/project_basic.png
+SHA-256-Digest: imtgeZUMuQU3WFMlOn+Q8/Ytygb//OGv7yqaRuACIis=
+
+Name: icons/project_executing.png
+SHA-256-Digest: duWvR6ieeF7/JQqpK2835GzzIorzcvAD/h4pUWIhNlw=
+
+Name: icons/wf_set.png
+SHA-256-Digest: 4Ct3MtZ4XyRLVTcIfUSxSesBZioEtkbtOvmbYyadrBo=
+
+Name: icons/fav/fav_nodes.png
+SHA-256-Digest: I7LfUvjWsOUXvcncDZQVelIzMN06FTW8igBp6HpIZ54=
+
+Name: icons/project_closed2.png
+SHA-256-Digest: YuanQUC8s5dBZ7VC3fkpkNHR0O9oDvChg0loAED1ulY=
+
+Name: icons/workflow_projects.png
+SHA-256-Digest: d1tPx4G6wkk7i78lvN9byYoTD3fMfc3zfJU8H8KGLRc=
+
+Name: schema/multipleInstanceViews.exsd
+SHA-256-Digest: VtqgfLdpFGIoe2gnBUaak4dmVPMfEhIWnn3T/NMZe08=
+
+Name: icons/sample.gif
+SHA-256-Digest: 6jMftqI7oSaDQ6w4VCjJEtTiJvYpMr0Z1u+lWgsbkjY=
+
+Name: icons/new_knime55.png
+SHA-256-Digest: VwWzJXui/JjxLJZ0m43x0QemLINN2VR4uA7kpCDDffg=
+
+Name: LICENSE.txt
+SHA-256-Digest: 8TSiQagVcm5WfssAApmJKIINRC9Qyw1o2chFUkUKsAQ=
+
+Name: icons/info.png
+SHA-256-Digest: nZRbp+o9cFZaHSTWy+t85a0io0jmSIM+azQq0+sXJOw=
+
+Name: icons/knime_export55.png
+SHA-256-Digest: Wf4LHmv0JmHgbv6BCEhVOyPnPyQRiQdXHSNmaHjI5I0=
+
+Name: icons/prefs_import.png
+SHA-256-Digest: nlV7ZXd+XZjX8zDs3ueLkuQWxMlos6kHV+9JvGGFA98=
+
+Name: icons/project_configured.png
+SHA-256-Digest: rVWcbIci1GT/SpDGgTF3vnbCh2Lej1aqLhNT2XFCQck=
+
+Name: icons/error.png
+SHA-256-Digest: gC+8WB4nQvRgdmRDCLYJZ3XZ2lxSLcWTzHBgsclFWqQ=
+
+Name: icons/knime_export16.png
+SHA-256-Digest: ayfJ7ADqRXZwMNK/nTBCnIWF2YbpEXMu7RXQ+ZQBAQw=
+
+Name: icons/knime_import.png
+SHA-256-Digest: HycKqhpRQVtva0IZzyh4thxaImmFfzKZ4MOrESzZiXI=
+
+Name: icons/warning.gif
+SHA-256-Digest: CWX0Czw3HEKqVKDLDGJqp2DoVYFVJpRzcA2liiVnZTI=
+
+Name: icons/project_error.png
+SHA-256-Digest: a+b6TmdX4Yl1EGjtIv/X3kXVNcegjGpgZ/GPzI7hMr4=
+
+Name: workbench-ui.jar
+SHA-256-Digest: MvnLP4TdvHN+gJahEf9mTyqFmjcszXcg1vFMe790DJk=
+

@@ -1,0 +1,7 @@
+/* make sure colors on bars are correct (inherit from group) */
+svg.colored .nvd3 .nv-multibar .nv-groups rect, 
+svg.colored .nvd3 .nv-multibarHorizontal .nv-groups rect, 
+svg.colored .nvd3 .nv-discretebar .nv-groups rect {
+	fill: inherit !important;
+	stroke: inherit !important;
+}

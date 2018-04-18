@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<js:knimeNode xmlns:js="http://knime.org/dynamicjsnode/v3.0"
+	xmlns="http://knime.org/dynamicnode/v3.0" xmlns:n="http://knime.org/node/v2.12"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://knime.org/dynamicjsnode/v3.0 http://www.knime.org/node/dynamicJSNode_v3.0.xsd"
+	jsNamespace="voronoiplot_namespace" nodeID="voronoiplotJS" categoryPath="/labs/interactiveView"
+	icon="../js.png" type="Visualizer">
+
+	<name>Voronoi Diagram (JavaScript)</name>
+	<shortDescription>This node provides a view with a Voronoi Diagram implemented with D3.js.</shortDescription>
+	<fullDescription>
+		<intro>
+		      <n:p>
+		      	This node draws a voronoi diagram for 2-dimensional data. The color of the cells
+		      	can be either random, uniform or dependent on a column with categorical or numerical values. 
+		      </n:p>
+		      <n:p>
+		      	A voronoi diagram segments a plane into regions based on points in a subset of the plane.
+		      	For each of the points, also called generators, one region is created. The region contains all
+		      	points that have no generator point closer to it than the generator of the region they are in.
+		      	A region on the plane is also called voronoi cell.
+		      	More information is available on <n:a href="https://en.wikipedia.org/wiki/Voronoi_diagram">Wikipedia</n:a>.
+		      </n:p>
+		      <n:p>
+		      	The voronoi plot is not suited for data with many collinear points and data with duplicate points.
+		      	Therefore the visualization adds a slight jitter.
+		      </n:p>
+		      <n:p>
+		        Missing values in the columns with the x- and y-values cannot be displayed in a voronoi plot. Therefore the node filters all rows
+		        that contain missing values in these columns.
+		      </n:p>
+		</intro>
+		<tab name="Options">
+			<options>
+				<columnSelectorOption name="X column" saveInView="false"
+                    id="xCol" inPortIndex="0" label="X Column" filterClasses="org.knime.core.data.DoubleValue">
+                    Select the column that contains the x-values.
+                </columnSelectorOption>
+                <columnSelectorOption name="Y column" saveInView="false"
+                    id="yCol" inPortIndex="0" label="Y Column" filterClasses="org.knime.core.data.DoubleValue">
+                    Select the column that contains the y-values.
+                </columnSelectorOption>
+			</options>
+		</tab>
+		<tab name="General Plot Options">
+			<options>
+				<stringOption name="Title" id="title" label="Title"
+					defaultValue="Voronoi Diagram" optional="true" saveInView="true">
+					The chart title.
+				</stringOption>
+				<stringOption name="Subtitle" id="subtitle" label="Subtitle"
+                    defaultValue="" optional="true" saveInView="true">
+                    The chart subtitle.
+                </stringOption>
+                
+                <radioButtonOption name="Coloring" id="coloring" 
+					possibleValues="Random Uniform Column Table&#160;Spec" label="Coloring Method"
+					defaultValue="Random">
+						Select the coloring method for the cells.
+				</radioButtonOption>
+				
+				<colorOption name="Uniform color" id="daColor" label="Uniform color" enableDependency="coloring"
+                    enableValue="Uniform"
+                    format="HexString" defaultR="255" defaultG="255" defaultB="255" defaultAlpha="255">
+                    The background color of the data area. This is only relevant when the coloring setting is &quot;Data Area&quot;.
+                    </colorOption>
+				
+				<columnSelectorOption name="Color column" saveInView="false" enableDependency="coloring" enableValue="Column"
+                    id="colorCol" inPortIndex="0" label="Color Column" filterClasses="org.knime.core.data.DataValue">
+                    Select the column that contains the values to use for coloring
+                </columnSelectorOption>
+                
+                <colorOption name="Min color" id="minColor" label="Min color"
+                 	enableDependency="coloring" enableValue="Column"
+                    format="HexString" defaultR="255" defaultG="255" defaultB="255" defaultAlpha="255">
+                    The color of the drawn cells for the minimum possible double value.
+                </colorOption>
+				<colorOption name="Max color" id="maxColor" label="Max color"
+				enableDependency="coloring" enableValue="Column"
+                    format="HexString" defaultR="70" defaultG="130" defaultB="180" defaultAlpha="255">
+                    The color of the drawn cells for the maximum possible double value.
+                </colorOption>
+                
+                <colorOption name="Background color" id="backgroundColor" label="Background color"
+                    format="HexString" defaultR="255" defaultG="255" defaultB="255" defaultAlpha="255">
+                    The background color of the whole plot, excluding the data area, but including the axes, the title and the legend.
+                    </colorOption>
+                
+				<svgOption name="Image" additionalWait="500"
+				    id="svg" portIndex="0" label="Image">
+				    Settings for image generation.
+				</svgOption>
+
+			</options>
+		</tab>
+		
+		<tab name="Control Options">
+          <options>
+              <checkBoxOption name="Enable view controls" id="enableViewControls"
+                   label="Enable view controls" defaultValue="true">
+                   Check to enable controls in the chart.
+               </checkBoxOption>
+               <checkBoxOption name="Enable Title editing" id="enableTitleEdit"
+                   label="Enable Title editing" defaultValue="true" enableDependency="enableViewControls" enableValue="true">
+                   Check to enable the editing of the title within the view.
+               </checkBoxOption>
+               <checkBoxOption name="Enable Subtitle editing" id="enableSubtitleEdit"
+                   label="Enable Subtitle editing" defaultValue="true" enableDependency="enableViewControls" enableValue="true">
+                   Check to enable the editing of the subtitle within the view.
+               </checkBoxOption>
+           </options>
+        </tab>
+
+	</fullDescription>
+	<outputOptions>
+		<dataOutputOption outPortIndex="0" id="chartImage" />
+	</outputOptions>
+	<interactiveView name="D3 Voronoi Diagram">
+		A D3.js implementation of a Voronoi Diagram.
+	</interactiveView>
+	<ports>
+		<inPort portType="Data" name="Input Data 1" index="0">
+			Data table containing the data to be plotted.
+		</inPort>
+		<outPort portType="Image" name="Voronoi Diagram image" index="0">
+			SVG image of the Voronoi Diagram.
+		</outPort>
+	</ports>
+	<js:resources>
+		<js:resource type="js" path="voronoiplot.js" />
+		<js:resource type="css" path="styles.css" />
+	</js:resources>
+	<js:dependencies>
+		<js:dependency name="D3" path="D3_3.2.8" type="local" />
+	</js:dependencies>
+	<js:javaProcessor className="org.knime.dynamic.js.base.voronoi.VoronoiProcessor"/>
+</js:knimeNode>

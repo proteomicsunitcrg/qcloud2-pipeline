@@ -1,0 +1,22 @@
+Manifest-Version: 1.0
+Ant-Version: Apache Ant 1.9.6
+Bundle-SymbolicName: org.knime.ext.seleniumdrivers.multios.bin.linux.x
+ 86_64;singleton:=true
+Bundle-Name: Linux64 binaries for multi OS Selenium Drivers
+Bundle-Version: 2.29.461571.v201711171355
+Bundle-ManifestVersion: 2
+Eclipse-PlatformFilter: (&(osgi.os=linux)(osgi.arch=x86_64))
+Bundle-Vendor: KNIME AG, Zurich, Switzerland
+Fragment-Host: org.knime.ext.seleniumdrivers.multios;bundle-version="[
+ 3.4.0,4.0.0)"
+Created-By: 1.8.0_131-b11 (Oracle Corporation)
+
+Name: META-INF/p2.inf
+SHA-256-Digest: bZ9eVB6idIglB9vPO9ELgWxi1GQhHefesKZ+YcoT+4c=
+
+Name: linux/x86_64/chromedriver
+SHA-256-Digest: YXZc73hhZnzhAUD758lIaZ5xlfEtvu7VqVm2DJp0WTM=
+
+Name: LICENSE.txt
+SHA-256-Digest: hFAi4MHbGrtBprpM08S2dOwpDzNZ2dPHiuVY1MDtkwg=
+

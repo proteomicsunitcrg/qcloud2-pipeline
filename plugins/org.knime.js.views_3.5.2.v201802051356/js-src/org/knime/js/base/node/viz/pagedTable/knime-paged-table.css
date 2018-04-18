@@ -1,0 +1,157 @@
+#knimePagedTableContainer {
+	margin: 10px;
+	overflow: auto;
+}
+
+h1 {
+	font-family: sans-serif;
+	font-size: 24px;
+	margin: 0;
+}
+
+h2 {
+	font-family: sans-serif;
+	font-size: 14px;
+	margin: 5px 0 15px 0;
+}
+
+#knimePagedTableContainer .col-lg-1:first-child,
+#knimePagedTableContainer .col-lg-10:first-child,
+#knimePagedTableContainer .col-lg-11:first-child,
+#knimePagedTableContainer .col-lg-12:first-child,
+#knimePagedTableContainer .col-lg-2:first-child,
+#knimePagedTableContainer .col-lg-3:first-child,
+#knimePagedTableContainer .col-lg-4:first-child,
+#knimePagedTableContainer .col-lg-5:first-child,
+#knimePagedTableContainer .col-lg-6:first-child,
+#knimePagedTableContainer .col-lg-7:first-child,
+#knimePagedTableContainer .col-lg-8:first-child,
+#knimePagedTableContainer .col-lg-9:first-child,
+#knimePagedTableContainer .col-md-1:first-child,
+#knimePagedTableContainer .col-md-10:first-child,
+#knimePagedTableContainer .col-md-11:first-child,
+#knimePagedTableContainer .col-md-12:first-child,
+#knimePagedTableContainer .col-md-2:first-child,
+#knimePagedTableContainer .col-md-3:first-child,
+#knimePagedTableContainer .col-md-4:first-child,
+#knimePagedTableContainer .col-md-5:first-child,
+#knimePagedTableContainer .col-md-6:first-child,
+#knimePagedTableContainer .col-md-7:first-child,
+#knimePagedTableContainer .col-md-8:first-child,
+#knimePagedTableContainer .col-md-9:first-child,
+#knimePagedTableContainer .col-sm-1:first-child,
+#knimePagedTableContainer .col-sm-10:first-child,
+#knimePagedTableContainer .col-sm-11:first-child,
+#knimePagedTableContainer .col-sm-12:first-child,
+#knimePagedTableContainer .col-sm-2:first-child,
+#knimePagedTableContainer .col-sm-3:first-child,
+#knimePagedTableContainer .col-sm-4:first-child,
+#knimePagedTableContainer .col-sm-5:first-child,
+#knimePagedTableContainer .col-sm-6:first-child,
+#knimePagedTableContainer .col-sm-7:first-child,
+#knimePagedTableContainer .col-sm-8:first-child,
+#knimePagedTableContainer .col-sm-9:first-child,
+#knimePagedTableContainer .col-xs-1:first-child,
+#knimePagedTableContainer .col-xs-10:first-child,
+#knimePagedTableContainer .col-xs-11:first-child,
+#knimePagedTableContainer .col-xs-12:first-child,
+#knimePagedTableContainer .col-xs-2:first-child,
+#knimePagedTableContainer .col-xs-3:first-child,
+#knimePagedTableContainer .col-xs-4:first-child,
+#knimePagedTableContainer .col-xs-5:first-child,
+#knimePagedTableContainer .col-xs-6:first-child,
+#knimePagedTableContainer .col-xs-7:first-child,
+#knimePagedTableContainer .col-xs-8:first-child,
+#knimePagedTableContainer .col-xs-9:first-child {
+	padding-left: 0;
+}
+
+#knimePagedTableContainer .col-lg-1:last-child,
+#knimePagedTableContainer .col-lg-10:last-child,
+#knimePagedTableContainer .col-lg-11:last-child,
+#knimePagedTableContainer .col-lg-12:last-child,
+#knimePagedTableContainer .col-lg-2:last-child,
+#knimePagedTableContainer .col-lg-3:last-child,
+#knimePagedTableContainer .col-lg-4:last-child,
+#knimePagedTableContainer .col-lg-5:last-child,
+#knimePagedTableContainer .col-lg-6:last-child,
+#knimePagedTableContainer .col-lg-7:last-child,
+#knimePagedTableContainer .col-lg-8:last-child,
+#knimePagedTableContainer .col-lg-9:last-child,
+#knimePagedTableContainer .col-md-1:last-child,
+#knimePagedTableContainer .col-md-10:last-child,
+#knimePagedTableContainer .col-md-11:last-child,
+#knimePagedTableContainer .col-md-12:last-child,
+#knimePagedTableContainer .col-md-2:last-child,
+#knimePagedTableContainer .col-md-3:last-child,
+#knimePagedTableContainer .col-md-4:last-child,
+#knimePagedTableContainer .col-md-5:last-child,
+#knimePagedTableContainer .col-md-6:last-child,
+#knimePagedTableContainer .col-md-7:last-child,
+#knimePagedTableContainer .col-md-8:last-child,
+#knimePagedTableContainer .col-md-9:last-child,
+#knimePagedTableContainer .col-sm-1:last-child,
+#knimePagedTableContainer .col-sm-10:last-child,
+#knimePagedTableContainer .col-sm-11:last-child,
+#knimePagedTableContainer .col-sm-12:last-child,
+#knimePagedTableContainer .col-sm-2:last-child,
+#knimePagedTableContainer .col-sm-3:last-child,
+#knimePagedTableContainer .col-sm-4:last-child,
+#knimePagedTableContainer .col-sm-5:last-child,
+#knimePagedTableContainer .col-sm-6:last-child,
+#knimePagedTableContainer .col-sm-7:last-child,
+#knimePagedTableContainer .col-sm-8:last-child,
+#knimePagedTableContainer .col-sm-9:last-child,
+#knimePagedTableContainer .col-xs-1:last-child,
+#knimePagedTableContainer .col-xs-10:last-child,
+#knimePagedTableContainer .col-xs-11:last-child,
+#knimePagedTableContainer .col-xs-12:last-child,
+#knimePagedTableContainer .col-xs-2:last-child,
+#knimePagedTableContainer .col-xs-3:last-child,
+#knimePagedTableContainer .col-xs-4:last-child,
+#knimePagedTableContainer .col-xs-5:last-child,
+#knimePagedTableContainer .col-xs-6:last-child,
+#knimePagedTableContainer .col-xs-7:last-child,
+#knimePagedTableContainer .col-xs-8:last-child,
+#knimePagedTableContainer .col-xs-9:last-child {
+	padding-right: 0;
+}
+
+#knimePagedTableContainer .row {
+	margin: 0;
+}
+
+#knimePagedTable_wrapper .dt-buttons.btn-group {
+	width: auto;
+}
+
+#knimePagedTable td.no-break {
+	white-space: nowrap;
+}
+
+#knimePagedTable td.no-break .rowKey {
+	white-space: normal;
+}
+
+#knimePagedTable td .missing-value-cell {
+	color: #d9534f;
+}
+
+#knimePagedTable #checkbox-select-all,
+#knimePagedTable #clear-selection-button,
+#knimePagedTable td.selection-cell input[type=checkbox], 
+#knimePagedTable td.selection-cell input[type=radio] {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#knimePagedTable #clear-selection-button {
+	border: none;
+    font-size: 14px;
+}
+
+#knimePagedTable #clear-selection-button span.glyphicon{
+    display: block;
+    padding-bottom: 3px;
+}

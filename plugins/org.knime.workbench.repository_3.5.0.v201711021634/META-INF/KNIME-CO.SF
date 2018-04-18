@@ -1,0 +1,43 @@
+Signature-Version: 1.0
+SHA-256-Digest-Manifest-Main-Attributes: lyu6LdW2wZVdXFduS5J5hV9gOsNi1
+ E2RCrsLheD68vQ=
+SHA-256-Digest-Manifest: FHzvvEV3oqtqvTMvRA8Cgf2CE/yVOdcakWYFkAmduwM=
+Created-By: 1.8.0_131 (Oracle Corporation)
+
+Name: plugin.xml
+SHA-256-Digest: 7vOZFAxQOBxhs1SrUk71KSUJbpivdIzf6eLOJvXgZOc=
+
+Name: schema/nodesets.exsd
+SHA-256-Digest: hkQDWeVlen0yNOpUH6BDVirSf+s2mMargTH6gcnZzFs=
+
+Name: icons/search.gif
+SHA-256-Digest: D0yGPxgNZ8dHM+w/JYAG5Gyl28rccs18sUguf0liaWM=
+
+Name: LICENSE.txt
+SHA-256-Digest: AINBnlxD6j1hoUJCdbqJDDXIUInSr72BED0xfnoxdrY=
+
+Name: lib/schemas.jar
+SHA-256-Digest: KekB6J6eqfOmMHDBkiOHE9mr6187CHnrlPN2P4mmKKU=
+
+Name: schema/metanode.exsd
+SHA-256-Digest: frSFSBdV/3PizlVp057+6e50leWRum4t4KzIPOBO6CE=
+
+Name: schema/Category.exsd
+SHA-256-Digest: Fvif0zVC6qaIJ+cQMU7ad3Y9x5HKqnAY1V9tgexgABs=
+
+Name: knime-workbench-repository.jar
+SHA-256-Digest: Q42c234dzsf0TWaRjg9DYQr7a572B7+AUgP/uAqlGAY=
+
+Name: schema/registeredFileExtensions.exsd
+SHA-256-Digest: CVd/3uOXsqVHZfupW6VgQNxZMztNlgr7B63NIeR6M88=
+
+Name: src/eclipse/org/knime/workbench/repository/util/node_description
+ _howto.html
+SHA-256-Digest: wRFsWHoBKAnnvuY2qRU/I5QEA04Waiea2Ol/SrOnw/c=
+
+Name: schema/Node.exsd
+SHA-256-Digest: ABLxw+yWd9zQyJj12M+h6LLRmlZ1D4ySrclWgYIWanI=
+
+Name: icons/node_repository.png
+SHA-256-Digest: 5MZSZd32GqmsJtBBjBgPh287lWSEKnnwCmEYk/L0I+U=
+

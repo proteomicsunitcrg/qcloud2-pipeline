@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?NLS TYPE="org.eclipse.help.toc"?><toc label="Connector" link_to="../org.knime.base/tocs/database_database-connector.xml#database_database-connector">
+<topic href="PLUGINS_ROOT/org.knime.database.connectors/html/nodes/4274fe46.H2ConnectorNodeFactory.html" label="H2 Connector"/>
+<topic href="PLUGINS_ROOT/org.knime.database.connectors/html/nodes/33fd5420.SQLServerConnectorNodeFactory.html" label="Microsoft SQL Server Connector"/>
+<topic href="PLUGINS_ROOT/org.knime.database.connectors/html/nodes/63f77882.MySQLConnectorNodeFactory.html" label="MySQL Connector"/>
+<topic href="PLUGINS_ROOT/org.knime.database.connectors/html/nodes/32ec555a.PostgreSQLConnectorNodeFactory.html" label="PostgreSQL Connector"/>
+<topic href="PLUGINS_ROOT/org.knime.database.connectors/html/nodes/bb1ab86.SQLiteConnectorNodeFactory.html" label="SQLite Connector"/>
+</toc>

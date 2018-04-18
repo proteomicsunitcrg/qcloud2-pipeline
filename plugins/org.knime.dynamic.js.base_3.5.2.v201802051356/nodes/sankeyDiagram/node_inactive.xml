@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<js:knimeNode xmlns:js="http://knime.org/dynamicjsnode/v3.0"
+		xmlns="http://knime.org/dynamicnode/v3.0"
+		xmlns:n="http://knime.org/node/v2.12"
+ 		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ 		xsi:schemaLocation="http://knime.org/dynamicjsnode/v3.0 http://www.knime.org/node/dynamicJSNode_v3.0.xsd"
+ 		jsNamespace="sankey_namespace" nodeID="sankey_diagram" categoryPath="/preview"
+ 		icon="../js.png" type="Visualizer">
+    <name>Sankey Diagram (JavaScript)</name>
+    <shortDescription>A sankey diagram based on the d3.js library.</shortDescription>
+    <fullDescription>
+	    <intro>
+	    	<n:p>
+					This chart displays the flow between nodes in a directed graph. The width of the links visualizes the magnitude of the flow between two nodes.
+				</n:p>
+    	</intro>
+    	<tab name="Options">
+	    	<options>
+					<columnSelectorOption name="Source column" id="source"
+						inPortIndex="0" label="Source Column"
+						filterClasses="org.knime.core.data.IntValue">
+						Select the column with the source IDs for the links.
+					</columnSelectorOption>
+					<columnSelectorOption name="Target column" id="target"
+						inPortIndex="0" label="Target Column"
+						filterClasses="org.knime.core.data.IntValue">
+						Select the column with the target IDs for the links.
+					</columnSelectorOption>
+					<columnSelectorOption name="Value column" id="value"
+						inPortIndex="0" label="Value Column"
+						filterClasses="org.knime.core.data.DoubleValue">
+						Select the column with the values for the links.
+					</columnSelectorOption>
+	    	</options>
+    	</tab>
+
+    	<tab name="General Plot Options">
+	    	<options>
+	    	    <stringOption name="Title" id="title" label="Title" defaultValue="Sankey Diagram" optional="true" saveInView="true">
+    				The chart title.
+    			</stringOption>
+    			<stringOption name="Subitle" id="subtitle" label="Subtitle" optional="true" saveInView="true">
+    				The chart subtitle.
+    			</stringOption>
+				<svgOption name="Image" id="svg" portIndex="0" label="Image" additionalWait="500" defaultWidth="600" defaultHeight="400" defaultFullscreen="true">
+					Settings for image generation.
+				</svgOption>
+    		</options>
+    	</tab>
+
+		<tab name="Control Options">
+          <options>
+              <checkBoxOption name="Enable view controls" id="enableViewControls"
+                   label="Enable view controls" defaultValue="true">
+                   Check to enable controls in the chart.
+               </checkBoxOption>
+               <checkBoxOption name="Enable title editing" id="enableTitleEdit"
+                   label="Enable title editing" defaultValue="true" enableDependency="enableViewControls" enableValue="true">
+                   Check to enable the editing of the title within the view.
+               </checkBoxOption>
+               <checkBoxOption name="Enable subtitle editing" id="enableSubtitleEdit"
+                   label="Enable subtitle editing" defaultValue="true" enableDependency="enableViewControls" enableValue="true">
+                   Check to enable the editing of the subtitle within the view.
+               </checkBoxOption>
+           </options>
+        </tab>
+
+    </fullDescription>
+    <interactiveView name="JavaScript Sankey Diagram">
+			A d3.js implementation of a sankey diagram.
+    </interactiveView>
+    <ports>
+    	<inPort portType="Data" name="Display data" index="0">
+			Data table containing the graph as list of edges. The first column holds the source, the second column holds the target and the third column holds the value.
+		</inPort>
+		<inPort portType="Data" name="Label data" index="1" optional="true">
+			Data table containing one column with the labels of the nodes.
+		</inPort>
+    	<outPort portType="Image" name="Sankey diagram image" index="0">
+    		SVG image of the sankey diagram.
+    	</outPort>
+    </ports>
+	<js:resources>
+		<!-- Added for inlining style rules when generating svg -->
+		<js:resource type="css" path="styles.css" />
+		<js:resource type="js" path="sankey.js" />
+		<js:resource type="js" path="sankey_diagram.js" />
+	</js:resources>
+	<js:dependencies>
+		<js:dependency name="D3" path="D3_3.2.8" type="local" />
+		<js:dependency name="jQuery" path="jQuery_1.11.0" type="local" />	</js:dependencies>
+</js:knimeNode>

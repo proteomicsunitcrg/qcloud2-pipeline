@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns="http://knime.org/dynamicjsnode/v3.0"
+	xmlns:dn="http://knime.org/dynamicnode/v3.0"
+	targetNamespace="http://knime.org/dynamicjsnode/v3.0"
+	elementFormDefault="qualified">
+
+	<xs:import schemaLocation="http://www.knime.org/node/dynamicNode_v3.0.xsd" namespace="http://knime.org/dynamicnode/v3.0" />
+	<!-- <xs:import schemaLocation="../org.knime.dynamic.node.generation/dynamicNode_v3.0.xsd" namespace="http://knime.org/dynamicnode/v3.0" /> -->
+	
+	<xs:element name="knimeNode" type="DynamicJSKnimeNode" />
+
+	<xs:complexType name="DynamicJSKnimeNode">
+		<xs:complexContent>
+			<xs:extension base="dn:DynamicKnimeNode">
+				<xs:sequence>
+					<xs:element name="resources" type="WebRessources" />
+					<xs:element name="dependencies" type="WebDependencies" minOccurs="0" maxOccurs="1" />
+					<xs:element name="javaProcessor" type="JavaProcessor" minOccurs="0" maxOccurs="1" />
+				</xs:sequence>
+				<xs:attribute name="nodeID" type="xs:string" use="required" />
+				<xs:attribute name="categoryPath" type="xs:string" />
+				<xs:attribute name="afterID" type="xs:string" />
+				<xs:attribute name="jsNamespace" type="xs:string" />
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="WebRessources">
+		<xs:sequence>
+			<xs:element name="resource" type="WebResource"
+				maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="WebResource">
+		<xs:attribute name="path" type="xs:string" use="required" />
+		<xs:attribute name="type" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:token">
+					<xs:enumeration value="js" />
+					<xs:enumeration value="css" />
+					<xs:enumeration value="file" />
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+
+	<xs:complexType name="WebDependencies">
+		<xs:sequence>
+			<xs:element name="dependency" type="WebDependency" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="WebDependency">
+		<xs:attribute name="name" type="xs:string" use="required" />
+		<xs:attribute name="path" type="xs:string" use="required" />
+		<xs:attribute name="type" default="local">
+			<xs:simpleType>
+				<xs:restriction base="xs:token">
+					<xs:enumeration value="local" />
+					<xs:enumeration value="url" />
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="usesDefine" type="xs:boolean" default="false" />
+		<xs:attribute name="exports" type="xs:string" use="optional" />
+		<xs:attribute name="dependsOn" type="dn:StringList" use="optional" />
+	</xs:complexType>
+	
+	<xs:complexType name="JavaProcessor">
+		<xs:attribute name="className" type="xs:string" use="required" />
+		<xs:attribute name="hidesLimitRowOption" type="xs:boolean" default="false" />
+	</xs:complexType>
+
+</xs:schema>

@@ -1,0 +1,62 @@
+.ui-datepicker-trigger {
+    margin: 0 5px 10px;
+    padding: 5px;
+    border: 1px solid silver;
+    border-radius: 5px;
+    vertical-align: bottom;
+	background: #f1f1f1;
+}
+
+.ui-datepicker-trigger:hover {
+    border-color: gray;
+    cursor: pointer;
+}
+
+#time_zone_select {
+    border-radius: 5px;
+    background: transparent;
+    font-size: medium;
+}
+
+#millis {
+    width: 30px !important;
+}
+
+.ui-spinner-input {
+ 	padding: 5px;
+    margin: 0px 17px 0px 0px;
+}
+
+.ui-spinner{
+	height: 30px;
+	margin-bottom: 5px;
+}
+
+#nowButton {
+	vertical-align: middle;
+	width: 70px;
+    height: 32px;
+    margin-top: 0px;
+	margin-right: 0px;
+    border-radius: 5px;
+    border: 1px solid silver;
+	background: #f1f1f1;
+}
+
+#nowButton:hover {
+    border-color: gray;
+    cursor: pointer;
+}
+
+#dateLabel {
+	display: inline-block;
+}
+
+#zoneLabel {
+	width: 80px;
+	display: inline-block;
+}
+
+#zoneList {
+	width: calc(100% - 80px);
+}

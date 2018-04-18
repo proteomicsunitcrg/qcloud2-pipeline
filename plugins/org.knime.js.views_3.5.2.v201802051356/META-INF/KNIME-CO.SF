@@ -1,0 +1,75 @@
+Signature-Version: 1.0
+SHA-256-Digest-Manifest-Main-Attributes: 42UpkUieEFP7/F8C0Wbh9AUbhwn2W
+ jS8J2VTVQ1HAfs=
+SHA-256-Digest-Manifest: M1Q39WmxKt+mkCbDZ0JAC618I4YiTKYp3khgz/6iOvY=
+Created-By: 1.8.0_131 (Oracle Corporation)
+
+Name: js-src/org/knime/js/base/node/viz/pagedTable/knime-paged-table.j
+ s
+SHA-256-Digest: zM3zi12mW/mk+Nq0N5yTxFoNObFeHy5ZmDXGM4/QHWw=
+
+Name: plugin.xml
+SHA-256-Digest: nzzTCNSoZkrWb2H5BVrV/N0CgQtHd8WDRPTwy83aI6k=
+
+Name: js-src/org/knime/js/base/util/decisionTree/decTreeDrawer.js
+SHA-256-Digest: 1x9EZ7kxjeSKBV5hi8sHZoUG/170d9NFcir7FZIitVU=
+
+Name: js-src/org/knime/js/base/node/viz/plotter/roc/knime-roc-plot.js
+SHA-256-Digest: /h7qAmrphQzJxSQuvT/Kar2j1Tof9QwA63l18MFDOE0=
+
+Name: js-src/org/knime/js/base/util/table/view/styles.css
+SHA-256-Digest: Gr1JAZ+Qul9ZWQj25ItWfQ+poK1x5sXrM02Qfkcw8Jc=
+
+Name: js-src/org/knime/js/base/node/viz/generic/knime-generic-view.js
+SHA-256-Digest: /s7P8nD9bacnSQf32s4Du4qgKj2uRWnkbsuUwgFc0fg=
+
+Name: js-src/org/knime/js/base/node/viz/table/web-template.js
+SHA-256-Digest: yfdG1j4iZdONN2l0TJZk1XqrrK0zuF7yiAidegjcbSw=
+
+Name: js-src/org/knime/js/base/node/viz/plotter/scatterSelectionAppend
+ er/knime-scatter-plot.css
+SHA-256-Digest: M/rxUDeTRi9z9D1wRTKvK8aApR7EH7ruM4WurjkgoIU=
+
+Name: js-src/org/knime/js/base/node/viz/decisiontree/decisiontree.js
+SHA-256-Digest: WzU92MjiHm8GQ7vQlklfUE/g8EdbuNmqgDqUoj/ke+s=
+
+Name: js-src/org/knime/js/base/node/viz/generic/knime-generic-view-v3.
+ js
+SHA-256-Digest: p23Y5eAAfRPTGZI3Wb63x+apYYiFPYaMmc3i3opjQ8A=
+
+Name: js-src/org/knime/js/base/node/viz/plotter/lift/knime-lift-chart.
+ js
+SHA-256-Digest: 4CyDs+59RLFMZpmk6yvpxVAuJnQdW1eDKmX/Bekuqmk=
+
+Name: js-src/org/knime/js/base/util/decisionTree/decTreeDrawer.css
+SHA-256-Digest: LatmP5EDjKq6gq3vyXN/OgVCYS1ZOOAXV7M8Eu/le/4=
+
+Name: js-src/org/knime/js/base/node/viz/plotter/line/knime-line-plot.j
+ s
+SHA-256-Digest: mt7DitMN7NFlN42CweoiErs46XLkgkifQJjAQtp7EQU=
+
+Name: js-src/org/knime/js/base/node/viz/plotter/scatter/knime-scatter-
+ plot.js
+SHA-256-Digest: pc/im+WTh+QceOrxPuZAk7K9UFG53ft3yK3G+DaaBUg=
+
+Name: js-views.jar
+SHA-256-Digest: /0W/w2wxv1YmPwPLJOM/v/e5B80ojpFqhYQbgJSgtu4=
+
+Name: js-src/org/knime/js/base/util/dateFormat/date-format.js
+SHA-256-Digest: QTSVSYkmm83mR/iCrAuZ7hhaRV5NiCIiepTpCkjFns8=
+
+Name: js-src/org/knime/js/base/node/viz/plotter/scatterSelectionAppend
+ er/knime-scatter-plot.js
+SHA-256-Digest: pc7gsDGOPGokijEg55c/l0W+IMYY2W4TK/aj3DycSio=
+
+Name: js-src/org/knime/js/base/node/viz/pagedTable/knime-paged-table.c
+ ss
+SHA-256-Digest: I6WRHn2l7DVQZ3bTtt0xmuJhhYQUqQWao8d3GyMOvKk=
+
+Name: icons/js.png
+SHA-256-Digest: fIroNR3qD5Fs3S/t97k7RYvv6e8+XSn3diKuGd6xwJc=
+
+Name: js-src/org/knime/js/base/util/table/view/knime_table_view_1_0_0.
+ js
+SHA-256-Digest: kTnVrrBIQjpIUDhZCdEprQJ9xJICWcOYlpvc5SzjwNM=
+

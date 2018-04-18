@@ -1,0 +1,51 @@
+Manifest-Version: 1.0
+Ant-Version: Apache Ant 1.9.6
+Bundle-SymbolicName: org.knime.explorer.nodes;singleton:=true
+Bundle-Name: KNIME Nodes for the KNIME Explorer
+Bundle-Version: 3.5.0.v201711041638
+Bundle-ClassPath: explorer-nodes.jar
+Require-Bundle: org.knime.base;bundle-version="[3.4.0,4.0.0)",org.knim
+ e.workbench.explorer.view;bundle-version="[8.0.0,9.0.0)",org.eclipse.
+ ui;bundle-version="[3.6.1,4.0.0)",org.eclipse.core.filesystem;bundle-
+ version="[1.3.1,2.0.0)",org.apache.commons.lang3;bundle-version="[3.2
+ .1,4.0.0)",org.knime.json;bundle-version="[3.4.0,4.0.0)",org.knime.wo
+ rkbench.ui;bundle-version="[3.4.0,4.0.0)",com.google.guava;bundle-ver
+ sion="[19.0.0,20.0.0)",com.knime.enterprise.utility;bundle-version="[
+ 4.1.0,5.0.0)",com.fifesoft.autocomplete;bundle-version="[2.5.7,3.0.0)
+ ",com.fifesoft.languagesupport;bundle-version="[2.5.7,3.0.0)",com.fif
+ esoft.rstaui;bundle-version="[2.5.7,3.0.0)",com.fifesoft.rsyntaxtexta
+ rea;bundle-version="[2.5.7,3.0.0)",com.fifesoft.spellchecker;bundle-v
+ ersion="[2.5.7,3.0.0)",org.knime.productivity.base;bundle-version="[3
+ .4.0,4.0.0)",org.knime.reporting.executor;bundle-version="[3.4.0,4.0.
+ 0)",org.eclipse.birt.report.engine;bundle-version="[4.5.0,5.0.0)",org
+ .eclipse.help;resolution:=optional,org.eclipse.help.ui;resolution:=op
+ tional
+Bundle-ManifestVersion: 2
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-Vendor: KNIME AG, Zurich, Switzerland
+Created-By: 1.8.0_131-b11 (Oracle Corporation)
+
+Name: plugin.xml
+SHA-256-Digest: A9BGCL5BTl7q+EGXWVp6wHvD88nKXh4DJcqAaXF1IX4=
+
+Name: tocs/io_write$nodes.xml
+SHA-256-Digest: 8/AO8Yv2BSGKf53dtrxDu31JaMb/Svbx5XZBSW+LSGE=
+
+Name: tocs/flowcontrol_automation$nodes.xml
+SHA-256-Digest: GZ4sY+rIbmt2xJ4444dYQ6pa5PpHeCkh/lCT7E99swM=
+
+Name: html/nodes/6dbaa8a9.ExplorerBrowserNodeFactory.html
+SHA-256-Digest: zyx9bbN16QgT09vJxvnnCM2wD+O+TXZ02cfQ3oUoCqY=
+
+Name: tocs/io_read$nodes.xml
+SHA-256-Digest: ERZRyYYwglSydp6mkhEwWHk+ygpMR86POGTAxnfOvrg=
+
+Name: explorer-nodes.jar
+SHA-256-Digest: 0vAyXkbinb3Xy9TB4qNpy6HCBjSGDXTLt5qgicx0/oQ=
+
+Name: html/nodes/3d25ff3.ExplorerWriterNodeFactory.html
+SHA-256-Digest: ddGNXgtQxna2WlNY4jnJca6kZ3Apt2K5+/vnGsGHcvM=
+
+Name: html/nodes/38404ec2.CallLocalWorkflowNodeFactory.html
+SHA-256-Digest: jUOr0hNBoF+0xuCR7QrYS5/Z0qaZL2EGPV0cFWNQsz8=
+

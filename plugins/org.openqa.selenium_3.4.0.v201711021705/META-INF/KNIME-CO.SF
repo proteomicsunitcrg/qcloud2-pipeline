@@ -1,0 +1,96 @@
+Signature-Version: 1.0
+SHA-256-Digest-Manifest-Main-Attributes: xIGWm07vIq9oNN7uXwAGzI5VcbltJ
+ RidxAVcwSf1SZQ=
+SHA-256-Digest-Manifest: xcBtDnx2CEUvZ/mkzsaGMthYPl+AmL/ZR0fJTCkSwQQ=
+Created-By: 1.8.0_131 (Oracle Corporation)
+
+Name: lib/dep/cssparser-0.9.22.jar
+SHA-256-Digest: VHxfS8oS5UiXh0/juOni4arqG1PkyGGmduQE41Yu4aU=
+
+Name: lib/dep/jna-platform-4.1.0.jar
+SHA-256-Digest: mh5WKYBjTZbaEYwQAebkp91w6CKMV0TsCYifSSLUYoU=
+
+Name: NOTICE
+SHA-256-Digest: mpfBUBfGwp6I6VgK+WmoeNTLUJG2urjRh4JMoTuvQmk=
+
+Name: lib/dep/xml-apis-1.4.01.jar
+SHA-256-Digest: L1oyiDtuU0GFV4PVN8EE4bsQloKSTw9A5VR43AlF8kU=
+
+Name: lib/dep/commons-lang3-3.5.jar
+SHA-256-Digest: hHYCXUu0qTgZDxPR984dy9Ktw+liKDQGPHqX7CdGyoY=
+
+Name: lib/dep/gson-2.8.0.jar
+SHA-256-Digest: MNln3DkeC33U7h1MP/cVKK3THukA/j0KV3wHJ+aG6Ec=
+
+Name: lib/dep/websocket-api-9.4.3.v20170317.jar
+SHA-256-Digest: L4ZAkl8140w28JoBlX5/ViqdBQobhIt2q48XFEj91+c=
+
+Name: lib/dep/websocket-common-9.4.3.v20170317.jar
+SHA-256-Digest: tUUOfaQbNY+fnFD88kZUQ6Z9negTIQ7HouFapUA4rMc=
+
+Name: lib/dep/phantomjsdriver-1.4.0.jar
+SHA-256-Digest: FKsJmdb45TG+0UTCZwFKV2a5HmJpZ0o+UU/SKZr53Rc=
+
+Name: lib/dep/commons-logging-1.2.jar
+SHA-256-Digest: ZEVJNkUeV+XIkg5OnE9oT5e+VoRghyhJij6uK2+D6Sg=
+
+Name: LICENSE
+SHA-256-Digest: jcH3sDAT+AOcW4du/E2p4s3VQrKfHtw9QsEy1jHBuzI=
+
+Name: lib/dep/xercesImpl-2.11.0.jar
+SHA-256-Digest: fMKMQ5A2EtouxV7pgADl2Tu8VwNH+Ku4uCeyEbiPcMU=
+
+Name: lib/client-combined-3.4.0-nodeps.jar
+SHA-256-Digest: +RvTdrjr0Da1n97HF/YoNoOOGbhn7YAb31t4Aznwuhk=
+
+Name: lib/dep/htmlunit-2.26.jar
+SHA-256-Digest: 0G16gW7cFrAf/vE04zG3Hiqosalg+YMN7tbkLmEwYag=
+
+Name: lib/dep/xalan-2.7.2.jar
+SHA-256-Digest: HfNc5FSRRMDryR5BIUfptgfhgciHNdYcZ1G9js7yorw=
+
+Name: lib/dep/cglib-nodep-3.2.4.jar
+SHA-256-Digest: sZazBQSDl5qdvVEsnjr/29KkACkiJ4b1PDUSir6z5B8=
+
+Name: lib/dep/httpcore-4.4.6.jar
+SHA-256-Digest: FfNnKSZJd275yT2UG7WNYtdCZwE+BtzAIZNcF0FvMFU=
+
+Name: lib/dep/commons-exec-1.3.jar
+SHA-256-Digest: 9IOx1aPLG5CSp4xbkSCH2K7jNsgpxZNqirLqLUhs8uo=
+
+Name: lib/dep/htmlunit-core-js-2.26.jar
+SHA-256-Digest: +BWw2LYp4Ss9ngecWqhE0qGtOd1u4QQ//9ULX26vbyo=
+
+Name: lib/dep/httpmime-4.5.3.jar
+SHA-256-Digest: gzXAOK9RJNvTkpd09uHWpyRhXIK4jLQw8xogA5OPbDI=
+
+Name: lib/dep/jetty-util-9.4.1.v20170120.jar
+SHA-256-Digest: jHIv3hPv8k2jSPrE2xt3s1ReBvx8G6lc+2wX0pIdbr8=
+
+Name: lib/dep/guava-21.0.jar
+SHA-256-Digest: qG5kX/ATvSQhSNGq7AGwnlMaukcwmb/1VMbIyt4PGXs=
+
+Name: lib/dep/htmlunit-driver-2.26.jar
+SHA-256-Digest: VhD0/5JcoyXxc8h+iecUrd3C6zLzHELnWTo7iY+KJSU=
+
+Name: lib/dep/jetty-io-9.4.1.v20170120.jar
+SHA-256-Digest: bhmoIongBWarFH4JwN/4jMXnggPtwdA9SSee9RYEar0=
+
+Name: lib/dep/websocket-client-9.4.3.v20170317.jar
+SHA-256-Digest: Psszt0lsrC6CIRLNxr4WmwbLxNWNdG6DpRKAKZzM2FI=
+
+Name: lib/dep/httpclient-4.5.3.jar
+SHA-256-Digest: eCrP7UORfoat8UBxLNeRgKDVd2fivR222lK4eZ8z28w=
+
+Name: lib/dep/neko-htmlunit-2.25.jar
+SHA-256-Digest: iiVCIXxgjfgsbY7nywCgcPB/8sAG/fmtgQ873UlVdWY=
+
+Name: README
+SHA-256-Digest: mwYWWN6YC69CovEDAqEA+Nk2eN+2ZadqzMFETImRjdg=
+
+Name: lib/dep/jna-4.1.0.jar
+SHA-256-Digest: xJ8Y0lzFcH8AL16012VdpAvDbfqXpzzvGYtnYTRTo1M=
+
+Name: lib/dep/serializer-2.7.2.jar
+SHA-256-Digest: cHdLPrM+5oiIF1asI3q5Rc3aQJunFMeVziXpjkeMcTc=
+

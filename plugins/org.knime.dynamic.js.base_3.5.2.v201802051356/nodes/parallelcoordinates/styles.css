@@ -1,0 +1,32 @@
+body {
+  font: 12px sans-serif;
+}
+
+.row:hover {
+	stroke-opacity: 1;
+	stroke-width: 3;
+
+}
+
+.row.selected {
+	stroke-opacity: 0.9;
+	stroke-width: 2;
+}
+
+.row.unselected {
+	stroke-opacity: 0.1;
+}
+
+.row.filtered {
+	display: none;
+}
+
+.xAxis line,.xAxis path {
+  fill: none;
+  stroke: lightgrey;
+  stroke-opacity: 0.5;
+}
+
+.xAxis text {
+	opacity: 0;
+}

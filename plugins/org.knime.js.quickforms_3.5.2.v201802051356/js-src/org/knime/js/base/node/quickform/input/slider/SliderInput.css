@@ -1,0 +1,23 @@
+.slidercontainer {
+	padding: 6px 20px;
+	overflow: hidden;
+}
+
+.noUi-value, .noUi-tooltip {
+	white-space: nowrap;
+}
+
+.noUi-value-horizontal {
+    -webkit-transform: translate3d(-50%,100%,0);
+    transform: translate3d(-50%,100%,0);
+}
+
+.noUi-vertical.noUi-ltr .noUi-value-vertical {
+    -webkit-transform: translate3d(0,-50%,0);
+    transform: translate3d(0,-50%,0);
+}
+
+.noUi-horizontal.noUi-rtl .noUi-value-horizontal {
+    -webkit-transform: translate3d(50%,100%,0);
+    transform: translate3d(50%,100%,0);
+}

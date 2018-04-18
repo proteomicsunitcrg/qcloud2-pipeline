@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?NLS TYPE="org.eclipse.help.toc"?><toc label="Manipulation" link_to="../org.knime.base/tocs/database_database-manipulation.xml#database_database-manipulation">
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/29830fcb.DBApplyBinnerNodeFactory.html" label="Database Apply-Binner"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/7a04ffaf.DBAutoBinnerNodeFactory.html" label="Database Auto-Binner"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/76c9add0.DBColumnRenameNodeFactory.html" label="Database Column Rename"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/455e4c0d.DBNumericBinnerNodeFactory.html" label="Database Numeric-Binner"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/326f69e4.DBPivotNodeFactory.html" label="Database Pivot"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/7de34f08.DBRowFilterNodeFactory.html" label="Database Row Filter"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/c919500.DBQueryNodeFactory2.html" label="Database Query"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/5a052068.DBColumnFilterNodeFactory.html" label="Database Column Filter"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/38fcc995.DBSorterNodeFactory.html" label="Database Sorter"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/a2b0bea.DBGroupByNodeFactory2.html" label="Database GroupBy"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/7d20f25f.DBJoinerNodeFactory.html" label="Database Joiner"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/4d29bbb0.DBTableCreatorNodeFactory.html" label="Database Table Creator"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/18f77d0.DBSamplingNodeFactory.html" label="Database Sampling"/>
+</toc>

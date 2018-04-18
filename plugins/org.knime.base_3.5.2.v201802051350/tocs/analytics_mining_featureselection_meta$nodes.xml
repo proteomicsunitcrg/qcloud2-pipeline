@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?NLS TYPE="org.eclipse.help.toc"?><toc label="Meta Nodes" link_to="../org.knime.base/tocs/analytics_mining_featureselection_meta.xml#analytics_mining_featureselection_meta">
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/Meta_Backward_Feature_Elimination.html" label="Backward Feature Elimination"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/Meta_Forward_Feature_Selection.html" label="Forward Feature Selection"/>
+</toc>

@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<js:knimeNode xmlns:js="http://knime.org/dynamicjsnode/v3.0"
+	xmlns="http://knime.org/dynamicnode/v3.0" xmlns:n="http://knime.org/node/v2.12"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://knime.org/dynamicjsnode/v3.0 http://www.knime.org/node/dynamicJSNode_v3.0.xsd"
+	jsNamespace="boxplot_namespace" nodeID="boxplotJS" categoryPath="/view/js-views"
+    icon="./box_plot.png" type="Visualizer">
+
+	<name>Box Plot (JavaScript)</name>
+	<shortDescription>This node provides a view with a Box Plot implemented with D3.js.</shortDescription>
+	<fullDescription>
+		<intro>
+		      <n:p>
+		        A box plot displays robust statistical parameters: minimum, 
+		        lower quartile, median, upper quartile, and maximum. These parameters 
+		        called robust, since they are not sensitive to extreme outliers.
+		        </n:p>
+		        <n:p> A box plot for one numerical attribute is constructed in the 
+		        following way:
+		        The box itself goes from the lower quartile (Q1) to the upper quartile 
+		        (Q3). The median is drawn as a horizontal bar inside the box. The 
+		        distance between Q1 and Q3 is called the interquartile range (IQR).
+		        Above and below the box are the so-called whiskers. They are drawn at 
+		        the minimum and the maximum value as horizontal bars and are connected 
+		        with the box by a dotted line. The whiskers never exceed 1.5 * IQR. 
+		        This means if there are some data points which exceed either 
+		        Q1 - (1.5 * IQR) or Q3 + (1.5 * IQR) than the whiskers are drawn at 
+		        exactly these ranges and the data points are drawn separately as outliers.
+		        For the outliers the distinction between mild and extreme outliers is made.
+		        As mild outliers are those datapoints p considered for which holds:
+		        p &lt; Q1 - (1.5 * IQR) AND p &gt; Q1 - (3 * IQR) or 
+		        p &gt; Q3 + (1.5 * IQR) AND p &lt; Q3 + (3 * IQR). In other words mild outliers
+		        are those data points which lay between 1.5 * IRQ and 3 * IRQ.
+		        Extreme outliers are those datapoints p for which holds:
+		        p &lt; Q1 - (3 * IQR) or p &gt; Q3 + (3 * IQR).
+		        Thus, three times the box width (IQR) marks
+		        the boundary between "mild" and "extreme" outliers. Mild outliers are 
+		        painted as dots, while extreme outliers are displayed as crosses.
+		        In order to identify the outliers they can be selected and hilited.
+		        This provides a quick overview over extreme characteristics of a dataset.
+		        </n:p>
+		</intro>
+		<tab name="Options">
+			<options>
+				<columnFilterOption name="Included columns"
+					id="columns" inPortIndex="0" label="Included columns" filterClasses="org.knime.core.data.DoubleValue">
+					Select the columns for which you wish to plot boxes.
+					Missing values in data columns will be ignored with a corresponding warning messages.
+				</columnFilterOption>
+				
+				<checkBoxOption name="Plot multiple boxes" id="multi"
+                    label="Plot multiple boxes" defaultValue="true">
+                    Check to plot boxes for each of the selected column.
+                    If not checked, the plot contains a dropdown selector for choosing the column to plot.
+                </checkBoxOption>
+				<!-- Not sure this should be StringValue -->
+                <columnSelectorOption name="Selected column" saveInView="true" enableDependency="multi" enableValue="false"
+                    id="numCol" inPortIndex="0" label="Selected column" filterClasses="org.knime.core.data.DoubleValue">
+                    Select the column that contains the numeric values.
+                </columnSelectorOption>
+                
+                <checkBoxOption name="Report on missing values" id="reportOnMissingValues" 
+                    label="Report on missing values" defaultValue="true" loadDefaults="true">
+                    Check to get the detailed warning messages in the view about missing values.
+                    If not checked, missing values will be ignored without raising a warning.
+                </checkBoxOption>
+			</options>
+		</tab>
+		<tab name="General Plot Options">
+			<options>
+				<stringOption name="Title" id="title" label="Title"
+					defaultValue="Box Plot" optional="true" saveInView="true">
+					The chart title.
+				</stringOption>
+				
+				<stringOption name="Subtitle" id="subtitle" label="Subtitle"
+                    defaultValue="" optional="true" saveInView="true">
+                    The chart subtitle.
+                </stringOption>
+<!-- 
+				<stringOption name="catLabel" id="catLabel" label="Category-axis label"
+					optional="true" defaultValue="Category-axis label">
+					The label used for the category axis.
+				</stringOption>
+
+				<stringOption name="freqLabel" id="freqLabel"
+					label="y-axis label" optional="true" defaultValue="y-axis label">
+					The label used for the Y axis.
+				</stringOption>
+ -->
+				<checkBoxOption name="Display fullscreen button" id="displayFullscreen" label="Display fullscreen button" defaultValue="true" loadDefaults="true">
+					Check to display a button which switches the view into fullscreen mode. The button is only available in the KNIME WebPortal.
+				</checkBoxOption>
+				
+				<svgOption name="Image" additionalWait="500"
+					id="svg" portIndex="0" label="Image">
+					Settings for image generation.
+				</svgOption>
+				
+<!-- 
+                <checkBoxOption name="Resize to window" id="resizeToWindow"
+                    label="Resize to window" defaultValue="true">
+                    Check to let the chart fill all available space in the window.
+                </checkBoxOption>
+                
+				<integerOption name="Image width (in pixels)" id="width"
+					label="Image width (in pixels)" defaultValue="800" minValue="1"
+					maxValue="20000">
+					Image width (in pixels)
+				</integerOption>
+
+				<integerOption name="Image height (in pixels)" id="height"
+					label="Image height (in pixels)" defaultValue="600" minValue="1"
+					maxValue="20000">
+					Image height (in pixels)
+				</integerOption>
+				 -->
+				 
+				<colorOption name="Background color" id="backgroundColor" label="Background color"
+                    format="HexString" defaultR="255" defaultG="255" defaultB="255" defaultAlpha="255">
+                    The color of the background.
+                </colorOption>
+                    
+                <colorOption name="Data area color" id="daColor" label="Data area color"
+                    format="HexString" defaultR="255" defaultG="255" defaultB="255" defaultAlpha="255">
+                    The background color of the data area, within the axes.
+                </colorOption>
+
+				<!-- Use a color selector to choose bar colors? -->
+				<colorOption name="Box color" id="boxColor" label="Box color"
+					format="HexString" defaultR="255" defaultG="255" defaultB="255" defaultAlpha="255">
+					The filling color of the box.
+	            </colorOption>
+	            
+	            <checkBoxOption name="Show warnings in view" id="showWarnings" label="Show warnings in view" defaultValue="true" loadDefaults="true">
+                    If checked, warning messages will be displayed in the view when they occur.
+                </checkBoxOption>
+			</options>
+		</tab>
+		
+		<tab name="Control Options">
+          <options>
+              <checkBoxOption name="Enable view controls" id="enableViewControls"
+                   label="Enable view controls" defaultValue="true">
+                   Check to enable controls in the chart.
+               </checkBoxOption>
+               <checkBoxOption name="Enable column selection" id="enableColumnSelection"
+                   label="Enable column selection" defaultValue="true" enableDependency="enableViewControls" enableValue="true">
+                   Check to enable the selection of the numeric column to show the box plot for. Note that this only has an effect if the 'Plot multiple boxes' option is not checked.
+               </checkBoxOption>
+               <checkBoxOption name="Enable Title editing" id="enableTitleEdit"
+                   label="Enable Title editing" defaultValue="true" enableDependency="enableViewControls" enableValue="true">
+                   Check to enable the editing of the title within the view.
+               </checkBoxOption>
+               <checkBoxOption name="Enable Subtitle editing" id="enableSubtitleEdit"
+                   label="Enable Subtitle editing" defaultValue="true" enableDependency="enableViewControls" enableValue="true">
+                   Check to enable the editing of the subtitle within the view.
+               </checkBoxOption>
+           </options>
+        </tab>
+
+	</fullDescription>
+	<outputOptions>
+		<dataOutputOption outPortIndex="0" id="chartImage" />
+	</outputOptions>
+	<interactiveView name="Box Plot">
+		A JavaScript implementation of a Box Plot.
+	</interactiveView>
+	<ports>
+		<inPort portType="Data" name="Input Data" index="0">
+			Data table containing the categories and values to be plotted in a box plot.
+		</inPort>
+		<outPort portType="Image" name="Box Plot image" index="0">
+			SVG image of the box plot.
+		</outPort>
+	</ports>
+	<js:resources>
+		<js:resource type="js" path="boxplot.js" />
+		<js:resource type="css" path="styles.css" />
+	</js:resources>
+	<js:dependencies>
+		<js:dependency name="D3" path="D3_3.2.8" type="local" />
+		<js:dependency name="jQuery" path="jQuery_1.11.0" type="local" />
+	</js:dependencies>
+	<js:javaProcessor className="org.knime.dynamic.js.base.boxplot.BoxplotProcessor_v2" hidesLimitRowOption="true"/>
+</js:knimeNode>

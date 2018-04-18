@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?NLS TYPE="org.eclipse.help.toc"?><toc label="Transform" link_to="../org.knime.base/tocs/manipulation_column_column-transform.xml#manipulation_column_column-transform">
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/52874bce.CaseConvertNodeFactory.html" label="Case Converter"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/5a9363b1.ColumnComparatorNodeFactory.html" label="Column Comparator"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/17b16688.ColumnResorterNodeFactory.html" label="Column Resorter"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/11fa74f0.LagColumnNodeFactory.html" label="Lag Column"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/6f3dfb12.ReferenceColumnResorterNodeFactory.html" label="Reference Column Resorter"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/226bd6fd.NormalizerDeNodeFactory.html" label="Denormalizer"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/17d090e8.ExtractMissingValueCauseNodeFactory.html" label="Extract Missing Value Cause"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/61b48e61.MissingValueHandlerNodeFactory.html" label="Missing Value"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/18bce4dc.MissingValueApplyNodeFactory.html" label="Missing Value (Apply)"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/8dadf1c.Normalizer3NodeFactory.html" label="Normalizer"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/1b770f3e.NormalizerApplyNodeFactory.html" label="Normalizer (Apply)"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/5e95437b.One2ManyCol2NodeFactory.html" label="One to Many"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/7df4de2d.Many2OneCol2NodeFactory.html" label="Many to One"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/311757dc.SmoteNodeFactory.html" label="SMOTE"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/4caf2748.SetOperatorNodeFactory.html" label="Set Operator"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/73acbbae.SubsetMatcherNodeFactory.html" label="Subset Matcher"/>
+</toc>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?NLS TYPE="org.eclipse.help.toc"?><toc label="PMML" link_to="../org.knime.base/tocs/manipulation_pmml.xml#manipulation_pmml">
+<topic href="PLUGINS_ROOT/org.knime.jsnippets/html/nodes/21ae3223.PMMLRuleEditorNodeFactory.html" label="Ruleset Editor"/>
+<topic href="PLUGINS_ROOT/org.knime.jsnippets/html/nodes/22be7690.PMMLRuleSetPredictorNodeFactory.html" label="Ruleset Predictor"/>
+<topic href="PLUGINS_ROOT/org.knime.jsnippets/html/nodes/7e1795fb.RulesToTableNodeFactory.html" label="Ruleset to Table"/>
+</toc>

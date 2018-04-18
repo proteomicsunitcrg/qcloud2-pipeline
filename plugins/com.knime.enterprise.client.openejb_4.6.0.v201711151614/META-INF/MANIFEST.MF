@@ -1,0 +1,34 @@
+Manifest-Version: 1.0
+Ant-Version: Apache Ant 1.9.6
+Bundle-SymbolicName: com.knime.enterprise.client.openejb;singleton:=tr
+ ue
+Bundle-Name: KNIME Server OpenEJB Client
+Bundle-Version: 4.6.0.v201711151614
+Bundle-ClassPath: knime-openejb-client.jar,lib/openejb-client-4.7.1.ja
+ r
+Require-Bundle: org.apache.commons.logging;bundle-version="[1.1.1,2.0.
+ 0)",org.knime.core.util;bundle-version="[5.0.0,6.0.0)",org.knime.core
+ ;bundle-version="[3.0.0,4.0.0)",com.knime.enterprise.client.api;bundl
+ e-version="[4.2.0,6.0.0)",com.knime.enterprise.utility;bundle-version
+ ="[4.0.0,5.0.0)",javax.ejb;bundle-version="[3.1.1,3.2.0)",org.apache.
+ commons.lang3;bundle-version="[3.2.1,4.0.0)",org.apache.httpcomponent
+ s.httpclient;bundle-version="[4.3.6,5.0.0)",com.knime.enterprise.serv
+ er.rest.api;bundle-version="[4.6.0,5.0.0)"
+Bundle-ManifestVersion: 2
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-ActivationPolicy: lazy
+Bundle-Vendor: KNIME AG, Zurich, Switzerland
+Created-By: 1.8.0_131-b11 (Oracle Corporation)
+
+Name: plugin.xml
+SHA-256-Digest: Uns0Fgqpnv8bBVDMehr8tRPG33EXe+COdPG7P4yJ8ys=
+
+Name: knime-keystore.jks
+SHA-256-Digest: Zgp9PMDVK7mcOJrqkUTVsudW6bVeZmuwsC/xBAO8vqE=
+
+Name: lib/openejb-client-4.7.1.jar
+SHA-256-Digest: ApZh3VVKC+fgjD+cAAje4peJ7yNG0Z9KdwbRLnzPacQ=
+
+Name: knime-openejb-client.jar
+SHA-256-Digest: BPjN9G3LCxJ1NAcyyw30fZarYc86LbGoclhhiVNmvjE=
+

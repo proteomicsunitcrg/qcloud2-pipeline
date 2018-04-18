@@ -1,0 +1,45 @@
+Signature-Version: 1.0
+SHA-256-Digest-Manifest-Main-Attributes: kXYTAKFgJhqWwi8WBYWtQzLvTxSP3
+ IG0Yfd0Z1fC1TU=
+SHA-256-Digest-Manifest: CyU4+RtjyIHH18bDSMivYmAryb1+05viEpGJisR3tHo=
+Created-By: 1.8.0_131 (Oracle Corporation)
+
+Name: plugin.xml
+SHA-256-Digest: spo/T8zAVlhm4F1L5RxT4Ov/JwLWGi61G61xkP70ZAc=
+
+Name: README.TXT
+SHA-256-Digest: DIjidc0jOWZYPJujdeR/czavOS6C8ABzKPuXl66RYcg=
+
+Name: lib/jep-2.4.1.jar
+SHA-256-Digest: aSrcoNhvY51kQc3Ssmmu8KVHKHtRcWBOPJu2B/Fj4Qw=
+
+Name: html/nodes/c6b0d17.JEPVariableNodeFactory.html
+SHA-256-Digest: npiuVYt09yQ0+JznOYAxNyoef0O50sXbgLykGRcj0iw=
+
+Name: html/nodes/6116e793.JEPNodeFactory.html
+SHA-256-Digest: w8rEOFhKymAc0e0vXLQU/a7y4x44a25Bk67JOUvWAms=
+
+Name: lib/LICENSE-gpl.txt
+SHA-256-Digest: FN2E0ypvaKgStJRJhdcvocdt+nGdKDPzczp5s2aL26g=
+
+Name: html/nodes/1fc4c97d.MultiColumnJEPNodeFactory.html
+SHA-256-Digest: qoR5wxVL/399f357NY0AVRmhk7UUGkpmwO4nNMHYkvs=
+
+Name: lib/ext-1.1.1.jar
+SHA-256-Digest: FfRINoSjwrgDOlSAjGkvhcqqNPIjgMrg5Lge7jr0XMA=
+
+Name: tocs/manipulation_column_column-convert+replace$nodes.xml
+SHA-256-Digest: m5MZPrdZkuPRVN2HVNDBI1fQAckgJcZN5OpQmshuKdc=
+
+Name: LICENSE.TXT
+SHA-256-Digest: k1PxXn+3jtMmXVmr8fozAniiwiHr7enxGVZRE6dv9ZM=
+
+Name: lib/README.TXT
+SHA-256-Digest: e7Z8vYn9pLovEQF9ST6Ba01DFnEtVyW2e/hZB/n+TCU=
+
+Name: knime-jep.jar
+SHA-256-Digest: 9E2dyDiAESUenFNj2tqKrUkkLoo4echMPGKYaykXkrk=
+
+Name: tocs/flowcontrol_variables$nodes.xml
+SHA-256-Digest: g1iZEMJNNOJuOJcp7gulQoVU4wmCN6kmPalvAJGRWus=
+

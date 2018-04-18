@@ -1,0 +1,42 @@
+Signature-Version: 1.0
+SHA-256-Digest-Manifest-Main-Attributes: U6llXfA83/JdgUrNCynalS/3Mm+qW
+ wrLf3nLME6raw0=
+SHA-256-Digest-Manifest: TBM2OaQlhaBVG8iW/qaYaHQCMOz5U9ONt+TN3iPUtH8=
+Created-By: 1.8.0_131 (Oracle Corporation)
+
+Name: plugin.xml
+SHA-256-Digest: O/I7Acs5QsZBLI9kkyqfK5apqRibyXK001bPspUoV6k=
+
+Name: org/knime/ext/seleniumdrivers/multios/ChromeWizardNodeView.class
+SHA-256-Digest: 10AMIcr3F7ozKqrVEZaiQLy2ribw1h2Y5qulQIjMAp4=
+
+Name: org/knime/ext/seleniumdrivers/multios/ChromiumWizardNodeView.cla
+ ss
+SHA-256-Digest: KZi4pwrUm04g90Zuss9rZY/tGD9AmptrnJz1pfKStMY=
+
+Name: org/knime/ext/seleniumdrivers/multios/ChromeWizardNodeView$Close
+ DialogOption.class
+SHA-256-Digest: rMZod/noSVEYXAAZGKnH0mpBwL3NpHiowlUvB+GoH80=
+
+Name: src-js/selenium-knime-bridge.html
+SHA-256-Digest: 5QESjF2VaenVW1tyyE5m5XxOCTueqyymo/ZSVkdmwEg=
+
+Name: org/knime/ext/seleniumdrivers/multios/ChromeViewService.class
+SHA-256-Digest: Zdx9QpvvPt/Qqn1hpBU0J33xKfU15CO8f3q6yjpoJ6I=
+
+Name: org/knime/ext/seleniumdrivers/multios/ChromeWizardNodeView$Comet
+ Runnable.class
+SHA-256-Digest: +KEJdeaQkfU5o5IwFmvnf5UIpSg2ZslTzwpuey0T570=
+
+Name: org/knime/ext/seleniumdrivers/multios/ChromeWizardNodeView$1.cla
+ ss
+SHA-256-Digest: 66GehKUxX5OIiUW+uXTDge9hXbO6c1ZRz+r0bStZkaw=
+
+Name: org/knime/ext/seleniumdrivers/multios/MultiOSDriverActivator.cla
+ ss
+SHA-256-Digest: mTcINR0/kJTKPAadJqt7wCyckv3RqJWUNkW4GtAi/8s=
+
+Name: org/knime/ext/seleniumdrivers/multios/SeleniumViewException.clas
+ s
+SHA-256-Digest: f8BdEGf+SrvFfkzVFg7Q0airHq4n6U8wl+gCplGC72M=
+

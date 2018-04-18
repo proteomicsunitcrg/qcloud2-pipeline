@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<js:knimeNode xmlns:js="http://knime.org/dynamicjsnode/v3.0"
+    xmlns="http://knime.org/dynamicnode/v3.0"
+    xmlns:n="http://knime.org/node/v2.12"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://knime.org/dynamicjsnode/v3.0 http://www.knime.org/node/dynamicJSNode_v3.0.xsd"
+    jsNamespace="network_namespace" nodeID="network_chart" categoryPath="/preview"
+    icon="../js.png" type="Visualizer">
+    <name>Force-Directed Graph (JavaScript)</name>
+    <shortDescription>A force-directed graph based on the d3.js library.</shortDescription>
+    <fullDescription>
+      <intro>
+        <n:p>
+					In this chart nodes of a network are positioned via a physical simulation: Forces are assigned among edges and nodes and then their motions are being simulated.
+					The resulting layout minimizes the overall energy.
+				</n:p>
+      </intro>
+      <tab name="Options">
+        <options>
+        <columnFilterOption name="Included columns"
+          id="columns" inPortIndex="0" label="Included columns" filterClasses="org.knime.core.data.DoubleValue">
+					Select the columns which you wish to include in the plot.
+					For excluded columns the corresponding rows are excluded as well.
+				</columnFilterOption>
+        </options>
+      </tab>
+
+      <tab name="General Plot Options">
+        <options>
+          <stringOption name="Title" id="title" label="Title" defaultValue="Force-Directed Graph" optional="true" saveInView="true">
+            The chart title.
+          </stringOption>
+          <stringOption name="Subitle" id="subtitle" label="Subtitle" optional="true" saveInView="true">
+            The chart subtitle.
+          </stringOption>
+        	<svgOption name="Image" id="svg" portIndex="0" label="Image" additionalWait="2000" defaultWidth="600" defaultHeight="400" defaultFullscreen="true">
+          	Settings for image generation.
+        	</svgOption>
+        </options>
+      </tab>
+
+      <tab name="Force-Directed Layout Options">
+        <options>
+          <doubleOption name="Gravity" id="gravity"
+            label="Gravity" defaultValue="0.1" minValue="0" saveInView="true">
+            Gravitation goes out from the center and get stronger farther away from the center. It can help preventing nodes escaping the layout.
+          </doubleOption>
+          <doubleOption name="Charge" id="charge"
+            label="Charge" defaultValue="-30" minValue="-10000" saveInView="true">
+            Set the charge of a node. Negative values result in repulsion of the nodes, positive values result in attraction of the nodes.
+          </doubleOption>
+          <doubleOption name="Link-Distance" id="linkDistance"
+            label="Link-Distance" defaultValue="20" minValue="0" saveInView="true">
+            Sets the target distance between linked nodes.
+          </doubleOption>
+          <doubleOption name="Link-Strength" id="linkStrength"
+            label="Link-Strength" defaultValue="1" minValue="0" maxValue="1" saveInView="true">
+            Sets the rigidity of links (i.e. the importance of the target distance when computing the simulation).
+          </doubleOption>
+          <checkBoxOption name="Collision detection" id="collisionDetection" label="Collision detection" defaultValue="false">
+            When checked, try to ensure that notes do not overlap.
+          </checkBoxOption>
+          <checkBoxOption name="Highlighting" id="highlighting" label="Highlighting" defaultValue="false">
+            When checked, all nodes that are not connected to the node the user double-clicked on fade.
+          </checkBoxOption>
+          <checkBoxOption name="Labels" id="labels" label="Labels" defaultValue="false">
+            When checked, nodes are labeled.
+          </checkBoxOption>
+        </options>
+      </tab>
+
+    <tab name="Control Options">
+          <options>
+              <checkBoxOption name="Enable view controls" id="enableViewControls"
+                   label="Enable view controls" defaultValue="true">
+                   Check to enable controls in the chart.
+               </checkBoxOption>
+               <checkBoxOption name="Enable title editing" id="enableTitleEdit"
+                   label="Enable title editing" defaultValue="true" enableDependency="enableViewControls" enableValue="true">
+                   Check to enable the editing of the title within the view.
+               </checkBoxOption>
+               <checkBoxOption name="Enable subtitle editing" id="enableSubtitleEdit"
+                   label="Enable subtitle editing" defaultValue="true" enableDependency="enableViewControls" enableValue="true">
+                   Check to enable the editing of the subtitle within the view.
+               </checkBoxOption>
+              <checkBoxOption name="Enable gravity editing" id="enableGravityEdit"
+                  label="Enable gravity editing" defaultValue="true" enableDependency="enableViewControls" enableValue="true">
+                  Check to enable the editing of the gravity value within the view.
+              </checkBoxOption>
+              <checkBoxOption name="Enable charge editing" id="enableChargeEdit"
+                  label="Enable charge editing" defaultValue="true" enableDependency="enableViewControls" enableValue="true">
+                  Check to enable the editing of the charge value within the view.
+              </checkBoxOption>
+              <checkBoxOption name="Enable link-distance editing" id="enableLinkDistanceEdit"
+                  label="Enable link-distance editing" defaultValue="true" enableDependency="enableViewControls" enableValue="true">
+                  Check to enable the editing of the link-distance within the view.
+              </checkBoxOption>
+              <checkBoxOption name="Enable link-strength editing" id="enableLinkStrengthEdit"
+                  label="Enable link-strength editing" defaultValue="true" enableDependency="enableViewControls" enableValue="true">
+                  Check to enable the editing of the link-strength within the view.
+              </checkBoxOption>
+           </options>
+        </tab>
+
+    </fullDescription>
+    <interactiveView name="JavaScript Force-Directed Graph">
+      A d3.js implementation of a force-directed graph.
+    </interactiveView>
+    <ports>
+      <inPort portType="Data" name="Link data" index="0">
+				Data table containing a quadratic adjacency matrix.
+				There is one column/row for each node, cells give the size of the relationship between two given nodes.
+			</inPort>
+    <inPort portType="Data" name="Node data" index="1" optional="true">
+			Data table containing one column with the names of the nodes and one column with the group ID. Group ID starts from zero.
+      Number of rows should be equal to the number of nodes as indicated by the adjacency matrix.
+    </inPort>
+      <outPort portType="Image" name="Force-directed graph image" index="0">
+        SVG image of the force-directed graph.
+      </outPort>
+    </ports>
+  <js:resources>
+    <!-- Added for inlining style rules when generating svg -->
+    <js:resource type="css" path="styles.css" />
+    <js:resource type="js" path="network.js" />
+  </js:resources>
+  <js:dependencies>
+    <js:dependency name="D3" path="D3_3.2.8" type="local" />
+    <js:dependency name="jQuery" path="jQuery_1.11.0" type="local" />
+  </js:dependencies>
+</js:knimeNode>

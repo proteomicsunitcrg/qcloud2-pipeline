@@ -1,0 +1,977 @@
+Manifest-Version: 1.0
+Ant-Version: Apache Ant 1.9.6
+Bundle-SymbolicName: org.knime.binary.jre.linux.x86_64
+Bundle-Name: JRE 1.8.0 Update 152
+Bundle-Version: 1.8.0.152-01
+Bundle-ManifestVersion: 2
+Created-By: 1.8.0_131-b11 (Oracle Corporation)
+
+Name: jre/lib/amd64/libjsig.so
+SHA-256-Digest: 6Bkpl6PydYN+YWu523c5HLE6WXthq+G3ecOlDiGsz+A=
+
+Name: jre/lib/fontconfig.SuSE.10.bfc
+SHA-256-Digest: 4RCm8iiRks0YWOnV7SzD/Q+XxX0JgZo8baqR+7aB4ok=
+
+Name: jre/lib/ext/sunec.jar
+SHA-256-Digest: b1GwBv/P3Ropo9qgpTorSFy74RGGb5ykrZPcPp9XtbY=
+
+Name: jre/lib/desktop/icons/HighContrastInverse/16x16/mimetypes/gnome-
+ mime-application-x-java-jnlp-file.png
+SHA-256-Digest: /TEsiE+Eg55lf4Y+RdcA/QcetUEOj3DOI5PbftAxoN0=
+
+Name: jre/lib/desktop/icons/hicolor/48x48/apps/sun-javaws.png
+SHA-256-Digest: fPjKCW5tbkJbNDREawg1U30Px/5ks8y6elX3vYbH4XY=
+
+Name: jre/lib/locale/de/LC_MESSAGES/sunw_java_plugin.mo
+SHA-256-Digest: H4oylPMcP+/lY+kp4JMLfm5mJnyfE4s7sTjmhyCFMyc=
+
+Name: jre/bin/jjs
+SHA-256-Digest: yN06BVEm4oVBfQPqq4DEjkrqkwVOL1LDigDZY9E3LDk=
+
+Name: jre/lib/amd64/libavplugin-54.so
+SHA-256-Digest: ZoHkQCsx5fm+xLDnLCOW2Ei3trRZBy293dMPtyf+0Xs=
+
+Name: jre/lib/locale/fr/LC_MESSAGES/sunw_java_plugin.mo
+SHA-256-Digest: ml/TH09xiIgFzZzxibweOKDndOea5caGpq95l+q+qAI=
+
+Name: jre/lib/desktop/icons/LowContrast/48x48/apps/sun-java.png
+SHA-256-Digest: /5wsNPDoI2n+Yuu6cyCJoNif+EDJ2NuWO0JD5QNQj5A=
+
+Name: jre/lib/sound.properties
+SHA-256-Digest: KZwjYLYVXrKJkOxJzSF1P5fkNEL+j6sD4E8+IT30OmY=
+
+Name: jre/lib/amd64/libfxplugins.so
+SHA-256-Digest: kM7BJYAIcqIEzv9uBItJDCOUCqjtBNuYK3m4Necmb8s=
+
+Name: jre/lib/desktop/icons/HighContrast/16x16/apps/sun-java.png
+SHA-256-Digest: 3C9LxB2RgIw8TOTphwJlx6tVdEqUgpK0SDLJs+mHm2E=
+
+Name: jre/lib/ext/cldrdata.jar
+SHA-256-Digest: Jl1tWvilr+na5pWa0236yJ3F1qZ2o2NPd6O9LzYxlPA=
+
+Name: jre/lib/deploy/ffjcext.zip
+SHA-256-Digest: 6K1jkyEM8AcgtlORBzsHkScansjNI472i5JhUSyxkdM=
+
+Name: jre/man/man1/tnameserv.1
+SHA-256-Digest: 9CsvBkMnHPVCUAmW1LEtS09SOxq2WyT2f0AvHsZaC8Q=
+
+Name: jre/lib/deploy/messages_pt_BR.properties
+SHA-256-Digest: QUBmOkkED/GRwH0tBFiEAiY+wuFnmpoaebeQoTfuf7g=
+
+Name: jre/lib/ext/meta-index
+SHA-256-Digest: i1LyNJbwAu8zo/cru59gJVj3GH0YLGknUHH8+jA4zw8=
+
+Name: jre/lib/desktop/icons/LowContrast/48x48/mimetypes/gnome-mime-app
+ lication-x-java-archive.png
+SHA-256-Digest: TgxpF3WiL7wysrxK64xWl4mAEwGwnXN3MJKGxrtzirE=
+
+Name: META-INF/p2.inf
+SHA-256-Digest: Z6oT0/wxhIdH7694BN9/4Sz31yV2WyvSXDH1xv+OSW0=
+
+Name: jre/lib/desktop/icons/hicolor/16x16/mimetypes/gnome-mime-applica
+ tion-x-java-archive.png
+SHA-256-Digest: lKEr1QK8Fy065hSp70JSH5nn1cvTb+TgaMjW4ngh7f0=
+
+Name: jre/man/man1/unpack200.1
+SHA-256-Digest: NnUpFD4PjUm+gjeTwuf5d2RAmeHKr6mFpcxBlaooBJE=
+
+Name: jre/lib/ext/sunpkcs11.jar
+SHA-256-Digest: QJrE6PjRPIzGu/QVv4IZ8leGMBQeCtRWnDJZ66DbKzg=
+
+Name: jre/lib/jfxswt.jar
+SHA-256-Digest: 3ztVkUWDYUXQT6VgkFu/+H5DjmFkVQcO0G+OYLlSMz4=
+
+Name: jre/man/ja/man1/javaws.1
+SHA-256-Digest: cAkcj559D5PqQbnpDYJkQdoZWigUT+AKxAH+f5cwsL4=
+
+Name: jre/lib/deploy/messages_it.properties
+SHA-256-Digest: VQlU8fgP4Oc9dOsQrVKbRU1evGJuuUprKU19Ks8G83I=
+
+Name: jre/man/ja/man1/keytool.1
+SHA-256-Digest: xl7WdvUq+LVbvfgHABFxRiPfHZC3SftsN/jJrMP6zpY=
+
+Name: jre/lib/amd64/libsplashscreen.so
+SHA-256-Digest: +1csoUy4Oo8agd/V9Nb7GJqsu5Qynw3DniCJwIeFFfQ=
+
+Name: jre/lib/desktop/applications/sun-javaws.desktop
+SHA-256-Digest: Og4Agxf/1CN5GE4VnWEEVvZHCXCxD5T+5D69u1A4TTU=
+
+Name: jre/lib/amd64/libjava.so
+SHA-256-Digest: E+6GtUo+xrXqXnXt+uhJmvYQL7ZArKQuwYrsD7DldWg=
+
+Name: jre/lib/ext/zipfs.jar
+SHA-256-Digest: +Jj9WWV0+XrwXOBK6oJqxOxD9ECRD6Pjv2G7iyDfzoE=
+
+Name: jre/man/man1/java.1
+SHA-256-Digest: cJE+c32LVQy08TI2kknUjWvboGVp5JzrQyT7eMfP6Bo=
+
+Name: jre/lib/charsets.jar
+SHA-256-Digest: rY9rRCEssAL7VI157McUB6U6wvqUAvhXZycgtxAIHi8=
+
+Name: jre/lib/amd64/libkcms.so
+SHA-256-Digest: ga3rCVcJ6os+nadrbS7NSTclfY9iUqa2NLs2EY2YD80=
+
+Name: jre/lib/desktop/icons/LowContrast/16x16/mimetypes/gnome-mime-app
+ lication-x-java-archive.png
+SHA-256-Digest: 3FQq72L2VAkCeX6H395zM6rfIKGUT7eDnL/jR3FCyUo=
+
+Name: jre/lib/desktop/icons/LowContrast/48x48/apps/sun-javaws.png
+SHA-256-Digest: /5wsNPDoI2n+Yuu6cyCJoNif+EDJ2NuWO0JD5QNQj5A=
+
+Name: jre/lib/desktop/icons/HighContrastInverse/16x16/apps/sun-java.pn
+ g
+SHA-256-Digest: LlMTBPVo4LtvYePB+boc4+PJpGhlCk5FijEWl/TEBt4=
+
+Name: jre/lib/amd64/libjavafx_font_t2k.so
+SHA-256-Digest: Skq7UhfeFmNi2sLtdLdgKCRR+AgT3nYe1wO8QvQDiCM=
+
+Name: jre/man/man1/keytool.1
+SHA-256-Digest: MG1b0c9gYzJiAez+y595GN7t3nXMVqi9N1/wyohVRXs=
+
+Name: jre/lib/desktop/icons/LowContrast/16x16/apps/sun-javaws.png
+SHA-256-Digest: lwY8x6mkx5yApPeOiQzn7oF6cS41MiJD2zYTjnK+Cig=
+
+Name: jre/lib/deploy.jar
+SHA-256-Digest: dAqN21OTez0Lxus9y2YpfMeEkSGuzXYcbo/yOULSBEY=
+
+Name: jre/lib/desktop/icons/HighContrastInverse/48x48/apps/sun-java.pn
+ g
+SHA-256-Digest: lUzHoqF5o+A2KcjuRT64PlZcxAG3WkImGp9U0P0W09A=
+
+Name: jre/lib/deploy/messages_es.properties
+SHA-256-Digest: vph9k+I6tzGNsJVyfe3YRhum2YuUCe+Px/XHn6lma4Q=
+
+Name: jre/lib/desktop/mime/packages/x-java-archive.xml
+SHA-256-Digest: 4hXGTCeqv0P+igZGtpmTFECYtAB0G3bU72yKUBokqac=
+
+Name: jre/bin/rmid
+SHA-256-Digest: v+zKtdqZU2t15tJ0Zc45qWKWsvBVeyBSX/kTGGqXn4A=
+
+Name: jre/lib/images/cursors/motif_CopyNoDrop32x32.gif
+SHA-256-Digest: Gh0wedSVg4N2YrhOEdjAhwaYUR2REOcQ645+sg33rjs=
+
+Name: jre/lib/deploy/splash.gif
+SHA-256-Digest: ETsBME6788xymlyjRS3aIJO9iz3cK6KeXhwWBWYfkL4=
+
+Name: jre/lib/amd64/libnpjp2.so
+SHA-256-Digest: f4Cse+Ezx9PkxM2c1rHeGbdhmcDSzSHLA96D9UuglMs=
+
+Name: jre/lib/oblique-fonts/LucidaTypewriterBoldOblique.ttf
+SHA-256-Digest: ISxEVAqHdeMwCVhF/fldR036YlRgXo61PqFtMyAWn/w=
+
+Name: jre/man/ja_JP.UTF-8/man1/unpack200.1
+SHA-256-Digest: HmB1kd3znB0bxaRbMtdJjD7XrAb0IXtkfOCC5QUjdCI=
+
+Name: jre/lib/desktop/icons/LowContrast/16x16/apps/sun-java.png
+SHA-256-Digest: lwY8x6mkx5yApPeOiQzn7oF6cS41MiJD2zYTjnK+Cig=
+
+Name: jre/lib/fontconfig.properties.src
+SHA-256-Digest: 3WjmPY9pOqWTdWuy8k3swIbQHWHad05fyUBl1jrqfdw=
+
+Name: jre/lib/desktop/icons/hicolor/16x16/mimetypes/gnome-mime-applica
+ tion-x-java-jnlp-file.png
+SHA-256-Digest: lKEr1QK8Fy065hSp70JSH5nn1cvTb+TgaMjW4ngh7f0=
+
+Name: jre/man/ja_JP.UTF-8/man1/rmiregistry.1
+SHA-256-Digest: q4zScvOxdVrP8i0YRfCRrUZvXLrYeOZJLmfOm+EwixY=
+
+Name: jre/lib/amd64/libverify.so
+SHA-256-Digest: lfnA+BekCj/0t/zdOFYLl7ua7XAzFZYEmbJasZQOQUg=
+
+Name: jre/lib/locale/sv/LC_MESSAGES/sunw_java_plugin.mo
+SHA-256-Digest: x22BNgerlMZRWOeVg8BJJVbBD3nGO2oY2+phGP3QocA=
+
+Name: jre/man/ja/man1/rmid.1
+SHA-256-Digest: 9Ao9ChczzpF3yCjMG+kKMQCLm3KykS+c98dsQV6ROFI=
+
+Name: jre/lib/amd64/libsunec.so
+SHA-256-Digest: wJMVsUZHFNbVkQl22+lQ1vEBD9uXbU+zMMcwKcC2i/A=
+
+Name: jre/lib/desktop/icons/HighContrastInverse/48x48/mimetypes/gnome-
+ mime-text-x-java.png
+SHA-256-Digest: qO5F9CJOojkJ2plWQTH/3ZC7eLYnitEl4eYJHUImHzY=
+
+Name: jre/lib/amd64/libjdwp.so
+SHA-256-Digest: 2I8GNFYeO1pYapCbDsO3eU5f0T40tljjQqWh9M55DWM=
+
+Name: jre/lib/amd64/libjava_crw_demo.so
+SHA-256-Digest: JILP/POTAwR+6e4Ii2D/Ly40Bkf5LnYb5IcYduRbkOE=
+
+Name: jre/lib/amd64/libjfr.so
+SHA-256-Digest: ADUKkI0lRIzKcnS8sttXsDRxCWdOtw7+3FfnTOU1yIo=
+
+Name: jre/lib/locale/zh/LC_MESSAGES/sunw_java_plugin.mo
+SHA-256-Digest: glMUP0ASUjzPuPeFcuXdeuztDAHBpe3tdTDvINUUqbc=
+
+Name: jre/lib/desktop/icons/hicolor/16x16/apps/sun-jcontrol.png
+SHA-256-Digest: 0n/sHXT3owgcPRde0YTRU4NmbcfwLMD3Em8RVJh5xu0=
+
+Name: jre/man/ja/man1/policytool.1
+SHA-256-Digest: eXmDNCHs0jRzYIhQ9lg4PxgzICnIisZtqshXnDoPlZo=
+
+Name: jre/lib/oblique-fonts/LucidaTypewriterOblique.ttf
+SHA-256-Digest: UNp7+y79xxAEO1bsewT2BZPZTVd7xL2HhmocWWPEiuM=
+
+Name: jre/lib/amd64/libzip.so
+SHA-256-Digest: C/4jF9HjiYXUe/1ZVGe2+GJXFbACOUNoWY+AVBGDsyk=
+
+Name: jre/lib/amd64/libgstreamer-lite.so
+SHA-256-Digest: 6usKAgUAokoJDb5OUa2gtg0oBnM1c1nf7HGp5Uqy7PQ=
+
+Name: jre/lib/amd64/libprism_common.so
+SHA-256-Digest: sxMjqMxPSJ5I00y9ZYzukPFSELXl2b4lU/Aa1aIUr5k=
+
+Name: jre/lib/desktop/icons/hicolor/48x48/mimetypes/gnome-mime-applica
+ tion-x-java-jnlp-file.png
+SHA-256-Digest: wrUUJB0fFaKw5aYoytjuInffmKO26cQJxCETcWCOmYI=
+
+Name: jre/lib/fontconfig.Turbo.properties.src
+SHA-256-Digest: 3tX1c8jC7jukAlmASYfVjp1+Dhu6ZSS9NDq0JS0QS1E=
+
+Name: jre/lib/psfont.properties.ja
+SHA-256-Digest: DHkN5pZTYWWRNoV4XqjL4axkrPCeLI2S2AIIOm2gk5M=
+
+Name: jre/lib/amd64/libavplugin-55.so
+SHA-256-Digest: KlFuBzKYeuYhf0cjelVk7new4E7xvBZNaSEw/wzLxdo=
+
+Name: jre/lib/images/icons/sun-java_HighContrast.png
+SHA-256-Digest: gQFJ8bk9AUdp54OEQISmMTOUN386GKIDdPYOJLE6gBA=
+
+Name: jre/lib/fonts/LucidaBrightRegular.ttf
+SHA-256-Digest: D6qso8cwhX0+UPuhu61MojMK3SF7NeIrfmfwKAn6ySM=
+
+Name: jre/man/ja/man1/orbd.1
+SHA-256-Digest: nL19MRyP+z2LVzqj07cgDXrdFtV9DXpHuPc6O1qqoYg=
+
+Name: jre/plugin/desktop/sun_java.desktop
+SHA-256-Digest: OFc3v1vjC56Rdt62QZWkiUmjqBgqLmqQTf29hUpgfEE=
+
+Name: jre/lib/desktop/mime/packages/x-java-jnlp-file.xml
+SHA-256-Digest: SLIggotHbZLyAgmPbdShKFy8dD2ZnR45V3qD8XI2RPg=
+
+Name: jre/lib/amd64/libdt_socket.so
+SHA-256-Digest: TnRox7EtmrfubnFb5OZSqGzl8a+sRSXPga44R9V5f44=
+
+Name: jre/lib/logging.properties
+SHA-256-Digest: zhaI/mQQmZVFcuqFaVMDW1GI4soihwUAE2glAze5sjI=
+
+Name: jre/lib/net.properties
+SHA-256-Digest: Fsk5ELJ4Xny92pDVR5qpaHFIwhQawK29Anf94oT2u7M=
+
+Name: jre/lib/meta-index
+SHA-256-Digest: UfWey3ZxQPG7Gk1UScDbUXsualRMOyIsMEXCVNMK/+E=
+
+Name: jre/lib/oblique-fonts/fonts.dir
+SHA-256-Digest: 5UJ0ATtiuELetiPRmpryT2Y6O85jzbzN3o6yW0TwHgI=
+
+Name: jre/lib/desktop/icons/HighContrastInverse/16x16/apps/sun-jcontro
+ l.png
+SHA-256-Digest: LlMTBPVo4LtvYePB+boc4+PJpGhlCk5FijEWl/TEBt4=
+
+Name: jre/lib/deploy/messages_ja.properties
+SHA-256-Digest: jUmcHLFNWOloqCPhHVsRRAjAELBTs7OM/vfr+ftJCW8=
+
+Name: jre/man/ja/man1/rmiregistry.1
+SHA-256-Digest: q4zScvOxdVrP8i0YRfCRrUZvXLrYeOZJLmfOm+EwixY=
+
+Name: jre/lib/calendars.properties
+SHA-256-Digest: 2T+200UdG4Ilaw4xqueFAVL6XfdvEWqdZpqkrOa7aLQ=
+
+Name: jre/lib/desktop/icons/HighContrast/48x48/mimetypes/gnome-mime-ap
+ plication-x-java-jnlp-file.png
+SHA-256-Digest: gUNOBtpnYIFDnYppVztpXIF6XPdi9PdbGgPB3eQR6eo=
+
+Name: jre/bin/unpack200
+SHA-256-Digest: 7gUIZRx9Fec0SFQ2bSnnN4MnIzz4PFGZss9KxYGpzCc=
+
+Name: jre/bin/ControlPanel
+SHA-256-Digest: +BPsKSSJDP4xT7QVktE9BxLhTGV+pTfeeKPFMREC4yw=
+
+Name: jre/lib/fontconfig.SuSE.10.properties.src
+SHA-256-Digest: d2LFNGY2zZC9GrdEZUHIJ5Ki+g4fq/ouYvz8KYjuT3A=
+
+Name: jre/lib/security/blacklisted.certs
+SHA-256-Digest: 3dKXECFGrH9mB7NcDgtWWXVzmnhB2l5aYge29Ouy2CI=
+
+Name: jre/lib/security/java.policy
+SHA-256-Digest: uFgoibDfNgZQk8ZC7Q+foqlMwNxv3jZpgM/YGOyVclA=
+
+Name: jre/lib/security/US_export_policy.jar
+SHA-256-Digest: +t9kmBXo3UKVmA7EyBp24l/qPOzIBn3jM6B1u82vj7k=
+
+Name: jre/lib/amd64/libnpt.so
+SHA-256-Digest: vm0Yvf2RcvCRXdb5wQM9VTUI0ptaVMuN6Xa9HAYMMLk=
+
+Name: jre/lib/oblique-fonts/LucidaSansOblique.ttf
+SHA-256-Digest: 66+ZZarFjeNf+aeomSd77e2orBpljNQnUKepnzc4PXs=
+
+Name: jre/lib/desktop/icons/hicolor/48x48/mimetypes/gnome-mime-applica
+ tion-x-java-archive.png
+SHA-256-Digest: wrUUJB0fFaKw5aYoytjuInffmKO26cQJxCETcWCOmYI=
+
+Name: jre/lib/locale/zh_HK.BIG5HK/LC_MESSAGES/sunw_java_plugin.mo
+SHA-256-Digest: uPel39S6sav763LVozWTnX1h3S+CeST0YQjA7IrCANc=
+
+Name: jre/lib/content-types.properties
+SHA-256-Digest: 7FoetDPyELZRwHmJq6Wt4bC/EVPSI+vWBia0BGRf+JI=
+
+Name: jre/lib/desktop/icons/hicolor/16x16/mimetypes/gnome-mime-text-x-
+ java.png
+SHA-256-Digest: lKEr1QK8Fy065hSp70JSH5nn1cvTb+TgaMjW4ngh7f0=
+
+Name: jre/lib/amd64/libjavafx_iio.so
+SHA-256-Digest: KAkMA9usqSRaE4iIjcKpaJjWr3dBeR2/CGS2jQueRpk=
+
+Name: jre/lib/fonts/LucidaBrightDemiBold.ttf
+SHA-256-Digest: cs7j5t9yrVd69JxZ3KLQVBBg+VqIGEWVBZXlYUxIYkQ=
+
+Name: jre/lib/amd64/libbci.so
+SHA-256-Digest: hVgxXAza+SRw7PSAGadvlq+qrXcLcdX0ADDHAMz9Z6I=
+
+Name: jre/lib/amd64/libprism_sw.so
+SHA-256-Digest: RY7sIDQnYpB9GFp8bNFpBJx8HWrxqvMRAX0bx19+R3E=
+
+Name: jre/lib/desktop/icons/HighContrastInverse/16x16/apps/sun-javaws.
+ png
+SHA-256-Digest: LlMTBPVo4LtvYePB+boc4+PJpGhlCk5FijEWl/TEBt4=
+
+Name: jre/lib/desktop/icons/HighContrast/48x48/mimetypes/gnome-mime-te
+ xt-x-java.png
+SHA-256-Digest: gUNOBtpnYIFDnYppVztpXIF6XPdi9PdbGgPB3eQR6eo=
+
+Name: jre/lib/jsse.jar
+SHA-256-Digest: KegDsiIYq4T7aiMLkvhnB7nfAVhrq5an2ttXJ4fj+OE=
+
+Name: jre/lib/fonts/fonts.dir
+SHA-256-Digest: 18sKPpwzhin+FzAta+W69/RIRJCHVQkpoJGDEQxvnj8=
+
+Name: jre/lib/classlist
+SHA-256-Digest: 75V5P0GVm4VtT2oW0DGLa5K65yF7blf1lvS7OXnBmnc=
+
+Name: jre/lib/resources.jar
+SHA-256-Digest: pNILRE1/KmUL8rEFjxoLhfhp4NT6lMeUL021LgCqi7k=
+
+Name: jre/lib/security/policy/limited/US_export_policy.jar
+SHA-256-Digest: kAEvkAz3SaDlKgd1lm71ddOQrUY4jEnVEoOJg6VUqHA=
+
+Name: jre/lib/amd64/libavplugin-53.so
+SHA-256-Digest: lgKKlJCctsHYZ3NSSO/YbjvXPKsieYEVRNwcpRqzPTU=
+
+Name: jre/lib/javaws.jar
+SHA-256-Digest: LAmInEXDtzaeqj0EqYGQus4egSlvUZgObW5D7J5cdI0=
+
+Name: jre/lib/locale/zh_TW.BIG5/LC_MESSAGES/sunw_java_plugin.mo
+SHA-256-Digest: uPel39S6sav763LVozWTnX1h3S+CeST0YQjA7IrCANc=
+
+Name: jre/lib/images/cursors/motif_LinkDrop32x32.gif
+SHA-256-Digest: OXdE+NW8UVjyNbVcYlNNWbxDf/V/i8T9R5FzJPpDDdY=
+
+Name: jre/lib/amd64/libjfxmedia.so
+SHA-256-Digest: M2SAFJmEYqtFaerBaEGD55+a7dbDWzeZ3d6I3YhmrKc=
+
+Name: jre/lib/locale/ko/LC_MESSAGES/sunw_java_plugin.mo
+SHA-256-Digest: rkIp7lEX9uRk2ouNOC2Cnefjwj/QDVr1qyENfuA+9WI=
+
+Name: jre/lib/locale/ko.UTF-8/LC_MESSAGES/sunw_java_plugin.mo
+SHA-256-Digest: Cs0y3faaWU0LiVz0z4m89FjxIaVOhIMKVnw4LxD9THg=
+
+Name: jre/lib/desktop/icons/HighContrast/16x16/mimetypes/gnome-mime-ap
+ plication-x-java-archive.png
+SHA-256-Digest: bqxIc9VO6cctVoHKJuN6NCyg9ZmkgdJ8cxJ5ihsFmeA=
+
+Name: jre/bin/pack200
+SHA-256-Digest: PBK8HZsn1uB+cJb+t0TvtEv10DIGZCb54YIKV8+aP9M=
+
+Name: jre/lib/amd64/liblcms.so
+SHA-256-Digest: jtBzPfcaIr3axGkaoCN1sJUGK8uFspJbyhUb5XSJo50=
+
+Name: jre/lib/hijrah-config-umalqura.properties
+SHA-256-Digest: ab7P4NRbYrvbz2/hEaijoEH7dJts846KL2cGB+F8nuI=
+
+Name: jre/lib/desktop/icons/hicolor/48x48/apps/sun-java.png
+SHA-256-Digest: fPjKCW5tbkJbNDREawg1U30Px/5ks8y6elX3vYbH4XY=
+
+Name: jre/lib/fontconfig.SuSE.11.properties.src
+SHA-256-Digest: A1scy91kA+soZ8jY5147Mr7a7A3+SrtL1ppjtrvPZ28=
+
+Name: jre/lib/fonts/LucidaSansRegular.ttf
+SHA-256-Digest: +Nh3sLZGAOc23+Q2dT6OEaywIuWbXXcj19Ih2B3C/N4=
+
+Name: jre/plugin/desktop/sun_java.png
+SHA-256-Digest: 6n4wfoRhEkAun6/QWYkBCE50AJSG7WwZ4XbjM9ePIHU=
+
+Name: jre/lib/desktop/icons/HighContrastInverse/48x48/apps/sun-jcontro
+ l.png
+SHA-256-Digest: lUzHoqF5o+A2KcjuRT64PlZcxAG3WkImGp9U0P0W09A=
+
+Name: jre/lib/fonts/LucidaTypewriterBold.ttf
+SHA-256-Digest: /JCCWQE7kPHLxZelEMbdeFW/nngwq+P8NhKrQJLtzeI=
+
+Name: jre/lib/amd64/libjaas_unix.so
+SHA-256-Digest: eML6n9eWUoYkgPwBtQY4Mj/IhcrhsxoK96dGczEjZns=
+
+Name: jre/lib/plugin.jar
+SHA-256-Digest: TrB8/IC26SZxxTVKCqYKiO7s61jwZ6qojXJ17nEyPFg=
+
+Name: jre/man/ja_JP.UTF-8/man1/keytool.1
+SHA-256-Digest: xl7WdvUq+LVbvfgHABFxRiPfHZC3SftsN/jJrMP6zpY=
+
+Name: jre/lib/desktop/icons/HighContrast/48x48/apps/sun-java.png
+SHA-256-Digest: JqmJ/oVG++qpt+P1v6PV3+LhMV0FVPOuz7bcJlGhZbk=
+
+Name: jre/lib/tzdb.dat
+SHA-256-Digest: pGqL9YvFV4T6B+I/Aa1GycsWGgK2p82OA1u3GMkudYs=
+
+Name: jre/lib/desktop/applications/sun_java.desktop
+SHA-256-Digest: OFc3v1vjC56Rdt62QZWkiUmjqBgqLmqQTf29hUpgfEE=
+
+Name: jre/lib/desktop/icons/hicolor/48x48/mimetypes/gnome-mime-text-x-
+ java.png
+SHA-256-Digest: wrUUJB0fFaKw5aYoytjuInffmKO26cQJxCETcWCOmYI=
+
+Name: jre/lib/security/trusted.libraries
+SHA-256-Digest: 47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=
+
+Name: jre/bin/jcontrol
+SHA-256-Digest: +BPsKSSJDP4xT7QVktE9BxLhTGV+pTfeeKPFMREC4yw=
+
+Name: jre/lib/images/cursors/invalid32x32.gif
+SHA-256-Digest: Gh0wedSVg4N2YrhOEdjAhwaYUR2REOcQ645+sg33rjs=
+
+Name: jre/lib/fontconfig.bfc
+SHA-256-Digest: lC2gk0iBhvw/RVDmpz3FGSVHOJyrJs3IXYT9UjGQaMo=
+
+Name: jre/lib/security/blacklist
+SHA-256-Digest: bHPId7NtSr0IbLaRlZsYBROsWrwMh/6QcNLVQm09v3E=
+
+Name: jre/bin/rmiregistry
+SHA-256-Digest: pdbDkRZZm7/K9V2rpVgbB6+I75piQZalPI0SVET9hos=
+
+Name: jre/lib/cmm/sRGB.pf
+SHA-256-Digest: KzqhZFd5qeY0dE+vmwHpECsMm4j9bezteTTfhrlJr34=
+
+Name: jre/lib/deploy/mixcode_s.png
+SHA-256-Digest: wP1Lxv3MTTHoO6PFNdsDw/NIvO2rUr2F9ckNixjB1QE=
+
+Name: jre/lib/amd64/libunpack.so
+SHA-256-Digest: 5W1nezLxAycrrr1Kg3eq1QCAe7XVJlURv48w6vJGB+I=
+
+Name: jre/man/man1/rmiregistry.1
+SHA-256-Digest: fGruQEuMQ7qxIuzkqFAfSIfNkdDxTF+sWSurpZF+kps=
+
+Name: jre/lib/amd64/server/Xusage.txt
+SHA-256-Digest: oTtQqH4GPX+nJwjkMXVeqIIacydqcpHlcCFRzCzPkqg=
+
+Name: jre/lib/deploy/splash@2x.gif
+SHA-256-Digest: ndXM1r39qtOPfQWhRmEQjmKf3SB/x3diaLVm95QeFDU=
+
+Name: jre/Welcome.html
+SHA-256-Digest: bz8TCqIrPL6tlZ5c8Pf2JrllOe7KVr7WB2jpGneCM2M=
+
+Name: jre/lib/amd64/libt2k.so
+SHA-256-Digest: SLeCdGLJRdIHVX54RnLToQsrX+0lFp03XjsL2Seiz6k=
+
+Name: jre/lib/deploy/MixedCodeMainDialog.ui
+SHA-256-Digest: YgXq+mNz2lbt+bGUsyCMXwPfxmGAEQ6cx0QAUyEdFtM=
+
+Name: jre/lib/flavormap.properties
+SHA-256-Digest: PDrlOrqUle/4uNKMFxtJ+E5v7ZrO6XKThxNbvZswT8o=
+
+Name: jre/bin/tnameserv
+SHA-256-Digest: KthwMgu7s9h+cmYM7/vFhe2ld/Dl+kv25QOWvmftkNQ=
+
+Name: jre/lib/fontconfig.RedHat.6.bfc
+SHA-256-Digest: +6arPbRO9XVplR0Wi4AfiT4hEgOZ9VgiwiJn54BM8Fg=
+
+Name: jre/lib/jce.jar
+SHA-256-Digest: vAIw5KT/0BZzh92VYbv/NFYzn8/x9GpjhWjVjGKroC4=
+
+Name: jre/lib/images/icons/sun-java.png
+SHA-256-Digest: KEE2YmnS61sf84hs3SijDMD1e5TnKb99l0Qx7WnkaVU=
+
+Name: jre/lib/locale/pt_BR/LC_MESSAGES/sunw_java_plugin.mo
+SHA-256-Digest: YXC1NL8cd+KXmZ4dQIeangCawHz9MB8WEus4ILxW06s=
+
+Name: jre/bin/orbd
+SHA-256-Digest: BbDXiU1rAGCmY+Yutw5/PW/BGw7uVg6KpeNK/2TB21g=
+
+Name: jre/lib/desktop/icons/HighContrastInverse/16x16/mimetypes/gnome-
+ mime-text-x-java.png
+SHA-256-Digest: /TEsiE+Eg55lf4Y+RdcA/QcetUEOj3DOI5PbftAxoN0=
+
+Name: jre/lib/amd64/libfontmanager.so
+SHA-256-Digest: km86sEi89xkYpA/YfJajrceBkIAULqL07ZSjD4ZqMO0=
+
+Name: jre/lib/deploy/splash_11@2x-lic.gif
+SHA-256-Digest: /DnQnRh3OeWA5HVpVW3g0Zryi1PfU3LH4FOP0m7beYg=
+
+Name: jre/man/ja/man1/servertool.1
+SHA-256-Digest: Ujo37OKqW7sopnX4gEmp0yKNBjU/XyoGfneFz4U7+3Q=
+
+Name: jre/man/ja_JP.UTF-8/man1/javaws.1
+SHA-256-Digest: cAkcj559D5PqQbnpDYJkQdoZWigUT+AKxAH+f5cwsL4=
+
+Name: jre/lib/amd64/libinstrument.so
+SHA-256-Digest: 9qXrh5lK/f1nhvUEiA36mDffvV4XP1pjliWqzAmaGS4=
+
+Name: jre/lib/desktop/icons/LowContrast/16x16/apps/sun-jcontrol.png
+SHA-256-Digest: lwY8x6mkx5yApPeOiQzn7oF6cS41MiJD2zYTjnK+Cig=
+
+Name: jre/lib/management/snmp.acl.template
+SHA-256-Digest: 8dyX2lpdIg7V1bcREM6CALFsrFBiKzN5C7A+Mpx1HO0=
+
+Name: jre/lib/deploy/messages.properties
+SHA-256-Digest: kmzK2uxkn2IVkNGqXpFUgQFlZOerKDkMjWi9qvR4Xx8=
+
+Name: jre/lib/psfontj2d.properties
+SHA-256-Digest: fVGTb6P9WBKuUfn1ZX4OcEh9yoELmFYHtsXWYD9ebJg=
+
+Name: jre/man/ja/man1/tnameserv.1
+SHA-256-Digest: qeOd8XY1+hslHkLCshLcTmXH3ved62BLEbcJAFNs6jU=
+
+Name: jre/THIRDPARTYLICENSEREADME-JAVAFX.txt
+SHA-256-Digest: f4QeUUuo0vMNkMY8jNk6xRZCjJMm1XH58++66L1yupY=
+
+Name: jre/lib/security/policy/limited/local_policy.jar
+SHA-256-Digest: uL7MPvLn/30hZd0aThO5xZ/WJvIKJq+aMid8H0tdW8c=
+
+Name: jre/man/ja_JP.UTF-8/man1/policytool.1
+SHA-256-Digest: eXmDNCHs0jRzYIhQ9lg4PxgzICnIisZtqshXnDoPlZo=
+
+Name: jre/man/man1/javaws.1
+SHA-256-Digest: EjvyCj/iqNAeiDL3k5Kfbbc54tgMyHI19ocAZ1KJtc4=
+
+Name: jre/README
+SHA-256-Digest: ljCVz423b7gHH9GaMRBxikLyq0Kyejrf2exYmBw+iNI=
+
+Name: jre/lib/security/javaws.policy
+SHA-256-Digest: t6h9Hz9Le6HRnQRg+ktjvRCTr8UU1n/jw1YkcjYyZCU=
+
+Name: jre/lib/amd64/libjavafx_font_pango.so
+SHA-256-Digest: 2cXkKJo0CjG8+uoyCWCa56oeX97wGGUuKNV6Cq9KCZE=
+
+Name: jre/lib/fonts/LucidaSansDemiBold.ttf
+SHA-256-Digest: U3czV9c5+JvBAIerKoKboFdkl4SprL/+4YpIiy3Mue4=
+
+Name: jre/lib/security/policy/unlimited/local_policy.jar
+SHA-256-Digest: SSTL6Gpg2TNRyJVbkktxT/3up3ayYh2E47rZl0nFbfM=
+
+Name: jre/man/man1/orbd.1
+SHA-256-Digest: 2Ii0KYwL6QXfyFg0P5mO3o95NgDBjfVqpU7zwNaTRiA=
+
+Name: jre/lib/amd64/jvm.cfg
+SHA-256-Digest: JX83K9n94S+J4GOxXBafXP1dJCBhmisBX4YbAu8xnjE=
+
+Name: jre/lib/amd64/libjsoundalsa.so
+SHA-256-Digest: fLJ+CLLUtW3J2rsbivSGQNtdVn5uF0xEg/XtfzynaWs=
+
+Name: jre/lib/amd64/libjfxwebkit.so
+SHA-256-Digest: 3b5ZSdvHGOyQGgSN3E1Vi1nrtKMw8quzqYOvvVDqAHs=
+
+Name: jre/lib/desktop/icons/LowContrast/48x48/mimetypes/gnome-mime-tex
+ t-x-java.png
+SHA-256-Digest: TgxpF3WiL7wysrxK64xWl4mAEwGwnXN3MJKGxrtzirE=
+
+Name: jre/lib/locale/zh_TW/LC_MESSAGES/sunw_java_plugin.mo
+SHA-256-Digest: FtT0hq1bZxIubSGE3Yo9UrDjyKgqsYATXhbdecDmO10=
+
+Name: jre/lib/amd64/libj2pcsc.so
+SHA-256-Digest: XqxeYSw+5+kUSwl49LbnT3QOuJzpMn7yFT2Cn3CwNJg=
+
+Name: jre/lib/deploy/cautionshield.icns
+SHA-256-Digest: wexpVCJfzNoC/ISJf0v49DyilswGP8pluxqghCUxow0=
+
+Name: jre/THIRDPARTYLICENSEREADME.txt
+SHA-256-Digest: 3DmCxe5Msa79pjRowZ2KpgyAzZ/sfnIJgW94qym8n7A=
+
+Name: jre/lib/amd64/libawt.so
+SHA-256-Digest: MtU52AjD9bYKaevgISBXX1OeFCuqu/njqRx2I5OlLHk=
+
+Name: jre/lib/desktop/icons/HighContrast/48x48/apps/sun-javaws.png
+SHA-256-Digest: JqmJ/oVG++qpt+P1v6PV3+LhMV0FVPOuz7bcJlGhZbk=
+
+Name: jre/lib/ext/dnsns.jar
+SHA-256-Digest: WMxKNRLO71SoB+4ld+dkUBHVX0lB3ocfWG37lfjtjAc=
+
+Name: jre/lib/amd64/libresource.so
+SHA-256-Digest: eJ5AQeYphNrrfytJT4x+49xKisgRyv8Qu6JAUDq/Ldw=
+
+Name: jre/lib/cmm/GRAY.pf
+SHA-256-Digest: CByqw4bZaK3Uwtcid24lk4Dc94owbhTMeQsECrh21CQ=
+
+Name: jre/man/ja/man1/unpack200.1
+SHA-256-Digest: HmB1kd3znB0bxaRbMtdJjD7XrAb0IXtkfOCC5QUjdCI=
+
+Name: jre/lib/deploy/messages_de.properties
+SHA-256-Digest: yTmaM7ucdTRRMLmdHXzohtkUjxk2VDWHhIxHuFQNpkA=
+
+Name: jre/lib/locale/es/LC_MESSAGES/sunw_java_plugin.mo
+SHA-256-Digest: gvRULsquVTR6GxwCmu/iKx60XeckRtPput/luIRtcZA=
+
+Name: jre/lib/desktop/icons/HighContrast/16x16/apps/sun-jcontrol.png
+SHA-256-Digest: 3C9LxB2RgIw8TOTphwJlx6tVdEqUgpK0SDLJs+mHm2E=
+
+Name: jre/lib/fonts/LucidaBrightDemiItalic.ttf
+SHA-256-Digest: iVxSYs22KXwTclUV+EntcGCdvXxJl0o4Lou/5KPXX4w=
+
+Name: jre/lib/deploy/java-icon.ico
+SHA-256-Digest: FY4L2IJaKAvckFKrjvoaZuIb3iZh4EeMyMVglz8NlJk=
+
+Name: jre/lib/desktop/icons/HighContrast/16x16/mimetypes/gnome-mime-ap
+ plication-x-java-jnlp-file.png
+SHA-256-Digest: bqxIc9VO6cctVoHKJuN6NCyg9ZmkgdJ8cxJ5ihsFmeA=
+
+Name: jre/LICENSE
+SHA-256-Digest: I/mlwS+oOWUFlaMocrc2C54DDHITWA+yfdkYVTilgow=
+
+Name: jre/lib/locale/ja/LC_MESSAGES/sunw_java_plugin.mo
+SHA-256-Digest: 0ovH3rgaL/SV035fW0le84+qshPa9J7sdASRaTUjCfA=
+
+Name: jre/lib/amd64/libhprof.so
+SHA-256-Digest: GBdcZhjtj49g5gOQ6C/sli7RX5ANBHWJFtALJXz+eCI=
+
+Name: jre/bin/javaws
+SHA-256-Digest: FYkySeOm013DgBvsBT0lFa32xhiz3S/utY7StbpJjZI=
+
+Name: jre/lib/fonts/LucidaTypewriterRegular.ttf
+SHA-256-Digest: 2dCqsDVMOFbfga+sSb3Fhukwp3Qoy0mQB93pntMRUv8=
+
+Name: jre/man/ja/man1/jjs.1
+SHA-256-Digest: wMZXtMgqW7/NgWj1fPzWj2Lq0yUiH3fjBMcrk9SiFVk=
+
+Name: jre/lib/images/cursors/cursors.properties
+SHA-256-Digest: IVnNnpZ/aTVCi7FA73V9SZkW4wQVr8uT0ojaIzuvqFU=
+
+Name: jre/lib/fontconfig.RedHat.5.properties.src
+SHA-256-Digest: NbET6BORZDzA7M5gb9/cbcSTR8RUlNdQkezyCTPbV+k=
+
+Name: jre/lib/deploy/messages_zh_TW.properties
+SHA-256-Digest: /0o6krySywjSwyxDWBBED9Jk7dY+Vu+jlDDgJAyDViA=
+
+Name: jre/lib/deploy/messages_fr.properties
+SHA-256-Digest: je7sNe0pNI9XVYAfQmdeO/P6etSx5BSsyig8TaQOTXc=
+
+Name: jre/lib/cmm/LINEAR_RGB.pf
+SHA-256-Digest: cSA2qhlRQn1C4+GQ5xT0IMqMLdl+8B/NBnXuVLkg20Y=
+
+Name: jre/lib/management-agent.jar
+SHA-256-Digest: DDcIJUpshmShO5jRRrSlitf26R0Rbowb1fSly0Hb0pU=
+
+Name: jre/lib/desktop/icons/LowContrast/48x48/apps/sun-jcontrol.png
+SHA-256-Digest: /5wsNPDoI2n+Yuu6cyCJoNif+EDJ2NuWO0JD5QNQj5A=
+
+Name: jre/lib/management/jmxremote.access
+SHA-256-Digest: Q5FY61E1Jf7aGeDkFTzPNqCP5qOcDGzuufzuhomd0zw=
+
+Name: jre/lib/management/management.properties
+SHA-256-Digest: OpI3NdnCBiBkzY/TD/jMqE0LwKtaj6uA/a0xVcDjo4A=
+
+Name: jre/lib/oblique-fonts/LucidaSansDemiOblique.ttf
+SHA-256-Digest: YUQft6wGY/McnoXIFg3YpUQZdvmlveQfbX3QtkJUbkw=
+
+Name: jre/man/man1/pack200.1
+SHA-256-Digest: sRasdp+8qOG6dOwdAidhyc1g/4umGCuJ1b/81KzQTUs=
+
+Name: jre/lib/amd64/libglass.so
+SHA-256-Digest: IINI+hZs2t2x20e8FI07jfhj4Q/XscxcYfObZWK8FXc=
+
+Name: jre/lib/jvm.hprof.txt
+SHA-256-Digest: sFW/JbB+WscOmbiX+4FS8oh2kGW1uEOHNiu5zC5snTg=
+
+Name: jre/lib/amd64/server/libjsig.so
+SHA-256-Digest: 6Bkpl6PydYN+YWu523c5HLE6WXthq+G3ecOlDiGsz+A=
+
+Name: jre/lib/desktop/icons/HighContrastInverse/16x16/mimetypes/gnome-
+ mime-application-x-java-archive.png
+SHA-256-Digest: /TEsiE+Eg55lf4Y+RdcA/QcetUEOj3DOI5PbftAxoN0=
+
+Name: jre/lib/locale/it/LC_MESSAGES/sunw_java_plugin.mo
+SHA-256-Digest: wkSx/M4MO3rjg1eQDQVhqJNw9Wy2hAD5YXJ3kIsoeG4=
+
+Name: jre/lib/desktop/icons/LowContrast/16x16/mimetypes/gnome-mime-app
+ lication-x-java-jnlp-file.png
+SHA-256-Digest: 3FQq72L2VAkCeX6H395zM6rfIKGUT7eDnL/jR3FCyUo=
+
+Name: jre/lib/desktop/icons/HighContrast/16x16/apps/sun-javaws.png
+SHA-256-Digest: 3C9LxB2RgIw8TOTphwJlx6tVdEqUgpK0SDLJs+mHm2E=
+
+Name: jre/bin/servertool
+SHA-256-Digest: vTFHTM6O8N1XdmVTFOQr1gMdrV4aYfnd7doBwPDYY+E=
+
+Name: jre/lib/ext/sunjce_provider.jar
+SHA-256-Digest: ZWyAx0Jc6qJrua8+LLumc/08xZV0DfNX0aEXtR1xMs4=
+
+Name: jre/lib/amd64/libnio.so
+SHA-256-Digest: l6DUPknt54Zp+zX9pzzVvK7PBk4OdAxG9n1mGRm6c+c=
+
+Name: jre/lib/desktop/icons/LowContrast/16x16/mimetypes/gnome-mime-tex
+ t-x-java.png
+SHA-256-Digest: 3FQq72L2VAkCeX6H395zM6rfIKGUT7eDnL/jR3FCyUo=
+
+Name: jre/lib/amd64/libdeploy.so
+SHA-256-Digest: P+ujB59EfaKvL9zHpOLjvCd46GlQ11rNyTlNbvtMyek=
+
+Name: jre/lib/desktop/applications/sun-java.desktop
+SHA-256-Digest: K56hF8whSvhmu56NAAQE4yIH4uA54zd9UeHpyr4HIDA=
+
+Name: jre/lib/cmm/CIEXYZ.pf
+SHA-256-Digest: IH10inbBDl+hDsfQSU4xq3Lyusq1kTcfLpZTlhMh/pw=
+
+Name: jre/lib/locale/zh.GBK/LC_MESSAGES/sunw_java_plugin.mo
+SHA-256-Digest: glMUP0ASUjzPuPeFcuXdeuztDAHBpe3tdTDvINUUqbc=
+
+Name: jre/lib/deploy/messages_ko.properties
+SHA-256-Digest: 2clcMbTBCS8yvc9A1SMrMcwJ+1toVkBnwcKl9Z04afo=
+
+Name: jre/lib/images/icons/sun-java_LowContrast.png
+SHA-256-Digest: Nf0yImSO5yh4og95kVPxoIkFnjU75qRp+ST3XXfvIbI=
+
+Name: jre/lib/amd64/libavplugin-ffmpeg-56.so
+SHA-256-Digest: LrCzJIkcz7bu9P9Fby053bHzXYqKxm0Iim+9AGMy1rg=
+
+Name: jre/lib/deploy/splash_11-lic.gif
+SHA-256-Digest: xVeKw0kQXeUcHpEJ0ix4Q6q1JclR4xJwDHPV/UJygbk=
+
+Name: jre/lib/amd64/libawt_xawt.so
+SHA-256-Digest: orXLxs22XbwDtYCTi/frBPSeCmjPY2o2oAx6ojbHgUA=
+
+Name: jre/lib/desktop/icons/hicolor/48x48/apps/sun-jcontrol.png
+SHA-256-Digest: fPjKCW5tbkJbNDREawg1U30Px/5ks8y6elX3vYbH4XY=
+
+Name: jre/lib/javafx.properties
+SHA-256-Digest: j3ICQi8edMgaRDTZMI0Si1IRUvwkXQ8pwZfyEso8Afc=
+
+Name: jre/lib/fontconfig.SuSE.11.bfc
+SHA-256-Digest: At2EqidA9q4s9EOWWNEY/Qo0L9HRTKIg+k+0+hQTY3c=
+
+Name: jre/lib/desktop/icons/HighContrast/48x48/mimetypes/gnome-mime-ap
+ plication-x-java-archive.png
+SHA-256-Digest: gUNOBtpnYIFDnYppVztpXIF6XPdi9PdbGgPB3eQR6eo=
+
+Name: jre/lib/deploy/messages_zh_HK.properties
+SHA-256-Digest: /0o6krySywjSwyxDWBBED9Jk7dY+Vu+jlDDgJAyDViA=
+
+Name: jre/lib/amd64/libnet.so
+SHA-256-Digest: pRZexBxNv1BfnVzh2gP3sLSKc83NjTzup+r4lPyOMkE=
+
+Name: jre/lib/images/cursors/motif_CopyDrop32x32.gif
+SHA-256-Digest: n8XgDKqckuFqqX7PXzE7OlNxJij6vYdVEu9ZUS0nujU=
+
+Name: jre/lib/jfr/default.jfc
+SHA-256-Digest: DIzTcsVI5N3LsPqM1vygnWXsMS14T0lb4ZuvG/BsV/M=
+
+Name: jre/man/ja_JP.UTF-8/man1/pack200.1
+SHA-256-Digest: SI3VxZ04SraCNIRfzz94GkGMQzPFZmQLMsn9ZlbFDkM=
+
+Name: jre/lib/amd64/libjavafx_font_freetype.so
+SHA-256-Digest: So8AmPhrnU9VsxKSTdcUeG3M/qtpqg+rJy2TMdFiea0=
+
+Name: jre/lib/desktop/icons/hicolor/16x16/apps/sun-java.png
+SHA-256-Digest: 0n/sHXT3owgcPRde0YTRU4NmbcfwLMD3Em8RVJh5xu0=
+
+Name: jre/man/ja/man1/java.1
+SHA-256-Digest: HkO5MX3oDDOcp3sZba7jF61JpUesCCYX2/o0ApfM/RQ=
+
+Name: jre/lib/amd64/libjavafx_font.so
+SHA-256-Digest: kgsvePqCaVuOA6IrdfCh3pVE3l5CbW7lkjnmdB54HWs=
+
+Name: jre/lib/fonts/LucidaBrightItalic.ttf
+SHA-256-Digest: 1ogZpwtg/2jKlF71rTWMMYKeQ+wlAkqZ0XF0xiZXXgY=
+
+Name: jre/lib/amd64/libj2gss.so
+SHA-256-Digest: FryyKBkW7ZsPIdN1S9i6Itad3icJwb5tMHNKA/w/PT0=
+
+Name: jre/lib/rt.jar
+SHA-256-Digest: ZyfdF1KD30IRl0ztdY004MPiJFkON5B1EVwk0fCRk5g=
+
+Name: jre/man/man1/policytool.1
+SHA-256-Digest: 80Hik/2jHUpMLjSaP/p4IFtYa0RH4KNnp/vX4eitQBQ=
+
+Name: jre/lib/amd64/libdecora_sse.so
+SHA-256-Digest: 6HbME940o2xNrtNen91b+WfJoIiPsq2W426f7Z3TnX4=
+
+Name: jre/lib/amd64/jli/libjli.so
+SHA-256-Digest: L0JkEoToiSaUQukhHHFJ6O9+FpNcbnqAHJHV1AYDs/8=
+
+Name: jre/lib/desktop/icons/HighContrastInverse/48x48/apps/sun-javaws.
+ png
+SHA-256-Digest: lUzHoqF5o+A2KcjuRT64PlZcxAG3WkImGp9U0P0W09A=
+
+Name: jre/lib/ext/localedata.jar
+SHA-256-Digest: ygWgnnUonr3U0k2i5UUjnFD9Lf08dVRJhwBcl1MWgtc=
+
+Name: jre/lib/deploy/messages_zh_CN.properties
+SHA-256-Digest: oXUqAXX0kPYeCq1G3GiHwZcR8HgwkGLVJg4WSshE9ho=
+
+Name: jre/lib/images/cursors/motif_LinkNoDrop32x32.gif
+SHA-256-Digest: Gh0wedSVg4N2YrhOEdjAhwaYUR2REOcQ645+sg33rjs=
+
+Name: jre/man/ja_JP.UTF-8/man1/tnameserv.1
+SHA-256-Digest: qeOd8XY1+hslHkLCshLcTmXH3ved62BLEbcJAFNs6jU=
+
+Name: jre/release
+SHA-256-Digest: Ush1ZQcfSVOj1E5h3eXz9If0XHMGLqiYgKg6/2bELms=
+
+Name: jre/lib/security/java.security
+SHA-256-Digest: N9d4UYzalZt5yIBINKCdMZP1TASYSHgB9cN9O75StIQ=
+
+Name: jre/man/ja_JP.UTF-8/man1/servertool.1
+SHA-256-Digest: Ujo37OKqW7sopnX4gEmp0yKNBjU/XyoGfneFz4U7+3Q=
+
+Name: jre/lib/ext/jaccess.jar
+SHA-256-Digest: be2C9ueWB+5hjv3n7xTT9mKp8fkdTBCWqVSebgEA2ME=
+
+Name: jre/lib/fontconfig.RedHat.5.bfc
+SHA-256-Digest: 2gaSyVmh945W42w5xg/L53/bakbVkwMVidO/vDl5bR4=
+
+Name: jre/lib/fontconfig.Turbo.bfc
+SHA-256-Digest: pKetER3CqedltgDUR9rywoo66oVPvAGmDH9jRnG4iUA=
+
+Name: jre/lib/desktop/icons/HighContrastInverse/48x48/mimetypes/gnome-
+ mime-application-x-java-jnlp-file.png
+SHA-256-Digest: qO5F9CJOojkJ2plWQTH/3ZC7eLYnitEl4eYJHUImHzY=
+
+Name: jre/lib/amd64/libprism_es2.so
+SHA-256-Digest: PycEqD6zAgyY6IfFCbmBTytDaYgdZCa8rDzMIDvgB6E=
+
+Name: jre/bin/keytool
+SHA-256-Digest: 1WETZR/CGCEegWEYR5rimOr514+SUzbWTT/gzRpO3GQ=
+
+Name: jre/lib/amd64/libjsound.so
+SHA-256-Digest: DPZZbNAg5sizkz1tBaLVJNCR9HizD9WQcvmYy+ujON4=
+
+Name: jre/lib/jfr.jar
+SHA-256-Digest: jKz4LXP2lI1r7/iRryGE81aqc0R0s4SZoj9T7PaLhh4=
+
+Name: jre/lib/amd64/libjsdt.so
+SHA-256-Digest: qaTKHkCjPYHdR/UMQBUbAFrSC8c3PjD1Lu8gfklyUvE=
+
+Name: jre/lib/amd64/libj2pkcs11.so
+SHA-256-Digest: RILeyFEQriMV9U9j6uBc0O5N3TBBKsBinBpDGhjrML8=
+
+Name: jre/lib/desktop/icons/HighContrast/16x16/mimetypes/gnome-mime-te
+ xt-x-java.png
+SHA-256-Digest: bqxIc9VO6cctVoHKJuN6NCyg9ZmkgdJ8cxJ5ihsFmeA=
+
+Name: jre/man/ja_JP.UTF-8/man1/java.1
+SHA-256-Digest: HkO5MX3oDDOcp3sZba7jF61JpUesCCYX2/o0ApfM/RQ=
+
+Name: jre/COPYRIGHT
+SHA-256-Digest: Yh92FrXoU4q7wmZn8owlZQpbI5pPHsqYH13WC42ptYk=
+
+Name: jre/lib/amd64/server/libjvm.so
+SHA-256-Digest: PAWyycYdEA71SHhj5wlZsEhZMAXk6OHxuhujImkSYg0=
+
+Name: jre/man/man1/rmid.1
+SHA-256-Digest: aB1AUCACAKJz5Jc3tANCaCvVjiyQ/54expWfonM3MZg=
+
+Name: jre/lib/security/cacerts
+SHA-256-Digest: SdQoyJoBfG2ATr3m6OaeMefCFlqbF/WeMA8zt39r2z0=
+
+Name: jre/man/man1/jjs.1
+SHA-256-Digest: Bmgkvati7o5rgunqfJj0abyTVDki4rXDwpJ1GD3nZao=
+
+Name: jre/lib/amd64/libsctp.so
+SHA-256-Digest: SZZBPuWxkQr1K70b987JyPWOSD7p9jPbldHii8tZj8Y=
+
+Name: jre/lib/desktop/icons/HighContrastInverse/48x48/mimetypes/gnome-
+ mime-application-x-java-archive.png
+SHA-256-Digest: qO5F9CJOojkJ2plWQTH/3ZC7eLYnitEl4eYJHUImHzY=
+
+Name: jre/lib/amd64/libavplugin-56.so
+SHA-256-Digest: Oz6FDd/5kyXBg8IE/dr7Aj0oh/MTw5c4uGRbbr7+tOU=
+
+Name: jre/bin/java
+SHA-256-Digest: V63+SMDSxElz7gbbtjXnZWTAH6ds+sHYqL3srMBDB50=
+
+Name: jre/lib/jexec
+SHA-256-Digest: yohHQOyrn3y1N67+PWbcuIjs5uWeAk3M2cO1frlLQoI=
+
+Name: jre/lib/security/local_policy.jar
+SHA-256-Digest: SSTL6Gpg2TNRyJVbkktxT/3up3ayYh2E47rZl0nFbfM=
+
+Name: jre/lib/management/jmxremote.password.template
+SHA-256-Digest: PYPjNsmiTQmhYGPqE1WIXgf3oXajdUNGNZa1242C+Po=
+
+Name: jre/man/ja_JP.UTF-8/man1/orbd.1
+SHA-256-Digest: nL19MRyP+z2LVzqj07cgDXrdFtV9DXpHuPc6O1qqoYg=
+
+Name: jre/lib/security/policy/unlimited/US_export_policy.jar
+SHA-256-Digest: +t9kmBXo3UKVmA7EyBp24l/qPOzIBn3jM6B1u82vj7k=
+
+Name: jre/lib/desktop/icons/hicolor/16x16/apps/sun-javaws.png
+SHA-256-Digest: 0n/sHXT3owgcPRde0YTRU4NmbcfwLMD3Em8RVJh5xu0=
+
+Name: jre/man/ja_JP.UTF-8/man1/jjs.1
+SHA-256-Digest: wMZXtMgqW7/NgWj1fPzWj2Lq0yUiH3fjBMcrk9SiFVk=
+
+Name: jre/lib/desktop/icons/HighContrast/48x48/apps/sun-jcontrol.png
+SHA-256-Digest: JqmJ/oVG++qpt+P1v6PV3+LhMV0FVPOuz7bcJlGhZbk=
+
+Name: jre/lib/images/icons/sun-java_HighContrastInverse.png
+SHA-256-Digest: m/glS0n+3uTDFT9cMmaq1g3HH9px30jzZ8OtFi7Uu0g=
+
+Name: jre/lib/amd64/libmlib_image.so
+SHA-256-Digest: KGfElN8DJck5lgBL1DcacKVuQpKEP+1b9IvVIigcNKc=
+
+Name: jre/lib/fontconfig.RedHat.6.properties.src
+SHA-256-Digest: 1X/sdjIPDS925dPyzyHIUwLtPQBW5W5ysywYxNM3bgc=
+
+Name: jre/man/man1/servertool.1
+SHA-256-Digest: XILeoEeTpDVEIMzA4mNSHBmp1L8PZZ156pNl+Ijg/WU=
+
+Name: jre/bin/policytool
+SHA-256-Digest: OjAjJuHARsRMdwSyVaZcUmw3dgbVDdgasxYKZVvPy9Q=
+
+Name: jre/lib/ext/nashorn.jar
+SHA-256-Digest: q6V5roYBxohsxPj7XPQy9HTzGsv0x1F33vw2Stl78Z4=
+
+Name: jre/lib/amd64/libawt_headless.so
+SHA-256-Digest: gMPOkj69W7HQTBrpVY2edaZKgz9tPNt3eeNJoNQJ2uc=
+
+Name: jre/lib/desktop/icons/LowContrast/48x48/mimetypes/gnome-mime-app
+ lication-x-java-jnlp-file.png
+SHA-256-Digest: TgxpF3WiL7wysrxK64xWl4mAEwGwnXN3MJKGxrtzirE=
+
+Name: jre/lib/ext/jfxrt.jar
+SHA-256-Digest: 2eo5ktmAvXnNEOKRlQopGkol3dvILVXpoI4oDbzbtio=
+
+Name: jre/lib/currency.data
+SHA-256-Digest: Zo5tEH5OYzENBnwLVK81fAg9lh/ZnsRl/nb8w4YM5gM=
+
+Name: jre/lib/amd64/libjawt.so
+SHA-256-Digest: CnGhII3L8XFLk4kNnVmeHK0QKeFPhmoKYK7FKfRxxT4=
+
+Name: jre/lib/jfr/profile.jfc
+SHA-256-Digest: 9w5MhYqWYD3mwELqeWMAwjKVOqsXV5/056R/6f/hfCY=
+
+Name: jre/man/ja_JP.UTF-8/man1/rmid.1
+SHA-256-Digest: 9Ao9ChczzpF3yCjMG+kKMQCLm3KykS+c98dsQV6ROFI=
+
+Name: jre/lib/amd64/libdcpr.so
+SHA-256-Digest: SZ8hwCeQ366i8VU9CDmB7zOXzbYmDCe8hBbRN9mh8JY=
+
+Name: jre/lib/amd64/libjpeg.so
+SHA-256-Digest: E76zfTofMsFauzjq4A46dFajL8hRGiOjJ2r6Smyfkgg=
+
+Name: jre/lib/deploy/MixedCodeMainDialogJs.ui
+SHA-256-Digest: FdDCGilEx6NcYCvsgRzPSRs658s7LVyFC7NOd6h5fn8=
+
+Name: jre/lib/images/cursors/motif_MoveNoDrop32x32.gif
+SHA-256-Digest: Gh0wedSVg4N2YrhOEdjAhwaYUR2REOcQ645+sg33rjs=
+
+Name: jre/lib/deploy/messages_sv.properties
+SHA-256-Digest: XM7mNyD8rCoTbPH6kMusBQQPif/owILC0Gcke/zXa4c=
+
+Name: jre/lib/cmm/PYCC.pf
+SHA-256-Digest: SBIilLXAjGm3/h2yiQSWnctu3JqlB24/h2i/SLdiBNA=
+
+Name: jre/man/ja/man1/pack200.1
+SHA-256-Digest: SI3VxZ04SraCNIRfzz94GkGMQzPFZmQLMsn9ZlbFDkM=
+
+Name: jre/lib/amd64/libmanagement.so
+SHA-256-Digest: E9O76y1B/dBqoKUhLe9iEypS7RceByoq3wmFnyG+ktk=
+
+Name: jre/lib/images/cursors/motif_MoveDrop32x32.gif
+SHA-256-Digest: JZLXCgUr6WpFv2Ne0xTWQd1yde15dtTMMAJ9rSb+Zc8=
+

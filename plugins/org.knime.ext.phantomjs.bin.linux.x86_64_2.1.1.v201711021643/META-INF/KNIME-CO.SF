@@ -1,0 +1,24 @@
+Signature-Version: 1.0
+SHA-256-Digest-Manifest-Main-Attributes: z2aJW0YYxhdKra/T5ye5SlPyFgUtv
+ /HoqRa0CF1N9HQ=
+SHA-256-Digest-Manifest: yVuq3Rg5dcwCl9H5yKfvyqFaWq364dG4yeYtOHIOsL8=
+Created-By: 1.8.0_131 (Oracle Corporation)
+
+Name: META-INF/p2.inf
+SHA-256-Digest: O7HPkktiKJq98IiMYIHHFwG3KnbPXWf8E8yfXDyB+DU=
+
+Name: third-party.txt
+SHA-256-Digest: DpGAyThR1SDGbWKzSwxCiB2VNL6qhMs3qHUOcKrnWfc=
+
+Name: ChangeLog
+SHA-256-Digest: uzdkrWv35gbC3qdy/Gs1hmYldluzlWbyi+GKGDse3hw=
+
+Name: linux/x86_64/phantomjs
+SHA-256-Digest: x4k8V2v09ePBBV8ZuuDpUo9gLlmoX/4tIiWFkMrj6ts=
+
+Name: LICENSE.BSD
+SHA-256-Digest: zmFM1i9AlVjSQ8mSLxhsgPucLCJjYuexPT+elFd2SrA=
+
+Name: README.md
+SHA-256-Digest: Z1DXLiO+UQu1uVK7U18el7YtvvPXaXeYBTAV5noA42U=
+

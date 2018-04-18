@@ -1,0 +1,107 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Schema file written by PDE -->
+<schema targetNamespace="org.knime.core">
+<annotation>
+      <appInfo>
+         <meta.schema plugin="org.knime.core" id="org.knime.core.node.workflow.NodeExecutionJobManagerFactory" name="NodeExecutionJobManagerFactory"/>
+      </appInfo>
+      <documentation>
+         Register factory to create NodeExecutionJobManager objects for special execution of nodes.
+      </documentation>
+   </annotation>
+
+   <element name="extension">
+      <complexType>
+         <sequence minOccurs="1" maxOccurs="unbounded">
+            <choice minOccurs="1" maxOccurs="unbounded">
+               <element ref="NodeExecutionJobManagerFactory"/>
+            </choice>
+         </sequence>
+         <attribute name="point" type="string" use="required">
+            <annotation>
+               <documentation>
+                  a fully qualified identifier of the target extension point
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="id" type="string">
+            <annotation>
+               <documentation>
+                  an optional identifier of the extension instance
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="name" type="string">
+            <annotation>
+               <documentation>
+                  an optional name of the extension instance
+               </documentation>
+               <appInfo>
+                  <meta.attribute translatable="true"/>
+               </appInfo>
+            </annotation>
+         </attribute>         
+      </complexType>
+   </element>
+
+   <element name="NodeExecutionJobManagerFactory">
+      <complexType>
+         <attribute name="JobManagerFactory" type="string" use="required">
+            <annotation>
+               <documentation>
+                  Specify an implementation of the org.knime.core.node.workflow.NodeExecutionJobManagerFactory interface.
+               </documentation>
+               <appInfo>
+                  <meta.attribute kind="java" basedOn=":org.knime.core.node.workflow.NodeExecutionJobManagerFactory"/>
+               </appInfo>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="since"/>
+      </appInfo>
+      <documentation>
+         KNIME V2.0
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="examples"/>
+      </appInfo>
+      <documentation>
+         
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="apiInfo"/>
+      </appInfo>
+      <documentation>
+         
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="implementation"/>
+      </appInfo>
+      <documentation>
+         
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="copyright"/>
+      </appInfo>
+      <documentation>
+         KNIME AG, Zurich, Switzerland
+      </documentation>
+   </annotation>
+
+</schema>

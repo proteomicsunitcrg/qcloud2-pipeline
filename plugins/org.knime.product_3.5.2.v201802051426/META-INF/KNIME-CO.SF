@@ -1,0 +1,303 @@
+Signature-Version: 1.0
+SHA-256-Digest-Manifest-Main-Attributes: exUX7L5UhuRlVK+6CXBMfQVmrfstW
+ yUuuBPCpraPJvg=
+SHA-256-Digest-Manifest: UdTmvl146I5zcpwOCFWNOWY4sStqfEjofRpRunSrd1I=
+Created-By: 1.8.0_131 (Oracle Corporation)
+
+Name: plugin.xml
+SHA-256-Digest: pMm6TRu45xbsTnG8MIxzCd1EnVLzr+bkErL/4qz1FyY=
+
+Name: intro/font/roboto/black-italic/roboto-black-italic_2.woff2
+SHA-256-Digest: hOm1oQNd9GWE/lG4nRWYrId5cPjGd//KcDLlry9OvrQ=
+
+Name: icons/png/knime_16.png
+SHA-256-Digest: JM0o1XWskLmafYZz8uufoPEOhUZcy4w+2JbeQwqx/vM=
+
+Name: intro/font/roboto/medium-italic/roboto-medium-italic_2.woff2
+SHA-256-Digest: pshtGqY8zDRz1sidMnC/KfjLnCjU0NPMd/TRHTgEnuY=
+
+Name: intro/font/roboto/black/roboto-black_5.woff2
+SHA-256-Digest: oeaTWwvlTckHHiWoyR7HpRwsLerxdRUqSTDbCcO4Dgk=
+
+Name: intro/font/roboto/bold/roboto-bold_2.woff2
+SHA-256-Digest: 10sX6+sVyOcRCKKKysdhq5zsoxB09aKfWke+qA7d4eY=
+
+Name: LICENSE.html
+SHA-256-Digest: GhWhB/gD+La+orwXHD0Eia7vEtmEVmvqSpT2UlcGQ1s=
+
+Name: about.ini
+SHA-256-Digest: Ds9hUqC/nNtTqh+OeHHVuPnG2aWGJcF0LyBGTjsCd2s=
+
+Name: intro/css/knime-fontello-codes.css
+SHA-256-Digest: rrzrWXyw3ztW4TvqAAetmitGMtKzqLp0A8vuz5sJN0I=
+
+Name: intro/font/roboto/medium-italic/roboto-medium-italic_5.woff2
+SHA-256-Digest: aiesMC9Rz301oqNpeauu9GbGlLZiYzO0F944+XSv75A=
+
+Name: intro/font/knime-fontello.svg
+SHA-256-Digest: jDbxi0cOyk3dLm+OqiFsJLsFWcSxShB9EhY2IVANu2E=
+
+Name: icons/png/knime_32.png
+SHA-256-Digest: iMjocCktuShYbxPrn9vXjE4vl9eBtbMc0yX9RLfMzaE=
+
+Name: intro/font/roboto/italic/roboto-italic_7.woff2
+SHA-256-Digest: fLU5KXRzkMaoiUzwEFTTgceghM1pRi2JKcsZw+gM680=
+
+Name: META-INF/p2.inf
+SHA-256-Digest: 0wWkR9EPse43Vg8q8LKP91WKDzAmhUs/ppSZspfg2Z4=
+
+Name: intro/font/roboto/medium/roboto-medium_4.woff2
+SHA-256-Digest: 5CMNmcN8Zb1X9u7EKZmIGscyhfMWs4qKkX0JHwzOaPw=
+
+Name: intro/font/roboto/italic/roboto-italic_4.woff2
+SHA-256-Digest: ghJt7sSxHdChcRPsMak06VUoifcXkh70bTZXBMhyaT4=
+
+Name: intro/font/roboto/bold/roboto-bold_5.woff2
+SHA-256-Digest: mPLu4NORmsFIUwliylqE6zv7jXm5EloL8pCTdXwRN/E=
+
+Name: intro/font/roboto/bold-italic/roboto-bold-italic_5.woff2
+SHA-256-Digest: h2uUZ/kk5KEtVtOfmnMcG5MMYzjzEf0iAwdoizbiF7A=
+
+Name: gs.css
+SHA-256-Digest: ivYKjJwg7Xq2PgxDHcl2VYAYYVkWae6a+thvzpNemPs=
+
+Name: intro/font/roboto/medium/roboto-medium_7.woff2
+SHA-256-Digest: V/vgRgdN0He6HZXKL1yojLPhvjvFVfibx23iZ1a7A7c=
+
+Name: intro/font/roboto/italic/roboto-italic_1.woff2
+SHA-256-Digest: UBWFaGjxJ/7rV5akv4H4ue44XK3x3ajwsumghGIBE1w=
+
+Name: LICENSE.txt
+SHA-256-Digest: AINBnlxD6j1hoUJCdbqJDDXIUInSr72BED0xfnoxdrY=
+
+Name: intro/css/knime-fontello.css
+SHA-256-Digest: IyrblZ8v8ZB/R0ywHkZkBWvwY+iALGSF6zvi19UL+cY=
+
+Name: intro/font/roboto/black-italic/roboto-black-italic_5.woff2
+SHA-256-Digest: xy89ycskQwqtXx/eJWavYMstQ+Z+Ym6ZjlUyZQesIDc=
+
+Name: intro/intro.xhtml
+SHA-256-Digest: hd2ZwAZ5kiiaN2UZmFshd81Cb2l1wGwfJ9h9sMjuQ7Y=
+
+Name: splash.bmp
+SHA-256-Digest: qVfEaEjUOfkWvD/xxAm8V3qf8aYW7rxWCwNACVdRuek=
+
+Name: intro/font/roboto/medium/roboto-medium_5.woff2
+SHA-256-Digest: 56NGZo+Olo0pBm3exWxxoOIB0HXpxFYIfVQbm9oLSVI=
+
+Name: update-sites.txt
+SHA-256-Digest: d9HFq4BnQwqWz0Amo1pwgxnHdaxmRf8oZNj0YjTiFw4=
+
+Name: intro/css/knime-fontello-ie7.css
+SHA-256-Digest: AFMX0rLUSkaYclv/i+D+K7w8JFatZk0FmPCQ+sPnWTY=
+
+Name: intro/font/roboto/black-italic/roboto-black-italic_4.woff2
+SHA-256-Digest: rCdtNavigiq/weHAqcs58oDNt9diad6f7BYra6M/TKg=
+
+Name: intro/font/roboto/bold-italic/roboto-bold-italic.woff2
+SHA-256-Digest: obA4Anlkpvn0FQpZ3xpnQdJYXDwuqMJKOQejQ6IbScA=
+
+Name: intro/font/roboto/italic/roboto-italic_2.woff2
+SHA-256-Digest: 7rKgE1uK1mLC9L7sOcr6wy7PmH0otDt1L1y95Qf9mFk=
+
+Name: intro/font/roboto/black/roboto-black_6.woff2
+SHA-256-Digest: sfRouIXgg6tJMpxzFKflcyheBDPlwNAEe46JOPQo/LU=
+
+Name: intro/font/roboto/regular/roboto-regular_5.woff2
+SHA-256-Digest: B71ugM2FdLbgOdqvKYz1vqDvJLG68BExrCoSMhd93qk=
+
+Name: icons/png/knime_256.png
+SHA-256-Digest: /lZxM7ooexkxspfUFaj2zh1Sa/XQSr1Zb3UJJwL+sTs=
+
+Name: intro/css/knime.css
+SHA-256-Digest: cvioKO0soQoHOIU/lo1CvQBHlXhxzRub4bPCsLI63Fo=
+
+Name: intro/font/roboto/bold/roboto-bold_4.woff2
+SHA-256-Digest: iOrCuEhVPGYt4hKzb+fNLK9QkPAtBD//Ca/rjnwlNWY=
+
+Name: intro/css/knime-fontello-embedded.css
+SHA-256-Digest: Zst3vbLHa+VqCYVHA9m8YwMUm8C2qFBHOejOQcxxfm8=
+
+Name: icons/knime_mac.icns
+SHA-256-Digest: whGhRAaswWu5ojEnBWaHLzsVmxYS84FJ/9q02X07cfY=
+
+Name: icons/png/knime_48.png
+SHA-256-Digest: Neq/jALVHQcbuPzeaHPIeT/bGjQTmfg5b/oj9NY8eD0=
+
+Name: intro/font/roboto/black-italic/roboto-black-italic_3.woff2
+SHA-256-Digest: w3KIYW7ZhDkUbuugAKKTGuYMlrAogUjXi4jEEDOPzP4=
+
+Name: intro/font/roboto/medium/roboto-medium_6.woff2
+SHA-256-Digest: wZHQqHXbpbU+NhpmDHHy8hRfaR9SFZfF/mp4+YI5fXE=
+
+Name: intro/font/roboto/medium-italic/roboto-medium-italic_4.woff2
+SHA-256-Digest: JZyOaj50NO0JnjCErdLA+rPoHvv0ajYtaJ/r5wzFhZQ=
+
+Name: intro/font/roboto/regular/roboto-regular_6.woff2
+SHA-256-Digest: AmfV3vWHwVKtJ4crXcd6dbWtJxMBF6+pVa726+x7OEM=
+
+Name: icons/png/knime_about.png
+SHA-256-Digest: sx4brtHa4n1IM342rEpN27L6n6Pazq7cstLXBjJy5Hw=
+
+Name: intro/font/roboto/bold-italic/roboto-bold-italic_6.woff2
+SHA-256-Digest: EvPXjLeKH3OL4vzJ9xbabc7XX2OK9Y5bar9KkdPY/Ek=
+
+Name: intro/font/roboto/bold/roboto-bold_3.woff2
+SHA-256-Digest: t7J7Gqip8zi0iBikfmdqs0ANkV8FZa8vDhNI4QKxQaU=
+
+Name: intro/font/roboto/italic/roboto-italic_3.woff2
+SHA-256-Digest: amIPlGLfbmXtJQ5pxRAOwbvYqT/5HDyeiQ9KzlB9P1E=
+
+Name: intro/css/img/close-button.png
+SHA-256-Digest: 9Uud4QElC2Pg/CaaAmKIXmA4abYYiFyJac6FAkpvV1A=
+
+Name: icons/knime_windows_128.ico
+SHA-256-Digest: 1fXs525+OWNF2kxxadk2OTOEl8lGkmGCNhOzt39otSQ=
+
+Name: intro/css/img/workflow.png
+SHA-256-Digest: EDH2zaLApqxn6rEsxrDpnsUMh6tijM6SRBIdJG60mnU=
+
+Name: intro/font/roboto/bold-italic/roboto-bold-italic_4.woff2
+SHA-256-Digest: iByFYDVaYdKhuGIfr106g+Luv3vHefK1cRztr9Sg/SQ=
+
+Name: icons/uninstall.ico
+SHA-256-Digest: iu9HcnrrwckuoAgJk1UcI966VR0XWyjkj1bI8f3IpjI=
+
+Name: intro/font/roboto/bold/roboto-bold_6.woff2
+SHA-256-Digest: NY6rk5odvFe7E2cmv8x+VL8cwUrVHvLFIuwfjKU87ew=
+
+Name: intro/css/img/arrow.png
+SHA-256-Digest: 6ri8SbRxOv/qQkK4scGi0bqolOo/7SD04vYQuBKcgtE=
+
+Name: intro/font/roboto/regular/roboto-regular_4.woff2
+SHA-256-Digest: ILG/DR7b0eBzj29RQf/U0cwxb/WSIqQ6OCKWimj7J/w=
+
+Name: icons/png/knime_128.png
+SHA-256-Digest: YE0wckG6IwVm0mnlz54W3kZHQxRtKjD62XyoGT2l3nk=
+
+Name: intro/font/roboto/black/roboto-black_1.woff2
+SHA-256-Digest: TRi7ourYOaLeYDSH7sgntI0J40e9Tw3/1x4FZHcfqqs=
+
+Name: intro/font/roboto/regular/roboto-regular_7.woff2
+SHA-256-Digest: o1BjeoAeEZ66Uy18Ohmtw92QeZe/0U9A8R52PX3Hdb0=
+
+Name: plugin.properties
+SHA-256-Digest: tfIpYi9FADz6kLASZvfoSDLFAeDvcnVfvYquXPceZZ8=
+
+Name: intro/font/roboto/black-italic/roboto-black-italic_6.woff2
+SHA-256-Digest: y0oj8Kd9j9lvW9K/mIiYobl29McECLbK7lMfTBrkFW4=
+
+Name: intro/font/roboto/medium/roboto-medium_3.woff2
+SHA-256-Digest: CcW6/Tfw9RsQbg51nm0QbDTtg54TZUdi/Hy0TBR7GC8=
+
+Name: intro/font/roboto/bold-italic/roboto-bold-italic_7.woff2
+SHA-256-Digest: 05met1VhszxB/Ae3qepzMymPG/pkonu+zZwaN1oocpg=
+
+Name: plugin_customization.ini
+SHA-256-Digest: 3cRpJReyixZRXxfE+GLaMt0sAWQ7Lbq6gX3AmCwMn30=
+
+Name: intro/font/roboto/black/roboto-black_4.woff2
+SHA-256-Digest: BzIAYMSsesWsDiFPDDxYmkPHfgeoY0otwwdmlrrYj6Y=
+
+Name: intro/font/roboto/medium-italic/roboto-medium-italic_6.woff2
+SHA-256-Digest: 1s5bFircbvMt5TNz3e4ELrC5azi2heLqB/8KgnH7nmM=
+
+Name: css/knime.css
+SHA-256-Digest: qmxwm9jQkCVq+27gAdrZTl2IX9hAXuPU3VNxVdHPlFs=
+
+Name: css/e4_basestyle.css
+SHA-256-Digest: /8+k9tco9ojHzErhoJ2jlXs6yRrATx3O/xJ/TftyWqs=
+
+Name: intro/font/roboto/medium-italic/roboto-medium-italic_3.woff2
+SHA-256-Digest: DlrdAle5Z0P5r0feJ5J4K348DaiXzbyG8PWFu1mmSwU=
+
+Name: intro/css/img/KNIME_logo.png
+SHA-256-Digest: ETwaQ6xbAEPSCMiTpPzT8PivEV1wRUGlsoPiYtXMeYk=
+
+Name: intro/font/roboto/regular/roboto-regular_1.woff2
+SHA-256-Digest: 2f/i6cRP0oRT0oqFFZJrhApKuDxsx99j/l0oHTPKOl4=
+
+Name: intro/css/img/close-button.svg
+SHA-256-Digest: lfd0Hdbjf0GWXHHqwFglYk6cODutGqd1cZHjSLOA2Lk=
+
+Name: schema/splashExtension.exsd
+SHA-256-Digest: fTz73ZgM0Ts4NzElKClYVbILv5Ybfwz/ZygqjDtkkgA=
+
+Name: intro/font/roboto/black/roboto-black_7.woff2
+SHA-256-Digest: cojz+BVerDFci2xJAjjgLCNAGhmTC0nYka8O/WXLLs8=
+
+Name: intro/font/roboto/medium-italic/roboto-medium-italic_7.woff2
+SHA-256-Digest: LTsPoihY2K7oeW5zPwSMUbNnGv37YIfU1d/lC/3JDgA=
+
+Name: knime-product.jar
+SHA-256-Digest: UVXggpMugPJTAQtV3+Lxe4I844XPZiekJyGxYdZzr3k=
+
+Name: intro/font/roboto/italic/roboto-italic_5.woff2
+SHA-256-Digest: WG1MqDoy13QKtdvW24VcAhZhX2wQ2RUgvM5wXnaKSO8=
+
+Name: intro/font/roboto/black-italic/roboto-black-italic_7.woff2
+SHA-256-Digest: TSsIBCrSE8gKeBeGmYCy+eryPZbehkYX6hRIIgoJGgs=
+
+Name: intro/css/img/arrow.svg
+SHA-256-Digest: UiYOEWGJYNAFLvJN0kPlQ1ht5csSVo/8MGQHGfoP8Kw=
+
+Name: lib/tagsoup-1.2.1.jar
+SHA-256-Digest: 17LKftwX0QaKekFSa1MsFF+80JJaHMXNcRwoBMDBecc=
+
+Name: intro/font/roboto/medium/roboto-medium_1.woff2
+SHA-256-Digest: jsSZqGBWSNeGw+XvPIMBJAiIZj/kQsR15hvSZmT1BN8=
+
+Name: intro/font/roboto/bold/roboto-bold_1.woff2
+SHA-256-Digest: vUGVaQw3k16i7AV+lD9/9yT1Ak2rFZrCS/OsYKjg3Ow=
+
+Name: intro/font/roboto/bold-italic/roboto-bold-italic_2.woff2
+SHA-256-Digest: vQonw3Gg5qOcq2CoGQdCVZGu236sgW8PSmKeTH1zJKA=
+
+Name: intro/font/roboto/bold/roboto-bold_7.woff2
+SHA-256-Digest: nNm2KYMtF3ZFZrmXtGN95ANgbVjiTTM0l+adgqgfsH0=
+
+Name: intro/css/knime-fontello-ie7-codes.css
+SHA-256-Digest: zFS7xfiqsRoMVrf01itg8wRGM2PUASfnPlFbu7hhSOs=
+
+Name: intro/font/roboto/black/roboto-black_3.woff2
+SHA-256-Digest: KSWxb7sQ+vR5rse2HAyYrG7tFPi9hKyIqJSi8V1mW2M=
+
+Name: icons/knime_windows_256.ico
+SHA-256-Digest: 1iomTxsoy3NK0c0k89AI6kQgwFXEkzOQIAzAGuHhwwI=
+
+Name: intro/font/roboto/regular/roboto-regular_2.woff2
+SHA-256-Digest: VPHIVtX52QaIkeQGVc5p3DROEWoRdHeoJxOFNm7dxJw=
+
+Name: intro/font/roboto/black-italic/roboto-black-italic_1.woff2
+SHA-256-Digest: OIXSzzHea8fpBJt2Q9Umw+Y8BNBCNmE9sUU711b+Xbw=
+
+Name: intro/font/roboto/regular/roboto-regular_3.woff2
+SHA-256-Digest: 0K8HdVJjcvvAx2r9KavOSY7jsUdbSN635xhEQpvtYpg=
+
+Name: intro/font/roboto/medium-italic/roboto-medium-italic_1.woff2
+SHA-256-Digest: hjidKiSLmHTq9/1xpOsKBnN7HOtbuLUQk3+a/xhNXOY=
+
+Name: intro/font/roboto/italic/roboto-italic_6.woff2
+SHA-256-Digest: VtaWZ90t+9ROz06kKBBYXX4EB0jIYzCUmjLVJn5/1V4=
+
+Name: intro/font/roboto/medium/roboto-medium_2.woff2
+SHA-256-Digest: 2U1ieKD0p1e9mpXHaAEw8Pa3/tzI8oub4SmXcWIP/R0=
+
+Name: icons/png/knime_64.png
+SHA-256-Digest: YsAbOC1xLbRqmJXFHm7F5BXYso6ez8FWVPj55K1fYPA=
+
+Name: intro/css/animation.css
+SHA-256-Digest: t0OoTKYivS/2BqyYRLW6GRI9/HbS5kVZLy8/D9Gzs9g=
+
+Name: intro/font/roboto/bold-italic/roboto-bold-italic_3.woff2
+SHA-256-Digest: xSW1ibhfml0WVs54+6P8z60hytTDG9LEYUYVbyZEM+4=
+
+Name: icons/knime_linux_128.xpm
+SHA-256-Digest: tyoAUeFLbcxv+uDa94loIJ2gAKd+s2u754h36Y7v5sE=
+
+Name: intro/font/roboto/black/roboto-black_2.woff2
+SHA-256-Digest: SECa52pmLv8e849CYqR/twsbTz1roLuJpQyTZNRbF6g=
+
+Name: icons/install.ico
+SHA-256-Digest: OMNlI3IiBm2w4XePy7SambGi/8bhZhvYrT64TmJz/hQ=
+

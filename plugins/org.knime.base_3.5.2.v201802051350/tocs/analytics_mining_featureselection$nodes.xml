@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?NLS TYPE="org.eclipse.help.toc"?><toc label="Feature Selection" link_to="../org.knime.base/tocs/analytics_mining_featureselection.xml#analytics_mining_featureselection">
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/2a8d0fa6.FeatureSelectionLoopStartNodeFactory.html" label="Feature Selection Loop Start (1:1)"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/2714e4e8.FeatureSelectionLoopStartNodeFactory2.html" label="Feature Selection Loop Start (2:2)"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/a0ca341.FeatureSelectionLoopEndNodeFactory.html" label="Feature Selection Loop End"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/30abed60.FeatureSelectionFilterNodeFactory.html" label="Feature Selection Filter"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/2902a4b2.CorrelationComputeNodeFactory.html" label="Linear Correlation"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/1dabebc6.CorrelationFilterNodeFactory.html" label="Correlation Filter"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/69de711a.LowVarFilter2NodeFactory.html" label="Low Variance Filter"/>
+</toc>

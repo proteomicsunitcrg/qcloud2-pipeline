@@ -1,0 +1,21 @@
+Manifest-Version: 1.0
+Bundle-SymbolicName: org.knime.core.pmml;singleton:=true
+Require-Bundle: org.apache.xmlbeans;bundle-version="[2.5.0,3.0.0)";vis
+ ibility:=reexport,org.apache.log4j;bundle-version="[1.2.15,2.0.0)"
+Bundle-ManifestVersion: 2
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ActivationPolicy: lazy
+Bundle-Vendor: KNIME AG, Zurich, Switzerland
+Ant-Version: Apache Ant 1.9.6
+Export-Package: org.dmg.pmml,org.dmg.pmml.impl,org.knime.core.pmml
+Bundle-Name: KNIME PMML support
+Bundle-Version: 3.5.0.v201712011135
+Bundle-ClassPath: knime-pmml.jar,lib/schemas.jar
+Created-By: 1.8.0_131-b11 (Oracle Corporation)
+
+Name: lib/schemas.jar
+SHA-256-Digest: 9auQAmAv9QuuUreEnitCQBeT0H6cLQbDxYBwi0eP7l8=
+
+Name: knime-pmml.jar
+SHA-256-Digest: vCfvzjO3iVeAc9toCdNMqkWSOhKxKI3J1Z4dzEzKRpU=
+

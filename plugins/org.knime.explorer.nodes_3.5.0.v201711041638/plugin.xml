@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?eclipse version="3.4"?><plugin>
+    <extension point="org.knime.workbench.repository.nodes">
+       <node category-path="/flowcontrol/automation" factory-class="org.knime.explorer.nodes.callworkflow.local.CallLocalWorkflowNodeFactory"/>
+       <node after="_last_" category-path="/io/read" factory-class="org.knime.explorer.nodes.browser.ExplorerBrowserNodeFactory"/>
+       <node category-path="/io/write" factory-class="org.knime.explorer.nodes.writer.ExplorerWriterNodeFactory"/>
+    </extension>
+    <extension point="org.knime.core.NodeFactoryClassMapper">
+       <NodeFactoryClassMapper classMapper="org.knime.explorer.nodes.ExplorerNodeFactoryClassMapper">
+       </NodeFactoryClassMapper>
+    </extension>
+<extension point="org.eclipse.help.toc">
+<toc extradir="html" file="tocs/io_read$nodes.xml"/>
+<toc extradir="html" file="tocs/io_write$nodes.xml"/>
+<toc extradir="html" file="tocs/flowcontrol_automation$nodes.xml"/>
+</extension>
+</plugin>

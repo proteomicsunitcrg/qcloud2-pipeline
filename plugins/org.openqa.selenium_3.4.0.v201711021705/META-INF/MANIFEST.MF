@@ -1,0 +1,135 @@
+Manifest-Version: 1.0
+Bundle-SymbolicName: org.openqa.selenium;singleton:=true
+Require-Bundle: org.apache.commons.codec;bundle-version="[1.10.0,2.0.0
+ )",org.apache.commons.io;bundle-version="[2.5.0,3.0.0)",org.hamcrest.
+ core;bundle-version="[1.3.0,2.0.0)",javax.servlet;bundle-version="[3.
+ 1.0,4.0.0)",org.junit;bundle-version="[4.12.0,5.0.0)",org.w3c.css.sac
+ ;bundle-version="[1.3.1,2.0.0)"
+Bundle-ManifestVersion: 2
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ActivationPolicy: lazy
+Bundle-Vendor: KNIME AG, Zurich, Switzerland
+Ant-Version: Apache Ant 1.9.6
+Export-Package: org.openqa.selenium,org.openqa.selenium.chrome,org.ope
+ nqa.selenium.edge,org.openqa.selenium.firefox,org.openqa.selenium.fir
+ efox.internal,org.openqa.selenium.html5,org.openqa.selenium.ie,org.op
+ enqa.selenium.interactions,org.openqa.selenium.interactions.internal,
+ org.openqa.selenium.interactions.touch,org.openqa.selenium.internal,o
+ rg.openqa.selenium.io,org.openqa.selenium.logging,org.openqa.selenium
+ .logging.profiler,org.openqa.selenium.mobile,org.openqa.selenium.net,
+ org.openqa.selenium.opera,org.openqa.selenium.os,org.openqa.selenium.
+ phantomjs,org.openqa.selenium.remote,org.openqa.selenium.remote.html5
+ ,org.openqa.selenium.remote.http,org.openqa.selenium.remote.internal,
+ org.openqa.selenium.remote.mobile,org.openqa.selenium.remote.service,
+ org.openqa.selenium.safari,org.openqa.selenium.security,org.openqa.se
+ lenium.support,org.openqa.selenium.support.events,org.openqa.selenium
+ .support.events.internal,org.openqa.selenium.support.pagefactory,org.
+ openqa.selenium.support.pagefactory.internal,org.openqa.selenium.supp
+ ort.ui
+Bundle-Name: Selenium WebDriver
+Bundle-Version: 3.4.0.v201711021705
+Bundle-ClassPath: lib/client-combined-3.4.0-nodeps.jar,lib/dep/cglib-n
+ odep-3.2.4.jar,lib/dep/commons-exec-1.3.jar,lib/dep/commons-lang3-3.5
+ .jar,lib/dep/commons-logging-1.2.jar,lib/dep/cssparser-0.9.22.jar,lib
+ /dep/gson-2.8.0.jar,lib/dep/guava-21.0.jar,lib/dep/htmlunit-2.26.jar,
+ lib/dep/htmlunit-core-js-2.26.jar,lib/dep/htmlunit-driver-2.26.jar,li
+ b/dep/httpclient-4.5.3.jar,lib/dep/httpcore-4.4.6.jar,lib/dep/httpmim
+ e-4.5.3.jar,lib/dep/jetty-io-9.4.1.v20170120.jar,lib/dep/jetty-util-9
+ .4.1.v20170120.jar,lib/dep/jna-4.1.0.jar,lib/dep/jna-platform-4.1.0.j
+ ar,lib/dep/neko-htmlunit-2.25.jar,lib/dep/phantomjsdriver-1.4.0.jar,l
+ ib/dep/serializer-2.7.2.jar,lib/dep/websocket-api-9.4.3.v20170317.jar
+ ,lib/dep/websocket-client-9.4.3.v20170317.jar,lib/dep/websocket-commo
+ n-9.4.3.v20170317.jar,lib/dep/xalan-2.7.2.jar,lib/dep/xercesImpl-2.11
+ .0.jar,lib/dep/xml-apis-1.4.01.jar
+Created-By: 1.8.0_131-b11 (Oracle Corporation)
+
+Name: lib/dep/cssparser-0.9.22.jar
+SHA-256-Digest: 4FYxNSyn04lJ0nqIjOwVabQ1iqa6DJQq5xtIEl1CrFo=
+
+Name: lib/dep/jna-platform-4.1.0.jar
+SHA-256-Digest: +RunwPJsNPBL9X0q4w1LGfkG57sd6Q6z4fT9v0XQxUE=
+
+Name: NOTICE
+SHA-256-Digest: ZaadyBuUUmgMvpW1O8Quv/F42WRP3+aLmU3W95d2Jts=
+
+Name: lib/dep/xml-apis-1.4.01.jar
+SHA-256-Digest: qECWgXZkVoS7Aa7TduBnqzlhSIX57uRKvjWl8g6+f60=
+
+Name: lib/dep/commons-lang3-3.5.jar
+SHA-256-Digest: islvxoZRLXd/yoXhRPGWzXz+DArsIxJyKUl9Gjj/ZRw=
+
+Name: lib/dep/gson-2.8.0.jar
+SHA-256-Digest: xiIXY715xPHD3H91C18poLs4s2e4ExTE9xiW40DECCU=
+
+Name: lib/dep/websocket-api-9.4.3.v20170317.jar
+SHA-256-Digest: 3hnzZgBSDCV9ePOMvxwmlviLF97dljQX6wsn3Eh8pf0=
+
+Name: lib/dep/websocket-common-9.4.3.v20170317.jar
+SHA-256-Digest: IRRlxxStwN6Wu7ExyNmBIGvaOxemhFxw8XFB5W+983o=
+
+Name: lib/dep/phantomjsdriver-1.4.0.jar
+SHA-256-Digest: sBFTBRRy+p/WD0ZN1xS6GrRac+D6JfM5jC3ZK1iBWz0=
+
+Name: lib/dep/commons-logging-1.2.jar
+SHA-256-Digest: 2t3qHqC+D1aXirMAa4rJKDSv7vvZt+TmMW/KV98PpjY=
+
+Name: LICENSE
+SHA-256-Digest: 11Mg0FXO1BHIPpPCzj3duEQnXgLqTHQbkE6ehjtb7pA=
+
+Name: lib/dep/xercesImpl-2.11.0.jar
+SHA-256-Digest: F1u72d73oiow4F+cjbYpyI+lvfxX1WWHkZAbVCIqvhw=
+
+Name: lib/client-combined-3.4.0-nodeps.jar
+SHA-256-Digest: Gr3tcKGb2dOKaoEahUt+r+kAGmsfY6QpQ3nJK4MCVxw=
+
+Name: lib/dep/htmlunit-2.26.jar
+SHA-256-Digest: 00RcLW4oxoAhRaxOxWME9OeE0b3kdMo+P/0viW2iLA8=
+
+Name: lib/dep/xalan-2.7.2.jar
+SHA-256-Digest: pEvYDoLLD0z6wNrIV1dGIjgCUU487J3HUjW8DeZGrxQ=
+
+Name: lib/dep/cglib-nodep-3.2.4.jar
+SHA-256-Digest: tA16xEAOoh3PgY9DajRt3Wa2fFUIEcysW7y+wJWrEoc=
+
+Name: lib/dep/httpcore-4.4.6.jar
+SHA-256-Digest: 1/hT3uh2gLByk9MIVbObnrVsEpe9Fv8c1vGd24+nRfs=
+
+Name: lib/dep/commons-exec-1.3.jar
+SHA-256-Digest: y0mBLcG/sOpPIPOYvK4aiMZAbiE+Z/dST7ENT4rZNHs=
+
+Name: lib/dep/htmlunit-core-js-2.26.jar
+SHA-256-Digest: yPvDaK4NJZuHZkSvVUp4kNYSpmj9PBYGSJHlyh+uerw=
+
+Name: lib/dep/httpmime-4.5.3.jar
+SHA-256-Digest: tIZbeaOq7veUIgtTK8ewf3k/pKrZDCnoPKsrg1zY7gY=
+
+Name: lib/dep/jetty-util-9.4.1.v20170120.jar
+SHA-256-Digest: VTh0H1LHdk7bwxzIkP/y+bmaGnQKkojEO/zVyHuHHmg=
+
+Name: lib/dep/guava-21.0.jar
+SHA-256-Digest: lyE5cYq8ikiT+njLqM97LJA/Ncl6r0T6MDGwZplItIA=
+
+Name: lib/dep/htmlunit-driver-2.26.jar
+SHA-256-Digest: eIANxnCp8bpJB6d8jKb9sWB9vu5VNNEXUP6o+0KZo/0=
+
+Name: lib/dep/jetty-io-9.4.1.v20170120.jar
+SHA-256-Digest: vFP1RzkPkNujwSrex3H/YDXGkVbiZdzbSdY1oMf30uo=
+
+Name: lib/dep/websocket-client-9.4.3.v20170317.jar
+SHA-256-Digest: 747zITm6BdtvJNOCDrlcXCtgV+qRq3sqVJnVrwvDzfI=
+
+Name: lib/dep/httpclient-4.5.3.jar
+SHA-256-Digest: 2z0bbC1qXlrUdXetYYVOLw4JNhmbjgXrVB7VI0kmMTU=
+
+Name: lib/dep/neko-htmlunit-2.25.jar
+SHA-256-Digest: tMPJFlG8lihGdQOTOAL5DrBjjyU0WMV9A5sMFYwAHyg=
+
+Name: README
+SHA-256-Digest: Lb0LoRWsxunBoWpcXT3i59SspYeiXtbYOv67NLJw/rY=
+
+Name: lib/dep/jna-4.1.0.jar
+SHA-256-Digest: GqN+nqa6oO4VLYlQn3WPCEfqxm7BeblVyv4JGeVAqS4=
+
+Name: lib/dep/serializer-2.7.2.jar
+SHA-256-Digest: 6PW0NA07EqDPpErC20vk4GOeR5roR98ExO2LUhc0u0o=
+

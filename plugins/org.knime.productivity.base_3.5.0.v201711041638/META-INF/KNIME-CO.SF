@@ -1,0 +1,36 @@
+Signature-Version: 1.0
+SHA-256-Digest-Manifest-Main-Attributes: WueI1AUAC0VYVt5S9Qkf9lFdvCd01
+ 0XJk4S6k25kX4Y=
+SHA-256-Digest-Manifest: 80DpXWyJBo7NtLtYUI9mPWN+OmHmaGG9iVrNAwdOxIc=
+Created-By: 1.8.0_131 (Oracle Corporation)
+
+Name: org/knime/productivity/base/callworkflow/IWorkflowBackend$Workfl
+ owState.class
+SHA-256-Digest: /9PG+D5M/5dpJtpdbxb2MMK+XhoZfBM68iUmVcBtBKw=
+
+Name: org/knime/productivity/base/callworkflow/JSONInputPanel.class
+SHA-256-Digest: Z/Q27gYLDzEzbK2xi8K2TdbCqm0drRw2bkRjkKYTV9g=
+
+Name: org/knime/productivity/base/callworkflow/CallWorkflowConfigurati
+ on.class
+SHA-256-Digest: sr5kkII3SjJE4woslzyN7DFrNyKWOE2UIGz19asBpzQ=
+
+Name: org/knime/productivity/base/callworkflow/IWorkflowBackend.class
+SHA-256-Digest: GngVafEqMgJ6Mh50s1T4Rce1i3deOXJj3GNSnW99Jwg=
+
+Name: org/knime/productivity/base/callworkflow/IWorkflowBackend$Report
+ GenerationException.class
+SHA-256-Digest: P95sL5Ht2lsAkk3hhkbsVU0x+rQx5gpc7cEY0/1oj70=
+
+Name: org/knime/productivity/base/callworkflow/CallWorkflowNodeModel$1
+ .class
+SHA-256-Digest: cJUHk3tJ256kfz1Yk4JE1cCIuU09Hu8shEdzlaGOskI=
+
+Name: org/knime/productivity/base/callworkflow/JSONInputPanel$Paramete
+ r.class
+SHA-256-Digest: jy3IH89+ERoCZJYFUiaCZmeSEEvnXq9Nwps6hFk3Plg=
+
+Name: org/knime/productivity/base/callworkflow/CallWorkflowNodeModel.c
+ lass
+SHA-256-Digest: nEGkaXDRJDDf680HUaHuSosUMYpDRv8OTwHrzRsfkt0=
+

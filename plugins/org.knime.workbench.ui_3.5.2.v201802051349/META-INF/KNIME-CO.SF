@@ -1,0 +1,132 @@
+Signature-Version: 1.0
+SHA-256-Digest-Manifest-Main-Attributes: MaYEWcdEstmBni4XetlW42Wl6rtIP
+ OEcS6Ec5lqAIU8=
+SHA-256-Digest-Manifest: AxOCtCGKHKGxYdvwIrwW9bp4JpmNjO+ggwRcv1DomxE=
+Created-By: 1.8.0_131 (Oracle Corporation)
+
+Name: icons/new_knime48.png
+SHA-256-Digest: KVHEi08Fl473T20V+eON2BPsG1M3BhBu5Cm+TPqmFtg=
+
+Name: schema/startupMessages.exsd
+SHA-256-Digest: kgv9wVBGvTZ7qznGURhcM/UrJdlaBKJeAto2cpDbv3w=
+
+Name: plugin.xml
+SHA-256-Digest: AjDpExMpxoOiceXYG5XeR4dmPD0RABqLglwgpRVEO3A=
+
+Name: icons/fav/expandall.png
+SHA-256-Digest: zXTZuoElpTZ78dskgzuYqwNJY8AmZdsJD8k0UGvE6Ng=
+
+Name: icons/fav/remove_fav_disabled.png
+SHA-256-Digest: gbQjOV2FyFsHe+FqUlwl3H+A7OKv+vLutFMhlNgkjjQ=
+
+Name: icons/node.png
+SHA-256-Digest: TwuJBhxKbX1Vg2jhmP1tVgfGq3pgFJ/I0Z8zMt2mRqg=
+
+Name: icons/fav/collapseall.png
+SHA-256-Digest: H0xxbgaEF+nhxc+mTFIhBeFgHOduy87B0toZtW80c9o=
+
+Name: icons/startupMessages.png
+SHA-256-Digest: uqThIVX0PzjSDn2FTPm4Pf05HyigPHnV2KvpdKOlKWc=
+
+Name: icons/knime_export.png
+SHA-256-Digest: rpex5Md454CZUY2QcJrMONjoeOxb5RsxtIewen5Pj1c=
+
+Name: icons/meta_info_edit.png
+SHA-256-Digest: R4OfCnw3r12u+9mAEvYUP1Jx1yP0kw0xU8kUAiw7ZVI=
+
+Name: icons/knime_import55.png
+SHA-256-Digest: Zi0MIaxpZ0uHDRd5kjYeaDzUM2tpq6jYhRcmSzVMeHA=
+
+Name: icons/prefs_export.png
+SHA-256-Digest: G5eZGwOQiprUEkv9o/cS+j1wszgp4wIwNiMql4r5JpM=
+
+Name: icons/wf_group_new.png
+SHA-256-Digest: WvQwyCjTUDmwMiGdlMO0KUM0K88cTy7T7lx4c+QJGOY=
+
+Name: icons/open_logfile.png
+SHA-256-Digest: zWs/XSh760kJLAyJE62oQiXnK0CmXc6FaDsI39vQZ4M=
+
+Name: icons/knime_default.png
+SHA-256-Digest: 2Xzmpuz14u3cFwGI8EEY9gFj6AjQAJOCDUZ3tXQ/l7Y=
+
+Name: icons/sync.png
+SHA-256-Digest: CEIxc1DpPsF+yS+HpFfA69v9h/ZD9UjwNt2huanFfzM=
+
+Name: icons/knime_unknown.png
+SHA-256-Digest: eIoJUcITsNJ0p8CqDeuJXLnOHG9/1XwVhh1KdDh78uw=
+
+Name: icons/fav/clear_history.png
+SHA-256-Digest: OSvnilAg+6RPkDxiW7E6ZixaMTPkp7ALj8jWJf/Expk=
+
+Name: icons/knime_unknown_red.png
+SHA-256-Digest: RcaYnKPSmjKoN/DyK85qjhscjdjUeS5+ry+rZRnXROE=
+
+Name: icons/project_executed.png
+SHA-256-Digest: BlOhvGkooFAG3acaHsOoIUtXaByEunA6tGicLdfkCXs=
+
+Name: icons/fav/remove_fav.png
+SHA-256-Digest: on98bwa/+Mws5L19A6ENqwRhaCsuXPxZlgXO2DLxKcw=
+
+Name: icons/new_knime16.png
+SHA-256-Digest: J+b4FF6sFLE3bHazx1oF/LV5ECn2sssLn6QOwT285Jg=
+
+Name: icons/project_basic.png
+SHA-256-Digest: mMVlMqEAtxGh/kmHcRwNbYfv+XMsa1jnniL2r5kHOfE=
+
+Name: icons/project_executing.png
+SHA-256-Digest: 0N33r45GXOmzIjJEmpdgVyNeloxQlJwcqL0JljkDCyE=
+
+Name: icons/wf_set.png
+SHA-256-Digest: 99ggkDdR5iHlHvTnGynBzrldnjp4q7kg9j/YHfpH5Mo=
+
+Name: icons/fav/fav_nodes.png
+SHA-256-Digest: 3CGsw6MwmLha5vNkbREgTzIMJc60Bg1efYCDez+C/PU=
+
+Name: icons/project_closed2.png
+SHA-256-Digest: hXOlgxQPd5lUCpSZ2CPF7wTVzwCsIOqB6jqABzwPOw4=
+
+Name: icons/workflow_projects.png
+SHA-256-Digest: wlbp57ReXfFkY+PFWT9X2KBxeZAVZkDuYSkg65QoZPA=
+
+Name: schema/multipleInstanceViews.exsd
+SHA-256-Digest: xZQaMm4sV3x+mDd8fDstN1t4rbvdzxfZJMGCOFVTArc=
+
+Name: icons/sample.gif
+SHA-256-Digest: nityhfdwDBvBTJAmLEfJHWWF9m4KlBIJ1DoECZjq87w=
+
+Name: icons/new_knime55.png
+SHA-256-Digest: bUDPwzo6hm4Wi8b3NmnlzzLYs7TmNkx9nMWHsqFTED0=
+
+Name: LICENSE.txt
+SHA-256-Digest: AINBnlxD6j1hoUJCdbqJDDXIUInSr72BED0xfnoxdrY=
+
+Name: icons/info.png
+SHA-256-Digest: aequPJ1qF2a/GEUnVD3XI2Kj/7HZ63Ewr7wpbm5WH9Y=
+
+Name: icons/knime_export55.png
+SHA-256-Digest: mzzQUa35DXHjW5y3kK49MWWR3F2cK9eIzVcXtITuWfU=
+
+Name: icons/prefs_import.png
+SHA-256-Digest: l3r24SzfQIcp8ZX+oJdmMTNeGhzBvscWCr4hIvXEU2A=
+
+Name: icons/project_configured.png
+SHA-256-Digest: u1DaZs9WGciUgYPWnKpteUGMsITyFcc6qlwGSZpc+ZU=
+
+Name: icons/error.png
+SHA-256-Digest: zS1ZJGMymAg5Aave/tPf4s5OrYnSWXOaf3Tc8Qp4ZJ8=
+
+Name: icons/knime_export16.png
+SHA-256-Digest: m4U5uN+MiggWkALh/EJrb0+pp+Hxa048A2VXh0c1rVI=
+
+Name: icons/knime_import.png
+SHA-256-Digest: 2AkeqHKCk0EVRf4kyJDwhfJmw1U1+BoSrurp4p7NXAI=
+
+Name: icons/warning.gif
+SHA-256-Digest: CAzdCVk+qszMXsyIhzdLltGvt0wxFeOXBikHSrSLhco=
+
+Name: icons/project_error.png
+SHA-256-Digest: aSPtWE1DNRy65X1kCVAtWv0AP4LpCJrF66qJfTMsanI=
+
+Name: workbench-ui.jar
+SHA-256-Digest: tocS1GLCDgejkv4QE9bygXG4xhGdY1yRIB5hwCg7Pxw=
+

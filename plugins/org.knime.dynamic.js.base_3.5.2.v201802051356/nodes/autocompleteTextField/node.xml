@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<js:knimeNode xmlns:js="http://knime.org/dynamicjsnode/v2.12" 
+		xmlns="http://knime.org/dynamicnode/v2.12"
+		xmlns:n="http://knime.org/node/v2.12"
+ 		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+ 		xsi:schemaLocation="http://knime.org/dynamicjsnode/v2.12 http://www.knime.org/node/dynamicJSNode_v2.12.xsd" 
+ 		jsNamespace="autocomplete_input" nodeID="autocompleteTextField" categoryPath="/flowcontrol/quickforms/input"
+ 		icon="../js.png" type="QuickForm">
+ 		
+ 	<name>Autocomplete Text Input</name>
+    <shortDescription>This node provides a view with an autocomplete text input component.</shortDescription>
+    <fullDescription>
+	    <intro>
+    	     The possible values are taken from a selected column in the input table.
+    	</intro>
+    	<options>
+    		<stringOption name="Label" id="label" label="Label" defaultValue="Label">
+    			A label for the textfield to display in the view.
+    		</stringOption>
+    		<stringOption name="Description" id="description" label="Description" defaultValue="Enter Description">
+    			A tooltip for the textfield to display in the view.
+    		</stringOption>
+    		<columnSelectorOption name="Autocomplete Column" id="autoSelect" inPortIndex="0" label="Column containing autocomplete options" filterClasses="org.knime.core.data.StringValue">
+    			Select the column that contains the autocomplete options.
+    		</columnSelectorOption>
+    		<checkBoxOption name="Restrict to options" id="restrict" label="Only accept value from options" defaultValue="false">
+    			Check if value has to be one of the given options. If not checked any string is accepted.
+    		</checkBoxOption>
+    		<stringOption name="Default Value" id="string_input" label="Default Value" optional="true" saveInView="true">
+    			An optional default value.
+    		</stringOption>
+    	</options>
+    </fullDescription>
+    <outputOptions>
+    	<flowVariableOutputOption variableName="Autocomplete string input" variableType="STRING" id="string_input" defaultFromOptions="string_input" />
+    </outputOptions>
+    <interactiveView name="Autocomplete Text Input">
+    	The view displaying a text input field with autocomplete functionality.
+    </interactiveView>
+    <ports>
+    	<inPort portType="Data" name="Autocomplete Options" index="0">
+    		Table containing a string column with the autocomplete options.
+    	</inPort>
+    	<outPort portType="FlowVariable" name="Entered String" index="0">
+    		Flow variable port which contains a new flow variable with the entered string.
+    	</outPort>
+    </ports>
+    <js:resources>
+		<js:resource type="js" path="autocomplete.js" />
+		<!-- <js:ressource type="css" path="sample.css" /> -->
+	</js:resources>
+	<js:dependencies>
+		<js:dependency name="QuickformUtils" path="KnimeQuickformUtils_1.0.0" type="local" />
+	</js:dependencies>
+</js:knimeNode>

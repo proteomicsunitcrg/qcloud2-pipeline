@@ -1,0 +1,17 @@
+body {
+  font: 10px sans-serif;
+}
+
+.group-tick line {
+  stroke: #000;
+}
+
+.ribbons {
+  fill-opacity: 0.67;
+}
+
+
+.group text {
+  font: 11px sans-serif;
+  pointer-events: none;
+}

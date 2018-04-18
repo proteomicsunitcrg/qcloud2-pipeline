@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?NLS TYPE="org.eclipse.help.toc"?><toc label="Variables" link_to="../org.knime.base/tocs/flowcontrol_variables.xml#flowcontrol_variables">
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/6e5ca9ab.CreateFilenameNodeFactory.html" label="Create File Name"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/53f4cbb.InjectVariablesNodeFactory.html" label="Inject Variables (Data)"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/41a054c7.InjectVariablesDBNodeFactory.html" label="Inject Variables (Database)"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/2c13bf75.ExtractVariablesNodeFactory.html" label="Extract Variables (Data)"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/6a6114f7.ExtractVariablesDBNodeFactory.html" label="Extract Variables (Database)"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/1a577bb7.TableColumnToVariableNodeFactory.html" label="Table Column to Variable"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/5e9605ad.TableToVariableNodeFactory.html" label="Table Row to Variable"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/25e3bb55.AppendVariableToTable2NodeFactory.html" label="Variable to Table Column"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/2a44692d.VariableToTable2NodeFactory.html" label="Variable to Table Row"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/1b1d31bd.MergeVariablesNodeFactory.html" label="Merge Variables"/>
+</toc>

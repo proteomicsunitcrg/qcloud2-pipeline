@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?NLS TYPE="org.eclipse.help.toc"?><toc label="PMML" link_to="../org.knime.base/tocs/manipulation_pmml.xml#manipulation_pmml">
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/50caab53.DataColumnSpecFilterPMMLNodeFactory.html" label="Column Filter (PMML)"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/6542ea11.NormalizerPMMLDeNodeFactory.html" label="Denormalizer (PMML)"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/3e450e7b.Many2OneCol2PMMLNodeFactory2.html" label="Many to One (PMML)"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/2c81dea0.NormalizerPMMLNodeFactory2.html" label="Normalizer (PMML)"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/5b34f490.NormalizerPMMLApplyNodeFactory.html" label="Normalizer Apply (PMML)"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/66a4235c.NumberToStringNodeFactory2.html" label="Number To String (PMML)"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/13d8637c.BinnerNodeFactory2.html" label="Numeric Binner (PMML)"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/65f46723.One2ManyCol2PMMLNodeFactory2.html" label="One to Many (PMML)"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/6914dca4.StringToNumberNodeFactory2.html" label="String To Number (PMML)"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/7f75f972.XML2PMMLNodeFactory.html" label="XML To PMML"/>
+</toc>

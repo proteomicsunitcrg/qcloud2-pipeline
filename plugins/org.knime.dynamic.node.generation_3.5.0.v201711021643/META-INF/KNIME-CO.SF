@@ -1,0 +1,27 @@
+Signature-Version: 1.0
+SHA-256-Digest-Manifest-Main-Attributes: KyTYqCZ4QLEtWmYDNKbpzy+5g5fxK
+ OEulTHjI0rqjvM=
+SHA-256-Digest-Manifest: xSGHA7lJ/4VM3iGVCI2xo8Dyx+Wfxj/znRo7Dn2hZFU=
+Created-By: 1.8.0_131 (Oracle Corporation)
+
+Name: plugin.xml
+SHA-256-Digest: T7bkDplnVV/etwUVaBWxkyRsnksPFnFc1sFDOBvaFTE=
+
+Name: schema/DynamicNode.exsd
+SHA-256-Digest: 7pleHZ3GFLjrenp5qBAkJHgBJczFY2PRspm7fx96T7I=
+
+Name: schema/DynamicNodeFunctions.exsd
+SHA-256-Digest: qaduHBwSmugwLb8TvXxyJx5XJlp+r+hy2U4+smHZZJ8=
+
+Name: lib/schemas.jar
+SHA-256-Digest: DaVqO8pl7ueAS3SHQGZkHtnA3AwtWk9U4n8i/S/bdjw=
+
+Name: knime-dynamic-node-generation.jar
+SHA-256-Digest: 9FDdL+IpqkYBGplnrQY/UbY/WRxYydfTVm/4myQy8Is=
+
+Name: dynamicNode_v2.12.xsd
+SHA-256-Digest: d10L5WvQM7afePZ4I2W1m3ibRmI+/DCbFoYF3TMAxyw=
+
+Name: dynamicNode_v3.0.xsd
+SHA-256-Digest: G0ytzooZZz5yekmiFiyFO0cnKBlr5ZNR6YbKJsDZWUY=
+

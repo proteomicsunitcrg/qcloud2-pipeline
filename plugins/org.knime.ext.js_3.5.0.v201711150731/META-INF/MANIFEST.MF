@@ -1,0 +1,809 @@
+Manifest-Version: 1.0
+Ant-Version: Apache Ant 1.9.6
+Bundle-SymbolicName: org.knime.ext.js;singleton:=true
+Bundle-Name: Additional JavaScript libraries and nodes
+Bundle-Version: 3.5.0.v201711150731
+Bundle-ClassPath: ext-js.jar
+Require-Bundle: org.knime.base;bundle-version="[3.0.0,4.0.0)",org.knim
+ e.js.core;bundle-version="[3.0.0,4.0.0)",org.knime.js.quickforms;bund
+ le-version="[3.0.0,4.0.0)",org.apache.commons.lang;bundle-version="[2
+ .6.0,3.0.0)",org.knime.ext.svg;bundle-version="[3.0.0,4.0.0)",org.ope
+ nqa.selenium;bundle-version="[3.0.0,4.0.0)",org.knime.ext.phantomjs;b
+ undle-version="[3.0.0,4.0.0)",com.fasterxml.jackson.core.jackson-anno
+ tations;bundle-version="[2.4.3,3.0.0)",com.fasterxml.jackson.core.jac
+ kson-core;bundle-version="[2.4.3,3.0.0)",com.fasterxml.jackson.core.j
+ ackson-databind;bundle-version="[2.4.3,3.0.0)"
+Bundle-ManifestVersion: 2
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-Vendor: KNIME AG, Zurich, Switzerland
+Created-By: 1.8.0_131-b11 (Oracle Corporation)
+
+Name: plugin.xml
+SHA-256-Digest: J7OJ3g2do2s/owGfWk62jG4pCjLcY4Yg+BDGGx1zm1c=
+
+Name: js-lib/ketcher/mol/charge_plus.mol
+SHA-256-Digest: VDYVX3Slmx2v/V7u6gqEJ3EegSqhXkrY1UNRmBJzLt4=
+
+Name: js-lib/ketcher/icons/png/template/template3.dropdown.png
+SHA-256-Digest: c6wsyB8pi3AVVKoa/T+g2ufyfrw0CsIgx9W0VdujnjM=
+
+Name: js-lib/ketcher/icons/png/customtemplate/customtemplate7.dropdown
+ .png
+SHA-256-Digest: KYFNNbxWO5FVj5LPCcTJttAWJ2xb9CvXE9Esw3TUzUU=
+
+Name: js-lib/ketcher/icons/mol/template0.mol
+SHA-256-Digest: /BP+o3EJ4Rp8HYQ9gx6hGn4EksE42rj0a1yVHglUjaI=
+
+Name: js-lib/ketcher/icons/svg/bond_doublearomatic.svg
+SHA-256-Digest: iTgbEcNaqUISiYNprV+mP4xnhXGudECsEmZMF1aK1wk=
+
+Name: js-lib/ketcher/mol/pattern/hexa1.mol
+SHA-256-Digest: s8tqtD17Lgt1iFkdhqgqYphbLmFjejwsTrkXXbawEQM=
+
+Name: js-lib/ketcher/icons/png/template/template10.sidebar.png
+SHA-256-Digest: kupTnmLVhZrBGdhdxgY8bMeyLbXB6v0jB/xGgGz8b0Y=
+
+Name: js-lib/ketcher/icons/png/main/charge_plus.png
+SHA-256-Digest: 3WAw5lx6SoKFrbGVcR11khNlmEEHbXtGKjoP84APfDQ=
+
+Name: js-lib/ketcher/util/common.js
+SHA-256-Digest: SjbW6FTD220tr9OwKlUQh8OFQtxJ+v7NJWQAqPJFUuE=
+
+Name: js-lib/ketcher/icons/png/template/template11.sidebar.png
+SHA-256-Digest: OhUIvFdb6clrKVaDcyUbJiBAsh4g+2W1c7lc5vX5Phk=
+
+Name: js-lib/ketcher/icons/png/main/edit-paste.png
+SHA-256-Digest: ytCu5Tn/c3uoO8DFK4smqd/t6o1TsGaY2Iid/aqRz6g=
+
+Name: js-lib/ketcher/icons/png/reaction/reaction-arrow.sidebar.png
+SHA-256-Digest: 66f+qK5MxpDxsD96nwPw9gmFm01SqCZqjvlUuJCk0+4=
+
+Name: js-lib/ketcher/server/src/memcpy.c
+SHA-256-Digest: RK80pztz2oEsJfDxFVGdD1cNKpG1zA+Vu5P8cIyEllQ=
+
+Name: js-lib/ketcher/chem/inchi.js
+SHA-256-Digest: BdEyRfuY+B6oO8r5zME2O44eS0Xxe4iN6blsrL7kTQU=
+
+Name: js-lib/ketcher/icons/svg/chain.svg
+SHA-256-Digest: UO1Vso0G/h99xPNyii23mt73PQ60vThAF66hmh9S9PM=
+
+Name: js-lib/ketcher/util/vec2.js
+SHA-256-Digest: Ua+ntRJGK8czxykSiW3foh8id+SeLgI+gyffjX7y6Ow=
+
+Name: js-lib/ketcher/server/java/war/src/main/java/com/ggasoftware/ket
+ cher/ContextListener.java
+SHA-256-Digest: XYQlNmbeXe1hW7JseJi7FSU0k8rAX7cWBXuUfoapFd8=
+
+Name: js-lib/ketcher/icons/png/transform/transform-flip-h.dropdown.png
+SHA-256-Digest: RJBb93zyQwf/ZjKzMv799kg/WWea9hPgulCE1a8UCWE=
+
+Name: js-lib/ketcher/icons/mol/template7.mol
+SHA-256-Digest: rhQ30wYFL7vwJO/YqtnAKPqfFa28vBrSaeRuv2KFycg=
+
+Name: js-lib/ketcher/ketcher.py
+SHA-256-Digest: ea7OQw4g5SuIeUGGL+lHC0hGZNA92bvovOAkr5C59Gw=
+
+Name: js-lib/ketcher/ui/actions.js
+SHA-256-Digest: NslWq5xJjr8WvxF5/gL0xcuQxANQn1d7zCT36OmJ6YY=
+
+Name: js-lib/ketcher/ui/ui.js
+SHA-256-Digest: hdEYcHeTUjjRB2oLhHxJYmCsYj4twEj7YkB8Pg8acLk=
+
+Name: js-lib/ketcher/util/pool.js
+SHA-256-Digest: CGOPRjXwREYOLLR9c8FJYbFObkHr48Z7Qp4rYjpRMow=
+
+Name: js-lib/ketcher/icons/png/bond/bond_any.dropdown.png
+SHA-256-Digest: mu2wqzjCx+hPcyMiJhQVCjlNxlSdmCqTH9TQraQcou0=
+
+Name: js-lib/ketcher/icons/mol/bond_up.mol
+SHA-256-Digest: 5iaOQO1yp73aoeripm/T3KWhU1FDu9v2rpfn9OIVjDI=
+
+Name: js-lib/ketcher/icons/mol/template4.mol
+SHA-256-Digest: svPqHhJ9ulQL2mb//0UPhT97v//+IR3m+L5cxMCPXN8=
+
+Name: js-lib/ketcher/icons/svg/bond_up.svg
+SHA-256-Digest: 1zjfgBAHd0aJu0jSODJ9yx+Ecz/UuMiTq6YL/lyeaOU=
+
+Name: js-lib/ketcher/icons/png/customtemplate/customtemplate6.dropdown
+ .png
+SHA-256-Digest: 0P77fEqyzeIqQiQj9bySp6dRSqn3pQdXxSnoz5s1I5I=
+
+Name: js-lib/ketcher/server/src/ketcher_server.h
+SHA-256-Digest: Gz13dYIcWjy6QxseoHnuM4k3JG4kwoTbgzp1zJ0BEso=
+
+Name: js-lib/ketcher/chem/stereocenters.js
+SHA-256-Digest: /kex3p9MfESDOQX+8pQYlz48D4mt00C6/CE/12GGjR0=
+
+Name: js-lib/ketcher/icons/png/reaction/reaction-automap.sidebar.png
+SHA-256-Digest: XkVMU4v5Tk+KPPgCAYs6MIe0HflvcqFfkPgW+jLurNA=
+
+Name: js-lib/ketcher/rnd/rgroup_table.js
+SHA-256-Digest: KTvRAsQIcnCm26IHBVqo0EYN9jsNlw1DYxT8E+yhTIc=
+
+Name: js-lib/ketcher/icons/png/rgroup/rgroup-label.dropdown.png
+SHA-256-Digest: z6wvgCq9s74fjCmZTtGQOd3jCsUVaOsufuulbfqdVRU=
+
+Name: js-lib/ketcher/icons/png/customtemplate/customtemplate0.dropdown
+ .png
+SHA-256-Digest: 8MRAOpTD/x/5zPJjQjR0VvJQj8uw/4EPTEHCwfId1MI=
+
+Name: js-lib/ketcher/icons/png/main/edit-clear.png
+SHA-256-Digest: CHkkcUPID6dTW0x43RubwrW4Wx6eQlIfsrphWA787zs=
+
+Name: js-lib/ketcher/icons/svg/template6.svg
+SHA-256-Digest: ETOi07xK+yqpznTMcrSME0qbvidMXlBA6q8KsAbPkPU=
+
+Name: js-lib/ketcher/icons/png/bond/bond_any.sidebar.png
+SHA-256-Digest: T9KMK7ZPr2A609WFy6TZijHO4Ssb3+/NWfZlvdN6eI8=
+
+Name: js-lib/ketcher/icons/svg/bond_crossed.svg
+SHA-256-Digest: Ck5vSLHKzkUJUJjhpG/dFSGfyDYlqdQ3yCtuEKC3GqE=
+
+Name: js-lib/ketcher/rnd/restruct.js
+SHA-256-Digest: 5vnvxKNQNYe2iYffeNMmzUhZG3J3FGmrAqLapnk4jeo=
+
+Name: js-lib/ketcher/icons/mol/bond_double.mol
+SHA-256-Digest: p7tJ21ggAOMR85R+bZqru3pj7KTcIfviQQOuU6QHaIY=
+
+Name: js-lib/ketcher/icons/svg/template2.svg
+SHA-256-Digest: xgjN96/RzbJfmteunrw+9GV2ywMPuxeKYiRPrBhyik0=
+
+Name: js-lib/ketcher/icons/mol/chain.mol
+SHA-256-Digest: gTZxIq2zB+nlxpFSTi6lyFKmiWIjN3fxdK2nSCvesIo=
+
+Name: js-lib/ketcher/icons/png/bond/bond_singlearomatic.sidebar.png
+SHA-256-Digest: Pu20U+Bmh0hPhPW8Wb1AG3wMEC0EhZju5cDU+1INaTQ=
+
+Name: js-lib/ketcher/render_sdf.sh
+SHA-256-Digest: aUTa20jQCq3LJVaOJ00RrX90c2kAfn0dZJdUQbTmqGo=
+
+Name: js-lib/ketcher/icons/mol/template10.mol
+SHA-256-Digest: 3dZ/Kk1VWeQgb7BD0P2AACeZu6+Fh4PL23io7alMcBk=
+
+Name: js-lib/ketcher/render_buttons.sh
+SHA-256-Digest: KWgZu0eDWlXNHCCRp+mWbsKiltcDk7zJPt6kmWp5p2I=
+
+Name: js-lib/ketcher/icons/png/main/logo.png
+SHA-256-Digest: DCkDwh89YEYwQm7j3xbc59AsnrgIMZjIlt88lV6BXig=
+
+Name: js-lib/ketcher/icons/logo_small01.jpg
+SHA-256-Digest: EoiWVrmUM/erdzexyGiHPGXLSAR6FFp8be+kNyuunzY=
+
+Name: js-lib/ketcher/icons/png/reaction/reaction-plus.dropdown.png
+SHA-256-Digest: o7X8mG1TF3TPIVYgP8TwDNy1xIMDfBnOsIsZ8qskvtM=
+
+Name: js-lib/ketcher/ketcher.html
+SHA-256-Digest: gi+G3oJ9ugh+toda0293VMW5+wxXXXANm4e44q0LdQA=
+
+Name: js-lib/ketcher/server/ketcher_server.explist
+SHA-256-Digest: Qg9i+UCPPQAR172xwKkjxyDlG+6zDWtI/R08+eBzSHg=
+
+Name: js-lib/ketcher/ketcher.css
+SHA-256-Digest: nl0VRMKgpxTIO3e8AoBPeZVO+Lx8OYpUNaUla/+7udI=
+
+Name: js-lib/ketcher/util/set.js
+SHA-256-Digest: sMfLelvcRJQtjcaqJW+W0+hcUVAp2+yr5OrYap2V3/I=
+
+Name: js-lib/ketcher/icons/png/template/template10.dropdown.png
+SHA-256-Digest: kupTnmLVhZrBGdhdxgY8bMeyLbXB6v0jB/xGgGz8b0Y=
+
+Name: js-lib/ketcher/icons/png/main/edit-cut.png
+SHA-256-Digest: q1LzTNqsqz06aTOLF/ng4FNJKfX6av7hFapV7m+BV3k=
+
+Name: js-lib/ketcher/loading.gif
+SHA-256-Digest: BgJlV8coLkS6KcEREzISv+EqAxuo4Ai/Sq07KVCnSGo=
+
+Name: js-lib/ketcher/prototype-min.js
+SHA-256-Digest: C/Var6TEVDEi6KJLscqnJD39nOQeR0xxLsIYPFg7GE0=
+
+Name: js-lib/ketcher/icons/png/template/template5.dropdown.png
+SHA-256-Digest: gGlusACY6BnpFpUutNjgCATK2frgVZo+3QWlLy+4zQQ=
+
+Name: js-lib/ketcher/mol/action/sgroup.mol
+SHA-256-Digest: zPbXydVM5M9ltwLL5/2F6t8/HWYNLf0Wu37UhiG/S64=
+
+Name: js-lib/ketcher/third_party/keymaster.js
+SHA-256-Digest: YLF0Hv1GaQ7Tp9yF7vl0F47vdmA+NR4Pey91B2nzgqE=
+
+Name: js-lib/ketcher/icons/svg/bond_triple.svg
+SHA-256-Digest: udiGUFChjuEZnt542GLVKqmcwFLyX82OQWJiCVFVOqw=
+
+Name: js-lib/ketcher/rnd/restruct_rendering.js
+SHA-256-Digest: NoW+JiEm/i5TqUX1isB48WFnaTbkByFuFrRKJKsILLA=
+
+Name: js-lib/ketcher/icons/mol/template8.mol
+SHA-256-Digest: fnmFlikWrjExmX6nzhz8sIkrZde0TTRNKzvYEQ3qs7M=
+
+Name: js-lib/ketcher/icons/png/template/template13.24.png
+SHA-256-Digest: Ihp/rNxxmu+EW9GkaLxTIruyb4tRz5YmAj5PWd6bIrs=
+
+Name: js-lib/ketcher/icons/png/template/template15.24.png
+SHA-256-Digest: qOIoTOi8PAnkWWh1IvF22Qz+2JCit2EZKJg2aFLzkSg=
+
+Name: js-lib/ketcher/chem/smiles.js
+SHA-256-Digest: FKRANtaRhYAuLrFhFeno8lD9+VAD/hmSDPghzD4kDwo=
+
+Name: js-lib/ketcher/mol/pattern/naphthalene.mol
+SHA-256-Digest: AKEtr3mI8ncDNgdk0iFArKJugoHR3AXJs+rlhXThAP8=
+
+Name: js-lib/ketcher/rnd/templates.js
+SHA-256-Digest: Vg/KhYbfhyb4YTHtVkfYrN2YZs3uGeUA9XCg/b8zXQI=
+
+Name: js-lib/ketcher/chem/dfs.js
+SHA-256-Digest: nZzZvpbAu0z85D7G9nYFq3rNY67pajMeEx3K/EHX/bE=
+
+Name: js-lib/ketcher/icons/mol/charge_plus.mol
+SHA-256-Digest: q/gHKpJsbt8lcr5zBKQ1P44SQkL5D1QiNppDvN181MA=
+
+Name: js-lib/ketcher/mol/updown.mol
+SHA-256-Digest: oQG1uZUV7dzGsLDRSSGA+Ch1o/y+G8tmJVseCX1uqmE=
+
+Name: js-lib/ketcher/icons/png/rgroup/rgroup-fragment.dropdown.png
+SHA-256-Digest: qHeEeSSuwWhwekt8V4igZXZvOnonKc8mfMZLk/tPST0=
+
+Name: js-lib/ketcher/icons/png/template/template8.sidebar.png
+SHA-256-Digest: Nq+0i8ORGuDvKr/P/ir7H08HLBy9PdjGtBsvpO2OFpo=
+
+Name: js-lib/ketcher/chem/sgroup.js
+SHA-256-Digest: 5yKUBe6OFRdx7+ei9Mc8h7xdR2T5DGkGu0AbLvGLBjU=
+
+Name: js-lib/ketcher/icons/png/selection/rectangle.sidebar.png
+SHA-256-Digest: cbfs+8kyIhmvGPbZ3tr3h7BjhsMXSt/nKRbgnjMyk6Y=
+
+Name: js-lib/ketcher/icons/png/template/template1.dropdown.png
+SHA-256-Digest: d02wsaa3agrralqFXKG9Vi9b67LaOfHa30GK3XlCcMU=
+
+Name: js-lib/ketcher/icons/png/template/template6.sidebar.png
+SHA-256-Digest: PUFNdHHqtmvIfWJYIZZu/7HiEbHxl87s0dm1lABFh7g=
+
+Name: js-lib/ketcher/icons/png/main/document-open.png
+SHA-256-Digest: vjylcBccW9E4yDtiMl0SxRxP2+iU2jjpnEpBm8sY5D0=
+
+Name: js-lib/ketcher/icons/mol/bond_updown.mol
+SHA-256-Digest: qdUAwajEoNxHFN1n4dXOCZn85LrQ/SLbyL22c3eSl3E=
+
+Name: js-lib/ketcher/mol/crossed.mol
+SHA-256-Digest: ewdIy3F7NSJ3jlv6XkPDD+zOzkr6cstc/Nr6Asp78HU=
+
+Name: js-lib/ketcher/icons/png/bond/bond_aromatic.sidebar.png
+SHA-256-Digest: poy705tSNVIt5Y9tNxJyDkapUoyLaFyZLwdBSoKPTUI=
+
+Name: js-lib/ketcher/mol/doublearomatic.mol
+SHA-256-Digest: FPSKVMl49Sdfuz3X/KQcZbhq1CM+JNmOtwSwPvMp3aU=
+
+Name: js-lib/ketcher/server/java/jar/src/main/java/com/ggasoftware/ket
+ cher/KetcherServer.java
+SHA-256-Digest: rqLtQnZ3ft1WlIX1BGnn9sPy2aTXoCm0sSWNpyQTu8s=
+
+Name: js-lib/ketcher/icons/png/selection/lasso.sidebar.png
+SHA-256-Digest: FQW/8PyE0p8tfH6EKuQXIzHP+uRisLLEt/TfGwnPGzI=
+
+Name: js-lib/ketcher/mol/pattern/hexaa.mol
+SHA-256-Digest: H/XwHCXKqZoARNM0D9JaU96CPKMphSAGigaR5xFQdsU=
+
+Name: js-lib/ketcher/mol/up.mol
+SHA-256-Digest: toXZkUNCwH0ar7Hz6QDtSt85lFqHZtzo/uGElEPb5LM=
+
+Name: js-lib/ketcher/icons/png/bond/bond_aromatic.dropdown.png
+SHA-256-Digest: TtY6n7gtxz6EY3dM78tc/vGiXAmzipBG77WAelMcKqs=
+
+Name: js-lib/ketcher/mol/charge_minus.mol
+SHA-256-Digest: XvzZ4wSD9fcsV9fYAuelJbB+JdkmLR2Pmn5HnEOlj3c=
+
+Name: js-lib/ketcher/icons/png/main/arrow.png
+SHA-256-Digest: F32USxEH8A525f2bQRC+Q6nyd0TiNuG4JBcTrzTENbY=
+
+Name: js-lib/ketcher/server/java/war/src/main/webapp/WEB-INF/conf/log4
+ j.xml
+SHA-256-Digest: abVXK+9/FEP3kiCsUYF2BzwF85eoRlBH7fHYdnRbPkc=
+
+Name: js-lib/ketcher/icons/png/main/view-zoom-in.png
+SHA-256-Digest: IBuiSmp9p9F3+V0bjtV8QCfz2F79qV6uZHVB7s0dKFY=
+
+Name: js-lib/ketcher/icons/svg/template0.svg
+SHA-256-Digest: qyVHAFX7SRMy+D0Ocan7YRCV5IekBemjnTPhhN+NcO8=
+
+Name: js-lib/ketcher/icons/png/template/template4.dropdown.png
+SHA-256-Digest: rOWux3IkITw4lLtKticfCxkmbAlJ2USwDpayCB00KiU=
+
+Name: js-lib/ketcher/icons/png/bond/bond_updown.sidebar.png
+SHA-256-Digest: evPnVKFJ+tbWkjuNCKnHcjyaZlPEngyGCfZIjtQESSQ=
+
+Name: js-lib/ketcher/icons/png/template/template8.dropdown.png
+SHA-256-Digest: Nq+0i8ORGuDvKr/P/ir7H08HLBy9PdjGtBsvpO2OFpo=
+
+Name: js-lib/ketcher/icons/svg/template5.svg
+SHA-256-Digest: 97KHZL+jpjej9/s8/flqafvqT70PQtR1ozkKv8SJA3Y=
+
+Name: js-lib/ketcher/icons/png/rgroup/rgroup-fragment.sidebar.png
+SHA-256-Digest: q0ej3moUjt2lO+8DXN3jX5CFIYk0e60IIFh3geMYzQg=
+
+Name: js-lib/ketcher/icons/png/rgroup/rgroup-attpoints.dropdown.png
+SHA-256-Digest: p/YhoauoUfCE7SMmWZ4UGC5yIv0j92bw7PAH8G/cfv0=
+
+Name: js-lib/ketcher/rnd/editor.js
+SHA-256-Digest: Fq5O+Ji4xU7c5x3mVSw2KETdLpLEgBwNj4p2lMl9YYw=
+
+Name: js-lib/ketcher/server/java/jar/src/test/java/com/ggasoftware/ket
+ cher/KetcherServerTest.java
+SHA-256-Digest: Nc9eQcUgUUAZdbJ7LvTB/j9pWVSbp2eIY4bB5gs3Tb0=
+
+Name: js-lib/ketcher/icons/png/template/template15.png
+SHA-256-Digest: qOIoTOi8PAnkWWh1IvF22Qz+2JCit2EZKJg2aFLzkSg=
+
+Name: js-lib/ketcher/icons/png/bond/bond_double.dropdown.png
+SHA-256-Digest: NsevRcNs9VHWxjYWthjTUEXWLtEvDFBJEiCZGxJzJs8=
+
+Name: js-lib/ketcher/icons/png/template/template0.dropdown.png
+SHA-256-Digest: 4pswohYE3C4OO1cUdA17FLq9MqQr/LIAUwrN3tFi7+w=
+
+Name: js-lib/ketcher/server/java/war/pom.xml
+SHA-256-Digest: d57w/fmASbczi4O0Po0G5T6hQy3GTT/ho6hlFM0K3Uc=
+
+Name: js-lib/ketcher/icons/mol/bond_down.mol
+SHA-256-Digest: H5BqfA/ZzaiZ9WJxnAHs+MnyRHcU+FSNhR5Tzgn9Utc=
+
+Name: js-lib/ketcher/icons/png/template/template4.sidebar.png
+SHA-256-Digest: rOWux3IkITw4lLtKticfCxkmbAlJ2USwDpayCB00KiU=
+
+Name: js-lib/ketcher/icons/png/main/dearom.png
+SHA-256-Digest: lwA30F26TWdP4oCD1TaEIcRJuXmRmwGyu4NmEgkvFww=
+
+Name: js-lib/ketcher/icons/mol/bond_doublearomatic.mol
+SHA-256-Digest: OPc73QVbwKthrL1HiJfBgmtXGYmAu76YtfIrs29ors0=
+
+Name: js-lib/ketcher/icons/png/rgroup/rgroup-attpoints.sidebar.png
+SHA-256-Digest: mM2JpjnKmV7cfAvI2Vh6UtC9uz1f/poCCTmuWgZ03Ac=
+
+Name: js-lib/ketcher/icons/png/template/template2.sidebar.png
+SHA-256-Digest: 9cR3eyE+Pvz9SKX9GSQV7jkJUpoydkyhTl58aIcRCd4=
+
+Name: js-lib/ketcher/icons/mol/charge_minus.mol
+SHA-256-Digest: Dajzo/mQ+DYjMWiQ0GfTzo1fdzvYIw+D91vr1V1Z3yg=
+
+Name: js-lib/ketcher/icons/png/bond/bond_singledouble.dropdown.png
+SHA-256-Digest: 6HQneBbCW1Pq5xibfuFyLLoCePnQJm+zaOm1EAl4Sso=
+
+Name: js-lib/ketcher/icons/svg/bond_single.svg
+SHA-256-Digest: /uM7QvC2kozNaNVFGnksrIaK0QOyWFJUid1raRnanxA=
+
+Name: js-lib/ketcher/icons/mol/template3.mol
+SHA-256-Digest: zgm+fCxVCgibEW5dDKgajUv+k0apPql4MxmuAP61DwI=
+
+Name: js-lib/ketcher/chem/cis_trans.js
+SHA-256-Digest: ADa1iPt8MFKA+MIzhVUNAe7zhdJNX4qTqmUYwDDdNUI=
+
+Name: js-lib/ketcher/icons/png/template/template0.sidebar.png
+SHA-256-Digest: 4pswohYE3C4OO1cUdA17FLq9MqQr/LIAUwrN3tFi7+w=
+
+Name: js-lib/ketcher/icons/mol/bond_aromatic.mol
+SHA-256-Digest: sCPdUQjE0uePu6KQwq4KHXt1m4sQkEZVGLiVgneA/dg=
+
+Name: js-lib/ketcher/icons/png/bond/bond_single.sidebar.png
+SHA-256-Digest: cj8uFHcm5D0ostxgNy6QJSg2dAglMd3iXQFpfx+b2pA=
+
+Name: js-lib/ketcher/icons/png/customtemplate/customtemplate5.sidebar.
+ png
+SHA-256-Digest: eZdDzPXjYmiJFnczPsuwLaBTHTSHlp8i+69tVCNI7qA=
+
+Name: js-lib/ketcher/icons/png/customtemplate/customtemplate4.sidebar.
+ png
+SHA-256-Digest: IEP+vnB8l3a34/3Xd3yKeOi24pB4VCpOEY74Vn3nGd4=
+
+Name: js-lib/ketcher/icons/png/customtemplate/customtemplate6.sidebar.
+ png
+SHA-256-Digest: ypD/DCCYkDyGJSP8khTxW4pfGqFglN3RaLn2QM8G9l8=
+
+Name: js-lib/ketcher/icons/png/template/template7.dropdown.png
+SHA-256-Digest: Gwp7ctCvIBzikk7YkdrHgXCafv+CkrY8THjYs5bibpA=
+
+Name: js-lib/ketcher/icons/mol/template9.mol
+SHA-256-Digest: ZjERA7nkBGH8q9ZpmLkmfAJ0HMgEqJP6DRuKwbH6Z2c=
+
+Name: js-lib/ketcher/icons/png/bond/bond_down.sidebar.png
+SHA-256-Digest: WZ8mEdZaBfDaIFG5b8iujueT+r/wfcOqlI+LpqeiBhQ=
+
+Name: js-lib/ketcher/mol/action/layout.mol
+SHA-256-Digest: zGJh/i0tpBjPX/rVz/3A253nZqPCDYxS+HB/IP83/hc=
+
+Name: js-lib/ketcher/icons/png/reaction/reaction-unmap.dropdown.png
+SHA-256-Digest: qSUeJUun8ISimXWY3gQMb7dG02IFjE0qMSqFyw1tfcg=
+
+Name: js-lib/ketcher/icons/png/customtemplate/customtemplate2.sidebar.
+ png
+SHA-256-Digest: 6mjuDehMwW+ZYji1odgkDawzFpSGhkYQB622usbQ4bg=
+
+Name: js-lib/ketcher/icons/png/customtemplate/customtemplate3.sidebar.
+ png
+SHA-256-Digest: C3ecDer7tZ1DOoJFfKF5+9fkYfsDcBdlMPaEmbrxKho=
+
+Name: js-lib/ketcher/reaxys/reaxys.js
+SHA-256-Digest: xmRKUl7UWIvK1Mx56neHU7K/c7Phdqc9TI36j2Kjei0=
+
+Name: js-lib/ketcher/icons/png/bond/bond_doublearomatic.dropdown.png
+SHA-256-Digest: z3km4CKmsJcV1mLMKvexy+cJ9pBwN4pE6Mk6NEc+R2s=
+
+Name: js-lib/ketcher/icons/png/customtemplate/customtemplate1.sidebar.
+ png
+SHA-256-Digest: XC0xVaS01bbDB/GdUEBNrfybzYo+s52mZ/CbcQEYpHU=
+
+Name: js-lib/ketcher/icons/png/customtemplate/customtemplate3.dropdown
+ .png
+SHA-256-Digest: 1HPakrWk6DQN0cNwdJ/Xs6zUL8Zg0UhDCSOCKyiIpME=
+
+Name: js-lib/ketcher/icons/png/bond/bond_down.dropdown.png
+SHA-256-Digest: 1+yAQ4jtUpQbGJULSrnv2UfdZ1rhZ8KaPX9TTau3BFM=
+
+Name: js-lib/ketcher/icons/png/customtemplate/customtemplate0.sidebar.
+ png
+SHA-256-Digest: U3kJdhNtm0aQX/J6dd5ccjbBrTo+zW0QVYlAvJrtk7E=
+
+Name: js-lib/ketcher/server/CMakeLists.txt
+SHA-256-Digest: 55JDOS3bL47+b6Nrvb+CCbcdxHMr3YBRMCVNawBk4v0=
+
+Name: js-lib/ketcher/server/test/ks_test.cpp
+SHA-256-Digest: wZ838lXmc1p0VOP2lcMdaHyAmyXRdqnt1t67aVLgU2o=
+
+Name: js-lib/ketcher/LICENSE.GPL
+SHA-256-Digest: P573aqwywvjXCc+Dnptkra6uPVTL2tjKlYIsP6JKSS0=
+
+Name: js-lib/ketcher/mol/singledouble.mol
+SHA-256-Digest: hRXX/qRobJ5vrwK4zqlTucFCsclh+6+Hf3XD/zprPFk=
+
+Name: js-lib/ketcher/server/java/war/src/test/java/com/ggasoftware/ket
+ cher/KetcherServerMappingTest.java
+SHA-256-Digest: lUIsqdv4e6vn+SiUG1B+h/3pdlH/cLUh26JNFqJZZhk=
+
+Name: js-lib/ketcher/icons/png/bond/bond_up.dropdown.png
+SHA-256-Digest: Av4vzOY5jJ2cRntF4dP+UpDy/yL5OIp5jCaIJD8wb5s=
+
+Name: js-lib/ketcher/icons/png/selection/structure.sidebar.png
+SHA-256-Digest: t3jE+KYKdikrfvNNS8J3Bu0rltot7Ky/yrzVWxYlM7Q=
+
+Name: js-lib/ketcher/icons/svg/template1.svg
+SHA-256-Digest: Yj4QiGWBSmrAxrCT25eLrDy6Y3HjO1SmLdR4VOU6xjY=
+
+Name: js-lib/ketcher/icons/svg/charge_minus.svg
+SHA-256-Digest: JsC0w4Upr8ckMrjmng2t8MhpZ6J0UUfu+2X/Grd2Muc=
+
+Name: js-lib/ketcher/icons/png/reaction/reaction-automap.dropdown.png
+SHA-256-Digest: JaBcpPoxGdbhvyiFlAYHShL0az/ZomFmrJNk7AnBTnU=
+
+Name: js-lib/ketcher/icons/png/main/arom.png
+SHA-256-Digest: lKtLlcE6V9eZg7BKEqCiR1+7RkeSDZE58Octscq8DTQ=
+
+Name: js-lib/ketcher/third_party/prototype.js
+SHA-256-Digest: SKT9UUZqxV0IH/kyNxAhsyjxGPdO5rqTwOyP0WPjSjA=
+
+Name: js-lib/ketcher/icons/png/transform/transform-rotate.sidebar.png
+SHA-256-Digest: 2U9Ymxdm+uhq6ezwL9vbyOkVfi9sfjcb73KZXA4c4wU=
+
+Name: js-lib/ketcher/server/java/jar/pom.xml
+SHA-256-Digest: 4QOhvwSTOicZHP8B4pGuZ/3h7OyyPOBx+VgqPYFgaSc=
+
+Name: js-lib/ketcher/icons/png/selection/lasso.dropdown.png
+SHA-256-Digest: GCF1n8DDl5fHCdq6TjVCfaQn5MOODCA8SKRaSMCttlU=
+
+Name: js-lib/ketcher/util/map.js
+SHA-256-Digest: GsdxU/yzN06i7cg95fAbW99hp/XaHaNX6ndibJVH6yw=
+
+Name: js-lib/ketcher/icons/mol/bond_singledouble.mol
+SHA-256-Digest: r5RuG65RnRb1KUU5k7uLTSZdR6LlKXViGd3i8yAXjZU=
+
+Name: js-lib/ketcher/icons/png/selection/structure.dropdown.png
+SHA-256-Digest: sYIW7jO84Lm3MtNMu4vZZNs5NhZ94KX2HhhhCJM9GTU=
+
+Name: js-lib/ketcher/icons/svg/template4.svg
+SHA-256-Digest: hol91jytupobWLdCJaD9LubsSa7FkMaQYQ9j0umG5p8=
+
+Name: js-lib/ketcher/server/src/gcc_preinclude.h
+SHA-256-Digest: mCM1B/J3Km3QcyXl4KUbGBnAqZImhgSfZuGXHa+Dk0Q=
+
+Name: js-lib/ketcher/icons/png/template/template14.png
+SHA-256-Digest: gfVsF9NgwwIvo9Eu0XK1nUhmYC/OcnpBZNElLPgyC+M=
+
+Name: js-lib/ketcher/server/ketcher_server.so.map
+SHA-256-Digest: XN2Jp9t3TpeoO0sbPH3lEmlwMlmdsYHdzdWrGQjKqZ4=
+
+Name: js-lib/ketcher/icons/png/main/charge_minus.png
+SHA-256-Digest: ZoGmCL3cGNJkb11qacGo3uWnAjsz1PJbJh6LOR4KNu8=
+
+Name: js-lib/ketcher/icons/png/main/sgroup.png
+SHA-256-Digest: KQufFopVSyeiNkbVlfz/FuWXxYXIMPJXDZLNvDb1ym4=
+
+Name: js-lib/ketcher/layout_patterns.sh
+SHA-256-Digest: sAV9PzfhfvJSEZdxIYAT9aywrdBSzc8Khzy7/+CKzNY=
+
+Name: js-lib/ketcher/icons/png/reaction/reaction-unmap.sidebar.png
+SHA-256-Digest: owz6EKuxEm8P3Ywrmn4Lvzmt9TgiCVrChtl9nFd3Gxg=
+
+Name: js-lib/ketcher/chem/molfile.js
+SHA-256-Digest: GUG3iuPDwqKuNerK9iG+5IWCIUX1feXwnSfHERWPLM0=
+
+Name: js-lib/ketcher/icons/png/main/layout.png
+SHA-256-Digest: b/vUt4advfZ2ST15s2eAcre83nHc1jpcgm4v9lkBezo=
+
+Name: js-lib/ketcher/demo.html
+SHA-256-Digest: uMCSHo7s0towH7xKQdx/zB5ZL0J9NsSp0E34fI8HHbU=
+
+Name: js-lib/ketcher/icons/png/reaction/reaction-map.sidebar.png
+SHA-256-Digest: scO8C5CZ6vnecGcF1zdkEI0Yt42SeouD9Owa6GhMwjM=
+
+Name: js-lib/ketcher/icons/png/main/view-zoom-out.png
+SHA-256-Digest: JtWKip3ZsKemgw+taqLSontY8WZCCRQaAxrV2Y+H/4c=
+
+Name: js-lib/ketcher/icons/png/customtemplate/customtemplate4.dropdown
+ .png
+SHA-256-Digest: zNZX0YTH9o83UtYYvVLFwyTXRXP0R/0DoLf3PXochIg=
+
+Name: js-lib/ketcher/icons/mol/bond_single.mol
+SHA-256-Digest: L7KQTW2vWMIEWkm04HvM2Py/itJiPJQl7JUWbZ3aynU=
+
+Name: js-lib/ketcher/icons/png/customtemplate/customtemplate2.dropdown
+ .png
+SHA-256-Digest: yZfebHT9DEWVzqIiBjnaHSmAUx55XoqGOMISHCsHqOQ=
+
+Name: js-lib/ketcher/render_templates.sh
+SHA-256-Digest: WzQxVNMxY3jwlCMh08Z6JODM1vojqokIaQL++0QqC9I=
+
+Name: js-lib/ketcher/chem/element.js
+SHA-256-Digest: K84wKWT7NlnfkH4uUEvAGFwe9+josyfyCctF5YAAwk4=
+
+Name: js-src/org/knime/ext/js/node/quickform/input/molecule/MoleculeSt
+ ringInput.js
+SHA-256-Digest: Hwy5ntXo1qdbVjUnxSPmrDbkjANqb1EZd/1eS32yo/k=
+
+Name: js-lib/ketcher/icons/png/transform/transform-rotate.dropdown.png
+SHA-256-Digest: EtIdCnZUXqUKjLgFKh5gwWOuCHgLoKc7fiQk8C3HbmU=
+
+Name: js-lib/ketcher/icons/png/rgroup/rgroup-label.sidebar.png
+SHA-256-Digest: Pym3+xCCKqUuLWyGmUtslCvHNMSN89sw3CgAyr6qH8g=
+
+Name: js-lib/ketcher/icons/png/bond/bond_single.dropdown.png
+SHA-256-Digest: W8jN3AlcDbhi2PowuAU8g3qFmh7PbLnAh0rh4BzCBfw=
+
+Name: js-lib/ketcher/icons/mol/bond_crossed.mol
+SHA-256-Digest: 4jPgYST2hYdk1gkj/rG00KbKSNfXTgwVN8yjggGBb/A=
+
+Name: js-lib/ketcher/server/java/war/src/main/webapp/WEB-INF/web.xml
+SHA-256-Digest: 3OevsIN5aMtr6R6Jk1AdkZ0hB85UlLJXzliyqDcNvFM=
+
+Name: js-lib/ketcher/icons/mol/template2.mol
+SHA-256-Digest: XzW5yxXPkkjUsakjFKxMtc2R/VjxdueznF3on6P0Cfo=
+
+Name: js-lib/ketcher/icons/png/bond/bond_triple.sidebar.png
+SHA-256-Digest: QpRWt2xxK9Px3FTNJQnSbaT4FYEiRnPeh/MTSsMdZhE=
+
+Name: js-lib/ketcher/favicon.ico
+SHA-256-Digest: 6jLhhT0v/tHRK4z9+aKtuICYU4OHGO7WxSD/vvC+ixU=
+
+Name: js-lib/ketcher/icons/png/template/template9.dropdown.png
+SHA-256-Digest: Kk6o6Eqf4k/jNcbK4n4UqbmE+5jfIarb/zTvjPU3h7k=
+
+Name: js-lib/ketcher/icons/png/customtemplate/customtemplate7.sidebar.
+ png
+SHA-256-Digest: 58PQjR09WKZ+vLOC6h9XEA3lJ/vROaQaeXm+PqF1uw0=
+
+Name: js-lib/ketcher/icons/svg/bond_singlearomatic.svg
+SHA-256-Digest: 8Xy6JSPrq98EFj3XdZBpQg06vdqG9i2iXbjf2i22ztI=
+
+Name: js-lib/ketcher/icons/mol/bond_any.mol
+SHA-256-Digest: kFH4bQmu6ZmZxBykOnA2yDfPtcO8u+9Vpth9uflx8Dg=
+
+Name: js-lib/ketcher/chem/struct_valence.js
+SHA-256-Digest: a9z7OG8Q5xFqYRLKOxRIfIPhNbD1v4MhqY6yEts9gUE=
+
+Name: js-lib/ketcher/ketcher.js
+SHA-256-Digest: FI8WoZ8NVSaaqsC3gilgSGoMQuiIVHHuXgp10pUfXlk=
+
+Name: js-lib/ketcher/raphael.js
+SHA-256-Digest: PkN3OqAcUSNbPTX80XuWSWemLIPFg9pBGGQC9fvMqJw=
+
+Name: js-lib/ketcher/base64.js
+SHA-256-Digest: 0TKEx7gbCR0PBefZ3+zyLh0sDkt8+q9quItMnFvywhE=
+
+Name: js-lib/ketcher/icons/png/main/document-save-as.png
+SHA-256-Digest: +rbRGlGR8IPpFk2MeCXtnhp9/D1tBRELN7cXcDGvw8s=
+
+Name: js-lib/ketcher/icons/png/customtemplate/customtemplate5.dropdown
+ .png
+SHA-256-Digest: tsKO704/bXsxeZc6txGxp6sohm5sdqy3uCia/GO88ik=
+
+Name: js-lib/ketcher/mol/pattern/hexa2.mol
+SHA-256-Digest: /5M94/rI6q/FiQCxhhGo90pQ+NSffkrFhv8FcA9GD2U=
+
+Name: js-lib/ketcher/rnd/render.js
+SHA-256-Digest: gc6nDZ3YK5lIqjpE0ewJm8Js/jG8Ir1M65ktFZcrntE=
+
+Name: js-lib/ketcher/icons/png/template/template12.24.png
+SHA-256-Digest: /IkH/V4DVt0oyaqbLJx7GOtppYe6FiZeEps+XLhdk0M=
+
+Name: js-lib/ketcher/icons/png/template/template14.24.png
+SHA-256-Digest: gfVsF9NgwwIvo9Eu0XK1nUhmYC/OcnpBZNElLPgyC+M=
+
+Name: js-lib/ketcher/icons/png/bond/bond_crossed.dropdown.png
+SHA-256-Digest: IvEkwKpuk5k747w4VT0cWJb0ZhzGDDcB+PAKUqQip/k=
+
+Name: js-lib/ketcher/rnd/elem_table.js
+SHA-256-Digest: Ic1hYKEKGDtp3NNApDXFkcXBEya5um14G1UdODDiuOo=
+
+Name: js-lib/ketcher/icons/png/reaction/reaction-map.dropdown.png
+SHA-256-Digest: gL/8fypk8AEBjFCvDU1gZ1dVr48RWFid5qxtYHg2h3A=
+
+Name: js-lib/ketcher/icons/png/customtemplate/customtemplate1.dropdown
+ .png
+SHA-256-Digest: gsrcm9N0ExWBybCPMdCHvEEPgu809J6aZS3Z9ro0oKg=
+
+Name: js-lib/ketcher/templates.sdf
+SHA-256-Digest: qy+aazoRNHofNVQlYeRAf0gTq8Hjo68BtvlHkx/Nj48=
+
+Name: js-lib/ketcher/icons/png/template/template9.sidebar.png
+SHA-256-Digest: Kk6o6Eqf4k/jNcbK4n4UqbmE+5jfIarb/zTvjPU3h7k=
+
+Name: js-lib/ketcher/icons/png/bond/bond_triple.dropdown.png
+SHA-256-Digest: Q3EEgJXjraYo4emA3cjo5JsyFKL4ewi7qwxfHi0lKyI=
+
+Name: js-lib/ketcher/icons/mol/bond_triple.mol
+SHA-256-Digest: QwAtINk+xn+TMfIOYBQ5bLEQnxjZHONQYIkEzS+LwvM=
+
+Name: js-lib/ketcher/icons/png/bond/bond_singlearomatic.dropdown.png
+SHA-256-Digest: qzfVG7GrOoq5ht4ygqHm0v97Alo3aX7zJji61mUj8zE=
+
+Name: js-lib/ketcher/icons/png/template/template7.sidebar.png
+SHA-256-Digest: Gwp7ctCvIBzikk7YkdrHgXCafv+CkrY8THjYs5bibpA=
+
+Name: js-lib/ketcher/server/java/war/src/main/java/com/ggasoftware/ket
+ cher/KetcherServerMapping.java
+SHA-256-Digest: OUDknl3TOf88btw0+xuFP5Tte+jPpaw+/LOAh1upcPk=
+
+Name: js-lib/ketcher/icons/png/bond/bond_singledouble.sidebar.png
+SHA-256-Digest: V8V/0s//brD2dSoZQBvMIflaknehNH7ea5swem1WdE8=
+
+Name: js-lib/ketcher/icons/svg/bond_aromatic.svg
+SHA-256-Digest: HBPAJuG0UwXVPufDOvLmgZz7qXsGs5lBihFsaZ1VKzw=
+
+Name: js-lib/ketcher/icons/svg/charge_plus.svg
+SHA-256-Digest: PDhWWvurqa9MG5UCJj67EWMxDUhdVuAf5RtWwSYLXWs=
+
+Name: js-lib/ketcher/icons/mol/template6.mol
+SHA-256-Digest: nSxTm0DWVQR47G3sD9Aj2bqBhobs+2+WFeBiM1huu/Q=
+
+Name: js-lib/ketcher/icons/svg/template7.svg
+SHA-256-Digest: gBEDOMwQw/QksXMAdkUSgY0SkKH6t4do3Adj+sTUet4=
+
+Name: js-lib/ketcher/chem/struct.js
+SHA-256-Digest: zrLfaHK4lnvj+Ivt7dDqhOcUxqeAzUliUCVWYx4KPyk=
+
+Name: js-lib/ketcher/icons/png/main/dropdown.png
+SHA-256-Digest: vvN07jDfUsP4X8Iz+tpzPLncy7N6wVmZSJSGFxFPwiE=
+
+Name: js-lib/ketcher/icons/png/main/edit-undo.png
+SHA-256-Digest: VpHLKdipQyeIS+CT3WyA/Ko7AFxa+3iEA9LF1JVwuJ0=
+
+Name: js-lib/ketcher/icons/png/transform/transform-flip-h.sidebar.png
+SHA-256-Digest: L2ecXWU7hzLJX12q4aNIJp+7hEdpiSqucJZdZF8RQlk=
+
+Name: js-lib/ketcher/icons/png/reaction/reaction-plus.sidebar.png
+SHA-256-Digest: 2XYvZ/nuBRiVp1M/tZ2nsOajUYdxE+IniOZVLn+d0TM=
+
+Name: js-lib/ketcher/icons/png/main/edit-redo.png
+SHA-256-Digest: 8Wy/7grvtXzBGmdu1SY8M2WlWuqVlWJP2As8anNi9xY=
+
+Name: js-lib/ketcher/icons/png/bond/bond_up.sidebar.png
+SHA-256-Digest: Ed7VhUj8ctzcX0bc/8qrt1bcHYmNUn2xnr1K4suRmTY=
+
+Name: js-lib/ketcher/icons/png/bond/bond_updown.dropdown.png
+SHA-256-Digest: 4HAqpOtX18r95CoG38PLqqVFMWY7hMvsAalfTBra1H4=
+
+Name: js-lib/ketcher/rnd/visel.js
+SHA-256-Digest: TiMukNgvUsNFT9P2tbruhCMoGCEVNTwn0a2/Z5rPUJQ=
+
+Name: js-lib/ketcher/icons/png/main/chain.png
+SHA-256-Digest: +t+TQtCnA86L8E7IbsLOcsX8G1rzL0MmhFn5anIfibQ=
+
+Name: js-lib/ketcher/icons/png/template/template13.png
+SHA-256-Digest: Ihp/rNxxmu+EW9GkaLxTIruyb4tRz5YmAj5PWd6bIrs=
+
+Name: js-lib/ketcher/server/ketcher-server-release.py
+SHA-256-Digest: 07qqpFj20JvsPIfxIiJ/Qg0thB1Ij6BzDZEUOEijCrU=
+
+Name: js-lib/ketcher/icons/png/bond/bond_double.sidebar.png
+SHA-256-Digest: bcQ01BlEtZpr5P/mgHw6w3vjiZ+x+89JdgtX75SmRgI=
+
+Name: js-lib/ketcher/icons/png/template/template6.dropdown.png
+SHA-256-Digest: PUFNdHHqtmvIfWJYIZZu/7HiEbHxl87s0dm1lABFh7g=
+
+Name: js-lib/ketcher/mol/singlearomatic.mol
+SHA-256-Digest: nagXWLKC9OY/hQE9v2FQyvN0ErT5exqzTmQANgHf4BM=
+
+Name: js-lib/ketcher/icons/mol/bond_singlearomatic.mol
+SHA-256-Digest: 7D80K7J4MKyEXUCT4wqM3FKYkFJBMqtkk5dW6wufmTc=
+
+Name: js-lib/ketcher/icons/png/main/document-new.png
+SHA-256-Digest: pA0pz79WJO1UO0GnUB/LPxd5LryVh5jl4gATrPE+NJc=
+
+Name: js-lib/ketcher/icons/png/template/template2.dropdown.png
+SHA-256-Digest: 9cR3eyE+Pvz9SKX9GSQV7jkJUpoydkyhTl58aIcRCd4=
+
+Name: js-lib/ketcher/server/java/jar/src/main/java/com/ggasoftware/ket
+ cher/KetcherServerLib.java
+SHA-256-Digest: s7yVXDTxa41LxT2nTxvJyc8xsGmfOW0wak/EApWvKlc=
+
+Name: js-lib/ketcher/icons/svg/template3.svg
+SHA-256-Digest: pdzIEhADRJv3Wj4yUQNFOGMkdB5egmguEfQlIqAS5oY=
+
+Name: js-lib/ketcher/icons/png/template/template12.png
+SHA-256-Digest: /IkH/V4DVt0oyaqbLJx7GOtppYe6FiZeEps+XLhdk0M=
+
+Name: js-lib/ketcher/icons/mol/template5.mol
+SHA-256-Digest: Wg0MVZ6vE/jJODIn3zhMgQIAhtWoJDUbsqhv0NNP7TM=
+
+Name: js-lib/ketcher/icons/svg/bond_any.svg
+SHA-256-Digest: QO9p8edSDUW9ckmsY3g4eTwvTBOzgD3n9t0+pCE+YW8=
+
+Name: js-lib/ketcher/icons/svg/bond_singledouble.svg
+SHA-256-Digest: Jn6eLua3m54/brjoUDUzGTyfaKLNaOkIVu3o1Iow4Kk=
+
+Name: js-lib/ketcher/icons/png/bond/bond_crossed.sidebar.png
+SHA-256-Digest: pvFxmSIdc6xk5ssLSAWuQ4ke1ie8m5nv5Hb4XxA3n2c=
+
+Name: js-lib/ketcher/icons/png/transform/transform-flip-v.sidebar.png
+SHA-256-Digest: 0KdkLIg6ZLBslVGtR/oXcAvJBVWfwPKoMtOhVFXYAM4=
+
+Name: js-lib/ketcher/pack-zip.sh
+SHA-256-Digest: 23e1qn6Ab461e7JDwsuhLVQWCvoyvg0Znkoc78Ua678=
+
+Name: js-lib/ketcher/icons/svg/bond_down.svg
+SHA-256-Digest: aqIyGpbWNQHnyfmqtjtPNb3PIhGIKlROqz8x+LUxa5A=
+
+Name: js-lib/ketcher/icons/png/template/template3.sidebar.png
+SHA-256-Digest: c6wsyB8pi3AVVKoa/T+g2ufyfrw0CsIgx9W0VdujnjM=
+
+Name: js-lib/ketcher/server/src/ketcher_server.cpp
+SHA-256-Digest: yDZPGm7R0Lm8UBgCTXdougxhi0XdMsGYPX+J3/QzPDs=
+
+Name: js-lib/ketcher/icons/png/template/template5.sidebar.png
+SHA-256-Digest: gGlusACY6BnpFpUutNjgCATK2frgVZo+3QWlLy+4zQQ=
+
+Name: js-lib/ketcher/icons/png/template/template1.sidebar.png
+SHA-256-Digest: d02wsaa3agrralqFXKG9Vi9b67LaOfHa30GK3XlCcMU=
+
+Name: js-lib/ketcher/icons/mol/template1.mol
+SHA-256-Digest: y74DZKbKKM7kGRkI5cLdeQymea4xOdSEjpbdqSX2vYs=
+
+Name: js-lib/ketcher/icons/svg/bond_updown.svg
+SHA-256-Digest: HCk11id/ntNgPrvSzqeAhj8A1hLPljH+TvpY0BEzgNE=
+
+Name: js-lib/ketcher/icons/png/selection/rectangle.dropdown.png
+SHA-256-Digest: ZZevIP8kdgqPBy/WvvvFrD3HtYjbDcQvY9P+/4FfEFY=
+
+Name: js-lib/ketcher/mol/down.mol
+SHA-256-Digest: 66lEcfmt4qtVOJ0FIRIRk7h3BGdNU/nCBtfQADhn4yg=
+
+Name: js-lib/ketcher/icons/png/reaction/reaction-arrow.dropdown.png
+SHA-256-Digest: A14Fw//3FNp8Mvkcm6yndJ84BzlkQHkQPdhiMhM+OSs=
+
+Name: js-lib/ketcher/icons/png/transform/transform-flip-v.dropdown.png
+SHA-256-Digest: TJPJyMT+qNj64lApFUWr7KoahApMX8sCJcCOMrKB9xs=
+
+Name: js-lib/ketcher/mol/pattern/penta.mol
+SHA-256-Digest: sFaAgFUmgajh/LyUpiT1YWOT8boq3mXsAGDTNTDu4p0=
+
+Name: js-lib/ketcher/icons/mol/template11.mol
+SHA-256-Digest: uWr1hqDEw5Km0otBpJ6t+gATWSP2gTlTDe3w8E+67U4=
+
+Name: js-lib/ketcher/icons/png/template/template11.dropdown.png
+SHA-256-Digest: OhUIvFdb6clrKVaDcyUbJiBAsh4g+2W1c7lc5vX5Phk=
+
+Name: js-lib/ketcher/icons/png/bond/bond_doublearomatic.sidebar.png
+SHA-256-Digest: wrN1CvOxFOxcmvAJBx4HLPgj36CufsK++dO2jbb3pK4=
+
+Name: ext-js.jar
+SHA-256-Digest: R+7y8v7cv32rFB6sLujQVLR8LQC4bc6ZyD8OqaJsgbY=
+
+Name: js-lib/ketcher/icons/svg/bond_double.svg
+SHA-256-Digest: LWCTQr7thC3knBmCD3w/eUtrEnvCEUCaswfXFW6qYdQ=
+
+Name: js-lib/ketcher/icons/png/main/edit-copy.png
+SHA-256-Digest: kgNpAcM35UpClsLPmssQW0pFfT4+qranx1+avYbUfOY=
+

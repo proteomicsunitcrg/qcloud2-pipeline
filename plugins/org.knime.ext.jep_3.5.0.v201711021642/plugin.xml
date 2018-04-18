@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?eclipse version="3.0"?><plugin>
+   <extension point="org.knime.workbench.repository.nodes">
+      <node category-path="/manipulation/column/column-convert+replace" factory-class="org.knime.ext.jep.JEPNodeFactory"/>
+      <node category-path="/flowcontrol/variables" deprecated="false" factory-class="org.knime.ext.jep.variable.JEPVariableNodeFactory">
+      </node>
+      <node category-path="/manipulation/column/column-convert+replace" deprecated="false" factory-class="org.knime.ext.jep.multicolumn.MultiColumnJEPNodeFactory">
+      </node>
+   </extension>
+<extension point="org.eclipse.help.toc">
+<toc extradir="html" file="tocs/manipulation_column_column-convert+replace$nodes.xml"/>
+<toc extradir="html" file="tocs/flowcontrol_variables$nodes.xml"/>
+</extension>
+</plugin>

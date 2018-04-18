@@ -1,0 +1,1512 @@
+<?xml version="1.0" encoding="UTF-8"?><html xmlns:t="http://knime.org/node2012" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>
+                    Node description for
+                    Create Bit Vector</title>
+<style type="text/css">/* Import font */
+/* @import url(https://fonts.googleapis.com/css?family=Roboto:400,700);*/
+/* New way ton load Fonts locally */
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../roboto-regular_1.woff2') format('woff2');
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../roboto-regular_2.woff2') format('woff2');
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../roboto-regular_3.woff2') format('woff2');
+}
+/* greek */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../roboto-regular_4.woff2') format('woff2');
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../roboto-regular_5.woff2') format('woff2');
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../roboto-regular_6.woff2') format('woff2');;
+}
+/* latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../roboto-regular_7.woff2') format('woff2');;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../roboto-medium_1.woff2') format('woff2');
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../roboto-medium_2.woff2') format('woff2');
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../roboto-medium_3.woff2') format('woff2');
+}
+/* greek */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../roboto-medium_4.woff2') format('woff2');
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../roboto-medium_5.woff2') format('woff2');
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../roboto-medium_6.woff2') format('woff2');
+}
+/* latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../roboto-medium_7.woff2') format('woff2');
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../roboto-bold_1.woff2') format('woff2');
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../roboto-bold_2.woff2') format('woff2');
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../roboto-bold_3.woff2') format('woff2');
+}
+/* greek */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../roboto-bold_4.woff2') format('woff2');
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../roboto-bold_5.woff2') format('woff2');
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../roboto-bold_6.woff2') format('woff2');
+}
+/* latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../roboto-bold_7.woff2') format('woff2');
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 900;
+  src: url('../roboto-black_1.woff2') format('woff2');
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 900;
+  src: url('../roboto-black_2.woff2') format('woff2');
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 900;
+  src: url('../roboto-black_3.woff2') format('woff2');
+}
+/* greek */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 900;
+  src: url('../roboto-black_4.woff2') format('woff2');
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 900;
+  src: url('../roboto-black_5.woff2') format('woff2');
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 900;
+  src: url('../roboto-black_6.woff2') format('woff2');
+}
+/* latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 900;
+  src: url('../roboto-black_7.woff2') format('woff2');
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 400;
+  src: url('../roboto-italic_1.woff2') format('woff2');
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 400;
+  src: url('../roboto-italic_2.woff2') format('woff2');
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 400;
+  src: url('../roboto-italic_3.woff2') format('woff2');
+}
+/* greek */
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 400;
+  src: url('../roboto-italic_4.woff2') format('woff2');
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 400;
+  src: url('../roboto-italic_5.woff2') format('woff2');
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 400;
+  src: url('../roboto-italic_6.woff2') format('woff2');
+}
+/* latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 400;
+  src: url('../roboto-italic_7.woff2') format('woff2');
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 500;
+  src: url('../roboto-medium-italic_1.woff2') format('woff2');
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 500;
+  src: url('../roboto-medium-italic_2.woff2') format('woff2');
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 500;
+  src: url('../roboto-medium-italic_3.woff2') format('woff2');
+}
+/* greek */
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 500;
+  src: url('../roboto-medium-italic_4.woff2') format('woff2');
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 500;
+  src: url('../roboto-medium-italic_5.woff2') format('woff2');
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 500;
+  src: url('../roboto-medium-italic_6.woff2') format('woff2');
+}
+/* latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 500;
+  src: url('../roboto-medium-italic_7.woff2') format('woff2');
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 700;
+  src: url('../roboto-bold-italic_1.woff2') format('woff2');
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 700;
+  src: url('../roboto-bold-italic_2.woff2') format('woff2');
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 700;
+  src: url('../roboto-bold-italic_3.woff2') format('woff2');
+}
+/* greek */
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 700;
+  src: url('../roboto-bold-italic_4.woff2') format('woff2');
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 700;
+  src: url('../roboto-bold-italic_5.woff2') format('woff2');
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 700;
+  src: url('../roboto-bold-italic_6.woff2') format('woff2');
+}
+/* latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 700;
+  src: url('../roboto-bold-italic_7.woff2') format('woff2');
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 900;
+  src: url('../roboto-black-italic_1.woff2') format('woff2');
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 900;
+  src: url('../roboto-black-italic_2.woff2') format('woff2');
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 900;
+  src: url('../roboto-black-italic_3.woff2') format('woff2');
+}
+/* greek */
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 900;
+  src: url('../roboto-black-italic_4.woff2') format('woff2');
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 900;
+  src: url('../roboto-black-italic_5.woff2') format('woff2');
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 900;
+  src: url('../roboto-black-italic_6.woff2') format('woff2');
+}
+/* latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 900;
+  src: url('../roboto-black-italic_7.woff2') format('woff2');
+}
+/* END */
+
+/* Default font size for old or unscaled browsers. */
+html {
+	font-size: 10px;
+}
+
+/* Catching scaled font sizes and/or retina displays for modern browsers only.
+   Setting font size to 62.5%, so that the default (usually 16px unscaled) is reset to 10px. */
+@media	only screen and (-webkit-min-device-pixel-ratio: 1.2),
+		only screen and (-o-min-device-pixel-ratio: 12/10),
+		only screen and (min-resolution: 115dpi),
+		only screen and (min-resolution: 1.2dppx) {
+	
+	html {
+    	font-size: 62.5%;
+	}
+
+}
+
+body.origin {
+     
+     font-family: 'Roboto',sans-serif;
+     font-size: 12px;
+     font-size: 1.2rem;
+	 color: #3E3A39;
+	 margin: 0px;
+	 padding: 0px;
+	 height: 100%;
+	 width: 100%;
+	 overflow-y: auto;
+	 background: #FFF none repeat scroll 0% 0%;
+	 border:0;
+}
+
+body {
+     
+     font-family: 'Roboto',sans-serif;
+     font-size: 12px;
+     font-size: 1.2rem;
+	 color: #3E3A39;
+	 margin: 0px;
+	 padding: 0px;
+	 height: 80%;
+	 width: 100%;
+	 background: #FFF none repeat scroll 0% 0%;
+	 border:0;
+	 overflow-y: auto;
+	 margin-top: 70px;
+}
+
+iframe {
+	border: none;
+}
+
+
+/* Media Queries */
+
+
+@media screen and (max-width: 800px){
+
+	div.k-footer {
+		width: 100% !important;
+	}
+	
+}
+
+@media screen and (min-width: 800px) and (max-width: 1000px){
+
+	div.k-footer {
+		width: 100% !important;
+	}
+	
+}
+
+@media screen and (min-width: 1000px) and (max-width: 1200px){
+
+	div.node-main-div {
+		width: 58%;
+	}
+
+	div.k-footer {
+		width: 100% !important;
+	}
+	
+	div#node-menu-div {
+		margin-left: 8px !important;
+	}
+		
+}
+
+
+
+
+
+@media all and (min-width: 600px) and (max-width: 960px){
+
+	div.node-main-div {
+		width: 43%;
+	}
+	
+	div.k-footer {
+		width: 100% !important;
+	}
+}
+@media all and (min-width: 800px) and (max-width: 1280px){
+	
+	div.node-main-div {
+		width: 64%;
+	}
+	
+	div.k-footer {
+		width: 100% !important;
+	}
+}
+@media all and (min-width: 768px) and (max-width: 1024px){
+	
+	div.node-main-div {
+		width: 47%;
+	}
+	
+	div.k-footer {
+		width: 100% !important;
+	}
+
+}
+
+
+@media all and (max-width: 1417px){
+
+	div.node-main-div {
+		width: 74%;
+	}
+	
+	div.k-footer {
+		width: 100% !important;
+	}
+	
+	div#node-menu-div {
+		margin-left: 8px !important;
+	}
+}
+
+@media all and (max-width: 960px){
+
+	div.node-main-div {
+		width: 41%;
+	}
+	
+	div.k-footer {
+		width: 100% !important;
+	}
+	
+	div#node-menu-div {
+		margin-left: 8px !important;
+	}
+}
+
+@media all and (max-width: 1150px){
+
+	div.node-main-div {
+		width: 55%;
+	}
+	
+	div.k-footer {
+		width: 100% !important;
+	}
+	
+	div#node-menu-div {
+		margin-left: 8px !important;
+	}
+}
+
+@media screen and (max-width: 1200px){
+	
+	div.groupClass {
+		width: 100%;
+	}
+	
+	div.container {
+		width: 100%;
+	}
+	
+}
+
+@media screen {
+  body {
+    width: 100%;
+  }
+}
+@media print {
+  body {
+    width: 100%;
+  }
+}
+
+@media all and (min-width: 1151px) and (max-width: 1380px){
+	
+		div.node-main-div {
+		width: 58%;
+	}
+	
+	div.k-footer {
+		width: 100% !important;
+	}
+
+}
+
+
+
+@media all and (min-width: 1100px) and (max-width: 1260px){
+	
+		div.node-main-div {
+		width: 60%;
+	}
+	
+	div.k-footer {
+		width: 100% !important;
+	}
+	
+	div#node-menu-div {
+		margin-left: 8px !important;
+	}
+	
+
+
+}
+
+
+
+@media all and (min-width: 1300px) and (max-width: 1460px){
+
+	div#node-container-div {
+		width: 100% !important;
+	}
+	
+	div.node-main-div {
+		width: 74%;
+	}
+	
+	div.k-footer {
+		width: 100% !important;
+	}
+	
+	div#node-menu-div {
+		margin-left: 8px !important;
+	}
+	
+
+}
+
+@media all and (min-width: 1460px) and (max-width: 1560px){
+	
+	div.node-main-div {
+		width: 72%;
+	}
+	
+	div.k-footer {
+		width: 93% !important;
+	}
+	
+	div#node-menu-div {
+		margin-left: 8px !important;
+	}
+	
+
+}
+
+@media all and (min-width: 800px) and (max-width: 960px){
+
+	div#node-container-div {
+		width: 100% !important;
+	}
+	
+	div.node-main-div {
+		width: 71%;
+		min-width:71%;
+	}
+	
+	div.k-footer {
+		width: 100% !important;
+	}
+	
+	div#node-menu-div {
+		margin-left: 8px !important;
+	}
+	
+
+}
+
+@media all and (min-width: 960px) and (max-width: 1024px){
+
+	div#node-container-div {
+		width: 100% !important;
+	}
+	
+	div.node-main-div {
+		width: 71%;
+	}
+	
+	div.k-footer {
+		width: 100% !important;
+	}
+	
+	div#node-menu-div {
+		margin-left: 8px !important;
+	}
+	
+}
+@media all and (min-width: 1024px) and (max-width: 1100px){
+	
+	div#node-container-div {
+		width: 100% !important;
+	}
+	
+	div.node-main-div {
+		width: 71%;
+	}
+	
+	div.k-footer {
+		width: 100% !important;
+	}
+	
+	div#node-menu-div {
+		margin-left: 8px !important;
+	}
+	
+}
+
+@media all and (min-width: 1100px) and (max-width: 1180px){
+	div#node-container-div {
+		width: 100% !important;
+	}
+	
+	div.node-main-div {
+		width: 71%;
+	}
+	
+	div.k-footer {
+		width: 100% !important;
+	}
+	
+	div#node-menu-div {
+		margin-left: 8px !important;
+	}
+	
+}
+
+@media all and (min-width: 1180px) and (max-width: 1210px){
+
+	div#node-container-div {
+		width: 100% !important;
+	}
+	
+	div.node-main-div {
+		width: 71%;
+	}
+	
+	div.k-footer {
+		width: 100% !important;
+	}
+	
+	div#node-menu-div {
+		margin-left: 8px !important;
+	}
+	
+}
+
+@media all and (min-width: 1210px) and (max-width: 1300px){
+
+	div#node-container-div {
+		width: 100% !important;
+	}
+	
+	div.node-main-div {
+		width: 71%;
+	}
+	
+	div.k-footer {
+		width: 100% !important;
+	}
+	
+	div#node-menu-div {
+		margin-left: 8px !important;
+	}
+	
+}
+
+@media all and (min-width: 1310px) and (max-width: 1400px){
+
+	div#node-container-div {
+		width: 100% !important;
+	}
+	
+	div.node-main-div {
+		width: 74%;
+	}
+	
+	div.k-footer {
+		width: 100% !important;
+	}
+	
+	div#node-menu-div {
+		margin-left: 8px !important;
+	}
+	
+}
+
+@media all and (min-width: 288px) and (max-width: 800px){
+	
+		div#node-container-div {
+		width: 100% !important;
+	}
+	
+	div.node-main-div {
+		width: 68%;
+	}
+	
+	div.k-footer {
+		width: 100% !important;
+	}
+	
+	div#node-menu-div {
+		width: 29% !important;
+		margin-left: 2px !important;
+		margin-right: 5px;
+	}
+	
+}
+
+
+
+
+
+/* ENd Media Queries */
+
+div.container {
+	width: 100%;
+}
+
+tt, pre {
+	font-family: monospace; 
+	color: #3E3A39;
+}
+
+.node-content-div p {
+	margin: 0 0 1em 0;
+}
+
+p {
+	text-align: justify;
+	font-size: 12px;
+	font-size:1.2rem;
+	margin: 8px;
+	line-height: 1.6em;
+}
+
+
+h1 {  
+	font-size: 18px;
+	font-size: 1.8rem;
+	text-align: center;
+	color: #575757;
+	margin: 10px 15px 10px 15px;
+ }
+
+h2{
+	font-size: 16px;
+	font-size: 1.6rem;
+	margin:8px;
+	border-bottom: 1px solid #e5e5e5;
+  	color: #ff9f00;
+	
+}
+
+h2 &gt; div {
+	font-size: 12px;
+	font-size: 1.2rem;
+}
+
+.deprecated {
+	color: red; font-style: italic;
+}
+
+dl{
+	padding: 0;
+	margin: 8px;
+	font-size: 12px;
+	font-size: 1.2rem;
+}
+
+dt {
+	font-weight: bold;
+	margin-bottom: 0.3em;
+}
+
+dd{
+	margin-bottom: 1em;
+	margin-left: 1.5em;
+	line-height: 1.6em; 
+}
+
+table{
+	font-size: 12px;
+	font-size: 1.2rem;
+}
+
+table.introtable {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid #666666;
+    border-collapse:collapse;
+}
+
+table.introtable table {
+	margin: -0.5em;
+	border: none;
+	border-collapse: collapse;
+}
+
+
+table.introtable tr td, 
+table.introtable tr th {
+    padding: 0.5em 0.5em;
+    border: 1px solid #666666;
+}
+
+table.introtable table tr:not(:last-child) {
+	border: none;
+	border-bottom: 1px solid #666666;
+}
+
+table.introtable table tr td,
+table.introtable table tr th {
+	border: none;
+}
+    
+table.introtable table tr td:not(:last-child),
+table.introtable table tr th:not(:last-child) {
+    border-right: 1px solid #666666;
+}
+
+
+table.introtable tr th {
+    background-color: #EEEEEE;
+}
+
+
+td{
+	padding: 0.5em 0.5em;
+	vertical-align:top;
+}
+
+
+.dt {
+	font-weight: bold;
+}
+
+a{
+	color: #FF9000;
+	text-decoration: none;
+}
+	
+a:hover{
+	text-decoration: underline;
+}
+
+.warn{
+	color: #cf0000;
+}
+
+div.group {
+    border: 2px solid #e5e5e5;
+    padding: 0.2em;
+    margin-bottom: 0.5em;
+    border-radius: 5px;
+}
+
+div.dlGroup {
+	border: 2px solid #ffd600;
+    padding: 0.2em;
+    margin-bottom: 0.5em;
+    border-radius: 5px;
+}
+
+
+div.groupname {
+    text-align: center;
+    font-weight: bold;
+    background-color: #EEEEEE;
+    padding: 0.3em;
+}
+
+
+div.group-description {
+    background-color: #F8F8F8;
+    padding: 0.4em;
+    border-top: 1px solid #AAAAAA;
+}
+
+
+div#origin-bundle {
+	color: #3E3A39;
+    /*font-size: 83.03%;*/
+    font-size: 12px;
+    font-size: 1.2rem;
+    margin-top: 2em;
+    padding-top: 0.5em;
+    border-top: 1px solid #bbbbbb;
+    text-align: right;
+}
+
+span#source_info {
+	font-style: italic;
+	color: #FFD900;
+}
+
+span#node_provider {
+	font-style: italic;
+	color: #3E3A39;
+}
+
+/* Styles for Header Div*/
+
+.header_docu {
+	margin: 0 auto;
+	width: 64%;
+}
+
+#logo {
+	float:left;
+}
+
+#docu_version {
+	float: right;
+	margin-right: -400px;
+	margin-top:0px;
+}
+	
+
+/* Styles for Vertical Menu*/
+
+ul.tabs{
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+
+ul.tabs li{
+    background: none;
+    color: #222;
+    display: table-cell;
+    width: auto;
+    text-align: center;
+    padding: 10px 15px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+ul.tabs li.current{
+    background: #ededed;
+    color: #222;
+}
+
+
+}
+
+
+
+.tab-content{
+    display: none;
+    padding: 2px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.tab-content.current{
+    display: inherit;
+    border: 1px solid #000;
+    padding-left: 20px;
+}
+
+.node-container-div {
+	margin: 0 auto;
+	width: 1460px;
+	min-width: 748px !important;
+	
+}
+
+.groupClass:before,
+.groupClass:after {
+	content: "";
+	display: table;
+}
+
+.groupClass:after{
+	clear:both;
+}
+
+.groupClass {
+	clear: both;
+	*zoom : 1;
+}
+
+#node-menu-div {
+	float: left;
+	width: 26%;
+	max-width: 312px;
+	max-height: 100%;
+	margin-right: 1em;
+}
+
+#node-main-div {
+
+}
+
+
+.node-main-div {
+	float: left;
+	position: relative;
+	min-width: 509px !important;
+	max-height: 100%;
+	width: 77%;
+}
+
+
+
+/*************** Custom Style for Node Repository *********************/
+/* format of the menu tree */
+span.childs {
+	cursor: pointer;
+}
+  
+/* Klassen für das öffnen und schließen eines Knotens */
+
+li.treeMenu_opened ul {
+	display: block;
+}
+    
+li.treeMenu_closed ul {
+	display: none;
+}
+  
+ul {
+	margin-left: 8px;
+}
+
+ul li {
+	font-size: 12px;
+	font-size: 1.2rem;
+
+}
+  
+li {
+	padding: 0em;
+	margin: 0em;
+	margin-bottom: 0.4em;
+}
+
+li.knime-node {
+	margin-left: 4px;
+}
+
+.container a {
+	color: #000;
+}
+
+#menu_header{
+	border-top: 1px solid #000;
+	border-right: 1px solid #000;
+	border-left: 1px solid #000;
+	width: 50%;
+}
+
+.container first-half{
+	width:50%;
+}
+
+.container second-half{
+	width:50%;
+	border-top: 1px solid #000;
+}
+
+#headerObj {
+	min-width: 509px !important;
+}
+
+#node-header-div {
+	min-width: 509px !important;
+}
+ 	
+/******************************* END *************************/
+
+/* Footer Style here */
+
+div.k-footer {
+	width: 1460px;
+	min-width: 748px !important;
+	padding-bottom: 25px;
+	position: absolute;
+	bottom: 0;
+	background: white;
+	margin: 0 auto;
+	clear: both;
+}
+
+div.footer-inner {
+	height: auto;
+	width: 100%;
+	min-width:100%;
+	max-width: 100%;
+	margin: 0 auto;
+}
+
+#footer {
+	margin: 0px 10px;
+	border-top: #ccc 1px solid;
+	font-size: 82.33% !important;
+}
+
+.content {
+	margin:0.5em 0;
+}
+
+
+.col1 h3, .col2 h3, .col3 h3, .col4 h3, .col-adress h3 {
+	text-transform: uppercase;
+}
+
+
+.col1, .col2, .col3,.col4 {
+	float: left;
+	margin: 0 1.5em;
+	width: 15%;
+}
+
+.col-adress {
+	float: right;
+	margin: 0 1.5em;
+}
+
+.m-footer {
+    padding: 0px !important;
+    padding-top: 0.4em !important;
+    padding-left: 0px !important;
+    list-style-type: none !important;
+} 
+
+.m-footer li {
+	padding: 0 !important;
+	margin:0 !important;
+	font-size: 140% !important;
+}
+
+.m-footer li a {
+	color: #aaa;
+	text-decoration: none;
+	font-size: 13px !important;
+	font-size: 1.3rem !important;
+	line-height: 1.8em;
+} 
+/* End */
+/* Header */
+
+.fix-header {
+	  border: solid 1px #e5e5e5;
+  	  border-top-left-radius: 5px;
+  	  border-top-right-radius: 5px;
+  	  padding: 3px;
+  	  background-color: #f0f0f2;
+}
+
+#fix-header {
+	  position: fixed;
+  	  margin-top: -70px;
+  	  width: 100%;
+  	  z-index: 5;
+}
+
+
+
+
+</style>
+</head>
+<body>
+<div class="fix-header" id="fix-header">
+<h1>Create Bit Vector</h1>
+</div>
+<p>
+		Generates for each row of a given input table a bit vector. The bit vectors are either generated from 
+        multiple numerical or string columns, a string column containing the bit positions to set, hexadecimal 
+        or binary strings or a collection column. In order to adjust the node settings please select first the
+        source column object e.g. if the bit vector should be created from multiple string/numerical columns or from a
+        single string/collection column. Depending on the selected option the corresponding dialog elements are enabled.
+        
+        <h3>Bit vectors from multiple columns</h3>
+        In the case of multiple columns the bit positions in the resulting bit vector correspond to the
+        column position in the input table.
+        For example if the second and third column of a given input table is selected and the first column is omitted 
+        the bit vectors of each row will have length 2. The first bit of the bit vector is set if the value of the 
+        second column matches the selected criterion likewise the second bit of the bit vector is set if the value 
+        of the third column matches the selected criterion. The columns to consider when creating the bit vector can
+        be specified in the multiple column selection section. Using the enforce exclusion/inclusion option the
+        node can be configured to handle previously unknown columns. If the enforce exclusion option is selected all
+        unknown columns are added automatically to the include list whereas if the enforce inclusion option is selected
+        all unknown columns are added to the exclude list. The columns to include can be also defined by a pattern if
+        the Wildcard/Regex Selection option is selected.
+        <h4>Multiple string columns</h4>
+		The bit of a vector is set if the corresponding column value does match/does not match the specified pattern
+        depending on the "Set bit if pattern does match/does not match" option. The pattern may contain wildcards such 
+        as '?' or '*' to match any one character or any sequence (including none) of characters. 
+        It can also be a complex 
+        <a href="http://java.sun.com/javase/6/docs/api/java/util/regex/Pattern.html#sum">regular expression</a>.
+        <h4>Multiple numeric columns</h4>
+		There are two options to determine if the bit is set for the value in 
+        the corresponding column or not: 
+        <ul>
+        <li>either a global threshold is defined, then all values which are above or equal to
+        the threshold are converted into set bits, all other bit positions remain 0, or</li>
+        <li>a certain percentage of the mean of each column is used as a threshold, then all values which are above 
+        or equal to the percentage of the mean are converted into set bits. As an example let's say the mean percentage 
+        is set to 50% and the mean of col1 is 2 and the mean of col2 is 8. Then the corresponding bit for col1 is set 
+        if the value is above or equal to 1 and for col2 if the value is above or equal to 4.</li>
+        </ul>
+        
+        <h3>Bit vectors from a single column</h3>
+        In the case of a single input column only the selected single column to be parsed is considered for the 
+        generation of the bit vectors. 
+		<h4>Single string column</h4>
+		In the case of a string input only the column containing the string is 
+		considered for the generation of the bit vectors. The string is parsed 
+		and converted into a bit vector. There are three valid input formats 
+		which can be parsed and converted:
+		<ul>
+		<li>Hexadecimal strings: strings consisting only of the characters 0-9 and A - F 
+		(where lower- or uppercase is not important). The represented hexadecimal number is 
+		converted into a binary number which is represented by the resulting bit vector.</li>
+		<li>Binary strings: strings consisting only of 0s and 1s are parsed and 
+		converted into the according bit vectors.</li>
+		<li>ID strings: strings consisting of numbers (separated by spaces) 
+		where the numbers refer to those positions in the bit vector which should be set.
+		(Typical input format for association rule mining).</li>
+		</ul>
+		<h4>Single collection column</h4>
+        In the case of a single collection column each unique collection element gets a bit position assigned.
+        The length of the bit vectors corresponds to the number of unique elements in a collection cells.
+        For example if the input table contains two rows with the collections {a,b} and {b,c} the corresponding
+        bit vectors will be [110] and [011].
+        
+		<h4>Missing values</h4>
+		For numeric data the incoming missing values will result in 0s.
+        For multiple string columns a missing values will also result in 0s.
+		For the string input missing values will also result in a missing value 
+		in the output table. If a string could not be parsed it will also result in
+		a missing cell in the output table and an error message with detailed information is printed in the console.
+        For a collection column all missing collection elements are ignored.
+		
+		</p>
+<h2>Dialog Options</h2>
+<div class="group">
+<div class="groupname">Create bit vectors from multiple string columns</div>
+<dl>
+            <dt>Pattern</dt>
+<dd>The pattern to search for in the data value</dd>
+            <dt>Contains wildcards</dt>
+<dd>
+            Select this option to use wild cards in the pattern. Wildcard patterns contain '*' (matching any sequence of
+            characters) and '?' (matching any one character).</dd>
+            <dt>Regular expression</dt>
+<dd>
+            Select this option to specify a regular expression. Examples of regular expressions are given below.
+            "<tt>^foo.*</tt>" matches anything that starts with "foo". The '^'-character
+            stands for the beginning of the word, the dot matches any (one) character,
+            and the asterisk allows any number (including zero) of the previous character.<br/>
+            "<tt>[0-9]*</tt>" matches any string of digits (including the empty string).
+            The <tt>[</tt> <tt>]</tt> define a set of characters (they could be
+            added individually like <tt>[0123456789]</tt>, or by range). This set
+            matches any (one) character included in the set.<br/>
+            For a complete explanation of regular expressions see e.g. the JavaDoc
+            of the <a href="http://java.sun.com/javase/6/docs/api/java/util/regex/Pattern.html#sum">
+            java.util.regex.Pattern</a> class.
+            </dd>
+            <dt>Case sensitive match</dt>
+<dd> 
+                A case sensitive matching is performed if this option is selected.
+            </dd>
+            <dt>Set bit if pattern</dt>
+<dd>
+                Depending on the selected option the corresponding bit in the bit vector is set if the pattern either
+                does match or does not match
+            </dd>
+            <dt>Multiple column selection panel</dt>
+<dd>
+                Select the string columns to convert to a bit vector
+            </dd>
+        </dl>
+</div>
+<div class="group">
+<div class="groupname">Create bit vectors from multiple numeric columns</div>
+<dl>
+    		<dt>Threshold</dt>
+<dd>
+    			If the "numeric input" is checked, specify the global threshold. 
+    			All values which are above or equal to this threshold will result 
+    			in a 1 in the bit vector.
+    		</dd>
+            <dt>Use percentage of the mean</dt>
+<dd>
+                Check, if a percentage of the mean of each column should serve as 
+                threshold above which the bits are set.
+            </dd>
+            <dt>Percentage</dt>
+<dd>
+                Specify which percentage of the mean a value should have in order to be set.
+            </dd>
+            <dt>Multiple column selection panel</dt>
+<dd>
+                Select the numeric columns to convert to a bit vector
+            </dd>
+        </dl>
+</div>
+<div class="group">
+<div class="groupname">Create bit vectors from a single string column</div>
+<dl>    
+            <dt>Kind of string representation</dt>
+<dd>
+            	Select one of the three valid input formats: HEX (hexadecimal),
+            	ID (bit positions) or BIT (binary strings). See description above.
+            </dd>
+            <dt>Single column to be parsed</dt>
+<dd>
+                The string column to parse
+            </dd>
+        </dl>
+</div>
+<div class="group">
+<div class="groupname">Create bit vectors from a single collection column</div>
+<dl>
+            <dt>Single column to be parsed</dt>
+<dd>
+                The collection column to parse
+            </dd>
+        </dl>
+</div>
+<div class="group">
+<div class="groupname">General options</div>
+<dl>
+        <dt>Remove column(s) used for bit vector creation:</dt>
+<dd>
+        If it is checked the generating column(s) (included columns if numeric input was used
+        or the selected string column) are removed.
+        If it is unchecked the generated bit vectors are appended to the input table.
+        </dd>
+        <dt>Output column</dt>
+<dd>Name of the output column.</dd>
+        <dt>Fail on invalid input</dt>
+<dd>
+        If selected, the node will fail during execution if a data cell could not be converted to a bit set. 
+        If unselected, the node will skip these invalid entries and insert a missing value instead.</dd>
+        <dt>Bit vector type</dt>
+<dd>
+            The dense vector type stores is the default method that stores each vector position with a single bit thus
+            requiring the same amount of bits for all vectors e.g. the vector length in bits.  
+            The sparse vector type stores only the indices of the set bits thus depends the space required to store a
+            bit vector depends on the number of set bits. Each set bit requires between 32 and 64 bits depending on the
+            operating system. Therefore the sparse option should be only selected if the majority of the bit vectors
+            contain only few set bits e.g. less than 10%.
+        </dd>
+        </dl>
+</div>
+<h2>Ports</h2>
+<dl>
+<div class="group dlGroup">
+<div class="groupname">Input Ports</div>
+<table>
+<tr>
+<td class="dt">0</td>
+<td>Data table with numerical data or a string column to be parsed.</td>
+</tr>
+</table>
+</div>
+<div class="group dlGroup">
+<div class="groupname">Output Ports</div>
+<table>
+<tr>
+<td class="dt">0</td>
+<td>Data table with the generated bit vectors.</td>
+</tr>
+</table>
+</div>
+</dl>
+<h2>Views</h2>
+<dl>
+<dt>Statistics View</dt>
+<dd>
+			 Provides information about the generation of the bit vectors from  
+			 the data. In particular this is the number of processed rows, 
+			 the total number of generated zeros and ones and the resulting 
+			 ratio of 1s to 0s.
+		</dd>
+</dl>
+<div id="origin-bundle">
+                    This node is contained in <em>KNIME Base Nodes</em>
+                    provided by <em>KNIME AG, Zurich, Switzerland</em>.
+                </div>
+</body>
+</html>

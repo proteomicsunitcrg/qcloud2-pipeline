@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?eclipse version="3.4"?><plugin>
+     <extension point="org.knime.workbench.repository.nodes">
+      <node category-path="/database/database-connector" factory-class="org.knime.database.connectors.sqlite.SQLiteConnectorNodeFactory"/>
+      <node category-path="/database/database-connector" factory-class="org.knime.database.connectors.mysql.MySQLConnectorNodeFactory"/>
+      <node category-path="/database/database-connector" factory-class="org.knime.database.connectors.postgresql.PostgreSQLConnectorNodeFactory"/>
+      <node category-path="/database/database-connector" factory-class="org.knime.database.connectors.h2.H2ConnectorNodeFactory">
+      </node>
+      <node category-path="/database/database-connector" factory-class="org.knime.database.connectors.sqlserver.SQLServerConnectorNodeFactory">
+      </node>
+    </extension>
+     <extension point="org.knime.workbench.repository.registeredFileExtensions">
+        <FileExtensionMapping NodeFactory="org.knime.database.connectors.sqlite.SQLiteConnectorNodeFactory">
+           <FileExtension extension=".sqlite">
+           </FileExtension>
+        </FileExtensionMapping>
+     </extension>
+     <extension point="org.knime.core.DatabaseUtility">
+        <databaseUtility class="org.knime.database.connectors.h2.utility.H2Utility" database="h2">
+        </databaseUtility>
+        <databaseUtility class="org.knime.database.connectors.mysql.utility.MySQLUtility" database="mysql">
+        </databaseUtility>
+        <databaseUtility class="org.knime.database.connectors.sqlite.utility.SQLiteUtility" database="sqlite">
+        </databaseUtility>
+        <databaseUtility class="org.knime.database.connectors.postgresql.utility.PostgreSQLUtility" database="postgresql">
+        </databaseUtility>
+        <databaseUtility class="org.knime.database.connectors.sqlserver.utility.SQLServerUtility" database="sqlserver">
+        </databaseUtility>
+        <databaseUtility class="org.knime.database.connectors.sqlserver.utility.JTDSServerUtility" database="jtds">
+        </databaseUtility>
+     </extension>
+     <extension point="org.knime.core.JDBCDriver">
+        <jdbcDriver jarFile="lib/jtds-1.3.1.jar">
+        </jdbcDriver>
+        <jdbcDriver jarFile="lib/postgresql-9.4-1201.jdbc41.jar">
+        </jdbcDriver>
+     </extension>
+<extension point="org.eclipse.help.toc">
+<toc extradir="html" file="tocs/database_database-connector$nodes.xml"/>
+</extension>
+</plugin>

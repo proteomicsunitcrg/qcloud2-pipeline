@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<js:knimeNode xmlns:js="http://knime.org/dynamicjsnode/v3.0"
+	xmlns="http://knime.org/dynamicnode/v3.0" xmlns:n="http://knime.org/node/v2.12"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://knime.org/dynamicjsnode/v3.0 http://www.knime.org/node/dynamicJSNode_v3.0.xsd"
+	jsNamespace="parallelcoords_namespace" nodeID="parallelcoordsJS" categoryPath="/view/js-views"
+    icon="./parallel_coordinates_plot.png" type="Visualizer">
+
+	<name>Parallel Coordinates Plot (JavaScript)</name>
+	<shortDescription>The parallel coordinates plot uses d3.js, JavaScript based charting library. 
+	The view can be accessed either via the interactive view action on the executed node or in KNIME Server web portal page.</shortDescription>
+	<fullDescription>
+		<intro>
+		      <n:p>
+		      	A parallel coordinates plot displays multidimensional data as polylines over multiple
+		      	parallel and evenly spaced axes.
+		      	More information is available on <n:a href="https://en.wikipedia.org/wiki/Parallel_coordinates">Wikipedia</n:a>.
+		      </n:p>
+		      <n:p>
+		        Rows that contain missing values, if present, are treated in accordance with the chosen in the dialog or in interactive view option.
+		      </n:p>
+		</intro>
+		<tab name="Options">
+			<options>
+			     <!-- Have to use NominalValue instead of StringValue to filter out date&time type as the latter is compatible with StringValue -->
+				<columnFilterOption name="Included columns"
+					id="columns" inPortIndex="0" label="Included columns" filterClasses="org.knime.core.data.NominalValue org.knime.core.data.IntValue org.knime.core.data.LongValue org.knime.core.data.DoubleValue" saveInView="true">
+					Select the columns to be plotted. The columns could be of string or number types.
+				</columnFilterOption>
+				
+				<checkBoxOption name="Use colors from spec" id="useColors"
+                   label="Use colors from spec" defaultValue="true">
+                   Check to use colors from the data table spec in the visualization.
+                </checkBoxOption>
+				
+				<columnSelectorOption name="Color column" saveInView="false" allowNoneColumn="true" optional="true"
+				    enableDependency="useColors" enableValue="false"
+                    id="catCol" inPortIndex="0" label="Color Column" filterClasses="org.knime.core.data.StringValue">
+                    Select the column which contains categorical values that will be used for coloring.
+                    If the option is not set, the visualization takes the color from the data table spec.
+                </columnSelectorOption>
+			</options>
+		</tab>
+		<tab name="General Plot Options">
+			<options>
+				<stringOption name="Title" id="title" label="Title"
+					defaultValue="Parallel Coordinates Plot" optional="true" saveInView="true">
+					The title of the graph shown above the generated image. If left blank, no title will be shown.
+				</stringOption>
+				
+				<stringOption name="Subtitle" id="subtitle" label="Subtitle"
+                    defaultValue="" optional="true" saveInView="true">
+                    The subtitle of the graph shown above the generated image. If left blank, no subtitle will be shown.
+                </stringOption>
+               
+				<svgOption name="Image" additionalWait="500"
+                    id="svg" portIndex="0" label="Image">
+                    Settings for image generation.
+                </svgOption>
+	
+				<colorOption name="Background color" id="backgroundColor" label="Background color"
+                    format="HexString" defaultR="255" defaultG="255" defaultB="255" defaultAlpha="255">
+                    The background color of the plot, including the axes labels, the title and the subtitle.
+                </colorOption>
+                    
+                <colorOption name="Data area color" id="daColor" label="Data area color"
+                    format="HexString" defaultR="255" defaultG="255" defaultB="255" defaultAlpha="255">
+                    The background color of the data area, within the axes.
+                </colorOption>
+                    
+                <radioButtonOption name="Missing values handling" id="mValues" possibleValues="Skip&#160;rows&#160;with&#160;missing&#160;values Skip&#160;missing&#160;values Show&#160;missing&#160;values" label="Missing values" defaultValue="Skip&#160;rows&#160;with&#160;missing&#160;values" 
+					saveInView="true">
+					The way missing values are handled.
+				</radioButtonOption>
+				
+				<radioButtonOption name="Line type" id="lType" possibleValues="Straight Curved" label="Line type" defaultValue="Straight" 
+					saveInView="true">
+					Set a type of interpolation between polyline's points.
+				</radioButtonOption>
+				
+				<doubleOption name="Line thickness" id="lThickness" 
+					label="Line thickness"  defaultValue="1.0" minValue="0.1" maxValue="100" saveInView="true">
+					Set thickness property of the rendered polylines.
+				</doubleOption>
+				<checkBoxOption name="Show legend" id="showLegend"
+                   label="Show legend" defaultValue="true">
+                   Render a legend to the plot.
+               </checkBoxOption>
+			</options>
+		</tab>
+		
+		<tab name="Control Options">
+          <options>
+              <checkBoxOption name="Enable view controls" id="enableViewControls"
+                   label="Enable view controls" defaultValue="true">
+                   Enables controls in the chart.
+               </checkBoxOption>
+               <checkBoxOption name="Display full screen button" id="displayFullscreenButton"
+                   label="Display full screen button" defaultValue="true">
+                   Displays a button enabling full screen mode.
+               </checkBoxOption>
+               <checkBoxOption name="Enable title editing" id="enableTitleEdit"
+                   label="Enable title editing" defaultValue="true" enableDependency="enableViewControls" enableValue="true">
+                   Enables the editing of the title in the interactive view.
+               </checkBoxOption>
+               <checkBoxOption name="Enable subtitle editing" id="enableSubtitleEdit"
+                   label="Enable subtitle editing" defaultValue="true" enableDependency="enableViewControls" enableValue="true">
+                   Enables the editing of the subtitle in the interactive view.
+               </checkBoxOption>
+               <checkBoxOption name="Enable missing values handling" id="enableMValuesHandling"
+                   label="Enable missing values handling" defaultValue="true" enableDependency="enableViewControls" enableValue="true">
+                   Enables handling of missing values in the interactive view.
+               </checkBoxOption>
+               <checkBoxOption name="Enable line type change" id="enableLineChange"
+                   label="Enable line type change" defaultValue="true" enableDependency="enableViewControls" enableValue="true">
+                   Enables changing of the line type in the interactive view.
+               </checkBoxOption>
+               <checkBoxOption name="Enable column selection" id="enableColumnSelection"
+                   label="Enable column selection" defaultValue="true" enableDependency="enableViewControls" enableValue="true">
+                   Enables changing the columns to be rendered in the interactive view. Only the columns included in the dialog will be available in the view. 
+               </checkBoxOption>
+               <checkBoxOption name="Enable axes swapping" id="enableAxesSwapping"
+                   label="Enable axes swapping" defaultValue="true">
+                   Enables swapping of the axes in the interactive view.
+               </checkBoxOption>
+           </options>
+        </tab>
+        
+        <tab name="Selection and Filter">
+          <options>
+           <checkBoxOption name="Enable selection" id="enableSelection"
+               label="Enable selection" defaultValue="true">
+               Enables row selection within the view by clicking the rendered lines. Use Shift key to select multiple rows. To deselect previously selected row use Shift + mouse click of the selected row.
+               Please note that this will deactivate the selection previously selected by the range selection, if applicable.
+           </checkBoxOption>
+           <checkBoxOption name="Enable range selection" id="enableBrushing"
+               label="Enable range selection" defaultValue="true" enableDependency="enableSelection" enableValue="true">
+               Enables a range of rows selection within the view. Clicking and dragging along an axis specifies a range of the rows for that dimension to be displayed.
+               Please note that this will deactivate the selection previously selected by the row selection, if applicable. 
+           </checkBoxOption>
+           <checkBoxOption name="Display clear selection button" id="displayClearSelectionButton"
+               label="Display clear selection button" defaultValue="true" enableDependency="enableSelection" enableValue="true">
+               Displays a button to clear current selection.
+           </checkBoxOption>
+           <checkBoxOption name="Publish selection events" id="publishSelection"
+               label="Publish selection events" defaultValue="true" enableDependency="enableSelection" enableValue="true" saveInView="true">
+               If checked, notifies other interactive views when user changes the selection in the current view. See also "Subscribe to selection events".
+           </checkBoxOption>
+           <checkBoxOption name="Subscribe to selection events" id="subscribeSelection"
+               label="Subscribe to selection events" defaultValue="true" enableDependency="enableSelection" enableValue="true" saveInView="true">
+               If checked, the view reacts on notifications from other interactive views that the selection has been changed. See also "Publish selection events".
+           </checkBoxOption>
+           <checkBoxOption name="Subscribe to filter events" id="subscribeFilter" label="Subscribe to filter events" defaultValue="true" saveInView="true">
+                If checked, the view reacts when applied filters have been changed.
+           </checkBoxOption>
+ 		</options>
+        </tab>
+	</fullDescription>
+	<outputOptions> 
+		<dataOutputOption outPortIndex="1" id="selection" additionalColumnName="Parallel Coordinates Selection" additionalColumnType="BOOLEAN" inPortIndex="0" />
+	</outputOptions>
+	<interactiveView name="Parallel Coordinates Plot">
+		A D3.js implementation of a Parallel Coordinates Plot.
+	</interactiveView>
+	<ports>
+		<inPort portType="Data" name="Data" index="0">
+			Data table with data to display.
+		</inPort>
+
+		<outPort portType="Image" name="Parallel Coordinates Plot image" index="0">
+			SVG image of the Parallel Coordinates plot.
+		</outPort>
+		<outPort portType="Data" name="Input Data + View Selection" index="1">
+			Data table containing the input data appended with a column, that represents the selection made in the parallel coordinates plot view.
+		</outPort>
+	</ports>
+	<js:resources>
+		<js:resource type="js" path="pc.js" />
+		<js:resource type="css" path="styles.css" />
+	</js:resources>
+	<js:dependencies>
+		<js:dependency name="D3" path="D3_3.2.8" type="local" />
+		<js:dependency name="MultipleSelections" path="MultipleSelections" type="local" />
+		<!--<js:dependency name="jsFreeChart_0.5" path="jsFreeChart_0.5" type="local" /> -->		
+	</js:dependencies>
+	<!-- <js:javaProcessor className="org.knime.dynamic.js.base.parallelcoords.ParallelCoordsProcessor"/> -->
+</js:knimeNode>

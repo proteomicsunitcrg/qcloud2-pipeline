@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?NLS TYPE="org.eclipse.help.toc"?><toc label="Views" link_to="../org.knime.base/tocs/view.xml#view">
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/646eae9d.BoxPlotNodeFactory.html" label="Box Plot"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/54f86b4d.ConditionalBoxPlotNodeFactory.html" label="Conditional Box Plot"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/b21a1fb.AutoHiLiteNodeFactory.html" label="HiLite Table"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/53bf664.FixedColumnHistogramNodeFactory.html" label="Histogram"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/210e1c8a.HistogramNodeFactory.html" label="Histogram (interactive)"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/5b026616.TableNodeFactory.html" label="Interactive Table"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/4a1e49c0.LiftChartNodeFactory.html" label="Lift Chart"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/48c95fa8.LinePlotterNodeFactory.html" label="Line Plot"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/27b1bb93.ParallelCoordinateNodeFactory.html" label="Parallel Coordinates"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/1c5959dc.FixedPieNodeFactory.html" label="Pie chart"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/64b93538.InteractivePieNodeFactory.html" label="Pie chart (interactive)"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/65c07ff6.ScatterMatrixNodeFactory.html" label="Scatter Matrix"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/71c04078.ScatterPlotterNodeFactory.html" label="Scatter Plot"/>
+</toc>

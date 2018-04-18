@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?NLS TYPE="org.eclipse.help.toc"?><toc label="Connector" link_to="../org.knime.base/tocs/database_database-connector.xml#database_database-connector">
+<topic href="PLUGINS_ROOT/org.knime.bigdata.vertica/html/nodes/76339b06.VerticaConnectorNodeFactory.html" label="Vertica Connector"/>
+</toc>

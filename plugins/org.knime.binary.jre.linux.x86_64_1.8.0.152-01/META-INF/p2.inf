@@ -1,0 +1,19 @@
+instructions.configure=org.eclipse.equinox.p2.touchpoint.eclipse.setJvm(\
+  jvm:plugins/org.knime.binary.jre.linux.x86_64_1.8.0.152-01/jre/bin);\
+org.eclipse.equinox.p2.touchpoint.eclipse.chmod(targetDir:@artifact,\
+    targetFile:jre/bin,permissions:755,options:-R);
+
+# Do not modify the below entries!
+# They make sure that the pre-3.5 JRE feature stays installed (because removing it will fail under Windows) and ...
+requires.0.greedy=true
+requires.0.namespace=org.eclipse.equinox.p2.iu
+requires.0.name=org.knime.binary.jre.linux.gtk.x86_64.feature.group
+requires.0.range=[1.8.0.60,1.8.0.60]
+
+# ... that fresh installation find the required pseudo-feature from above
+units.0.id=org.knime.binary.jre.linux.gtk.x86_64.feature.group
+units.0.version=1.8.0.60
+units.0.filter=(&(osgi.os\=linux)(osgi.arch\=x86_64))
+units.0.provides.0.name=org.knime.binary.jre.linux.gtk.x86_64.feature.group
+units.0.provides.0.namespace=org.eclipse.equinox.p2.iu
+units.0.provides.0.version=1.8.0.60

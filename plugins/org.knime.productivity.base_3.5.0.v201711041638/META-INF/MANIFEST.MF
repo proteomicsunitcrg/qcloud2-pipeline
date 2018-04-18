@@ -1,0 +1,51 @@
+Manifest-Version: 1.0
+Ant-Version: Apache Ant 1.9.6
+Bundle-SymbolicName: org.knime.productivity.base;singleton:=true
+Export-Package: org.knime.productivity.base.callworkflow
+Bundle-Name: Shared components of various bundles
+Bundle-Version: 3.5.0.v201711041638
+Bundle-ClassPath: .
+Require-Bundle: org.knime.base;bundle-version="[3.5.0,4.0.0)",org.knim
+ e.core.util;bundle-version="[5.6.0,6.0.0)",org.apache.commons.lang3;b
+ undle-version="[3.2.1,4.0.0)",org.knime.json;bundle-version="[3.4.0,4
+ .0.0)",org.knime.workbench.ui;bundle-version="[3.4.0,4.0.0)",com.goog
+ le.guava;bundle-version="[19.0.0,20.0.0)",com.fifesoft.autocomplete;b
+ undle-version="[2.5.7,3.0.0)",com.fifesoft.languagesupport;bundle-ver
+ sion="[2.5.7,3.0.0)",com.fifesoft.rstaui;bundle-version="[2.5.7,3.0.0
+ )",com.fifesoft.rsyntaxtextarea;bundle-version="[2.5.7,3.0.0)",com.fi
+ fesoft.spellchecker;bundle-version="[2.5.7,3.0.0)"
+Bundle-ManifestVersion: 2
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-Vendor: KNIME AG, Zurich, Switzerland
+Created-By: 1.8.0_131-b11 (Oracle Corporation)
+
+Name: org/knime/productivity/base/callworkflow/IWorkflowBackend$Workfl
+ owState.class
+SHA-256-Digest: t4iOpg3Tm41Iolo/9ElIjTnGk5qa/aSaWV3Yg79n9vY=
+
+Name: org/knime/productivity/base/callworkflow/JSONInputPanel.class
+SHA-256-Digest: /X+49yTNtyUmyK5RsGx7CEWBLxJBw4kUGhsz3qxalDs=
+
+Name: org/knime/productivity/base/callworkflow/CallWorkflowConfigurati
+ on.class
+SHA-256-Digest: CFlaI3x0sCq0JAHWCT5EFqqz/JctxNkHQsqq+2wXU/M=
+
+Name: org/knime/productivity/base/callworkflow/IWorkflowBackend.class
+SHA-256-Digest: cDB+ecHxfxndDDaTJVjLE/tz02JrgHgmH/fnxxcnsW0=
+
+Name: org/knime/productivity/base/callworkflow/IWorkflowBackend$Report
+ GenerationException.class
+SHA-256-Digest: RIFH9GvJQM2mLz3NX6YLHoM+EiuVEK8wo+0TCLhGAlU=
+
+Name: org/knime/productivity/base/callworkflow/CallWorkflowNodeModel$1
+ .class
+SHA-256-Digest: VR7dPSvyBGk0sxrfmldwNzgF+eX/8ZINjX85yd6cS5k=
+
+Name: org/knime/productivity/base/callworkflow/JSONInputPanel$Paramete
+ r.class
+SHA-256-Digest: iari7OIbx19XmN32JjdkVB2h+IWOMgxLn5hPXpg3jBo=
+
+Name: org/knime/productivity/base/callworkflow/CallWorkflowNodeModel.c
+ lass
+SHA-256-Digest: 1ITmz8dhtPIMQSxteFCxIaQs/k+Msfs2/xflkZplnGY=
+

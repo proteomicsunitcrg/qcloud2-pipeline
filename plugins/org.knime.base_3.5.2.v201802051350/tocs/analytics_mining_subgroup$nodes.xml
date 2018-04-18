@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?NLS TYPE="org.eclipse.help.toc"?><toc label="Item Sets / Association Rules" link_to="../org.knime.base/tocs/analytics_mining_subgroup.xml#analytics_mining_subgroup">
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/2a5f7db8.SubgroupMinerFactory2.html" label="Association Rule Learner"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/466a2c76.CreateBitVectorNodeFactory.html" label="Create Bit Vector"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/73acbbae.SubsetMatcherNodeFactory.html" label="Subset Matcher"/>
+</toc>

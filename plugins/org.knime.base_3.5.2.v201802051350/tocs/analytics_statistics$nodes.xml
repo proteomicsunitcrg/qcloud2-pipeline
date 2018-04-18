@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?NLS TYPE="org.eclipse.help.toc"?><toc label="Statistics" link_to="../org.knime.base/tocs/analytics_statistics.xml#analytics_statistics">
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/1064bf43.CrosstabNodeFactory.html" label="Crosstab"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/3099a205.ValueCounterNodeFactory.html" label="Value Counter"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/2902a4b2.CorrelationComputeNodeFactory.html" label="Linear Correlation"/>
+</toc>

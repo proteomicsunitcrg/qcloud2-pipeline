@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?NLS TYPE="org.eclipse.help.toc"?><toc label="Convert &amp;amp; Replace" link_to="../org.knime.base/tocs/manipulation_column_column-convert+replace.xml#manipulation_column_column-convert+replace">
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/41ef8c79.CategoryToNumberNodeFactory2.html" label="Category To Number"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/7ed7a06b.CategoryToNumberApplyNodeFactory.html" label="Category To Number (Apply)"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/e00b3ee.CellReplacerNodeFactory.html" label="Cell Replacer"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/1de78659.ColumnAutoTypeCasterNodeFactory.html" label="Column Auto Type Cast"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/6b5a3ed8.RenameNodeFactory.html" label="Column Rename"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/55ed5a4e.ColumnRenameRegexNodeFactory.html" label="Column Rename (Regex)"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/678ae8c4.ConstantValueColumnNodeFactory.html" label="Constant Value Column"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/79b106b.NumberToCategoryApplyNodeFactory.html" label="Number To Category (Apply)"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/1e415229.NumberToStringNodeFactory.html" label="Number To String"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/491a5229.StringToNumberNodeFactory.html" label="String To Number"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/67ada6b3.DoubleToIntNodeFactory.html" label="Double To Int"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/1ceb262a.RoundDoubleNodeFactory.html" label="Round Double"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/2dbddce3.SearchReplaceDictNodeFactory.html" label="String Replace (Dictionary)"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/6da372d8.StringReplacerNodeFactory.html" label="String Replacer"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/3597cc94.DomainNodeFactory.html" label="Domain Calculator"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/5faceca8.EditNumericDomainNodeFactory.html" label="Edit Numeric Domain"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/7ac03d48.EditNominalDomainDicNodeFactory.html" label="Edit Nominal Domain (Dictionary)"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/40d6ea06.EditNominalDomainNodeFactory.html" label="Edit Nominal Domain"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/41e3ab36.TargetShufflingNodeFactory.html" label="Target Shuffling"/>
+</toc>

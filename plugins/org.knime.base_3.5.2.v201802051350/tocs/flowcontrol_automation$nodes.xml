@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?NLS TYPE="org.eclipse.help.toc"?><toc label="Automation" link_to="../org.knime.base/tocs/flowcontrol_automation.xml#flowcontrol_automation">
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/24820110.SleepNodeFactory.html" label="Wait..."/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/1e4a50bf.SaveWorkflowNodeFactory.html" label="Save Workflow"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/6e6eed8d.TimerinfoNodeFactory.html" label="Timer Info"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/28ad5be7.GlobalTimerinfoNodeFactory.html" label="Global Timer Info"/>
+</toc>

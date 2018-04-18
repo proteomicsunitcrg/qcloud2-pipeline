@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?NLS TYPE="org.eclipse.help.toc"?><toc label="Transform" link_to="../org.knime.base/tocs/manipulation_row_row-transform.xml#manipulation_row_row-transform">
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/2b42ab2c.AppendedRowsNodeFactory.html" label="Concatenate"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/7a53ad21.AppendedRowsWithOptionalInNodeFactory.html" label="Concatenate (Optional in)"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/68b0ead8.GroupByNodeFactory.html" label="GroupBy"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/19dd7798.UngroupNodeFactory.html" label="Ungroup"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/6b6c60a0.PartitionNodeFactory.html" label="Partitioning"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/1b00bf52.Pivot2NodeFactory.html" label="Pivoting"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/7a69bc88.Unpivot2NodeFactory.html" label="Unpivoting"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/15d252e8.RankNodeFactory.html" label="Rank"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/38753885.SamplingNodeFactory.html" label="Row Sampling"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/35bf9668.BootstrapNodeFactory.html" label="Bootstrap Sampling"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/581567fc.EqualSizeSamplingNodeFactory.html" label="Equal Size Sampling"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/19110c2.ShuffleNodeFactory.html" label="Shuffle"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/397d7488.SorterNodeFactory.html" label="Sorter"/>
+</toc>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?NLS TYPE="org.eclipse.help.toc"?><toc label="Variables" link_to="../org.knime.base/tocs/flowcontrol_variables.xml#flowcontrol_variables">
+<topic href="PLUGINS_ROOT/org.knime.jsnippets/html/nodes/2ebab801.JavaEditVarNodeFactory.html" label="Java Edit Variable"/>
+<topic href="PLUGINS_ROOT/org.knime.jsnippets/html/nodes/51df1722.RuleEngineVariableNodeFactory.html" label="Rule Engine Variable"/>
+<topic href="PLUGINS_ROOT/org.knime.jsnippets/html/nodes/4e98876e.RuleEngineVariable2PortsNodeFactory.html" label="Rule Engine Variable (Dictionary)"/>
+<topic href="PLUGINS_ROOT/org.knime.jsnippets/html/nodes/5dd93852.StringManipulationVariableNodeFactory.html" label="String Manipulation (Variable)"/>
+</toc>

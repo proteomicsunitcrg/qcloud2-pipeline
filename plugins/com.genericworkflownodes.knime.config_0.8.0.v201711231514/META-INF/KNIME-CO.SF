@@ -1,0 +1,17 @@
+Signature-Version: 1.0
+SHA1-Digest-Manifest-Main-Attributes: 4QIHK0gdDcb2z0Q/y8GqaomCSEM=
+SHA1-Digest-Manifest: 731YwTVRmlCJ54JBwC9yLJDWXlQ=
+Created-By: 1.8.0_144 (Oracle Corporation)
+
+Name: lib/jaxen-1.1-beta-6.jar
+SHA1-Digest: aAEw1voWTboc1SoZFK483RNWi6c=
+
+Name: lib/xercesImpl.jar
+SHA1-Digest: pwmPASWiyJPnkJm44Uv62L3T53I=
+
+Name: genericnodes.config.jar
+SHA1-Digest: rk5kw8VmrOTrkm+YCDMUpTAC5qc=
+
+Name: lib/dom4j-1.6.1.jar
+SHA1-Digest: gsU2d+9o6BNfZn+WFJ1xwXf/o6U=
+

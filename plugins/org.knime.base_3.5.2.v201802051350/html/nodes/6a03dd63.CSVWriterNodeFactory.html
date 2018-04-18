@@ -1,0 +1,1481 @@
+<?xml version="1.0" encoding="UTF-8"?><html xmlns:t="http://knime.org/node/v2.10" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>
+                    Node description for
+                    CSV Writer</title>
+<style type="text/css">/* Import font */
+/* @import url(https://fonts.googleapis.com/css?family=Roboto:400,700);*/
+/* New way ton load Fonts locally */
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../roboto-regular_1.woff2') format('woff2');
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../roboto-regular_2.woff2') format('woff2');
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../roboto-regular_3.woff2') format('woff2');
+}
+/* greek */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../roboto-regular_4.woff2') format('woff2');
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../roboto-regular_5.woff2') format('woff2');
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../roboto-regular_6.woff2') format('woff2');;
+}
+/* latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../roboto-regular_7.woff2') format('woff2');;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../roboto-medium_1.woff2') format('woff2');
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../roboto-medium_2.woff2') format('woff2');
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../roboto-medium_3.woff2') format('woff2');
+}
+/* greek */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../roboto-medium_4.woff2') format('woff2');
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../roboto-medium_5.woff2') format('woff2');
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../roboto-medium_6.woff2') format('woff2');
+}
+/* latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../roboto-medium_7.woff2') format('woff2');
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../roboto-bold_1.woff2') format('woff2');
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../roboto-bold_2.woff2') format('woff2');
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../roboto-bold_3.woff2') format('woff2');
+}
+/* greek */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../roboto-bold_4.woff2') format('woff2');
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../roboto-bold_5.woff2') format('woff2');
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../roboto-bold_6.woff2') format('woff2');
+}
+/* latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../roboto-bold_7.woff2') format('woff2');
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 900;
+  src: url('../roboto-black_1.woff2') format('woff2');
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 900;
+  src: url('../roboto-black_2.woff2') format('woff2');
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 900;
+  src: url('../roboto-black_3.woff2') format('woff2');
+}
+/* greek */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 900;
+  src: url('../roboto-black_4.woff2') format('woff2');
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 900;
+  src: url('../roboto-black_5.woff2') format('woff2');
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 900;
+  src: url('../roboto-black_6.woff2') format('woff2');
+}
+/* latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 900;
+  src: url('../roboto-black_7.woff2') format('woff2');
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 400;
+  src: url('../roboto-italic_1.woff2') format('woff2');
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 400;
+  src: url('../roboto-italic_2.woff2') format('woff2');
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 400;
+  src: url('../roboto-italic_3.woff2') format('woff2');
+}
+/* greek */
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 400;
+  src: url('../roboto-italic_4.woff2') format('woff2');
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 400;
+  src: url('../roboto-italic_5.woff2') format('woff2');
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 400;
+  src: url('../roboto-italic_6.woff2') format('woff2');
+}
+/* latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 400;
+  src: url('../roboto-italic_7.woff2') format('woff2');
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 500;
+  src: url('../roboto-medium-italic_1.woff2') format('woff2');
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 500;
+  src: url('../roboto-medium-italic_2.woff2') format('woff2');
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 500;
+  src: url('../roboto-medium-italic_3.woff2') format('woff2');
+}
+/* greek */
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 500;
+  src: url('../roboto-medium-italic_4.woff2') format('woff2');
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 500;
+  src: url('../roboto-medium-italic_5.woff2') format('woff2');
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 500;
+  src: url('../roboto-medium-italic_6.woff2') format('woff2');
+}
+/* latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 500;
+  src: url('../roboto-medium-italic_7.woff2') format('woff2');
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 700;
+  src: url('../roboto-bold-italic_1.woff2') format('woff2');
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 700;
+  src: url('../roboto-bold-italic_2.woff2') format('woff2');
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 700;
+  src: url('../roboto-bold-italic_3.woff2') format('woff2');
+}
+/* greek */
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 700;
+  src: url('../roboto-bold-italic_4.woff2') format('woff2');
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 700;
+  src: url('../roboto-bold-italic_5.woff2') format('woff2');
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 700;
+  src: url('../roboto-bold-italic_6.woff2') format('woff2');
+}
+/* latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 700;
+  src: url('../roboto-bold-italic_7.woff2') format('woff2');
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 900;
+  src: url('../roboto-black-italic_1.woff2') format('woff2');
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 900;
+  src: url('../roboto-black-italic_2.woff2') format('woff2');
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 900;
+  src: url('../roboto-black-italic_3.woff2') format('woff2');
+}
+/* greek */
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 900;
+  src: url('../roboto-black-italic_4.woff2') format('woff2');
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 900;
+  src: url('../roboto-black-italic_5.woff2') format('woff2');
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 900;
+  src: url('../roboto-black-italic_6.woff2') format('woff2');
+}
+/* latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 900;
+  src: url('../roboto-black-italic_7.woff2') format('woff2');
+}
+/* END */
+
+/* Default font size for old or unscaled browsers. */
+html {
+	font-size: 10px;
+}
+
+/* Catching scaled font sizes and/or retina displays for modern browsers only.
+   Setting font size to 62.5%, so that the default (usually 16px unscaled) is reset to 10px. */
+@media	only screen and (-webkit-min-device-pixel-ratio: 1.2),
+		only screen and (-o-min-device-pixel-ratio: 12/10),
+		only screen and (min-resolution: 115dpi),
+		only screen and (min-resolution: 1.2dppx) {
+	
+	html {
+    	font-size: 62.5%;
+	}
+
+}
+
+body.origin {
+     
+     font-family: 'Roboto',sans-serif;
+     font-size: 12px;
+     font-size: 1.2rem;
+	 color: #3E3A39;
+	 margin: 0px;
+	 padding: 0px;
+	 height: 100%;
+	 width: 100%;
+	 overflow-y: auto;
+	 background: #FFF none repeat scroll 0% 0%;
+	 border:0;
+}
+
+body {
+     
+     font-family: 'Roboto',sans-serif;
+     font-size: 12px;
+     font-size: 1.2rem;
+	 color: #3E3A39;
+	 margin: 0px;
+	 padding: 0px;
+	 height: 80%;
+	 width: 100%;
+	 background: #FFF none repeat scroll 0% 0%;
+	 border:0;
+	 overflow-y: auto;
+	 margin-top: 70px;
+}
+
+iframe {
+	border: none;
+}
+
+
+/* Media Queries */
+
+
+@media screen and (max-width: 800px){
+
+	div.k-footer {
+		width: 100% !important;
+	}
+	
+}
+
+@media screen and (min-width: 800px) and (max-width: 1000px){
+
+	div.k-footer {
+		width: 100% !important;
+	}
+	
+}
+
+@media screen and (min-width: 1000px) and (max-width: 1200px){
+
+	div.node-main-div {
+		width: 58%;
+	}
+
+	div.k-footer {
+		width: 100% !important;
+	}
+	
+	div#node-menu-div {
+		margin-left: 8px !important;
+	}
+		
+}
+
+
+
+
+
+@media all and (min-width: 600px) and (max-width: 960px){
+
+	div.node-main-div {
+		width: 43%;
+	}
+	
+	div.k-footer {
+		width: 100% !important;
+	}
+}
+@media all and (min-width: 800px) and (max-width: 1280px){
+	
+	div.node-main-div {
+		width: 64%;
+	}
+	
+	div.k-footer {
+		width: 100% !important;
+	}
+}
+@media all and (min-width: 768px) and (max-width: 1024px){
+	
+	div.node-main-div {
+		width: 47%;
+	}
+	
+	div.k-footer {
+		width: 100% !important;
+	}
+
+}
+
+
+@media all and (max-width: 1417px){
+
+	div.node-main-div {
+		width: 74%;
+	}
+	
+	div.k-footer {
+		width: 100% !important;
+	}
+	
+	div#node-menu-div {
+		margin-left: 8px !important;
+	}
+}
+
+@media all and (max-width: 960px){
+
+	div.node-main-div {
+		width: 41%;
+	}
+	
+	div.k-footer {
+		width: 100% !important;
+	}
+	
+	div#node-menu-div {
+		margin-left: 8px !important;
+	}
+}
+
+@media all and (max-width: 1150px){
+
+	div.node-main-div {
+		width: 55%;
+	}
+	
+	div.k-footer {
+		width: 100% !important;
+	}
+	
+	div#node-menu-div {
+		margin-left: 8px !important;
+	}
+}
+
+@media screen and (max-width: 1200px){
+	
+	div.groupClass {
+		width: 100%;
+	}
+	
+	div.container {
+		width: 100%;
+	}
+	
+}
+
+@media screen {
+  body {
+    width: 100%;
+  }
+}
+@media print {
+  body {
+    width: 100%;
+  }
+}
+
+@media all and (min-width: 1151px) and (max-width: 1380px){
+	
+		div.node-main-div {
+		width: 58%;
+	}
+	
+	div.k-footer {
+		width: 100% !important;
+	}
+
+}
+
+
+
+@media all and (min-width: 1100px) and (max-width: 1260px){
+	
+		div.node-main-div {
+		width: 60%;
+	}
+	
+	div.k-footer {
+		width: 100% !important;
+	}
+	
+	div#node-menu-div {
+		margin-left: 8px !important;
+	}
+	
+
+
+}
+
+
+
+@media all and (min-width: 1300px) and (max-width: 1460px){
+
+	div#node-container-div {
+		width: 100% !important;
+	}
+	
+	div.node-main-div {
+		width: 74%;
+	}
+	
+	div.k-footer {
+		width: 100% !important;
+	}
+	
+	div#node-menu-div {
+		margin-left: 8px !important;
+	}
+	
+
+}
+
+@media all and (min-width: 1460px) and (max-width: 1560px){
+	
+	div.node-main-div {
+		width: 72%;
+	}
+	
+	div.k-footer {
+		width: 93% !important;
+	}
+	
+	div#node-menu-div {
+		margin-left: 8px !important;
+	}
+	
+
+}
+
+@media all and (min-width: 800px) and (max-width: 960px){
+
+	div#node-container-div {
+		width: 100% !important;
+	}
+	
+	div.node-main-div {
+		width: 71%;
+		min-width:71%;
+	}
+	
+	div.k-footer {
+		width: 100% !important;
+	}
+	
+	div#node-menu-div {
+		margin-left: 8px !important;
+	}
+	
+
+}
+
+@media all and (min-width: 960px) and (max-width: 1024px){
+
+	div#node-container-div {
+		width: 100% !important;
+	}
+	
+	div.node-main-div {
+		width: 71%;
+	}
+	
+	div.k-footer {
+		width: 100% !important;
+	}
+	
+	div#node-menu-div {
+		margin-left: 8px !important;
+	}
+	
+}
+@media all and (min-width: 1024px) and (max-width: 1100px){
+	
+	div#node-container-div {
+		width: 100% !important;
+	}
+	
+	div.node-main-div {
+		width: 71%;
+	}
+	
+	div.k-footer {
+		width: 100% !important;
+	}
+	
+	div#node-menu-div {
+		margin-left: 8px !important;
+	}
+	
+}
+
+@media all and (min-width: 1100px) and (max-width: 1180px){
+	div#node-container-div {
+		width: 100% !important;
+	}
+	
+	div.node-main-div {
+		width: 71%;
+	}
+	
+	div.k-footer {
+		width: 100% !important;
+	}
+	
+	div#node-menu-div {
+		margin-left: 8px !important;
+	}
+	
+}
+
+@media all and (min-width: 1180px) and (max-width: 1210px){
+
+	div#node-container-div {
+		width: 100% !important;
+	}
+	
+	div.node-main-div {
+		width: 71%;
+	}
+	
+	div.k-footer {
+		width: 100% !important;
+	}
+	
+	div#node-menu-div {
+		margin-left: 8px !important;
+	}
+	
+}
+
+@media all and (min-width: 1210px) and (max-width: 1300px){
+
+	div#node-container-div {
+		width: 100% !important;
+	}
+	
+	div.node-main-div {
+		width: 71%;
+	}
+	
+	div.k-footer {
+		width: 100% !important;
+	}
+	
+	div#node-menu-div {
+		margin-left: 8px !important;
+	}
+	
+}
+
+@media all and (min-width: 1310px) and (max-width: 1400px){
+
+	div#node-container-div {
+		width: 100% !important;
+	}
+	
+	div.node-main-div {
+		width: 74%;
+	}
+	
+	div.k-footer {
+		width: 100% !important;
+	}
+	
+	div#node-menu-div {
+		margin-left: 8px !important;
+	}
+	
+}
+
+@media all and (min-width: 288px) and (max-width: 800px){
+	
+		div#node-container-div {
+		width: 100% !important;
+	}
+	
+	div.node-main-div {
+		width: 68%;
+	}
+	
+	div.k-footer {
+		width: 100% !important;
+	}
+	
+	div#node-menu-div {
+		width: 29% !important;
+		margin-left: 2px !important;
+		margin-right: 5px;
+	}
+	
+}
+
+
+
+
+
+/* ENd Media Queries */
+
+div.container {
+	width: 100%;
+}
+
+tt, pre {
+	font-family: monospace; 
+	color: #3E3A39;
+}
+
+.node-content-div p {
+	margin: 0 0 1em 0;
+}
+
+p {
+	text-align: justify;
+	font-size: 12px;
+	font-size:1.2rem;
+	margin: 8px;
+	line-height: 1.6em;
+}
+
+
+h1 {  
+	font-size: 18px;
+	font-size: 1.8rem;
+	text-align: center;
+	color: #575757;
+	margin: 10px 15px 10px 15px;
+ }
+
+h2{
+	font-size: 16px;
+	font-size: 1.6rem;
+	margin:8px;
+	border-bottom: 1px solid #e5e5e5;
+  	color: #ff9f00;
+	
+}
+
+h2 &gt; div {
+	font-size: 12px;
+	font-size: 1.2rem;
+}
+
+.deprecated {
+	color: red; font-style: italic;
+}
+
+dl{
+	padding: 0;
+	margin: 8px;
+	font-size: 12px;
+	font-size: 1.2rem;
+}
+
+dt {
+	font-weight: bold;
+	margin-bottom: 0.3em;
+}
+
+dd{
+	margin-bottom: 1em;
+	margin-left: 1.5em;
+	line-height: 1.6em; 
+}
+
+table{
+	font-size: 12px;
+	font-size: 1.2rem;
+}
+
+table.introtable {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid #666666;
+    border-collapse:collapse;
+}
+
+table.introtable table {
+	margin: -0.5em;
+	border: none;
+	border-collapse: collapse;
+}
+
+
+table.introtable tr td, 
+table.introtable tr th {
+    padding: 0.5em 0.5em;
+    border: 1px solid #666666;
+}
+
+table.introtable table tr:not(:last-child) {
+	border: none;
+	border-bottom: 1px solid #666666;
+}
+
+table.introtable table tr td,
+table.introtable table tr th {
+	border: none;
+}
+    
+table.introtable table tr td:not(:last-child),
+table.introtable table tr th:not(:last-child) {
+    border-right: 1px solid #666666;
+}
+
+
+table.introtable tr th {
+    background-color: #EEEEEE;
+}
+
+
+td{
+	padding: 0.5em 0.5em;
+	vertical-align:top;
+}
+
+
+.dt {
+	font-weight: bold;
+}
+
+a{
+	color: #FF9000;
+	text-decoration: none;
+}
+	
+a:hover{
+	text-decoration: underline;
+}
+
+.warn{
+	color: #cf0000;
+}
+
+div.group {
+    border: 2px solid #e5e5e5;
+    padding: 0.2em;
+    margin-bottom: 0.5em;
+    border-radius: 5px;
+}
+
+div.dlGroup {
+	border: 2px solid #ffd600;
+    padding: 0.2em;
+    margin-bottom: 0.5em;
+    border-radius: 5px;
+}
+
+
+div.groupname {
+    text-align: center;
+    font-weight: bold;
+    background-color: #EEEEEE;
+    padding: 0.3em;
+}
+
+
+div.group-description {
+    background-color: #F8F8F8;
+    padding: 0.4em;
+    border-top: 1px solid #AAAAAA;
+}
+
+
+div#origin-bundle {
+	color: #3E3A39;
+    /*font-size: 83.03%;*/
+    font-size: 12px;
+    font-size: 1.2rem;
+    margin-top: 2em;
+    padding-top: 0.5em;
+    border-top: 1px solid #bbbbbb;
+    text-align: right;
+}
+
+span#source_info {
+	font-style: italic;
+	color: #FFD900;
+}
+
+span#node_provider {
+	font-style: italic;
+	color: #3E3A39;
+}
+
+/* Styles for Header Div*/
+
+.header_docu {
+	margin: 0 auto;
+	width: 64%;
+}
+
+#logo {
+	float:left;
+}
+
+#docu_version {
+	float: right;
+	margin-right: -400px;
+	margin-top:0px;
+}
+	
+
+/* Styles for Vertical Menu*/
+
+ul.tabs{
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+
+ul.tabs li{
+    background: none;
+    color: #222;
+    display: table-cell;
+    width: auto;
+    text-align: center;
+    padding: 10px 15px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+ul.tabs li.current{
+    background: #ededed;
+    color: #222;
+}
+
+
+}
+
+
+
+.tab-content{
+    display: none;
+    padding: 2px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.tab-content.current{
+    display: inherit;
+    border: 1px solid #000;
+    padding-left: 20px;
+}
+
+.node-container-div {
+	margin: 0 auto;
+	width: 1460px;
+	min-width: 748px !important;
+	
+}
+
+.groupClass:before,
+.groupClass:after {
+	content: "";
+	display: table;
+}
+
+.groupClass:after{
+	clear:both;
+}
+
+.groupClass {
+	clear: both;
+	*zoom : 1;
+}
+
+#node-menu-div {
+	float: left;
+	width: 26%;
+	max-width: 312px;
+	max-height: 100%;
+	margin-right: 1em;
+}
+
+#node-main-div {
+
+}
+
+
+.node-main-div {
+	float: left;
+	position: relative;
+	min-width: 509px !important;
+	max-height: 100%;
+	width: 77%;
+}
+
+
+
+/*************** Custom Style for Node Repository *********************/
+/* format of the menu tree */
+span.childs {
+	cursor: pointer;
+}
+  
+/* Klassen für das öffnen und schließen eines Knotens */
+
+li.treeMenu_opened ul {
+	display: block;
+}
+    
+li.treeMenu_closed ul {
+	display: none;
+}
+  
+ul {
+	margin-left: 8px;
+}
+
+ul li {
+	font-size: 12px;
+	font-size: 1.2rem;
+
+}
+  
+li {
+	padding: 0em;
+	margin: 0em;
+	margin-bottom: 0.4em;
+}
+
+li.knime-node {
+	margin-left: 4px;
+}
+
+.container a {
+	color: #000;
+}
+
+#menu_header{
+	border-top: 1px solid #000;
+	border-right: 1px solid #000;
+	border-left: 1px solid #000;
+	width: 50%;
+}
+
+.container first-half{
+	width:50%;
+}
+
+.container second-half{
+	width:50%;
+	border-top: 1px solid #000;
+}
+
+#headerObj {
+	min-width: 509px !important;
+}
+
+#node-header-div {
+	min-width: 509px !important;
+}
+ 	
+/******************************* END *************************/
+
+/* Footer Style here */
+
+div.k-footer {
+	width: 1460px;
+	min-width: 748px !important;
+	padding-bottom: 25px;
+	position: absolute;
+	bottom: 0;
+	background: white;
+	margin: 0 auto;
+	clear: both;
+}
+
+div.footer-inner {
+	height: auto;
+	width: 100%;
+	min-width:100%;
+	max-width: 100%;
+	margin: 0 auto;
+}
+
+#footer {
+	margin: 0px 10px;
+	border-top: #ccc 1px solid;
+	font-size: 82.33% !important;
+}
+
+.content {
+	margin:0.5em 0;
+}
+
+
+.col1 h3, .col2 h3, .col3 h3, .col4 h3, .col-adress h3 {
+	text-transform: uppercase;
+}
+
+
+.col1, .col2, .col3,.col4 {
+	float: left;
+	margin: 0 1.5em;
+	width: 15%;
+}
+
+.col-adress {
+	float: right;
+	margin: 0 1.5em;
+}
+
+.m-footer {
+    padding: 0px !important;
+    padding-top: 0.4em !important;
+    padding-left: 0px !important;
+    list-style-type: none !important;
+} 
+
+.m-footer li {
+	padding: 0 !important;
+	margin:0 !important;
+	font-size: 140% !important;
+}
+
+.m-footer li a {
+	color: #aaa;
+	text-decoration: none;
+	font-size: 13px !important;
+	font-size: 1.3rem !important;
+	line-height: 1.8em;
+} 
+/* End */
+/* Header */
+
+.fix-header {
+	  border: solid 1px #e5e5e5;
+  	  border-top-left-radius: 5px;
+  	  border-top-right-radius: 5px;
+  	  padding: 3px;
+  	  background-color: #f0f0f2;
+}
+
+#fix-header {
+	  position: fixed;
+  	  margin-top: -70px;
+  	  width: 100%;
+  	  z-index: 5;
+}
+
+
+
+
+</style>
+</head>
+<body>
+<div class="fix-header" id="fix-header">
+<h1>CSV Writer</h1>
+</div>
+<p>
+ 		This node writes out the input data table into a file or to a remote location denoted by an URL. The node
+        provides many options to customize the output format (see below). But there is no checking done on the
+        settings, so it is possible to write out the data in a format that makes it	impossible to read it in again
+         (e. g. if you specify no data separator).<br/>
+         Note that if the destination location is a remote URL not all options are available because in general it's
+         not possible to determine whether the remote location exists. In this case it will always be overwritten.
+ 		</p>
+<h2>Dialog Options</h2>
+<div class="group">
+<div class="groupname">Settings</div>
+<div class="group-description">
+ 		    General settings regarding the output file location and formats.
+ 		</div>
+<dl>
+<dt>Output location</dt>
+<dd>Enter a valid file name or URL. 
+			You can also choose a previously selected location from the drop-down list,
+			or select a local file from the "Browse..." dialog.
+			</dd>
+<dt>Write column header</dt>
+<dd>If checked, the column names will be
+ 			written out in the first line of the output file.
+			</dd>
+<dt>Don't write column headers if file exists</dt>
+<dd>
+ 			If checked, the column headers will not be written when the output
+ 			is appended to the already existing output file. 
+ 			This is particularly useful when the CSV Writer is
+ 			used in a loop to report results. This option is ignored
+ 			when the column header is not written anyway or the file append option
+ 			is unchecked (see below).
+			</dd>
+<dt>Write row ID</dt>
+<dd>If checked, the row IDs will be
+ 			added to the output, as first item in each line.
+		</dd>
+<dt>Compress output file (gzip)</dt>
+<dd>Compress the output file
+ 		    in gzip format. If enabled, you will not be able to append to an
+ 		    existing file.
+		</dd>
+<dt>If file exists...</dt>
+<dd>Specify the behavior of the node in 
+ 		    case the output file already exists. <i>Overwrite</i> will replace any 
+ 		    existing file, <i>Append</i> will append the input table to the end
+ 		    of the file (possibly skipping the column header) and <i>Abort</i>
+ 		    will issue an error during the node's execution (to prevent
+ 		    unintentional overwrite).</dd>
+</dl>
+</div>
+<div class="group">
+<div class="groupname">Advanced</div>
+<div class="group-description">
+		  In the Advanced tab, you can specify the character(s) that will be written 
+		  out between the data items.
+		</div>
+<dl>
+<dt>Data Separator</dt>
+<dd> You can use "\t" for a tab or "\n" 
+            for a new line character (and must use "\\" for a backslash) in 
+            any character sequence.
+        </dd>
+<dt>Missing Value Pattern</dt>
+<dd>In the Advanced tab, enter a pattern 
+ 			that will be written out for missing data values. Note, the missing
+ 			value pattern will never be put into quotes (see below).
+			</dd>
+</dl>
+</div>
+<div class="group">
+<div class="groupname">Quotes</div>
+<div class="group-description">In the Quotes tab, you can enter a left
+		    and right quotation mark pattern. Also, select a mode, which determines
+		    when quotation marks should be placed around the data item. When quotes
+		    are used (in every mode other than "never") you must also specify a 
+		    replacement pattern for the right quote. If it appears in the data
+		    item, it must be replaced (so it won't be confused with the actual
+		    closing quote). 
+	    </div>
+<dl>
+<dt>Quote Mode: always</dt>
+<dd>Every data item written out is
+		    placed between quotation marks. (The missing value pattern is not
+		    quoted though.)
+			</dd>
+<dt>Quote Mode: if needed</dt>
+<dd>Quotes are only placed around a 
+		    data item that contains the data separator (specified in the Advanced
+		    tab) or if it equals the missing value pattern. The right quote pattern
+		    will be replaced if it appears in a quoted data item.
+			</dd>
+<dt>Quote Mode: non-numerical only</dt>
+<dd>Integer and floating point 
+		    numbers are not quoted, all other data items are. (Selecting the decimal
+		    point as data separator will lead to an output that can't be read in 
+		    again.) The right quote is replaced in quoted items.
+			</dd>
+<dt>Quote Mode: never</dt>
+<dd>No data item is placed between quotation
+		    marks. You should specify a replacement pattern for the data separator,
+		    if it occurs in the data item.
+			</dd>
+</dl>
+</div>
+<div class="group">
+<div class="groupname">Comment Header</div>
+<div class="group-description">In the Comment Header tab you can add a 
+		    comment header to the beginning of the output. Either specify your 
+		    own comment line(s) or choose from the predefined items. 
+		    If you check one of the options you must also enter a comment begin 
+		    and comment end pattern.
+		</div>
+<dl>
+<dt>Header Content: the current creation time</dt>
+<dd>If checked, a
+		    comment line with the current time and date is added.
+			</dd>
+<dt>Header Content: the user account name</dt>
+<dd>If checked, the login
+		    name of the user that created the file (probably you!) is inserted.
+			</dd>
+<dt>Header Content: the input table name</dt>
+<dd>If checked, a comment
+		    line is added showing the name of the table the data was read from.
+			</dd>
+<dt>Header Content: this text</dt>
+<dd>If you check this, you can enter
+		    any text, that will be added then to the comment header. Use "\n" to
+		    start a new line, and "\t" to insert a tab character (and "\\" to
+		    produce a backslash).
+			</dd>
+<dt>Comment Pattern</dt>
+<dd>
+		    If you have checked at least one of the content options, you must
+		    provide comment begin and end patterns that are placed around the
+		    comment header then. If you omit the end pattern the begin pattern
+		    is placed at the beginning of each comment line (assuming single
+		    line comments, in contrast to block comment if you specify both
+		    patterns).
+			</dd>
+</dl>
+</div>
+<div class="group">
+<div class="groupname">Decimal Separator</div>
+<div class="group-description">
+		    In the tab "decimal separator" you can enter a character that is used as 
+		    decimal separator for floating point numbers. It replaces the default 
+		    character '.' then.
+	    </div>
+<dl>
+<dt>Line Ending</dt>
+<dd>
+            In the tab "Advanced" you can select the line endings that are written to the file. Default value is the
+            system default value, which is system dependent (LF on Linux/Unix systems, CR+LF on Windows systems). You 
+            can enforce a certain line ending to generate a file that is readable on a different operating system. 
+        </dd>
+</dl>
+</div>
+<div class="group">
+<div class="groupname">Encoding</div>
+<dl>
+<dt>File Encoding</dt>
+<dd>
+    	        To write a csv file with a different encoding, you can select a character set in this tab (UTF-8, 
+    	        UTF-16, etc.), or specify any other encoding supported by your Java VM. The default value uses the default
+    	        encoding of the Java VM, which may depend on the locale or the Java property "file.encoding"
+            </dd>
+</dl>
+</div>
+<h2>Ports</h2>
+<dl>
+<div class="group dlGroup">
+<div class="groupname">Input Ports</div>
+<table>
+<tr>
+<td class="dt">0</td>
+<td>The data table to write out.</td>
+</tr>
+</table>
+</div>
+</dl>
+<div id="origin-bundle">
+                    This node is contained in <em>KNIME Base Nodes</em>
+                    provided by <em>KNIME AG, Zurich, Switzerland</em>.
+                </div>
+</body>
+</html>

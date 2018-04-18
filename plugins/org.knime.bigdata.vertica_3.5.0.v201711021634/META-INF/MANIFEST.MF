@@ -1,0 +1,31 @@
+Manifest-Version: 1.0
+Ant-Version: Apache Ant 1.9.6
+Bundle-SymbolicName: org.knime.bigdata.vertica;singleton:=true
+Bundle-Name: KNIME HP Vertica Connector
+Bundle-Version: 3.5.0.v201711021634
+Bundle-ClassPath: knime-vertica.jar,lib/vertica-jdk5-6.1.3-0.jar
+Require-Bundle: org.apache.commons.lang3;bundle-version="[3.2.1,4.0.0)
+ ",org.knime.core;bundle-version="[3.0.0,4.0.0)",org.knime.base;bundle
+ -version="[3.0.0,4.0.0)",org.eclipse.help;resolution:=optional,org.ec
+ lipse.help.ui;resolution:=optional
+Bundle-ManifestVersion: 2
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-ActivationPolicy: lazy
+Bundle-Vendor: KNIME AG, Zurich, Switzerland
+Created-By: 1.8.0_131-b11 (Oracle Corporation)
+
+Name: tocs/database_database-connector$nodes.xml
+SHA-256-Digest: 0TWy1TVlO1CpOekKyySTXmFkmfRzAh0EhTqbOtXC9Fo=
+
+Name: lib/vertica-jdk5-6.1.3-0.jar
+SHA-256-Digest: grbDHK1usOVmF/Y1zeOAAXQv1jd0JgmS4alYUm3FiNI=
+
+Name: plugin.xml
+SHA-256-Digest: mQ6WhF44352h5yELYjxXGM39kIQBfSYJOkOp+QamAQY=
+
+Name: knime-vertica.jar
+SHA-256-Digest: 1o3AkNxoy93fpCFZAp6JB834i5bu/EN+ApLClO4qglE=
+
+Name: html/nodes/76339b06.VerticaConnectorNodeFactory.html
+SHA-256-Digest: 1asQahi/Uk2JTo8kf464TDzXw9KzFBN/4bTjrIkI7qw=
+

@@ -1,0 +1,30 @@
+Manifest-Version: 1.0
+Ant-Version: Apache Ant 1.9.6
+Bundle-SymbolicName: org.knime.ext.phantomjs.bin.linux.x86_64;singleto
+ n:=true
+Bundle-Name: PhantomJS binaries for Linux x86_64
+Bundle-Version: 2.1.1.v201711021643
+Bundle-ManifestVersion: 2
+Eclipse-PlatformFilter: (&(osgi.os=linux)(osgi.arch=x86_64))
+Bundle-Vendor: KNIME AG, Zurich, Switzerland
+Fragment-Host: org.knime.ext.phantomjs;bundle-version="3.0.0"
+Created-By: 1.8.0_131-b11 (Oracle Corporation)
+
+Name: META-INF/p2.inf
+SHA-256-Digest: tnYMH1fFS8OfB8MMOPtiCUpOtKrtZrDpj2ZpX43Iw9c=
+
+Name: third-party.txt
+SHA-256-Digest: URkxnfdd2rISRK+BiDDP8fNWyxGvUbkr7+0gSrZErSg=
+
+Name: ChangeLog
+SHA-256-Digest: bjS/PzJ2BDUUbrGM4pI7VekOWYIsrpOnumQeoZIY5aI=
+
+Name: linux/x86_64/phantomjs
+SHA-256-Digest: T2PmBVwyO4ZX8KVG1N02r9pc1Olhw3XzG0jVBqfEKW8=
+
+Name: LICENSE.BSD
+SHA-256-Digest: 3kLL8ZwW2EwrM7iPYitNPLkuMJRa3IQXDj22+6UhSkU=
+
+Name: README.md
+SHA-256-Digest: ytKP2O7cHkpiYgUCrnvFmerSymw8vbiB/ZPkUTx3m1w=
+

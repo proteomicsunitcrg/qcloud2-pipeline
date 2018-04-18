@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?NLS TYPE="org.eclipse.help.toc"?><toc label="Filter" link_to="../org.knime.base/tocs/manipulation_row_row-filter.xml#manipulation_row_row-filter">
+<topic href="PLUGINS_ROOT/org.knime.jsnippets/html/nodes/85969da.RuleEngineFilterNodeFactory.html" label="Rule-based Row Filter"/>
+<topic href="PLUGINS_ROOT/org.knime.jsnippets/html/nodes/4ad8e096.RuleEngineFilter2PortsNodeFactory.html" label="Rule-based Row Filter (Dictionary)"/>
+<topic href="PLUGINS_ROOT/org.knime.jsnippets/html/nodes/b3dba09.RuleEngineSplitterNodeFactory.html" label="Rule-based Row Splitter"/>
+<topic href="PLUGINS_ROOT/org.knime.jsnippets/html/nodes/3fc08c59.RuleEngineSplitter2PortsNodeFactory.html" label="Rule-based Row Splitter (Dictionary)"/>
+</toc>

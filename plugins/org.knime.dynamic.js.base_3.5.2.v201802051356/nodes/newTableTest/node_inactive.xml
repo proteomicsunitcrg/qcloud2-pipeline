@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<js:knimeNode xmlns:js="http://knime.org/dynamicjsnode/v3.0"
+	xmlns="http://knime.org/dynamicnode/v3.0" xmlns:n="http://knime.org/node/v2.12"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://knime.org/dynamicjsnode/v3.0 http://www.knime.org/node/dynamicJSNode_v3.0.xsd"
+	jsNamespace="newTableTest" nodeID="newTableTest" categoryPath="/labs/interactiveView"
+	icon="../js.png" type="Other">
+
+	<name>New Table test (dynamic node framework)</name>
+	<shortDescription>This node tests the functionality of the output options to create new tables.</shortDescription>
+	<fullDescription>
+		<intro>
+		      <n:p>
+		      	Simple tables will be created for all three new/edited table options.
+		      </n:p>
+		</intro>
+	</fullDescription>
+	<outputOptions>
+		<dataOutputOption outPortIndex="0" id="emptyTableOutput" outputType="EMPTY_TABLE" />
+		<dataOutputOption outPortIndex="1" id="emptyWithSpecOutput" outputType="EMPTY_WITH_SPEC" inPortIndex="0" />
+		<dataOutputOption outPortIndex="2" id="inputTableOutput" outputType="INPUT_TABLE" inPortIndex="0" />
+	</outputOptions>
+	<interactiveView name="Test View">
+		Nothing is plotted, just tables are created in the background.
+	</interactiveView>
+	<ports>
+		<inPort portType="Data" name="Input Data" index="0">
+			Data table containing arbitrary input data to be edited.
+		</inPort>
+		<outPort portType="Data" name="Empty Table Default" index="0">
+			Default of this port is an empty table with an empty spec.
+		</outPort>
+		<outPort portType="Data" name="Empty with Spec Default" index="1">
+			Default is that the output has a copy of the input spec, but an empty table.
+		</outPort>
+		<outPort portType="Data" name="Input Table Default" index="2">
+			Default is that the output has a copy of the input spec and table.
+		</outPort>
+	</ports>
+	<js:resources>
+		<js:resource type="js" path="newTableTest.js" />
+	</js:resources>
+</js:knimeNode>

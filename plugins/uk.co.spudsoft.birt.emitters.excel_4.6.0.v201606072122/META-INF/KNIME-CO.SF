@@ -1,0 +1,227 @@
+Signature-Version: 1.0
+SHA-256-Digest-Manifest-Main-Attributes: 2PTmGO9JPbydECWP+amtSVUG0mVfY
+ Qy+JU4BTN+WtgY=
+SHA-256-Digest-Manifest: zx9Tbku8wdjQMldCY8TDpCf4oKyRuvN4Ehxkko44Pzw=
+Created-By: 1.8.0_131 (Oracle Corporation)
+
+Name: plugin.xml
+SHA-256-Digest: 1lrBFHhtzORglfvNiiiV9dU0Q5v6ax9apQkWeNjbwEw=
+
+Name: uk/co/spudsoft/birt/emitters/excel/StyleManagerHUtils$1.class
+SHA-256-Digest: eoOHdUfKfJaH6GBGa0h0fyNlEZqaKnQPJh/DydAyx4Y=
+
+Name: uk/co/spudsoft/birt/emitters/excel/handlers/FlattenedTableRowHan
+ dler.class
+SHA-256-Digest: sGfc2AXv/cFrjesJHVbbc3jPRtbiuA60pNDQrjPSo3w=
+
+Name: uk/co/spudsoft/birt/emitters/excel/FontManager.class
+SHA-256-Digest: rc6x7hgb8MiQz6wPAOgp6HlKPeh5NZKO78E2Kt78buU=
+
+Name: uk/co/spudsoft/birt/emitters/excel/RichTextRun.class
+SHA-256-Digest: 5VHF9mpo0KNXk3S42NAhlW6gUweIhG6Wa/mlQNKPiH0=
+
+Name: uk/co/spudsoft/birt/emitters/excel/XlsEmitter.class
+SHA-256-Digest: sCwNBbU8+tUUHVXdmsVb7sEjE5WHIvvK2pVkVMsqrws=
+
+Name: uk/co/spudsoft/birt/emitters/excel/ExcelEmitter.class
+SHA-256-Digest: gLpz3PSHw5GAX9xvoG4z/n7psP9YV2K2n0hSvAivj70=
+
+Name: COPYING
+SHA-256-Digest: g+loAlhnIJisx7OGVRPQdNILz9HlYaq2+k/RaNqHHG8=
+
+Name: uk/co/spudsoft/birt/emitters/excel/handlers/AbstractRealListHand
+ ler.class
+SHA-256-Digest: kWWQH215LZNoTRMA8KZNGnS078p01pfyrdpKCiW/NGQ=
+
+Name: uk/co/spudsoft/birt/emitters/excel/handlers/TopLevelContentHandl
+ er.class
+SHA-256-Digest: W6f/u5S7OqRXAJStQKTJvquLLLZy3um7jZLgD6DYfvk=
+
+Name: lib/dom4j-1.6.1.jar
+SHA-256-Digest: bL/U4y7XvlDlE7c7wfjlwD8puO1qZs8WXMhGC7hBAUc=
+
+Name: uk/co/spudsoft/birt/emitters/excel/StyleManager$StylePair.class
+SHA-256-Digest: BmpZ6SYNniOanL7/KCONFtGf2TLEc2ohgG79AlzUPUQ=
+
+Name: uk/co/spudsoft/birt/emitters/excel/handlers/NestedTableHandler.c
+ lass
+SHA-256-Digest: ehPh32lqLek1lxJWyZOZpkOOvW25CmeZSP16yu861eI=
+
+Name: uk/co/spudsoft/birt/emitters/excel/handlers/TopLevelTableHandler
+ .class
+SHA-256-Digest: lMpzOEH8mNCnt3YQ9LWdhFh4btyH/MYFJtETkkks6zI=
+
+Name: uk/co/spudsoft/birt/emitters/excel/handlers/NestedTableRowHandle
+ r.class
+SHA-256-Digest: jZD99yNvhmFi6Zcg0xFlEAzX4DtGs5pvHSp0Jl340Mo=
+
+Name: uk/co/spudsoft/birt/emitters/excel/ClientAnchorConversions.class
+SHA-256-Digest: iXvTxfeyiEFF4onCc5FMtXgbYBq9Yn7KBt2v35vud0k=
+
+Name: uk/co/spudsoft/birt/emitters/excel/FilteredSheet.class
+SHA-256-Digest: YftxcU/2cOz4ooUB6qWp8iQfMVhJeTZNYab3RKVDyIU=
+
+Name: uk/co/spudsoft/birt/emitters/excel/handlers/FlattenedTableHandle
+ r.class
+SHA-256-Digest: 0u2NmYr8weSPGa9WOvJBcbH6MzXkq1p9s7K8OWkffPM=
+
+Name: uk/co/spudsoft/birt/emitters/excel/XlsxEmitter.class
+SHA-256-Digest: pP2+YfRsVW8BAGPUBQXV7n7Y6BFIgQ9gZ2A6T/w44YU=
+
+Name: uk/co/spudsoft/birt/emitters/excel/handlers/ITableHandler.class
+SHA-256-Digest: pFwQjS6NbwNhEFtj4FoQwVbBMTmSigeT6Ylnrh9/WrQ=
+
+Name: uk/co/spudsoft/birt/emitters/excel/StyleManagerXUtils.class
+SHA-256-Digest: GHksGsXQRfcuJjyPTqyPRuvoq1LBf8YvTNlnG6K99vg=
+
+Name: uk/co/spudsoft/birt/emitters/excel/handlers/NestedTableContainer
+ .class
+SHA-256-Digest: 76PPrK/aq/n631eFZe759ksylYHxG0N5eqbt4fWtajE=
+
+Name: about_files/LICENSE
+SHA-256-Digest: Xv/cP5wCKocN72q3BrYyoWlwVNc4vL1/QJh2dh8BrWM=
+
+Name: uk/co/spudsoft/birt/emitters/excel/EmitterServices.class
+SHA-256-Digest: FusMWSChlWEFfbIFOdyXOdCSYi24KOCN+TX8Z9ZFtdM=
+
+Name: about_files/LICENSE.txt
+SHA-256-Digest: uOhNOUzUtiIvOvJeISf/NZZsXurTPQ4mtlw4CRQfXHU=
+
+Name: uk/co/spudsoft/birt/emitters/excel/handlers/TopLevelListHandler.
+ class
+SHA-256-Digest: AnGX5oayN4srZUtLwhzwJ2eY+d6VbfeyVqLqbarnrkY=
+
+Name: uk/co/spudsoft/birt/emitters/excel/handlers/TopLevelTableCellHan
+ dler.class
+SHA-256-Digest: WGHQWgjHZxY+uqnXJfJNQctNKwmeeEz2n8mwVHztGgk=
+
+Name: logo.png
+SHA-256-Digest: eomRXUb6CmZ6BosjpZFr4E/V4JcHvx7QHUS1gOfyhGI=
+
+Name: lib/poi-ooxml-schemas-3.9-20121203.jar
+SHA-256-Digest: n/V3vFZeu99umDiXJKjVYCdL1YBcqXhYkajufrCnSQQ=
+
+Name: uk/co/spudsoft/birt/emitters/excel/framework/Logger.class
+SHA-256-Digest: eo3yQJhmyIqKlW0mr5KusAdywUBu9uzPN9RSRvdni2w=
+
+Name: uk/co/spudsoft/birt/emitters/excel/handlers/NestedTableCellHandl
+ er.class
+SHA-256-Digest: ZujnvhXXT29ZaddQNZ3c0VoE2H+SED5QeUwW5XGVebs=
+
+Name: uk/co/spudsoft/birt/emitters/excel/DateFormatConverter.class
+SHA-256-Digest: shRnRWbmVOWEMFrmSt5KsDSzn9xoP4kn40YLNREL/Wo=
+
+Name: uk/co/spudsoft/birt/emitters/excel/handlers/FlattenedListHandler
+ .class
+SHA-256-Digest: hrHEV55KIOYRU3kEd2lawkBVlei2jD5sR74gxZBQCis=
+
+Name: uk/co/spudsoft/birt/emitters/excel/BirtStyle.class
+SHA-256-Digest: JxdfX2j7F+YYdJTPYvijWl+YrBXTva6iDgQmf6vQ9ow=
+
+Name: uk/co/spudsoft/birt/emitters/excel/framework/ExcelEmitterPlugin.
+ class
+SHA-256-Digest: waEhLt4SdW0OshEiFjOrAiFHqRqYuX1OtH73x0grwHw=
+
+Name: uk/co/spudsoft/birt/emitters/excel/HandlerState.class
+SHA-256-Digest: XzvW6h6viprxytx1zhrmTKCTDMetv/ldFQ1xvkU3CDM=
+
+Name: lib/xmlbeans-2.3.0.jar
+SHA-256-Digest: R7jnl20cPNBzqmhNlG+hPtAQNoPkQ49iVxEnCqBgCSk=
+
+Name: uk/co/spudsoft/birt/emitters/excel/handlers/TopLevelTableRowHand
+ ler.class
+SHA-256-Digest: AdYyAnqx/o3IKQ9VHUpnRXH3vzs7ZbvhGCiViubve1s=
+
+Name: uk/co/spudsoft/birt/emitters/excel/CellImage.class
+SHA-256-Digest: H34RFNIzuZqAaD33CiNmJQ7ZvHBVoQCQDo1IhWLZJ2c=
+
+Name: uk/co/spudsoft/birt/emitters/excel/StyleManagerUtils$Factory.cla
+ ss
+SHA-256-Digest: fokVZSrZUmoTsC3cArJNJy+5uD8YQlMNDfOeHur6GWU=
+
+Name: uk/co/spudsoft/birt/emitters/excel/handlers/AbstractHandler.clas
+ s
+SHA-256-Digest: 7tos50eqY3nFJIaxMtsBXbLwfT7/ts8CJ6OE7kq125c=
+
+Name: uk/co/spudsoft/birt/emitters/excel/FontManager$FontPair.class
+SHA-256-Digest: vRtpTkukIDl2vnYai+H9KT77PuQQVUruPfSdYkXnIUw=
+
+Name: uk/co/spudsoft/birt/emitters/excel/Area.class
+SHA-256-Digest: sNpSP7uSFhkIOH0NTdJQz+4dLqrflsJLfhapEuX/Frs=
+
+Name: uk/co/spudsoft/birt/emitters/excel/DateFormatConverter$DateForma
+ tTokenizer.class
+SHA-256-Digest: L5FRTTG8U+KOHFmAFCHj20Dfw6db718VQat//xADNIs=
+
+Name: uk/co/spudsoft/birt/emitters/excel/FilteredSheet$FilteredIterato
+ r.class
+SHA-256-Digest: iVTu2uXHpc2Yeildsd+J12SuGDWEN6ILWqwWAYmXNEA=
+
+Name: uk/co/spudsoft/birt/emitters/excel/handlers/FlattenedTableCellHa
+ ndler.class
+SHA-256-Digest: ntj9ObHdy/pBKVlXYn+EMMIaaYxGoyXhoxXME4CbkEI=
+
+Name: uk/co/spudsoft/birt/emitters/excel/handlers/NestedListHandler.cl
+ ass
+SHA-256-Digest: FDacOVpWUA2whE0YgXRFMDl07kd1zQVK0Px1fbRXYoA=
+
+Name: about.html
+SHA-256-Digest: iNe5/nRYTnXlBs9zLpqrqhccG0cksJZ02w0wAmWj2kU=
+
+Name: uk/co/spudsoft/birt/emitters/excel/handlers/AbstractRealTableCel
+ lHandler.class
+SHA-256-Digest: +zD8VMjjclrffiuujbflngkWG+nm0BXHw4lSR15cdiE=
+
+Name: uk/co/spudsoft/birt/emitters/excel/StyleManagerHUtils.class
+SHA-256-Digest: +C4vjvMqq3HM/aivFT7gEU0+F/3bl1FOKNOFU8MLnRE=
+
+Name: uk/co/spudsoft/birt/emitters/excel/Coordinate.class
+SHA-256-Digest: EK5d0+7wsRop0wU0PF5lcz9Rt+a7zCPYgYo6m6/Y3u4=
+
+Name: uk/co/spudsoft/birt/emitters/excel/StyleManagerUtils.class
+SHA-256-Digest: oWBQEYe9rfeF/w/+FbZycwy449RhRLIpUMxmykjo8jU=
+
+Name: uk/co/spudsoft/birt/emitters/excel/handlers/AbstractRealTableHan
+ dler.class
+SHA-256-Digest: SjfzM4eIxY/95il2sk/stEEgfSUYldvjtziNtzkwzhU=
+
+Name: uk/co/spudsoft/birt/emitters/excel/handlers/NestedListContentHan
+ dler.class
+SHA-256-Digest: 3tJsORX6HFeRnV74VAjd5E9pV18jonx2AOq/bLc2YII=
+
+Name: uk/co/spudsoft/birt/emitters/excel/AreaBorders.class
+SHA-256-Digest: eJGfvGW4w1tDFW9qZG3oz1roD9IEf7vq3YTCTe3FN88=
+
+Name: about_files/NOTICE
+SHA-256-Digest: OrBp0gdC5D3OqTw/nLTfuiXQtO4oy8CIS54UtfjkC9E=
+
+Name: uk/co/spudsoft/birt/emitters/excel/StyleManagerXUtils$1.class
+SHA-256-Digest: GWMdDdsJLJ5F2DsSlIptkCuXUW1Q0zyfMCuhs/UCg4A=
+
+Name: lib/poi-ooxml-3.9-20121203.jar
+SHA-256-Digest: JmbV11QqGZKcHSPLQ7Mcaf2A6kzHaF9jEY7HPwWn95o=
+
+Name: uk/co/spudsoft/birt/emitters/excel/StyleManager.class
+SHA-256-Digest: U1xMQ77fHXy+sfDjLrnbYEMqG1YcS6jqm1Bi3Fel0d8=
+
+Name: uk/co/spudsoft/birt/emitters/excel/handlers/StringCellHandler.cl
+ ass
+SHA-256-Digest: 6L2rGFXlhuIfVGeqO8y0yo2njD3/V1hnyGIVH/RA3pE=
+
+Name: uk/co/spudsoft/birt/emitters/excel/handlers/IHandler.class
+SHA-256-Digest: Gpt81XKG7tZPGMfwiEXe+5XaKl6BeImi4ft82eoJ630=
+
+Name: lib/commons-codec-1.5.jar
+SHA-256-Digest: JG+8GxaUsONhZvrizEvMj+VD+UGtB1+R0ACoJagqD+Y=
+
+Name: uk/co/spudsoft/birt/emitters/excel/handlers/CellContentHandler.c
+ lass
+SHA-256-Digest: wuAjdO8EKSMiv64HiHr4Cww1DBnsEUZU4YiD/OH0Xac=
+
+Name: uk/co/spudsoft/birt/emitters/excel/handlers/AbstractRealTableRow
+ Handler.class
+SHA-256-Digest: 5JXY0UoIgnxUEcsyYgejMO35XW/5TCpN1DbQF9mKNvE=
+
+Name: uk/co/spudsoft/birt/emitters/excel/handlers/PageHandler.class
+SHA-256-Digest: 985e4jmltP4fbg8jJZbXPKfobsLEaME4U8HYg1ZDhoY=
+

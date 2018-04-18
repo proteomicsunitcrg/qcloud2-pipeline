@@ -1,0 +1,793 @@
+Manifest-Version: 1.0
+Bundle-SymbolicName: org.apache.xmlbeans;singleton:=true
+Require-Bundle: org.apache.ant;bundle-version="[1.9.4,2.0.0)"
+Bundle-ManifestVersion: 2
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-ActivationPolicy: lazy
+Eclipse-BuddyPolicy: dependent
+Bundle-Vendor: KNIME AG, Zurich, Switzerland
+Ant-Version: Apache Ant 1.9.6
+Export-Package: org.apache.xmlbeans,org.apache.xmlbeans.impl.common,or
+ g.apache.xmlbeans.impl.config,org.apache.xmlbeans.impl.inst2xsd,org.a
+ pache.xmlbeans.impl.inst2xsd.util,org.apache.xmlbeans.impl.jam,org.ap
+ ache.xmlbeans.impl.jam.annotation,org.apache.xmlbeans.impl.jam.intern
+ al,org.apache.xmlbeans.impl.jam.internal.classrefs,org.apache.xmlbean
+ s.impl.jam.internal.elements,org.apache.xmlbeans.impl.jam.internal.ja
+ vadoc,org.apache.xmlbeans.impl.jam.internal.parser,org.apache.xmlbean
+ s.impl.jam.internal.reflect,org.apache.xmlbeans.impl.jam.mutable,org.
+ apache.xmlbeans.impl.jam.provider,org.apache.xmlbeans.impl.jam.visito
+ r,org.apache.xmlbeans.impl.jam.xml,org.apache.xmlbeans.impl.piccolo.i
+ o,org.apache.xmlbeans.impl.piccolo.util,org.apache.xmlbeans.impl.picc
+ olo.xml,org.apache.xmlbeans.impl.regex,org.apache.xmlbeans.impl.richP
+ arser,org.apache.xmlbeans.impl.schema,org.apache.xmlbeans.impl.soap,o
+ rg.apache.xmlbeans.impl.store,org.apache.xmlbeans.impl.tool,org.apach
+ e.xmlbeans.impl.util,org.apache.xmlbeans.impl.validator,org.apache.xm
+ lbeans.impl.values,org.apache.xmlbeans.impl.xb.ltgfmt,org.apache.xmlb
+ eans.impl.xb.ltgfmt.impl,org.apache.xmlbeans.impl.xb.substwsdl,org.ap
+ ache.xmlbeans.impl.xb.substwsdl.impl,org.apache.xmlbeans.impl.xb.xmlc
+ onfig,org.apache.xmlbeans.impl.xb.xmlconfig.impl,org.apache.xmlbeans.
+ impl.xb.xmlschema,org.apache.xmlbeans.impl.xb.xmlschema.impl,org.apac
+ he.xmlbeans.impl.xb.xsdownload,org.apache.xmlbeans.impl.xb.xsdownload
+ .impl,org.apache.xmlbeans.impl.xb.xsdschema,org.apache.xmlbeans.impl.
+ xb.xsdschema.impl,org.apache.xmlbeans.impl.xpath.saxon,org.apache.xml
+ beans.impl.xpathgen,org.apache.xmlbeans.impl.xquery.saxon,org.apache.
+ xmlbeans.impl.xsd2inst,org.apache.xmlbeans.soap,org.apache.xmlbeans.x
+ ml.stream,org.apache.xmlbeans.xml.stream.events,org.apache.xmlbeans.x
+ ml.stream.utils,repackage,schemaorg_apache_xmlbeans.system.sXMLCONFIG
+ ,schemaorg_apache_xmlbeans.system.sXMLLANG,schemaorg_apache_xmlbeans.
+ system.sXMLSCHEMA,schemaorg_apache_xmlbeans.system.sXMLTOOLS
+Bundle-Name: Apache XMLBeans
+Bundle-Version: 2.6.0.v201711021649
+Bundle-ClassPath: lib/xbean.jar,lib/xbean_xpath.jar,lib/xmlpublic.jar,
+ lib/saxon9.jar,lib/saxon9-dom.jar,lib/saxon9-xpath.jar
+Created-By: 1.8.0_131-b11 (Oracle Corporation)
+
+Name: docs/reference/constant-values.html
+SHA-256-Digest: F2wR5t9wsgVWIY5xP8OEc/5DiSn9KKoRP2D+mvlxkhM=
+
+Name: bin/dumpxsb.cmd
+SHA-256-Digest: eJJTLkijNRszyVDtONsGxy+7ChR5OcFUTgZx1d98ETQ=
+
+Name: docs/reference/org/apache/xmlbeans/XmlDecimal.html
+SHA-256-Digest: RiyfeCYcdqoyKWkIeLUe2yrFnzxZ7wswdiT7tFNx70o=
+
+Name: docs/build.xml
+SHA-256-Digest: 2wGT9CGV+iQ0FMH3TcjgWlZBA38Fk74y0rj8Nh/BShs=
+
+Name: docs/reference/org/apache/xmlbeans/XmlRuntimeException.html
+SHA-256-Digest: aZIc9ruUcgLqzm8df8rmdk0/Ptk+QAlzJSCgAb2ToaI=
+
+Name: docs/reference/org/apache/xmlbeans/XmlErrorCodes.html
+SHA-256-Digest: 8YU+YCEFvcj9C3sY5m87cS8gQuhTKjGhykPWNc91dk4=
+
+Name: docs/reference/org/apache/xmlbeans/XmlOptionsBean.html
+SHA-256-Digest: cl7WTIhgCiig+6wq+8Gp09rjBRi1gtzWZIPu00HkQ24=
+
+Name: bin/sfactor
+SHA-256-Digest: WuBYyw74TGIVOSycBa9G0ZJoYunx7KhqEVm6uFYXX+8=
+
+Name: docs/reference/org/apache/xmlbeans/XmlGMonth.html
+SHA-256-Digest: 4fbh8hMGlWkn6GQv9wzbIW4xUpS+ADBTpKUBiqw99VE=
+
+Name: docs/reference/org/apache/xmlbeans/ObjectFactory.html
+SHA-256-Digest: Z6RnJQeDfsGlnUlivt8emmTZE3mPstCi5yfbE12n0O0=
+
+Name: docs/guide/conXMLBeansSupportBuiltInSchemaTypes.html
+SHA-256-Digest: wH7MohhFWF72E3FH4vhIuB7wwYcw20I3eESDc1YzVCk=
+
+Name: docs/reference/org/apache/xmlbeans/XmlENTITIES.Factory.html
+SHA-256-Digest: oDY7XEhVSC8s+RHEeSwcC/Yh1reRMae3m/GP9S019yY=
+
+Name: docs/reference/org/apache/xmlbeans/XmlGDay.html
+SHA-256-Digest: q0ZnpDAo8f/cb2wWEiMc+H2K5wd02zddonx8HKUrSPE=
+
+Name: docs/reference/org/apache/xmlbeans/XmlNormalizedString.Factory.h
+ tml
+SHA-256-Digest: eGVLa+X7wqe+vQVTYPDnBorNXCJ23RB7C4jRfdszrG8=
+
+Name: bin/xsd2inst.cmd
+SHA-256-Digest: 3cvJXJzPwoLl7/RHSozNzdZVjikUHCBYwYTMJXpXgCQ=
+
+Name: docs/reference/javax/xml/namespace/NamespaceContext.html
+SHA-256-Digest: 9bwc/nKckvUfLxb4+3C9kzkrG2j/JXt7Wsa2FOrqXbU=
+
+Name: docs/reference/deprecated-list.html
+SHA-256-Digest: RHFi17w4dy+k5yB2Dg8PfGNrzxaAJIJAKWZ6dYbPjYc=
+
+Name: docs/reference/org/apache/xmlbeans/SchemaGlobalAttribute.Ref.htm
+ l
+SHA-256-Digest: 3pvOT8kpXR4JcnPq8Z0wowVs94zxcfCLlqeWd/YOr+0=
+
+Name: docs/reference/org/apache/xmlbeans/SchemaLocalAttribute.html
+SHA-256-Digest: 71z+Dg0Qevc4506PDJB9ped05rAMRS3RU16upijr3Zg=
+
+Name: bin/_setlib
+SHA-256-Digest: weRPkou86ltn34KDusLNxWgQtwvaY1JSS9Lh5C8+ciQ=
+
+Name: bin/validate
+SHA-256-Digest: 8Nz6FMCwFbwyEwyJtP8y0D0xKgPiDPeAs7dXVSGPOgs=
+
+Name: bin/xsd2inst
+SHA-256-Digest: Fygx2tgZNoKUYXQMLcLgfiLpoZWAZd+HeJwssy6Gxq0=
+
+Name: docs/reference/org/apache/xmlbeans/SchemaAnnotated.html
+SHA-256-Digest: 7QsXMueaZISMTMNpeawxlnlYs8+nOMsOx/FK/6Q+mfw=
+
+Name: docs/reference/org/apache/xmlbeans/GDateBuilder.html
+SHA-256-Digest: xdBTElZNTH73JqcKUtLmvn3es1jpa9gHBB78iBnj0RQ=
+
+Name: docs/reference/package-list
+SHA-256-Digest: vyo2clCxwGX9P0beXa1QVQHhIfQ7KO3haAue8RaP2E8=
+
+Name: docs/reference/org/apache/xmlbeans/SchemaField.html
+SHA-256-Digest: IBJR/ftqHrkV5ZK18a5bJSNiHcOnNLXkEf1YmGIyddo=
+
+Name: docs/reference/org/apache/xmlbeans/XmlOptions.html
+SHA-256-Digest: byOk7j7TKLecMDX4lzCEb/tSgbDCWahZsMdZsiJUE3w=
+
+Name: bin/sfactor.cmd
+SHA-256-Digest: 1LKTD63Y72oCAzL4r0FXEwl/lngXVYDhY7YbyRlljKE=
+
+Name: docs/reference/org/apache/xmlbeans/XmlSimpleList.html
+SHA-256-Digest: Xq79/NgLC3HLVDiv2YWZ5DQl5Txuky2a8Vt+f71L6PI=
+
+Name: docs/guide/conNavigatingXMLwithCursors.html
+SHA-256-Digest: JF370EnZYs2ZlkiJkz//0QJ6P9ra8oIg5CIzaQMVCvs=
+
+Name: docs/reference/org/apache/xmlbeans/XmlTime.html
+SHA-256-Digest: DD1L9i8WBiEj8p7PTYYvYc5aQo586r1S5FFwS/BfES4=
+
+Name: docs/reference/org/apache/xmlbeans/XmlGMonthDay.Factory.html
+SHA-256-Digest: TGiP9TXbn0Mqjw7V2ftodGNhB/2ciMxXfq/Cc9YQ65U=
+
+Name: docs/reference/org/apache/xmlbeans/XmlUnsignedShort.Factory.html
+SHA-256-Digest: fGk6gFTV0k3vIJeLI72f+MOPxx38VWPJ85IFSnfk+1g=
+
+Name: bin/inst2xsd
+SHA-256-Digest: 7kHcuXi4I4rRttMJpRM3OHpr9i3Mc9If3SKknQzGvVI=
+
+Name: docs/reference/org/apache/xmlbeans/ResourceLoader.html
+SHA-256-Digest: Ijc1BCf3hNbXr0Kt2K+5ix+PweDDcedMsiHSzyqhISo=
+
+Name: bin/svalidate
+SHA-256-Digest: /zG8kCGKJXFwRV+XXcqsWv4KJGOR0M9uql5UwTNmm3Y=
+
+Name: docs/reference/overview-tree.html
+SHA-256-Digest: jV5Mw2PQwZVS3b3hOzJm8kGBR2NYyQiby2scYul6x1E=
+
+Name: docs/reference/org/apache/xmlbeans/StringEnumAbstractBase.html
+SHA-256-Digest: IFwT4TvdRLu+HDd46Wcc50j2Efg2BAZTuRvy+HALOTM=
+
+Name: docs/reference/org/apache/xmlbeans/XmlDate.Factory.html
+SHA-256-Digest: uLK2E/eo9hDdnF40Oa9ALWHPF54dgI7cH4z0e8cUz+s=
+
+Name: lib/xmlpublic.jar
+SHA-256-Digest: CVSqjdNoPKxGDnZZ8IxcTwOohDH/lmInp6v1Gof3gDI=
+
+Name: docs/reference/org/apache/xmlbeans/XmlNCName.html
+SHA-256-Digest: nNovNPRA8HFCaopPKv/wDsnWCgK+iEOiWZ6p/zf10Yc=
+
+Name: docs/reference/org/apache/xmlbeans/XmlAnySimpleType.html
+SHA-256-Digest: nSGLD0g8Sv+ZPtVGltl1UZ9dVRB5k1GtjDGxAOyoE78=
+
+Name: docs/guide/conValidationWithXmlBeans.html
+SHA-256-Digest: HqpFBMtmPr42Pkasow02uUF1GQdA8n0pfSSbc03e/7w=
+
+Name: docs/reference/org/apache/xmlbeans/XmlIDREF.Factory.html
+SHA-256-Digest: UuCcc9TLs+kQ9V0QgXAcByb016/6F+ugFpuwzxGkMUk=
+
+Name: docs/reference/org/apache/xmlbeans/XmlIDREFS.Factory.html
+SHA-256-Digest: H01q1NuvNzBbazDCiCCMw6OpH9m3VMnM6xAqqz+BOwA=
+
+Name: bin/svalidate.cmd
+SHA-256-Digest: A/AmBppvdIs6WtvPFqalcAyM9h0JM5npEaN1zqBt2FY=
+
+Name: docs/reference/org/apache/xmlbeans/XmlUnsignedLong.Factory.html
+SHA-256-Digest: Ais1jCREMLQ+I1YI0+p8EAsTlx1pnvnxmyw6MsecjMM=
+
+Name: docs/reference/org/apache/xmlbeans/XmlNMTOKENS.html
+SHA-256-Digest: 8TiHZVqfeuwcU0A2NTb/Df3IK+cfzzeena+w6Jwoe7Y=
+
+Name: docs/reference/org/apache/xmlbeans/SchemaAnnotation.html
+SHA-256-Digest: k63PFXbK4aQpQxIh8FjHrrEMH3kntN1XzQsnvAB1NcQ=
+
+Name: docs/reference/org/apache/xmlbeans/XmlNOTATION.Factory.html
+SHA-256-Digest: mWQxMQzEtgcdpm6cBK7FxQFhwTAHfO8i1i3DhPMM1zY=
+
+Name: docs/reference/index.html
+SHA-256-Digest: sm4KTB30dr/pp3IU4Ki7uHyJGr1e86Oakv61Ipfk8rU=
+
+Name: docs/reference/org/apache/xmlbeans/SchemaType.html
+SHA-256-Digest: m5FbzL8umDMxkokOR9SFzVXtz8louPlSYYhV8u/Tiy8=
+
+Name: docs/reference/org/apache/xmlbeans/FilterXmlObject.html
+SHA-256-Digest: XFm81EafYqhLYiWofpItz19sHHJVZ05KJxtGjvjZDoQ=
+
+Name: docs/reference/org/apache/xmlbeans/SchemaCodePrinter.html
+SHA-256-Digest: M+Ir7VQWTnd+W3eKGi36/PG7L87faWHngz4gO+2JWck=
+
+Name: docs/guide/conIntroToTheSchemaTypeSystem.html
+SHA-256-Digest: uVniJdZ6Grnft36sEH7pX/oYYD5/EkBjr4F0fuq2GC4=
+
+Name: docs/reference/org/apache/xmlbeans/SchemaAttributeModel.html
+SHA-256-Digest: 4THpA/oZgEb/7rCC31Z2xCwnoAXX5SUwwP68n7UHTus=
+
+Name: docs/reference/org/apache/xmlbeans/XmlBoolean.Factory.html
+SHA-256-Digest: 8Lvg8MbUzHo5Z7DDDGZRCJUcOn6iupP5XfSxwYo3PuE=
+
+Name: bin/inst2xsd.cmd
+SHA-256-Digest: CJFZUxRzrmTDkmmITJKsRtFf1blHRHp/LWJrTMUDSIA=
+
+Name: docs/reference/org/apache/xmlbeans/XmlGMonth.Factory.html
+SHA-256-Digest: +qONLoF5yPOc3yEwSYFF9hKImq5UQcD4J9Q8uZLTBuY=
+
+Name: docs/reference/org/apache/xmlbeans/XmlLong.Factory.html
+SHA-256-Digest: BPBFHGF32SQRWK3h3yCQ0QnC7qdaL8nAXryTl48mNzQ=
+
+Name: bin/dumpxsb
+SHA-256-Digest: 3caH8ww6sHUMd163ZV7QDilKVG9EdFwclArMqNAMAGg=
+
+Name: docs/reference/org/apache/xmlbeans/XmlLanguage.html
+SHA-256-Digest: lFU58rA/mJyrJZqiEMWFscU0J2L/0ssC/hFoZT/+Saw=
+
+Name: docs/reference/org/apache/xmlbeans/XmlPositiveInteger.Factory.ht
+ ml
+SHA-256-Digest: P+1V95TXTmPeHr9ExrFSv62G2wmczultWoK49Fbwn8w=
+
+Name: docs/reference/org/apache/xmlbeans/StringEnumAbstractBase.Table.
+ html
+SHA-256-Digest: 10oAQWbPT4gVpLck87EMU+2dTJ3VToSDWRfiQ7VRM40=
+
+Name: docs/reference/org/apache/xmlbeans/XmlGYearMonth.Factory.html
+SHA-256-Digest: Zu05RMQc1Tktb5JBhnTVeu2m9h0LFj9j3wyeTHgdU8w=
+
+Name: docs/reference/org/apache/xmlbeans/XmlLong.html
+SHA-256-Digest: NQPOs5B5o1SxkQWESgRaoZ2gvk6kbUwe+LtXu8+uN9U=
+
+Name: docs/images/conCursorTokenLocations.gif
+SHA-256-Digest: DAH3T2lnFz22Oa9NFxAfkQIh8XzKUTFR8PrumV2sRe8=
+
+Name: docs/reference/org/apache/xmlbeans/XmlUnsignedByte.html
+SHA-256-Digest: 6NumsJQnBZd7x8K1vAyAlPenOkc8lqESEJjo146GMDE=
+
+Name: docs/reference/org/apache/xmlbeans/XmlBase64Binary.html
+SHA-256-Digest: wcGh4Xz3aRgbMD5khyDChy+CyUptgN7PfNP0hyDXoQ0=
+
+Name: docs/reference/org/apache/xmlbeans/XmlIDREF.html
+SHA-256-Digest: q6ebgRkVXsZww82Ytbxu9iURoujG0OdPbZSE/TRd0mc=
+
+Name: docs/reference/org/apache/xmlbeans/SchemaModelGroup.html
+SHA-256-Digest: Su6PD192+4XCBqZ1mI2LQQvsQWD5256sVyUJjLNPfss=
+
+Name: docs/reference/org/apache/xmlbeans/XmlSaxHandler.html
+SHA-256-Digest: 3DIUmkwRbvxiZhtp2w7yxOGbbFKhHBKzLqw4olLEtZA=
+
+Name: docs/reference/org/apache/xmlbeans/XmlENTITY.html
+SHA-256-Digest: AZJHj6R4muva4DAlf42S5iF79nqpcbVcG2EE9qtyKwY=
+
+Name: docs/reference/org/apache/xmlbeans/XmlCursor.TokenType.html
+SHA-256-Digest: UiTwF98lpMHTBVQedPwP7ArkK09R47+zxKOo084+j/o=
+
+Name: docs/reference/org/apache/xmlbeans/XmlName.Factory.html
+SHA-256-Digest: AjFYuVdyPi9SwZ68PohDvrRB7Q29msJrmqMkPamkz2g=
+
+Name: docs/reference/org/apache/xmlbeans/package-summary.html
+SHA-256-Digest: sWCxVZwL/XPHRPsxFPo3FDjcg+pwKSkaFJcUaaSyl4o=
+
+Name: lib/saxon9-dom.jar
+SHA-256-Digest: KutKTJqBAR5YB6C83cTN5/nN0OtjHpafUEFu8oaqdFU=
+
+Name: docs/reference/org/apache/xmlbeans/XmlLineNumber.html
+SHA-256-Digest: eyA9BfTRe3hRRLPXWsyX4aA5bmfa9vBFmSOdij1G7LA=
+
+Name: README.txt
+SHA-256-Digest: MRaRAybRDzarZLjOx54Tx/oAnxqyQojalNkoFqK3ii4=
+
+Name: docs/reference/javax/xml/namespace/package-tree.html
+SHA-256-Digest: JsA0Cv9q8YcO4Mx+dnPrC6PQSQnpcRkfJDRq9xUgoyA=
+
+Name: docs/reference/stylesheet.css
+SHA-256-Digest: M6rNKJFlDc1e3z3FrxW5NeTp5MLquzeAPVx91CM/S3E=
+
+Name: docs/reference/org/apache/xmlbeans/GDurationSpecification.html
+SHA-256-Digest: KHcAeUCNGJvqSnXVSoHgjXhKp2sfOe7bavLgodvq7qE=
+
+Name: docs/reference/org/apache/xmlbeans/XmlBase64Binary.Factory.html
+SHA-256-Digest: HCNHxt6jls1YAJ5NPBJ13DVmZu21cy2HgBuIBy4eDWM=
+
+Name: docs/reference/org/apache/xmlbeans/XmlBeans.html
+SHA-256-Digest: bXv4fF0/M054lN8xD1cxNS9mgWIn5GPelm3XWoyrHdE=
+
+Name: docs/reference/org/apache/xmlbeans/XmlValidationError.html
+SHA-256-Digest: l3sjPDMbBb613BmuOw+9cvTbjuSRwfcNtZBcUHMgdIQ=
+
+Name: docs/reference/org/apache/xmlbeans/SchemaType.Ref.html
+SHA-256-Digest: bUZK+u7FiQjzcLvpUl2H/LrwMOEhLMAgqRS0utBJrKg=
+
+Name: docs/reference/org/apache/xmlbeans/SchemaTypeElementSequencer.ht
+ ml
+SHA-256-Digest: mtHc4+8on04kVnYvB/XWxBegwO8ah9ycDvVx+cgzqyM=
+
+Name: docs/reference/org/apache/xmlbeans/SchemaIdentityConstraint.Ref.
+ html
+SHA-256-Digest: HZgSeNHvK8pLW2cLhhx15JHdkDM238KqWYfCXX9987Y=
+
+Name: docs/reference/org/apache/xmlbeans/XMLStreamValidationException.
+ html
+SHA-256-Digest: 5F4zzSqFVjSlIjFzUbYfVxUVHVmjTXl2xkk9+s7Dhm4=
+
+Name: docs/reference/resources/inherit.gif
+SHA-256-Digest: AhPz3KDLF9bfxEScYoM9i6cVPf7VUyACuWkP37p9deA=
+
+Name: docs/reference/org/apache/xmlbeans/XmlDuration.html
+SHA-256-Digest: NQl9aUJKnqZVh9kqlhzfcO9LwsTQM2uJKb3lt9JBCnw=
+
+Name: docs/reference/org/apache/xmlbeans/XmlID.Factory.html
+SHA-256-Digest: StVjnx8fJMjOgZEJcqiBUSA6JyMd890JXgzpK7KRv+U=
+
+Name: docs/reference/org/apache/xmlbeans/XmlCursor.html
+SHA-256-Digest: MNzehAVv9nTFjpz/NXdiJBh4Y+9EadcGu97zgiUPRfQ=
+
+Name: lib/xbean.jar
+SHA-256-Digest: DIj3ovmfI3WT0tOu0t59yYmB9Vgeo9vfZgzYo55K4RE=
+
+Name: docs/reference/org/apache/xmlbeans/XmlUnsignedInt.Factory.html
+SHA-256-Digest: 9XJx6OvUlT/UQdDFNty3LY06TkFkINwV8Kmaw4a0hq8=
+
+Name: docs/reference/javax/xml/namespace/package-summary.html
+SHA-256-Digest: 4Oh2BtdiMhqdXdq6q8bYSqByXVHGHzKVpIA/C7nqZd0=
+
+Name: docs/reference/org/apache/xmlbeans/SchemaAttributeGroup.html
+SHA-256-Digest: D6qr4vhwq2GcolIR7oUrxQnQUlXjc0JabP697q2DnO8=
+
+Name: bin/_setlib.cmd
+SHA-256-Digest: aw563fLCa8bDUhIm7bgxSIXK0FcB+TDO3hwIloFb3aQ=
+
+Name: docs/reference/org/apache/xmlbeans/XmlNMTOKEN.Factory.html
+SHA-256-Digest: JWLWzvXC2iCofi/MIEYqDWM8CXUolX7BDyUIx7ugC/8=
+
+Name: docs/guide/conUsingBookmarksToAnnotateXML.html
+SHA-256-Digest: 2CV4zm4YRPKH4fW1V5KS08BMzNzDqGv4rSdccyrlYA0=
+
+Name: docs/reference/org/apache/xmlbeans/XmlID.html
+SHA-256-Digest: PEto+rbvsXIrzjY0hwERE3RrCxtqyMQ+shUoRT5xQeM=
+
+Name: docs/reference/packages.html
+SHA-256-Digest: 6iXkMsyRneLxC/8BhAKbQLjarsfLZ2RLb5JszKfECCA=
+
+Name: docs/reference/org/apache/xmlbeans/XmlAnySimpleType.Factory.html
+SHA-256-Digest: jMCDDSLHVL3dwLErcSIilVsCrQXt40ZnHj4R1SdrrgE=
+
+Name: docs/reference/org/apache/xmlbeans/QNameCache.html
+SHA-256-Digest: QFs6ej7Y6j2EAJodvX6XmeeJ/Vr03jNmPDZV7l5ngsk=
+
+Name: docs/reference/serialized-form.html
+SHA-256-Digest: WY7qKXc909orCEuNWkNr3MT1AcKNDO61OoX+fhdj6ZU=
+
+Name: docs/reference/org/apache/xmlbeans/XmlHexBinary.html
+SHA-256-Digest: dC+WjSaEH/q5NxZuORUnF00tIOb+tgRgY+1u5B62Xcs=
+
+Name: docs/reference/org/apache/xmlbeans/XmlNormalizedString.html
+SHA-256-Digest: RvxDxCU8UXhgmEpv89nbOzFj0JGTTyOp32AbuGvbSME=
+
+Name: docs/reference/help-doc.html
+SHA-256-Digest: o0FBTM1DzwOMhohMA+iwgq7xiwKIUZZe2AbkOxqiCBs=
+
+Name: docs/reference/org/apache/xmlbeans/XmlBoolean.html
+SHA-256-Digest: X3b0x7kTKVCjft3qw2Ol6CZlvCTRIdTZp+Vukfvk0wo=
+
+Name: bin/scomp.cmd
+SHA-256-Digest: aqld7wmlbFhV5tdv+PWKQonXByNlBSDNnfPOwdUmAuo=
+
+Name: docs/reference/org/apache/xmlbeans/SchemaTypeLoader.html
+SHA-256-Digest: WywV9zlFjST7kzPMEzZLDs88TRgJR5TmzuSfp4Frf3I=
+
+Name: bin/xsdtree.cmd
+SHA-256-Digest: vYSnwEyUp+cRs85O3c/9ShVfiX/ZtRN7eBm5fyQUqdo=
+
+Name: docs/reference/org/apache/xmlbeans/SchemaModelGroup.Ref.html
+SHA-256-Digest: N8a0Xi7FA5GJ9gSeCSZbO1VB7h6/rXR4GPrxEKPBN+Q=
+
+Name: docs/reference/org/apache/xmlbeans/XmlUnsignedByte.Factory.html
+SHA-256-Digest: yZYbmxKXms0dF2Q4ZEmGsnrjVEOyUvzSiNC0Rr+BehU=
+
+Name: docs/reference/org/apache/xmlbeans/XmlNonNegativeInteger.Factory
+ .html
+SHA-256-Digest: CKU3PqwHH7kFXrp8nQQXpDNLI8NEotwE+7fFufMqFNo=
+
+Name: docs/guide/antXmlbean.html
+SHA-256-Digest: 92IaBBf5oSMbNEG85GtL5BuN+RRSSjwW5H0kkFGXOJw=
+
+Name: docs/reference/org/apache/xmlbeans/XmlObject.Factory.html
+SHA-256-Digest: 8bzNdjq5O1gwgKEQSbSIIK8Toxk9FbPAYrhKm4kl/qM=
+
+Name: docs/reference/allclasses-frame.html
+SHA-256-Digest: kheiAMwMuH0O2q8yCjXQieS9S6ylqpm1gsnn652IEJ4=
+
+Name: docs/reference/org/apache/xmlbeans/XmlToken.Factory.html
+SHA-256-Digest: Hq/ANqv8oGGqpv55Sqi1aTrFuDasBKxdWZU5vtOam8E=
+
+Name: bin/validate.cmd
+SHA-256-Digest: SOp/O7kwIIEbTSdmZfsFm9pI7+hirm7MuG6rkx9+rH4=
+
+Name: docs/reference/org/apache/xmlbeans/XmlENTITIES.html
+SHA-256-Digest: 4flE2pQRqjSsQzQMA3udkzSpj8a6aP4x6yFyAHo2rI8=
+
+Name: docs/reference/org/apache/xmlbeans/XmlGYearMonth.html
+SHA-256-Digest: 4H35o9UFHgP6e9JZ1X3c+HzWKqDs7UDwCc9GZ0nmyOA=
+
+Name: docs/reference/allclasses-noframe.html
+SHA-256-Digest: YmUTcL2bbZEtpZhRxhLgQqQRrtKcQMvQ25KMLhID5m8=
+
+Name: docs/guide/conJavaTypesGeneratedFromUserDerived.html
+SHA-256-Digest: 4it358yhagZNh1PDb/iuABljSeZx5BMhJBYI+eTGjwk=
+
+Name: docs/reference/org/apache/xmlbeans/XmlNMTOKENS.Factory.html
+SHA-256-Digest: l8viBrAu8y8S4vbKqhzJyAm6+8wdxpyE7AHpBnGJapA=
+
+Name: docs/reference/org/apache/xmlbeans/CDataBookmark.html
+SHA-256-Digest: 6etepoVo5ashPo2WnxS8vYlMC5LL7yZRmfxEoDonOTM=
+
+Name: docs/reference/org/apache/xmlbeans/GDateSpecification.html
+SHA-256-Digest: lzC8j5yMiLBllRwmMWUaceyWqHJfLIdK0+rn2XjsMQg=
+
+Name: docs/reference/org/apache/xmlbeans/XmlQName.html
+SHA-256-Digest: tb4mEIebf7RvZNt7GOHOcOrnNHVwif6fsC8akO1ezUc=
+
+Name: docs/reference/org/apache/xmlbeans/package-tree.html
+SHA-256-Digest: rATegRhNCB/6vl/yij9fK1ePXJHjGQ6HElWhmFN+lsk=
+
+Name: docs/reference/org/apache/xmlbeans/GDurationBuilder.html
+SHA-256-Digest: knQXbJztBhaMmbZhTvR+mzjzNKpyBQ3G2sMDcAmdVaM=
+
+Name: docs/reference/org/apache/xmlbeans/XmlPositiveInteger.html
+SHA-256-Digest: 2u4SgnHvWTcAHjFFfWpLqAR1TCeZCtV6gMDv2/WMLMA=
+
+Name: docs/reference/org/apache/xmlbeans/XmlString.html
+SHA-256-Digest: JpTwdYrJq7agaukvXIiE86NVpTqEI7ylYYyg3QMohqY=
+
+Name: docs/reference/org/apache/xmlbeans/XmlAnyURI.Factory.html
+SHA-256-Digest: WmUncmRU9u3FuiluBb23v/UNGbrmddFDTRxAwGAuDKY=
+
+Name: docs/reference/org/apache/xmlbeans/XmlError.html
+SHA-256-Digest: OcevNWSwrrDCQn7hdICCwEhgu8rlcB1v2frG6yiOU3Q=
+
+Name: docs/reference/org/apache/xmlbeans/QNameSetBuilder.html
+SHA-256-Digest: KY5AvC2xbWROzwI2cR8RxSlIDMkcCGd5ED4t/aUh8Fo=
+
+Name: bin/xpretty
+SHA-256-Digest: EtGUZXkaXBe51uulVz07XLQbi3IH0gJh4eChZXf9B1s=
+
+Name: docs/reference/org/apache/xmlbeans/XmlDate.html
+SHA-256-Digest: ejK/6Ek//4KbLISi+fTXTv96Ci0QT7sN8Iv9T1S5+rc=
+
+Name: lib/xbean_xpath.jar
+SHA-256-Digest: snVKYIx0SjBuY008WN0emrq52y6/xxpVK1lTZU9w2CE=
+
+Name: docs/reference/org/apache/xmlbeans/XmlTokenSource.html
+SHA-256-Digest: DSnQcQ66bTwmaW5DPPR0ja16SEhT/OG+6MVzxrdM1+I=
+
+Name: docs/reference/org/apache/xmlbeans/SchemaTypeLoaderException.htm
+ l
+SHA-256-Digest: wN1c5LC+Rg3B4/t8FH7+7RsmTxvzMcsFtSDdRxFreKo=
+
+Name: NOTICE.txt
+SHA-256-Digest: uUxYnpW3Cz2L9UG3UPha+KANiqFXBtlJNwgkwk7hKFo=
+
+Name: docs/reference/org/apache/xmlbeans/UserType.html
+SHA-256-Digest: u+Hi7GJj4ExqQxJYXY71VO33yrwzl0MgGrVID/ZAbCs=
+
+Name: docs/reference/org/apache/xmlbeans/XmlToken.html
+SHA-256-Digest: uHBi8UZVXLy4nR0qKsAsSq/idxtaYqEF6vOsAKYV2LU=
+
+Name: docs/reference/org/apache/xmlbeans/XmlShort.Factory.html
+SHA-256-Digest: K66xsGhqAlTXQDIJJ6qVX+xuZY1KnCFH1fKqXEQWnbs=
+
+Name: docs/reference/org/apache/xmlbeans/SchemaLocalElement.html
+SHA-256-Digest: 02GBDSGllQUk87JCJhrsy5phBNC8+wp6AuPMM5zMt2I=
+
+Name: docs/reference/org/apache/xmlbeans/XmlUnsignedShort.html
+SHA-256-Digest: yJA+/0h8ULtl4MF9j8EsGsZK0rAotELDHwnfLVVw8fs=
+
+Name: docs/reference/org/apache/xmlbeans/package-frame.html
+SHA-256-Digest: Ll4kZ904utdDS5oIp7acdDzO8XiumAcXh9M0D6ZOj90=
+
+Name: docs/reference/org/apache/xmlbeans/XmlGYear.Factory.html
+SHA-256-Digest: ogumi1dqGC2xE6yQCIIXZCXbgY6h6FQCvuzr+rbUFFA=
+
+Name: docs/reference/org/apache/xmlbeans/SimpleValue.html
+SHA-256-Digest: dAObzAUG9YjvGL2tY+IzztSCLn2531zCG7IBw9rH0fM=
+
+Name: docs/stylesheet.css
+SHA-256-Digest: M6rNKJFlDc1e3z3FrxW5NeTp5MLquzeAPVx91CM/S3E=
+
+Name: docs/reference/org/apache/xmlbeans/XmlHexBinary.Factory.html
+SHA-256-Digest: w06CVtWVuq2DbH+QaEqPsAVmBrTKGvaTCkZUTR7POCY=
+
+Name: docs/reference/org/apache/xmlbeans/XmlNonPositiveInteger.Factory
+ .html
+SHA-256-Digest: WmFWCdEi1gm/ko6atXqKBAdZV1rMWB6vNuv0CwQl8vg=
+
+Name: docs/reference/org/apache/xmlbeans/SchemaComponent.Ref.html
+SHA-256-Digest: JKJirqYq0Vw8Ul9A2WnG78yAB68Hlv0zRYTMAekhzxI=
+
+Name: docs/reference/org/apache/xmlbeans/XmlNegativeInteger.Factory.ht
+ ml
+SHA-256-Digest: +vTSodCs5FdAd+GSP4Bd63oESFLAVIQ4geV07tguGhk=
+
+Name: docs/reference/org/apache/xmlbeans/BindingConfig.html
+SHA-256-Digest: FE6n8O3d5AJ6URCT3F0JDPPVRoxkUC47x9tyiFBbD1o=
+
+Name: docs/reference/javax/xml/namespace/QName.html
+SHA-256-Digest: VoW8xuNqgVflxIUfDGeKwGLHkbN7gjACJuaCpj33h1A=
+
+Name: docs/reference/org/apache/xmlbeans/SchemaGlobalAttribute.html
+SHA-256-Digest: ttYVLOgF4X4ncfhw+6JQgXBrvi+W6PFRIKxgqWuA30U=
+
+Name: LICENSE.txt
+SHA-256-Digest: yVuuHRzgI17MzTVgt3LsHvuX80innw++CmNPDCzO/iw=
+
+Name: docs/reference/org/apache/xmlbeans/SchemaAnnotation.Attribute.ht
+ ml
+SHA-256-Digest: KQNTjoVPNV8eKPXFo1LjqftDbN0a32gwLbS2h5iRg3I=
+
+Name: docs/guide/conSelectingXMLwithXQueryPathXPath.html
+SHA-256-Digest: Fg61Zyh5ZEyAhT0usHZZerbjXVFDMDym1b2EFUJMRW4=
+
+Name: docs/guide/tools.html
+SHA-256-Digest: fWMWCRSsTChBYC6c8dC9kPRKAf/COUkPa7TDANmv0NI=
+
+Name: docs/reference/org/apache/xmlbeans/XmlOptionCharEscapeMap.html
+SHA-256-Digest: Xh41hifM7rr5aN60SJUbzivzMui6FD/MO07Y2NU64cI=
+
+Name: docs/reference/org/apache/xmlbeans/XmlFloat.html
+SHA-256-Digest: 6pbA6UZFNDZmwTJMCQ9QyMlulIm49882NSuxittITso=
+
+Name: docs/guide/conMethodsForGeneratedJavaTypes.html
+SHA-256-Digest: ipzphWJmYxXI/jy8+JltyCOKL4xG6rtXIeoIYDBPjZA=
+
+Name: docs/reference/org/apache/xmlbeans/SystemProperties.html
+SHA-256-Digest: yazHIYg7gtIDrr4VgTaZU740/sqbSBluIRTSi8Hozxc=
+
+Name: docs/reference/org/apache/xmlbeans/SchemaBookmark.html
+SHA-256-Digest: AcuhJjA4BfpEkLIav6jlDdDukV1AhVBwY3na+86tTxI=
+
+Name: docs/reference/org/apache/xmlbeans/XmlCursor.ChangeStamp.html
+SHA-256-Digest: OdI98S3Bj01bKRP98BgLiz1yv8VNKqb35EyVcysnGzU=
+
+Name: docs/reference/org/apache/xmlbeans/SchemaGlobalElement.Ref.html
+SHA-256-Digest: ArBPM92963qyA/aRP3xEfrF3dbbO2RuTeQCVzyGu3Rc=
+
+Name: docs/reference/org/apache/xmlbeans/SchemaGlobalElement.html
+SHA-256-Digest: /PaQYHP/bQx1wxR1MWIlns6RzTjj3ao3dilgeeRDBW8=
+
+Name: docs/reference/org/apache/xmlbeans/XmlShort.html
+SHA-256-Digest: Gc/j8Uh18DgrbzEi1V/LDhGGV5KTBMIEmH6jwfg/n7Y=
+
+Name: docs/reference/org/apache/xmlbeans/XmlFloat.Factory.html
+SHA-256-Digest: yXbtz5PxB+Z3LXodw2gq6aeYtOWT1aKGpRabA2PQXfo=
+
+Name: docs/reference/org/apache/xmlbeans/GDuration.html
+SHA-256-Digest: Z/l4RBFxzP5klyuKQe262qxRNxtuoTNrXrXcTvohy90=
+
+Name: docs/guide/conHandlingAny.html
+SHA-256-Digest: TRe3AleCncQRVnNryiHvY5eZpFJOQDyUzbijwdNghFo=
+
+Name: docs/reference/org/apache/xmlbeans/SchemaIdentityConstraint.html
+SHA-256-Digest: u9+84tca7Y01c6yqppIUrhp/E8NvRCNPqzPnsqfqFNc=
+
+Name: docs/reference/org/apache/xmlbeans/XmlDocumentProperties.html
+SHA-256-Digest: wh6ucKq0X9iiy+9a1og2yAlg/yiAtnZ8+w+Opo5Iv/I=
+
+Name: docs/xmlbeans.css
+SHA-256-Digest: 8yb+2rkdeQzGmF+PfpFGofav/YbB1O+qyWFI2Kg+Zuc=
+
+Name: docs/reference/org/apache/xmlbeans/SchemaProperty.html
+SHA-256-Digest: S3rN4df9pX4m/HResj95CTiahvMWrX8HtdDyA3WP5e4=
+
+Name: docs/reference/org/apache/xmlbeans/XmlGDay.Factory.html
+SHA-256-Digest: UONfgXd+0k18gLUgqpVeicB7YfEbnBJWn8xPXsVQwxw=
+
+Name: docs/reference/org/apache/xmlbeans/SchemaAttributeGroup.Ref.html
+SHA-256-Digest: PuTp5+Kit4TaWuEuYTlibfRdfiiz0LilpczJsbTurgc=
+
+Name: docs/reference/org/apache/xmlbeans/XmlNMTOKEN.html
+SHA-256-Digest: 7xHv0K38y/I9PcUceKAIce972hRbkCS/tdVBOpJ91dI=
+
+Name: docs/reference/org/apache/xmlbeans/XmlDecimal.Factory.html
+SHA-256-Digest: EKdWIFyXCZwkRigs9E/NSoYNvnJ+3WPjn7M0xpCbGdw=
+
+Name: docs/reference/org/apache/xmlbeans/DelegateXmlObject.html
+SHA-256-Digest: ysy/ms9NQafv6khKZdJa1cg/dDe/V9nBKGbwzQ8mB7s=
+
+Name: bin/sdownload
+SHA-256-Digest: 3R62kelk2POHuZ+ljIl4kKnJLsHXHHkmDgAHb1Od9AQ=
+
+Name: docs/reference/org/apache/xmlbeans/QNameSetSpecification.html
+SHA-256-Digest: 5HEa54u9IVRqWB88a7vTRwIDZWzIzKeK+WR9vBLUHsY=
+
+Name: docs/reference/org/apache/xmlbeans/XmlException.html
+SHA-256-Digest: m5PkNQwtBSp0XC8LLzpb9HHGFjzBJQeTyJNiXKp+fAQ=
+
+Name: docs/reference/org/apache/xmlbeans/InterfaceExtension.html
+SHA-256-Digest: jX3j7FTbP+3rLZrxdxFQfWlOCYiB0tbgEk2P+9B1uhQ=
+
+Name: docs/reference/javax/xml/namespace/package-frame.html
+SHA-256-Digest: sXRYt+iXBY4/rEaw1B5QRueNDGkpBhj8tFH44ETlFoA=
+
+Name: docs/reference/org/apache/xmlbeans/XmlNCName.Factory.html
+SHA-256-Digest: jIrAurTTs3Krzd6NdzVr01QH9TdTdXOmOAAROgofS6c=
+
+Name: lib/saxon9-xpath.jar
+SHA-256-Digest: juXxgiKNeZexUkqZ857jIlt+wjHnzDbutjV1MBltyZU=
+
+Name: docs/reference/org/apache/xmlbeans/InterfaceExtension.MethodSign
+ ature.html
+SHA-256-Digest: Fp0vaCCk/F4ek5h1uzMxg2tyXyUvlZiMvPSaBXJtE2c=
+
+Name: docs/reference/org/apache/xmlbeans/XmlGMonthDay.html
+SHA-256-Digest: Gub71ZxhtB1Hc63OGVp8qDwOHeWR+EAPcdA2dpjOl1s=
+
+Name: docs/images/conXMLTypeHierarchy.gif
+SHA-256-Digest: b0iSm/4LoK/RTNVoiihBFoL4nzzVOV/uWM+MCCKPm4w=
+
+Name: bin/sdownload.cmd
+SHA-256-Digest: 5px4iY04Pdh/ygDNL97eITn6Jz3PH8ct7Rfz4SOXKS8=
+
+Name: docs/reference/org/apache/xmlbeans/XmlDateTime.Factory.html
+SHA-256-Digest: vyaLBMqC7xuLK4O7LLH8d9rUtepgROzgQpWeZty7PEc=
+
+Name: docs/reference/org/apache/xmlbeans/XmlAnyURI.html
+SHA-256-Digest: UGM9+htKbTYC+R5fVEXIOFXVEhGZ2UfbYZNiqVIYOOI=
+
+Name: docs/reference/org/apache/xmlbeans/XmlInteger.Factory.html
+SHA-256-Digest: RHEG2Cp9V2QvUmdm01NoE2+jqvBr0Mp2H6vp0eRMC10=
+
+Name: docs/reference/org/apache/xmlbeans/XmlInt.Factory.html
+SHA-256-Digest: 6YxW71vcgv6igzJpOi4MBZtzA3cm1j2LISLuAQYeofA=
+
+Name: lib/saxon9.jar
+SHA-256-Digest: 8C6uQTro6ccPpC5epyWgSHxBN3fuCuGsQ7QCYKOM15A=
+
+Name: docs/reference/org/apache/xmlbeans/XmlDateTime.html
+SHA-256-Digest: fR7MwM/qCrPfn9QAIrZyYPrIlSPWwkpbrawDexAbBx0=
+
+Name: bin/xsdtree
+SHA-256-Digest: 6AZNd8SEiopBObKSe1uLkgV6jkDXAI+75G9Vn+l0TUg=
+
+Name: bin/xstc
+SHA-256-Digest: uuCHCfkcetSPoXW1XxPaeKR6jkDKc4/M79iWOEtzGx4=
+
+Name: bin/xstc.cmd
+SHA-256-Digest: MMqggB/X67AMVn+T/KsGYkhFc73xO0YjWPg6gvRnyjE=
+
+Name: docs/reference/org/apache/xmlbeans/XmlGYear.html
+SHA-256-Digest: SA1NX/45WgarPJFDCnLe8tCcCgvhWYGHLoAqJXrKhgU=
+
+Name: docs/reference/org/apache/xmlbeans/XmlNonNegativeInteger.html
+SHA-256-Digest: ZyTcISzoan/76uWFUmQfibHP/pdLb2DhrFRJRQfdMT8=
+
+Name: docs/reference/org/apache/xmlbeans/XmlENTITY.Factory.html
+SHA-256-Digest: 2cpu/HD0Wr2G/k3lly/v+MTJTm7TpB4EYIp16I3QAik=
+
+Name: docs/reference/org/apache/xmlbeans/XmlUnsignedLong.html
+SHA-256-Digest: 0aMxCspD2149a+nb0CfSHlLxytgZWRwu4KsYmp8D434=
+
+Name: docs/reference/org/apache/xmlbeans/XmlInteger.html
+SHA-256-Digest: aTf/x4ENn0ZUoasOECO2AsHhMYs94ds22T86yhmwuBE=
+
+Name: docs/guide/conUnderstandingXMLTokens.html
+SHA-256-Digest: B/KPpHLyU8ki1UHkDgWUwADuw5Iv8lMuEaRyP+j8j74=
+
+Name: bin/xpretty.cmd
+SHA-256-Digest: 3Zgsn8/r/SgDEeyaApZWJYIBvftB/cp1lIidyXmrkzc=
+
+Name: docs/reference/org/apache/xmlbeans/SchemaStringEnumEntry.html
+SHA-256-Digest: XhE9u5rl1Y6XxOeSbwGLHrc80lOKyLuJVyeqW9so1R4=
+
+Name: docs/reference/org/apache/xmlbeans/XmlFactoryHook.html
+SHA-256-Digest: L7Y0VSz3HYaGHG99il9W/UJMCxfPjiPacMrf9ocSkZs=
+
+Name: docs/reference/org/apache/xmlbeans/XmlInt.html
+SHA-256-Digest: MX6m8Nh4qgCjH8U8YJrNkOiZGLWYa2e7YfC8c/vrkyg=
+
+Name: docs/reference/org/apache/xmlbeans/XmlDouble.html
+SHA-256-Digest: ivh+bNE+ne4NHwkKNWUfMU2RRDny2TK2f0JBKzy30hA=
+
+Name: docs/reference/org/apache/xmlbeans/XmlFactoryHook.ThreadContext.
+ html
+SHA-256-Digest: yM25OIps9kDRxHcYlEb1yKucaY/Da7PFzSboapakvCI=
+
+Name: docs/reference/org/apache/xmlbeans/XmlCursor.XmlBookmark.html
+SHA-256-Digest: STYqJOJeM6vu8qAXujI6U9V9VbB8bx9zdvCYzrhcKTs=
+
+Name: bin/scomp
+SHA-256-Digest: WrUXa1RJQrUeGN0luXdeUk+yjJSROcsVN323iADx1Iw=
+
+Name: docs/reference/org/apache/xmlbeans/XmlCursor.XmlMark.html
+SHA-256-Digest: OBqgZaxqcGJ4G0wISmQ+6Lew/MPzzLjfHpbs5pjwSu0=
+
+Name: docs/reference/overview-frame.html
+SHA-256-Digest: vK3aW7qO1o0qiAFU+1+Cy+cAvzhE7dwg/XomoPGwxzI=
+
+Name: docs/reference/org/apache/xmlbeans/XmlLanguage.Factory.html
+SHA-256-Digest: fwrxL+potymH3Eq/JaaUK0eg66fc2XSq+NulPhztHZ4=
+
+Name: docs/reference/org/apache/xmlbeans/SchemaTypeSystem.html
+SHA-256-Digest: +b7t1D6l1u8wacP+KOEIYMp3BnHDa8Ze1qUiGWcsyuU=
+
+Name: docs/guide/conGettingStartedwithXMLBeans.html
+SHA-256-Digest: huvOG2Q3cDJ6aM2D+jtPDWy4yIS1KgHuEuJgagvSZrs=
+
+Name: docs/reference/org/apache/xmlbeans/PrePostExtension.html
+SHA-256-Digest: D1saJBqkyk22AoM4LX/AzfP/mE59mzaQtl6FtMtS//g=
+
+Name: docs/reference/org/apache/xmlbeans/XmlNOTATION.html
+SHA-256-Digest: rJTmg09kVwV9hJJV1j8zwJ4+rMsC+ZJ470YGSXDhArg=
+
+Name: docs/reference/org/apache/xmlbeans/XmlByte.html
+SHA-256-Digest: gNRpg+2xcg4nrVgbiM1WpQu1S6Nu+zGOIRguZqkNqy8=
+
+Name: docs/reference/org/apache/xmlbeans/XmlDuration.Factory.html
+SHA-256-Digest: za4RpdoFvqlsAkMcrcGpmL8d+JiorAUZ9LHF7pPBaQQ=
+
+Name: docs/reference/org/apache/xmlbeans/Filer.html
+SHA-256-Digest: 5ghWE3A0KfvzRbhZdY0kpjXoogZZvNhTtRyuCmvt2Hk=
+
+Name: docs/reference/org/apache/xmlbeans/XmlDouble.Factory.html
+SHA-256-Digest: WxWIcnay8df/53+4uPmkgj9obih+YI/itECX6GW77AU=
+
+Name: docs/reference/org/apache/xmlbeans/SchemaParticle.html
+SHA-256-Digest: 5zaROKmahQKRuucJgMbBl7FToS2Gg3akchBFZkQc0OE=
+
+Name: docs/reference/org/apache/xmlbeans/XmlString.Factory.html
+SHA-256-Digest: yBE3seGhZDqmRCl5A5LnCGoplEG+Q1XDOyRNcyVqBmY=
+
+Name: docs/reference/org/apache/xmlbeans/XmlObject.html
+SHA-256-Digest: GsYDU6onq/k0/EmdjbXW2OR/nrTJb5bsxTgakfiE3ok=
+
+Name: docs/reference/org/apache/xmlbeans/SchemaComponent.html
+SHA-256-Digest: Q3SEan9tZx4mQ9Z1jsUdo4mQpSE2IPNkSfzGteCk/4Q=
+
+Name: docs/reference/org/apache/xmlbeans/XmlTime.Factory.html
+SHA-256-Digest: O7xP67nIeLmpLDm4Dl1xr9O8T7rCbyj50Zfr+QJ88os=
+
+Name: docs/reference/org/apache/xmlbeans/XmlQName.Factory.html
+SHA-256-Digest: 9Fh+H0ZNOgYelNRUxvDzuGppGN/TlMqqZdtSUYwdUU0=
+
+Name: bin/scopy.cmd
+SHA-256-Digest: tQmhQoDLog3miOMy8SZcp2xF6b84TYXfVQE3KVJb0hM=
+
+Name: docs/reference/org/apache/xmlbeans/XmlIDREFS.html
+SHA-256-Digest: /9ozGArZ7RoS2sepu0rzaQBO4i6YTNR8Vb199qyDsi8=
+
+Name: docs/reference/org/apache/xmlbeans/XmlByte.Factory.html
+SHA-256-Digest: 25mBj433Yb9mgdE9S1mkJh+GE8Ekjp4LnZzuvzETh9k=
+
+Name: docs/reference/index-all.html
+SHA-256-Digest: KXokxKvem8yvUzkcQXGEF/Mi17ZaoEeK8LPd5DWi8q0=
+
+Name: docs/reference/org/apache/xmlbeans/XmlName.html
+SHA-256-Digest: dFOchufeCJ04RXJV1XIxttMYz6p3NbI208RzuIKEof4=
+
+Name: docs/reference/org/apache/xmlbeans/QNameSet.html
+SHA-256-Digest: fgdoZaTJW3vyFC2QSkQdEPBj9PIA9gB22ku/K3Dc+iw=
+
+Name: docs/reference/org/apache/xmlbeans/XmlUnsignedInt.html
+SHA-256-Digest: eDiUvTzUfb+SlGkpsmxMcVtapbpdKEdsYSnxcIaoyAU=
+
+Name: docs/reference/org/apache/xmlbeans/XmlNegativeInteger.html
+SHA-256-Digest: v01Zx1+3jU1zriwpmJePmsuUmIicGv2kDdyL/O9J27M=
+
+Name: docs/reference/org/apache/xmlbeans/XmlCalendar.html
+SHA-256-Digest: HhTz4n3zuCWUJNBYowNJ1QQFGDKZPAyo7gmZKu5i2UM=
+
+Name: docs/reference/org/apache/xmlbeans/XmlNonPositiveInteger.html
+SHA-256-Digest: BVWGmq9ffBRTDNuI+9vBOeEjFjTf2HVLO5OFgQir3bQ=
+
+Name: docs/reference/overview-summary.html
+SHA-256-Digest: QR9ZvHM6mi9l55TW64Uuf/XGbMdTImIiUY61BQifja8=
+
+Name: docs/reference/org/apache/xmlbeans/GDate.html
+SHA-256-Digest: Ju4h5B2kglGd843ZWxyQYaITnN3P0r9U7zyGQmuSUBg=
+

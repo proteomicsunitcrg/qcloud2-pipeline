@@ -1,0 +1,241 @@
+Manifest-Version: 1.0
+Ant-Version: Apache Ant 1.9.6
+Bundle-SymbolicName: org.knime.dynamic.js.base;singleton:=true
+Bundle-Name: D3 Samples for KNIME Dynamic JavaScript Node Generation
+Bundle-Version: 3.5.2.v201802051356
+Bundle-ClassPath: org-knime-dynamic-js-base.jar
+Require-Bundle: org.knime.dynamic.js;bundle-version="[3.0.0,4.0.0)",or
+ g.knime.dynamic.node.generation;bundle-version="[3.0.0,4.0.0)",org.kn
+ ime.core;bundle-version="[3.0.0,4.0.0)",org.knime.base;bundle-version
+ ="[3.0.0,4.0.0)",org.knime.js.core;bundle-version="3.4.0",com.fasterx
+ ml.jackson.core.jackson-annotations;bundle-version="[2.7.1,3.0.0)"
+Bundle-ManifestVersion: 2
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-Vendor: KNIME AG, Zurich, Switzerland
+Created-By: 1.8.0_131-b11 (Oracle Corporation)
+
+Name: plugin.xml
+SHA-256-Digest: E6PyXxIKq3MEECqfFxLd7gRxsKLGHFdjBP5FDMDm58M=
+
+Name: nodes/autocompleteTextField/autocomplete.js
+SHA-256-Digest: u+L6kVqREYAhrcjnq4SBAwPS+A0gdmNSh+vJidMBTUw=
+
+Name: nodes/streamgraph/streamgraph.js
+SHA-256-Digest: kzLokH+jprwWaTg5oLtSeehxXy1GvVaoXrO2H6WYBp4=
+
+Name: nodes/autocompleteTextField/node.xml
+SHA-256-Digest: WfYCCjhLpg4UQfTd30ORUp2JahYJjtCFNLVECZ0d4A8=
+
+Name: nodes/cond_boxplot_v2/conditional_box_plot-icon.svg
+SHA-256-Digest: 4DoY7FOn6kGa8xHdDWI1rd1HoKk+7/VmrvNIf3Y7OYA=
+
+Name: nodes/barChart/bar_chart.png
+SHA-256-Digest: zqhwqTW883VI7v2417oFS6k2gKCKFaQqsQf39oMRZW4=
+
+Name: nodes/boxplot/boxplot.js
+SHA-256-Digest: gxAS/0sZ2MTnQb9QAQ61/sTFyWdpOWhSNeDnbF6aXEA=
+
+Name: nodes/sunburst/styles.css
+SHA-256-Digest: atAFicdl834uGNST7PYTifOErLO4KLxVf4y4DHylnws=
+
+Name: nodes/barChart/node.xml
+SHA-256-Digest: MfQAL5iRJCfuLkd6F+nrUXRCdQxRAGorpmzlaAXvgmw=
+
+Name: nodes/barChart/bar_chart-icon.ai
+SHA-256-Digest: fuwFkwPhwhjez9uhxgVOWmSf8FHXgWa032dr1FK8dgY=
+
+Name: nodes/voronoi/voronoiplot.js
+SHA-256-Digest: NFeyPfTHty0GmxMDogVLsbzrqGFOXPXpuk38jJhQz8k=
+
+Name: nodes/parallelcoordinates/parallel_coordinates_chart-icon.ai
+SHA-256-Digest: iZsj7LwNphY1DxwZO7/NEcYPjKe5c1SpSFi99GAU7do=
+
+Name: nodes/sunburst/sunburst_chart-icon.ai
+SHA-256-Digest: qb7611ZF4wSRM4ET8B04b3YrfJg+UDHpp+PpfKFsykA=
+
+Name: nodes/boxplot/styles.css
+SHA-256-Digest: U+7u9my52PQENPoaZ7DPHoZWA1oFD1WjEaehW36rsTs=
+
+Name: nodes/barChart/bar_chart-icon.svg
+SHA-256-Digest: xHTZC9LQBKHqIb382egKBciVJvrnA5PNVjG9yp3aLxo=
+
+Name: nodes/newTableTest/newTableTest.js
+SHA-256-Digest: zKFwX2M+ebKBxgy4DmgSKxqwP4OWrLLbowOxnw0iLH0=
+
+Name: nodes/streamgraph/node.xml
+SHA-256-Digest: 5WYyjT4n7P7zZgijBQDWSOCehQncaYsevisZbSaTRa0=
+
+Name: nodes/sankeyDiagram/styles.css
+SHA-256-Digest: qPhK2B15/RkK4O8kLwXmpedNm1ZjpqiKsxFb/lwIFuw=
+
+Name: nodes/boxplot_v2/boxplot.js
+SHA-256-Digest: ES5RF0l8pEyp9kIgzCWrnDfMA0wESD1r3KJHERONE70=
+
+Name: nodes/donutChart/pie_chart.png
+SHA-256-Digest: 1HKVtu1vZoZSN5RJ+KwVZuB1QNMLxu8txhsa8MLvGl8=
+
+Name: nodes/donutChart/node.xml
+SHA-256-Digest: 10ptSbzI/hhrkH4POLj+Zt09Iw7tCbVzpW7DLJ/DA6w=
+
+Name: nodes/cond_boxplot/styles.css
+SHA-256-Digest: izPzX3PuO+JmWbdYWBdyyP42EEOtpzjcMddQm/lPOOY=
+
+Name: nodes/donutChart/nv.d3.v1_8_1.min.css
+SHA-256-Digest: 3CsJgu02eqxey/fq0iexa7XiKKWMwyxQSz5WITxe0GU=
+
+Name: nodes/sunburst/sunburst.js
+SHA-256-Digest: 3fQ+A4wZtlKJeld48MoLJT4Zy0bDQjHHpqtPloZnIxY=
+
+Name: nodes/chordDiagram/node_inactive.xml
+SHA-256-Digest: +HFcyPKfv137en848AkW5KLlBDPXtmwSAftPNyyUYgg=
+
+Name: nodes/streamgraph/stacked_area_chart-icon.ai
+SHA-256-Digest: c0EJM0gHXkTAIrXaisJWPhABiCPvyy0Wnya1uYx7f3s=
+
+Name: nodes/parallelcoordinates/pc.js
+SHA-256-Digest: mmwFT+FEXE7JHr1dBcHiGxFIsA0CMN+ZVKVmOo5FIws=
+
+Name: nodes/stacked_area_chart/styles.css
+SHA-256-Digest: 8UKCxW82dP64PiFZHcTzxuBnUvjefG7XMrp+1RWiZVQ=
+
+Name: nodes/sankeyDiagram/sankey.js
+SHA-256-Digest: +piD4cC8x1ncDHQhNOIojYlUQkAk7lSDt1bVC08jcco=
+
+Name: nodes/cond_boxplot_v2/node.xml
+SHA-256-Digest: RpmJd3eZNiHwEMo1PlOq6VaKvAMzXzlwcUB6EcUOMqg=
+
+Name: nodes/forceDirectedLayout/network.js
+SHA-256-Digest: dfsqVzADuS8g5ZMX1IUcWQj33RSj4EeUcr8OH0X/hG0=
+
+Name: nodes/cond_boxplot/condboxplot.js
+SHA-256-Digest: QfalpuqUQQORwNIQ0TAwkS5Y1hrXANlDOe/qBISYkfk=
+
+Name: nodes/streamgraph/nv.d3.min.css
+SHA-256-Digest: tw03Ka2ZwZCvz4XCrr6bZ+vooG4OKShABE6dtTYbDcc=
+
+Name: nodes/voronoi/node_inactive.xml
+SHA-256-Digest: aKL9HRJQCfJ2BeIu3rQIW8LCWFQ7FpPjCPHt9Aw/DiI=
+
+Name: nodes/stacked_area_chart/stackedareachart.js
+SHA-256-Digest: PXLQGIX4nM1ga17pdKPXMLWjxYuo1NcBKeH2Fp17RN4=
+
+Name: nodes/sankeyDiagram/sankey_diagram.js
+SHA-256-Digest: Qn48Y/JmIUKM51Rz0Y51Ur9YvTQYk1w0D1hX0f4kQtw=
+
+Name: nodes/cond_boxplot_v2/conditional_box_plot.png
+SHA-256-Digest: 8Clp8NSm1A9g2Kt9qunc7Z8euMZ7WHajT1T2T8k1PcA=
+
+Name: nodes/newTableTest/node_inactive.xml
+SHA-256-Digest: fu9eURWfjP+uONzHIjuTqo3RpMrN4vGirL8/bfy2v9c=
+
+Name: nodes/cond_boxplot_v2/conditional_box_plot-icon.ai
+SHA-256-Digest: 3OwPNVxVNuz0kdD2dFOOARr7PSR73PPCKoxeg+Uyxfc=
+
+Name: nodes/stacked_area_chart/node_inactive.xml
+SHA-256-Digest: 9vbqfPzcc3L7CadakbiaMHpEZ5PO9nHyDWJrJWY61Yw=
+
+Name: nodes/boxplot_v2/box_plot.png
+SHA-256-Digest: aW4pvFx2f1RrCflMxtUnDs6vEyPQtyHSZ0fGnRW6kIc=
+
+Name: nodes/js.png
+SHA-256-Digest: yor9MzBqXcUEcjb2xxu65mfVJnmnp5rfpsrTh0FVn4s=
+
+Name: nodes/streamgraph/stacked_area_chart.png
+SHA-256-Digest: sfPi7TwMquFYoXYk54UbK/R9cs2atC5U0kDIJDt/cfo=
+
+Name: nodes/barChart/groupedbarchart.js
+SHA-256-Digest: 2/WCnTcMUY+L7HXKffRu+xnhD4XW8p0hqb4bBHBMHRI=
+
+Name: nodes/cond_boxplot/node.xml
+SHA-256-Digest: iSn2peS4c8UsptJPppgKDqiTqYSMwvNR8XkIgnh7J1o=
+
+Name: nodes/boxplot/node.xml
+SHA-256-Digest: HI9e5ipAlN/cnos1p3B/TqboDXgdDYy1CszF/CaB6MQ=
+
+Name: nodes/parallelcoordinates/parallel_coordinates_plot-icon.svg
+SHA-256-Digest: JH3D+CgyTXw/XdqOCNYpuJDK8yXceGsJJC+wrEYgBSo=
+
+Name: nodes/boxplot_v2/node.xml
+SHA-256-Digest: 9KTORB/vy9EL7NplOhYeFY7OQ7bCvlD726hncOe6ENU=
+
+Name: nodes/parallelcoordinates/node.xml
+SHA-256-Digest: ohUNT76wTvGoxI3M/TSFwDXKTc+Xt6RaMJ39RMN2iqU=
+
+Name: nodes/cond_boxplot_v2/styles.css
+SHA-256-Digest: izPzX3PuO+JmWbdYWBdyyP42EEOtpzjcMddQm/lPOOY=
+
+Name: nodes/sunburst/sunburst_chart.png
+SHA-256-Digest: oeZZedZmBvoOUyvjCDhEc4SY5FD3isAhvvqX+JSsvDA=
+
+Name: nodes/barChart/nv.d3.v1_8_1.min.css
+SHA-256-Digest: 3CsJgu02eqxey/fq0iexa7XiKKWMwyxQSz5WITxe0GU=
+
+Name: nodes/cond_boxplot_v2/condboxplot.js
+SHA-256-Digest: 0owLu45R1btoLRQNqncoDKCIpvt/sesDz1KaaznHpmc=
+
+Name: nodes/parallelcoordinates/styles.css
+SHA-256-Digest: ybnL8ofia4R3HWAu2bcL93TMKX71NEEx/RLGHlNwVT0=
+
+Name: nodes/boxplot/.Rhistory
+SHA-256-Digest: 47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=
+
+Name: nodes/donutChart/donutchart.js
+SHA-256-Digest: d62q+3nDY0TVHH3WS3/dCE+jR/xfJ9Pzw/onejyVhn8=
+
+Name: nodes/forceDirectedLayout/node_inactive.xml
+SHA-256-Digest: drvNAUMoIoQtJ8erjKlLSCPlMwEC1uAZGvIW5IdgBLs=
+
+Name: nodes/boxplot_v2/box_plot-icon.ai
+SHA-256-Digest: GrOpO50zy8w7FHO+VxgYAZwVE4lobUcgp1+9H/DlnkE=
+
+Name: nodes/donutChart/pie_chart-icon.ai
+SHA-256-Digest: Sm4NtqSfdUnTzbnKgZyw2olnWKAeyY4TSll4nYbsol8=
+
+Name: nodes/streamgraph/stacked_area_chart-icon.svg
+SHA-256-Digest: zPFvF0Q8bRtPhcwwFrZwTDTrvU1NiNzrrXxjLEBAiak=
+
+Name: nodes/sunburst/sunburst_chart-icon.svg
+SHA-256-Digest: e+PEY7iOrdvtsqlN/vnw/KebheqVH/9gGOjVfG8ufkE=
+
+Name: nodes/barChart/groupedbarchart.css
+SHA-256-Digest: 9PBdavrsvGO8XusmwCBip84WS5Mwo6ZEDpjhd4TxbiU=
+
+Name: nodes/parallelcoordinates/parallel_coordinates_plot.png
+SHA-256-Digest: 70RTi2Y021V50T6mqpTcyC1m5kqV3ABUfOworhId3Iw=
+
+Name: org-knime-dynamic-js-base.jar
+SHA-256-Digest: htEpDSx3p43haUsgLzr9WJ6QAo5wG7RdajfmZINbUAc=
+
+Name: nodes/boxplot_v2/styles.css
+SHA-256-Digest: U+7u9my52PQENPoaZ7DPHoZWA1oFD1WjEaehW36rsTs=
+
+Name: nodes/forceDirectedLayout/styles.css
+SHA-256-Digest: QmY6tIMCP1iidhPlPLuEXwBcDfmMrEClYOn+SJE/hZ4=
+
+Name: nodes/boxplot_v2/box_plot-icon.svg
+SHA-256-Digest: 1pG2pTPVu545UMhSLS1keazL38qn722z5zPaIocp954=
+
+Name: nodes/cond_boxplot/.Rhistory
+SHA-256-Digest: 47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=
+
+Name: nodes/donutChart/pie_chart-icon.svg
+SHA-256-Digest: UMTBNNHism/a6Lmhr9q1IdTmk8zlCyH+21zwxEPLT8I=
+
+Name: nodes/chordDiagram/styles.css
+SHA-256-Digest: 4jtjTxIofcpk831shY3uqYqkpsGwcaQVtuaCMFFAVf0=
+
+Name: nodes/sankeyDiagram/node_inactive.xml
+SHA-256-Digest: owir9tqHyyrsu1hIkoG0zfuUVcGSAG5FiFJLjwQ+pSA=
+
+Name: nodes/voronoi/styles.css
+SHA-256-Digest: 6Burhc+n+ZdlF3FEyAKz32Te+uSmgX+n2poAoc7GfUk=
+
+Name: nodes/sunburst/node.xml
+SHA-256-Digest: L58ZJ43CkK9Yx0JDykC7JHd8k02H423ApZxHgYOoAA8=
+
+Name: nodes/stacked_area_chart/.Rhistory
+SHA-256-Digest: 47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=
+
+Name: nodes/chordDiagram/chord.js
+SHA-256-Digest: Vh5sOfCpC6fAff5Z/BXcPSbwBSMBqh9m+E8O/I7y+NA=
+

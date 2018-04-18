@@ -1,0 +1,125 @@
+Signature-Version: 1.0
+SHA1-Digest-Manifest-Main-Attributes: /RbB7TNMadSvlV61yHyL3OjEeHk=
+SHA1-Digest-Manifest: BJ4Yf5HMAGS/DBABM1ofMELo6wg=
+Created-By: 1.8.0_144 (Oracle Corporation)
+
+Name: plugin.xml
+SHA1-Digest: xaB/VOY/K6BLPX0Xkb8mSA5w8gw=
+
+Name: tocs/community_GenericKnimeNodes_Util.xml
+SHA1-Digest: KPdQzTY0crvqtR9qQReUtKITtsw=
+
+Name: html/nodes/393c6b9f.MimeFileImporterNodeFactory.html
+SHA1-Digest: ffBSKHiAdXyotMRcA+4eZTiNoOg=
+
+Name: icons/GKN.png
+SHA1-Digest: 2c2bKKYHwwzkOVysMGC81rws7Zo=
+
+Name: html/nodes/661ad0c3.BeanShellNodeFactory.html
+SHA1-Digest: gVbn/I6RyDgTwCDmhoa9TehzhDE=
+
+Name: html/nodes/2266904f.OutputFolderNodeFactory.html
+SHA1-Digest: BL+dc0OUEgLHL09z2kprBmJ+7io=
+
+Name: tocs/community_GenericKnimeNodes_Flow.xml
+SHA1-Digest: I6ZOxQseAea0Xj7PW9DEjz8Ci0A=
+
+Name: html/nodes/dfba9d5.FileMergerNodeFactory.html
+SHA1-Digest: VLbkrap50I39eesalOL4UmOYb/w=
+
+Name: icons/GWN.png
+SHA1-Digest: u98Lfq5Wz6CMfqz9n5ArKD7lZMQ=
+
+Name: html/nodes/275f458b.ListZipLoopStartNodeFactory.html
+SHA1-Digest: aENWM4d2vrSmFTbBzWu2ZFi+j4k=
+
+Name: tocs/community_GenericKnimeNodes_Flow$nodes.xml
+SHA1-Digest: 3h/Z9B2+8QZFwvUC8kPGGNzkGcg=
+
+Name: html/nodes/3ecc381c.ListZipLoopEndNodeFactory.html
+SHA1-Digest: kPh1UUydqZcFCW16e7grxF6tJJU=
+
+Name: tocs/community_GenericKnimeNodes_IO$nodes.xml
+SHA1-Digest: cGpHKMKEwOJteSxMn0pKC8nN3NI=
+
+Name: html/nodes/1b35d7d5.DemanglerNodeFactory.html
+SHA1-Digest: X+Cp7AG0MGlR96GkEW9NNTlaSIM=
+
+Name: html/nodes/2648dc41.ListMimeFileImporterNodeFactory.html
+SHA1-Digest: w98+mmo/DIEkQ0dgFvacUK/DYOk=
+
+Name: icons/category.png
+SHA1-Digest: j3IZHDA1+9xJQh9IfLIAKalcb8g=
+
+Name: html/nodes/4fc38ea1.OutputFilesNodeFactory.html
+SHA1-Digest: at209mrkIZcQ1Sk4vH3XzNXqWgo=
+
+Name: lib/swingx-all-1.6.4.jar
+SHA1-Digest: X+kodfKaX7Nraa3+9sAmM7OyFEM=
+
+Name: tocs/community_GenericKnimeNodes_KNIMEConversion.xml
+SHA1-Digest: HJRZA3PkgSxh1YuW6jgkBJsAyr0=
+
+Name: html/nodes/3ac04b93.ManglerNodeFactory.html
+SHA1-Digest: /LnMcHcyuQnFNC9xCRV8GG5lqSM=
+
+Name: schema/com.genericworkflownodes.knime.execution.CommandGenerator
+ .exsd
+SHA1-Digest: ixTBgYyxjAm7hDzKPawXSY9D2Ag=
+
+Name: schema/com.genericworkflownodes.knime.mime.demangler.Demangler.e
+ xsd
+SHA1-Digest: hIWurHVdcteVdSs7i/KuMYx8KWg=
+
+Name: genericnodes.jar
+SHA1-Digest: wICI4J0wg9yiqH6QgBOqel/ro74=
+
+Name: html/nodes/31160ce1.MimeFileViewerNodeFactory.html
+SHA1-Digest: E3X89qx5mzWXwF/5e9rAnu10Qz4=
+
+Name: html/nodes/660bdc31.OutputFileNodeFactory.html
+SHA1-Digest: CJr8x1JLtzYCWIXfgw7EnibZOWc=
+
+Name: lib/swingx-all-1.6.4-javadoc.jar
+SHA1-Digest: /EpiAoowGadYkPluhwUxvlsCo8g=
+
+Name: html/nodes/61e269c1.MimeDirectoryImporterNodeFactory.html
+SHA1-Digest: gisxfLvz9fvWrgNDBR35/OlN3Vc=
+
+Name: html/nodes/76f9cb7a.Image2FilePortNodeFactory.html
+SHA1-Digest: x1veaVvUNDr9hG6VCSji6BHsbmA=
+
+Name: schema/com.genericworkflownodes.knime.dynamic.VersionedNodeSetFa
+ ctory.exsd
+SHA1-Digest: F+32MnfO9xhvglbpvzdYSNcOXiE=
+
+Name: html/nodes/11719d75.FileSplitterNodeFactory.html
+SHA1-Digest: FPAThxmckPSMbCSR1I70cepqIJA=
+
+Name: tocs/community_GenericKnimeNodes_KNIMEConversion$nodes.xml
+SHA1-Digest: as/LWENfAJFfgxuT6uNsVFHvxOk=
+
+Name: lib/org-netbeans-swing-outline.jar
+SHA1-Digest: qXJ2lVJmp5V/UTdDZDPsSfBitWA=
+
+Name: lib/swingx-all-1.6.4-sources.jar
+SHA1-Digest: H1zy/+MQ1+kPOoyJNndeS8t4guY=
+
+Name: lib/bsh-2.0b4.jar
+SHA1-Digest: 8eMhuM+O9rdpeNmSkAL33uw2md0=
+
+Name: tocs/community_GenericKnimeNodes.xml
+SHA1-Digest: CsE83es1tQEaHu1D8yWLrs3c/kM=
+
+Name: icons/GKN.psd
+SHA1-Digest: JkZDT4QX1p61hwE3I97TMCzeyt0=
+
+Name: tocs/community_GenericKnimeNodes_Util$nodes.xml
+SHA1-Digest: q2ggHp61TwX0T4oU7WYN2yH2j9I=
+
+Name: schema/com.genericworkflownodes.knime.execution.Executor.exsd
+SHA1-Digest: wphB23zLsKnSg0aJZpz6rcCXfXU=
+
+Name: tocs/community_GenericKnimeNodes_IO.xml
+SHA1-Digest: 9prTbCe8nKf27rogg6IriU4zcKM=
+

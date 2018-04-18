@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?eclipse version="3.4"?><plugin>
+     <extension point="org.knime.workbench.repository.nodes">
+        <node category-path="/database/database-connector" factory-class="org.knime.bigdata.vertica.node.connector.VerticaConnectorNodeFactory">
+        </node>
+    </extension>
+     <extension point="org.knime.core.DatabaseUtility">
+        <databaseUtility class="org.knime.bigdata.vertica.utility.VerticaUtility" database="vertica">
+        </databaseUtility>
+     </extension>
+<extension point="org.eclipse.help.toc">
+<toc extradir="html" file="tocs/database_database-connector$nodes.xml"/>
+</extension>
+</plugin>

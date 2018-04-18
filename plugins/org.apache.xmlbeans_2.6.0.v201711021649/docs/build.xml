@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="XMLBeans" default="build">
+	<taskdef name="xmlbean" classname="org.apache.xmlbeans.impl.tool.XMLBean" />
+
+	<!-- ========================== build ==== -->
+	<target name="schemas.check">
+		<uptodate property="schemas.notRequired"
+		          targetfile="lib/schemas.jar">
+			<srcfiles dir="src" includes="**/*.xsd" />
+		</uptodate>
+	</target>
+
+	<target name="build" depends="schemas.check" unless="schemas.notRequired">
+		<xmlbean schema="schemas"
+		         destfile="lib/schemas.jar"
+		         srcgendir="src/xmlbeans"
+		         javasource="1.5"
+		         optimize="on"
+		         debug="on">
+			<fileset dir="src">
+				<include name="**/*.xsd" />
+			</fileset>
+		</xmlbean>
+	</target>
+	
+	<target name="clean">
+		   <delete file="lib/schemas.jar" />
+	</target>
+</project>

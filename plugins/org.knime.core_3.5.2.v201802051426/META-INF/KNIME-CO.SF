@@ -1,0 +1,57 @@
+Signature-Version: 1.0
+SHA-256-Digest-Manifest-Main-Attributes: pzuMR2qPm4XjPQuOMnJWWpzK5q+id
+ NY3Ztn8JQfojZ0=
+SHA-256-Digest-Manifest: 9KbMJITMzcF18WVjITt+3Ci8f3sd0Rh3iNNB8zZCwmM=
+Created-By: 1.8.0_131 (Oracle Corporation)
+
+Name: schema/DataCellToJavaConverter.exsd
+SHA-256-Digest: JBXIC5Ops0x34ZHMoXHWFhVM1E2+75cGV6IdadmT854=
+
+Name: plugin.xml
+SHA-256-Digest: 8zmbIjsBXRL91dboPd6UCqdNOi03u4WdLPSryTHEbS0=
+
+Name: schema/DataValueRenderer.exsd
+SHA-256-Digest: solKpbDaM2J/tZjspRIRMcMzSwM0OZCMsvJALznsgWo=
+
+Name: schema/WorkflowSaveHook.exsd
+SHA-256-Digest: 3NK0YNAxIB9qbxU6CxOixGHuRVneR94aBBB2K/McgyY=
+
+Name: lib/saxon-he-9.2.0.5.jar
+SHA-256-Digest: kGPkmhvUYjzCAMllSYY0bn6RcfUze8eldGv9288dmvk=
+
+Name: schema/EarlyStartup.exsd
+SHA-256-Digest: C5GGTFUdJybgddjmN0nTFC94kKooqa5esubVnK2JDlg=
+
+Name: schema/JavaToDataCellConverter.exsd
+SHA-256-Digest: o9Fw6wtg6BsC+IROLloOFtcelUqk3gluv9pdVqtBrD0=
+
+Name: schema/org.knime.core.NodeExecutionJobManagerFactory.exsd
+SHA-256-Digest: jLIOSWsdDcTgn6ZN9n5ygfUksOrYk6839aZgFUlTjMY=
+
+Name: knime-core.jar
+SHA-256-Digest: DTQ1okU8tjY5DkRgWzRQA0Ak4AZSLLbFf2u3+eR6jP4=
+
+Name: schema/DatabaseUtility.exsd
+SHA-256-Digest: /RCivs0lek5SJ3zf6RN5PGN7zAfBZrxcxEvp5qy1tO8=
+
+Name: schema/PortType.exsd
+SHA-256-Digest: 1T1g5UH55BwRIc+8tNSZ3mhanLLS+M1hJ6gUNTlpgIw=
+
+Name: schema/JDBCDriver.exsd
+SHA-256-Digest: mOfQlHi4x+Wpam0qYL00+TRCxLcscP+Lq4/ms6FQ7FE=
+
+Name: schema/DataType.exsd
+SHA-256-Digest: aiGufldvPkEcBURKmYD/zC9hcecMeUym2rGwN4vehkM=
+
+Name: schema/WizardNodeView.exsd
+SHA-256-Digest: lJC5AiyNC6yz/I1KbKge7uZx0t1XO4fyAqV88mnQ7Vc=
+
+Name: LICENSE.txt
+SHA-256-Digest: AINBnlxD6j1hoUJCdbqJDDXIUInSr72BED0xfnoxdrY=
+
+Name: lib/schemas.jar
+SHA-256-Digest: gEeSjDojklj3DJSBXxcT2gsKICRIfE5E1u7Z89lpUpA=
+
+Name: schema/NodeFactoryClassMapper.exsd
+SHA-256-Digest: JxJkT4q5bzWmNu9kmGe8f42mSegKcV8om3MVvkuej+g=
+

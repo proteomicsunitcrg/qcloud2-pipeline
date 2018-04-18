@@ -1,0 +1,123 @@
+Signature-Version: 1.0
+SHA-256-Digest-Manifest-Main-Attributes: PNGQXj46wH5Kv49Mxm6GrGerbz1cF
+ h3CipNEJyfXqno=
+SHA-256-Digest-Manifest: 08J0k0m/tXthp3MY6uAT2IRVPow5Uy7Wx7x1t/0n1aA=
+Created-By: 1.8.0_131 (Oracle Corporation)
+
+Name: lib/javax.servlet.jsp.jar
+SHA-256-Digest: QFIKGK66SPtWSnxeK4YsjsroFDmyVVlUAG/PSyUHTsA=
+
+Name: plugin.xml
+SHA-256-Digest: Dcb6dxXB4mY9GJTW+Nog9qENlj93gPgDVw2sD2EPIW4=
+
+Name: lib/appserv-deployment-client.jar
+SHA-256-Digest: RKR/J2RxChulEsmF4j5BML18+i8s1yk4WFtC9K1EarI=
+
+Name: lib/webservices-osgi.jar
+SHA-256-Digest: WtxpCHDHoiQyuMiTz3v2dgELFjoWEHp5e2XKZR2N2Jk=
+
+Name: lib/javax.enterprise.deploy.jar
+SHA-256-Digest: qEWND+fOFF6sRaSwrcUBFC5gUe8yKAVsTXnBgX1qCoY=
+
+Name: lib/javax.security.jacc.jar
+SHA-256-Digest: R8ewA3UQxus9+W9I+6fxBK/QJ1BQfL4qpCrER/fk1qs=
+
+Name: lib/jsr311-api.jar
+SHA-256-Digest: IQ1Twtck1xufoOy4krF+rOaQQSIspIIa2gqV5LRYVCY=
+
+Name: lib/appserv-admin.jar
+SHA-256-Digest: uMmvVNTJK4GjZl9gYCLtS7B7yNKHQ8T1b32KzAtL920=
+
+Name: lib/javax.servlet.jsp.jstl.jar
+SHA-256-Digest: JARN1hiGjTiyiSYkVNhTDFyGtIbQ7wxjmc6sR4DgQB8=
+
+Name: lib/javax.persistence.jar
+SHA-256-Digest: 7orJYt6YxhY2vXSfrHgpMkQy3xesfiMQK0l/hIOBLHw=
+
+Name: lib/grizzly-comet.jar
+SHA-256-Digest: cPs68xPk/b4i7bmH3YS+1uCNS9NdThCHZSYkIaJlzYc=
+
+Name: lib/weld-osgi-bundle.jar
+SHA-256-Digest: 4sq1jhKfMpOScXkxk6wLl2YWIe0xP2Vh67DaG0LthWs=
+
+Name: lib/appserv-rt.jar
+SHA-256-Digest: ahMzL2izkA/3GjIWcIBEKpIK5inXM8wXewwBACxaVnY=
+
+Name: lib/javax.resource.jar
+SHA-256-Digest: ORzxhQ+dyFo0BDWNqHAh+DSW3Bf0HVs4lU8gtsT9268=
+
+Name: lib/jersey-multipart.jar
+SHA-256-Digest: HtmPEXVHhHoJ1PSHf8tgCJDH00jsZXIP2oxvQzlC7oI=
+
+Name: lib/webservices-connector.jar
+SHA-256-Digest: HDECreXndDIwgtQ7XiXZiExJDyI7yS5zCQJF39XbxKs=
+
+Name: lib/javax.ejb.jar
+SHA-256-Digest: sCwCPVQQxRzhGef4N5/+9Izu5wGsi/PR5m+yU6FA+P0=
+
+Name: lib/javax.jms.jar
+SHA-256-Digest: 3MLb+efZEVX1OsFmpcEZAqQRg9BvIZN3LVQU3qwi1ws=
+
+Name: lib/javax.security.auth.message.jar
+SHA-256-Digest: slhM4FsL8ZBq8gBL8PnDbnDPFYlIu5tFTK9zo8OOJac=
+
+Name: lib/jersey-gf-statsproviders.jar
+SHA-256-Digest: Z9fKq+6GfL/5FJpZojXamFkvGw3+3FeWJpwtZNptU+Q=
+
+Name: lib/jaxb-osgi.jar
+SHA-256-Digest: WCJaenyT/82vYi+8v/r4a2l7nhGpLti3iXLK656DohE=
+
+Name: lib/grizzly-cometd.jar
+SHA-256-Digest: X1sYUg5iRQiiRY+X+b1pzV7kQakHipScicZMXeUcnaY=
+
+Name: lib/appserv-ext.jar
+SHA-256-Digest: hN0v94dgTHo+1+P/TeAAkKljlYpk20EqsUyahu0qEPE=
+
+Name: lib/jmxremote_optional.jar
+SHA-256-Digest: V0uzMgQ1b5loqfI1Oc5D3LITgr0TC7UIAaYEF0/bWV8=
+
+Name: lib/glassfish-api.jar
+SHA-256-Digest: 1PKH0EJThWYcQ2hmEVFOVDu89YeTaRZ4yCGOP1qy4w4=
+
+Name: lib/webservices.security.jar
+SHA-256-Digest: 7+W7u3jrj+WCItBGfxHswuFy38+2sFd++CzlvaQJQpI=
+
+Name: lib/javax.servlet.jar
+SHA-256-Digest: k7GLzq69WY3ZQCd6U4lwfc90byfJl9Ac+UouGfXnANE=
+
+Name: lib/webservices-api-osgi.jar
+SHA-256-Digest: Op1F21Z507tBr2aoduQMo1Q4UlSE+p1pJ+8fhE8Z0NQ=
+
+Name: lib/jaxb-api-osgi.jar
+SHA-256-Digest: XTy6GMONWShlyV0AQh/riS4Cgv3ZHJRMX4UheGsPzHg=
+
+Name: lib/bean-validator.jar
+SHA-256-Digest: kN8xUhLfla1UFHw3qAkWOa/J1iBbyVH8rfPwGHXH93s=
+
+Name: lib/javax.annotation.jar
+SHA-256-Digest: dhNOHowyZ55+T9Gm30xfdVBZ9eG1e2r1LNk4PSw4cU8=
+
+Name: knime-enterprise-client-glassfish.jar
+SHA-256-Digest: anr1/uJMx7p94Uy49MXotxuJ8Hn54Dd/D46irgW76uI=
+
+Name: lib/javax.management.j2ee.jar
+SHA-256-Digest: M3zPVaNa8F6g9JRlWlfytTXLvPwKpk91r15P//mjG34=
+
+Name: lib/jersey-gf-bundle.jar
+SHA-256-Digest: pgzuqPnpti7nWVJBMZfzxBje4ihZvDPirowArivAKIE=
+
+Name: lib/javax.transaction.jar
+SHA-256-Digest: fh6+TfYq8j7Vsn6aGh1qZcXEfK9XnAG+7NKqmZ1wziM=
+
+Name: lib/jsf-impl.jar
+SHA-256-Digest: f3Pv7C0y3OZXRC3nDBGF/YRF1thjXaerEmWiVP0AhsY=
+
+Name: lib/jsf-api.jar
+SHA-256-Digest: Y7gK1kGRKvNvOjADPXg6PrFlWB4IOASP4cAh5Kz4BSE=
+
+Name: lib/j2ee.jar
+SHA-256-Digest: rzXP/Z85f/8iHx7btnqLoXsyxGy5eX9B7MUPtnzWL/o=
+
+Name: lib/jstl-impl.jar
+SHA-256-Digest: Gj+onLP55wVLF9oFpYELlEy+3GpGIfcg3U+1HR1aawI=
+

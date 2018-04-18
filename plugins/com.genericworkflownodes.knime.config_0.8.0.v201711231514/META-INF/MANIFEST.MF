@@ -1,0 +1,38 @@
+Manifest-Version: 1.0
+Ant-Version: Apache Ant 1.9.6
+Bundle-SymbolicName: com.genericworkflownodes.knime.config;singleton:=
+ true
+Export-Package: com.genericworkflownodes.knime.cliwrapper,com.genericw
+ orkflownodes.knime.config;uses:="com.genericworkflownodes.knime.param
+ eter,com.genericworkflownodes.knime.port,com.genericworkflownodes.kni
+ me.cliwrapper",com.genericworkflownodes.knime.config.citation,com.gen
+ ericworkflownodes.knime.config.impl,com.genericworkflownodes.knime.co
+ nfig.reader;uses:="com.genericworkflownodes.knime.config",com.generic
+ workflownodes.knime.config.writer;uses:="com.genericworkflownodes.kni
+ me.config",com.genericworkflownodes.knime.os,com.genericworkflownodes
+ .knime.parameter;uses:="com.genericworkflownodes.knime.port",com.gene
+ ricworkflownodes.knime.port,com.genericworkflownodes.knime.schemas;us
+ es:="org.xml.sax",com.genericworkflownodes.util
+Bundle-Name: GenericKnimeNodes-Config
+Bundle-Version: 0.8.0.v201711231514
+Bundle-ClassPath: genericnodes.config.jar,lib/dom4j-1.6.1.jar,lib/jaxe
+ n-1.1-beta-6.jar
+Require-Bundle: org.apache.commons.lang;bundle-version="[2.4.0,3.0.0)"
+Bundle-ManifestVersion: 2
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-Vendor: Freie Universitaet Berlin, Universitaet Tuebingen, and 
+ the GenericWorkflowNodes Team
+Created-By: 1.8.0_144-b01 (Oracle Corporation)
+
+Name: lib/jaxen-1.1-beta-6.jar
+SHA1-Digest: rbznTmHWi08qIF7aWlHhfM895yM=
+
+Name: lib/xercesImpl.jar
+SHA1-Digest: ZIPjOQfzSUksfu4JsKb6FdD0BxI=
+
+Name: genericnodes.config.jar
+SHA1-Digest: LBNeWwpjO14ujkdi8ko8hJNPl9Y=
+
+Name: lib/dom4j-1.6.1.jar
+SHA1-Digest: XTzMBWtvBW2/Dd399DiUuQZaj5Q=
+

@@ -1,0 +1,693 @@
+Signature-Version: 1.0
+SHA-256-Digest-Manifest-Main-Attributes: pPYXa0oEURECgN1cxr30Pc47r/ZZM
+ 1FnUowWXsGAlHo=
+SHA-256-Digest-Manifest: pJrX0NLxC+ZZPulEZ/ApeB/XwJorOtxoHZc9Pqch4IY=
+Created-By: 1.8.0_131 (Oracle Corporation)
+
+Name: icons/layout/warning@2x.png
+SHA-256-Digest: K9BPUcOjH/LdZdRp73uDKkBH5LMZAukMHg7ePaowbf8=
+
+Name: plugin.xml
+SHA-256-Digest: YNbBRNBIoieRN0k4z4ygGZrpzxFNfak71hH1l4DMtIg=
+
+Name: icons/meta/meta_1_1.png
+SHA-256-Digest: mEEu9jnLd+OVtgaCYMMRv4IW+3Kck0Lc5mo68EnRlVQ=
+
+Name: icons/meta/meta_1_1_inactive-icon.ai
+SHA-256-Digest: 4iUwd3XEPZVT/DpW8yCJJkxfGkFy7Om/JdZbXvXgQ7g=
+
+Name: icons/meta/meta_executing5.png
+SHA-256-Digest: VTxC3gmYwUNaxlCFL8NolbutIckmEZP4zuYH5C8TQFI=
+
+Name: icons/node/background_other.svg
+SHA-256-Digest: dQ+KqSa9xUIdX+y4dEDamDQrsFKBG5wmVqJM2fTgwTY=
+
+Name: icons/annotations/italic_10.png
+SHA-256-Digest: tf+Z+78Ns34J6VKoBKilaxTwSC6GVohOsjS8VgN/IcI=
+
+Name: icons/meta/metanode_link_disconnect_disabled.png
+SHA-256-Digest: sNfe1oIJea8/66QtYNWEuf05CjTaPrrWzyGqv8j0ZcQ=
+
+Name: icons/annotation.png
+SHA-256-Digest: 808y7JFLep3eXHAwgl9SrNHfufxAorielwFPPw/P4pA=
+
+Name: icons/column.gif
+SHA-256-Digest: d4B1I6pTVJJTl312Gza0eUjDF59WO/Wn0sAbaL/5Za0=
+
+Name: icons/layout/settings.ai
+SHA-256-Digest: c6Jipu6DjJwL68h/x+RwYqK4pIBRfQW6BkrqOflt6jg=
+
+Name: icons/editor.png
+SHA-256-Digest: mCOHOOW9dNSQjP1SNu9rvQr+3wRbQwMA3B8D8MWXpeE=
+
+Name: icons/node/background_virtual_in.png
+SHA-256-Digest: LMVb2TLFCK0RAr8zvWHo94weFrR76qfbYGxxGXAbUx4=
+
+Name: icons/meta/metanode_unlock_decorator.png
+SHA-256-Digest: cYzkToXZyhRIKxGqJI3nAFFQkOGjsNZvI4MvqnBmkjs=
+
+Name: icons/node/background_missing.svg
+SHA-256-Digest: qzTek/MadJyH/Kv8Em9lmtNH/5+wMs/AAuQJP7OEZRQ=
+
+Name: icons/layout/settings.png
+SHA-256-Digest: Jt+Us7DPDJN+UTF+aQo+ZwX53vl5VvLEP2/knq83Xr4=
+
+Name: icons/editor_UI_settings_55.png
+SHA-256-Digest: X9XY493uvHU7Wr+NJabHh5KDrSHqNzAHlFiZsEFB0r4=
+
+Name: icons/meta/metanode_link_red_decorator.png
+SHA-256-Digest: zdS7qgVS5XO0B1y8/ZRNKx5cBddCNcL8WDpWyW6KVcE=
+
+Name: icons/node/background_learner.svg
+SHA-256-Digest: alNzx+v1le5n/UHxR0YgXHYIo7RgLxVuCgfE25Dmt/0=
+
+Name: icons/error.png
+SHA-256-Digest: Ik2qE63eSJHOrIMjj3aeOmYLzXz0zvU5Pfq1ME4ENf0=
+
+Name: icons/meta/meta_custom_preview.png
+SHA-256-Digest: lcxiIcQtKirlzabLFVggFO6yuiTxhaHwy7+HP4FiYBU=
+
+Name: icons/node/background_quickform.png
+SHA-256-Digest: UCAHC8PqAANd4TSZGgDdQsctTwcqHMbdgJLDPxr+zBU=
+
+Name: icons/cancel_disabled.PNG
+SHA-256-Digest: GOl0Pn9v5mJPpwf/GxRzvf7LOccUOGQba1mab8oHQ0Y=
+
+Name: icons/annotations/color_10.png
+SHA-256-Digest: Qhxo4WPhbpGlx2apgwI6PvTlsZ3rvaG8YTnpNQsQtdY=
+
+Name: icons/meta/custom_meta.png
+SHA-256-Digest: mMK2aYi7qzqfX6wVZCUqvlVzyHnJcncO7B182+8BtDk=
+
+Name: icons/move_dis.png
+SHA-256-Digest: g0dldg40vTKrPbCA8wp2TqR8qr9rjLZ3F+Cgtgzq4Fw=
+
+Name: icons/annotations/alignment_10.png
+SHA-256-Digest: RnbnV18ZlrnvBR+2dOJtQjR6VxFVThCgRs5eKb6/7VU=
+
+Name: icons/meta/metanode_unlock.png
+SHA-256-Digest: lYREVj+UGnktCJFtwxFYD+uYR6t1Vrfp/YIMWyESGQM=
+
+Name: icons/meta/meta_1_1_inactive-icon.svg
+SHA-256-Digest: 3FGj7QCkrAoIcbnawJaQyny966v4qzFAWPHp1q/rets=
+
+Name: icons/annotations/bgcolor_10.png
+SHA-256-Digest: 0+AQ7wOsqYLPexUt5L88ETaMuKQ/LxvSlQZ3U4gNjEs=
+
+Name: icons/hideNodeNames.png
+SHA-256-Digest: 8vQ0xyFK0cgn6kUcPgskzMQ7ZBqY4bteajdKoPtpd1k=
+
+Name: icons/meta/meta_2_2_inactive-icon.ai
+SHA-256-Digest: GHS5c6pvj0MsJ9ZuaL1PISgTJSNiQZTfWSLVJN4xpeo=
+
+Name: icons/loop_in_progress.svg
+SHA-256-Digest: JIgJDt7Gb1RCZrXHNSg5HjK94+1elfg1giDVLE6Ya7w=
+
+Name: icons/node/background_other.png
+SHA-256-Digest: nz3wWQ4ax0d/Or2lPkiVgxZ4SemoqRtxcn+EpoNrKXA=
+
+Name: icons/meta/metanode_lock.png
+SHA-256-Digest: qceUTfXZ3Qb7vQkMJ1xiGlWeItMcg52Z3gJlrxu5vf8=
+
+Name: icons/meta/meta_2_1.png
+SHA-256-Digest: LlcdIeE4Yj/e9qUDhwK4IlVa7PJHaOn8fPBI+AM16kI=
+
+Name: icons/editor_UI_settings_16_disabled.png
+SHA-256-Digest: TGnmzMpttkaQZy98eqEimj+5Ju6ew4JTZAlfk6ZxgCg=
+
+Name: icons/ampel_red.svg
+SHA-256-Digest: vgdXzQcyHUhZHw6foXt6zvXdI7w5s8/zChYOn7u+tW8=
+
+Name: icons/layout/reset@2x.png
+SHA-256-Digest: dAHxQgOvpEo+YAQtgoi7CYhxnr8WvqZzy+QPsT0NU08=
+
+Name: icons/node/background_virtual_in.svg
+SHA-256-Digest: xvIpvlKZGjP7DrNFrYyDPtE1td7a7Rwb6IFmrv8EhaA=
+
+Name: icons/ampel_red.png
+SHA-256-Digest: Nag6XBeO2KkLjBAsrAqPM4VCUVrwvVX5zj/AYernsqk=
+
+Name: icons/roundInfo.jpg
+SHA-256-Digest: FqPQPAlNadhCkIzAk7KL2MZT0NSwnzQCWTNaPz9qFNQ=
+
+Name: icons/table.gif
+SHA-256-Digest: hRDyBTzGqbwhm270PtVzUVrTQHZjxVrX+02u2vD+8ac=
+
+Name: icons/meta/meta_2_1_inactive.png
+SHA-256-Digest: KHUO2x6PLUr+EkWDaZIYo1FavWVawyaF3sDZmbyrTkc=
+
+Name: icons/executeAll.PNG
+SHA-256-Digest: gq3lij5X2zH9JCkXNfgLrjcTMp11+fc4/4C/4cKv0cc=
+
+Name: icons/node_monitor.png
+SHA-256-Digest: Tz8W+OWkXSm4W7YAwHYD8TXvrpk5ont1NUh9HY+0EBI=
+
+Name: icons/meta/meta_1_1-icon.ai
+SHA-256-Digest: vPgQuRKzBPvwxD4oNkKSEkY8fl0XkG7glHcFxE719vY=
+
+Name: icons/node/background_viewer.svg
+SHA-256-Digest: evIHqtI9ay1ZV6SqlUzVZjltTEXnClBdZ1AQeQTscuU=
+
+Name: icons/meta/metanode_setname.png
+SHA-256-Digest: R3pks45N59xuFeT2e1n4pN+bAQdl8EhwCLiEH/HfFPA=
+
+Name: icons/layout/missing.png
+SHA-256-Digest: R0Sz/ACnHQHtC2htUNETlG+d+JEkm5qg/swoo1BiH6Y=
+
+Name: icons/layout/reset.ai
+SHA-256-Digest: 4+EFbGpv0nQGdNz40d1E4a172+zoB2sqU+ugBz+GiOU=
+
+Name: icons/editor_UI_settings_16.png
+SHA-256-Digest: lGQL5FclVGmVvqx2jVr7I6DnGE248NSCmQY7yAlwhfM=
+
+Name: icons/ports/port_inactive.svg
+SHA-256-Digest: pk1fqweICX02CdivEbOlO3MVHtKcwxvLwHCaSIau/Cc=
+
+Name: icons/openView.gif
+SHA-256-Digest: h1zjbL/aUGtKQ3p7DS+E+Qreaj7Ewq9xpRsVpMIz6IQ=
+
+Name: icons/error.svg
+SHA-256-Digest: 0XmsAf9hly1fHYHaSOUu7bLrrBOk8PB9XOmVqXe0xFk=
+
+Name: icons/meta/meta_idle2.png
+SHA-256-Digest: zgXh9fwuFpixrBxqkU1JvEdvi0HseRz1WA5uVYdKdEc=
+
+Name: icons/layout/remove@2x.png
+SHA-256-Digest: 3N3nUEe1Av+F4XPYLV+KRHbuh91TrSgTDzyTPI00sP0=
+
+Name: icons/openPortView_disabled.png
+SHA-256-Digest: ORqzFemBYTFFsue36okQnj5Kg1SXUz1eG1ufjpYMqhA=
+
+Name: icons/meta/meta_1_2-icon.svg
+SHA-256-Digest: 1D0t4XXVS5XEFao8Q4+qIBrgxTQERtMtcXRFRkyz/pA=
+
+Name: icons/meta/metanode_lock_decorator.png
+SHA-256-Digest: zb/xWsUPrOxUgKd6mvjkTKZ3EWvETTD7xaTnf5AV2WU=
+
+Name: icons/node/background_looper_end.svg
+SHA-256-Digest: i5cHnZUU9pxvOYO/M4Od815omVnGEa+Jy3Z0zhbsnJo=
+
+Name: icons/node/background_scope_end.png
+SHA-256-Digest: e0rbpfwrIUtMhkKpAky+GFSrJrCtekkIyF3cAxTqidg=
+
+Name: icons/loop_nostatus.png
+SHA-256-Digest: Ho6rozzQJrTDzBqovxqhoBGeeNDhKu3fsNs9LhHxiD0=
+
+Name: icons/layout/warning.png
+SHA-256-Digest: U9e8zeKboBylKxTjE/7Kwv43IZB3j/eY5+9a4WaFB6Q=
+
+Name: icons/cancelAll.GIF
+SHA-256-Digest: Rj6FUZAAlXY+GX/Dmh8RhVhrouORGGY0kevmJV+Ydxg=
+
+Name: icons/meta/metanode_link_reveal.png
+SHA-256-Digest: b1S2YbB5TOwOj4S/XvvFyihFFLJaNF8nwz/GZGgdx/0=
+
+Name: icons/layout/remove.ai
+SHA-256-Digest: Vk9bxMPpL+qofgL0WqcRlrBBd/Bz5M578Ke4J1Mb78E=
+
+Name: icons/ports/port_inactive.png
+SHA-256-Digest: ImjNiZP5AmJHNqo/TIIZRGxzH1ZUthcn1hvMjT0JtpY=
+
+Name: icons/openInteractiveView.png
+SHA-256-Digest: sagZTgzo0PlguJip7Hf3crtbb5Z70sejmLfm8CXQ3tg=
+
+Name: icons/node/background_manipulator.png
+SHA-256-Digest: 0Zgw6R69H6nODR/Mm5Qk2cOSb9XN5GG0XEl2kCbX6cA=
+
+Name: icons/annotations/border_10.png
+SHA-256-Digest: 2ymhd/Jxxyp2JJKoKs2PiEweYdAoYEGXyPeNb01OkNg=
+
+Name: icons/node/background_predictor.png
+SHA-256-Digest: XxPh565JKg9HQOv366QNJ8kU89nTdsC7fyxmsuSyaPc=
+
+Name: icons/node/background_sink.svg
+SHA-256-Digest: 5J9GeKkh0pBAmbIqog432ECwJS4m2RX+S9Wv8fKr2dA=
+
+Name: icons/node/background_looper_start.png
+SHA-256-Digest: t0hInNwI46QBPrsnRQrtJ9wW95AphDdHZPZBx8EWqMM=
+
+Name: icons/layout_16.png
+SHA-256-Digest: CBRhc5g8hufE3M2tcl4/MReQKYhXP5qsYMT55Aq1CDY=
+
+Name: icons/warning.gif
+SHA-256-Digest: CAzdCVk+qszMXsyIhzdLltGvt0wxFeOXBikHSrSLhco=
+
+Name: icons/layout/missing.ai
+SHA-256-Digest: ehEJsCVrLeKF8RF5RPptDPY+yhsOk9PKOsQ8uXIFpDk=
+
+Name: icons/executeAll.GIF
+SHA-256-Digest: wPAesbsMK2m5hvLbFfAhSiwB8yAugGzPer/LY2hSzt8=
+
+Name: icons/meta/meta_0_1_inactive-icon.ai
+SHA-256-Digest: mCYilmpHh1uucqUM9TPaxqt+qp2dKqLgjEzaEC2BuB0=
+
+Name: icons/meta/meta_2_1_inactive-icon.ai
+SHA-256-Digest: M23b9zUqFDJNAdV0rnZubKiDhLnhckgtWP/S7Rh9PBI=
+
+Name: icons/loop_done.png
+SHA-256-Digest: BeYsifwXDTl+vweUfAUdvFpECELYJjtyCBoUTRLZcz8=
+
+Name: icons/meta/metanode_link_red_decorator-icon.svg
+SHA-256-Digest: wjAezNaD5xSgUJN1ij9jdifbWPs70kX+i6V+YM7XQTc=
+
+Name: icons/executeAll_disabled.GIF
+SHA-256-Digest: 40wh/K8iK6Cp0bQn4BWwF7DOHIsHkHH9PG4XC0bgdFs=
+
+Name: icons/meta/meta_2_1-icon.ai
+SHA-256-Digest: gpTrOr1I8nzffvOBO8VT1rLPyJK1HTX2s7gzeiJ88lY=
+
+Name: icons/select_loop.png
+SHA-256-Digest: A7WAcmrqOYRXaAMBHlX8xHhnKwR+p8zGsUem9W2uH+U=
+
+Name: icons/step.png
+SHA-256-Digest: 4f2mRDwepoxLcYDd9dRvpbZZOppX0OwtTq77He7W7hk=
+
+Name: icons/annotations/font_10.png
+SHA-256-Digest: rinIfu3kvLJDQ96ts/jWsGzOux3LQPKeZcKtO1FYN1o=
+
+Name: icons/node/background_scope_end.svg
+SHA-256-Digest: 1zLgnyhUGWxTrZ9ixlEBiTaZZEpcDGRrrmTTxddIDP0=
+
+Name: icons/meta/meta_1_2_inactive-icon.svg
+SHA-256-Digest: 9kmhb3a6wmc50iV19ilvXVOdWvwkm7XZBY06RWIaEDM=
+
+Name: icons/resume_disabled.PNG
+SHA-256-Digest: SZQkffuiGqmC0fkIReTX8ah8hMAlXS65ATIVIK27NUQ=
+
+Name: icons/editor_UI_settings.svg
+SHA-256-Digest: Hfoj+QjRcyP4cowRXS9aJZrjZ2usYiZN3LvvqxF8gVA=
+
+Name: icons/meta/meta_2_1-icon.svg
+SHA-256-Digest: d9HWWz/HDRoTpU/2wWcq1/hDoraG7Rt/aZWVVogfwEs=
+
+Name: icons/meta/meta_menu.png
+SHA-256-Digest: SPlv1XOs9dVzbwnKsUzN+8qvf0m/9fcVQbv/JQGX3RA=
+
+Name: icons/annotations/cancel_10.png
+SHA-256-Digest: Hih1KFJ03Wko7DZKbiOOArOx9gwEmhSLjFAIHkw/n0c=
+
+Name: icons/meta/subnode_custom_preview.png
+SHA-256-Digest: lxzuhsiSh0i23a5mG+mYUPPGBLNsxTuSUhJl5jYJ5/w=
+
+Name: icons/info.gif
+SHA-256-Digest: v6y4hlNAT5iZLVkI0+z+ZlLH8cWjQj5UUUzfGBTKAys=
+
+Name: icons/cancel_disabled.GIF
+SHA-256-Digest: 9r69c11+m/uwXA6lBdYPeN61D0r/+hWdQRp6cIN85eM=
+
+Name: icons/ampel_green.svg
+SHA-256-Digest: dznxtMGEGMNnb7llKqBOKZApgBSIyyoC5jP7niaEgEo=
+
+Name: icons/meta/custom_meta_inactive.png
+SHA-256-Digest: IeRdz/kGI2U2ieZ/A2s5STKQJ2u7U4gkWKRejXJU6Xc=
+
+Name: icons/node/background_subnode.png
+SHA-256-Digest: EWPhHoBTmW5xC8HdtjLs4yeoJRXHFog9FyamV54zTK8=
+
+Name: icons/node/background_learner.png
+SHA-256-Digest: rNwYfWBc6RCEilN9RJgVx3eDR0JL+0egdlz6rqxlCXA=
+
+Name: icons/layout/missing@2x.png
+SHA-256-Digest: MrSuAfY/6uayBpEGz48sJxcePaJzxT0SlEYsGr26mp0=
+
+Name: icons/meta/meta_2_2_inactive.png
+SHA-256-Digest: ERuidYoHpLAk5jPQ4uYRcsVfNn0I27FdF1uXZ/B8tWo=
+
+Name: icons/node/background_manipulator.svg
+SHA-256-Digest: uPCguwtcVtsjoc4IsWASDqRHCIIj5DsW3oISrG4HItc=
+
+Name: icons/meta/metanode_expand.png
+SHA-256-Digest: K6dn9ZK+4BKRjimVydRuvTxOSRpIPGOI3CwMMWq6pgQ=
+
+Name: icons/knime.bmp
+SHA-256-Digest: Ty0KAGD+VVJfibI4dXjLKzd2gF0F2vkvCfA/Y7VJ5Dw=
+
+Name: icons/meta/metanode_link_problem_decorator-icon.svg
+SHA-256-Digest: 16IU2O3knky1FRfYzHog6xyJ33BgxIqcEwqQUJE1B7U=
+
+Name: icons/node/background_looper_end.png
+SHA-256-Digest: z9ezJgDy8mINLJSEocAPAfA9GAzQfhlQrM/9SpF1E8Y=
+
+Name: icons/meta/meta_2_2_inactive-icon.svg
+SHA-256-Digest: k4b7jAI+gMD1D1Mn0CDLjjrFqwiHEJlopztUyQtv9pI=
+
+Name: icons/node/background_predictor.svg
+SHA-256-Digest: Lg+hTTS6FxqeiFrqPqcYRu06kjZ2k3qAjoRxCdsnGn0=
+
+Name: icons/meta/meta_node.png
+SHA-256-Digest: Gpo1hnFxlRzPhvIcOh+jv6k6ywsCw7pVJAxJuXboV8c=
+
+Name: icons/loop_done.svg
+SHA-256-Digest: UsEDFMBxOyUhW+J6Lc4m8KZQPcvg7Kp92U6vHxPiUoE=
+
+Name: icons/ports/port_configured.svg
+SHA-256-Digest: mGQAcqOVsGWaohPz3c2g41Vh5EPXSpCU7Czh8rGi0jc=
+
+Name: icons/layout_55.png
+SHA-256-Digest: uE+TTUw+Eu9duLCWkWH9mVoBSsHif6wFs7IXFozWASk=
+
+Name: icons/meta/metanode_link_green_decorator.png
+SHA-256-Digest: 8kzUpVUQoCCt9U0Lqf5WgPq35foEHwnScvdHzw1Bgak=
+
+Name: icons/node/background_missing.png
+SHA-256-Digest: BvaTW6/fbNOcH4JKB0wGgGapeuAI7BLd25HBruHEhko=
+
+Name: icons/meta/meta_executed.png
+SHA-256-Digest: KMoDIUaLL/ybCM8zR8yFFnpi7oGF8s8VQ4TYgaA8flE=
+
+Name: icons/node/background_sink.png
+SHA-256-Digest: B81bqgXWZAe5QY50Fj47lv/bfpyL3/sVfnTRPBnxnk4=
+
+Name: icons/meta/meta_0_1-icon.svg
+SHA-256-Digest: fV7ASdgb7e5Rn0noNEztWE113KryiFlaUKwQvUrM25k=
+
+Name: icons/layout/add.png
+SHA-256-Digest: 3+H7UT3uhuKLAaSep1thMRb3qFc9e3GrGUarI0pGns4=
+
+Name: icons/annotations/bold_10.png
+SHA-256-Digest: /LMOMGstHZzZ14tVXTyM4H0LgQXhOc8zioSBS3j9klc=
+
+Name: icons/pause.png
+SHA-256-Digest: VV4QDwsVqFZO+0+sTgZctJq9Gz+ql+Pwtwf5blZGTcI=
+
+Name: icons/pause_disabled.png
+SHA-256-Digest: n2ub8Qbit8p+QvQL+lToH4HlLf4CxBO36g084rMLU5A=
+
+Name: icons/ports/port_executed.svg
+SHA-256-Digest: 4wVBF7wxXVHe0IoI7y0ozRA8+82JG3aqkuodZrDzXZY=
+
+Name: icons/execute.PNG
+SHA-256-Digest: z9AeurzPqihodEmqUEGhyONzeMkvH0+aYWDu4TmBszg=
+
+Name: icons/layout/add@2x.png
+SHA-256-Digest: /sjKAexVd9RsSLXmJg4w/LpVBufX3XpqSb8XbRaJNkY=
+
+Name: icons/layout/warning.ai
+SHA-256-Digest: 6fON7sw8XG28clN/BkMTuhF1BD0D0kCIWbX6AZZ7Iw8=
+
+Name: icons/select_loop_dis.png
+SHA-256-Digest: Tylef5uW+aCTTkgcfHUI1Q2BAfrdd5ZITl+a5NiOyWo=
+
+Name: icons/execute_disabled.GIF
+SHA-256-Digest: M5USKI72V8+xgo9a/oiRAGCg++c+c9WG1EVa1BJY05U=
+
+Name: icons/openView_disabled.gif
+SHA-256-Digest: PP6/PbftNWEBmd4hfVdJ4e/E+emYWshRcToIRfJ2m6c=
+
+Name: icons/meta/meta_2_2-icon.ai
+SHA-256-Digest: rQMLnsl+7xLeKFrXaJBDsFzbO/45iw4Jdfkdk8P3kYU=
+
+Name: icons/ampel_inactive.png
+SHA-256-Digest: cemwXPrUfdJuxGWnGlWBkBgO6D578LjmtRvxyUC9rdE=
+
+Name: icons/ampel_green.png
+SHA-256-Digest: bP78xJMhchUO1gUFsKc5EVb/ZPPVCS+KSeTX7OIHAYw=
+
+Name: icons/node/background_source.svg
+SHA-256-Digest: UEzI5HpNNJp3fXy/J1RqnnwBfujKUQ+2MFuOLYoIVtk=
+
+Name: icons/meta/meta_1_2-icon.ai
+SHA-256-Digest: P0K4Q1aEkyxAjT/hpkojm6EcI+7abLkI3Jh0te1VYxk=
+
+Name: icons/cancel.GIF
+SHA-256-Digest: cfeNhDuilSybHla/qiNMbomKx77rlaG+Z4/+ZrDLAD4=
+
+Name: icons/meta/metanode_unwrap.png
+SHA-256-Digest: kUOQX+NsJhHnGrlSCl7IfHx1YCyS74OHJ9qXzwS0kLI=
+
+Name: icons/setNameDescription.PNG
+SHA-256-Digest: q8BWKvZvk34otJLqgMyrb1tCMwkF5knoYnxXYydIW74=
+
+Name: icons/openDialog_disabled.gif
+SHA-256-Digest: 6DQbOn1mWZaXHDfm0V1pfnU+2bmBhFyfKLtmLX/a4MQ=
+
+Name: icons/ports/port_idle.svg
+SHA-256-Digest: p+484QYfFqOU5B34jhOCJA82z+Bh++ViQ6xtxWOCH1Y=
+
+Name: editor.jar
+SHA-256-Digest: lZ4dqhxF0AkHqMudjMbtQHdJ3YhqNH7UEPwMkX5xwGs=
+
+Name: LICENSE.txt
+SHA-256-Digest: AINBnlxD6j1hoUJCdbqJDDXIUInSr72BED0xfnoxdrY=
+
+Name: icons/ports/port_configured.png
+SHA-256-Digest: vM0NMMpwGJ11rnoXPTI33hspPd2O+hDiCkSDHoz7Csc=
+
+Name: icons/meta/metanode_link_problem_decorator.png
+SHA-256-Digest: wOPnQKddFUis67YrPwnycXWXCyv3J7LpnMFLmRR1QJ4=
+
+Name: icons/meta/meta_0_1_inactive.png
+SHA-256-Digest: e/SAMy6on/ybs3Nbg48/DQi5UZz03DFP0OJ4LdEucXM=
+
+Name: icons/ports/port_executed.png
+SHA-256-Digest: +ymPApeBuyzBUuRIQWLjWERe+qsfthmS94FGIyX8A1s=
+
+Name: icons/meta/meta_0_1_inactive-icon.svg
+SHA-256-Digest: r/fhmDBc4ZfbGN6h3Ou/lA1W7S394gKCY7WteOPZvqQ=
+
+Name: icons/showNodeIds_disabled.png
+SHA-256-Digest: 7o/7zd4nA6+8AU0YaoD1Z4O8URuUPqi7SY4QuLJILPc=
+
+Name: icons/meta/metanode_add.png
+SHA-256-Digest: gUB5yAYO19gZUzDfshT0HhbxRsBk7goiS/a/4dxZa4s=
+
+Name: icons/hideNodeNames_disabled.png
+SHA-256-Digest: nhgzmDaCgsVkXyZwz/k1L0MtVwa4h2viYrERNT8ix4Y=
+
+Name: icons/resume.png
+SHA-256-Digest: 3BeM+Q6BOcEaVZuYqs9eeiItOSgDlibxHaMmVy13VJM=
+
+Name: icons/confexec.png
+SHA-256-Digest: lCvJVrQkyhOEUxhdcUex/yiO42gwYgf/RgME+ZMZ+bQ=
+
+Name: icons/openPortView.png
+SHA-256-Digest: BXLEIYBimuLbnNcxM1T3Rd8DiD/GHX60zIAvs0Ih+Uc=
+
+Name: icons/ampel_inactive.svg
+SHA-256-Digest: AHtcZ7fx/zHGfGiKLxog3gKRBWRrMlzaseUs8+C5w18=
+
+Name: icons/cancelAll_disabled.GIF
+SHA-256-Digest: i4YJw0OCNJUMT2ziJMMqBqfjXqO9k4VL3lRu0Wrezao=
+
+Name: icons/ampel_yellow.png
+SHA-256-Digest: bB2AKcpE2E0jZcVXmL9gfI/7JTdXci9525bwDsMmHRI=
+
+Name: icons/meta/metanode_link_disconnect.png
+SHA-256-Digest: kt69/Fy5IKbEIUx8igELaWZ5PtuqrqyG+0ME7euITY8=
+
+Name: icons/meta/metanode_wrap.png
+SHA-256-Digest: zqv5cDzcgzvH5yUNG2ptL/7nJALUje7Wab8W1jKPVYs=
+
+Name: icons/warning_framed.png
+SHA-256-Digest: kspWv4aGtHAbVNR8zB9WEo0uR1XZF27u0O7m53EiZGU=
+
+Name: icons/executeAndView.GIF
+SHA-256-Digest: 8wp5vHNUVvNX4sUhiKLzcEAyoNjBQPmYHLakzYepaX4=
+
+Name: icons/meta/meta_2_1_inactive-icon.svg
+SHA-256-Digest: 2psvMfrjZjGxJArvYxaeQMAuphwWcbffGHQ1M94EQoM=
+
+Name: icons/executeAll_disabled.PNG
+SHA-256-Digest: dWqCQzLYk8/g/yTTPtQrM7O/kUJRu6aIr3R2+Rje/+Y=
+
+Name: icons/confexec_dis.png
+SHA-256-Digest: XwY9XN/VCdsFi3BNjaiBWaw4XV5LzwjINhpl+5912jY=
+
+Name: icons/delete.png
+SHA-256-Digest: wVcG1QIOYfpKk/p33gMWJpxqbou2Bc9sgOR5ckYReN8=
+
+Name: icons/resetNode_disabled.gif
+SHA-256-Digest: t/ggRHFL6WXpFEn24GNr3lTiV3KyDLPsk34GgBYzrw8=
+
+Name: icons/node/background_virtual_out.svg
+SHA-256-Digest: kAQca1o7oKL4zWI6Jbe3wKkMOXzs5fFw//GB2BVBVVE=
+
+Name: icons/meta/meta_2_2-icon.svg
+SHA-256-Digest: HL4K86gVrwW8SAb6FzHL0Uf0NeVfKmSf3ARvk4KsKoI=
+
+Name: icons/node/background_looper_start.svg
+SHA-256-Digest: GrXfX6GfUT56eoNYWmFsMey/ZUjMgv0P8OhExHbn2u8=
+
+Name: icons/execute_disabled.PNG
+SHA-256-Digest: B6UzN/tc7xRDK3nGKk0XQ8Tn3esVqXjxLH/SD81nT4A=
+
+Name: icons/description.gif
+SHA-256-Digest: GIti9rXAarmTKbZ5J2xhRppp3fk3ZZpRycTux2ZEJpM=
+
+Name: icons/meta/metanode_link_update.png
+SHA-256-Digest: /SZlS+H/mu5AOW8nCrXwvGKPtpb4gsH2ohj2M4tH6q0=
+
+Name: icons/cancelAll.PNG
+SHA-256-Digest: JBY3v2ICyZDulxyHlZQCPJ8MIIUoEvsvqAE7Gn7cFGg=
+
+Name: icons/meta/meta_1_2_inactive.png
+SHA-256-Digest: qDhz+KDnNSBPyi5YL3R3rKY9Hp4Ab+bjOEVxPDOUK80=
+
+Name: icons/meta/metanode_unlock_decorator-icon.svg
+SHA-256-Digest: OEUKrvXTa7dOS8RsVhxQLjeSvvT0uxyxI7aegPXXc+c=
+
+Name: icons/annotations/ok_10.png
+SHA-256-Digest: byh6cYDbJeXWbxAGia/qKcZ6yFpt4jTKUrg29XdRD6k=
+
+Name: icons/node/background_meta.svg
+SHA-256-Digest: nQqKtKJgcgWmYf3vjGljosYnsxs6MY4e/IOzaOSgUiM=
+
+Name: icons/node/background_unknown.svg
+SHA-256-Digest: VXuHuqZTEYeMdm53SdKefV5FdsS6mIUTfE1IP0EVYdw=
+
+Name: icons/meta/metanode_link_create.png
+SHA-256-Digest: Y4zg5aSv9j4bnawwRGh10gTlnHMWAxGMTCRhKW1g3+E=
+
+Name: icons/showNodeIds.png
+SHA-256-Digest: Oeq/8yNQgIRK8RecJB2DAnAb8ZaFMaqPcsni7Q2nLqQ=
+
+Name: icons/layout_16_bw.png
+SHA-256-Digest: DkUgSaQ9IqAWgq0Equ4l1kMp6P4LP9tgEA+sAqBHqR0=
+
+Name: icons/meta/metanode_link_green_decorator-icon.svg
+SHA-256-Digest: eOrSDuZZGtoJh0cMlLECF/Yj0+9OSWspCC1OX/Tjo2Y=
+
+Name: icons/loop_in_progress.png
+SHA-256-Digest: BtRFzQzo9SEAukoRicwylTysJxJkGnSjaedtNfz8KAQ=
+
+Name: icons/knime.png
+SHA-256-Digest: 0OGN0KWQqIXCnMO7ffsQ+L3ob7vYeeg7hSSn4tMlQic=
+
+Name: icons/executeAndView_disabled.GIF
+SHA-256-Digest: I+rYZP6crztD5ZfBFPucm3PS5Cd5GnVp4uTlobRzXg4=
+
+Name: icons/meta/meta_1_2_inactive-icon.ai
+SHA-256-Digest: RNRDLzDI6yhahMY+J03i5T+g8FYVj2Cp5jvw1z2xPPw=
+
+Name: icons/node/background_other.ai
+SHA-256-Digest: DsQ+DtoCb4heSFu2EyIeOITJzs0g/9U3i3jqM+vO8JM=
+
+Name: icons/node/background_quickform.svg
+SHA-256-Digest: aqbZLeS38k/JTRAeZqEKM9XfxB78KdrFFCI/VLtOZtk=
+
+Name: icons/node/background_scope_start.svg
+SHA-256-Digest: k21rwhSGb25WoK1Xpr+LDKHuesKjIJyd4PFmarwlPeo=
+
+Name: icons/ampel_yellow.svg
+SHA-256-Digest: XxdEvbfybXiuQ+Wu91/+oLqx0q6H1yUKHL1u523NkPg=
+
+Name: icons/meta/meta_0_1.png
+SHA-256-Digest: xAZIJrv2OCNywspUkIvgYKCk8GX0HjalQV4IrhLcE2w=
+
+Name: icons/meta/meta_0_1-icon.ai
+SHA-256-Digest: rWiHysFa8QQZImz8ukMzBL/wN2yZiWAAZQcUW9VRdyA=
+
+Name: icons/node/background_meta.png
+SHA-256-Digest: cxAPeJeWIvdClkklw4aL6WEWWmoEaHq8r9XljPOFjC0=
+
+Name: icons/layout/settings@2x.png
+SHA-256-Digest: 1KBwv/DLs6mPKbahBT01s0h1QIhPJaMkmQJ5a59r51w=
+
+Name: icons/node/background_viewer.png
+SHA-256-Digest: AjJrBep7adu9pdCnpV0Ri9OjfN29+oUkoU09ZKRdDgQ=
+
+Name: icons/meta/meta_executed-icon.svg
+SHA-256-Digest: p/RDO0a5aEvmMhIu31E1XOFDUkXfZ6a2h95J6tDcZuc=
+
+Name: icons/node/background_virtual_out.png
+SHA-256-Digest: oWKgFRpF1GiY87DH9g3Yr8dFIQJKg4lO31KtWRoKOgk=
+
+Name: icons/execute.GIF
+SHA-256-Digest: CWDuPBUxDf/IktctnRMCMFeSZzlMwHI8rGiZvfUCydg=
+
+Name: icons/delete.svg
+SHA-256-Digest: JZBdDPV+MKePE/yQRYG5qfr3+PU/0H+kAY5tazTgCEg=
+
+Name: icons/openDialog.gif
+SHA-256-Digest: KSJIgFh8YgQ6W02tlzNPJuIwrP7fue9RkICslJeAqYM=
+
+Name: icons/meta/meta_executing5-icon.svg
+SHA-256-Digest: HSrFbRS/qTTp/8MF0k28hxzXUF4V8C861/FjahrvdA8=
+
+Name: icons/executeAndView.PNG
+SHA-256-Digest: VVPOGWQgTrIogF8OA9h5sbZoApBjsLbfBoEvR9BSmbc=
+
+Name: icons/meta/metanode.png
+SHA-256-Digest: CK+yslLxkse0myQq44dy4Vpt3sKu0+/vEyW8IdaCU9I=
+
+Name: icons/cancel.PNG
+SHA-256-Digest: eC2GgleY0bWDuQDmJaUl0+WJqrXrnWw1EVw5AmLoelg=
+
+Name: icons/node/background_unknown.png
+SHA-256-Digest: ychHBUe9mEpDyFJ/9i3t/l4g6PGWKdVChK+72jYaJRw=
+
+Name: icons/error_framed.png
+SHA-256-Digest: 33hRY1EOYn/fj1pdjFO4u4t4XA2IpLvZ6/SqPIpK/Mw=
+
+Name: icons/node/background_subnode_new.png
+SHA-256-Digest: PfIzCgP8tbDRr4u0Jrjg1Lbv9uwe6c8wj8wBcE4sTUU=
+
+Name: icons/move.png
+SHA-256-Digest: 0xOQFSG6aMhLJbfdDYuRQjLAPfRpgAobw3uzWST32rY=
+
+Name: icons/meta/meta_2_2.png
+SHA-256-Digest: nJ/Bmlc/AMcf9aWGMDRLudqPQWRZpe/F+YTnCGBOZSE=
+
+Name: icons/step_disabled.png
+SHA-256-Digest: hdJ0qaxH7AAbaldSuyca5qZG1S6HcLjOOAsQp92ekdQ=
+
+Name: icons/meta/meta_idle2-icon.svg
+SHA-256-Digest: 6RVgxcC1koazxFz/1g0QObsw7wfBfCowoOTkFlTU5eg=
+
+Name: icons/resetNode.gif
+SHA-256-Digest: g/CTd8NIc6MP95BQ9sJqvOiZ2VXxttRP2M/ex6Zv02s=
+
+Name: icons/layout/remove.png
+SHA-256-Digest: 40FLJLVdccUzcoowpd4l10/vvM1Opw93OMiwiPUhFko=
+
+Name: icons/warning.svg
+SHA-256-Digest: imOfWSdMeSAGffLhUxgFcz4vXZSf/LM8PZYF0B18IeQ=
+
+Name: icons/layout/add.ai
+SHA-256-Digest: z0EiHZI3L2ozbwbvQNId6OFhJ8FOssq8AuNrdLSXKb0=
+
+Name: icons/ports/port_idle.png
+SHA-256-Digest: GoYCuaQ3UJnBoV2BstXtaKdRsnFNhFQTQn4KjS/B5fA=
+
+Name: lib/WindowsDNDHelper.jar
+SHA-256-Digest: xkeH8e3qhWRRLkfU1s3I6f2LfJTNceLm3t8yPUV2sRI=
+
+Name: icons/meta/meta_1_1-icon.svg
+SHA-256-Digest: hcr4uMje0Dy+V4eEjMobTPbQovlQFzexuMvsruLH14k=
+
+Name: icons/node/background_source.png
+SHA-256-Digest: 0FqXV231NhO6ytXz/b2puTSg7bP0GlgUQvGRNxP2pfw=
+
+Name: icons/lock.gif
+SHA-256-Digest: McLzHWUFLY4xPKzmoh/x+HY+Ls09MQOYj0UwXoK5+nQ=
+
+Name: icons/node/background_scope_start.png
+SHA-256-Digest: lHeCdrPZc/gBGPJH1NXDeHCEFQf5NZBO7AgoGN5T+fY=
+
+Name: icons/layout/reset.png
+SHA-256-Digest: /wER2CF7bn1FkNv1CikNJB070wXyNzwDccES1+HvhcI=
+
+Name: icons/meta/meta_1_2.png
+SHA-256-Digest: 8uOpGfXoG+mkxlJnETnXP0UQ+TAvhZ23VNmgApyHTd0=
+
+Name: icons/meta/meta_node_wizard2.png
+SHA-256-Digest: GrN7/YH05KXKLKdT0wEvThNJyDUDgxVwBrSlqtuQ1M8=
+
+Name: icons/meta/metanode_lock_decorator-icon.svg
+SHA-256-Digest: 5qgFjzpagkVYT9igWccBP9xIE0JopOKhvsppBl2WwK0=
+
+Name: icons/executeAndView_disabled.PNG
+SHA-256-Digest: tmCap5GCPB2fdnOCzIqK6yermW5Je62WtT2NajoXiqc=
+
+Name: icons/cancelAll_disabled.PNG
+SHA-256-Digest: 3MWBJxZySv3Cgi9F/YwwSCrGFJc+pPz3YY1LdiUzJB0=
+
+Name: icons/meta/meta_1_1_inactive.png
+SHA-256-Digest: h64Bla2ElrKxx9ZenoksDOzypPYJmhfbldzFUMVUdBA=
+
+Name: icons/node_description.png
+SHA-256-Digest: +hLQGVcSVLh8JRaOM0bkOzk4Q4q2mm6Kz+X+5RFp/VI=
+
+Name: icons/setNameDescription_disabled.PNG
+SHA-256-Digest: RdKXHET917tubH7dDQ9AhxzJJPzj0j3olBvbiPgfBuQ=
+

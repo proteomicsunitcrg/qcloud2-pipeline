@@ -30,7 +30,7 @@ RUN apt-get update \
  && apt-get clean
 
 ENV PATH="/usr/local/knime_${KNIME_VERSION}/:${PATH}"
-
+COPY plugins/ /usr/local/knime_3.5.3/plugins/
 
 ##RUN gcc --version
 

@@ -1,0 +1,914 @@
+Manifest-Version: 1.0
+Bundle-License: http://www.apache.org/licenses/LICENSE-2.0.txt
+Bundle-SymbolicName: org.apache.commons.compress
+Archiver-Version: Plexus Archiver
+Built-By: bodewig
+Bnd-LastModified: 1466263803354
+Implementation-Vendor-Id: org.apache
+Specification-Title: Apache Commons Compress
+Bundle-DocURL: http://commons.apache.org/proper/commons-compress/
+Include-Resource: META-INF/NOTICE.txt=NOTICE.txt,META-INF/LICENSE.txt=
+ LICENSE.txt
+Require-Capability: osgi.ee;filter:="(&(osgi.ee=JavaSE)(version=1.6))"
+Import-Package: org.tukaani.xz;resolution:=optional
+Main-Class: org.apache.commons.compress.archivers.Lister
+Export-Package: org.apache.commons.compress;version="1.12",org.apache.
+ commons.compress.archivers;version="1.12",org.apache.commons.compress
+ .archivers.ar;version="1.12",org.apache.commons.compress.archivers.ar
+ j;version="1.12",org.apache.commons.compress.archivers.cpio;version="
+ 1.12",org.apache.commons.compress.archivers.dump;version="1.12",org.a
+ pache.commons.compress.archivers.jar;version="1.12",org.apache.common
+ s.compress.archivers.sevenz;version="1.12",org.apache.commons.compres
+ s.archivers.tar;version="1.12",org.apache.commons.compress.archivers.
+ zip;version="1.12",org.apache.commons.compress.changes;version="1.12"
+ ,org.apache.commons.compress.compressors;version="1.12",org.apache.co
+ mmons.compress.compressors.bzip2;version="1.12",org.apache.commons.co
+ mpress.compressors.deflate;version="1.12",org.apache.commons.compress
+ .compressors.gzip;version="1.12",org.apache.commons.compress.compress
+ ors.lzma;version="1.12",org.apache.commons.compress.compressors.lzw;v
+ ersion="1.12",org.apache.commons.compress.compressors.pack200;version
+ ="1.12",org.apache.commons.compress.compressors.snappy;version="1.12"
+ ,org.apache.commons.compress.compressors.xz;version="1.12",org.apache
+ .commons.compress.compressors.z;version="1.12",org.apache.commons.com
+ press.parallel;version="1.12",org.apache.commons.compress.utils;versi
+ on="1.12"
+Bundle-Name: Apache Commons Compress
+Extension-Name: org.apache.commons.compress
+Implementation-Title: Apache Commons Compress
+Bundle-Description: Apache Commons Compress software defines an API fo
+ r working withcompression and archive formats.  These include: bzip2,
+  gzip, pack200,lzma, xz, Snappy, traditional Unix Compress, DEFLATE a
+ nd ar, cpio,jar, tar, zip, dump, 7z, arj.
+Implementation-Version: 1.12
+Specification-Vendor: The Apache Software Foundation
+Bundle-ManifestVersion: 2
+Bundle-Vendor: The Apache Software Foundation
+Tool: Bnd-2.3.0.201405100607
+Implementation-Vendor: The Apache Software Foundation
+Bundle-Version: 1.12.0
+X-Compile-Target-JDK: 1.6
+Implementation-Build: UNKNOWN@r${buildNumber}; 2016-06-18 17:29:54+020
+ 0
+X-Compile-Source-JDK: 1.6
+Created-By: Apache Maven Bundle Plugin
+Implementation-URL: http://commons.apache.org/proper/commons-compress/
+Build-Jdk: 1.7.0_101
+Specification-Version: 1.12
+
+Name: org/apache/commons/compress/archivers/dump/ShortFileException.cl
+ ass
+SHA-256-Digest: dlUOwWnUG7gI3x21qqJfw04C6TXZ6Z5xvd0y1R0ItOw=
+
+Name: org/apache/commons/compress/compressors/bzip2/BZip2CompressorOut
+ putStream.class
+SHA-256-Digest: M9YbAPxCn9DMbrHXjAFBeBw7P6o2t9zPqYiITcQ0VhI=
+
+Name: org/apache/commons/compress/archivers/dump/DumpArchiveEntry.clas
+ s
+SHA-256-Digest: yPkxwxiCP/StKRifvuYiIDMjYQnxUP9S33mhZclAzbI=
+
+Name: org/apache/commons/compress/compressors/pack200/Pack200Strategy$
+ 2.class
+SHA-256-Digest: F2zDVs63YWg5Nry4myJZAE1FQkoSJYwhgK79Em+PJV4=
+
+Name: org/apache/commons/compress/archivers/zip/ZipArchiveOutputStream
+ $CurrentEntry.class
+SHA-256-Digest: ZhfE3MGvDJYf8G75YSvQUDn91Y6dYvukxyIvw8gdQ8I=
+
+Name: org/apache/commons/compress/archivers/sevenz/Coders$CopyDecoder.
+ class
+SHA-256-Digest: bFNbK0vklgVXB/oiuaQhSZGiCtbq9rTdCLoTh9PfB/k=
+
+Name: org/apache/commons/compress/compressors/CompressorStreamFactory.
+ class
+SHA-256-Digest: dxsshKd+TaMmNO6GP4vdBwGgSxabCX7jeFw4DLqPC1I=
+
+Name: org/apache/commons/compress/archivers/sevenz/Coders$DeflateDecod
+ er.class
+SHA-256-Digest: UwvIttHJftaL+9UoeUmD5gINp4Z8PyyZZl7acED/ois=
+
+Name: org/apache/commons/compress/archivers/zip/ZipArchiveOutputStream
+ $UnicodeExtraFieldPolicy.class
+SHA-256-Digest: 8Ji0IBqAZAr/K30xl4DvDIV7sVSuFQyvqXVn93aIE74=
+
+Name: org/apache/commons/compress/archivers/zip/ZipFile$3.class
+SHA-256-Digest: 2SGKUlJZYC1BsqLRaH5KY4pECTCk5zrgEA2yVqnHBOk=
+
+Name: org/apache/commons/compress/archivers/zip/PKWareExtraHeader$Hash
+ Algorithm.class
+SHA-256-Digest: rdQD7sX+1LI8/PRUdQfO/qq5ed4QL91Rq6qMAz+5SYU=
+
+Name: org/apache/commons/compress/archivers/tar/TarArchiveInputStream.
+ class
+SHA-256-Digest: 3AfmnF26GHlVGQ62+hGq7uqf/57MTFWyRRK3HQLDJ2Y=
+
+Name: org/apache/commons/compress/utils/CharsetNames.class
+SHA-256-Digest: JHjHMFiB3NzSUHXqSRhigQK3FXRMoQgRmv1gQhBcWG4=
+
+Name: org/apache/commons/compress/compressors/lzma/LZMAUtils$CachedAva
+ ilability.class
+SHA-256-Digest: OuIllWtLmZR5qq/lwyc7dGyemchUN4wSRVwZMgdqvVg=
+
+Name: org/apache/commons/compress/archivers/arj/MainHeader$Flags.class
+SHA-256-Digest: WdLBcB8HfQsOb1K//X3SV3gw79fk+FYww+FKixv4xk8=
+
+Name: org/apache/commons/compress/archivers/zip/ZipArchiveOutputStream
+ $1.class
+SHA-256-Digest: a/Z+6eyRQ3r33E5J2SY3PTho2wC4n5xMDpHIxTJb89E=
+
+Name: org/apache/commons/compress/archivers/zip/ParallelScatterZipCrea
+ tor$DefaultBackingStoreSupplier.class
+SHA-256-Digest: vWAV4bqdpqv+02Xvxt9klk5JM9C1k9u7ODcs8V4qCYk=
+
+Name: org/apache/commons/compress/archivers/sevenz/SevenZMethodConfigu
+ ration.class
+SHA-256-Digest: NEOCWq40GyRNAVtbsB/76/ZUvmiEGwaKs2JNLRXtATo=
+
+Name: org/apache/commons/compress/archivers/dump/DumpArchiveEntry$TYPE
+ .class
+SHA-256-Digest: 8o8tW12Q8iWRvYVW5RvdRVZy24W78TNw9J0iv89e/fY=
+
+Name: org/apache/commons/compress/archivers/zip/ZipExtraField.class
+SHA-256-Digest: r77zjkYe22LuYzc7GQTRFmdI2dGLLi5A0N3U76HPHsg=
+
+Name: org/apache/commons/compress/parallel/InputStreamSupplier.class
+SHA-256-Digest: Zt6yyHGnN8SF5VadaElw+qIC7Sj7IXvEHySniTuD4o8=
+
+Name: org/apache/commons/compress/archivers/sevenz/AES256SHA256Decoder
+ $1.class
+SHA-256-Digest: NWkzBV7etobaVYAlHdRAvwkHIwvfLWtzYrJaQTlRqqA=
+
+Name: org/apache/commons/compress/archivers/sevenz/DeltaDecoder.class
+SHA-256-Digest: EJ8ThwMuLaIiv+EZQ+sAWH3P60n0BEHYf9P47Ocm7kM=
+
+Name: org/apache/commons/compress/changes/Change.class
+SHA-256-Digest: p8PU1d01gRUhkCs4tAGsPROAbNpCtj0Qz5Tn+M6K/tE=
+
+Name: org/apache/commons/compress/archivers/jar/JarArchiveInputStream.
+ class
+SHA-256-Digest: swqGv4tdZBt18Ayvc7W4qbtQOxQTASkSua76GXe4BSA=
+
+Name: org/apache/commons/compress/archivers/jar/JarArchiveEntry.class
+SHA-256-Digest: F8M2HgB9ftmnvP44CYEG2Dfhk7PDcJ7AcAI4tOQSmI0=
+
+Name: org/apache/commons/compress/archivers/zip/ZipArchiveEntry.class
+SHA-256-Digest: 6C8MgNCUrB4ULW7tT3O1l6W9IBUqro3DdSUFqo+cOa4=
+
+Name: org/apache/commons/compress/PasswordRequiredException.class
+SHA-256-Digest: kuIokQjgZy/592Qf+tZ+rPxAZInbJNyNXpyCfiJHwUg=
+
+Name: org/apache/commons/compress/compressors/bzip2/BZip2CompressorInp
+ utStream.class
+SHA-256-Digest: Ep+20GL0SgWwfVGHfTRSz6KdKN8k4KqQsrtB65vhj+E=
+
+Name: org/apache/commons/compress/archivers/ArchiveInputStream.class
+SHA-256-Digest: K9mhJYFBe773j9o0Qv4dJgWXDwfi5mv2fw/H2vIxCj8=
+
+Name: org/apache/commons/compress/archivers/sevenz/SevenZFile.class
+SHA-256-Digest: 4p3+qNalvNmye3SZ7U+bM520lRWunU1AJHj8J6O5xAU=
+
+Name: org/apache/commons/compress/archivers/zip/X5455_ExtendedTimestam
+ p.class
+SHA-256-Digest: HOqOBmSFd2riKmiBdgAGbueT5gdGzGDBjg+qsiVuGAE=
+
+Name: org/apache/commons/compress/archivers/zip/ZipShort.class
+SHA-256-Digest: MN2894DyfAphyP2aKJLhanukTjs3KkqRxfZYBypb8XA=
+
+Name: org/apache/commons/compress/archivers/sevenz/AES256SHA256Decoder
+ .class
+SHA-256-Digest: b8sqlNT9G5XYb2DfGB3yVvt92v+ev74UY2/H15hB6pQ=
+
+Name: org/apache/commons/compress/archivers/ArchiveException.class
+SHA-256-Digest: uKbKjDE2LG1nsbrVHkVrTRTcdUPaZGgHGK/PEwf7ksw=
+
+Name: org/apache/commons/compress/archivers/zip/ZipUtil.class
+SHA-256-Digest: p0cIohK80Wg1PyMtvWwwpyy6MhFgUridCxTp8zEWqSM=
+
+Name: org/apache/commons/compress/archivers/cpio/CpioConstants.class
+SHA-256-Digest: MsnWsVoGNXp4JMqe0EOXVx1Fx952V7VWZoFKE1rUlTY=
+
+Name: org/apache/commons/compress/compressors/pack200/Pack200Utils.cla
+ ss
+SHA-256-Digest: fUyskYbF94/3fa/iSZrnIreKiVoyYhsjHWkNJvtJUb8=
+
+Name: org/apache/commons/compress/archivers/zip/X0015_CertificateIdFor
+ File.class
+SHA-256-Digest: BIR8NOqN9XkuZZxZkArOybjWLvEGCxFPiIfuslVae8s=
+
+Name: org/apache/commons/compress/archivers/cpio/CpioArchiveEntry.clas
+ s
+SHA-256-Digest: TTBv4j1G6vYmU4gW+ZN9HWcKgFlQRRVpYYswEBYg9Wg=
+
+Name: org/apache/commons/compress/utils/ChecksumVerifyingInputStream.c
+ lass
+SHA-256-Digest: BXVPsINDQv+2U+Jbewl2nROhzB7Hf5UMTDLvfxbsTQA=
+
+Name: org/apache/commons/compress/compressors/bzip2/BZip2CompressorOut
+ putStream$Data.class
+SHA-256-Digest: CPWzI9smF4ve2+z2EBog3WrviTroJOISsk0zDx93XZM=
+
+Name: org/apache/commons/compress/archivers/zip/ExplodingInputStream.c
+ lass
+SHA-256-Digest: xiU+cTVMxiJwLJ/guChiVJmDJMeXvTOHXo0Dy4H+2Ik=
+
+Name: org/apache/commons/compress/compressors/bzip2/BZip2Utils.class
+SHA-256-Digest: gWa4Ru06ZBRTaxTZPr/S6Lc8lNs42lsQEBdgxWETbP8=
+
+Name: org/apache/commons/compress/archivers/zip/PKWareExtraHeader$Encr
+ yptionAlgorithm.class
+SHA-256-Digest: zGRT7ycTSaQy8HEEKrridJ0JnXJZGhHowBH9Y1z+V+U=
+
+Name: org/apache/commons/compress/utils/IOUtils.class
+SHA-256-Digest: EX9WPPjCFOfIPRzf/sldi2xLCoomJK718U/twxpUIhA=
+
+Name: org/apache/commons/compress/compressors/CompressorOutputStream.c
+ lass
+SHA-256-Digest: q23jaM6fDCTXmzEYfKDqHcz3Sgc0usPn8Tn0RdGVKHg=
+
+Name: org/apache/commons/compress/archivers/zip/ParallelScatterZipCrea
+ tor.class
+SHA-256-Digest: ZHKtLQluxkau2iJ3D52wLa5dKRyLL1Qk+PLxHxitAVQ=
+
+Name: org/apache/commons/compress/archivers/zip/ScatterZipOutputStream
+ $CompressedEntry.class
+SHA-256-Digest: eSUl791jX9ajfp5S3Zb7Eu9DLN4c3z6+DBs1N1yiQVM=
+
+Name: org/apache/commons/compress/archivers/ArchiveStreamFactory.class
+SHA-256-Digest: 0IO90UsW9flfZrnadu9nk9Cf1MyWcNCV/T+HX2fPSKE=
+
+Name: org/apache/commons/compress/archivers/zip/X0016_CertificateIdFor
+ CentralDirectory.class
+SHA-256-Digest: nQcGSAXjIi6dt+RvoBckvfLtnNqAZ6dw7bZGm28iZXc=
+
+Name: org/apache/commons/compress/archivers/sevenz/SevenZOutputFile$1.
+ class
+SHA-256-Digest: +M5x/22hOOZsLrS4D598oUbuc8oqpBURwY4dooghIXo=
+
+Name: org/apache/commons/compress/compressors/pack200/TempFileCachingS
+ treamBridge.class
+SHA-256-Digest: XBsVNbuEmG0cZ0Ml3j8zbEXpW2NQgE0LsWEHZa0vsag=
+
+Name: org/apache/commons/compress/archivers/zip/ZipFile$NameAndComment
+ .class
+SHA-256-Digest: Q5duo4zppN7UkKA7M3OmhLs2kxywqyewQ7D/015jmsc=
+
+Name: org/apache/commons/compress/archivers/sevenz/Coder.class
+SHA-256-Digest: WDMA5iKfkgS3khcJNC0GFzEyy7xuBhzJlKfqzRttSjQ=
+
+Name: org/apache/commons/compress/archivers/zip/ZipFile.class
+SHA-256-Digest: qbrvzTVdn7OqVD1k2BbFDA7xouTLuxsRT+tkmBYwVc4=
+
+Name: org/apache/commons/compress/compressors/bzip2/BZip2Constants.cla
+ ss
+SHA-256-Digest: dnEkm/1QTWYnEL0hgvIrhDTENquyT4x9fQBQT/FlbJQ=
+
+Name: org/apache/commons/compress/archivers/sevenz/StreamMap.class
+SHA-256-Digest: WhMMvSEaDDybgf1jalKnbc8a9Kqu+XxR70yg7BXOv98=
+
+Name: org/apache/commons/compress/archivers/arj/LocalFileHeader$FileTy
+ pes.class
+SHA-256-Digest: ZWp8LeLQNzS93ifsIwIyyhxDChQOGTh2mxTmzglDa/k=
+
+Name: org/apache/commons/compress/archivers/zip/ZipArchiveInputStream.
+ class
+SHA-256-Digest: lvBuA3Bo52dfKRZh9OQJmTV2O8ZRqA4Qkr3NkHegxMQ=
+
+Name: org/apache/commons/compress/archivers/dump/DumpArchiveConstants.
+ class
+SHA-256-Digest: IIsDAEuFeWoouZdRucDCya+QCBJL2JszwDrQmSf53Dg=
+
+Name: org/apache/commons/compress/archivers/sevenz/CLI$Mode.class
+SHA-256-Digest: prg/zg0r6UBYMnIX2f4iwUs8S1UyDUazsm2MUVNkoMs=
+
+Name: org/apache/commons/compress/utils/BoundedInputStream.class
+SHA-256-Digest: +uS2GbTvwThqvoZzUNzwX4o+Xs84swFl7V6OyHcL6DM=
+
+Name: org/apache/commons/compress/archivers/zip/BinaryTree.class
+SHA-256-Digest: f5AZxu94wiSkYv9zHyN3P/RMyx5Azawd1e2Tl4Bo7gQ=
+
+Name: org/apache/commons/compress/archivers/tar/TarArchiveSparseEntry.
+ class
+SHA-256-Digest: 8T4FIvow1C2Zr7sy5TBC/LxjRQjM/hNEFz2AjgaR5aI=
+
+Name: org/apache/commons/compress/archivers/zip/JarMarker.class
+SHA-256-Digest: /H+f93dohM7F+hOKYiW+qj8rs9grAFw5GcGTHeUxM5w=
+
+Name: org/apache/commons/compress/archivers/zip/ScatterZipOutputStream
+ .class
+SHA-256-Digest: JhQHg+IIJL59KCqDhuedTVdbtdvhkrZJJ3mv1qwAGF4=
+
+Name: org/apache/commons/compress/archivers/zip/ZipLong.class
+SHA-256-Digest: iMLHr+RLPdOMSeKLlGnaWIsOHlbsADGsxgR9cbKT8s4=
+
+Name: org/apache/commons/compress/compressors/FileNameUtil.class
+SHA-256-Digest: u/7M8totSr1uNIi4xzPX/LNbylgRsqjMMw8rw70BHG8=
+
+Name: org/apache/commons/compress/archivers/sevenz/SevenZMethod.class
+SHA-256-Digest: EBZguvDznSzB0dzT+hrOM5dpej0iYYeQ8tVmg2Wxp88=
+
+Name: org/apache/commons/compress/archivers/arj/ArjArchiveEntry$HostOs
+ .class
+SHA-256-Digest: N0sLzjvcCvmvKbwXpTunh1R9DhXnh6KIWBwUz7ubBtM=
+
+Name: org/apache/commons/compress/archivers/zip/Simple8BitZipEncoding$
+ Simple8BitChar.class
+SHA-256-Digest: yEEL7oHhnaJRmkt1OtahhRfkc/aY30YhOI8eqgcyQy8=
+
+Name: org/apache/commons/compress/compressors/bzip2/BZip2CompressorInp
+ utStream$Data.class
+SHA-256-Digest: EBwBCfdBypD4AkhB/DcDXYlNQYpjtr4dkzA4gM5B4dU=
+
+Name: org/apache/commons/compress/archivers/arj/MainHeader.class
+SHA-256-Digest: G+PPZS5nccRPXQrbhb0pAH+0kmqGgzZwFXIMKhMqDFg=
+
+Name: org/apache/commons/compress/parallel/ScatterGatherBackingStore.c
+ lass
+SHA-256-Digest: CBY1687y3GHEb2jmKOMxY3Lc63FKhTWCePl3MiwQLdo=
+
+Name: org/apache/commons/compress/archivers/zip/GeneralPurposeBit.clas
+ s
+SHA-256-Digest: qIerTnZWwmatpBV1jLrGv5VUHiQXy/QktnrMzDlNhr4=
+
+Name: org/apache/commons/compress/archivers/dump/TapeInputStream.class
+SHA-256-Digest: UFcyji5RKhDbe9sOpvCqaoBXYO4P6IronBi2CFzLa7E=
+
+Name: org/apache/commons/compress/compressors/pack200/Pack200Strategy$
+ 1.class
+SHA-256-Digest: AG8TsRPpBVtyttAU5Y60KbwZJex8cfCm9pcJGa7V6hQ=
+
+Name: org/apache/commons/compress/changes/ChangeSetPerformer$ZipFileIt
+ erator.class
+SHA-256-Digest: jdCymBuhrCjFf4ytjFq8GPjgfS+Vp07WgCTvjEScnJE=
+
+Name: org/apache/commons/compress/compressors/pack200/InMemoryCachingS
+ treamBridge.class
+SHA-256-Digest: g/3tYxd6uKEasNdggabu7L0DfF99HssHQJ3J7bxEAjM=
+
+Name: org/apache/commons/compress/archivers/dump/DumpArchiveInputStrea
+ m$1.class
+SHA-256-Digest: 4KOfCNvgW2YNe0XBOpiEFS1bZ8LVnycxDWAX7fTjG0o=
+
+Name: org/apache/commons/compress/archivers/sevenz/LZMA2Decoder.class
+SHA-256-Digest: V7IoEPqnpQmPtMakiN6TAwprb8e37Umtd+N6jJh00OI=
+
+Name: org/apache/commons/compress/compressors/deflate/DeflateParameter
+ s.class
+SHA-256-Digest: YL0Lzb3wMzmWwuk4fw0TBybGo+Hu8R08xTiC+LgPKR0=
+
+Name: org/apache/commons/compress/archivers/zip/ExtraFieldUtils$Unpars
+ eableExtraField.class
+SHA-256-Digest: evYNG/ZheLLVQCn9gipHTaw+ZAQUtWmt95fNMEi94Nw=
+
+Name: org/apache/commons/compress/archivers/zip/UnrecognizedExtraField
+ .class
+SHA-256-Digest: gcNTT+1ffsNIGNK2TLx5M0o52uTLRScqe+zNkwU5tU8=
+
+Name: org/apache/commons/compress/archivers/cpio/CpioArchiveInputStrea
+ m.class
+SHA-256-Digest: r0IUBsCkapD6ezGqfCKCAzLnQ3M+/06GmEg6s1oedsU=
+
+Name: org/apache/commons/compress/archivers/ArchiveEntry.class
+SHA-256-Digest: KEp8e3rSDzgE0CIYy7JKKQZVwrsPYyAOzD5g4YvwGcs=
+
+Name: org/apache/commons/compress/archivers/zip/CircularBuffer.class
+SHA-256-Digest: sPDtdgMZ4j10X+p+3qtzb+yeeBQueLCW4uRqcxH/vNc=
+
+Name: org/apache/commons/compress/archivers/arj/ArjArchiveInputStream.
+ class
+SHA-256-Digest: dF4Zv59Cqo/11ZLywCUVlycsOKZ4+5lobTp09XzzQjE=
+
+Name: org/apache/commons/compress/archivers/arj/LocalFileHeader$Method
+ s.class
+SHA-256-Digest: VFxBrFXmtiWlhYBw96qaB80WOHoZk1kzTqyhe9J7d7E=
+
+Name: org/apache/commons/compress/archivers/cpio/CpioUtil.class
+SHA-256-Digest: yyg0eZmFJA+UiRRJ/oN7FbtngZRrRtesXvrz/pSish4=
+
+Name: META-INF/NOTICE.txt
+SHA-256-Digest: +5jVb7J79nhcV019W0YrFZrxKQSb5a7sBGZSMGtyszI=
+
+Name: org/apache/commons/compress/archivers/ar/ArArchiveEntry.class
+SHA-256-Digest: mJJw9OCKhmkOTAd/12YdKl/JIBmWQmvcquhppF3h+8s=
+
+Name: org/apache/commons/compress/compressors/CompressorException.clas
+ s
+SHA-256-Digest: vwV+0nLdNxjUk5hhmmeLKOEC3BlUwZMIStYlVIKwws0=
+
+Name: org/apache/commons/compress/archivers/zip/StreamCompressor$Outpu
+ tStreamCompressor.class
+SHA-256-Digest: RD1qkp9l8xOL3WKO/B14sZLNckTQKQNS9FPlplQ7QUk=
+
+Name: org/apache/commons/compress/archivers/zip/X7875_NewUnix.class
+SHA-256-Digest: c7kX3ZK86qd8d+gjSP5MYJPTD/PdP6Sds18XuLeZmTU=
+
+Name: org/apache/commons/compress/compressors/gzip/GzipCompressorInput
+ Stream.class
+SHA-256-Digest: pvklsqkV/XkLAqGPDeW7hTtJksWmZhYVFP+Anff5RI4=
+
+Name: org/apache/commons/compress/archivers/zip/X000A_NTFS.class
+SHA-256-Digest: BIpQV/K+H0zZOrNBvSt1sWp4ulV5NP7t7BWcX0E4L/U=
+
+Name: META-INF/LICENSE.txt
+SHA-256-Digest: xx0jnfkXJvxRnG63LTGOxlggYnIysveWIZ6H3PNdCrQ=
+
+Name: org/apache/commons/compress/parallel/FileBasedScatterGatherBacki
+ ngStore.class
+SHA-256-Digest: YsHBpF96lNXHF3qurPUDNEfhkw3EpIzrp9rF5lXXI+E=
+
+Name: org/apache/commons/compress/compressors/lzw/LZWInputStream.class
+SHA-256-Digest: EyzQ5E2JJy35Q+agpACHZMDtPPKmPosqUtPqkgiX/TE=
+
+Name: org/apache/commons/compress/archivers/sevenz/NID.class
+SHA-256-Digest: UZYFZegibRF1Bm6InfgLgnGQLzemhiNwNxpvztoeSUc=
+
+Name: org/apache/commons/compress/archivers/ArchiveOutputStream.class
+SHA-256-Digest: krmAMEIqeiCB4jnmG1E3wV4uzM/q0EgR2yMqd63ncEo=
+
+Name: org/apache/commons/compress/archivers/zip/PKWareExtraHeader.clas
+ s
+SHA-256-Digest: tJqTEffKbms7c6knTCBYwJ2MI29LeJq5KlE3wzdNAK4=
+
+Name: org/apache/commons/compress/archivers/tar/TarUtils.class
+SHA-256-Digest: K5wPKWhsUXloBuZItY6I+feb7ah4e7sRf579fd6R2k0=
+
+Name: org/apache/commons/compress/archivers/zip/ZipEncoding.class
+SHA-256-Digest: qF2r8Ca4gxO+KFnE6WATLgBYjJQr4HFTfK/rBnixRwg=
+
+Name: org/apache/commons/compress/compressors/bzip2/Rand.class
+SHA-256-Digest: shfeKD8ekLjZkSxXSxOtt41gMwF+mQA2se0vWrnC3Kc=
+
+Name: org/apache/commons/compress/archivers/zip/AsiExtraField.class
+SHA-256-Digest: uWOABczuUZ2LS1ys2NfmjoHAAzTxHNxtMbyjwctbYiw=
+
+Name: org/apache/commons/compress/archivers/sevenz/BoundedRandomAccess
+ FileInputStream.class
+SHA-256-Digest: 912FRKKdawCdWe9LYGhZbLoAv257lJbaTfvfz28R//c=
+
+Name: org/apache/commons/compress/archivers/zip/ZipFile$OffsetEntry.cl
+ ass
+SHA-256-Digest: TXaYRchAtdDUWtGwkBSV5p0y8Z/ZnOfiAsEkeQvXsJo=
+
+Name: org/apache/commons/compress/parallel/ScatterGatherBackingStoreSu
+ pplier.class
+SHA-256-Digest: MOQN1snabeayi5ajbe4dKwU8S11uKQ9rRERKGjbQrY4=
+
+Name: org/apache/commons/compress/archivers/sevenz/SevenZArchiveEntry.
+ class
+SHA-256-Digest: tighDuBwiuQuU8o6eqKOtV7oUI/8DSmMy8o/G8b4lws=
+
+Name: org/apache/commons/compress/utils/CountingInputStream.class
+SHA-256-Digest: p8GkFORy8mT2yizwe8VCeMkGt8AvRZiUO5IHLeto4mY=
+
+Name: org/apache/commons/compress/compressors/bzip2/CRC.class
+SHA-256-Digest: k9hFgYGCDsEdRw3QiR2h0Jf5lAdthM76s/5jH6CPaHs=
+
+Name: org/apache/commons/compress/changes/ChangeSetPerformer$ArchiveEn
+ tryIterator.class
+SHA-256-Digest: wZbZ0OGIKod/HB6Jod/KwiKlLNSIZcMRDAndFR3GEvg=
+
+Name: org/apache/commons/compress/compressors/bzip2/BlockSort.class
+SHA-256-Digest: PfbfOvrKi0s8FDKtnTWgdwzz2MOb8qFXxFjElUMCw4Y=
+
+Name: org/apache/commons/compress/archivers/tar/TarArchiveEntry.class
+SHA-256-Digest: RIYlv4hSqy+LvGhoQ6evaZQ8DSjBdL5xgKUcqDSDXnE=
+
+Name: org/apache/commons/compress/archivers/dump/UnsupportedCompressio
+ nAlgorithmException.class
+SHA-256-Digest: +Ki9SyDSoBSQqQfDhiNdbizeL2iAMlrvmQsMSnAEX3c=
+
+Name: org/apache/commons/compress/archivers/sevenz/CLI$Mode$2.class
+SHA-256-Digest: c+uBIS3NLpxF3qrD6nivmEhc0KtcEJ6oUeie0+Y+X6Q=
+
+Name: org/apache/commons/compress/archivers/zip/AbstractUnicodeExtraFi
+ eld.class
+SHA-256-Digest: c5f2eHzO24TYbCkM/eYuq9VjAlU4ZbBq/EsofffCqIk=
+
+Name: org/apache/commons/compress/archivers/dump/InvalidFormatExceptio
+ n.class
+SHA-256-Digest: ooLddaX5bxqN0BkomoPFdhKZkk8IkI9GhdO6HjJsQiI=
+
+Name: org/apache/commons/compress/utils/BitInputStream.class
+SHA-256-Digest: /ZbjGNvcrNWRMsroxVfUoRWKjtzm4HimUzcV4gFHL/o=
+
+Name: org/apache/commons/compress/compressors/snappy/SnappyCompressorI
+ nputStream.class
+SHA-256-Digest: i/9/PaYFXko2AW/AlzvZjQc+LnBiDrCutTvlKkn6tAY=
+
+Name: org/apache/commons/compress/archivers/sevenz/CLI$1.class
+SHA-256-Digest: KC7P3EIESZ4aX9T8A0sNI0dJqarhLJqOZftaiMJ5HAA=
+
+Name: org/apache/commons/compress/utils/CRC32VerifyingInputStream.clas
+ s
+SHA-256-Digest: EWafYzPMS121TT4hYTAUqtcMBmBnjHTvsUeCviF5gRY=
+
+Name: org/apache/commons/compress/archivers/zip/X0019_EncryptionRecipi
+ entCertificateList.class
+SHA-256-Digest: RYL2d8yuGojeWYUNiR3YgXW14SXj1v1JGfi4WzFkdu8=
+
+Name: org/apache/commons/compress/changes/ChangeSetPerformer$ArchiveIn
+ putStreamIterator.class
+SHA-256-Digest: yHwlC74ENS451iW/TBe/PgOnAZZNi88Pqet4by4+yV4=
+
+Name: org/apache/commons/compress/archivers/zip/ZipMethod.class
+SHA-256-Digest: 3WFMSpIiYp4NZLutFUJvLuI9mocvB2IgX51o5lHE9JE=
+
+Name: org/apache/commons/compress/archivers/sevenz/Coders$DeflateDecod
+ er$2.class
+SHA-256-Digest: Pf6/RdVjIMH5ttGdvT3QGahgtZTjQy4K0M6TmhThUF0=
+
+Name: org/apache/commons/compress/changes/ChangeSetResults.class
+SHA-256-Digest: N/IOJl0pEajN97jf7+cWL0ql1GcSkFQWN0KeHn+xsIc=
+
+Name: org/apache/commons/compress/changes/ChangeSetPerformer.class
+SHA-256-Digest: 21gBT6wtnMlKfDs38hb9fgNVo8BpObsaQGaQBBAVf0M=
+
+Name: org/apache/commons/compress/compressors/z/ZCompressorInputStream
+ .class
+SHA-256-Digest: wdGi8TwGR/QhMJc5g0hBS6WCAuqaHNscO6ayTeopn+Y=
+
+Name: org/apache/commons/compress/archivers/sevenz/SevenZOutputFile.cl
+ ass
+SHA-256-Digest: qiOzTHn2iZJcrAVAOX8eUTfqzptYQaai5dTKDPtXhuU=
+
+Name: org/apache/commons/compress/utils/ArchiveUtils.class
+SHA-256-Digest: fDtwaXpHMHMfPAPI7/azhKe2kqpbcof7aE2pYxbqJwo=
+
+Name: org/apache/commons/compress/archivers/dump/DumpArchiveConstants$
+ COMPRESSION_TYPE.class
+SHA-256-Digest: AeekSV2jxTNtPfOZM6Hx+kr4uIUY2qydBeWR3S0d6kU=
+
+Name: org/apache/commons/compress/archivers/dump/DumpArchiveEntry$Tape
+ SegmentHeader.class
+SHA-256-Digest: X/x6C02OqYjw8/b0I3bFG84eqtQ72xkXtPkGK7OzuMA=
+
+Name: org/apache/commons/compress/archivers/sevenz/Folder.class
+SHA-256-Digest: NG0rHnwpCYrE9OixO4se0hauayOw+W7K7BDWcaRRKJk=
+
+Name: org/apache/commons/compress/archivers/arj/LocalFileHeader.class
+SHA-256-Digest: /XV1zVBgkVnW7Y5TOsfFbS53yyPG2cbjCzQGnWtpVJ0=
+
+Name: org/apache/commons/compress/archivers/ar/ArArchiveInputStream.cl
+ ass
+SHA-256-Digest: loBHYo6TYUyaUN7LSCB9VhkbDf+x+BRp3LTrkUph080=
+
+Name: org/apache/commons/compress/compressors/xz/XZCompressorOutputStr
+ eam.class
+SHA-256-Digest: ypwWOaAbhSlTDnJTWS890T6xY53Mj3cJ5QzdBEV7zt8=
+
+Name: org/apache/commons/compress/archivers/zip/BitStream.class
+SHA-256-Digest: uBmIzBLHx4U8PcGn+cI5VZSQy7IVDS8WZXWhE6tf5Sk=
+
+Name: org/apache/commons/compress/archivers/zip/StreamCompressor.class
+SHA-256-Digest: XE90AHLxTz9ItyW3+AWb/71c0aa9A46QcWbuMESk3Qc=
+
+Name: org/apache/commons/compress/archivers/zip/NioZipEncoding.class
+SHA-256-Digest: vJNVSmzyJJ7levKk0sjVTY2KpD02vcUIpy5SLlqhBaI=
+
+Name: org/apache/commons/compress/archivers/zip/Zip64Mode.class
+SHA-256-Digest: iFET5NftEybdkq6Ftwsgp0cgVkXFx512ZW2J11SRyas=
+
+Name: org/apache/commons/compress/archivers/ar/ArArchiveOutputStream.c
+ lass
+SHA-256-Digest: 75fulq28Qoj2fQE5/H/dSa9CBQIFeTWmdb5UUxpruBo=
+
+Name: org/apache/commons/compress/archivers/zip/Zip64RequiredException
+ .class
+SHA-256-Digest: PfkHvdbwL5w0rRdkgerYfoo/Jey0PZfAehdTRHAuEZg=
+
+Name: org/apache/commons/compress/archivers/dump/DumpArchiveConstants$
+ SEGMENT_TYPE.class
+SHA-256-Digest: pAbUwqe3M273j9e5UXfRVebEpoCh9IfF0nr4Fn0caVU=
+
+Name: org/apache/commons/compress/archivers/jar/JarArchiveOutputStream
+ .class
+SHA-256-Digest: QZfzGWWoAqVtXAWi8zzs7RyMI2yiP+sN6hParCsyBd0=
+
+Name: org/apache/commons/compress/archivers/zip/UnsupportedZipFeatureE
+ xception.class
+SHA-256-Digest: 69DdUgIPVwDSELSvr5WNP1+vkj90qzqQeLMVRWYOWBg=
+
+Name: org/apache/commons/compress/compressors/deflate/DeflateCompresso
+ rInputStream.class
+SHA-256-Digest: S8IaQo1YwECRrD/gPEPNSs0ojgCGH4bXh03wVWu+2lw=
+
+Name: org/apache/commons/compress/archivers/zip/UnsupportedZipFeatureE
+ xception$Feature.class
+SHA-256-Digest: hOiYQ+S369n0OzWJlYy8hxXjqPX4V5Gucq3apQGtztw=
+
+Name: org/apache/commons/compress/archivers/zip/ZipArchiveOutputStream
+ .class
+SHA-256-Digest: XvARJneWeKwuI+TsjTVFEl5JWh7P4cZzj9VA2CA7xro=
+
+Name: org/apache/commons/compress/compressors/pack200/Pack200Compresso
+ rOutputStream.class
+SHA-256-Digest: hkgu6jv//oDCi8EyfOKwmx2SOT0/1qI4UpKWm0UgZQM=
+
+Name: org/apache/commons/compress/archivers/arj/LocalFileHeader$Flags.
+ class
+SHA-256-Digest: IuxeCx5pRmLRuqufQu2yvSFOu2MEx8ON7d49GHB5QrM=
+
+Name: org/apache/commons/compress/archivers/zip/ScatterStatistics.clas
+ s
+SHA-256-Digest: 8i9X6UeVDZL+w04xE+z2ulGfoDPCr5/99dKSF6Jw5Z8=
+
+Name: org/apache/commons/compress/archivers/zip/UnicodeCommentExtraFie
+ ld.class
+SHA-256-Digest: EToA5+Zw1JA8gtO1CWsLlUtplr2XPx6Wmw/51gjm4gQ=
+
+Name: org/apache/commons/compress/archivers/sevenz/SevenZOutputFile$Ou
+ tputStreamWrapper.class
+SHA-256-Digest: ibh3ly0C6xsV3tAMxOsssJpBB2HvhImFbTOSiJ3xYz4=
+
+Name: org/apache/commons/compress/archivers/zip/ExtraFieldUtils.class
+SHA-256-Digest: /mYYlWlRRyyHbJO+TWx49PqCmt+KNdzEQaiuMuOwPO4=
+
+Name: org/apache/commons/compress/archivers/zip/ZipEncodingHelper$Simp
+ leEncodingHolder.class
+SHA-256-Digest: 9wqHiBqfHyTBIzlxuC1PocIaO5fFSqCnRwXBxvVb/Bk=
+
+Name: org/apache/commons/compress/archivers/zip/StreamCompressor$DataO
+ utputCompressor.class
+SHA-256-Digest: k9Z8xMXKyTV3rw3jgzr99oitATko684gzrpUuPx8CcM=
+
+Name: org/apache/commons/compress/archivers/zip/X0014_X509Certificates
+ .class
+SHA-256-Digest: 8KBlwD2LKvY/mvSBsCG3hF+vDtAe94yWc2sUiicW81Q=
+
+Name: org/apache/commons/compress/archivers/zip/ZipEightByteInteger.cl
+ ass
+SHA-256-Digest: uj1q5PF2D9msLdhZBZefBj0vASVgFIGR7whV/Zl2Uyg=
+
+Name: org/apache/commons/compress/utils/CountingOutputStream.class
+SHA-256-Digest: aPoGReUtHotnhQSG5ke0YtivufYUJ6hWQlwVgTmqDYA=
+
+Name: META-INF/maven/org.apache.commons/commons-compress/pom.propertie
+ s
+SHA-256-Digest: IDjYKYAQ745nUtBg9L9CmHITjEnGjowAhXN6hRc2Tcs=
+
+Name: org/apache/commons/compress/archivers/dump/UnrecognizedFormatExc
+ eption.class
+SHA-256-Digest: lxR1n2ecFeDMc6Sk1XIjxuTYJC9LtZhqIOI5MFaVveg=
+
+Name: org/apache/commons/compress/archivers/dump/Dirent.class
+SHA-256-Digest: kDF9IZf9Mqw8xxwvBbXOA3Lqx7hdB3kZWuP3266YlSs=
+
+Name: org/apache/commons/compress/archivers/sevenz/CLI$Mode$1.class
+SHA-256-Digest: OusPJ7K6FTHtkzWIvju2K3v9VKV/wGOM+MeP4wBXMok=
+
+Name: org/apache/commons/compress/utils/Charsets.class
+SHA-256-Digest: Sas8EK5pRBK988/jyfRIXBDVxUHYZvGxUJjfm5AulkI=
+
+Name: org/apache/commons/compress/archivers/zip/ZipArchiveInputStream$
+ BoundedInputStream.class
+SHA-256-Digest: 1AmvmCthD7oAJJ3GjmBz45UYdn70VKo98mw6YdS64UY=
+
+Name: org/apache/commons/compress/archivers/zip/X0017_StrongEncryption
+ Header.class
+SHA-256-Digest: ApGdSFH9ywipab5ydCe0Zx7gclCYmPw4b+nbx6lEM0c=
+
+Name: META-INF/maven/org.apache.commons/commons-compress/pom.xml
+SHA-256-Digest: t4fVdMhRUF52ISloua4WQep5gErvf1os7ioBzUBVITo=
+
+Name: org/apache/commons/compress/archivers/zip/UnshrinkingInputStream
+ .class
+SHA-256-Digest: olA8k1q/Nbu08F9uzjcBvpGEg5xDJeQe9rFPKD3ekpw=
+
+Name: org/apache/commons/compress/archivers/tar/TarConstants.class
+SHA-256-Digest: PolMt3mUxvPTfME4YBPQsbQTRGIU4FAd9wKg7wOLd0A=
+
+Name: org/apache/commons/compress/archivers/sevenz/Coders.class
+SHA-256-Digest: Pa2zgsmOed9A2LlEDsvWwj5J1z/xGtzVQUikd9V53Lc=
+
+Name: org/apache/commons/compress/archivers/StreamingNotSupportedExcep
+ tion.class
+SHA-256-Digest: 4pyDt/M/YXiMHcg1VbW5sky4czDsffN8JcAl0gp27/A=
+
+Name: org/apache/commons/compress/changes/ChangeSet.class
+SHA-256-Digest: S6BR44PD9DME5zHE+QtE8mEGNGrA6whbIbW5UG0k2v8=
+
+Name: org/apache/commons/compress/archivers/sevenz/Coders$LZMADecoder.
+ class
+SHA-256-Digest: OfigqSL8EOC18aXtkWYPx2QXtKLR1xPqp7csPsb1r7c=
+
+Name: org/apache/commons/compress/compressors/deflate/DeflateCompresso
+ rOutputStream.class
+SHA-256-Digest: R8cqbyIpwHLFAOHmdOBsfnCeNJd6bkSPMSNr3gD09b4=
+
+Name: org/apache/commons/compress/archivers/zip/Zip64ExtendedInformati
+ onExtraField.class
+SHA-256-Digest: 2rWDH/4g77SO6P6Dykj3ON2pzOZ9Uh1QdjBU5kIU984=
+
+Name: org/apache/commons/compress/archivers/dump/DumpArchiveUtil.class
+SHA-256-Digest: /NSRacZF762W5VMZA/b5kgIu8gnxdDPO68tnKzFJm+o=
+
+Name: org/apache/commons/compress/archivers/zip/ZipArchiveEntryPredica
+ te.class
+SHA-256-Digest: VeCfVsVtSoIg+LNbF0QXwSCh9rLqDEXNOBt4FRsiG/A=
+
+Name: org/apache/commons/compress/archivers/sevenz/Coders$BCJDecoder$1
+ .class
+SHA-256-Digest: IXC7TQI8Wuzl+9SGJLUX8cRzwN7ptWLBwVrMOooiD2U=
+
+Name: org/apache/commons/compress/compressors/lzma/LZMACompressorInput
+ Stream.class
+SHA-256-Digest: eftuUd+p7HoHDssvQhkxuxDmM1Z/3nCyER2NrCkJztE=
+
+Name: org/apache/commons/compress/compressors/CompressorInputStream.cl
+ ass
+SHA-256-Digest: TVZbDHeQ0pOKaxz7H23RsUV/w1jwz8ePJUUHk9Nh7Xc=
+
+Name: org/apache/commons/compress/compressors/gzip/GzipParameters.clas
+ s
+SHA-256-Digest: 2HA+Znf+kddFFEu3v/HtVgYO36DApsgZZgPicQtfs2M=
+
+Name: org/apache/commons/compress/archivers/sevenz/Coders$BCJDecoder.c
+ lass
+SHA-256-Digest: zhhuZYa5JS2FO7yTqtdOJu3Kr7ssdWa9H/yxF+jQkgc=
+
+Name: org/apache/commons/compress/archivers/zip/ZipFile$BoundedInputSt
+ ream.class
+SHA-256-Digest: vPH4igauvIAxRKlAU8A7RnXVG6OEgX/Da/hQl/hPris=
+
+Name: org/apache/commons/compress/archivers/sevenz/BindPair.class
+SHA-256-Digest: 6J826NqCQDOzhsq6TpPgzX6MxHoLgznYIeAF3Qa+yRI=
+
+Name: org/apache/commons/compress/compressors/gzip/GzipUtils.class
+SHA-256-Digest: eohoh6QXF86yKt+NOR6oJuh2a6tVSoR+EBEDRbi4OKY=
+
+Name: org/apache/commons/compress/compressors/lzma/LZMAUtils.class
+SHA-256-Digest: TBFfNcSYxfF2OuEuhsGMMuX3VfdgpS/3/Yj0T/OGvZE=
+
+Name: org/apache/commons/compress/archivers/arj/ArjArchiveEntry.class
+SHA-256-Digest: LmThbbW22PNev0fkk5gXqiQpw4ZtbeDNqgCqSc9umOs=
+
+Name: org/apache/commons/compress/compressors/xz/XZCompressorInputStre
+ am.class
+SHA-256-Digest: GvrgWWdfNyHDdA1aC48V0+HtkEEb7Hvk6z7k+4dU7l0=
+
+Name: org/apache/commons/compress/compressors/snappy/PureJavaCrc32C.cl
+ ass
+SHA-256-Digest: sxsrYuudUZP0HeKZ3+2HOtrudMsQy6AcjDczVDTC97Q=
+
+Name: org/apache/commons/compress/archivers/sevenz/Coders$BZIP2Decoder
+ .class
+SHA-256-Digest: L6ueA5eiCJZkYJraGmPzrWicrBKgViLLQdpYexBHG9c=
+
+Name: org/apache/commons/compress/archivers/dump/DumpArchiveException.
+ class
+SHA-256-Digest: 4XwO/CuKCokiiPoVNAogpn+dk4m11+DLUAh9KvtnQIo=
+
+Name: org/apache/commons/compress/compressors/pack200/Pack200Compresso
+ rInputStream.class
+SHA-256-Digest: D30uLsPENSUXSHt77BDfQzhpjYHsFJ6NzNVzDDdmXtY=
+
+Name: org/apache/commons/compress/compressors/gzip/GzipCompressorOutpu
+ tStream.class
+SHA-256-Digest: aEZN3qysqnZxlgwrSWkbNT2GO/9GiA9tD6TZZwuBOxI=
+
+Name: org/apache/commons/compress/compressors/pack200/Pack200Compresso
+ rInputStream$1.class
+SHA-256-Digest: 7mYs5qEdMJKtnfQ5jAeGmKwxIEoqoyx9wBgQBNihLPs=
+
+Name: org/apache/commons/compress/archivers/zip/ZipArchiveInputStream$
+ CurrentEntry.class
+SHA-256-Digest: Wr+pp1PLwRdJKXE5waNFpirDISQbQIbf/A3cxtqgy7E=
+
+Name: org/apache/commons/compress/archivers/zip/ZipArchiveEntryRequest
+ .class
+SHA-256-Digest: xf/xpkrWXJFRkgfcgfxn5YrIUhPYyoy2lLBWYVCIJMQ=
+
+Name: org/apache/commons/compress/archivers/zip/ParallelScatterZipCrea
+ tor$1.class
+SHA-256-Digest: ErvEk+B4F8+SZszlZDZ2ABp+07qCro+2O5VeIm4C+QU=
+
+Name: org/apache/commons/compress/archivers/tar/TarArchiveOutputStream
+ .class
+SHA-256-Digest: iCusKEM2PJO3iCbuwDFTGYPHy3mgQLTbaztWdubYtz4=
+
+Name: org/apache/commons/compress/compressors/xz/XZUtils$CachedAvailab
+ ility.class
+SHA-256-Digest: pgCJ5CqHseeeJZ0hyYPiwEdc2QeKG2mui6+OOd2wBYo=
+
+Name: org/apache/commons/compress/compressors/pack200/Pack200Strategy.
+ class
+SHA-256-Digest: qCXLXI0jk5kT8m6xfywg0PwcKgpxtZP+n68gQY0fBDk=
+
+Name: org/apache/commons/compress/archivers/sevenz/Coders$DeflateDecod
+ er$1.class
+SHA-256-Digest: qTSrz4K9C99mmNPJKZH/sAugvLgXUqQKDU+47a8pixo=
+
+Name: org/apache/commons/compress/archivers/sevenz/StartHeader.class
+SHA-256-Digest: cPPs1myoCKKUqz6GXBj0bQ3dPSv3SeZeX2N69mwihD0=
+
+Name: org/apache/commons/compress/archivers/zip/StreamCompressor$Scatt
+ erGatherBackingStoreCompressor.class
+SHA-256-Digest: VCYeVFKrFNF6vkL+eN3dGb0OgiIUR+MpzvqwBk63ooY=
+
+Name: org/apache/commons/compress/compressors/snappy/FramedSnappyDiale
+ ct.class
+SHA-256-Digest: UqjBMUhqIeGcS60B+wjD6L+ljRkrBk3rX2UZJLtic4Q=
+
+Name: org/apache/commons/compress/archivers/zip/UnparseableExtraFieldD
+ ata.class
+SHA-256-Digest: WY77CF5l87d3/xeJjdbV3drC/ZsWMtFxwXYngVPQ9OU=
+
+Name: org/apache/commons/compress/archivers/zip/ZipConstants.class
+SHA-256-Digest: 4k80Bzr7MrO5bakuBun2XLGg4fEAkZSKB0ZLgOkg8zo=
+
+Name: org/apache/commons/compress/archivers/dump/DumpArchiveInputStrea
+ m.class
+SHA-256-Digest: zpEeKNkNBNZM2+iuMcjYqNo+HvfRT9wQdNHThr5rt4Y=
+
+Name: org/apache/commons/compress/archivers/Lister.class
+SHA-256-Digest: eBTJ3NeJ3SwikvFA8bGjP/2Qd2tL7v7lyVrc/kqm0aY=
+
+Name: org/apache/commons/compress/archivers/zip/ZipFile$1.class
+SHA-256-Digest: B02NHHCmKrBZTBqd1DG/TTK1CUWqpFNdJ3C2LnHWQeE=
+
+Name: org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStre
+ am.class
+SHA-256-Digest: 8/QbREP66PJOmU+lwbJAB4mb2zNwwLYKXvHCZ9afCiU=
+
+Name: org/apache/commons/compress/compressors/pack200/StreamBridge.cla
+ ss
+SHA-256-Digest: NWY4xH4hHKsUt0slju0v/3KBeW41DZt8p5CoHAu7lwM=
+
+Name: org/apache/commons/compress/archivers/zip/UnicodePathExtraField.
+ class
+SHA-256-Digest: A5KV7RAHKvqZBzUfRF3Es8JUKYUHiALwiaUbhGp8qps=
+
+Name: org/apache/commons/compress/archivers/sevenz/Coders$DummyByteAdd
+ ingInputStream.class
+SHA-256-Digest: WsMUlO+qHoT0/t8zXp2D7S9ocDfSbmnoiId+BjOONW0=
+
+Name: org/apache/commons/compress/archivers/zip/UnixStat.class
+SHA-256-Digest: I9mTscL5nUin3CS9rX2vEKUVsDhnA+GrHyP0IUgvtFA=
+
+Name: org/apache/commons/compress/archivers/dump/TapeInputStream$1.cla
+ ss
+SHA-256-Digest: uQvATzZaVa444x1SHdNLnyK9IyCANbUtuPBRUIunEqM=
+
+Name: org/apache/commons/compress/archivers/zip/ZipArchiveInputStream$
+ 1.class
+SHA-256-Digest: xRX1chOkPTrIvVnLEnQmNFtqyhryN+MOiTlfFh3bwbk=
+
+Name: org/apache/commons/compress/compressors/snappy/FramedSnappyCompr
+ essorInputStream.class
+SHA-256-Digest: MfX3QH7yQjPZXEvAUBI/rFyjMm1fNKAuOv4qN5SH8iU=
+
+Name: org/apache/commons/compress/archivers/dump/DumpArchiveSummary.cl
+ ass
+SHA-256-Digest: 76akAUszw7z7vIt7nUQq/avdl91nWLqAZL1p+CdAerE=
+
+Name: org/apache/commons/compress/archivers/zip/ZipFile$Entry.class
+SHA-256-Digest: lYpfoay0Bhqs4Qtdl0bdd9UE2lmK1e6fbiJrSdmTI40=
+
+Name: org/apache/commons/compress/archivers/zip/Simple8BitZipEncoding.
+ class
+SHA-256-Digest: g77qDZtCIgTiKsIfLBwOn/yFQo3Qfah88advBv+349Y=
+
+Name: org/apache/commons/compress/archivers/sevenz/Archive.class
+SHA-256-Digest: SYRJqXwJAMh4efhhnLem/f87J4XRxyxQ2J9vt0efLwg=
+
+Name: org/apache/commons/compress/archivers/zip/ZipFile$2.class
+SHA-256-Digest: A0JKCKepTWrRfk1maxH4Ufce5IEUSMveBKEGpMWVjoo=
+
+Name: org/apache/commons/compress/compressors/xz/XZUtils.class
+SHA-256-Digest: sna62cDvE+/ShVN3K+M8nlrePUFpoLdZ3YPnWqiqh4A=
+
+Name: org/apache/commons/compress/archivers/zip/FallbackZipEncoding.cl
+ ass
+SHA-256-Digest: XamQfR8Dy4RoeD9Y0NjKSoHlbMdoD4xNkSJPJQZVwX8=
+
+Name: org/apache/commons/compress/archivers/sevenz/CoderBase.class
+SHA-256-Digest: Da4xSqvw8oVnZ7fyqv9Pfkd4CIwCU7UgcFHM07YG2HM=
+
+Name: org/apache/commons/compress/archivers/sevenz/SubStreamsInfo.clas
+ s
+SHA-256-Digest: vo8LX5Wdmf1q7HT/iqn2Ecos89QtCpO5QJPixS8EvY4=
+
+Name: org/apache/commons/compress/archivers/dump/DumpArchiveEntry$PERM
+ ISSION.class
+SHA-256-Digest: Oqqxr3EDzo3e0FSHlz7p5yKznEJ3imd57m2oRNt3q0A=
+
+Name: org/apache/commons/compress/archivers/sevenz/Coders$1.class
+SHA-256-Digest: OeXTYyd/0C33GtiGBHUs0hFnwnHqW/VNJ/Qiy/S0Nvg=
+
+Name: org/apache/commons/compress/archivers/tar/TarUtils$1.class
+SHA-256-Digest: GlIzcW6TpaXFDOxRu3miKWFH7aLslGnMaz9JqDIRPZo=
+
+Name: org/apache/commons/compress/compressors/pack200/TempFileCachingS
+ treamBridge$1.class
+SHA-256-Digest: a4nu+itWb5+sCw86Q48wAB/MYTTTHfIV9gEz1qUcWYo=
+
+Name: org/apache/commons/compress/archivers/zip/ParallelScatterZipCrea
+ tor$2.class
+SHA-256-Digest: x0mdp0TwfT9JWH/AoP+eg5coYpeor+unQanicdZC4l8=
+
+Name: org/apache/commons/compress/archivers/zip/ZipEncodingHelper.clas
+ s
+SHA-256-Digest: 0W1gn+QYfeshsYhrbmuwN62jFMOvpoKWmGTaWBWMQAU=
+
+Name: org/apache/commons/compress/archivers/sevenz/CLI.class
+SHA-256-Digest: qxeodLslvEhoZ0vr9xywBf0p1FO8SoYZ0l57cNTHbwM=
+

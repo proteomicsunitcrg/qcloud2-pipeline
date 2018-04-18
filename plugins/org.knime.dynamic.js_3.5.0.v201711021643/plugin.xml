@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.knime.workbench.repository.nodesets">
+      <nodeset
+            factory-class="org.knime.dynamic.js.DynamicJSNodeSetFactory">
+      </nodeset>
+   </extension>
+   <extension
+         point="org.knime.js.core.webResources">
+      <webResourceBundle
+            debug="true"
+            name="Dynamic JS Node Bundle"
+            version="1.0.0"
+            webResourceBundleID="org.knime.dynamic.js">
+         <webResource
+               relativePathSource="src-js/"
+               relativePathTarget="org/knime/dynamic/js/">
+         </webResource>
+         <importResource
+               relativePath="org/knime/dynamic/js/dynamicJSNode.js"
+               type="JAVASCRIPT">
+         </importResource>
+         <webDependency
+               webResourceBundleID="RequireJS_2.1.8">
+         </webDependency>
+         <webDependency
+               webResourceBundleID="KnimeTable_1.0.0">
+         </webDependency>
+      </webResourceBundle>
+   </extension>
+   <extension
+         point="org.knime.js.core.javascriptComponents">
+      <javascriptComponent
+            getComponentValue-method-name="getComponentValue"
+            implementationBundleID="org.knime.dynamic.js"
+            init-method-name="init"
+            javascriptComponentID="org.knime.dynamic.js"
+            name="Dynamic JS Node Wrapper"
+            namespace="dynamicJSNode"
+            setValidationError-method-name="setValidationError"
+            validate-method-name="validate">
+      </javascriptComponent>
+   </extension>
+   <extension
+         point="org.knime.dynamic.node.generation.dynamicNodeFunctions">
+      <dynamicNodeFunction
+            id="js"
+            name="Dynamic JS View Nodes">
+      </dynamicNodeFunction>
+   </extension>
+
+</plugin>

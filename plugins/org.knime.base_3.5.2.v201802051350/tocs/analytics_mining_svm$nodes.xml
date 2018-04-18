@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?NLS TYPE="org.eclipse.help.toc"?><toc label="SVM" link_to="../org.knime.base/tocs/analytics_mining_svm.xml#analytics_mining_svm">
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/5e4e5b24.SVMLearnerNodeFactory2.html" label="SVM Learner"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/76836254.SVMPredictorNodeFactory.html" label="SVM Predictor"/>
+</toc>

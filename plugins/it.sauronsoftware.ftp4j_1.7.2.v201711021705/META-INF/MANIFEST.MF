@@ -1,0 +1,23 @@
+Manifest-Version: 1.0
+Ant-Version: Apache Ant 1.9.6
+Bundle-SymbolicName: it.sauronsoftware.ftp4j
+Export-Package: it.sauronsoftware.ftp4j,it.sauronsoftware.ftp4j.connec
+ tors,it.sauronsoftware.ftp4j.extrecognizers,it.sauronsoftware.ftp4j.l
+ istparsers
+Bundle-Name: ftp4j - A pure Java FTP client library
+Bundle-Version: 1.7.2.v201711021705
+Bundle-ClassPath: ftp4j-1.7.2.jar
+Bundle-ManifestVersion: 2
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-Vendor: Carlo Pelliccia
+Created-By: 1.8.0_131-b11 (Oracle Corporation)
+
+Name: README.txt
+SHA-256-Digest: efe44loL9QzPcS/jLJfOH/I2YqimvD4O0BbghJzUknw=
+
+Name: LICENSE.txt
+SHA-256-Digest: XfBwBxmJicYi9dQd6NcD577z0OedYuJDMu5zmkUq9io=
+
+Name: ftp4j-1.7.2.jar
+SHA-256-Digest: r4CTqVbMX8connJge37OIyXbKSsat89yjch2061pBh0=
+

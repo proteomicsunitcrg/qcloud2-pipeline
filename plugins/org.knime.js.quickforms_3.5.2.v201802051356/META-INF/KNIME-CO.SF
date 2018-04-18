@@ -1,0 +1,137 @@
+Signature-Version: 1.0
+SHA-256-Digest-Manifest-Main-Attributes: IvXfDlFWrF8aa9TsMVLa4wvX/OyDm
+ WKt7Uc+y5zWxZc=
+SHA-256-Digest-Manifest: n2RaK1fs/pmgIvj10jp+rcig2nG+bgHsN3hJ1QL8PwY=
+Created-By: 1.8.0_131 (Oracle Corporation)
+
+Name: icons/missing.gif
+SHA-256-Digest: lMyZ5ytr155kIG2bAIQXVOio9G8kpCIAUhULWzplmiA=
+
+Name: plugin.xml
+SHA-256-Digest: ZDWtHZu4rxthXKDV5wd4nsKUQdDBCPYOYeEUbmKlQSQ=
+
+Name: js-src/org/knime/js/base/dialog/selection/single/DropdownSingleS
+ election.js
+SHA-256-Digest: jwqDEqq3ZY1xfhUjg5KmOLh7RXM0A38ewdG+Tl1NpJs=
+
+Name: js-src/org/knime/js/base/node/quickform/selection/single/SingleS
+ election.js
+SHA-256-Digest: 6xGdOil3QDRf9Q1Uba7kb8iiNTtFoQRuYI03SYBMtp0=
+
+Name: js-src/org/knime/js/base/util/quickform/quickformStyles.css
+SHA-256-Digest: 1d9p2pfOyRA/LCIuhV0/sUwY4aCND8t7vW5WDFwReWQ=
+
+Name: js-src/org/knime/js/base/node/output/filedownload/FileDownload.j
+ s
+SHA-256-Digest: PBWTkkRL5cdsL93dwt8wgpYdZT4NF8Z6bqzvDY7qvrI=
+
+Name: js-src/org/knime/js/base/util/quickform/knime_quickform_utils_1_
+ 0_0.js
+SHA-256-Digest: QARmxJmhujxNfY+UrPK5lbK6fxzX8knSjJaHhcvQRJ0=
+
+Name: js-src/org/knime/js/base/dialog/selection/multiple/ListMultipleS
+ elections.js
+SHA-256-Digest: t7XYbUBi8j1z6lHx5TbFjNfTxIl1ExcFBW/nRL8tbH0=
+
+Name: js-src/org/knime/js/base/node/quickform/filter/column/ColumnFilt
+ er.js
+SHA-256-Digest: LJcVnrgYqPNWMA9W6961e35L6bfkc6tTpvfGRPREKa8=
+
+Name: js-src/org/knime/js/base/node/quickform/input/slider/SliderInput
+ .css
+SHA-256-Digest: GCxyWN8m3ecPC7YwkXOjRpNgmF+3TMAQ5A67Oy60u7I=
+
+Name: js-src/org/knime/js/base/node/output/image/ImageOutput.js
+SHA-256-Digest: yIYyLcSHkXcgp4boXNQK8YYJdhoA/DntucSfRLBMcLA=
+
+Name: js-src/org/knime/js/base/node/quickform/input/filechooser/FileCh
+ ooser.js
+SHA-256-Digest: HMlxNHuSJ8yKgb/+NRkK5O+oVchghdcr6Na17eUojiU=
+
+Name: js-src/org/knime/js/base/node/quickform/input/slider/SliderInput
+ .js
+SHA-256-Digest: Di6SJSHZwJ+yWnACBegG8LdplTxkwbMIyzqLPloD5iM=
+
+Name: js-src/org/knime/js/base/node/quickform/filter/slider/slider.css
+SHA-256-Digest: bYwEBLjZv+87cjtUIawTjtXGK78eY1ywNIbKWPWhvrc=
+
+Name: js-src/org/knime/js/base/node/output/text/TextOutput.js
+SHA-256-Digest: nes/uiMKa4B11777rVoc+3nBgU4YNGeTg9VDTpk6eJc=
+
+Name: js-quickforms.jar
+SHA-256-Digest: etLqWR7SkQ1y1s14KqrE+CDclO+4IZD9HKGQ1+UIWvw=
+
+Name: js-src/org/knime/js/base/node/quickform/input/date2/DateInput2.c
+ ss
+SHA-256-Digest: 5XfJCNkuoRY1o1JMICjOYkq+02axmyXYfOECsDCsjJY=
+
+Name: js-src/org/knime/js/base/node/quickform/selection/multiple/Multi
+ pleSelection.js
+SHA-256-Digest: qbj214x7t7I5DaOAV/QJL0ovJ6tCOO6oA1dI2SJlT+4=
+
+Name: js-src/org/knime/js/base/node/quickform/input/fileupload/FileUpl
+ oad.js
+SHA-256-Digest: qFRP3eMUZmxU2QSouWZ1PN6Jj1+bsCGEMMIDfV3q6oE=
+
+Name: js-src/org/knime/js/base/node/quickform/input/date/DateInput.js
+SHA-256-Digest: vKBMECmc/Sj5vDjI80fS4x450ieJfAs++OUeeFrdzSo=
+
+Name: js-src/org/knime/js/base/node/quickform/input/string/StringInput
+ .js
+SHA-256-Digest: tiFrMPi/MJX/aamPgvu5XSvHlGr3gZvnzIQCjHALAik=
+
+Name: js-src/org/knime/js/base/node/quickform/input/date2/DateInput2.j
+ s
+SHA-256-Digest: wUKcu11rlgrIZu8C0kP8kGNRh4VN+RYZ2uuBRTzgvag=
+
+Name: js-src/org/knime/js/base/dialog/selection/multiple/CheckBoxesMul
+ tipleSelections.js
+SHA-256-Digest: +TNNvcpw/Cfrp4U2/RN9JZ2D/cGpUA0pRCVIlIL6Y9w=
+
+Name: js-src/org/knime/js/base/node/quickform/selection/value/ValueSel
+ ection.js
+SHA-256-Digest: 9nsDEjqtOAFJqcyeb5HZ1GToMY67liHL+x/+wJNckOI=
+
+Name: js-src/org/knime/js/base/dialog/selection/multiple/TwinlistMulti
+ pleSelections.js
+SHA-256-Digest: 88hcCV5s2irj3XNVjWbtSRcey+/0RMQjn6hbMSo0QSs=
+
+Name: js-src/org/knime/js/base/node/quickform/input/credentials/Creden
+ tialsInput.js
+SHA-256-Digest: Vk0qEGUMMIU3a+Nrf0EaDdHW/NdHWVrX5y6TsBzA2gI=
+
+Name: js-src/org/knime/js/base/dialog/selection/single/ListSingleSelec
+ tion.js
+SHA-256-Digest: PKuI/O4zQOsQQBwyIjPLgCo2UI/+YAdvRjYaoClDT9I=
+
+Name: js-src/org/knime/js/base/dialog/selection/single/RadioButtonSing
+ leSelection.js
+SHA-256-Digest: 8pG692dDwobTnBZUDXH25+YbIZxOcqpYrpU5iC6PxS4=
+
+Name: js-src/org/knime/js/base/node/quickform/input/bool/BooleanInput.
+ js
+SHA-256-Digest: Lav8lVYtf6iqXdlPmN5ZS3+sMF3je7jVprGyiEWRVdY=
+
+Name: js-src/org/knime/js/base/node/quickform/input/dbl/DoubleInput.js
+SHA-256-Digest: GfFXo+Bq0AQC+aYH3qJIdNgW5po7xhKAfzo9IWpb2x4=
+
+Name: js-src/org/knime/js/base/node/quickform/input/listbox/ListBoxInp
+ ut.js
+SHA-256-Digest: hVMuFQ4OeX2KHOANaQGNNzkqqEe24hLBnnEhf+Bhruw=
+
+Name: js-src/org/knime/js/base/node/quickform/filter/slider/SliderFilt
+ er.js
+SHA-256-Digest: gED6ic31bMhOUzOyvC4hMmx5Jl11thUGAFh45lYMoKc=
+
+Name: js-src/org/knime/js/base/node/quickform/input/integer/IntegerInp
+ ut.js
+SHA-256-Digest: m48OaQZPeEdB/se/2YDUihx6pBwjy6Xy4lKN9GPO0Ls=
+
+Name: js-src/org/knime/js/base/node/quickform/selection/column/ColumnS
+ election.js
+SHA-256-Digest: t5wwt0CYUm/TbFoGvfIZrLUZYZ+oKc+IkcbuHs0ocbE=
+
+Name: js-src/org/knime/js/base/node/quickform/filter/value/ValueFilter
+ .js
+SHA-256-Digest: Uvl11fkF10yfUNPWGPRx+M9bJRcvQJApl9QquEoWRyY=
+

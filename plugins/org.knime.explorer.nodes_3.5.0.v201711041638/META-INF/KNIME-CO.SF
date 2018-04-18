@@ -1,0 +1,30 @@
+Signature-Version: 1.0
+SHA-256-Digest-Manifest-Main-Attributes: aCoe6dBxA/xOUqGgvKpI/uPEd4IKV
+ 1LLCufS1UPOLNg=
+SHA-256-Digest-Manifest: 0wopT27H+OxIwgpbD8aOZSGFoTia6V+9fv4dwuxCZDY=
+Created-By: 1.8.0_131 (Oracle Corporation)
+
+Name: plugin.xml
+SHA-256-Digest: ciaXflYYFmSdv8kX4ECypiJNKqSptetpUN0WtMGtuF4=
+
+Name: tocs/io_write$nodes.xml
+SHA-256-Digest: 9Fi5t0zpYeWbeJh/YPPp9d+x6QilUrlOcQRgATgBYZI=
+
+Name: tocs/flowcontrol_automation$nodes.xml
+SHA-256-Digest: cccnujAI8AdxxUmrqzqBSrUDASqme3rz1Z8gTXT22dg=
+
+Name: html/nodes/6dbaa8a9.ExplorerBrowserNodeFactory.html
+SHA-256-Digest: GZlshxZoz+JAbpzNaAoSj0JrkzPUDA7o36ZeCeTUb70=
+
+Name: tocs/io_read$nodes.xml
+SHA-256-Digest: RgEiAkyW5StKXDQtxFGGPRKnrci159B5AyF2FSCwa80=
+
+Name: explorer-nodes.jar
+SHA-256-Digest: 6jFB0VSGGm6UhcPCoWx9l3tUMkL9dzHEZW4AcOPz3rU=
+
+Name: html/nodes/3d25ff3.ExplorerWriterNodeFactory.html
+SHA-256-Digest: y40xkVumrjNYHHxuVGLhofF7KihZrhNFkQjKHs1ky98=
+
+Name: html/nodes/38404ec2.CallLocalWorkflowNodeFactory.html
+SHA-256-Digest: LhpAZ7dxLCHxpjorQZcvgxVdkZeaPPiSyc0UdBYvv2Y=
+

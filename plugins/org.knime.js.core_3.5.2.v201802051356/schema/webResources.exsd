@@ -1,0 +1,235 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Schema file written by PDE -->
+<schema targetNamespace="org.knime.js.core" xmlns="http://www.w3.org/2001/XMLSchema">
+<annotation>
+      <appInfo>
+         <meta.schema plugin="org.knime.js.core" id="webResources" name="Web Resources"/>
+      </appInfo>
+      <documentation>
+         This extension point can be used to plug new Javascript implementations of web-enabled KNIME nodes or other web resources into the repository.
+      </documentation>
+   </annotation>
+
+   <element name="extension">
+      <annotation>
+         <appInfo>
+            <meta.element />
+         </appInfo>
+      </annotation>
+      <complexType>
+         <choice minOccurs="1" maxOccurs="unbounded">
+            <element ref="webResourceBundle"/>
+         </choice>
+         <attribute name="point" type="string" use="required">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="id" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="name" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+               <appInfo>
+                  <meta.attribute translatable="true"/>
+               </appInfo>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <element name="webResourceBundle">
+      <annotation>
+         <documentation>
+            A webResourceBundle describes a bundle of different resources (JavaScript, CSS and other files) to be made available to a web enabled node.
+         </documentation>
+      </annotation>
+      <complexType>
+         <sequence>
+            <element ref="webResource" minOccurs="1" maxOccurs="unbounded"/>
+            <element ref="importResource" minOccurs="0" maxOccurs="unbounded"/>
+            <element ref="webDependency" minOccurs="0" maxOccurs="unbounded"/>
+         </sequence>
+         <attribute name="webResourceBundleID" type="string" use="required">
+            <annotation>
+               <documentation>
+                  The unique id of the bundle. Good practice is to incorporate the name, version and debug attributes.
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="name" type="string" use="required">
+            <annotation>
+               <documentation>
+                  The human readable name of the bundle to be used for display.
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="version" type="string" use="required">
+            <annotation>
+               <documentation>
+                  The version number of the bundle.
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="debug" type="boolean" use="required">
+            <annotation>
+               <documentation>
+                  The debug flag describes the nature of this bundle. Usually production bundles include sources that are optimized and minified, where as debug bundles contain sources that are not optimized and preserve the original variable and method names to allow for easier debugging. 
+It is good practice to always provide a production and debug bundle.
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="description" type="string">
+            <annotation>
+               <documentation>
+                  The optional description of a bundle to be used for display.
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="usesDefine" type="boolean" use="default" value="false">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="exports" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <element name="webResource">
+      <annotation>
+         <documentation>
+            A webResource describes a file or folder to be made available to be referenced by any node utilizing this bundle.
+If the resource is a folder, all contents of that folder are made available.
+         </documentation>
+      </annotation>
+      <complexType>
+         <attribute name="relativePathSource" type="string" use="required">
+            <annotation>
+               <documentation>
+                  The plugin-relative path to the source file or folder.
+               </documentation>
+               <appInfo>
+                  <meta.attribute kind="resource"/>
+               </appInfo>
+            </annotation>
+         </attribute>
+         <attribute name="relativePathTarget" type="string">
+            <annotation>
+               <documentation>
+                  The destination-relative path to the file or folder.
+               </documentation>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <element name="importResource">
+      <annotation>
+         <documentation>
+            An importResource describes and JavaScript or stylesheet to be included in the header of a generated HTML file.
+         </documentation>
+      </annotation>
+      <complexType>
+         <attribute name="relativePath" type="string" use="required">
+            <annotation>
+               <documentation>
+                  The destination-relative path to the JavaScript or stylesheet file.
+               </documentation>
+               <appInfo>
+                  <meta.attribute kind="identifier"/>
+               </appInfo>
+            </annotation>
+         </attribute>
+         <attribute name="type" use="required">
+            <annotation>
+               <documentation>
+                  The type of resource.
+               </documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <enumeration value="JAVASCRIPT">
+                  </enumeration>
+                  <enumeration value="CSS">
+                  </enumeration>
+               </restriction>
+            </simpleType>
+         </attribute>
+      </complexType>
+   </element>
+
+   <element name="webDependency">
+      <annotation>
+         <documentation>
+            A bundle can define an arbitrary amount of bundle dependencies.
+         </documentation>
+      </annotation>
+      <complexType>
+         <attribute name="webResourceBundleID" type="string" use="required">
+            <annotation>
+               <documentation>
+                  The id of the bundle dependency.
+               </documentation>
+               <appInfo>
+                  <meta.attribute kind="identifier" basedOn="org.knime.js.core.webResources/webResourceBundle/@webResourceBundleID"/>
+               </appInfo>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="since"/>
+      </appInfo>
+      <documentation>
+         2.9.0
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="examples"/>
+      </appInfo>
+      <documentation>
+         [Enter extension point usage example here.]
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="apiinfo"/>
+      </appInfo>
+      <documentation>
+         [Enter API information here.]
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="implementation"/>
+      </appInfo>
+      <documentation>
+         [Enter information about supplied implementation of this extension point.]
+      </documentation>
+   </annotation>
+
+
+</schema>

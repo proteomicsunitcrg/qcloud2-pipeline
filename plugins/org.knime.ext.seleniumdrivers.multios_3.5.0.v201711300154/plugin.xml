@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.knime.core.WizardNodeView">
+      <wizardNodeView
+            description="This option uses a Chromium based browser to display a node view."
+            name="Chrome Browser"
+            viewClass="org.knime.ext.seleniumdrivers.multios.ChromeWizardNodeView">
+      </wizardNodeView>
+      <wizardNodeView
+            description="This option uses the internal Chromium browser to display a node view."
+            name="Internal Chromium Browser"
+            viewClass="org.knime.ext.seleniumdrivers.multios.ChromiumWizardNodeView">
+      </wizardNodeView>
+   </extension>
+
+</plugin>

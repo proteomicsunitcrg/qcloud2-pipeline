@@ -1,0 +1,11 @@
+circle.selected {
+	/* ToDo: specify styles for selected points */
+}
+
+circle.filtered {
+	display: none;
+}
+
+circle.hidden {
+    display: none;
+}

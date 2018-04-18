@@ -34,6 +34,7 @@ version = 2.0
 log.info "BIOCORE@CRG microRNASeq - N F  ~  version ${version}"
 log.info "========================================"
 log.info "email for notification 			: ${params.email}"
+log.info "mzlfiles (input files) 			: ${params.mzlfiles}"
 log.info "\n"
 
 if (params.help) {
@@ -44,10 +45,16 @@ if (params.help) {
 
 if (params.resume) exit 1, "Are you making the classical --resume typo? Be careful!!!! ;)"
 
-firstOutput = "first"
+workflowsFolder	= "$baseDir/workflows/"
+firstOutput		= "first"
 
+firstStepWF     = file("${workflowsFolder}/module_workflow_shotgun_bsa.knwf")
 
-str = Channel.from('hello', 'hola', 'bonjour', 'ciao')
+Channel
+   	.fromFilePairs( params.mzlfiles, size: 1)                                             
+   	.ifEmpty { error "Cannot find any file matching: ${params.mzlfiles}" }
+    .set { mzlfiles_for_first_step}    
+
 
 /*
  * Step 0. Run FastQC on raw data
@@ -55,16 +62,26 @@ str = Channel.from('hello', 'hola', 'bonjour', 'ciao')
 process FirstStep {
 	publishDir firstOutput
 
-   tag { str }
+   tag { sample_id }
    
-   input:
-   val str 
-   output: 
-   stdout into result
+    input:
+ 	set sample_id, file(mzML_file) from (mzlfiles_for_first_step)
+    file(workflowfile) from firstStepWF
+
+    output:
+	set sample_id, file("${sample_id}.qcml") into qcmlfiles
+	set sample_id, file("${sample_id}.featureXML") into featureXMLfiles
+	set sample_id, file("${sample_id}.idXML") into idXMLfiles
+
+
    
    """
-   echo $str;
-   knime --launcher.suppressErrors -nosplash -application org.knime.product.KNIME_BATCH_APPLICATION -reset -nosave -workflowFile="/users/pr/rolivella/mydata/knwf/module_parameter_mean_injection_time_of_identified_peptides_MS1.knwf" -workflow.variable=input_featurexml_file,/users/pr/rolivella/myframeworks/qcweb/scripts/input/vib/erika_2p/featureXML/1804/El_02534_2p_QC1W.featureXML,String -workflow.variable=input_mzml_file,/users/pr/rolivella/myframeworks/qcweb/scripts/input/vib/erika_2p/mzML/1804/El_02534_2p_QC1W.mzML,String
-   """
+	knime --launcher.suppressErrors -nosplash -application org.knime.product.KNIME_BATCH_APPLICATION -reset -nosave \
+	-workflowFile=${workflowfile} \
+	-workflow.variable=input_mzml_file,${mzML_file},String \
+	-workflow.variable=output_qcml_file,${sample_id}.qcml,String \
+	-workflow.variable=output_featurexml_file,${sample_id}.featureXML,String \
+	-workflow.variable=output_idxml_file,${sample_id}.idXML,String
+	"""
 }
 

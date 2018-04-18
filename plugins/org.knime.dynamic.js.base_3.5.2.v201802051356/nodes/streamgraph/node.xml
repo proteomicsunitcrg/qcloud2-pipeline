@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<js:knimeNode xmlns:js="http://knime.org/dynamicjsnode/v3.0"
+	xmlns="http://knime.org/dynamicnode/v3.0" xmlns:n="http://knime.org/node/v2.12"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://knime.org/dynamicjsnode/v3.0 http://www.knime.org/node/dynamicJSNode_v3.0.xsd"
+	jsNamespace="streamgraph_namespace" nodeID="streamgraph" categoryPath="/view/js-views"
+	icon="./stacked_area_chart.png" type="Visualizer">
+
+	<name>Stacked Area Chart (JavaScript)</name>
+	<shortDescription>A Stacked Area Chart based on the NVD3 library.</shortDescription>
+	<fullDescription>
+		<intro>
+			<n:p>
+				This chart visualizes numerical values from multiple columns as stacked areas.
+				Different stacking types can be chosen to guide the user's interpretation: The node can display Stacked Area Charts, Percentage Area Charts and Stream Graphs.
+				Different interpolation methods can be chosen to give the graph an organic appearance.
+			</n:p>
+		</intro>
+		<tab name="Options">
+			<options>
+				<columnSelectorOption name="x-Axis Column" id="xAxisColumn"
+					inPortIndex="0" label="Choose column for x-axis" filterClasses="org.knime.core.data.DataValue"
+					allowRowID="true" optional="true">
+					Choose the column for the x-axis. Dependent on the column's type, labels on the x-axis get rendered differently.
+				</columnSelectorOption>
+				<checkBoxOption name="Sort for x-axis column"
+					id="xAxisSort" label="Sort for x-axis column"
+					defaultValue="true">
+					When checked, the table is sorted for the x-axis column.
+				</checkBoxOption>
+				<columnFilterOption name="Included Columns" id="columns"
+					inPortIndex="0" label="Included columns" filterClasses="org.knime.core.data.DoubleValue">
+					Select the numeric columns which you wish to be included in the chart.
+				</columnFilterOption>
+			</options>
+		</tab>
+
+		<tab name="General Plot Options">
+			<options>
+				<radioButtonOption name="Chart Type" id="chartType"
+					saveInView="true" possibleValues="Stacked-Area-Chart Percentage-Area-Chart Stream-Graph"
+					label="Chart Type" defaultValue="Stacked-Area-Chart">
+					Select the stacking types.
+				</radioButtonOption>
+				<radioButtonOption name="Interpolation Method" id="interpolation"
+					saveInView="true" possibleValues="basis linear step" label="Interpolation Method"
+					defaultValue="basis">
+					Select the interpolation method used to interpolate values
+					in-between data items.
+					-basis: a B-spline, with control point duplication on the ends.
+					-linear: piecewise linear segments
+					-step: alternate between horizontal and vertical segments
+				</radioButtonOption>
+				<stringOption name="Title" id="title" label="Title"
+					defaultValue="Stacked Area Chart" optional="true" saveInView="true">
+					The chart's title.
+				</stringOption>
+				<stringOption name="Subitle" id="subtitle" label="Subtitle"
+					optional="true" saveInView="true">
+					The chart's subtitle.
+				</stringOption>
+				<checkBoxOption name="Display legend" id="legend"
+					label="Display legend" defaultValue="true" saveInView="true">
+					When checked, the legend is displayed.
+				</checkBoxOption>
+				<checkBoxOption name="Display tooltip"
+					id="interactiveGuideline" label="Display tooltip"
+					defaultValue="true" saveInView="true">
+					When checked, an interactive tooltip is displayed on hover.
+				</checkBoxOption>
+				<checkBoxOption name="Display fullscreen button" id="displayFullscreenButton"
+					label="Display fullscreen button" defaultValue="true" loadDefaults="true">
+					Check to display a button which switches the view into fullscreen
+					mode. The button is only available in the KNIME WebPortal.
+				</checkBoxOption>
+
+				<checkBoxOption name="Subscribe to filter events" id="subscribeFilter"
+					label="Subscribe to filter events" defaultValue="true" saveInView="true">
+					Check to subscribe to external filter events. The data will then be filtered according to the filters.
+				</checkBoxOption>
+
+				<svgOption name="Image" id="svg" portIndex="0" label="Image"
+					additionalWait="2000" defaultWidth="800" defaultHeight="600"
+					defaultFullscreen="true">
+					Settings for image generation.
+				</svgOption>
+			</options>
+		</tab>
+		<tab name="Axis Configuration">
+			<options>
+				<checkBoxOption name="Show Grid"
+					id="showGrid" label="Show grid"
+					defaultValue="true" saveInView="true">
+					When checked, a grid is displayed in the chart.
+				</checkBoxOption>
+				<stringOption name="x-axis label" id="xAxisLabel" label="x-axis label" optional="true" saveInView="true">
+					The label used for the x-axis.
+				</stringOption>
+				<stringOption name="y-axis label" id="yAxisLabel" label="y-axis label" optional="true" saveInView="true">
+					The label used for the y-axis.
+				</stringOption>
+				<stringOption name="x-Axis Number Format" id="xAxisFormatString" label="x-Axis Number Format"
+					defaultValue=",.2f" optional="true">
+					d3-Format string for numbers on the x-Axis.
+				</stringOption>
+				<stringOption name="y-Axis Number Format" id="yAxisFormatString" label="y-Axis Number Format"
+					defaultValue=",.2f" optional="true">
+					d3-Format string for numbers on the y-Axis.
+				</stringOption>
+				<!-- <stringListOption name="Date Format" id="dateFormat"
+					label="Date Format" possibleValues="YYYY-MM-DD M/D/YY" editable="true"
+					optional="true" defaultValues="YYYY-MM-DD">
+					Choose how to format x-Axis ticks if the
+					associated
+					column is of type
+					Date/Time.
+				</stringListOption> -->
+				<dateFormatOption name="Date Format" id="dateTimeFormats" label="Date Format" showLegacyDateTimeFormatChooser="true">
+					Choose how to format x-Axis ticks if the associated column is of any date or time type.
+				</dateFormatOption>
+			</options>
+		</tab>
+		<tab name="Control Options">
+			<options>
+				<checkBoxOption name="Enable view controls" id="enableViewControls"
+					label="Enable view controls" defaultValue="true">
+					Check to enable controls in the chart.
+				</checkBoxOption>
+				<checkBoxOption name="Enable title editing" id="enableTitleEdit"
+					label="Enable title editing" defaultValue="true" enableDependency="enableViewControls"
+					enableValue="true">
+					Check to enable the editing of the title within the view.
+				</checkBoxOption>
+				<checkBoxOption name="Enable subtitle editing" id="enableSubtitleEdit"
+					label="Enable subtitle editing" defaultValue="true"
+					enableDependency="enableViewControls" enableValue="true">
+					Check to enable the editing of the subtitle within the view.
+				</checkBoxOption>
+				<checkBoxOption name="Enable chart type change" id="enableChartTypeChange"
+					label="Enable chart type change" defaultValue="true"
+					enableDependency="enableViewControls" enableValue="true">
+					Check to enable changing of the chart style within the view.
+				</checkBoxOption>
+				<checkBoxOption name="Enable interpolation method editing"
+					id="enableInterpolationMethodEdit" label="Enable interpolation method editing"
+					defaultValue="true" enableDependency="enableViewControls"
+					enableValue="true">
+					Check to enable the editing of the interpolation method within the view.
+				</checkBoxOption>
+				<checkBoxOption name="Enable legend toggle" id="enableLegendToggle"
+					label="Enable legend toggle" defaultValue="true" enableDependency="enableViewControls"
+					enableValue="true">
+					Check to enable toggling of the legend within the view.
+				</checkBoxOption>
+				<checkBoxOption name="Enable interactive guideline toggle"
+					id="enableInteractiveGuidelineToggle" label="Enable interactive guideline toggle"
+					defaultValue="true" enableDependency="enableViewControls"
+					enableValue="true">
+					Check to enable toggling of the interactive pop-up
+					within the view.
+				</checkBoxOption>
+				<checkBoxOption name="Enable show grid toggle" id="showGridToggle"
+					label="Enable show grid toggle" defaultValue="true" enableDependency="enableViewControls"
+					enableValue="true">
+					Check to enable toggling of the grid within the view.
+				</checkBoxOption>
+				<checkBoxOption name="Enable x-axis  editing" id="enableXAxisEdit"
+					label="Enable x-axis editing" defaultValue="true" enableDependency="enableViewControls"
+					enableValue="true">
+					Check to enable the editing of the x-axis label within the view.
+				</checkBoxOption>
+				<checkBoxOption name="Enable y-axis  editing" id="enableYAxisEdit"
+					label="Enable y-axis editing" defaultValue="true" enableDependency="enableViewControls"
+					enableValue="true">
+					Check to enable the editing of the y-axis label within the view.
+				</checkBoxOption>
+			</options>
+		</tab>
+
+	</fullDescription>
+	<interactiveView name="JavaScript Stacked Area Chart">
+		A NVD3.js implementation of a Stacked Area Chart.
+	</interactiveView>
+	<ports>
+		<inPort portType="Data" name="Display data" index="0">
+			Data table containing the values to be plotted in the Stacked Area Chart. Rows with missing values get excluded.
+		</inPort>
+		<inPort portType="Data" name="Color data" index="1" optional="true">
+			Data table containing one column with the column names of the first
+			table. Each column name has a color assigned.
+		</inPort>
+		<outPort portType="Image" name="Stacked Area Chart image" index="0">
+			SVG image of the Stacked Area Chart chart.
+		</outPort>
+	</ports>
+	<js:resources>
+		<!-- Added for inlining style rules when generating svg -->
+		<js:resource type="css" path="nv.d3.min.css" />
+		<js:resource type="js" path="streamgraph.js" />
+	</js:resources>
+	<js:dependencies>
+		<js:dependency name="nvd3" path="NVD3_1.8.4" type="local"
+			exports="nv" />
+		<js:dependency name="moment" path="moment_timezone_locales_2_17"
+			type="local" exports="moment" />
+	</js:dependencies>
+	<js:javaProcessor className="org.knime.dynamic.js.base.stackedarea.StackedAreaProcessor" hidesLimitRowOption="false"/>
+</js:knimeNode>

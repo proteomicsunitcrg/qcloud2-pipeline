@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?NLS TYPE="org.eclipse.help.toc"?><toc label="Split &amp;amp; Combine" link_to="../org.knime.base/tocs/manipulation_column_column-split+combine.xml#manipulation_column_column-split+combine">
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/1447c7d5.CellSplitterNodeFactory.html" label="Cell Splitter"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/79fb1ec1.CellSplitterByPosNodeFactory.html" label="Cell Splitter By Position"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/4f092a68.ColumnAggregatorNodeFactory.html" label="Column Aggregator"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/1cf38bee.ColCombine2NodeFactory.html" label="Column Combiner"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/1692dcf2.ColumnMergerNodeFactory.html" label="Column Merger"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/37935c54.SplitNodeFactory2.html" label="Column Splitter"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/7cfa5dab.ColumnAppenderNodeFactory.html" label="Column Appender"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/3fd20f3e.ColumnToGrid2NodeFactory.html" label="Column to Grid"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/466a2c76.CreateBitVectorNodeFactory.html" label="Create Bit Vector"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/5f1eba36.ExpandBitVectorNodeFactory.html" label="Expand Bit Vector"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/1ed5412b.CollectionCreate2NodeFactory.html" label="Create Collection Column"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/669f559d.CollectionSplitNodeFactory.html" label="Split Collection Column"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/16c9aa4c.CreateByteVectorNodeFactory.html" label="Create Byte Vector"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/14a6d48c.ExpandByteVectorNodeFactory.html" label="Expand Byte Vector"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/738b5d5a.Joiner2NodeFactory.html" label="Joiner"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/122c154d.CrossJoinerNodeFactory.html" label="Cross Joiner"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/75d7bc18.RegexSplitNodeFactory.html" label="Regex Split"/>
+</toc>

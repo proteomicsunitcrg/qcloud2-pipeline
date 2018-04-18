@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?NLS TYPE="org.eclipse.help.toc"?><toc label="Binning" link_to="../org.knime.base/tocs/manipulation_column_binning.xml#manipulation_column_binning">
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/32f317dd.AutoBinnerLearnNodeFactory.html" label="Auto-Binner"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/531ed9ea.AutoBinnerApplyNodeFactory.html" label="Auto-Binner (Apply)"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/6fc18868.BinnerNodeFactory.html" label="Numeric Binner"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/50daf2fa.BinByDictionaryNodeFactory.html" label="Binner (Dictionary)"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/62345145.CAIMDiscretization2NodeFactory.html" label="CAIM Binner"/>
+<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/60d70021.Discretization2ApplyNodeFactory.html" label="CAIM Applier"/>
+</toc>
