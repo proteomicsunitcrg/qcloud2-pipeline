@@ -33,8 +33,9 @@ version = 2.0
 
 log.info "BIOCORE@CRG microRNASeq - N F  ~  version ${version}"
 log.info "========================================"
-log.info "email for notification 			: ${params.email}"
 log.info "mzlfiles (input files) 			: ${params.mzlfiles}"
+log.info "fasta_tab (tsv file)				: ${params.fasta_tab}"
+log.info "email for notification 			: ${params.email}"
 log.info "\n"
 
 if (params.help) {
@@ -45,10 +46,17 @@ if (params.help) {
 
 if (params.resume) exit 1, "Are you making the classical --resume typo? Be careful!!!! ;)"
 
-workflowsFolder	= "$baseDir/workflows/"
-firstOutput		= "first"
+workflowsFolder		= "$baseDir/workflows/"
+fasta_folder		= "$baseDir/fasta"
 
 firstStepWF     = file("${workflowsFolder}/module_workflow_shotgun_bsa.knwf")
+if( !firstStepWF.exists() )  { error "Cannot find any module_workflow_shotgun_bsa.knwf file!!!"}
+
+fastaconfig = file(params.fasta_tab)
+if( !fastaconfig.exists() )  { error "Cannot find any fasta tab file!!!"}
+
+shotgun_bsa_output = "shotgun_bsa_output"
+
 
 Channel
    	.fromFilePairs( params.mzlfiles, size: 1)                                             
@@ -57,16 +65,54 @@ Channel
 
 
 /*
- * Step 0. Run FastQC on raw data
+ * Create a channel for fasta files description
+ */
+Channel
+    .from(fastaconfig.readLines())
+    .map { line ->
+        list = line.split("\t")
+        internal_db = list[0]
+        fasta_file_name = list[1]
+		fasta_path = file("${fasta_folder}/${fasta_file_name}")
+        [fasta_file_name, internal_db, fasta_path]
+    }
+    .set{ fasta_desc }
+
+
+/*
+ * Step 1. Run makeblastdb on fasta data
 */
-process FirstStep {
-	publishDir firstOutput
+process makeblastdb {
+
+	tag { fasta_file }
+
+    input:
+    set fasta_file, internal_dbfile, file(fasta_path) from fasta_desc
+
+    output:
+    set internal_dbfile, file ("${internal_dbfile}.*") into blastdbs
+    
+    script:
+	
+    """
+		if [ `echo ${fasta_file} | grep 'gz'` ]; then zcat ${fasta_file} > ${internal_dbfile}; else ln -s ${fasta_file} ${internal_dbfile}; fi
+		makeblastdb -dbtype prot -in ${internal_dbfile} -out ${internal_dbfile}
+    """
+}
+
+
+/*
+ * Step 2. Run FirstStep on raw data
+*/
+process shotgun_bsa {
+	publishDir shotgun_bsa_output
 
    tag { sample_id }
    
     input:
  	set sample_id, file(mzML_file) from (mzlfiles_for_first_step)
     file(workflowfile) from firstStepWF
+    file ("*") from blastdbs.collect()
 
     output:
 	set sample_id, file("${sample_id}.qcml") into qcmlfiles

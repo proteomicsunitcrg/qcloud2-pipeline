@@ -32,6 +32,12 @@ RUN apt-get update \
 ENV PATH="/usr/local/knime_${KNIME_VERSION}/:${PATH}"
 COPY plugins/ /usr/local/knime_3.5.3/plugins/
 
+ARG BLAST_VERSION=2.7.1
+RUN apt-get install curl
+RUN cd /usr/local; curl --fail --silent --show-error --location --remote-name ftp://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/${BLAST_VERSION}/ncbi-blast-${BLAST_VERSION}+-x64-linux.tar.gz
+RUN cd /usr/local; tar zxf ncbi-blast-${BLAST_VERSION}+-x64-linux.tar.gz; rm ncbi-blast-${BLAST_VERSION}+-x64-linux.tar.gz
+RUN cd /usr/local/bin; ln -s /usr/local/ncbi-blast-${BLAST_VERSION}+/bin/* .
+
 ##RUN gcc --version
 
 # Install pandas and protobuf so KNIME can communicate with Python
