@@ -1,2 +1,2 @@
-blastdb.fasta	sp_bovine_2015_11_wo_contaminants_shuffled.fasta.gz	
-stdb.fasta	sp_human_2015_10_contaminants_plus_shuffled.fasta.gz
+shotgun_bsa.fasta	sp_bovine_2015_11_wo_contaminants_shuffled.fasta.gz	
+shotgun_hela.fasta	sp_human_2015_10_contaminants_plus_shuffled.fasta.gz

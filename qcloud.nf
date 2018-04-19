@@ -48,21 +48,22 @@ if (params.resume) exit 1, "Are you making the classical --resume typo? Be caref
 
 workflowsFolder		= "$baseDir/workflows/"
 fasta_folder		= "$baseDir/fasta"
-
-firstStepWF     = file("${workflowsFolder}/module_workflow_shotgun_bsa.knwf")
-if( !firstStepWF.exists() )  { error "Cannot find any module_workflow_shotgun_bsa.knwf file!!!"}
-
 fastaconfig = file(params.fasta_tab)
 if( !fastaconfig.exists() )  { error "Cannot find any fasta tab file!!!"}
 
-shotgun_bsa_output = "shotgun_bsa_output"
+firstStepWF     = file("${workflowsFolder}/module_workflow_shotgun_bsa.knwf")
+if( !firstStepWF.exists() )  { error "Cannot find any module_workflow_shotgun_bsa.knwf file!!!"}
+secondStepWF     = file("${workflowsFolder}/module_parameter_mean_it.knwf")
+if( !secondStepWF.exists() )  { error "Cannot find any module_parameter_mean_it.knwf file!!!"}
 
+
+shotgun_bsa_output	= "output_shotgun_bsa"
+mean_it_output		= "mean_it_output"
 
 Channel
    	.fromFilePairs( params.mzlfiles, size: 1)                                             
    	.ifEmpty { error "Cannot find any file matching: ${params.mzlfiles}" }
     .set { mzlfiles_for_first_step}    
-
 
 /*
  * Create a channel for fasta files description
@@ -90,7 +91,7 @@ process makeblastdb {
     set fasta_file, internal_dbfile, file(fasta_path) from fasta_desc
 
     output:
-    set internal_dbfile, file ("${internal_dbfile}.*") into blastdbs
+    file ("*") into blastdbs
     
     script:
 	
@@ -116,18 +117,41 @@ process shotgun_bsa {
 
     output:
 	set sample_id, file("${sample_id}.qcml") into qcmlfiles
-	set sample_id, file("${sample_id}.featureXML") into featureXMLfiles
+	set sample_id, file("file.mzML"), file("${sample_id}.featureXML") into files_for_second_step
 	set sample_id, file("${sample_id}.idXML") into idXMLfiles
 
 
    
    """
+	if [ `echo ${mzML_file} | grep 'gz'` ]; then zcat ${mzML_file} > file.mzML; else ln -s ${mzML_file} file.mzML; fi
 	knime --launcher.suppressErrors -nosplash -application org.knime.product.KNIME_BATCH_APPLICATION -reset -nosave \
 	-workflowFile=${workflowfile} \
-	-workflow.variable=input_mzml_file,${mzML_file},String \
+	-workflow.variable=input_mzml_file,file.mzML,String \
 	-workflow.variable=output_qcml_file,${sample_id}.qcml,String \
 	-workflow.variable=output_featurexml_file,${sample_id}.featureXML,String \
 	-workflow.variable=output_idxml_file,${sample_id}.idXML,String
 	"""
 }
 
+/*
+ * Step 3. Run Second step 
+*/
+process mean_it {
+	publishDir mean_it_output
+
+   tag { sample_id }
+   
+    input:
+	set sample_id, file(mzML_file), file(featureXML_file) from files_for_second_step
+    file(workflowfile) from secondStepWF
+
+
+
+   
+   """
+	knime --launcher.suppressErrors -nosplash -application org.knime.product.KNIME_BATCH_APPLICATION\
+	-reset -nosave -workflowFile="${workflowfile}" \
+	-workflow.variable=input_featurexml_file,${featureXML_file},String \
+	-workflow.variable=input_mzml_file,${mzML_file},String
+   """
+}
