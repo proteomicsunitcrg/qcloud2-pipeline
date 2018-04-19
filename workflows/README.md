@@ -14,7 +14,7 @@ knime --launcher.suppressErrors -nosplash -application org.knime.product.KNIME_B
 
 STEP 2
 
-Description: given a mzML, removes the string xmlns="http://psi.hupo.org/ms/mzml" in both <indexedmzML> and <mzML> tags inside the mzML file.  
+Description: given a mzML, removes the string xmlns="http://psi.hupo.org/ms/mzml" in both 'indexedmzML' and 'mzML' tags inside the mzML file.  
 
 ```
 sed -i 's@xmlns="http://psi.hupo.org/ms/mzml"@@g' /path/to/1804/180308_Q_QC1X_01_01.mzML
