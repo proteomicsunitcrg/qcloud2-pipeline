@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<?NLS TYPE="org.eclipse.help.toc"?><toc label="Clustering" link_to="../org.knime.base/tocs/analytics_mining_clustering.xml#analytics_mining_clustering">
-<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/157f39f5.ClusterAssignerNodeFactory.html" label="Cluster Assigner"/>
-<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/35650727.FuzzyClusterNodeFactory2.html" label="Fuzzy c-Means"/>
-<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/6ae53516.HierarchicalClusterNodeFactory.html" label="Hierarchical Clustering"/>
-<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/3f50ce4d.SotaLearnerNodeFactory.html" label="SOTA Learner"/>
-<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/27075346.SotaPredictorNodeFactory.html" label="SOTA Predictor"/>
-<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/6777d15f.ClusterNodeFactory2.html" label="k-Means"/>
-</toc>

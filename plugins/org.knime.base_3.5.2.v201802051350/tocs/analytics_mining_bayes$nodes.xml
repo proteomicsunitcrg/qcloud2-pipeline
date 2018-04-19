@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<?NLS TYPE="org.eclipse.help.toc"?><toc label="Bayes" link_to="../org.knime.base/tocs/analytics_mining_bayes.xml#analytics_mining_bayes">
-<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/471d5a5f.NaiveBayesLearnerNodeFactory3.html" label="Naive Bayes Learner"/>
-<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/3f8005bf.NaiveBayesPredictorNodeFactory2.html" label="Naive Bayes Predictor"/>
-</toc>

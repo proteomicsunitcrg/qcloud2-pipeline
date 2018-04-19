@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<?NLS TYPE="org.eclipse.help.toc"?><toc label="MDS" link_to="../org.knime.base/tocs/analytics_mining_mds.xml#analytics_mining_mds">
-<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/77d31010.MDSNodeFactory.html" label="MDS"/>
-<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/356a475c.MDSProjectionNodeFactory.html" label="MDS Projection"/>
-</toc>

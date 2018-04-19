@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<?NLS TYPE="org.eclipse.help.toc"?><toc label="Filter" link_to="../org.knime.base/tocs/manipulation_column_column-filter.xml#manipulation_column_column-filter">
-<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/39d9780b.DataColumnSpecFilterNodeFactory.html" label="Column Filter"/>
-<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/61936bd4.ColumnFilterRefNodeFactory.html" label="Reference Column Filter"/>
-<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/333c28aa.MissingValueColumnFilterNodeFactory.html" label="Missing Value Column Filter"/>
-<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/71e22b70.ColumnSplitRefNodeFactory.html" label="Reference Column Splitter"/>
-</toc>

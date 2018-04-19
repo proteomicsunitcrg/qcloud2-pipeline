@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<?NLS TYPE="org.eclipse.help.toc"?><toc label="Other" link_to="../org.knime.base/tocs/manipulation_row_row-other.xml#manipulation_row_row-other">
-<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/37f1a188.AddEmptyRowsNodeFactory.html" label="Add Empty Rows"/>
-<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/f949e75.ColumnHeaderExtractorNodeFactory.html" label="Extract Column Header"/>
-<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/efa02a8.ColumnHeaderInsertNodeFactory.html" label="Insert Column Header"/>
-<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/722127f2.RowKeyNodeFactory2.html" label="RowID"/>
-</toc>

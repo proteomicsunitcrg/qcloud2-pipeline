@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<?NLS TYPE="org.eclipse.help.toc"?><toc label="Column" link_to="../org.knime.base/tocs/manipulation_column.xml#manipulation_column">
-<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/4702cda4.InteractiveHiLiteCollectorNodeFactory.html" label="Interactive HiLite Collector"/>
-<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/6bc6dc3c.DataValidatorNodeFactory.html" label="Table Validator"/>
-<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/345b5309.DataValidatorSpecNodeFactory.html" label="Table Validator (Reference)"/>
-</toc>

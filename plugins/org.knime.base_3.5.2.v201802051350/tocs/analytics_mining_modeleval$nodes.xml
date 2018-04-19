@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<?NLS TYPE="org.eclipse.help.toc"?><toc label="Scoring" link_to="../org.knime.base/tocs/analytics_mining_modeleval.xml#analytics_mining_modeleval">
-<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/41cfe3d6.AccuracyScorerNodeFactory.html" label="Scorer"/>
-<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/3c4b9008.NumericScorerNodeFactory.html" label="Numeric Scorer"/>
-<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/4cf99a13.NewEntropyNodeFactory.html" label="Entropy Scorer"/>
-<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/3cdc9006.ROCNodeFactory.html" label="ROC Curve"/>
-<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/8bf9bc4.EnrichmentPlotterFactory.html" label="Enrichment Plotter"/>
-</toc>

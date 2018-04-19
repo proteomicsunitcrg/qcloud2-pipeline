@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<?NLS TYPE="org.eclipse.help.toc"?><toc label="Fuzzy Rules" link_to="../org.knime.base/tocs/analytics_mining_rules_basisfunction.xml#analytics_mining_rules_basisfunction">
-<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/5ed67e43.FuzzyBasisFunctionLearnerNodeFactory.html" label="Fuzzy Rule Learner"/>
-<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/7f248df4.FuzzyBasisFunctionPredictor2NodeFactory.html" label="Fuzzy Rule Predictor"/>
-</toc>

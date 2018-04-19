@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?eclipse version="3.4"?>
-<plugin>
-   <extension-point id="dynamicNodes" name="DynamicNode" schema="schema/DynamicNode.exsd"/>
-   <extension-point id="dynamicNodeFunctions" name="DynamicNodeFunctions" schema="schema/DynamicNodeFunctions.exsd"/>
-
-</plugin>

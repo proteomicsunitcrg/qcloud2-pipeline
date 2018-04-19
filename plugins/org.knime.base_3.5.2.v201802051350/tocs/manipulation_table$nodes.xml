@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<?NLS TYPE="org.eclipse.help.toc"?><toc label="Table" link_to="../org.knime.base/tocs/manipulation_table.xml#manipulation_table">
-<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/3358c759.ExtractTableDimensionNodeFactory.html" label="Extract Table Dimension"/>
-<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/115fd4bd.ExtractTableSpecNodeFactory.html" label="Extract Table Spec"/>
-<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/13722720.TransposeTableNodeFactory.html" label="Transpose"/>
-</toc>

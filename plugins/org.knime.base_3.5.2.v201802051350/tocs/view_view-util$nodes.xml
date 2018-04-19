@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<?NLS TYPE="org.eclipse.help.toc"?><toc label="Utility" link_to="../org.knime.base/tocs/view_view-util.xml#view_view-util">
-<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/1f519af4.ImageToTableNodeFactory.html" label="Image To Table"/>
-<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/679557b6.TableRowToImageNodeFactory.html" label="Table To Image"/>
-</toc>

@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<?NLS TYPE="org.eclipse.help.toc"?><toc label="Utility" link_to="../org.knime.base/tocs/database_database-utility.xml#database_database-utility">
-<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/146c72f2.DBDropTableNodeFactory.html" label="Database Drop Table"/>
-<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/15456059.DBSQLExecutorNodeFactory.html" label="Database SQL Executor"/>
-<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/4e1e1f21.SQLExtractNodeFactory.html" label="SQL Extract"/>
-<topic href="PLUGINS_ROOT/org.knime.base/html/nodes/368bd55d.SQLInjectNodeFactory.html" label="SQL Inject"/>
-</toc>
