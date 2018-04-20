@@ -63,7 +63,7 @@ mean_it_output		= "output_mean_it"
 Channel
    	.fromFilePairs( params.mzlfiles, size: 1)                                             
    	.ifEmpty { error "Cannot find any file matching: ${params.mzlfiles}" }
-    .set { mzmlfiles_for_first_step}    
+    .set { mzmlfiles_for_correction }    
 
 /*
  * Create a channel for fasta files description
@@ -102,22 +102,25 @@ process makeblastdb {
 }
 
 /*
- * Step 0. Run batch correction on mzl
+ * Step 0. Run batch correction on mzl and eventually unzip the input file
+ * We remove the string xmlns="http://psi.hupo.org/ms/mzml" since it can causes problem with some executions
 */
 process correctMzl {
 
    tag { sample_id }
    
     input:
- 	set sample_id, file(mzML_file) from (mzmlfiles_for_first_step)
+ 	set sample_id, file(mzML_file) from (mzmlfiles_for_correction)
  
     output:
-	set sample_id, file("file.ok.mzML") into corrected_mzmlfiles
+	set sample_id, file("${sample_id}.ok.mzML") into corrected_mzmlfiles
+	set sample_id, file("${sample_id}.mzML") into mzmlfiles_for_first_step
 
 
    """  
-   	if [ `echo ${mzML_file} | grep 'gz'` ]; then zcat ${mzML_file} > file.mzML; else ln -s ${mzML_file} file.mzML; fi
-	sed s@'xmlns=\"http://psi.hupo.org/ms/mzml\"'@@g file.mzML > file.ok.mzML 
+   	if [ `echo ${mzML_file} | grep 'gz'` ]; then zcat ${mzML_file} > ${sample_id}.mzML; \
+	sed s@'xmlns=\"http://psi.hupo.org/ms/mzml\"'@@g ${sample_id}.mzML > ${sample_id}.ok.mzML; \
+   	else sed s@'xmlns=\"http://psi.hupo.org/ms/mzml\"'@@g ${mzML_file} > ${sample_id}.ok.mzML; fi
    """
 }
 
@@ -129,9 +132,9 @@ process shotgun_bsa {
 	publishDir shotgun_bsa_output
 
    tag { sample_id }
-   
+    
     input:
- 	set sample_id, file(mzML_file) from (corrected_mzmlfiles)
+ 	set sample_id, file(mzML_file) from (mzmlfiles_for_first_step)
     file(workflowfile) from firstStepWF
     file ("*") from blastdbs.collect()
 
@@ -145,14 +148,14 @@ process shotgun_bsa {
 	-workflowFile=${workflowfile} \
 	-workflow.variable=input_mzml_file,${mzML_file},String \
 	-workflow.variable=output_qcml_file,${sample_id}.qcml,String \
-	-workflow.variable=output_featurexml_file,output.featureXML,String \
-	-workflow.variable=output_idxml_file,output.idXML,String   
+	-workflow.variable=output_featurexml_file,${sample_id}.featureXML,String \
+	-workflow.variable=output_idxml_file,${sample_id}.idXML,String   
 	"""
 }
 
 /*
  * Step 3. Run Second step 
-*/
+
 process mean_it {
 	publishDir mean_it_output
 
@@ -174,3 +177,4 @@ process mean_it {
     -workflow.variable=output_csv_file,${sample_id}_ident_pep.csv,String
 	"""
 }
+*/
