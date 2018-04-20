@@ -58,12 +58,12 @@ if( !secondStepWF.exists() )  { error "Cannot find any module_parameter_mean_it.
 
 
 shotgun_bsa_output	= "output_shotgun_bsa"
-mean_it_output		= "mean_it_output"
+mean_it_output		= "output_mean_it"
 
 Channel
    	.fromFilePairs( params.mzlfiles, size: 1)                                             
    	.ifEmpty { error "Cannot find any file matching: ${params.mzlfiles}" }
-    .set { mzlfiles_for_first_step}    
+    .set { mzmlfiles_for_first_step}    
 
 /*
  * Create a channel for fasta files description
@@ -101,6 +101,26 @@ process makeblastdb {
     """
 }
 
+/*
+ * Step 0. Run batch correction on mzl
+*/
+process correctMzl {
+
+   tag { sample_id }
+   
+    input:
+ 	set sample_id, file(mzML_file) from (mzmlfiles_for_first_step)
+ 
+    output:
+	set sample_id, file("file.ok.mzML") into corrected_mzmlfiles
+
+
+   """  
+   	if [ `echo ${mzML_file} | grep 'gz'` ]; then zcat ${mzML_file} > file.mzML; else ln -s ${mzML_file} file.mzML; fi
+	sed s@'xmlns=\"http://psi.hupo.org/ms/mzml\"'@@g file.mzML > file.ok.mzML 
+   """
+}
+
 
 /*
  * Step 2. Run FirstStep on raw data
@@ -111,25 +131,22 @@ process shotgun_bsa {
    tag { sample_id }
    
     input:
- 	set sample_id, file(mzML_file) from (mzlfiles_for_first_step)
+ 	set sample_id, file(mzML_file) from (corrected_mzmlfiles)
     file(workflowfile) from firstStepWF
     file ("*") from blastdbs.collect()
 
     output:
 	set sample_id, file("${sample_id}.qcml") into qcmlfiles
-	set sample_id, file("file.mzML"), file("${sample_id}.featureXML") into files_for_second_step
+	set sample_id, file("${mzML_file}"), file("${sample_id}.featureXML") into files_for_second_step
 	set sample_id, file("${sample_id}.idXML") into idXMLfiles
 
-
-   
-   """
-	if [ `echo ${mzML_file} | grep 'gz'` ]; then zcat ${mzML_file} > file.mzML; else ln -s ${mzML_file} file.mzML; fi
+   """   
 	knime --launcher.suppressErrors -nosplash -application org.knime.product.KNIME_BATCH_APPLICATION -reset -nosave \
 	-workflowFile=${workflowfile} \
-	-workflow.variable=input_mzml_file,file.mzML,String \
+	-workflow.variable=input_mzml_file,${mzML_file},String \
 	-workflow.variable=output_qcml_file,${sample_id}.qcml,String \
-	-workflow.variable=output_featurexml_file,${sample_id}.featureXML,String \
-	-workflow.variable=output_idxml_file,${sample_id}.idXML,String
+	-workflow.variable=output_featurexml_file,output.featureXML,String \
+	-workflow.variable=output_idxml_file,output.idXML,String   
 	"""
 }
 
@@ -145,13 +162,15 @@ process mean_it {
 	set sample_id, file(mzML_file), file(featureXML_file) from files_for_second_step
     file(workflowfile) from secondStepWF
 
-
+    output:
+	set sample_id, file("${sample_id}_ident_pep.csv") into mean_it_ident_pep_files
 
    
    """
-	knime --launcher.suppressErrors -nosplash -application org.knime.product.KNIME_BATCH_APPLICATION\
+	knime --launcher.suppressErrors -nosplash -application org.knime.product.KNIME_BATCH_APPLICATION \
 	-reset -nosave -workflowFile="${workflowfile}" \
 	-workflow.variable=input_featurexml_file,${featureXML_file},String \
-	-workflow.variable=input_mzml_file,${mzML_file},String
-   """
+	-workflow.variable=input_mzml_file,file.ok.mzML,String
+    -workflow.variable=output_csv_file,${sample_id}_ident_pep.csv,String
+	"""
 }
