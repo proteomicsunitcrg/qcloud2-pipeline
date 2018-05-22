@@ -4,10 +4,12 @@ STEP 1
 
 Clean mzML
 
-Description: given a mzML, removes the string xmlns="http://psi.hupo.org/ms/mzml" in both 'indexedmzML' and 'mzML' tags inside the mzML file.  
+Description: given a mzML, removes the string xmlns="http://psi.hupo.org/ms/mzml" in both 'indexedmzML' and 'mzML' tags inside the mzML file. Also extracts an attribute from the mzML file (startTimeStamp) to be stored in a JSON file (fileinfo.json). 
 
 ```
 sed -i 's@xmlns="http://psi.hupo.org/ms/mzml"@@g' /path/to/1804/180308_Q_QC1X_01_01.mzML
+xmllint --xpath 'string(/indexedmzML/mzML/run/@startTimeStamp)' /users/pr/rolivella/mydata/mzml/180308_Q_QC1X_01_01_WO_xmlns.mzML
+echo '{"startTimeStamp": $output_from_xmllint}' > fileinfo.json
 ```
 
 STEP 2
