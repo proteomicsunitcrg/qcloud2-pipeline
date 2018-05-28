@@ -1,4 +1,5 @@
 .nextflow*
+log*
 work
 output*
 .Dockerfile.swp

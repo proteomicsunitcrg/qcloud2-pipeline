@@ -113,7 +113,7 @@ process correctMzl {
  	set sample_id, file(mzML_file) from (mzmlfiles_for_correction)
  
     output:
-	set sample_id, file("${sample_id}.ok.mzML") into corrected_mzmlfiles
+	set sample_id, file("${sample_id}.ok.mzML") into corrected_mzmlfiles_for_second_step
 	set sample_id, file("${sample_id}.mzML") into mzmlfiles_for_first_step
 
 
@@ -140,7 +140,7 @@ process shotgun_bsa {
 
     output:
 	set sample_id, file("${sample_id}.qcml") into qcmlfiles
-	set sample_id, file("${mzML_file}"), file("${sample_id}.featureXML") into files_for_second_step
+	set sample_id, file("${sample_id}.featureXML") into featureXMLfiles_for_second_step
 	set sample_id, file("${sample_id}.idXML") into idXMLfiles
 
    """   
@@ -155,26 +155,24 @@ process shotgun_bsa {
 
 /*
  * Step 3. Run Second step 
-
+*/
 process mean_it {
 	publishDir mean_it_output
 
    tag { sample_id }
    
     input:
-	set sample_id, file(mzML_file), file(featureXML_file) from files_for_second_step
+	set sample_id, file(mzML_file), file(featureXML_file) from corrected_mzmlfiles_for_second_step.combine(featureXMLfiles_for_second_step, by: 0)
     file(workflowfile) from secondStepWF
 
     output:
 	set sample_id, file("${sample_id}_ident_pep.csv") into mean_it_ident_pep_files
 
-   
    """
 	knime --launcher.suppressErrors -nosplash -application org.knime.product.KNIME_BATCH_APPLICATION \
 	-reset -nosave -workflowFile="${workflowfile}" \
 	-workflow.variable=input_featurexml_file,${featureXML_file},String \
-	-workflow.variable=input_mzml_file,file.ok.mzML,String
+	-workflow.variable=input_mzml_file,${mzML_file},String
     -workflow.variable=output_csv_file,${sample_id}_ident_pep.csv,String
 	"""
 }
-*/
