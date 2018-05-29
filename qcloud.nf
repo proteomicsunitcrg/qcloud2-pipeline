@@ -30,6 +30,7 @@ log.info "BIOCORE@CRG microRNASeq - N F  ~  version ${version}"
 log.info "========================================"
 log.info "id (internal id) 					: ${params.id}"
 log.info "mzlfiles (input files) 			: ${params.mzlfiles}"
+log.info "rawfiles (input files) 		    : ${params.rawfiles}"
 log.info "qconfig (config file) 			: ${params.qconfig}"
 log.info "fasta_tab (tsv file)				: ${params.fasta_tab}"
 log.info "email for notification 			: ${params.email}"
@@ -49,25 +50,6 @@ blastdb_folder		= "$baseDir/blastdb"
 fastaconfig = file(params.fasta_tab)
 if( !fastaconfig.exists() )  { error "Cannot find any fasta tab file!!!"}
 
-/*
-* Read the config file and get genome and workflow information
-*/
-genome = ""
-qconfig = file(params.qconfig)
-if( !qconfig.exists() )  { error "Cannot find any qconfig tab file!!!"}
-qconfig.readLines().each { 
-    list = it.split("\t")
-    internal_code = list[0]
-	if (internal_code == "${params.id}") {
-	    genome		 	 = list[1]
-   		workflow_type	 = list[2]
-    }
-}
-if (genome == "") {
-	 exit 1,  "ERROR ~ Unknown internal code ${internal_code}!! Please specify a valid one\n";
-} else {
-	print "** Analyzing ${internal_code}. Genome: ${genome}. WorkFlow: ${workflow_type}**\n"
-}
 
 /*
 * check for workflow existence
@@ -91,10 +73,22 @@ if( !secondStepWF.exists() )  { error "Cannot find any module_parameter_tic_sum.
 shotgun_output		= "output_shotgun"
 mean_it_output		= "output_mean_it"
 
+/*
+ * Create a channel for raw files 
+ */
+Channel
+   	.fromFilePairs( params.rawfiles, size: 1)                
+   	.ifEmpty { error "Cannot find any file matching: ${params.rawfiles}" }
+    .set { rawfiles_for_correction }
+
+/*
+ * Create a channel for mzlfiles files; Temporary for testing purposes only
+ */
 Channel
    	.fromFilePairs( params.mzlfiles, size: 1)                                             
    	.ifEmpty { error "Cannot find any file matching: ${params.mzlfiles}" }
     .set { mzmlfiles_for_correction }    
+
 
 /*
  * Create a channel for fasta files description
@@ -112,10 +106,29 @@ Channel
     }
     .set{ fasta_desc }
 
+/*
+* Read the config file and get genome and workflow information
+*/
+genome = ""
+qconfig = file(params.qconfig)
+if( !qconfig.exists() )  { error "Cannot find any qconfig tab file!!!"}
+qconfig.readLines().each { 
+    list = it.split("\t")
+    internal_code = list[0]
+	if (internal_code == "${params.id}") {
+	    genome		 	 = list[1]
+   		workflow_type	 = list[2]
+    }
+}
+if (genome == "") {
+	 exit 1,  "ERROR ~ Unknown internal code ${internal_code}!! Please specify a valid one\n";
+} else {
+	print "** Analyzing ${params.id}. Genome: ${genome}. WorkFlow: ${workflow_type}**\n"
+}
 
 
 /*
- * Step 1. Run makeblastdb on fasta data
+ * Run makeblastdb on fasta data
 */
 process makeblastdb {
 	publishDir	blastdb_folder
@@ -135,7 +148,7 @@ process makeblastdb {
 }
 
 /*
- * Step 0. Run batch correction on mzl and eventually unzip the input file
+ * Run batch correction on mzl and eventually unzip the input file
  * We remove the string xmlns="http://psi.hupo.org/ms/mzml" since it can causes problem with some executions
 */
 process correctMzl {
@@ -159,8 +172,9 @@ process correctMzl {
 
 
 /*
- * Step 2. Run FirstStep on raw data. 
+ * Run FirstStep on raw data. 
  * Choose blast_db and fasta file depending on species
+ * choose genome depending on QC code in the file name // description etc .
 */
 if (workflow_type == "shotgun") {
 
@@ -180,15 +194,17 @@ if (workflow_type == "shotgun") {
 		set sample_id, file("${sample_id}.featureXML") into featureXMLfiles_for_second_step
 		set sample_id, file("${sample_id}.idXML") into idXMLfiles
 
-	   """   
-		knime --launcher.suppressErrors -nosplash -application org.knime.product.KNIME_BATCH_APPLICATION -reset -nosave \
+	   """
+	   export _JAVA_OPTIONS='-Djava.awt.headless=true'
+
+		knime  --launcher.suppressErrors -nosplash -application org.knime.product.KNIME_BATCH_APPLICATION -reset -nosave \
 		-workflowFile=${workflowfile} \
 		-workflow.variable=input_mzml_file,${mzML_file},String \
 		-workflow.variable=output_qcml_file,${sample_id}.qcml,String \
 		-workflow.variable=output_featurexml_file,${sample_id}.featureXML,String \
 		-workflow.variable=output_idxml_file,${sample_id}.idXML,String \
 		-workflow.variable=input_fasta_file,${fasta_file},String \
-		-workflow.variable=input_fasta_psq_file,${fasta_file}.psq,String
+		-workflow.variable=input_fasta_psq_file,${fasta_file}.psq,String \
 	   """
 	}
 } else if (workflow_type == "srm") {
