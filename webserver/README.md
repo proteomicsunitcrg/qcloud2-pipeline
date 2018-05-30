@@ -13,3 +13,5 @@ Links and references
     composer install
 
 
+* Configuration with Apache (for Windows): https://www.howtoforge.com/tutorial/install-laravel-on-ubuntu-for-apache/
+
