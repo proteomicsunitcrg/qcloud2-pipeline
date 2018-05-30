@@ -6,7 +6,7 @@ Links and references
 
 * XAMPP: https://www.apachefriends.org
 * WebDAV, for data upload: http://sabre.io/
-
+* Lumen, for basic REST API framework: https://lumen.laravel.com/
 
 ### Install dependencies
 
