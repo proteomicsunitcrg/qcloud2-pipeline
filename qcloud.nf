@@ -181,6 +181,8 @@ if (workflow_type == "shotgun") {
 	print "\n$genome\t$workflow_type\n"
 	process run_shotgun {
 	   publishDir shotgun_output
+        errorStrategy 'retry'
+    maxRetries 10
 
 	   tag { sample_id }
 	
