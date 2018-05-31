@@ -87,8 +87,8 @@ Channel
 Channel
    	.fromFilePairs( params.mzlfiles, size: 1)                                             
    	.ifEmpty { error "Cannot find any file matching: ${params.mzlfiles}" }
-    .set { mzmlfiles_for_correction }    
-
+    .into { mzmlfiles_for_correction; mzmlfiles_for_info}    
+ 
 
 /*
  * Create a channel for fasta files description
@@ -104,27 +104,24 @@ Channel
 		fasta_path = file("${fasta_folder}/${fasta_file_name}")
 	    [genome_id, fasta_file_name, internal_db, fasta_path]
     }
-    .set{ fasta_desc }
+    .into{ fasta_desc; blastdb_desc }
 
 /*
 * Read the config file and get genome and workflow information
 */
-genome = ""
 qconfig = file(params.qconfig)
 if( !qconfig.exists() )  { error "Cannot find any qconfig tab file!!!"}
-qconfig.readLines().each { 
-    list = it.split("\t")
+
+Channel
+    .from(qconfig.readLines())
+    .map { line ->
+    list = line.split("\t")
     internal_code = list[0]
-	if (internal_code == "${params.id}") {
-	    genome		 	 = list[1]
-   		workflow_type	 = list[2]
-    }
-}
-if (genome == "") {
-	 exit 1,  "ERROR ~ Unknown internal code ${internal_code}!! Please specify a valid one\n";
-} else {
-	print "** Analyzing ${params.id}. Genome: ${genome}. WorkFlow: ${workflow_type}**\n"
-}
+	genome		 	 = list[1]
+   	workflow_type	 = list[2]
+ 	[internal_code, genome, workflow_type]
+  	}
+	.set {qconfig_desc}
 
 
 /*
@@ -147,10 +144,12 @@ process makeblastdb {
     """
 }
 
+
 /*
  * Run batch correction on mzl and eventually unzip the input file
  * We remove the string xmlns="http://psi.hupo.org/ms/mzml" since it can causes problem with some executions
 */
+
 process correctMzl {
 
    tag { sample_id }
@@ -170,36 +169,45 @@ process correctMzl {
    """
 }
 
+input_pipe_withcode = mzmlfiles_for_first_step.map{
+  internal_id, file -> [internal_id.split('_')[0], internal_id, file]
+}
+
+input_pipe_withcode_reordered = input_pipe_withcode.combine(qconfig_desc,by: 0).map{
+  genome, sample_id, file, internal_id, analysis -> [internal_id, sample_id, file, genome, analysis]
+}
+
+input_pipe_complete_first_step = input_pipe_withcode_reordered.combine(blastdbs, by: 0)
 
 /*
  * Run FirstStep on raw data. 
  * Choose blast_db and fasta file depending on species
  * choose genome depending on QC code in the file name // description etc .
+	   containerOptions "--contain -B $HOME"
 */
-if (workflow_type == "shotgun") {
 
-	print "\n$genome\t$workflow_type\n"
-	process run_shotgun {
+
+process run_shotgun {
 	   publishDir shotgun_output
-        errorStrategy 'retry'
-    maxRetries 10
-
+	   
 	   tag { sample_id }
 	
 		input:
-		set sample_id, file(mzML_file) from (mzmlfiles_for_first_step)
+		set genome_id, sample_id, file(mzML_file), internal_code, analysis_type, fasta_file, file ("*") from input_pipe_complete_first_step
 		file(workflowfile) from firstStepWF
-		set genome_id, fasta_file, file ("*") from blastdbs.filter { /"${genome}"/  }
 		
+		when:
+		analysis_type == 'shotgun'
+
 		output:
 		set sample_id, file("${sample_id}.qcml") into qcmlfiles
 		set sample_id, file("${sample_id}.featureXML") into featureXMLfiles_for_second_step
 		set sample_id, file("${sample_id}.idXML") into idXMLfiles
 
 	   """
-	   export _JAVA_OPTIONS='-Djava.awt.headless=true'
-
-		knime  --launcher.suppressErrors -nosplash -application org.knime.product.KNIME_BATCH_APPLICATION -reset -nosave \
+	   export _JAVA_OPTIONS=-Djava.io.tmpdir=\$PWD
+	   
+		knime  -clean -consoleLog --launcher.suppressErrors -nosplash -application org.knime.product.KNIME_BATCH_APPLICATION -reset -nosave \
 		-workflowFile=${workflowfile} \
 		-workflow.variable=input_mzml_file,${mzML_file},String \
 		-workflow.variable=output_qcml_file,${sample_id}.qcml,String \
@@ -208,9 +216,6 @@ if (workflow_type == "shotgun") {
 		-workflow.variable=input_fasta_file,${fasta_file},String \
 		-workflow.variable=input_fasta_psq_file,${fasta_file}.psq,String \
 	   """
-	}
-} else if (workflow_type == "srm") {
-
 }
 
 
