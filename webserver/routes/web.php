@@ -14,3 +14,8 @@
 $router->get('/', function () use ($router) {
     return $router->app->version();
 });
+
+$router->get('/env', function () use ($router) {
+    return json_encode( env('APP_TIMEZONE') );
+});
+
