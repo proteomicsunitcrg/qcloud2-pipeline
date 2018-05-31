@@ -11,8 +11,15 @@
 |
 */
 
-$router->get('/', function () use ($router) {
-    return $router->app->version();
+$router->get('/', function(\Illuminate\Http\Request $request){
+
+    if ( $request->has('input') ) {
+        // Processing input
+        return $request->input('input');
+    } else {
+        return "Nothing here!";
+    }
+
 });
 
 $router->get('/env', function () use ($router) {
