@@ -26,7 +26,7 @@ params.resume          = false
 
 version = 2.0
 
-log.info "BIOCORE@CRG microRNASeq - N F  ~  version ${version}"
+log.info "BIOCORE@CRG Qcloud - N F  ~  version ${version}"
 log.info "========================================"
 log.info "id (internal id) 					: ${params.id}"
 log.info "mzlfiles (input files) 			: ${params.mzlfiles}"
