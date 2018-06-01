@@ -6,7 +6,7 @@
  */
 
 /* 
- * Micro RNASeq pipeline script for Bioinformatics Core @ CRG
+ * Qcloud pipeline by Bioinformatics Core & Proteomics Core @ CRG
  *
  * @authors
  * Luca Cozzuto <lucacozzuto@gmail.com>
@@ -188,8 +188,7 @@ input_pipe_complete_first_step = input_pipe_withcode_reordered.combine(blastdbs,
 
 
 process run_shotgun {
-	   publishDir shotgun_output
-	   
+	   publishDir shotgun_output	   
 	   tag { sample_id }
 	
 		input:
@@ -204,10 +203,9 @@ process run_shotgun {
 		set sample_id, file("${sample_id}.featureXML") into featureXMLfiles_for_second_step
 		set sample_id, file("${sample_id}.idXML") into idXMLfiles
 
+		
 	   """
-	   export _JAVA_OPTIONS=-Djava.io.tmpdir=\$PWD
-	   
-		knime  -clean -consoleLog --launcher.suppressErrors -nosplash -application org.knime.product.KNIME_BATCH_APPLICATION -reset -nosave \
+		knime -data \$PWD -clean -consoleLog --launcher.suppressErrors -nosplash -application org.knime.product.KNIME_BATCH_APPLICATION -reset -nosave \
 		-workflowFile=${workflowfile} \
 		-workflow.variable=input_mzml_file,${mzML_file},String \
 		-workflow.variable=output_qcml_file,${sample_id}.qcml,String \
@@ -215,6 +213,7 @@ process run_shotgun {
 		-workflow.variable=output_idxml_file,${sample_id}.idXML,String \
 		-workflow.variable=input_fasta_file,${fasta_file},String \
 		-workflow.variable=input_fasta_psq_file,${fasta_file}.psq,String \
+    	-vmArgs -Xmx${task.memory.mega-5000}m -Duser.home=\$PWD 	
 	   """
 }
 
