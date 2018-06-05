@@ -29,7 +29,7 @@ $router->get('/', function(\Illuminate\Http\Request $request){
             $return = proc_close($process);
             
             $outcome{"return"} = $return;
-            $outcome{"output"} = $outputfile;
+            $outcome{"output"} = $outputfile."mzML";
             
             return response()->json( $outcome );
         
