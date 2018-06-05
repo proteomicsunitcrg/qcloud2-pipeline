@@ -6,7 +6,8 @@ use Illuminate\Http\Response;
 $router->get('/', function(\Illuminate\Http\Request $request){
 
     $outcome = array();
-    
+    $outcome{"input"} = null;
+
     if ( $request->has('input') ) {
         // Processing input
         $inputfile = $request->input('input');
@@ -43,7 +44,7 @@ $router->get('/', function(\Illuminate\Http\Request $request){
         
     } else {
 
-        $outcome{"return"} = 0;
+        $outcome{"return"} = -1;
         $outcome{"output"} = null;
         
         return response()->json( $outcome );

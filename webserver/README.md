@@ -98,11 +98,11 @@ Links and references
 
 #### JSON output
 
-* Return must be 1
+* Return must not be -1
 
         {
           "input": "180528_QC01.raw",
-          "return": 1,
+          "return": 0,
           "output": "180528_QC01.mzML"
         }
 
