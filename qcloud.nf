@@ -74,22 +74,20 @@ shotgun_output		= "output_shotgun"
 mean_it_output		= "output_mean_it"
 
 /*
- * Create a channel for raw files 
- */
-Channel
-   	.fromFilePairs( params.rawfiles, size: 1)                
-   	.ifEmpty { error "Cannot find any file matching: ${params.rawfiles}" }
-    .set { rawfiles_for_correction }
-
-/*
  * Create a channel for mzlfiles files; Temporary for testing purposes only
  */
 Channel
-   	.fromFilePairs( params.mzlfiles, size: 1)                                             
+   	.watchPath( params.mzlfiles )             
    	.ifEmpty { error "Cannot find any file matching: ${params.mzlfiles}" }
+   	.map { 
+        file = it
+        id = it.getName()
+        ext = params.mzlfiles.tokenize( '/' )
+        len = ext[-1].length()
+	    [id[0..-len], file ]
+    }
     .into { mzmlfiles_for_correction; mzmlfiles_for_info}    
  
-
 /*
  * Create a channel for fasta files description
  */
