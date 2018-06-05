@@ -34,7 +34,7 @@ Workflow name: module_parameter_featurexml.knwf</br>
 Extracted parameters: mass accuracy, peak area, fwhm</br>
 
 ```
-knime --launcher.suppressErrors -nosplash -application org.knime.product.KNIME_BATCH_APPLICATION -reset -nosave -workflowFile="/users/pr/rolivella/mydata/knwf/module_parameter_featurexml.knwf" -workflow.variable=input_csv_file,/users/pr/rolivella/mydata/csv/knime_bsa_list.csv,String -workflow.variable=input_featurexml_file,/users/pr/rolivella/mydata/featureXML/180308_Q_QC1X_01_01.featureXML,String -workflow.variable=output_json_file,180308_Q_QC1X_01_01_featurexml,String -workflow.variable=output_json_folder,/users/pr/rolivella/mydata/json,String
+knime --launcher.suppressErrors -nosplash -application org.knime.product.KNIME_BATCH_APPLICATION -reset -nosave -workflowFile="/users/pr/rolivella/mydata/knwf/module_parameter_featurexml.knwf" -workflow.variable=input_csv_file,/users/pr/rolivella/mydata/csv/knime_bsa_list.csv,String -workflow.variable=input_featurexml_file,/users/pr/rolivella/mydata/featureXML/180308_Q_QC1X_01_01.featureXML,String -workflow.variable=output_json_file,180308_Q_QC1X_01_01_featurexml,String -workflow.variable=output_json_folder,/users/pr/nodes/outgoing,String
 ```
 
 Workflow name: module_parameter_it_ms1.knwf</br>
