@@ -5,14 +5,18 @@ use Illuminate\Http\Response;
 
 $router->get('/', function(\Illuminate\Http\Request $request){
 
+    $outcome = array();
+    
     if ( $request->has('input') ) {
         // Processing input
         $inputfile = $request->input('input');
         $inputdir = env('QCLOUD_INPUT_PATH');
         
+        $outcome{"input"} = $inputfile;
+
         if ( file_exists( $inputdir."/".$inputfile ) ) {
             
-            $outputfile = str_replace( $infile, ".raw", "" );
+            $outputfile = str_replace( ".raw", "", $inputfile );
             # Z:\rolivella\mydata\raw\QC1F\180218_Q_QC1F_01_11.raw --32 --mzML --zlib --filter "peakPicking true 1-" --outfile 180218_Q_QC1F_01_11 -o Z:\rolivella\mydata\mzml
             $command =  env('QCLOUD_EXEC_PATH')." ".$inputdir."/".$inputfile." --32 --mzML --zlib --filter \"peakPicking true 1-\" --outfile ".$outputfile." -o ".env('QCLOUD_OUTPUT_PATH');
             $descriptorspec = array(
@@ -24,17 +28,21 @@ $router->get('/', function(\Illuminate\Http\Request $request){
             $process = proc_open( $comnand, $descriptorspec, $pipes );
             $return = proc_close($process);
             
-            $outcome = array();
             $outcome{"return"} = $return;
             $outcome{"output"} = $outputfile;
             
             return response()->json( $outcome );
+        
+        } else {
+            
+            $outcome{"return"} = 400;
+            $outcome{"output"} = null;
+        
         }
         
         
     } else {
 
-        $outcome = array();
         $outcome{"return"} = 0;
         $outcome{"output"} = null;
         
