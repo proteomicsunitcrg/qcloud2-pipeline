@@ -89,23 +89,19 @@ Links and references
 * Return should be a JSON string with information where to retrieve output file.
 
 
-    curl --user 'webdav:xxx' -T '/home/toniher/remote-work/bio/Qcloud/test_data2/180528_QC01.raw' 'http://192.168.101.125/input/180528_QC01.raw'
-    
-    curl -X GET http://192.168.101.125/index.php?input=180528_QC01.raw
-    
-    curl --user 'webdav:xxx' -X GET http://192.168.101.125/output/180528_QC01.mzML > 180528_QC01.mzML
-    
-    curl --user 'webdav:xxx' -X DELETE http://192.168.101.125/output/180528_QC01.mzML
-    
-    curl --user 'webdav:xxx' -X DELETE http://192.168.101.125/input/180528_QC01.raw
+        curl --user 'webdav:xxx' -T '/home/toniher/remote-work/bio/Qcloud/test_data2/180528_QC01.raw' 'http://192.168.101.125/input/180528_QC01.raw'
+        curl -X GET http://192.168.101.125/index.php?input=180528_QC01.raw
+        curl --user 'webdav:xxx' -X GET http://192.168.101.125/output/180528_QC01.mzML > 180528_QC01.mzML
+        curl --user 'webdav:xxx' -X DELETE http://192.168.101.125/output/180528_QC01.mzML
+        curl --user 'webdav:xxx' -X DELETE http://192.168.101.125/input/180528_QC01.raw
 
 
 #### JSON output
 
 * Return must be 1
 
-    {
-      "input": "180528_QC01.raw",
-      "return": 1,
-      "output": "180528_QC01.mzML"
-    }
+        {
+          "input": "180528_QC01.raw",
+          "return": 1,
+          "output": "180528_QC01.mzML"
+        }
