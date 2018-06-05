@@ -88,11 +88,15 @@ Links and references
 * If everything OK, webserver will generate file in another WebDAV folder.
 * Return should be a JSON string with information where to retrieve output file.
 
-curl -T '/path/to/local/myfile.txt' 'http://webdav/input/'
-curl -X GET http://webdav/index.php?input=myfile.txt
-curl -X GET http://webdav/output/myfile.txt
 
-optional: curl -X DELETE http://webdav/output/myfile.txt
+    curl -T '/path/to/local/myfile.txt' 'http://webdav/input/'
+    curl -X GET http://webdav/index.php?input=myfile.txt
+    curl -X GET http://webdav/output/myfile.txt
+
+
+optional: 
+
+    curl -X DELETE http://webdav/output/myfile.txt
 
 * Extras: minimal authorization to be added...
 
