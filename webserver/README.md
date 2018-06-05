@@ -105,3 +105,10 @@ Links and references
           "return": 1,
           "output": "180528_QC01.mzML"
         }
+
+#### Piping into workflow
+
+curl -X GET http://192.168.101.125/index.php?input=180528_QC01.raw | jq '.return'
+
+* Reference: https://medium.com/how-tos-for-coders/https-medium-com-how-tos-for-coders-parse-json-data-using-jq-and-curl-from-command-line-5aa8a05cd79b
+
