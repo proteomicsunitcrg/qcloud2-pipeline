@@ -17,32 +17,15 @@ Links and references
 
 ### XAMPP Apache excerpt configuration
 
-    DocumentRoot "C:/www"
-    <Directory "C:/www">
-        #
-        # Possible values for the Options directive are "None", "All",
-        # or any combination of:
-        #   Indexes Includes FollowSymLinks SymLinksifOwnerMatch ExecCGI MultiViews
-        #
-        # Note that "MultiViews" must be named *explicitly* --- "Options All"
-        # doesn't give it to you.
-        #
-        # The Options directive is both complicated and important.  Please see
-        # http://httpd.apache.org/docs/2.4/mod/core.html#options
-        # for more information.
-        #
+    DocumentRoot "C:/www/webserver/public"
+    <Directory "C:/www/webserver/public">
+
+        DirectoryIndex index.php
+
         Options Indexes FollowSymLinks Includes ExecCGI
 
-        #
-        # AllowOverride controls what directives may be placed in .htaccess files.
-        # It can be "All", "None", or any combination of the keywords:
-        #   AllowOverride FileInfo AuthConfig Limit
-        #
         AllowOverride All
 
-        #
-        # Controls who can get stuff from this server.
-        #
         Require all granted
     </Directory>
 
@@ -52,6 +35,7 @@ Links and references
 
     Alias /input "C:\www\input"
     Alias /output "C:\www\output"
+    Alias /error "C:\www\error"
 
     <Directory "C:\www\input">
         Dav On
@@ -78,6 +62,15 @@ Links and references
         <LimitExcept GET PROPFIND OPTIONS DELETE>
             Deny from all
         </LimitExcept>
+
+    </Directory>
+
+    <Directory "C:\www\error">
+
+        AuthType Basic
+        AuthName WebDAV
+        AuthUserFile	"C:\xampp\apache\conf\htpasswd\webdav"
+        Require valid-user
 
     </Directory>
 
