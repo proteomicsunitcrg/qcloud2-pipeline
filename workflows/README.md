@@ -31,10 +31,16 @@ sed -i 's@xmlns="http://psi.hupo.org/ms/mzml"@@g' /path/to/1804/180308_Q_QC1X_01
 STEP 4
 
 Workflow name: module_parameter_featurexml.knwf</br>
-Extracted parameters: mass accuracy, peak area, fwhm</br>
+Extracted parameters: mass accuracy, peak area, fwhm</br></br>
+
+input_csv_file, list of peptides for QC01 and QC02</br>
+input_featurexml_file, is the .featureXML from the output of module_workflow_shotgun</br>
+input_sample_type, QC01 or QC02</br>
+output_json_file, output JSON filename</br>
+output_json_folder, output JSON folder</br></br>
 
 ```
-knime --launcher.suppressErrors -nosplash -application org.knime.product.KNIME_BATCH_APPLICATION -reset -nosave -workflowFile="/users/pr/rolivella/mydata/knwf/module_parameter_featurexml.knwf" -workflow.variable=input_csv_file,/users/pr/rolivella/mydata/csv/knime_bsa_list.csv,String -workflow.variable=input_featurexml_file,/users/pr/rolivella/mydata/featureXML/180308_Q_QC1X_01_01.featureXML,String -workflow.variable=output_json_file,180308_Q_QC1X_01_01_featurexml,String -workflow.variable=output_json_folder,/users/pr/nodes/outgoing,String
+knime --launcher.suppressErrors -nosplash -application org.knime.product.KNIME_BATCH_APPLICATION -reset -nosave -workflowFile="/users/pr/rolivella/mydata/knwf/module_parameter_featurexml.knwf" -workflow.variable=input_csv_file,/users/pr/rolivella/mydata/csv/knime_peptides_final.csv,String -workflow.variable=input_featurexml_file,/users/pr/rolivella/mydata/featureXML/180308_Q_QC1X_01_01.featureXML,String -workflow.variable=output_json_file,180308_Q_QC1X_01_01_featurexml,String -workflow.variable=output_json_folder,/users/pr/nodes/outgoing,String -workflow.variable=input_sample_type,QC01,String
 ```
 
 Workflow name: module_parameter_it_ms1.knwf</br>
