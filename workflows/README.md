@@ -44,5 +44,5 @@ output_json_folder, output JSON folder</br></br>
 
 ```
 $cvqc='QC_1001844'
-knime --launcher.suppressErrors -nosplash -application org.knime.product.KNIME_BATCH_APPLICATION -reset -nosave -workflowFile="/users/pr/rolivella/mydata/knwf/module_parameter_featurexml.knwf" -workflow.variable=input_csv_file,/users/pr/rolivella/mydata/csv/knime_peptides_final.csv,String -workflow.variable=input_featurexml_file,/users/pr/rolivella/mydata/featureXML/180308_Q_QC1X_01_01.featureXML,String -workflow.variable=output_json_file,QC_1001844_180308_Q_QC1X_01_01_QC_1001844,String -workflow.variable=output_json_folder,/users/pr/nodes/outgoing,String -workflow.variable=input_sample_type,QC01,String
+knime --launcher.suppressErrors -nosplash -application org.knime.product.KNIME_BATCH_APPLICATION -reset -nosave -workflowFile="/users/pr/rolivella/mydata/knwf/module_parameter_featurexml.knwf" -workflow.variable=input_csv_file,/users/pr/rolivella/mydata/csv/knime_peptides_final.csv,String -workflow.variable=input_featurexml_file,/users/pr/rolivella/mydata/featureXML/180308_Q_QC1X_01_01.featureXML,String -workflow.variable=output_json_file,QC_1001844_180308_Q_QC1X_01_01'$cvqc,String -workflow.variable=output_json_folder,/users/pr/nodes/outgoing,String -workflow.variable=input_sample_type,QC01,String
 ```
