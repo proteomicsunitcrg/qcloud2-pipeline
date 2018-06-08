@@ -16,7 +16,7 @@ echo $json_body > QCPIPELINE_STEP1_$filename.json
 curl -i -H 'Accept: application/json' -H 'Content-Type:application/json' -X POST --data '$json_body' 'http://172.17.151.92:8080/api/file/add/QC:0000005'
 
 ```
-</br>  
+ 
 ## STEP 2</br> </br> 
 
 Proteomics workflow: </br> </br> 
