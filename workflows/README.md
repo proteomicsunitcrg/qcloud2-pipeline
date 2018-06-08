@@ -8,13 +8,18 @@ Description: given a mzML, removes the string xmlns="http://psi.hupo.org/ms/mzml
 
 ```
 sed -i 's@xmlns="http://psi.hupo.org/ms/mzml"@@g' /path/to/1804/180308_Q_QC1X_01_01.mzML
+```
 xmllint --xpath 'string(/indexedmzML/mzML/run/@startTimeStamp)' /users/pr/rolivella/mydata/mzml/180308_Q_QC1X_01_01_WO_xmlns.mzML
+```
 cksum $filename
+```
 $lumos_apikey='a79c4765-aeaf-488e-97fd-ee4479b0b261'
+```
 $json_body='{"labSystem": {"apiKey": "$lumos_apikey"},"creationDate": "$output_from_xmllint","filename": "$filename","checksum":"$cheksum"}'
+```
 echo $json_body > QCPIPELINE_STEP1_$filename.json
+```
 curl -i -H 'Accept: application/json' -H 'Content-Type:application/json' -X POST --data '$json_body' 'http://172.17.151.92:8080/api/file/add/QC:0000005'
-
 ```
  
 ## STEP 2</br> </br> 
@@ -32,7 +37,9 @@ Clean output featureXML, qcML, idXML</br> </br>
 
 ```
 sed -i 's@xmlns="http://psi.hupo.org/ms/mzml"@@g' /path/to/1804/180308_Q_QC1X_01_01.mzML
+```
 sed -i 's@xmlns="http://psi.hupo.org/ms/mzml"@@g' /path/to/1804/180308_Q_QC1X_01_01.qcML
+```
 sed -i 's@xmlns="http://psi.hupo.org/ms/mzml"@@g' /path/to/1804/180308_Q_QC1X_01_01.featureXML
 ```
 
@@ -53,6 +60,8 @@ output_json_folder, output JSON folder</br></br>
 
 ```
 $cvqc='QC_1001844'
+```
 knime --launcher.suppressErrors -nosplash -application org.knime.product.KNIME_BATCH_APPLICATION -reset -nosave -workflowFile="/users/pr/rolivella/mydata/knwf/module_parameter_'$cvqc'.knwf" -workflow.variable=input_csv_file,/users/pr/rolivella/mydata/csv/knime_peptides_final.csv,String -workflow.variable=input_featurexml_file,/users/pr/rolivella/mydata/featureXML/180308_Q_QC1X_01_01.featureXML,String -workflow.variable=output_json_file,$cvqc'180308_Q_QC1X_01_01',String -workflow.variable=output_json_folder,/users/pr/nodes/outgoing,String -workflow.variable=input_sample_type,QC01,String
+```
 curl -i -H 'Accept: application/json' -H 'Content-Type:application/json' -X POST --data '$json_body' 'http://172.17.151.92:8080/api/file/add/QC:0000005'
 ```
