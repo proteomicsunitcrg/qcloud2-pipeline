@@ -20,7 +20,7 @@ $creation_date = xmllint --xpath 'string(/indexedmzML/mzML/run/@startTimeStamp)'
 ```
 
 ```
-$cheksum = md5sum  $file_path | awk '{ print $1 }'
+$checksum = md5sum  $file_path | awk '{ print $1 }'
 ```
 
 ```
