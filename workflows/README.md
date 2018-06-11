@@ -7,19 +7,20 @@ Clean and send file info to the QCloud server</br> </br>
 Description: given a mzML, removes the string xmlns="http://psi.hupo.org/ms/mzml" in both 'indexedmzML' and 'mzML' tags inside the mzML file. Also extracts an attribute from the mzML file (startTimeStamp), the checksum of the file and the instrument API key. Later all this information is sent in JSON format to the server.</br> </br>   
 
 ```
-$filename = 180308_Q_QC1X_01_01.mzML
+$file_path = /users/pr/nodes/incoming/1806/180531_Q_QC1F_01_02.mzML
+$filename = 180531_Q_QC1F_01_02
 ```
 
 ```
-sed -i 's@xmlns="http://psi.hupo.org/ms/mzml"@@g' /path/to/mzML/1806/$filename
+sed -i 's@xmlns="http://psi.hupo.org/ms/mzml"@@g' $file_path
 ```
 
 ```
-$creation_date = xmllint --xpath 'string(/indexedmzML/mzML/run/@startTimeStamp)' /path/to/mzML/1806/$filename
+$creation_date = xmllint --xpath 'string(/indexedmzML/mzML/run/@startTimeStamp)' $file_path 
 ```
 
 ```
-md5sum  /path/to/mzML/1806/$filename | awk '{ print $1 }'
+md5sum  $file_path | awk '{ print $1 }'
 ```
 
 ```
