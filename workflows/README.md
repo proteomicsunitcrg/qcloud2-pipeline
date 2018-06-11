@@ -7,15 +7,15 @@ Clean and send file info to the QCloud server</br> </br>
 Description: given a mzML, removes the string xmlns="http://psi.hupo.org/ms/mzml" in both 'indexedmzML' and 'mzML' tags inside the mzML file. Also extracts an attribute from the mzML file (startTimeStamp), the checksum of the file and the instrument API key. Later all this information is sent in JSON format to the server.</br> </br>   
 
 ```
-sed -i 's@xmlns="http://psi.hupo.org/ms/mzml"@@g' /path/to/1804/180308_Q_QC1X_01_01.mzML
+$cleaned_mzml = sed -i 's@xmlns="http://psi.hupo.org/ms/mzml"@@g' /path/to/1804/180308_Q_QC1X_01_01.mzML
 ```
 
 ```
-xmllint --xpath 'string(/indexedmzML/mzML/run/@startTimeStamp)' /users/pr/rolivella/mydata/mzml/180308_Q_QC1X_01_01_WO_xmlns.mzML
+$creation_date = xmllint --xpath 'string(/indexedmzML/mzML/run/@startTimeStamp)' /users/pr/rolivella/mydata/mzml/$cleaned_mzml
 ```
 
 ```
-cksum $filename
+$checksum = cksum $filename
 ```
 
 ```
@@ -23,11 +23,11 @@ $lumos_apikey='a79c4765-aeaf-488e-97fd-ee4479b0b261'
 ```
 
 ```
-$json_body='{"labSystem": {"apiKey": "$lumos_apikey"},"creationDate": "$output_from_xmllint","filename": "$filename","checksum":"$cheksum"}'
+$json_body='{"labSystem": {"apiKey": "$lumos_apikey"},"creationDate": "$creation_date","filename": "$cleaned_mzml","checksum":"$cheksum"}'
 ```
 
 ```
-echo $json_body > QCPIPELINE_STEP1_$filename.json
+echo $json_body > QCPIPELINE_STEP1_$cleaned_mzml.json
 ```
 
 ```
