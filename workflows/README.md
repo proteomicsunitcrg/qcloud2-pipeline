@@ -54,22 +54,6 @@ knime --launcher.suppressErrors -nosplash -application org.knime.product.KNIME_B
 
 ## STEP 3</br> </br> 
 
-Clean output featureXML, qcML, idXML</br> </br> 
-
-```
-sed -i 's@xmlns="http://psi.hupo.org/ms/mzml"@@g' /path/to/1804/180308_Q_QC1X_01_01.mzML
-```
-
-```
-sed -i 's@xmlns="http://psi.hupo.org/ms/mzml"@@g' /path/to/1804/180308_Q_QC1X_01_01.qcML
-```
-
-```
-sed -i 's@xmlns="http://psi.hupo.org/ms/mzml"@@g' /path/to/1804/180308_Q_QC1X_01_01.featureXML
-```
-
-## STEP 4</br> </br> 
-
 In general a KNIME workflow will accept one or more OpenMS files like .mzML, .qcML, etc. depending on the QC parameter to compute. The output must be a JSON file with this filename: QCCVCODENUM_FILENAME.json, for instance QC1001844_180308_Q_QC01_01_01.json. 
 
 ![2018-06-08 10_54_03-qcloud-detailed-overview pptx - powerpoint](https://user-images.githubusercontent.com/1679820/41148872-5489c732-6b0a-11e8-9515-857171236b77.png)
@@ -88,7 +72,7 @@ $cvqc='QC_1001844'
 ```
 
 ```
-knime --launcher.suppressErrors -nosplash -application org.knime.product.KNIME_BATCH_APPLICATION -reset -nosave -workflowFile="/users/pr/rolivella/mydata/knwf/module_parameter_'$cvqc'.knwf" -workflow.variable=input_csv_file,/users/pr/rolivella/mydata/csv/knime_peptides_final.csv,String -workflow.variable=input_featurexml_file,/users/pr/rolivella/mydata/featureXML/180308_Q_QC1X_01_01.featureXML,String -workflow.variable=output_json_file,$cvqc'180308_Q_QC1X_01_01',String -workflow.variable=output_json_folder,/users/pr/nodes/outgoing,String -workflow.variable=input_sample_type,QC01,String
+knime --launcher.suppressErrors -nosplash -application org.knime.product.KNIME_BATCH_APPLICATION -reset -nosave -workflowFile="/users/pr/qcloud/nextflow/workflows/module_parameter_QC_1001844.knwf" -workflow.variable=input_csv_file,/users/pr/qcloud/nextflow/csv/knime_peptides_final.csv,String -workflow.variable=input_featurexml_file,/users/pr/nodes/outgoing/featureXML/1806/180531_Q_QC1F_01_02.featureXML,String -workflow.variable=output_json_file,'QCCV_1001844_180531_Q_QC1F_01_02',String -workflow.variable=output_json_folder,/users/pr/nodes/outgoing/json/1806,String -workflow.variable=input_sample_type,QC01,String
 ```
 
 ```
