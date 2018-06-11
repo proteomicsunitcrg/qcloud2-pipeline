@@ -38,6 +38,10 @@ echo $json_body > /path/to/json/1806/QCPIPELINE_STEP1_$filename.json
 ```
 curl -i -H 'Accept: application/json' -H 'Content-Type:application/json' -X POST --data '$json_body' 'http://172.17.151.92:8080/api/file/add/QC:0000005'
 ```
+For instance:
+```
+curl -i -H 'Accept: application/json' -H 'Content-Type:application/json' -X POST --data '{"labSystem": {"apiKey": "a79c4765-aeaf-488e-97fd-ee4479b0b261"},"creationDate": "2018-05-31T21:45:05Z","filename": "180531_Q_QC1F_01_02","checksum":"a593cea2cd0924f529e3b6d8bdf45664"}'​ 'http://172.17.151.92:8080/api/file/add/QC:0000005'
+ ```
  
 ## STEP 2</br> </br> 
 
