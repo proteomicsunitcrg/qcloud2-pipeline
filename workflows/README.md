@@ -36,11 +36,11 @@ echo $json_body > /path/to/json/1806/QCPIPELINE_STEP1_$filename.json
 ```
 
 ```
-curl -i -H 'Accept: application/json' -H 'Content-Type:application/json' -X POST --data '$json_body' 'http://172.17.151.92:8080/api/file/QC:0000005/'$lumos_apikey
+curl -i -H 'Accept: application/json' -H 'Content-Type:application/json' -X POST --data '$json_body' 'http://172.17.151.92:8080/api/file/QC:0000005/$lumos_apikey
 ```
 For instance:
 ```
-curl -i -H 'Accept: application/json' -H 'Content-Type:application/json' -X POST --data '{"creationDate": "2018-05-31 21:45:05","filename": "180531_Q_QC1F_01_02","checksum":"a593cea2cd0924f529e3b6d8bdf45664"}'​ 'http://172.17.151.92:8080/api/file/QC:0000005/a79c4765-aeaf-488e-97fd-ee4479b0b261'
+curl -i -H 'Accept: application/json' -H 'Content-Type:application/json' -X POST --data '{"creationDate": "2018-05-31 21:45:05","filename": "180531_Q_QC1F_01_02","checksum":"a593cea2cd0924f529e3b6d8bdf45664"}' 'http://172.17.151.92:8080/api/file/QC:0000005/a79c4765-aeaf-488e-97fd-ee4479b0b261'
  ```
  
 ## STEP 2</br> </br> 
