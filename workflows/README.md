@@ -36,7 +36,7 @@ echo $json_body > /path/to/json/1806/QCPIPELINE_STEP1_$filename.json
 ```
 
 ```
-curl -i -H 'Accept: application/json' -H 'Content-Type:application/json' -X POST --data '$json_body' 'http://172.17.151.92:8080/api/file/QC:0000005/$lumos_apikey
+curl -i -H 'Accept: application/json' -H 'Content-Type:application/json' -X POST --data '$json_body' 'http://172.17.151.92:8080/api/file/QC:0000005/$lumos_apikey'
 ```
 For instance:
 ```
