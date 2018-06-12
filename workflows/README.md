@@ -28,7 +28,7 @@ $lumos_apikey='a79c4765-aeaf-488e-97fd-ee4479b0b261'
 ```
 
 ```
-$json_body='{"labSystem": {"apiKey": "$lumos_apikey"},"creationDate": "$creation_date","filename": "$filename","checksum":"$cheksum"}'
+$json_body='{"labSystem": {"creationDate": "$creation_date","filename": "$filename","checksum":"$cheksum"}'
 ```
 
 ```
@@ -36,17 +36,16 @@ echo $json_body > /path/to/json/1806/QCPIPELINE_STEP1_$filename.json
 ```
 
 ```
-curl -i -H 'Accept: application/json' -H 'Content-Type:application/json' -X POST --data '$json_body' 'http://172.17.151.92:8080/api/file/add/QC:0000005'
+curl -i -H 'Accept: application/json' -H 'Content-Type:application/json' -X POST --data '$json_body' 'http://172.17.151.92:8080/api/file/QC:0000005/'$lumos_apikey
 ```
 For instance:
 ```
-curl -i -H 'Accept: application/json' -H 'Content-Type:application/json' -X POST --data '{"labSystem": {"apiKey": "a79c4765-aeaf-488e-97fd-ee4479b0b261"},"creationDate": "2018-05-31T21:45:05Z","filename": "180531_Q_QC1F_01_02","checksum":"a593cea2cd0924f529e3b6d8bdf45664"}'​ 'http://172.17.151.92:8080/api/file/add/QC:0000005'
+curl -i -H 'Accept: application/json' -H 'Content-Type:application/json' -X POST --data '{"creationDate": "2018-05-31 21:45:05","filename": "180531_Q_QC1F_01_02","checksum":"a593cea2cd0924f529e3b6d8bdf45664"}'​ 'http://172.17.151.92:8080/api/file/QC:0000005/a79c4765-aeaf-488e-97fd-ee4479b0b261'
  ```
  
 ## STEP 2</br> </br> 
 
 Proteomics workflow: </br> </br> 
-
 
 ```
 knime --launcher.suppressErrors -nosplash -application org.knime.product.KNIME_BATCH_APPLICATION -reset -nosave -workflowFile="/users/pr/qcloud/nextflow/workflows/module_workflow_shotgun.knwf" -workflow.variable=input_mzml_file,/users/pr/nodes/incoming/1806/180531_Q_QC1F_01_02.mzML,String -workflow.variable=input_fasta_file,/users/pr/qcloud/nextflow/fasta/sp_human_2015_10_contaminants_plus_shuffled.fasta,String -workflow.variable=input_fasta_psq_file,/users/pr/qcloud/nextflow/blastdb/shotgun_hela.fasta.psq,String -workflow.variable=output_featurexml_file,/users/pr/nodes/outgoing/featureXML/1806/180531_Q_QC1F_01_02.featureXML,String -workflow.variable=output_qcml_file,/users/pr/nodes/outgoing/qcML/1806/180531_Q_QC1F_01_02.qcml,String -workflow.variable=output_idxml_file,/users/pr/nodes/outgoing/idXML/1806/180531_Q_QC1F_01_02.idxml,String
