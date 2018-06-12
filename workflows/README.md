@@ -16,7 +16,7 @@ sed -i 's@xmlns="http://psi.hupo.org/ms/mzml"@@g' $file_path
 ```
 
 ```
-$creation_date = xmllint --xpath 'string(/indexedmzML/mzML/run/@startTimeStamp)' $file_path 
+$creation_date = xmllint --xpath 'string(/indexedmzML/mzML/run/@startTimeStamp)' $file_path | sed -e 's@T@ @g' | sed -e 's@Z@@g' 
 ```
 
 ```
