@@ -75,5 +75,5 @@ knime --launcher.suppressErrors -nosplash -application org.knime.product.KNIME_B
 ```
 
 ```
-curl -i -H 'Accept: application/json' -H 'Content-Type:application/json' -X POST --data '$json_body' 'http://172.17.151.92:8080/api/file/add/QC:0000005'
+curl -i -H 'Accept: application/json' -H 'Content-Type:application/json' -X POST --data '$json_body' 'http://172.17.151.92:8080/api/data/peptides/QC:1001844/a593cea2cd0924f529e3b6d8bdf45664'
 ```
