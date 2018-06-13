@@ -2,45 +2,65 @@
 
 ## STEP 1</br></br> 
 
-Clean and send file info to the QCloud server</br> </br> 
+Folder where the data will be collected: 
+```
+/users/pr/nodes/incoming/$YYMM
+```
 
-Description: given a mzML, removes the string xmlns="http://psi.hupo.org/ms/mzml" in both 'indexedmzML' and 'mzML' tags inside the mzML file. Also extracts an attribute from the mzML file (startTimeStamp), the checksum of the file and the instrument API key. Later all this information is sent in JSON format to the server.</br> </br>   
-
+Define file path and its filename: 
 ```
 $file_path = /users/pr/nodes/incoming/1806/180531_Q_QC1F_01_02.mzML
 $filename = 180531_Q_QC1F_01_02
 ```
 
+Remove XML namespace: 
 ```
 sed -i 's@xmlns="http://psi.hupo.org/ms/mzml"@@g' $file_path
 ```
 
+Get mzML run date:
 ```
 $creation_date = xmllint --xpath 'string(/indexedmzML/mzML/run/@startTimeStamp)' $file_path | sed -e 's@T@ @g' | sed -e 's@Z@@g' 
 ```
 
+Get mzML cheksum: 
 ```
 $checksum = md5sum  $file_path | awk '{ print $1 }'
 ```
 
+Define the LS-MS where the data come from (it will be extracted from filename):  
 ```
-$lumos_apikey='a79c4765-aeaf-488e-97fd-ee4479b0b261'
+$lumos_apikey='02656d22-b9d9-43e1-9375-f257b5f9717c'
 ```
 
+Prepare the JSON file where the data will be sent and stored: 
 ```
 $json_body='{"labSystem": {"creationDate": "$creation_date","filename": "$filename","checksum":"$cheksum"}'
 ```
 
+Store the JSON file in the filesystem: 
 ```
-echo $json_body > /path/to/json/1806/QCPIPELINE_STEP1_$filename.json
+echo $json_body > /users/pr/nodes/outgoing/json/1806/QCPIPELINE_STEP1_$filename.json
 ```
 
+Send the JSON file to QCloud database: 
+
+- GET token for authentication (jq commandline JSON processor must be installed): 
+
 ```
-curl -i -H 'Accept: application/json' -H 'Content-Type:application/json' -X POST --data '$json_body' 'http://172.17.151.92:8080/api/file/QC:0000005/$lumos_apikey'
+$token = curl -i -H 'Accept: application/json' -H 'Content-Type:application/json' -X POST --data '{"username": "daniel.mancera@crg.eu","password": "q........7"}' 'http://172.17.151.92:8080/api/auth' | jq -r '.token'
 ```
+
+- POST file metadata in the QCloud database: 
+
+```
+curl -i -H 'Authorization:$token' -H 'Accept: application/json' -H 'Content-Type:application/json' -X POST --data '$json_body' 'http://172.17.151.92:8080/api/file/QC:0000005/$lumos_apikey'
+```
+
 For instance:
+
 ```
-curl -i -H 'Accept: application/json' -H 'Content-Type:application/json' -X POST --data '{"creationDate": "2018-05-31 21:45:05","filename": "180531_Q_QC1F_01_02","checksum":"a593cea2cd0924f529e3b6d8bdf45664"}' 'http://172.17.151.92:8080/api/file/QC:0000005/a79c4765-aeaf-488e-97fd-ee4479b0b261'
+curl -i -H 'Accept: application/json' -H 'Content-Type:application/json' -X POST --data '{"creationDate": "2018-05-31 21:45:05","filename": "180531_Q_QC1F_01_02","checksum":"a593cea2cd0924f529e3b6d8bdf45664"}' 'http://172.17.151.92:8080/api/file/QC:0000005/02656d22-b9d9-43e1-9375-f257b5f9717c'
  ```
  
 ## STEP 2</br> </br> 
