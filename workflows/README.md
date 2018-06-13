@@ -40,7 +40,7 @@ $json_body='{"labSystem": {"creationDate": "$creation_date","filename": "$filena
 
 Store the JSON file in the filesystem: 
 ```
-echo $json_body > /users/pr/nodes/outgoing/json/1806/QCPIPELINE_STEP1_$filename.json
+echo $json_body > /users/pr/nodes/outgoing/JSON/1806/QCPIPELINE_STEP1_$filename.json
 ```
 
 Send the JSON file to QCloud database: 
@@ -57,18 +57,18 @@ $token = curl -i -H 'Accept: application/json' -H 'Content-Type:application/json
 curl -i -H 'Authorization:$token' -H 'Accept: application/json' -H 'Content-Type:application/json' -X POST --data '$json_body' 'http://172.17.151.92:8080/api/file/QC:0000005/$lumos_apikey'
 ```
 
-For instance:
+- For instance:
 
 ```
-curl -i -H 'Accept: application/json' -H 'Content-Type:application/json' -X POST --data '{"creationDate": "2018-05-31 21:45:05","filename": "180531_Q_QC1F_01_02","checksum":"a593cea2cd0924f529e3b6d8bdf45664"}' 'http://172.17.151.92:8080/api/file/QC:0000005/02656d22-b9d9-43e1-9375-f257b5f9717c'
+curl -i -H 'Authorization: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJkYW5pZWwubWFuY2VyYUBjcmcuZXUiLCJhdWRpZW5jZSI6IndlYiIsImNyZWF0ZWQiOjE1Mjg4NzMwODAyNjYsImV4cCI6MTUyOTQ3Nzg4MCwiYXV0aG9yaXRpZXMiOlt7ImF1dGhvcml0eSI6IlJPTEVfVVNFUiJ9LHsiYXV0aG9yaXR5IjoiUk9MRV9NQU5BR0VSIn0seyJhdXRob3JpdHkiOiJST0xFX0FETUlOIn1dfQ.McZK9coRSgOQ7-XxhokBaakQqOh_mE33tprrxOIfMelTY-s5BDRGKSIOYJfGvGzwAAzLzoPm1w32Q5I979hd3w' -H 'Accept: application/json' -H 'Content-Type:application/json' -X POST --data '{"creationDate": "2018-05-31 21:45:05","filename": "180531_Q_QC1F_01_02","checksum":"a593cea2cd0924f529e3b6d8bdf45664"}' 'http://172.17.151.92:8080/api/file/QC:0000005/02656d22-b9d9-43e1-9375-f257b5f9717c'
  ```
  
 ## STEP 2</br> </br> 
 
-Proteomics workflow: </br> </br> 
+Proteomics OpenMS KNIME workflow: </br> </br> 
 
 ```
-knime --launcher.suppressErrors -nosplash -application org.knime.product.KNIME_BATCH_APPLICATION -reset -nosave -workflowFile="/users/pr/qcloud/nextflow/workflows/module_workflow_shotgun.knwf" -workflow.variable=input_mzml_file,/users/pr/nodes/incoming/1806/180531_Q_QC1F_01_02.mzML,String -workflow.variable=input_fasta_file,/users/pr/qcloud/nextflow/fasta/sp_human_2015_10_contaminants_plus_shuffled.fasta,String -workflow.variable=input_fasta_psq_file,/users/pr/qcloud/nextflow/blastdb/shotgun_hela.fasta.psq,String -workflow.variable=output_featurexml_file,/users/pr/nodes/outgoing/featureXML/1806/180531_Q_QC1F_01_02.featureXML,String -workflow.variable=output_qcml_file,/users/pr/nodes/outgoing/qcML/1806/180531_Q_QC1F_01_02.qcml,String -workflow.variable=output_idxml_file,/users/pr/nodes/outgoing/idXML/1806/180531_Q_QC1F_01_02.idxml,String
+knime --launcher.suppressErrors -nosplash -application org.knime.product.KNIME_BATCH_APPLICATION -reset -nosave -workflowFile="/users/pr/qcloud/nextflow/workflows/module_workflow_shotgun.knwf" -workflow.variable=input_mzml_file,/users/pr/nodes/incoming/1806/180531_Q_QC1F_01_02.mzML,String -workflow.variable=input_fasta_file,/users/pr/qcloud/nextflow/fasta/sp_bovine_2015_11_wo_contaminants_shuffled.fasta,String -workflow.variable=input_fasta_psq_file,/users/pr/qcloud/nextflow/blastdb/shotgun_bsa.fasta.psq,String -workflow.variable=output_featurexml_file,/users/pr/nodes/outgoing/featureXML/1806/180531_Q_QC1F_01_02.featureXML,String -workflow.variable=output_qcml_file,/users/pr/nodes/outgoing/qcML/1806/180531_Q_QC1F_01_02.qcml,String -workflow.variable=output_idxml_file,/users/pr/nodes/outgoing/idXML/1806/180531_Q_QC1F_01_02.idxml,String
 ```
 
 ## STEP 3</br> </br> 
@@ -86,14 +86,32 @@ input_sample_type, QC01 or QC02</br>
 output_json_file, output JSON filename</br>
 output_json_folder, output JSON folder</br></br>
 
+Sets the QC parameter and workflow to search: 
+
 ```
 $cvqc='QC_1001844'
 ```
 
-```
-knime --launcher.suppressErrors -nosplash -application org.knime.product.KNIME_BATCH_APPLICATION -reset -nosave -workflowFile="/users/pr/qcloud/nextflow/workflows/module_parameter_QC_1001844.knwf" -workflow.variable=input_csv_file,/users/pr/qcloud/nextflow/csv/knime_peptides_final.csv,String -workflow.variable=input_featurexml_file,/users/pr/nodes/outgoing/featureXML/1806/180531_Q_QC1F_01_02.featureXML,String -workflow.variable=output_json_file,$cvqc_'180531_Q_QC1F_01_02',String -workflow.variable=output_json_folder,/users/pr/nodes/outgoing/json/1806,String -workflow.variable=input_sample_type,QC01,String
-```
+KNIME QC parameter computing module: 
 
 ```
-curl -i -H 'Accept: application/json' -H 'Content-Type:application/json' -X POST --data '$json_body' 'http://172.17.151.92:8080/api/data/peptides/QC:1001844/a593cea2cd0924f529e3b6d8bdf45664'
+knime --launcher.suppressErrors -nosplash -application org.knime.product.KNIME_BATCH_APPLICATION -reset -nosave -workflowFile="/users/pr/qcloud/nextflow/workflows/module_parameter_QC_1001844.knwf" -workflow.variable=input_csv_file,/users/pr/qcloud/nextflow/csv/knime_peptides_final.csv,String -workflow.variable=input_featurexml_file,/users/pr/nodes/outgoing/featureXML/1806/180531_Q_QC1F_01_02.featureXML,String -workflow.variable=output_json_file,$cvqc_'180531_Q_QC1F_01_02',String -workflow.variable=output_json_folder,/users/pr/nodes/outgoing/JSON/1806,String -workflow.variable=input_sample_type,QC01,String
+```
+
+Store the KNIME output file path to a variable: 
+
+```
+$output_param_json_file = '/users/pr/nodes/outgoing/JSON/1806/QC_1001844_180531_Q_QC1F_01_02.json'
+```
+
+Store JSON file to QCloud database: 
+
+```
+curl -i -H 'Authorization: $token' -H 'Accept: application/json' -H 'Content-Type:application/json' -X POST --data '$output_param_json_file' 'http://172.17.151.92:8080/api/data/peptides/QC:1001844/a593cea2cd0924f529e3b6d8bdf45664'
+```
+
+For instance: 
+
+```
+curl -i -H 'Authorization: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJkYW5pZWwubWFuY2VyYUBjcmcuZXUiLCJhdWRpZW5jZSI6IndlYiIsImNyZWF0ZWQiOjE1Mjg4NzMwODAyNjYsImV4cCI6MTUyOTQ3Nzg4MCwiYXV0aG9yaXRpZXMiOlt7ImF1dGhvcml0eSI6IlJPTEVfVVNFUiJ9LHsiYXV0aG9yaXR5IjoiUk9MRV9NQU5BR0VSIn0seyJhdXRob3JpdHkiOiJST0xFX0FETUlOIn1dfQ.McZK9coRSgOQ7-XxhokBaakQqOh_mE33tprrxOIfMelTY-s5BDRGKSIOYJfGvGzwAAzLzoPm1w32Q5I979hd3w' -H 'Accept: application/json' -H 'Content-Type:application/json' -X POST --data '[{"sequence" : "HLVDEPQNLIK","value" : 624275000}, {"sequence" : "LVNELTEFAK","value" : 652085000}, {"sequence" : "YIC(Carbamidomethyl)DNQDTISSK","value" : 467011000}]' 'http://172.17.151.92:8080/api/data/peptides/QC:1001844/a593cea2cd0924f529e3b6d8bdf45664'
 ```
