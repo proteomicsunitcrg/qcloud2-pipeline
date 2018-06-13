@@ -67,12 +67,12 @@ curl -i -H 'Authorization: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJkYW5pZWwubWFuY2VyYUBj
 
 Proteomics OpenMS KNIME workflow: </br> </br> 
 
-input_mzml_file, input mzML file
-input_fasta_file, input FASTA database file (BSA or HeLa)
-input_fasta_psq_file, input FASTA.PSQ database file (BSA or HeLa)
-output_featurexml_file, output featureXML filename and path
-output_qcml_file, output qcXML filename and path
-output_idxml_file, output idXML filename and path
+input_mzml_file, input mzML file</br>
+input_fasta_file, input FASTA database file (BSA or HeLa)</br>
+input_fasta_psq_file, input FASTA.PSQ database file (BSA or HeLa)</br>
+output_featurexml_file, output featureXML filename and path</br>
+output_qcml_file, output qcXML filename and path</br>
+output_idxml_file, output idXML filename and path</br></br>
 
 ```
 knime --launcher.suppressErrors -nosplash -application org.knime.product.KNIME_BATCH_APPLICATION -reset -nosave -workflowFile="/users/pr/qcloud/nextflow/workflows/module_workflow_shotgun.knwf" -workflow.variable=input_mzml_file,/users/pr/nodes/incoming/1806/180531_Q_QC1F_01_02.mzML,String -workflow.variable=input_fasta_file,/users/pr/qcloud/nextflow/fasta/sp_bovine_2015_11_wo_contaminants_shuffled.fasta,String -workflow.variable=input_fasta_psq_file,/users/pr/qcloud/nextflow/blastdb/shotgun_bsa.fasta.psq,String -workflow.variable=output_featurexml_file,/users/pr/nodes/outgoing/featureXML/1806/180531_Q_QC1F_01_02.featureXML,String -workflow.variable=output_qcml_file,/users/pr/nodes/outgoing/qcML/1806/180531_Q_QC1F_01_02.qcml,String -workflow.variable=output_idxml_file,/users/pr/nodes/outgoing/idXML/1806/180531_Q_QC1F_01_02.idxml,String
