@@ -28,8 +28,6 @@ version = 2.0
 
 log.info "BIOCORE@CRG Qcloud - N F  ~  version ${version}"
 log.info "========================================"
-log.info "id (internal id) 					: ${params.id}"
-log.info "mzlfiles (input files) 			: ${params.mzlfiles}"
 log.info "rawfiles (input files) 		    : ${params.rawfiles}"
 log.info "qconfig (config file) 			: ${params.qconfig}"
 log.info "fasta_tab (tsv file)				: ${params.fasta_tab}"
@@ -56,18 +54,14 @@ if( !fastaconfig.exists() )  { error "Cannot find any fasta tab file!!!"}
 */
 firstStepWF     = file("${workflowsFolder}/module_workflow_shotgun.knwf")
 if( !firstStepWF.exists() )  { error "Cannot find any module_workflow_shotgun.knwf file!!!"}
-
-secondStepWF     = file("${workflowsFolder}/module_parameter_featurexml.knwf")
-if( !secondStepWF.exists() )  { error "Cannot find any module_parameter_featurexml.knwf!!!"}
-
-thirdStepWF     = file("${workflowsFolder}/module_parameter_it_ms1.knwf")
-if( !secondStepWF.exists() )  { error "Cannot find any module_parameter_it_ms1.knwf!!!"}
-
-fourthStepWF     = file("${workflowsFolder}/module_parameter_it_ms2.knwf")
-if( !secondStepWF.exists() )  { error "Cannot find any module_parameter_it_ms2.knwf!!!"}
-
-fifthStepWF     = file("${workflowsFolder}/module_parameter_tic_sum.knwf")
-if( !secondStepWF.exists() )  { error "Cannot find any module_parameter_tic_sum.knwf!!!"}
+secondStepWF     = file("${workflowsFolder}/module_parameter_QC_1001844.knwf")
+if( !secondStepWF.exists() )  { error "Cannot find any module_parameter_QC_1001844.knwf!!!"}
+thirdStepWF     = file("${workflowsFolder}/module_parameter_QC_1000928.knwf")
+if( !thirdStepWF.exists() )  { error "Cannot find any module_parameter_QC_1000928.knwf!!!"}
+fourthStepWF     = file("${workflowsFolder}/module_parameter_QC_0000048.knwf")
+if( !fourthStepWF.exists() )  { error "Cannot find any module_parameter_QC_0000048.knwf!!!"}
+fifthStepWF     = file("${workflowsFolder}/module_parameter_QC_1000927.knwf")
+if( !fifthStepWF.exists() )  { error "Cannot find any module_parameter_QC_1000927.knwf!!!"}
 
 
 shotgun_output		= "output_shotgun"
@@ -77,16 +71,18 @@ mean_it_output		= "output_mean_it"
  * Create a channel for mzlfiles files; Temporary for testing purposes only
  */
 Channel
-   	.watchPath( params.mzlfiles )             
-   	.ifEmpty { error "Cannot find any file matching: ${params.mzlfiles}" }
+   	.fromPath( params.rawfiles )             
+   	.ifEmpty { error "Cannot find any file matching: ${params.rawfiles}" }
    	.map { 
         file = it
         id = it.getName()
-        ext = params.mzlfiles.tokenize( '/' )
+        ext = params.rawfiles.tokenize( '/' )
+        pieces = id.tokenize( '_' )
         len = ext[-1].length()
-	    [id[0..-len], file ]
-    }
-    .into { mzmlfiles_for_correction; mzmlfiles_for_info}    
+        [pieces[0], pieces[1], pieces[2][0..-len], file]
+    }.set { rawfiles }
+
+ 
  
 /*
  * Create a channel for fasta files description
@@ -121,10 +117,36 @@ Channel
   	}
 	.set {qconfig_desc}
 
+/*
+ * Run makeblastdb on fasta data
+*/
+
+process msconvert {
+	publishDir	"conversion"
+	
+	tag { "${labsys}_${qcode}_${checksum}" }
+
+    input:
+    set labsys, qcode, checksum, file(rawfile) from rawfiles
+
+    output:
+    set val("${labsys}_${qcode}_${checksum}"), qcode, file("${labsys}_${qcode}_${checksum}.mzML") into mzmlfiles_for_correction
+    
+    script:
+    """
+	curl --user "webdav:${params.webdavpass}" -T "${rawfile}" "http://${params.webdavip}/input/${labsys}_${qcode}_${checksum}.raw"
+	curl -X GET http://${params.webdavip}/index.php?input=${labsys}_${qcode}_${checksum}.raw
+	curl --user 'webdav:${params.webdavpass}' -X GET http://${params.webdavip}/output/${labsys}_${qcode}_${checksum}.mzML > ${labsys}_${qcode}_${checksum}.mzML
+	curl --user 'webdav:${params.webdavpass}' -X DELETE http://${params.webdavip}/output/${labsys}_${qcode}_${checksum}.mzML
+	curl --user 'webdav:${params.webdavpass}' -X DELETE http://${params.webdavip}/input/${labsys}_${qcode}_${checksum}.raw    
+	"""
+}
+
 
 /*
  * Run makeblastdb on fasta data
 */
+
 process makeblastdb {
 	publishDir	blastdb_folder
 	tag { genome_id }
@@ -153,11 +175,11 @@ process correctMzl {
    tag { sample_id }
    
     input:
- 	set sample_id, file(mzML_file) from (mzmlfiles_for_correction)
+ 	set sample_id, qcode, file(mzML_file) from (mzmlfiles_for_correction)
  
     output:
-	set sample_id, file("${sample_id}.ok.mzML") into corrected_mzmlfiles_for_second_step
-	set sample_id, file("${sample_id}.mzML") into mzmlfiles_for_first_step
+	set qcode, sample_id, file("${sample_id}.ok.mzML") into corrected_mzmlfiles_for_second_step
+	set qcode, sample_id, file("${sample_id}.mzML") into mzmlfiles_for_first_step
 
 
    """  
@@ -167,21 +189,17 @@ process correctMzl {
    """
 }
 
-input_pipe_withcode = mzmlfiles_for_first_step.map{
-  internal_id, file -> [internal_id.split('_')[0], internal_id, file]
-}
-
-input_pipe_withcode_reordered = input_pipe_withcode.combine(qconfig_desc,by: 0).map{
-  genome, sample_id, file, internal_id, analysis -> [internal_id, sample_id, file, genome, analysis]
+input_pipe_withcode_reordered = corrected_mzmlfiles_for_second_step.combine(qconfig_desc,by: 0).map{
+  qc_id, sample_id, file, genome, analysis -> [genome, qc_id, sample_id, file, analysis]
 }
 
 input_pipe_complete_first_step = input_pipe_withcode_reordered.combine(blastdbs, by: 0)
+
 
 /*
  * Run FirstStep on raw data. 
  * Choose blast_db and fasta file depending on species
  * choose genome depending on QC code in the file name // description etc .
-	   containerOptions "--contain -B $HOME"
 */
 
 
@@ -190,7 +208,7 @@ process run_shotgun {
 	   tag { sample_id }
 	
 		input:
-		set genome_id, sample_id, file(mzML_file), internal_code, analysis_type, fasta_file, file ("*") from input_pipe_complete_first_step
+		set genome_id, internal_code,sample_id, file(mzML_file), analysis_type, fasta_file, file ("*") from input_pipe_complete_first_step
 		file(workflowfile) from firstStepWF
 		
 		when:
