@@ -91,7 +91,7 @@ input_csv_file, list of peptides for QC01 and QC02</br>
 input_featurexml_file, is the .featureXML from the output of module_workflow_shotgun</br>
 input_sample_type, QC01 or QC02</br>
 output_json_file, output JSON filename</br>
-output_json_folder, output JSON folder</br></br>
+output_json_folder, output JSON folder</br>
 
 Sets the QC parameter and workflow to search: 
 
