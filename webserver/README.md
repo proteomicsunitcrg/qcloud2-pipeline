@@ -91,13 +91,19 @@ Links and references
 
 #### JSON output
 
-* Return must not be -1
+* Return must be 0
 
         {
           "input": "180528_QC01.raw",
+          "opts": "--32 --mzML --zlib --filter \"peakPicking true 1-\"",
           "return": 0,
           "output": "180528_QC01.mzML"
         }
+
+* Error returns:
+    * 400 -> File not found
+    * -1 -> No input parameter
+    * 1 -> Error with program
 
 #### Piping into workflow
 
