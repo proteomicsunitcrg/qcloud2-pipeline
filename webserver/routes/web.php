@@ -21,7 +21,7 @@ $router->get('/', function(\Illuminate\Http\Request $request){
             $opts = "--32 --mzML --zlib --filter \"peakPicking true 1-\"";
             
             if ( $request->has('opts') ) {
-                $opts = addslashes( $request->input('opts') );
+                $opts = $request->input('opts');
             }
             
             $outcome{"opts"} = $opts;
