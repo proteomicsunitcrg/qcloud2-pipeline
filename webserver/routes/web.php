@@ -17,7 +17,7 @@ $router->get('/', function(\Illuminate\Http\Request $request){
 
         if ( file_exists( $inputdir."/".$inputfile ) ) {
                         
-            if ( $request->has('alt') ) {
+            if ( $request->has('alt') && endsWith( $inputfile, ".wiff" ) ) {
                 
                 // Handling alt
                 
@@ -96,5 +96,12 @@ $router->get('/', function(\Illuminate\Http\Request $request){
 function isOutputFileOK( $output ) {
     
     return true;
+}
+
+
+function endsWith( $haystack, $needle ) {
+    $length = strlen( $needle );
+
+    return $length === 0 || ( substr($haystack, -$length) === $needle );
 }
 
