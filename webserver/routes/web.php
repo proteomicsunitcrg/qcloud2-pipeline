@@ -24,6 +24,8 @@ $router->get('/', function(\Illuminate\Http\Request $request){
                 $opts = addslashes( $request->input('opts') );
             }
             
+            $outcome{"opts"} = $opts;
+            
             $command =  env('QCLOUD_EXEC_PATH')." ".$inputdir."/".$inputfile." ".$opts." --outfile ".$outputfile." -o ".env('QCLOUD_OUTPUT_PATH');
             $descriptorspec = array(
                0 => array("pipe", "r"),  // stdin is a pipe that the child will read from
@@ -38,7 +40,7 @@ $router->get('/', function(\Illuminate\Http\Request $request){
             isOutputFileOK( $outputfile );
             
             $outcome{"return"} = $return;
-            $outcome{"output"} = $outputfile."mzML";
+            $outcome{"output"} = $outputfile.".mzML";
                     
         } else {
             
