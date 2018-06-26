@@ -31,7 +31,7 @@ $router->get('/', function(\Illuminate\Http\Request $request){
                2 => array("file", env('QCLOUD_ERROR_FILEPATH'), "a") // stderr is a file to write to
             );
             
-            $process = proc_open( $comnand, $descriptorspec, $pipes );
+            $process = proc_open( $command, $descriptorspec, $pipes );
             $return = proc_close($process);
             
             // Check outputfile
