@@ -17,9 +17,10 @@ $router->get('/', function(\Illuminate\Http\Request $request){
 
         if ( file_exists( $inputdir."/".$inputfile ) ) {
                         
-            if ( $request->has('alt') && endsWith( $inputfile, ".wiff" ) ) {
+            if ( $request->has('alt') ) {
                 
                 // Handling alt
+                $outcome{"alt"} = true;
                 
                 $outputfile = str_replace( ".wiff", "", $inputfile );
                 
