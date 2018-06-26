@@ -16,17 +16,44 @@ $router->get('/', function(\Illuminate\Http\Request $request){
         $outcome{"input"} = $inputfile;
 
         if ( file_exists( $inputdir."/".$inputfile ) ) {
+                        
+            if ( $request->has('alt') ) {
+                
+                // Handling alt
+                
+                $outputfile = str_replace( ".wiff", "", $inputfile );
+                
+                $altfile = $outputfile."scan.wiff";
+                
+                
+                if ( ! file_exists( $inputdir."/".$altfile ) ) {
+                    
+                    $outcome{"return"} = 400;
+                    $outcome{"output"} = null;
+                    
+                } else {
+                    
+                    $command =  env('QCLOUD_EXEC_ALT_PATH')." --in ".$inputdir."/".$inputfile." --out ".env('QCLOUD_OUTPUT_PATH')."/".$outputfile.".mzML";
+
+                }
+                
+            } else {
             
-            $outputfile = str_replace( ".raw", "", $inputfile );
-            $opts = '--32 --mzML --zlib --filter "peakPicking true 1-"';
-            
-            if ( $request->has('opts') ) {
-                $opts = $request->input('opts');
+                $outputfile = str_replace( ".raw", "", $inputfile );
+
+                $opts = '--32 --mzML --zlib --filter "peakPicking true 1-"';
+                
+                if ( $request->has('opts') ) {
+                    $opts = $request->input('opts');
+                }
+                
+                $outcome{"opts"} = $opts;
+                
+                $command =  env('QCLOUD_EXEC_PATH')." ".$inputdir."/".$inputfile." ".$opts." --outfile ".$outputfile." -o ".env('QCLOUD_OUTPUT_PATH');
+                
             }
             
-            $outcome{"opts"} = $opts;
             
-            $command =  env('QCLOUD_EXEC_PATH')." ".$inputdir."/".$inputfile." ".$opts." --outfile ".$outputfile." -o ".env('QCLOUD_OUTPUT_PATH');
             $descriptorspec = array(
                0 => array("pipe", "r"),  // stdin is a pipe that the child will read from
                1 => array("pipe", "w"),  // stdout is a pipe that the child will write to
