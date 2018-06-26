@@ -23,7 +23,7 @@ $router->get('/', function(\Illuminate\Http\Request $request){
                 
                 $outputfile = str_replace( ".wiff", "", $inputfile );
                 
-                $altfile = $outputfile."wiff.scan";
+                $altfile = $outputfile.".wiff.scan";
                 
                 
                 if ( ! file_exists( $inputdir."/".$altfile ) ) {
