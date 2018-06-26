@@ -18,8 +18,13 @@ $router->get('/', function(\Illuminate\Http\Request $request){
         if ( file_exists( $inputdir."/".$inputfile ) ) {
             
             $outputfile = str_replace( ".raw", "", $inputfile );
-            # Z:\rolivella\mydata\raw\QC1F\180218_Q_QC1F_01_11.raw --32 --mzML --zlib --filter "peakPicking true 1-" --outfile 180218_Q_QC1F_01_11 -o Z:\rolivella\mydata\mzml
-            $command =  env('QCLOUD_EXEC_PATH')." ".$inputdir."/".$inputfile." --32 --mzML --zlib --filter \"peakPicking true 1-\" --outfile ".$outputfile." -o ".env('QCLOUD_OUTPUT_PATH');
+            $opts = '--32 --mzML --zlib --filter "peakPicking true 1-"';
+            
+            if ( $request->has('opts') ) {
+                $opts = $request->input('opts');
+            }
+            
+            $command =  env('QCLOUD_EXEC_PATH')." ".$inputdir."/".$inputfile." ".$opts." --outfile ".$outputfile." -o ".env('QCLOUD_OUTPUT_PATH');
             $descriptorspec = array(
                0 => array("pipe", "r"),  // stdin is a pipe that the child will read from
                1 => array("pipe", "w"),  // stdout is a pipe that the child will write to
@@ -29,11 +34,12 @@ $router->get('/', function(\Illuminate\Http\Request $request){
             $process = proc_open( $comnand, $descriptorspec, $pipes );
             $return = proc_close($process);
             
+            // Check outputfile
+            isOutputFileOK( $outputfile );
+            
             $outcome{"return"} = $return;
             $outcome{"output"} = $outputfile."mzML";
-            
-            return response()->json( $outcome );
-        
+                    
         } else {
             
             $outcome{"return"} = 400;
@@ -46,10 +52,20 @@ $router->get('/', function(\Illuminate\Http\Request $request){
 
         $outcome{"return"} = -1;
         $outcome{"output"} = null;
-        
-        return response()->json( $outcome );
-        
+
     }
+    
+    return response()->json( $outcome );
 
 });
+
+/** Checking output file if it has any error */
+/* @output String
+ * return boolean
+*/
+
+function isOutputFileOK( $output ) {
+    
+    return true;
+}
 
