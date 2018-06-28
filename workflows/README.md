@@ -1,6 +1,6 @@
 # QCLOUD 2.0 PIPELINE (Nextflow+Knime)
 
-## STEP 1</br></br> 
+## STEP 1</br>
 
 Folder where the data will be collected: 
 ```
@@ -20,7 +20,7 @@ sed -i 's@xmlns="http://psi.hupo.org/ms/mzml"@@g' $file_path
  
 ## STEP 2</br> </br> 
 
-Proteomics **SHOTGUN**: </br> </br> 
+Proteomics **SHOTGUN**: </br>
 
 input_mzml_file, input mzML file</br>
 input_fasta_file, input FASTA database file (BSA or HeLa)</br>
