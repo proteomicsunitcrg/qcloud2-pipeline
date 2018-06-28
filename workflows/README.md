@@ -32,7 +32,7 @@ output_idxml_file, output idXML filename and path</br></br>
 ```
 knime --launcher.suppressErrors -nosplash -application org.knime.product.KNIME_BATCH_APPLICATION -reset -nosave -workflowFile="/users/pr/qcloud/nextflow/workflows/module_workflow_shotgun.knwf" -workflow.variable=input_mzml_file,/users/pr/nodes/outgoing/mzML/1806/02656d22-b9d9-43e1-9375-f257b5f9717c_QC01_96410bfd152abfc6565266c837ce7887.mzML,String -workflow.variable=input_fasta_file,/users/pr/qcloud/nextflow/fasta/sp_bovine_2015_11_wo_contaminants_shuffled.fasta,String -workflow.variable=input_fasta_psq_file,/users/pr/qcloud/nextflow/blastdb/shotgun_bsa.fasta.psq,String -workflow.variable=output_featurexml_file,/users/pr/nodes/outgoing/featureXML/1806/02656d22-b9d9-43e1-9375-f257b5f9717c_QC01_96410bfd152abfc6565266c837ce7887.featureXML,String -workflow.variable=output_qcml_file,/users/pr/nodes/outgoing/qcML/1806/02656d22-b9d9-43e1-9375-f257b5f9717c_QC01_96410bfd152abfc6565266c837ce7887.qcml,String -workflow.variable=output_idxml_file,/users/pr/nodes/outgoing/idXML/1806/02656d22-b9d9-43e1-9375-f257b5f9717c_QC01_96410bfd152abfc6565266c837ce7887.idxml,String
 ```
-Proteomics **SRM**: </br> </br> 
+Proteomics **SRM**: </br>
 
 input_mzml_file, input mzML file</br>
 input_traml, input mzML file</br>
