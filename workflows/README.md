@@ -74,7 +74,7 @@ Store JSON file to QCloud database: </br>
 
 Post file info: </br>
 
-QC:0000005 means QC01
+QC:0000005 means QC01</br>
 02656d22-b9d9-43e1-9375-f257b5f9717c is labsys key
 
 ```
