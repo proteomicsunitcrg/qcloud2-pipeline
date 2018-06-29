@@ -70,6 +70,66 @@ KNIME QC parameter computing module:
 knime --launcher.suppressErrors -nosplash -application org.knime.product.KNIME_BATCH_APPLICATION -reset -nosave -workflowFile="/users/pr/rolivella/mydata/knwf/module_parameter_QC_1001844_v2.knwf" -workflow.variable=input_csv_file,/users/pr/qcloud/nextflow/csv/knime_peptides_final.csv,String -workflow.variable=input_featurexml_file,/users/pr/nodes/outgoing/featureXML/1806/02656d22-b9d9-43e1-9375-f257b5f9717c_QC01_96410bfd152abfc6565266c837ce7887.featureXML,String -workflow.variable=input_sample_type,QC01,String -workflow.variable=input_string_checksum,96410bfd152abfc6565266c837ce7887,String -workflow.variable=output_json_file,'02656d22-b9d9-43e1-9375-f257b5f9717c_QC01_96410bfd152abfc6565266c837ce7887_QC_1001844.json',String -workflow.variable=output_json_folder,/users/pr/nodes/outgoing/JSON/1806,String 
 ```
 
-Store JSON file to QCloud database: 
+Store JSON file to QCloud database: </br>
 
-[pending]
+Post file info: </br>
+
+QC:0000005 means QC01
+02656d22-b9d9-43e1-9375-f257b5f9717c is labsys key
+
+```
+curl -i -H 'Authorization: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJkYW5pZWwubWFuY2VyYUBjcmcuZXUiLCJhdWRpZW5jZSI6IndlYiIsImNyZWF0ZWQiOjE1MzAyNTkzMjI0NDIsImV4cCI6MTUzMDg2NDEyMiwiYXV0aG9yaXRpZXMiOlt7ImF1dGhvcml0eSI6IlJPTEVfVVNFUiJ9LHsiYXV0aG9yaXR5IjoiUk9MRV9NQU5BR0VSIn0seyJhdXRob3JpdHkiOiJST0xFX0FETUlOIn1dfQ.F7lL8dYsGdCRW9H6MGkIjD7eiwOZAiX2MlZqzFFhAaKY3ZZWfaqvncXrhQ4F02sP27dQ1Fh2v80zVoXwMkNhPw' -H 'Accept: application/json' -H 'Content-Type:application/json' -X POST --data '{"creationDate": "2018-05-31 21:45:05","filename": "180531_Q_QC1F_01_02","checksum":"a593cea2cd0924f529e3b6d8bdf45664"}' 'http://192.168.101.37:8181/api/file/QC:0000005/02656d22-b9d9-43e1-9375-f257b5f9717c'
+```
+Post data to file: </br>
+
+```
+curl -i -H 'Authorization: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJkYW5pZWwubWFuY2VyYUBjcmcuZXUiLCJhdWRpZW5jZSI6IndlYiIsImNyZWF0ZWQiOjE1MzAyNTkzMjI0NDIsImV4cCI6MTUzMDg2NDEyMiwiYXV0aG9yaXRpZXMiOlt7ImF1dGhvcml0eSI6IlJPTEVfVVNFUiJ9LHsiYXV0aG9yaXR5IjoiUk9MRV9NQU5BR0VSIn0seyJhdXRob3JpdHkiOiJST0xFX0FETUlOIn1dfQ.F7lL8dYsGdCRW9H6MGkIjD7eiwOZAiX2MlZqzFFhAaKY3ZZWfaqvncXrhQ4F02sP27dQ1Fh2v80zVoXwMkNhPw' -H 'Accept: application/json' -H 'Content-Type:application/json' -X POST --data '$data_param' 'http://192.168.101.37:8181/api/data/pipeline'
+```
+Where $data_param= </br>
+
+```
+{
+  "file" : {
+    "checksum" : "a593cea2cd0924f529e3b6d8bdf45664"
+  },
+  "data" : [ {
+    "parameter" : {
+      "QCCV" : "QC:1001844"
+    },
+    "values" : [ {
+      "sequence" : "EAC(Carbamidomethyl)FAVEGPK",
+      "mass_acc" : 0.5983956158408309
+    }, {
+      "sequence" : "EC(Carbamidomethyl)C(Carbamidomethyl)HGDLLEC(Carbamidomethyl)ADDR",
+      "mass_acc" : 0.32304470627096477
+    }, {
+      "sequence" : "EYEATLEEC(Carbamidomethyl)C(Carbamidomethyl)AK",
+      "mass_acc" : 0.13539907509054283
+    }, {
+      "sequence" : "HLVDEPQNLIK",
+      "mass_acc" : 0.714647658269317
+    }, {
+      "sequence" : "LVNELTEFAK",
+      "mass_acc" : 0.777346695311011
+    }, {
+      "sequence" : "NEC(Carbamidomethyl)FLSHK",
+      "mass_acc" : 0.7115451443202172
+    }, {
+      "sequence" : "SLHTLFGDELC(Carbamidomethyl)K",
+      "mass_acc" : 0.01365762278395882
+    }, {
+      "sequence" : "TC(Carbamidomethyl)VADESHAGC(Carbamidomethyl)EK",
+      "mass_acc" : 0.07932435272596104
+    }, {
+      "sequence" : "VPQVSTPTLVEVSR",
+      "mass_acc" : 0.23677258801063458
+    }, {
+      "sequence" : "VPQVSTPTLVEVSR",
+      "mass_acc" : 0.38794578499440446
+    }, {
+      "sequence" : "YIC(Carbamidomethyl)DNQDTISSK",
+      "mass_acc" : 0.5377631215703618
+    } ]
+  } ]
+}
+```
