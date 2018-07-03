@@ -55,6 +55,7 @@ input_csv_file, list of peptides for QC01 and QC02</br>
 input_featurexml_file, is the .featureXML from the output of module_workflow_shotgun</br>
 input_sample_type, QC01 or QC02</br>
 input_string_checksum, file checksum</br>
+input_string_qccv, file QC code, e.g. QC_1001844</br>
 output_json_file, output JSON filename</br>
 output_json_folder, output JSON folder</br>
 
@@ -67,7 +68,7 @@ $cvqc='QC_1001844'
 KNIME QC parameter computing module: 
 
 ```
-knime --launcher.suppressErrors -nosplash -application org.knime.product.KNIME_BATCH_APPLICATION -reset -nosave -workflowFile="/users/pr/rolivella/mydata/knwf/module_parameter_QC_1001844_v2.knwf" -workflow.variable=input_csv_file,/users/pr/qcloud/nextflow/csv/knime_peptides_final.csv,String -workflow.variable=input_featurexml_file,/users/pr/nodes/outgoing/featureXML/1806/02656d22-b9d9-43e1-9375-f257b5f9717c_QC01_96410bfd152abfc6565266c837ce7887.featureXML,String -workflow.variable=input_sample_type,QC01,String -workflow.variable=input_string_checksum,96410bfd152abfc6565266c837ce7887,String -workflow.variable=output_json_file,'02656d22-b9d9-43e1-9375-f257b5f9717c_QC01_96410bfd152abfc6565266c837ce7887_QC_1001844.json',String -workflow.variable=output_json_folder,/users/pr/nodes/outgoing/JSON/1806,String 
+knime --launcher.suppressErrors -nosplash -application org.knime.product.KNIME_BATCH_APPLICATION -reset -nosave -workflowFile="/users/pr/rolivella/mydata/knwf/module_parameter_QC_1001844_v2.knwf" -workflow.variable=input_csv_file,/users/pr/qcloud/nextflow/csv/knime_peptides_final.csv,String -workflow.variable=input_featurexml_file,/users/pr/nodes/outgoing/featureXML/1806/02656d22-b9d9-43e1-9375-f257b5f9717c_QC01_96410bfd152abfc6565266c837ce7887.featureXML,String -workflow.variable=input_sample_type,QC01,String -workflow.variable=input_string_checksum,96410bfd152abfc6565266c837ce7887,String -workflow.variable=input_string_qccv,QC_1001844,String -workflow.variable=output_json_file,'02656d22-b9d9-43e1-9375-f257b5f9717c_QC01_96410bfd152abfc6565266c837ce7887_QC_1001844.json',String -workflow.variable=output_json_folder,/users/pr/nodes/outgoing/JSON/1806,String 
 ```
 
 Store JSON file to QCloud database: </br>
