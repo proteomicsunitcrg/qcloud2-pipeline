@@ -158,9 +158,30 @@ function compressAndClean( $outputFile, $outputDir, $inputFile ) {
     $zip->addFile( $outputDir."/".$outputFile.".mzML", $outputFile.".mzML" );
     $zip->close();
     
-    // TODO: rm files
+    // TODO: more control on unlinks
+
+    // remove mzML uncompressed
+    $unlink = unlink( $outputDir."/".$outputFile.".mzML" );
+    
+    // remove input files
+    $inremove = glob( $inputFile."*" );
+    
+    foreach ( $inremove as $inrm ) {
+        
+        if ( ! endsWith( $inrm, ".zip" ) ) {
+            
+            $unlink = unlink( $inrm );
+        }
+     
+    }
     
     return 0;
 }
 
+function endsWith( $haystack, $needle ) {
+    $length = strlen($needle);
+
+    return $length === 0 || 
+    (substr($haystack, -$length) === $needle);
+}
 
