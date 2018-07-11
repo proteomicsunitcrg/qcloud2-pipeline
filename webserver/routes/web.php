@@ -93,7 +93,7 @@ $router->get('/', function(\Illuminate\Http\Request $request){
                     }
                     
                     $outcome{"return"} = $return;
-                    $outcome{"output"} = $outputfile.".zip";
+                    $outcome{"output"} = $outputfile.".mzML.zip";
                 
                 } else {
                     
@@ -148,7 +148,7 @@ function isOutputFileOK( $outputFile, $outputDir ) {
 function compressAndClean( $outputFile, $outputDir, $inputFile ) {
     
     $zip = new ZipArchive();
-    $filename = $outputDir."/".$outputFile.".zip";
+    $filename = $outputDir."/".$outputFile.".mzML.zip";
     
     if ( $zip->open($filename, ZipArchive::CREATE) !== TRUE ) {
 
