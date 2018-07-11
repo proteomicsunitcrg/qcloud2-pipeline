@@ -133,7 +133,7 @@ $router->get('/', function(\Illuminate\Http\Request $request){
 
 function isOutputFileOK( $outputFile, $outputDir ) {
     
-    $filename = $outputDir."/".$outputFile.".zip";
+    $filename = $outputDir."/".$outputFile.".mzML";
 
     if ( file_exists( $filename ) && filesize( $filename ) > 0 ) {
         
