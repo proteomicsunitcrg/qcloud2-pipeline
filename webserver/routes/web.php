@@ -16,60 +16,97 @@ $router->get('/', function(\Illuminate\Http\Request $request){
         $outcome{"input"} = $inputfile;
 
         if ( file_exists( $inputdir."/".$inputfile ) ) {
+            
+            # Input now is a zip file, which must be handled
+        
+            if ( is_resource( $zip = zip_open( $inputdir."/".$inputfile ) ) && filesize( $inputdir."/".$inputfile ) > 0 ){
+            
+                $zip = new ZipArchive;
+                $res = $zip->open( $inputdir."/".$inputfile );
+                
+                if ( $res === TRUE ) {
+                    
+                    $zip->extractTo( $inputdir );
+                    $zip->close();
+
+            
+                    if ( $request->has('alt') ) {
                         
-            if ( $request->has('alt') ) {
-                
-                // Handling alt
-                $outcome{"alt"} = true;
-                
-                $outputfile = str_replace( ".wiff", "", $inputfile );
-                
-                $altfile = $outputfile.".wiff.scan";
-                
-                
-                if ( ! file_exists( $inputdir."/".$altfile ) ) {
+                        // Handling alt
+                        $outcome{"alt"} = true;
+                        
+                        # Here we assume archive is kkk.zip and has kkk.wiff and kkk.wiff.scan
+                        $proginputfile = str_replace( ".zip", ".wiff", $inputfile );
+                        
+                        $outputfile = str_replace( ".wiff", "", $proginputfile );
+                        
+                        $altfile = $outputfile.".wiff.scan";
+                        
+                        
+                        if ( ! file_exists( $inputdir."/".$altfile ) ) {
+                            
+                            $outcome{"return"} = 400;
+                            $outcome{"output"} = null;
+                            
+                        } else {
+                            
+                            $command =  env('QCLOUD_EXEC_ALT_PATH')." --in ".$inputdir."/".$proginputfile." --out ".env('QCLOUD_OUTPUT_PATH')."/".$outputfile.".mzML";
+        
+                        }
+                        
+                    } else {
                     
-                    $outcome{"return"} = 400;
-                    $outcome{"output"} = null;
+                        # Here we assume archive is kkk.zip and has kkk.raw
+                        $proginputfile = str_replace( ".zip", ".raw", $inputfile );
+                        
+                        $outputfile = str_replace( ".raw", "", $proginputfile );
+        
+                        $opts = '--32 --mzML --zlib --filter "peakPicking true 1-"';
+                        
+                        if ( $request->has('opts') ) {
+                            $opts = $request->input('opts');
+                        }
+                        
+                        $outcome{"opts"} = $opts;
+                        
+                        $command =  env('QCLOUD_EXEC_PATH')." ".$inputdir."/".$proginputfile." ".$opts." --outfile ".$outputfile." -o ".env('QCLOUD_OUTPUT_PATH');
+                        
+                    }
                     
+                    
+                    $descriptorspec = array(
+                       0 => array("pipe", "r"),  // stdin is a pipe that the child will read from
+                       1 => array("pipe", "w"),  // stdout is a pipe that the child will write to
+                       2 => array("file", env('QCLOUD_ERROR_FILEPATH'), "a") // stderr is a file to write to
+                    );
+                    
+                    $process = proc_open( $command, $descriptorspec, $pipes );
+                    $return = proc_close($process);
+                    
+                    // Check outputfile
+                    $return = isOutputFileOK( $outputfile );
+                    
+                    if ( $return === 0 ) {
+                    
+                        $return = compressAndClean( $outputfile, env('QCLOUD_OUTPUT_PATH'), $inputdir."/".$inputfile );
+                    
+                    }
+                    
+                    $outcome{"return"} = $return;
+                    $outcome{"output"} = $outputfile.".zip";
+                
                 } else {
                     
-                    $command =  env('QCLOUD_EXEC_ALT_PATH')." --in ".$inputdir."/".$inputfile." --out ".env('QCLOUD_OUTPUT_PATH')."/".$outputfile.".mzML";
-
+                    $outcome{"return"} = -4;
+                    $outcome{"output"} = null;                 
                 }
                 
             } else {
-            
-                $outputfile = str_replace( ".raw", "", $inputfile );
-
-                $opts = '--32 --mzML --zlib --filter "peakPicking true 1-"';
                 
-                if ( $request->has('opts') ) {
-                    $opts = $request->input('opts');
-                }
-                
-                $outcome{"opts"} = $opts;
-                
-                $command =  env('QCLOUD_EXEC_PATH')." ".$inputdir."/".$inputfile." ".$opts." --outfile ".$outputfile." -o ".env('QCLOUD_OUTPUT_PATH');
-                
+                $outcome{"return"} = -1;
+                $outcome{"output"} = null;               
             }
             
-            
-            $descriptorspec = array(
-               0 => array("pipe", "r"),  // stdin is a pipe that the child will read from
-               1 => array("pipe", "w"),  // stdout is a pipe that the child will write to
-               2 => array("file", env('QCLOUD_ERROR_FILEPATH'), "a") // stderr is a file to write to
-            );
-            
-            $process = proc_open( $command, $descriptorspec, $pipes );
-            $return = proc_close($process);
-            
-            // Check outputfile
-            isOutputFileOK( $outputfile );
-            
-            $outcome{"return"} = $return;
-            $outcome{"output"} = $outputfile.".mzML";
-                    
         } else {
             
             $outcome{"return"} = 400;
@@ -94,9 +131,36 @@ $router->get('/', function(\Illuminate\Http\Request $request){
  * return boolean
 */
 
-function isOutputFileOK( $output ) {
+function isOutputFileOK( $outputFile, $outputDir ) {
     
-    return true;
+    $filename = $outputDir."/".$outputFile.".zip";
+
+    if ( file_exists( $filename ) && filesize( $filename ) > 0 ) {
+        
+        return 0;
+
+    } else {
+        return -2;
+    }
+    
+}
+
+function compressAndClean( $outputFile, $outputDir, $inputFile ) {
+    
+    $zip = new ZipArchive();
+    $filename = $outputDir."/".$outputFile.".zip";
+    
+    if ( $zip->open($filename, ZipArchive::CREATE) !== TRUE ) {
+
+        return -3;
+    }
+    
+    $zip->addFile( $outputDir."/".$outputFile.".mzML", $outputFile.".mzML" );
+    $zip->close();
+    
+    // TODO: rm files
+    
+    return 0;
 }
 
 
