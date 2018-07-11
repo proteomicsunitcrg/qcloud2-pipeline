@@ -168,7 +168,7 @@ function compressAndClean( $outputFile, $outputDir, $inputFile ) {
     
     foreach ( $inremove as $inrm ) {
         
-        if ( ! endsWith( $inrm, ".zip" ) ) {
+        if ( ! endsWithStr( $inrm, ".zip" ) ) {
             
             $unlink = unlink( $inrm );
         }
@@ -178,7 +178,7 @@ function compressAndClean( $outputFile, $outputDir, $inputFile ) {
     return 0;
 }
 
-function endsWith( $haystack, $needle ) {
+function endsWithStr( $haystack, $needle ) {
     $length = strlen($needle);
 
     return $length === 0 || 
