@@ -164,6 +164,7 @@ function compressAndClean( $outputFile, $outputDir, $inputFile ) {
     $unlink = unlink( $outputDir."/".$outputFile.".mzML" );
     
     // remove input files
+    $inputFile = str_replace( ".zip", "", $inputFile );
     $inremove = glob( $inputFile."*" );
     
     foreach ( $inremove as $inrm ) {
