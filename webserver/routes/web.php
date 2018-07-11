@@ -84,7 +84,7 @@ $router->get('/', function(\Illuminate\Http\Request $request){
                     $return = proc_close($process);
                     
                     // Check outputfile
-                    $return = isOutputFileOK( $outputfile );
+                    $return = isOutputFileOK( $outputfile, env('QCLOUD_OUTPUT_PATH') );
                     
                     if ( $return === 0 ) {
                     
