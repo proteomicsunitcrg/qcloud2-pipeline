@@ -28,7 +28,6 @@ $router->get('/', function(\Illuminate\Http\Request $request){
                     
                     $zip->extractTo( $inputdir );
                     $zip->close();
-
             
                     if ( $request->has('alt') ) {
                         
@@ -43,6 +42,12 @@ $router->get('/', function(\Illuminate\Http\Request $request){
                         $altfile = $outputfile.".wiff.scan";
                         
                         
+                        if ( $request->has('output') ) {
+                            $outputfile = $request->input('output');
+                        } else {
+                            $outputfile = $outputfile.".mzML";
+                        }
+                        
                         if ( ! file_exists( $inputdir."/".$altfile ) ) {
                             
                             $outcome{"return"} = 400;
@@ -50,7 +55,8 @@ $router->get('/', function(\Illuminate\Http\Request $request){
                             
                         } else {
                             
-                            $command =  env('QCLOUD_EXEC_ALT_PATH')." --in ".$inputdir."/".$proginputfile." --out ".env('QCLOUD_OUTPUT_PATH')."/".$outputfile.".mzML";
+                            
+                            $command =  env('QCLOUD_EXEC_ALT_PATH')." --in ".$inputdir."/".$proginputfile." --out ".env('QCLOUD_OUTPUT_PATH')."/".$outputfile;
         
                         }
                         
@@ -68,6 +74,10 @@ $router->get('/', function(\Illuminate\Http\Request $request){
                         }
                         
                         $outcome{"opts"} = $opts;
+                        
+                        if ( $request->has('output') ) {
+                            $outputfile = $request->input('output');
+                        }
                         
                         $command =  env('QCLOUD_EXEC_PATH')." ".$inputdir."/".$proginputfile." ".$opts." --outfile ".$outputfile." -o ".env('QCLOUD_OUTPUT_PATH');
                         
