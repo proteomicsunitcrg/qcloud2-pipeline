@@ -41,7 +41,7 @@ fi
 
 curl --user "webdav:${webdavpass}" -T "${rawfile}" "http://${webdavip}/input/${labsys}_${qcode}_${checksum}.${ext}"
 
-curl -X GET http://${webdavip}/index.php?input=${labsys}_${qcode}_${checksum}.${ext}${alt}
+curl -X GET http://${webdavip}/index.php?input=${labsys}_${qcode}_${checksum}.${ext}${alt}&output=${out}
 
 curl --user "webdav:${webdavpass}" -X GET http://${webdavip}/output/${output} > ${output}
 
