@@ -1,7 +1,9 @@
 #!/bin/bash
 
 set -euo pipefail
-## ADD example how to use it
+
+## Example
+## bash webservice.sh -l b2a401cd-ee09-4a2d-8799-765a237beffa -q QCS1 -c 3d0c7b4ef362c15f878afef700a9afed -r myrawfile.zip -i 127.0.0.1 -p mypasswd -o outcome.zip
 
 alt=""
 ext="zip"
