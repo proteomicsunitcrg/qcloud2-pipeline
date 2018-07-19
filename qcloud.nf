@@ -28,7 +28,7 @@ version = 2.0
 
 log.info "BIOCORE@CRG Qcloud - N F  ~  version ${version}"
 log.info "========================================"
-log.info "rawfiles (input files) 		    : ${params.rawfiles}"
+log.info "zipfiles (input files) 		    : ${params.zipfiles}"
 log.info "qconfig (config file) 			: ${params.qconfig}"
 log.info "fasta_tab (tsv file)				: ${params.fasta_tab}"
 log.info "email for notification 			: ${params.email}"
@@ -52,8 +52,11 @@ if( !fastaconfig.exists() )  { error "Cannot find any fasta tab file!!!"}
 /*
 * check for workflow existence
 */
-firstStepWF     = file("${workflowsFolder}/module_workflow_shotgun.knwf")
-if( !firstStepWF.exists() )  { error "Cannot find any module_workflow_shotgun.knwf file!!!"}
+shotgunWF     = file("${workflowsFolder}/module_workflow_shotgun.knwf")
+if( !shotgunWF.exists() )  { error "Cannot find any module_workflow_shotgun.knwf file!!!"}
+srmWF     = file("${workflowsFolder}/module_workflow_srm.knwf")
+if( !srmWF.exists() )  { error "Cannot find any module_workflow_srm.knwf file!!!"}
+
 secondStepWF     = file("${workflowsFolder}/module_parameter_QC_1001844.knwf")
 if( !secondStepWF.exists() )  { error "Cannot find any module_parameter_QC_1001844.knwf!!!"}
 thirdStepWF     = file("${workflowsFolder}/module_parameter_QC_1000928.knwf")
@@ -71,8 +74,8 @@ mean_it_output		= "output_mean_it"
  * Create a channel for mzlfiles files; Temporary for testing purposes only
  */
 Channel
-   	.fromPath( params.rawfiles )             
-   	.ifEmpty { error "Cannot find any file matching: ${params.rawfiles}" }
+   	.fromPath( params.zipfiles )             
+   	.ifEmpty { error "Cannot find any file matching: ${params.zipfiles}" }
    	.map { 
         file = it
         id = it.getName()
@@ -80,7 +83,7 @@ Channel
         pieces = id.tokenize( '_' )
         len = ext[-1].length()
         [pieces[0], pieces[1], pieces[2][0..-len], file]
-    }.set { rawfiles }
+    }.set { zipfiles }
 
  
  
@@ -118,7 +121,7 @@ Channel
 	.set {qconfig_desc}
 
 /*
- * Run makeblastdb on fasta data
+ * Run msconvert on raw data.
 */
 
 process msconvert {
@@ -127,18 +130,18 @@ process msconvert {
 	tag { "${labsys}_${qcode}_${checksum}" }
 
     input:
-    set labsys, qcode, checksum, file(rawfile) from rawfiles
+    set labsys, qcode, checksum, file(zipfile) from zipfiles
 
     output:
     set val("${labsys}_${qcode}_${checksum}"), qcode, file("${labsys}_${qcode}_${checksum}.mzML") into mzmlfiles_for_correction
     
     script:
     """
-	curl --user "webdav:${params.webdavpass}" -T "${rawfile}" "http://${params.webdavip}/input/${labsys}_${qcode}_${checksum}.raw"
-	curl -X GET http://${params.webdavip}/index.php?input=${labsys}_${qcode}_${checksum}.raw
+	curl --user "webdav:${params.webdavpass}" -T "${zipfile}" "http://${params.webdavip}/input/${labsys}_${qcode}_${checksum}.zip"
+	curl -X GET http://${params.webdavip}/index.php?input=${labsys}_${qcode}_${checksum}.zip
 	curl --user 'webdav:${params.webdavpass}' -X GET http://${params.webdavip}/output/${labsys}_${qcode}_${checksum}.mzML > ${labsys}_${qcode}_${checksum}.mzML
 	curl --user 'webdav:${params.webdavpass}' -X DELETE http://${params.webdavip}/output/${labsys}_${qcode}_${checksum}.mzML
-	curl --user 'webdav:${params.webdavpass}' -X DELETE http://${params.webdavip}/input/${labsys}_${qcode}_${checksum}.raw    
+	curl --user 'webdav:${params.webdavpass}' -X DELETE http://${params.webdavip}/input/${labsys}_${qcode}_${checksum}.zip  
 	"""
 }
 
@@ -197,7 +200,7 @@ input_pipe_complete_first_step = input_pipe_withcode_reordered.combine(blastdbs,
 
 
 /*
- * Run FirstStep on raw data. 
+ * Run shotgun on raw data. 
  * Choose blast_db and fasta file depending on species
  * choose genome depending on QC code in the file name // description etc .
 */
@@ -209,15 +212,15 @@ process run_shotgun {
 	
 		input:
 		set genome_id, internal_code,sample_id, file(mzML_file), analysis_type, fasta_file, file ("*") from input_pipe_complete_first_step
-		file(workflowfile) from firstStepWF
+		file(workflowfile) from shotgunWF
 		
 		when:
 		analysis_type == 'shotgun'
 
 		output:
-		set sample_id, file("${sample_id}.qcml") into qcmlfiles
+		set sample_id, file("${sample_id}.qcml") into qcmlfiles_for_second_step
 		set sample_id, file("${sample_id}.featureXML") into featureXMLfiles_for_second_step
-		set sample_id, file("${sample_id}.idXML") into idXMLfiles
+		set sample_id, file("${sample_id}.idXML") into idXMLfiles_for_second_step
 
 		
 	   """
@@ -235,8 +238,8 @@ process run_shotgun {
 
 
 /*
- * Step 3. Run Second step 
-
+ * Run Second step 
+*/
 process mean_it {
 	publishDir mean_it_output
 
