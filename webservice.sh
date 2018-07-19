@@ -4,11 +4,11 @@ set -euo pipefail
 ## ADD example how to use it
 
 alt=""
-ext="raw"
+ext="zip"
 
 while getopts "ac:i:l:p:q:r:" opt; do
   case $opt in
-    a) alt="&alt"; ext="wiff"
+    a) alt="&alt"
     ;;
     c) checksum="$OPTARG"
     ;;
@@ -30,14 +30,10 @@ done
 
 curl --user "webdav:${webdavpass}" -T "${rawfile}" "http://${webdavip}/input/${labsys}_${qcode}_${checksum}.${ext}"
 
-if [ "${ext}" == "wiff" ]; then
-	curl --user "webdav:${webdavpass}" -T "${rawfile}.scan" "http://${webdavip}/input/${labsys}_${qcode}_${checksum}.${ext}.scan"
-fi
-
 curl -X GET http://${webdavip}/index.php?input=${labsys}_${qcode}_${checksum}.${ext}${alt}
 
-curl --user "webdav:${webdavpass}" -X GET http://${webdavip}/output/${labsys}_${qcode}_${checksum}.mzML > ${labsys}_${qcode}_${checksum}.mzML
+curl --user "webdav:${webdavpass}" -X GET http://${webdavip}/output/${labsys}_${qcode}_${checksum}.mzML.${ext} > ${labsys}_${qcode}_${checksum}.mzML.${ext}
 
-curl --user "webdav:${webdavpass}" -X DELETE http://${webdavip}/output/${labsys}_${qcode}_${checksum}.mzML
+curl --user "webdav:${webdavpass}" -X DELETE http://${webdavip}/output/${labsys}_${qcode}_${checksum}.mzML.${ext}
 
 curl --user "webdav:${webdavpass}" -X DELETE http://${webdavip}/input/${labsys}_${qcode}_${checksum}.${ext}    
