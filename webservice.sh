@@ -1,7 +1,7 @@
 #!/bin/bash
 
 set -euo pipefail
-
+## ADD example how to use it
 
 alt=""
 ext="raw"
