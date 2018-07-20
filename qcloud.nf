@@ -42,9 +42,12 @@ if (params.help) {
 
 if (params.resume) exit 1, "Are you making the classical --resume typo? Be careful!!!! ;)"
 
+// Data folders
 workflowsFolder		= "$baseDir/workflows/"
 fasta_folder		= "$baseDir/fasta"
 blastdb_folder		= "$baseDir/blastdb"
+CSV_folder			= "$baseDir/csv"
+
 fastaconfig = file(params.fasta_tab)
 if( !fastaconfig.exists() )  { error "Cannot find any fasta tab file!!!"}
 
@@ -56,6 +59,8 @@ shotgunWF     = file("${workflowsFolder}/module_workflow_shotgun.knwf")
 if( !shotgunWF.exists() )  { error "Cannot find any module_workflow_shotgun.knwf file!!!"}
 srmWF     = file("${workflowsFolder}/module_workflow_srm.knwf")
 if( !srmWF.exists() )  { error "Cannot find any module_workflow_srm.knwf file!!!"}
+srmCSV = file("${CSV_folder}/qtrap_bsa.traml")
+
 
 secondStepWF     = file("${workflowsFolder}/module_parameter_QC_1001844.knwf")
 if( !secondStepWF.exists() )  { error "Cannot find any module_parameter_QC_1001844.knwf!!!"}
@@ -68,6 +73,7 @@ if( !fifthStepWF.exists() )  { error "Cannot find any module_parameter_QC_100092
 
 
 shotgun_output		= "output_shotgun"
+srm_output			= "srm_output"
 mean_it_output		= "output_mean_it"
 
 /*
@@ -79,7 +85,7 @@ Channel
    	.map { 
         file = it
         id = it.getName()
-        ext = params.rawfiles.tokenize( '/' )
+        ext = params.zipfiles.tokenize( '/' )
         pieces = id.tokenize( '_' )
         len = ext[-1].length()
         [pieces[0], pieces[1], pieces[2][0..-len], file]
@@ -136,12 +142,13 @@ process msconvert {
     set val("${labsys}_${qcode}_${checksum}"), qcode, file("${labsys}_${qcode}_${checksum}.mzML") into mzmlfiles_for_correction
     
     script:
+    extrapar = ""
+    if (qcode =~'QCS') {
+    	extrapar = "-a"
+    }
     """
-	curl --user "webdav:${params.webdavpass}" -T "${zipfile}" "http://${params.webdavip}/input/${labsys}_${qcode}_${checksum}.zip"
-	curl -X GET http://${params.webdavip}/index.php?input=${labsys}_${qcode}_${checksum}.zip
-	curl --user 'webdav:${params.webdavpass}' -X GET http://${params.webdavip}/output/${labsys}_${qcode}_${checksum}.mzML > ${labsys}_${qcode}_${checksum}.mzML
-	curl --user 'webdav:${params.webdavpass}' -X DELETE http://${params.webdavip}/output/${labsys}_${qcode}_${checksum}.mzML
-	curl --user 'webdav:${params.webdavpass}' -X DELETE http://${params.webdavip}/input/${labsys}_${qcode}_${checksum}.zip  
+    bash webservice.sh ${extrapar} -l ${labsys} -q ${qcode} -c ${checksum} -r ${zipfile} -i ${params.webdavip} -p ${params.webdavpass} -o ${labsys}_${qcode}_${checksum}.mzML.zip
+	unzip ${labsys}_${qcode}_${checksum}.mzML.zip
 	"""
 }
 
@@ -199,6 +206,11 @@ input_pipe_withcode_reordered = corrected_mzmlfiles_for_second_step.combine(qcon
 input_pipe_complete_first_step = input_pipe_withcode_reordered.combine(blastdbs, by: 0)
 
 
+input_pipe_complete_first_step
+     .into{ input_pipe_complete_first_step_for_srm; input_pipe_complete_first_step_for_shotgun; cazz }
+
+
+
 /*
  * Run shotgun on raw data. 
  * Choose blast_db and fasta file depending on species
@@ -209,18 +221,20 @@ input_pipe_complete_first_step = input_pipe_withcode_reordered.combine(blastdbs,
 process run_shotgun {
 	   publishDir shotgun_output	   
 	   tag { sample_id }
-	
+	   
+       label 'big_mem'
+       
 		input:
-		set genome_id, internal_code,sample_id, file(mzML_file), analysis_type, fasta_file, file ("*") from input_pipe_complete_first_step
+		set genome_id, internal_code,sample_id, file(mzML_file), analysis_type, fasta_file, file ("*") from input_pipe_complete_first_step_for_shotgun
 		file(workflowfile) from shotgunWF
 		
 		when:
 		analysis_type == 'shotgun'
 
 		output:
-		set sample_id, file("${sample_id}.qcml") into qcmlfiles_for_second_step
-		set sample_id, file("${sample_id}.featureXML") into featureXMLfiles_for_second_step
-		set sample_id, file("${sample_id}.idXML") into idXMLfiles_for_second_step
+		set sample_id, file("${sample_id}.qcml") into qcmlfiles_for_second_step_shot
+		set sample_id, file("${sample_id}.featureXML") into featureXMLfiles_for_second_step_shot
+		set sample_id, file("${sample_id}.idXML") into idXMLfiles_for_second_step_shot
 
 		
 	   """
@@ -236,10 +250,42 @@ process run_shotgun {
 	   """
 }
 
+/*
+ * Run srm on raw data. 
+ * Choose blast_db and fasta file depending on species
+ * choose genome depending on QC code in the file name // description etc .
+*/
+
+process run_srm {
+	   publishDir srm_output	   
+	   tag { sample_id }
+
+       label 'big_mem'
+	
+		input:
+		set genome_id, internal_code,sample_id, file(mzML_file), analysis_type, fasta_file, file ("*") from input_pipe_complete_first_step_for_srm
+		file(workflowfile) from srmWF
+		file(srmCSV)
+		
+		when:
+		analysis_type == 'srm'
+
+		output:
+		set sample_id, file("${sample_id}.featureXML") into featureXMLfiles_for_second_step_srm
+		
+	   """
+	   knime --launcher.suppressErrors -nosplash -application org.knime.product.KNIME_BATCH_APPLICATION -reset -nosave \
+		-workflowFile=${workflowfile} \
+		-workflow.variable=input_traml,${srmCSV},String \
+	 	-workflow.variable=output_featurexml_file,${sample_id}.featureXML,String
+    	-vmArgs -Xmx${task.memory.mega-5000}m -Duser.home=\$PWD 	
+	   """
+}
+
 
 /*
  * Run Second step 
-*/
+
 process mean_it {
 	publishDir mean_it_output
 
@@ -254,7 +300,7 @@ process mean_it {
 
    """
 	knime --launcher.suppressErrors -nosplash -application org.knime.product.KNIME_BATCH_APPLICATION \
-	-reset -nosave -workflowFile="${workflowfile}" \
+	-reset -nosave -workflowFile=${workflowfile},String \
 	-workflow.variable=input_featurexml_file,${featureXML_file},String \
 	-workflow.variable=input_mzml_file,${mzML_file},String
     -workflow.variable=output_csv_file,${sample_id}_ident_pep.csv,String
