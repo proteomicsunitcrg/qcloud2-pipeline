@@ -51,6 +51,12 @@ CSV_folder			= "$baseDir/csv"
 fastaconfig = file(params.fasta_tab)
 if( !fastaconfig.exists() )  { error "Cannot find any fasta tab file!!!"}
 
+/*
+* File needed
+*/
+srmCSV = file("${CSV_folder}/qtrap_bsa.traml")
+peptideCSV = file("${CSV_folder}/knime_peptides_final.csv")
+
 
 /*
 * check for workflow existence
@@ -59,13 +65,14 @@ shotgunWF     = file("${workflowsFolder}/module_workflow_shotgun.knwf")
 if( !shotgunWF.exists() )  { error "Cannot find any module_workflow_shotgun.knwf file!!!"}
 srmWF     = file("${workflowsFolder}/module_workflow_srm.knwf")
 if( !srmWF.exists() )  { error "Cannot find any module_workflow_srm.knwf file!!!"}
-srmCSV = file("${CSV_folder}/qtrap_bsa.traml")
 
 
-secondStepWF     = file("${workflowsFolder}/module_parameter_QC_1001844.knwf")
-if( !secondStepWF.exists() )  { error "Cannot find any module_parameter_QC_1001844.knwf!!!"}
-thirdStepWF     = file("${workflowsFolder}/module_parameter_QC_1000928.knwf")
-if( !thirdStepWF.exists() )  { error "Cannot find any module_parameter_QC_1000928.knwf!!!"}
+thirdStepWF     = file("${workflowsFolder}/module_parameter_QC_1001844.knwf")
+if( !thirdStepWF.exists() )  { error "Cannot find any module_parameter_QC_1001844.knwf!!!"}
+
+
+
+
 fourthStepWF     = file("${workflowsFolder}/module_parameter_QC_0000048.knwf")
 if( !fourthStepWF.exists() )  { error "Cannot find any module_parameter_QC_0000048.knwf!!!"}
 fifthStepWF     = file("${workflowsFolder}/module_parameter_QC_1000927.knwf")
@@ -75,6 +82,7 @@ if( !fifthStepWF.exists() )  { error "Cannot find any module_parameter_QC_100092
 shotgun_output		= "output_shotgun"
 srm_output			= "srm_output"
 mean_it_output		= "output_mean_it"
+peptide_area		= "peptide_area"
 
 /*
  * Create a channel for mzlfiles files; Temporary for testing purposes only
@@ -124,7 +132,9 @@ Channel
    	workflow_type	 = list[2]
  	[internal_code, genome, workflow_type]
   	}
-	.set {qconfig_desc}
+	.set{qconfig_desc}
+
+
 
 /*
  * Run msconvert on raw data.
@@ -139,7 +149,7 @@ process msconvert {
     set labsys, qcode, checksum, file(zipfile) from zipfiles
 
     output:
-    set val("${labsys}_${qcode}_${checksum}"), qcode, file("${labsys}_${qcode}_${checksum}.mzML") into mzmlfiles_for_correction
+    set val("${labsys}_${qcode}_${checksum}"), qcode, checksum, file("${labsys}_${qcode}_${checksum}.mzML") into mzmlfiles_for_correction
     
     script:
     extrapar = ""
@@ -185,12 +195,10 @@ process correctMzl {
    tag { sample_id }
    
     input:
- 	set sample_id, qcode, file(mzML_file) from (mzmlfiles_for_correction)
+ 	set sample_id, qcode, checksum, file(mzML_file) from (mzmlfiles_for_correction)
  
     output:
-	set qcode, sample_id, file("${sample_id}.ok.mzML") into corrected_mzmlfiles_for_second_step
-	set qcode, sample_id, file("${sample_id}.mzML") into mzmlfiles_for_first_step
-
+	set qcode, sample_id, checksum, file("${sample_id}.ok.mzML") into corrected_mzmlfiles_for_second_step
 
    """  
    	if [ `echo ${mzML_file} | grep 'gz'` ]; then zcat ${mzML_file} > ${sample_id}.mzML; \
@@ -200,7 +208,7 @@ process correctMzl {
 }
 
 input_pipe_withcode_reordered = corrected_mzmlfiles_for_second_step.combine(qconfig_desc,by: 0).map{
-  qc_id, sample_id, file, genome, analysis -> [genome, qc_id, sample_id, file, analysis]
+  qc_id, sample_id, checksum, file, genome, analysis -> [genome, qc_id, sample_id, file, analysis, checksum]
 }
 
 input_pipe_complete_first_step = input_pipe_withcode_reordered.combine(blastdbs, by: 0)
@@ -208,8 +216,6 @@ input_pipe_complete_first_step = input_pipe_withcode_reordered.combine(blastdbs,
 
 input_pipe_complete_first_step
      .into{ input_pipe_complete_first_step_for_srm; input_pipe_complete_first_step_for_shotgun; cazz }
-
-
 
 /*
  * Run shotgun on raw data. 
@@ -225,16 +231,17 @@ process run_shotgun {
        label 'big_mem'
        
 		input:
-		set genome_id, internal_code,sample_id, file(mzML_file), analysis_type, fasta_file, file ("*") from input_pipe_complete_first_step_for_shotgun
+		set genome_id, internal_code, sample_id, file(mzML_file), analysis_type, checksum, fasta_file, file ("*") from input_pipe_complete_first_step_for_shotgun
 		file(workflowfile) from shotgunWF
 		
 		when:
 		analysis_type == 'shotgun'
 
 		output:
-		set sample_id, file("${sample_id}.qcml") into qcmlfiles_for_second_step_shot
-		set sample_id, file("${sample_id}.featureXML") into featureXMLfiles_for_second_step_shot
+		set sample_id, internal_code, checksum, file("${sample_id}.featureXML") into featureXMLfiles_shot_for_calc_peptide_area
+
 		set sample_id, file("${sample_id}.idXML") into idXMLfiles_for_second_step_shot
+		set sample_id, file("${sample_id}.qcml") into qcmlfiles_for_second_step_shot
 
 		
 	   """
@@ -254,7 +261,7 @@ process run_shotgun {
  * Run srm on raw data. 
  * Choose blast_db and fasta file depending on species
  * choose genome depending on QC code in the file name // description etc .
-*/
+ */
 
 process run_srm {
 	   publishDir srm_output	   
@@ -263,7 +270,7 @@ process run_srm {
        label 'big_mem'
 	
 		input:
-		set genome_id, internal_code,sample_id, file(mzML_file), analysis_type, fasta_file, file ("*") from input_pipe_complete_first_step_for_srm
+		set genome_id, internal_code, sample_id, file(mzML_file), analysis_type, checksum, fasta_file, file ("*") from input_pipe_complete_first_step_for_srm
 		file(workflowfile) from srmWF
 		file(srmCSV)
 		
@@ -271,13 +278,14 @@ process run_srm {
 		analysis_type == 'srm'
 
 		output:
-		set sample_id, file("${sample_id}.featureXML") into featureXMLfiles_for_second_step_srm
+		set sample_id, internal_code, checksum, file("${sample_id}.featureXML") into featureXMLfiles_srm_for_calc_peptide_area
 		
 	   """
 	   knime --launcher.suppressErrors -nosplash -application org.knime.product.KNIME_BATCH_APPLICATION -reset -nosave \
 		-workflowFile=${workflowfile} \
+	   	-workflow.variable=input_mzml_file,${mzML_file},String \
 		-workflow.variable=input_traml,${srmCSV},String \
-	 	-workflow.variable=output_featurexml_file,${sample_id}.featureXML,String
+	 	-workflow.variable=output_featurexml_file,${sample_id}.featureXML,String \
     	-vmArgs -Xmx${task.memory.mega-5000}m -Duser.home=\$PWD 	
 	   """
 }
@@ -285,25 +293,31 @@ process run_srm {
 
 /*
  * Run Second step 
-
-process mean_it {
-	publishDir mean_it_output
+ * think about moving the QC ID OUT OF THE COMMAND LINE
+ * Why do we have checksum here?
+*/
+process calc_peptide_area {
+	publishDir peptide_area
 
    tag { sample_id }
    
     input:
-	set sample_id, file(mzML_file), file(featureXML_file) from corrected_mzmlfiles_for_second_step.combine(featureXMLfiles_for_second_step, by: 0)
-    file(workflowfile) from secondStepWF
+	set sample_id, internal_code, checksum, file(featureXML_file) from featureXMLfiles_shot_for_calc_peptide_area.mix(featureXMLfiles_srm_for_calc_peptide_area)
+    file(workflowfile) from thirdStepWF
 
     output:
-	set sample_id, file("${sample_id}_ident_pep.csv") into mean_it_ident_pep_files
+	set sample_id, file("${sample_id}.json") into mean_it_ident_pep_files
 
    """
-	knime --launcher.suppressErrors -nosplash -application org.knime.product.KNIME_BATCH_APPLICATION \
-	-reset -nosave -workflowFile=${workflowfile},String \
-	-workflow.variable=input_featurexml_file,${featureXML_file},String \
-	-workflow.variable=input_mzml_file,${mzML_file},String
-    -workflow.variable=output_csv_file,${sample_id}_ident_pep.csv,String
+ 	knime --launcher.suppressErrors -nosplash -application org.knime.product.KNIME_BATCH_APPLICATION \
+	-reset -nosave -workflowFile=${workflowfile}\
+    -workflow.variable=input_csv_file,${peptideCSV},String \
+    -workflow.variable=input_featurexml_file,${featureXML_file},String \
+    -workflow.variable=input_sample_type,internal_code,String \
+    -workflow.variable=input_string_checksum,${checksum},String \
+    -workflow.variable=input_string_qccv,QC_1001844,String \
+    -workflow.variable=output_json_file,${sample_id}.json,String \
+    -workflow.variable=output_json_folder,'.',String \
+    -vmArgs -Xmx${task.memory.mega-5000}m -Duser.home=\$PWD 	
 	"""
 }
-*/
