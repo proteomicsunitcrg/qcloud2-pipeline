@@ -34,7 +34,7 @@ knime --launcher.suppressErrors -nosplash -application org.knime.product.KNIME_B
 ```
 ## STEP 2 - QC parameters</br> </br> 
 
-module_parameter_QC_0000007 (MS2 spectral count)
+module_parameter_QC_0000007 (MS2 spectral count) (Only Shotgun)
 ```
 knime --launcher.suppressErrors -nosplash -application org.knime.product.KNIME_BATCH_APPLICATION -reset -nosave \
 -workflowFile="/users/pr/rolivella/mydata/knwf/module_parameter_QC_0000007.knwf" \
@@ -45,7 +45,7 @@ knime --launcher.suppressErrors -nosplash -application org.knime.product.KNIME_B
 -workflow.variable=output_json_folder,/users/pr/qcloud/outgoing/JSON/1809,String \
 -workflow.variable=output_json_filename,70fa8350-1b1b-467e-a714-2b293adef295_QC01_b5132b11365e8c26842c09afee2d1631,String
 ```
-module_parameter_QC_0000029 (Total number of PSM)
+module_parameter_QC_0000029 (Total number of PSM) (Only Shotgun)
 ```
 knime --launcher.suppressErrors -nosplash -application org.knime.product.KNIME_BATCH_APPLICATION -reset -nosave \
 -workflowFile="/users/pr/rolivella/mydata/knwf/module_parameter_QC_0000029.knwf" \
@@ -56,7 +56,7 @@ knime --launcher.suppressErrors -nosplash -application org.knime.product.KNIME_B
 -workflow.variable=output_json_folder,/users/pr/qcloud/outgoing/JSON/1809,String \
 -workflow.variable=output_json_filename,70fa8350-1b1b-467e-a714-2b293adef295_QC01_b5132b11365e8c26842c09afee2d1631,String
 ```
-module_parameter_QC_0000031 (Total number of uniquely identified peptides)
+module_parameter_QC_0000031 (Total number of uniquely identified peptides) (Only shotgun)
 ```
 knime --launcher.suppressErrors -nosplash -application org.knime.product.KNIME_BATCH_APPLICATION -reset -nosave \
 -workflowFile="/users/pr/rolivella/mydata/knwf/module_parameter_QC_0000031.knwf" \
@@ -67,7 +67,7 @@ knime --launcher.suppressErrors -nosplash -application org.knime.product.KNIME_B
 -workflow.variable=output_json_folder,/users/pr/qcloud/outgoing/JSON/1809,String \
 -workflow.variable=output_json_filename,70fa8350-1b1b-467e-a714-2b293adef295_QC01_b5132b11365e8c26842c09afee2d1631,String
 ```
-module_parameter_QC_0000032 (Total number of uniquely identified proteins)
+module_parameter_QC_0000032 (Total number of uniquely identified proteins) (Only shotgun)
 ```
 knime --launcher.suppressErrors -nosplash -application org.knime.product.KNIME_BATCH_APPLICATION -reset -nosave \
 -workflowFile="/users/pr/rolivella/mydata/knwf/module_parameter_QC_0000032.knwf" \
@@ -78,18 +78,8 @@ knime --launcher.suppressErrors -nosplash -application org.knime.product.KNIME_B
 -workflow.variable=output_json_folder,/users/pr/qcloud/outgoing/JSON/1809,String \
 -workflow.variable=output_json_filename,70fa8350-1b1b-467e-a714-2b293adef295_QC01_b5132b11365e8c26842c09afee2d1631,String
 ```
-module_parameter_QC_1000927 (MEDIAN IT MS1)
-```
-knime --launcher.suppressErrors -nosplash -application org.knime.product.KNIME_BATCH_APPLICATION -reset -nosave \
--workflowFile="/users/pr/rolivella/mydata/knwf/module_parameter_QC_1000927.knwf" \
--workflow.variable=input_mzml_file,/users/pr/rolivella/mydata/mzML/nf/70fa8350-1b1b-467e-a714-2b293adef295_QC01_b5132b11365e8c26842c09afee2d1631.mzML,String \
--workflow.variable=input_string_qccv,QC_1000927,String \
--workflow.variable=input_string_qccv_parent,QC_9000002,String \
--workflow.variable=input_string_checksum,b5132b11365e8c26842c09afee2d1631,String \
--workflow.variable=output_json_folder,/users/pr/qcloud/outgoing/JSON/1809,String \
--workflow.variable=output_json_filename,70fa8350-1b1b-467e-a714-2b293adef295_QC01_b5132b11365e8c26842c09afee2d1631,String
-```
-module_parameter_QC_1000928 (MEDIAN IT MS2)
+
+module_parameter_QC_1000928 (MEDIAN IT MS2) (Both Shotgun and SRM)
 ```
 knime --launcher.suppressErrors -nosplash -application org.knime.product.KNIME_BATCH_APPLICATION -reset -nosave \
 -workflowFile="/users/pr/rolivella/mydata/knwf/module_parameter_QC_1000928.knwf" \
@@ -100,7 +90,7 @@ knime --launcher.suppressErrors -nosplash -application org.knime.product.KNIME_B
 -workflow.variable=output_json_folder,/users/pr/qcloud/outgoing/JSON/1809,String \
 -workflow.variable=output_json_filename,70fa8350-1b1b-467e-a714-2b293adef295_QC01_b5132b11365e8c26842c09afee2d1631,String
 ```
-module_parameter_QC_1001844 (Peptide Area)
+module_parameter_QC_1001844 (Peptide Area) (Both Shotgun and SRM)
 ```
 knime --launcher.suppressErrors -nosplash -application org.knime.product.KNIME_BATCH_APPLICATION -reset -nosave \
 -workflowFile="/users/pr/rolivella/mydata/knwf/module_parameter_QC_1001844.knwf" \
@@ -112,7 +102,7 @@ knime --launcher.suppressErrors -nosplash -application org.knime.product.KNIME_B
 -workflow.variable=output_json_folder,/users/pr/qcloud/outgoing/JSON/1809,String \
 -workflow.variable=output_json_filename,70fa8350-1b1b-467e-a714-2b293adef295_QC01_b5132b11365e8c26842c09afee2d1631,String
 ```
-module_parameter_QC_1000014 (Mass accuracy)
+module_parameter_QC_1000014 (Mass accuracy) (Both Shotgun and SRM)
 ```
 knime --launcher.suppressErrors -nosplash -application org.knime.product.KNIME_BATCH_APPLICATION -reset -nosave \
 -workflowFile="/users/pr/rolivella/mydata/knwf/module_parameter_QC_1000014.knwf" \
@@ -125,7 +115,7 @@ knime --launcher.suppressErrors -nosplash -application org.knime.product.KNIME_B
 -workflow.variable=output_json_folder,/users/pr/qcloud/outgoing/JSON/1809,String \
 -workflow.variable=output_json_filename,70fa8350-1b1b-467e-a714-2b293adef295_QC01_b5132b11365e8c26842c09afee2d1631,String
 ```
-module_parameter_QC_1010086 (Median Fwhm)
+module_parameter_QC_1010086 (Median Fwhm) (Both Shotgun and SRM)
 ```
 knime --launcher.suppressErrors -nosplash -application org.knime.product.KNIME_BATCH_APPLICATION -reset -nosave \
 -workflowFile="/users/pr/rolivella/mydata/knwf/module_parameter_QC_1010086.knwf" \
