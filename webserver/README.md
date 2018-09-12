@@ -111,3 +111,13 @@ curl -X GET http://192.168.101.125/index.php?input=180528_QC01.raw | jq '.return
 
 * Reference: https://medium.com/how-tos-for-coders/https-medium-com-how-tos-for-coders-parse-json-data-using-jq-and-curl-from-command-line-5aa8a05cd79b
 
+# TODO
+
+* Adding script for cleaning older input files:
+    * Ref: https://stackoverflow.com/questions/51054/batch-file-to-delete-files-older-than-n-days
+    * Ref: https://stackoverflow.com/questions/132971/what-is-the-windows-version-of-cron
+
+
+
+
+
