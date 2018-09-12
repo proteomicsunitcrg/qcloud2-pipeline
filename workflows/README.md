@@ -1,136 +1,168 @@
 # QCLOUD 2.0 PIPELINE (Nextflow+Knime)
 
-## STEP 1</br>
+## STEP 1 - Proteomics workflows</br> </br> 
 
-Folder where the data will be collected: 
-```
-/users/pr/nodes/incoming/$YYMM
-```
-
-Define file path and its filename: 
-```
-$file_path = /users/pr/nodes/outgoing/mzML/1806/02656d22-b9d9-43e1-9375-f257b5f9717c_QC01_96410bfd152abfc6565266c837ce7887.raw.mzML
-$filename = 02656d22-b9d9-43e1-9375-f257b5f9717c_QC01_96410bfd152abfc6565266c837ce7887
-```
-
-Remove XML namespace: 
+Remove XML namespace from mzML file: 
 ```
 sed -i 's@xmlns="http://psi.hupo.org/ms/mzml"@@g' $file_path
 ```
- 
-## STEP 2</br> </br> 
-
 Proteomics **SHOTGUN**: </br>
 
-input_mzml_file, input mzML file</br>
-input_fasta_file, input FASTA database file (BSA or HeLa)</br>
-input_fasta_psq_file, input FASTA.PSQ database file (BSA or HeLa)</br>
-output_featurexml_file, output featureXML filename and path</br>
-output_qcml_file, output qcXML filename and path</br>
-output_idxml_file, output idXML filename and path</br></br>
-
 ```
-knime --launcher.suppressErrors -nosplash -application org.knime.product.KNIME_BATCH_APPLICATION -reset -nosave -workflowFile="/users/pr/qcloud/nextflow/workflows/module_workflow_shotgun.knwf" -workflow.variable=input_mzml_file,/users/pr/nodes/outgoing/mzML/1806/02656d22-b9d9-43e1-9375-f257b5f9717c_QC01_96410bfd152abfc6565266c837ce7887.mzML,String -workflow.variable=input_fasta_file,/users/pr/qcloud/nextflow/fasta/sp_bovine_2015_11_wo_contaminants_shuffled.fasta,String -workflow.variable=input_fasta_psq_file,/users/pr/qcloud/nextflow/blastdb/shotgun_bsa.fasta.psq,String -workflow.variable=output_featurexml_file,/users/pr/nodes/outgoing/featureXML/1806/02656d22-b9d9-43e1-9375-f257b5f9717c_QC01_96410bfd152abfc6565266c837ce7887.featureXML,String -workflow.variable=output_qcml_file,/users/pr/nodes/outgoing/qcML/1806/02656d22-b9d9-43e1-9375-f257b5f9717c_QC01_96410bfd152abfc6565266c837ce7887.qcml,String -workflow.variable=output_idxml_file,/users/pr/nodes/outgoing/idXML/1806/02656d22-b9d9-43e1-9375-f257b5f9717c_QC01_96410bfd152abfc6565266c837ce7887.idxml,String
+knime --launcher.suppressErrors -nosplash -application org.knime.product.KNIME_BATCH_APPLICATION -reset -nosave \
+-workflowFile="/users/pr/rolivella/mydata/knwf/module_workflow_shotgun.knwf" \
+-workflow.variable=input_mzml_file,/users/pr/rolivella/mydata/mzML/nf/70fa8350-1b1b-467e-a714-2b293adef295_QC01_b5132b11365e8c26842c09afee2d1631.mzML,String \
+-workflow.variable=input_fasta_file,/users/pr/databases/sp_bovine_2015_11_wo_contaminants_shuffled.fasta,String \
+-workflow.variable=input_fasta_psq_file,/users/pr/databases/BLASTformattedDB/sp_bovine_2015_11_wo_contaminants_shuffled.fasta.psq,String \
+-workflow.variable=output_featurexml_file,/users/pr/rolivella/mydata/featureXML/nf/70fa8350-1b1b-467e-a714-2b293adef295_QC01_b5132b11365e8c26842c09afee2d1631.featureXML,String \
+-workflow.variable=output_qcml_file,/users/pr/rolivella/mydata/qcML/nf/70fa8350-1b1b-467e-a714-2b293adef295_QC01_b5132b11365e8c26842c09afee2d1631.qcml,String \
+-workflow.variable=output_idxml_file,/users/pr/rolivella/mydata/idXML/nf/70fa8350-1b1b-467e-a714-2b293adef295_QC01_b5132b11365e8c26842c09afee2d1631.idxml,String
 ```
 Proteomics **SRM**: </br>
 
-input_mzml_file, input mzML file</br>
-input_traml, input mzML file</br>
-output_featurexml_file, output featureXML filename and path</br>
-
 ```
-knime --launcher.suppressErrors -nosplash -application org.knime.product.KNIME_BATCH_APPLICATION -reset -nosave -workflowFile="/users/pr/qcloud/nextflow/workflows/module_workflow_srm.knwf" -workflow.variable=input_mzml_file,/users/pr/nodes/outgoing/mzML/1806/42839b81-9038-4b86-b1b6-c55d7cd9503c_QC01_f3672ebc3f88fbbf976ac4e52cd3f98f.mzML,String -workflow.variable=input_traml,users/pr/qcloud/nextflow/csv/qtrap_bsa.traml,String -workflow.variable=output_featurexml_file,/users/pr/nodes/outgoing/featureXML/1806/42839b81-9038-4b86-b1b6-c55d7cd9503c_QC01_f3672ebc3f88fbbf976ac4e52cd3f98f.featureXML,String
+knime --launcher.suppressErrors -nosplash -application org.knime.product.KNIME_BATCH_APPLICATION -reset -nosave \
+-workflowFile="/users/pr/rolivella/mydata/knwf/module_workflow_srm.knwf" \
+-workflow.variable=input_mzml_file,/users/pr/rolivella/mydata/mzML/nf/cc58d80d-6e1e-4902-9adc-b0e0d27eb357_QCS1_5c40d14cf709afec1b6d5a968ba222a3.mzML,String \
+-workflow.variable=input_traml,/users/pr/rolivella/mydata/traml/qtrap_bsa.traml,String \
+-workflow.variable=output_featurexml_file,/users/pr/rolivella/mydata/featureXML/nf/cc58d80d-6e1e-4902-9adc-b0e0d27eb357_QCS1_5c40d14cf709afec1b6d5a968ba222a3.featureXML,String
 ```
-
-## STEP 3</br> </br> 
-
-In general a KNIME workflow will accept one or more OpenMS files like .mzML, .qcML, etc. depending on the QC parameter to compute. The output must be a JSON file with this filename: QCCVCODENUM_FILENAME.json, for instance QC1001844_180308_Q_QC01_01_01.json. 
-
-![2018-06-08 10_54_03-qcloud-detailed-overview pptx - powerpoint](https://user-images.githubusercontent.com/1679820/41148872-5489c732-6b0a-11e8-9515-857171236b77.png)
-
-Workflow name: module_parameter_QC_1001844.knwf</br>
-Extracted parameters: QC:1001844 (MS1 feature area or peak area)</br></br>
-
-input_csv_file, list of peptides for QC01 and QC02</br>
-input_featurexml_file, is the .featureXML from the output of module_workflow_shotgun</br>
-input_sample_type, QC01 or QC02</br>
-input_string_checksum, file checksum</br>
-input_string_qccv, file QC code, e.g. QC_1001844</br>
-output_json_file, output JSON filename</br>
-output_json_folder, output JSON folder</br>
-
-Sets the QC parameter and workflow to search: 
-
+Remove XML namespace from qcML file: 
 ```
-$cvqc='QC_1001844'
+sed -i 's@xmlns="http://psi.hupo.org/ms/mzml"@@g' $file_path
 ```
 
-KNIME QC parameter computing module: 
+## STEP 2 - QC parameters</br> </br> 
 
+module_parameter_QC_0000007 (MS2 spectral count)
 ```
-knime --launcher.suppressErrors -nosplash -application org.knime.product.KNIME_BATCH_APPLICATION -reset -nosave -workflowFile="/users/pr/rolivella/mydata/knwf/module_parameter_QC_1001844.knwf" -workflow.variable=input_csv_file,/users/pr/rolivella/mydata/csv/knime_peptides_final.csv,String -workflow.variable=input_featurexml_file,/users/pr/rolivella/mydata/featureXML/42839b81-9038-4b86-b1b6-c55d7cd9503c_QC01_f3672ebc3f88fbbf976ac4e52cd3f98f.featureXML,String -workflow.variable=input_sample_type,QC01,String -workflow.variable=input_string_checksum,f3672ebc3f88fbbf976ac4e52cd3f98f,String -workflow.variable=input_string_qccv,QC_1001844,String -workflow.variable=output_json_file,'42839b81-9038-4b86-b1b6-c55d7cd9503c_QC01_f3672ebc3f88fbbf976ac4e52cd3f98f_QC_1001844.json',String -workflow.variable=output_json_folder,/users/pr/qcloud/outgoing/JSON/1807,String
+knime --launcher.suppressErrors -nosplash -application org.knime.product.KNIME_BATCH_APPLICATION -reset -nosave \
+-workflowFile="/users/pr/rolivella/mydata/knwf/module_parameter_QC_0000007.knwf" \
+-workflow.variable=input_qcml_file,/users/pr/rolivella/mydata/qcML/nf/70fa8350-1b1b-467e-a714-2b293adef295_QC01_b5132b11365e8c26842c09afee2d1631.qcml,String \
+-workflow.variable=input_string_qccv,QC_0000007,String \
+-workflow.variable=input_string_qccv_parent,QC_9000001,String \
+-workflow.variable=input_string_checksum,b5132b11365e8c26842c09afee2d1631,String \
+-workflow.variable=output_json_folder,/users/pr/qcloud/outgoing/JSON/1809,String \
+-workflow.variable=output_json_filename,70fa8350-1b1b-467e-a714-2b293adef295_QC01_b5132b11365e8c26842c09afee2d1631,String
 ```
+module_parameter_QC_0000029 (Total number of PSM)
+```
+knime --launcher.suppressErrors -nosplash -application org.knime.product.KNIME_BATCH_APPLICATION -reset -nosave \
+-workflowFile="/users/pr/rolivella/mydata/knwf/module_parameter_QC_0000029.knwf" \
+-workflow.variable=input_qcml_file,/users/pr/rolivella/mydata/qcML/nf/70fa8350-1b1b-467e-a714-2b293adef295_QC01_b5132b11365e8c26842c09afee2d1631.qcml,String \
+-workflow.variable=input_string_qccv,QC_0000029,String \
+-workflow.variable=input_string_qccv_parent,QC_9000001,String \
+-workflow.variable=input_string_checksum,b5132b11365e8c26842c09afee2d1631,String \
+-workflow.variable=output_json_folder,/users/pr/qcloud/outgoing/JSON/1809,String \
+-workflow.variable=output_json_filename,70fa8350-1b1b-467e-a714-2b293adef295_QC01_b5132b11365e8c26842c09afee2d1631,String
+```
+module_parameter_QC_0000031 (Total number of uniquely identified peptides)
+```
+knime --launcher.suppressErrors -nosplash -application org.knime.product.KNIME_BATCH_APPLICATION -reset -nosave \
+-workflowFile="/users/pr/rolivella/mydata/knwf/module_parameter_QC_0000031.knwf" \
+-workflow.variable=input_qcml_file,/users/pr/rolivella/mydata/qcML/nf/70fa8350-1b1b-467e-a714-2b293adef295_QC01_b5132b11365e8c26842c09afee2d1631.qcml,String \
+-workflow.variable=input_string_qccv,QC_0000031,String \
+-workflow.variable=input_string_qccv_parent,QC_9000001,String \
+-workflow.variable=input_string_checksum,b5132b11365e8c26842c09afee2d1631,String \
+-workflow.variable=output_json_folder,/users/pr/qcloud/outgoing/JSON/1809,String \
+-workflow.variable=output_json_filename,70fa8350-1b1b-467e-a714-2b293adef295_QC01_b5132b11365e8c26842c09afee2d1631,String
+```
+module_parameter_QC_0000032 (Total number of uniquely identified proteins)
+```
+knime --launcher.suppressErrors -nosplash -application org.knime.product.KNIME_BATCH_APPLICATION -reset -nosave \
+-workflowFile="/users/pr/rolivella/mydata/knwf/module_parameter_QC_0000032.knwf" \
+-workflow.variable=input_qcml_file,/users/pr/rolivella/mydata/qcML/nf/70fa8350-1b1b-467e-a714-2b293adef295_QC01_b5132b11365e8c26842c09afee2d1631.qcml,String \
+-workflow.variable=input_string_qccv,QC_0000032,String \
+-workflow.variable=input_string_qccv_parent,QC_9000001,String \
+-workflow.variable=input_string_checksum,b5132b11365e8c26842c09afee2d1631,String \
+-workflow.variable=output_json_folder,/users/pr/qcloud/outgoing/JSON/1809,String \
+-workflow.variable=output_json_filename,70fa8350-1b1b-467e-a714-2b293adef295_QC01_b5132b11365e8c26842c09afee2d1631,String
+```
+module_parameter_QC_1000927 (MEDIAN IT MS1)
+```
+knime --launcher.suppressErrors -nosplash -application org.knime.product.KNIME_BATCH_APPLICATION -reset -nosave \
+-workflowFile="/users/pr/rolivella/mydata/knwf/module_parameter_QC_1000927.knwf" \
+-workflow.variable=input_mzml_file,/users/pr/rolivella/mydata/mzML/nf/70fa8350-1b1b-467e-a714-2b293adef295_QC01_b5132b11365e8c26842c09afee2d1631.mzML,String \
+-workflow.variable=input_string_qccv,QC_1000927,String \
+-workflow.variable=input_string_qccv_parent,QC_9000002,String \
+-workflow.variable=input_string_checksum,b5132b11365e8c26842c09afee2d1631,String \
+-workflow.variable=output_json_folder,/users/pr/qcloud/outgoing/JSON/1809,String \
+-workflow.variable=output_json_filename,70fa8350-1b1b-467e-a714-2b293adef295_QC01_b5132b11365e8c26842c09afee2d1631,String
+```
+module_parameter_QC_1000928 (MEDIAN IT MS2)
+```
+knime --launcher.suppressErrors -nosplash -application org.knime.product.KNIME_BATCH_APPLICATION -reset -nosave \
+-workflowFile="/users/pr/rolivella/mydata/knwf/module_parameter_QC_1000928.knwf" \
+-workflow.variable=input_mzml_file,/users/pr/rolivella/mydata/mzML/nf/70fa8350-1b1b-467e-a714-2b293adef295_QC01_b5132b11365e8c26842c09afee2d1631.mzML,String \
+-workflow.variable=input_string_qccv,QC_1000928,String \
+-workflow.variable=input_string_qccv_parent,QC_9000002,String \
+-workflow.variable=input_string_checksum,b5132b11365e8c26842c09afee2d1631,String \
+-workflow.variable=output_json_folder,/users/pr/qcloud/outgoing/JSON/1809,String \
+-workflow.variable=output_json_filename,70fa8350-1b1b-467e-a714-2b293adef295_QC01_b5132b11365e8c26842c09afee2d1631,String
+```
+module_parameter_QC_1001844 (Peptide Area)
+```
+knime --launcher.suppressErrors -nosplash -application org.knime.product.KNIME_BATCH_APPLICATION -reset -nosave \
+-workflowFile="/users/pr/rolivella/mydata/knwf/module_parameter_QC_1001844.knwf" \
+-workflow.variable=input_csv_file,/users/pr/rolivella/mydata/csv/knime_peptides_final.csv,String \
+-workflow.variable=input_featurexml_file,/users/pr/rolivella/mydata/featureXML/nf/70fa8350-1b1b-467e-a714-2b293adef295_QC01_b5132b11365e8c26842c09afee2d1631.featureXML,String \
+-workflow.variable=input_sample_type,QC01,String \
+-workflow.variable=input_string_checksum,b5132b11365e8c26842c09afee2d1631,String \
+-workflow.variable=input_string_qccv,QC_1001844,String \
+-workflow.variable=output_json_folder,/users/pr/qcloud/outgoing/JSON/1809,String \
+-workflow.variable=output_json_filename,70fa8350-1b1b-467e-a714-2b293adef295_QC01_b5132b11365e8c26842c09afee2d1631,String
+```
+module_parameter_QC_1000014 (Mass accuracy)
+```
+knime --launcher.suppressErrors -nosplash -application org.knime.product.KNIME_BATCH_APPLICATION -reset -nosave \
+-workflowFile="/users/pr/rolivella/mydata/knwf/module_parameter_QC_1000014.knwf" \
+-workflow.variable=input_csv_file,/users/pr/rolivella/mydata/csv/knime_peptides_final.csv,String \
+-workflow.variable=input_featurexml_file,/users/pr/rolivella/mydata/featureXML/nf/70fa8350-1b1b-467e-a714-2b293adef295_QC01_b5132b11365e8c26842c09afee2d1631.featureXML,String \
+-workflow.variable=input_sample_type,QC01,String \
+-workflow.variable=input_string_checksum,b5132b11365e8c26842c09afee2d1631,String \
+-workflow.variable=input_string_qccv,QC_1000014,String \
+-workflow.variable=input_string_qccv_parent,QC_1000014,String \
+-workflow.variable=output_json_folder,/users/pr/qcloud/outgoing/JSON/1809,String \
+-workflow.variable=output_json_filename,70fa8350-1b1b-467e-a714-2b293adef295_QC01_b5132b11365e8c26842c09afee2d1631,String
+```
+module_parameter_QC_1010086 (Median Fwhm)
+```
+knime --launcher.suppressErrors -nosplash -application org.knime.product.KNIME_BATCH_APPLICATION -reset -nosave \
+-workflowFile="/users/pr/rolivella/mydata/knwf/module_parameter_QC_1010086.knwf" \
+-workflow.variable=input_csv_file,/users/pr/rolivella/mydata/csv/knime_peptides_final.csv,String \
+-workflow.variable=input_featurexml_file,/users/pr/rolivella/mydata/featureXML/nf/70fa8350-1b1b-467e-a714-2b293adef295_QC01_b5132b11365e8c26842c09afee2d1631.featureXML,String \
+-workflow.variable=input_sample_type,QC01,String \
+-workflow.variable=input_string_checksum,b5132b11365e8c26842c09afee2d1631,String \
+-workflow.variable=input_string_qccv,QC_1010086,String \
+-workflow.variable=input_string_qccv_parent,QC_1010086,String \
+-workflow.variable=output_json_folder,/users/pr/qcloud/outgoing/JSON/1809,String \
+-workflow.variable=output_json_filename,70fa8350-1b1b-467e-a714-2b293adef295_QC01_b5132b11365e8c26842c09afee2d1631,String
+```
+## STEP 3 - Check peptide JSON files, send to database and move</br> </br> 
 
-Store JSON file to QCloud database: </br>
-
-Post file info: </br>
-
-QC:0000005 means QC01</br>
-02656d22-b9d9-43e1-9375-f257b5f9717c is labsys key
-
+module_check_peptides (only for QC_1000014,QC_1010086 and QC_1000014)
 ```
-curl -i -H 'Authorization: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJkYW5pZWwubWFuY2VyYUBjcmcuZXUiLCJhdWRpZW5jZSI6IndlYiIsImNyZWF0ZWQiOjE1MzAyNTkzMjI0NDIsImV4cCI6MTUzMDg2NDEyMiwiYXV0aG9yaXRpZXMiOlt7ImF1dGhvcml0eSI6IlJPTEVfVVNFUiJ9LHsiYXV0aG9yaXR5IjoiUk9MRV9NQU5BR0VSIn0seyJhdXRob3JpdHkiOiJST0xFX0FETUlOIn1dfQ.F7lL8dYsGdCRW9H6MGkIjD7eiwOZAiX2MlZqzFFhAaKY3ZZWfaqvncXrhQ4F02sP27dQ1Fh2v80zVoXwMkNhPw' -H 'Accept: application/json' -H 'Content-Type:application/json' -X POST --data '{"creationDate": "2018-05-31 21:45:05","filename": "180531_Q_QC1F_01_02","checksum":"a593cea2cd0924f529e3b6d8bdf45664"}' 'http://192.168.101.37:8181/api/file/QC:0000005/02656d22-b9d9-43e1-9375-f257b5f9717c'
+knime --launcher.suppressErrors -nosplash -application org.knime.product.KNIME_BATCH_APPLICATION -reset -nosave \
+-workflowFile="/users/pr/rolivella/mydata/knwf/module_check_peptides.knwf" \
+-workflow.variable=input_csv_file,/users/pr/rolivella/mydata/csv/knime_peptides_final.csv,String \
+-workflow.variable=input_sample_type,QC01,String \
+-workflow.variable=input_string_checksum,b5132b11365e8c26842c09afee2d1631,String \
+-workflow.variable=input_string_qccv,QC_1010086,String \
+-workflow.variable=input_json_absolute_path,/users/pr/qcloud/outgoing/JSON/1809/70fa8350-1b1b-467e-a714-2b293adef295_QC01_b5132b11365e8c26842c09afee2d1631_QC_1010086.json,String \
+-workflow.variable=output_json_folder,/users/pr/qcloud/outgoing/JSON/1809,String \
+-workflow.variable=output_json_filename,70fa8350-1b1b-467e-a714-2b293adef295_QC01_b5132b11365e8c26842c09afee2d1631,String
 ```
-Post data to file: </br>
-
+module_api_conn
 ```
-curl -i -H 'Authorization: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJkYW5pZWwubWFuY2VyYUBjcmcuZXUiLCJhdWRpZW5jZSI6IndlYiIsImNyZWF0ZWQiOjE1MzAyNTkzMjI0NDIsImV4cCI6MTUzMDg2NDEyMiwiYXV0aG9yaXRpZXMiOlt7ImF1dGhvcml0eSI6IlJPTEVfVVNFUiJ9LHsiYXV0aG9yaXR5IjoiUk9MRV9NQU5BR0VSIn0seyJhdXRob3JpdHkiOiJST0xFX0FETUlOIn1dfQ.F7lL8dYsGdCRW9H6MGkIjD7eiwOZAiX2MlZqzFFhAaKY3ZZWfaqvncXrhQ4F02sP27dQ1Fh2v80zVoXwMkNhPw' -H 'Accept: application/json' -H 'Content-Type:application/json' -X POST --data '$data_param' 'http://192.168.101.37:8181/api/data/pipeline'
+knime --launcher.suppressErrors -nosplash -application org.knime.product.KNIME_BATCH_APPLICATION -reset -nosave \
+-workflowFile="/users/pr/rolivella/mydata/knwf/module_api_conn.knwf" \
+-workflow.variable=input_mzml_file,/users/pr/rolivella/mydata/mzML/nf/70fa8350-1b1b-467e-a714-2b293adef295_QC01_b5132b11365e8c26842c09afee2d1631.mzML,String \
+-workflow.variable=input_string_checksum,b5132b11365e8c26842c09afee2d1631,String \
+-workflow.variable=input_string_labsystem,70fa8350-1b1b-467e-a714-2b293adef295,String \
+-workflow.variable=input_sample_type,QC01,String \
+-workflow.variable=input_url_token,http://192.168.101.37:8080/api/auth,String \
+-workflow.variable=input_url_insert_file,http://192.168.101.37:8080/api/file/QC:0000005,String \
+-workflow.variable=input_url_insert_data,http://192.168.101.37:8080/api/data/pipeline,String \
+-workflow.variable=input_json_folder,/users/pr/qcloud/outgoing/JSON/1809,String
 ```
-Where $data_param= </br>
-
-```
-{
-  "file" : {
-    "checksum" : "a593cea2cd0924f529e3b6d8bdf45664"
-  },
-  "data" : [ {
-    "parameter" : {
-      "QCCV" : "QC:1001844"
-    },
-    "values" : [ {
-      "sequence" : "EAC(Carbamidomethyl)FAVEGPK",
-      "mass_acc" : 0.5983956158408309
-    }, {
-      "sequence" : "EC(Carbamidomethyl)C(Carbamidomethyl)HGDLLEC(Carbamidomethyl)ADDR",
-      "mass_acc" : 0.32304470627096477
-    }, {
-      "sequence" : "EYEATLEEC(Carbamidomethyl)C(Carbamidomethyl)AK",
-      "mass_acc" : 0.13539907509054283
-    }, {
-      "sequence" : "HLVDEPQNLIK",
-      "mass_acc" : 0.714647658269317
-    }, {
-      "sequence" : "LVNELTEFAK",
-      "mass_acc" : 0.777346695311011
-    }, {
-      "sequence" : "NEC(Carbamidomethyl)FLSHK",
-      "mass_acc" : 0.7115451443202172
-    }, {
-      "sequence" : "SLHTLFGDELC(Carbamidomethyl)K",
-      "mass_acc" : 0.01365762278395882
-    }, {
-      "sequence" : "TC(Carbamidomethyl)VADESHAGC(Carbamidomethyl)EK",
-      "mass_acc" : 0.07932435272596104
-    }, {
-      "sequence" : "VPQVSTPTLVEVSR",
-      "mass_acc" : 0.23677258801063458
-    }, {
-      "sequence" : "VPQVSTPTLVEVSR",
-      "mass_acc" : 0.38794578499440446
-    }, {
-      "sequence" : "YIC(Carbamidomethyl)DNQDTISSK",
-      "mass_acc" : 0.5377631215703618
-    } ]
-  } ]
-}
-```
+All inserted JSONs must be moved to the "processed" folder. 
