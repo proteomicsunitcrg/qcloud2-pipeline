@@ -31,7 +31,7 @@ knime --launcher.suppressErrors -nosplash -application org.knime.product.KNIME_B
 -workflow.variable=input_mzml_file,/users/pr/rolivella/mydata/mzML/nf/cc58d80d-6e1e-4902-9adc-b0e0d27eb357_QCS1_5c40d14cf709afec1b6d5a968ba222a3.mzML,String \
 -workflow.variable=input_traml,/users/pr/rolivella/mydata/traml/qtrap_bsa.traml,String \
 -workflow.variable=output_featurexml_file,/users/pr/rolivella/mydata/featureXML/nf/cc58d80d-6e1e-4902-9adc-b0e0d27eb357_QCS1_5c40d14cf709afec1b6d5a968ba222a3.featureXML,String
-
+```
 ## STEP 2 - QC parameters</br> </br> 
 
 module_parameter_QC_0000007 (MS2 spectral count)
