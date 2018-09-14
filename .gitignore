@@ -1,7 +1,8 @@
+testFunctions.nf
 conversion
 blastdb
 .nextflow*
 log*
 work
-output*
+output
 .Dockerfile.swp

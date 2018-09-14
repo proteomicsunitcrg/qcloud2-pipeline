@@ -40,11 +40,11 @@ fi
 
 
 curl --user "webdav:${webdavpass}" -T "${rawfile}" "http://${webdavip}/input/${labsys}_${qcode}_${checksum}.${ext}"
-
-curl -X GET http://${webdavip}/index.php?input=${labsys}_${qcode}_${checksum}.${ext}${alt}&output=${out}
-
+echo "STEP 1"
+curl -X GET "http://${webdavip}/index.php?input=${labsys}_${qcode}_${checksum}.${ext}${alt}&output=${out}"
+echo "STEP 2"
 curl --user "webdav:${webdavpass}" -X GET http://${webdavip}/output/${output} > ${output}
-
+echo "STEP 3"
 curl --user "webdav:${webdavpass}" -X DELETE http://${webdavip}/output/${output}
-
-curl --user "webdav:${webdavpass}" -X DELETE http://${webdavip}/input/${labsys}_${qcode}_${checksum}.${ext}    
+echo "STEP 4" 
+curl --user "webdav:${webdavpass}" -X DELETE http://${webdavip}/input/${labsys}_${qcode}_${checksum}.${ext}   
