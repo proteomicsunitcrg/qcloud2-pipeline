@@ -131,7 +131,7 @@ knime --launcher.suppressErrors -nosplash -application org.knime.product.KNIME_B
 ```
 ## STEP 3 - Check peptide JSON files, send to database and move</br> </br> 
 
-module_check_peptides (only for QC_1000014,QC_1010086 and QC_1000014)
+module_check_peptides (only for QC_1000014,QC_1010086)
 ```
 knime --launcher.suppressErrors -nosplash -application org.knime.product.KNIME_BATCH_APPLICATION -reset -nosave \
 -workflowFile="/users/pr/rolivella/mydata/knwf/module_check_peptides.knwf" \
