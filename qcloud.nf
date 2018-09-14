@@ -52,7 +52,7 @@ fastaconfig = file(params.fasta_tab)
 if( !fastaconfig.exists() )  { error "Cannot find any fasta tab file!!!"}
 
 // Output folder
-shotgun_output      = "output/output_shotgun"
+shotgun_output      = "output/shotgun_output"
 srm_output          = "output/srm_output"
 common_output		= "output/common_output"
 
@@ -245,9 +245,8 @@ process run_shotgun {
         analysis_type == 'shotgun'
 
         output:
-        set sample_id, internal_code, checksum, file("${sample_id}.featureXML") into featureXMLfiles_shot_for_calc_peptide_area
+        set sample_id, internal_code, checksum, file("${sample_id}.featureXML") into shot_featureXMLfiles_for_calc_peptide_area, shot_featureXMLfiles_for_calc_mass_accuracy, shot_featureXMLfiles_for_calc_median_fwhm
         set sample_id, internal_code, checksum, file(mzML_file) into shot_mzML_file_for_MedianITMS2
-        set sample_id, file("${sample_id}.idXML") into idXMLfiles_for_second_step_shot
         set sample_id, internal_code, checksum, file("${sample_id}.qcml") into qcmlfiles_for_MS2_spectral_count, qcmlfiles_for_tot_num_uniq_peptides, qcmlfiles_for_tot_num_uniq_proteins
 
         
@@ -287,7 +286,7 @@ process run_srm {
         analysis_type == 'srm'
 
         output:
-        set sample_id, internal_code, checksum, file("${sample_id}.featureXML") into featureXMLfiles_srm_for_calc_peptide_area
+        set sample_id, internal_code, checksum, file("${sample_id}.featureXML") into srm_featureXMLfiles_for_calc_peptide_area, srm_featureXMLfiles_for_calc_mass_accuracy, srm_featureXMLfiles_for_calc_median_fwhm
         set sample_id, internal_code, checksum, file(mzML_file) into srm_mzML_file_for_MedianITMS2
         
        """
@@ -370,14 +369,13 @@ process calc_tot_num_uniq_proteins {
  * Run calculation of median IT MS2
  */
 process calc_median_IT_MS2 {
-    publishDir shotgun_output
+    publishDir common_output
 
     tag { sample_id }
     def process_id = MedianITMS2_ID   
 
     input:
     set sample_id, internal_code, checksum, file(mzml_file) from shot_mzML_file_for_MedianITMS2.mix(srm_mzML_file_for_MedianITMS2)
-
     file(workflowfile) from getWFFile(baseQCPath, process_id)
 
     output:
@@ -388,7 +386,75 @@ process calc_median_IT_MS2 {
 	knime.launch()
 	
 }
+
+/*
+ * Run calculation of peptide area
+ */
+process calc_peptide_area {
+    publishDir common_output
+
+    tag { sample_id }
+    def process_id = PepArea_ID   
+
+    input:
+    set sample_id, internal_code, checksum, file(featxml_file) from shot_featureXMLfiles_for_calc_peptide_area.mix(srm_featureXMLfiles_for_calc_peptide_area)
+	file(peptideCSV)
+    file(workflowfile) from getWFFile(baseQCPath, process_id)
+
+    output:
+    file("${sample_id}_QC_${process_id}.json")
+
+	script:
+	def knime = new Knime(wf:workflowfile, csvpep:peptideCSV, stype:internal_code, featxml:featxml_file, mem:"${task.memory.mega-5000}m", qccv:"QC_${process_id}", qccvp:ontology[process_id], chksum:checksum, ojfile:"${sample_id}")
+	knime.launch()
+	
+}
  
+/*
+ * Run calculation of Mass accuracy
+ */
+ process calc_mass_accuracy {
+    publishDir common_output
+
+    tag { sample_id }
+    def process_id = MassAccuracy_ID   
+
+    input:
+    set sample_id, internal_code, checksum, file(featxml_file) from shot_featureXMLfiles_for_calc_mass_accuracy.mix(srm_featureXMLfiles_for_calc_mass_accuracy)
+	file(peptideCSV)
+    file(workflowfile) from getWFFile(baseQCPath, process_id)
+
+    output:
+    file("${sample_id}_QC_${process_id}.json")
+
+	script:
+	def knime = new Knime(wf:workflowfile, csvpep:peptideCSV, stype:internal_code, featxml:featxml_file, mem:"${task.memory.mega-5000}m", qccv:"QC_${process_id}", qccvp:ontology[process_id], chksum:checksum, ojfile:"${sample_id}")
+	knime.launch()
+	
+}
+ 
+/*
+ * Run calculation of Median Fwhm
+ */
+ process calc_median_fwhm {
+    publishDir common_output
+
+    tag { sample_id }
+    def process_id = MedianFwhm_ID   
+
+    input:
+    set sample_id, internal_code, checksum, file(featxml_file) from shot_featureXMLfiles_for_calc_median_fwhm.mix(srm_featureXMLfiles_for_calc_median_fwhm)
+	file(peptideCSV)
+    file(workflowfile) from getWFFile(baseQCPath, process_id)
+
+    output:
+    file("${sample_id}_QC_${process_id}.json")
+
+	script:
+	def knime = new Knime(wf:workflowfile, csvpep:peptideCSV, stype:internal_code, featxml:featxml_file, mem:"${task.memory.mega-5000}m", qccv:"QC_${process_id}", qccvp:ontology[process_id], chksum:checksum, ojfile:"${sample_id}")
+	knime.launch()
+	
+}
  
 /*
  Functions
