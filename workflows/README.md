@@ -43,7 +43,7 @@ knime --launcher.suppressErrors -nosplash -application org.knime.product.KNIME_B
 -workflow.variable=input_string_qccv_parent,QC_9000001,String \
 -workflow.variable=input_string_checksum,b5132b11365e8c26842c09afee2d1631,String \
 -workflow.variable=output_json_folder,/users/pr/qcloud/outgoing/JSON/1809,String \
--workflow.variable=output_json_filename,70fa8350-1b1b-467e-a714-2b293adef295_QC01_b5132b11365e8c26842c09afee2d1631,String
+-workflow.variable=output_json_id,70fa8350-1b1b-467e-a714-2b293adef295_QC01_b5132b11365e8c26842c09afee2d1631,String
 ```
 module_parameter_QC_0000029 (Total number of PSM) (Only Shotgun)
 ```
@@ -54,7 +54,7 @@ knime --launcher.suppressErrors -nosplash -application org.knime.product.KNIME_B
 -workflow.variable=input_string_qccv_parent,QC_9000001,String \
 -workflow.variable=input_string_checksum,b5132b11365e8c26842c09afee2d1631,String \
 -workflow.variable=output_json_folder,/users/pr/qcloud/outgoing/JSON/1809,String \
--workflow.variable=output_json_filename,70fa8350-1b1b-467e-a714-2b293adef295_QC01_b5132b11365e8c26842c09afee2d1631,String
+-workflow.variable=output_json_id,70fa8350-1b1b-467e-a714-2b293adef295_QC01_b5132b11365e8c26842c09afee2d1631,String
 ```
 module_parameter_QC_0000031 (Total number of uniquely identified peptides) (Only shotgun)
 ```
@@ -65,7 +65,7 @@ knime --launcher.suppressErrors -nosplash -application org.knime.product.KNIME_B
 -workflow.variable=input_string_qccv_parent,QC_9000001,String \
 -workflow.variable=input_string_checksum,b5132b11365e8c26842c09afee2d1631,String \
 -workflow.variable=output_json_folder,/users/pr/qcloud/outgoing/JSON/1809,String \
--workflow.variable=output_json_filename,70fa8350-1b1b-467e-a714-2b293adef295_QC01_b5132b11365e8c26842c09afee2d1631,String
+-workflow.variable=output_json_id,70fa8350-1b1b-467e-a714-2b293adef295_QC01_b5132b11365e8c26842c09afee2d1631,String
 ```
 module_parameter_QC_0000032 (Total number of uniquely identified proteins) (Only shotgun)
 ```
@@ -76,7 +76,7 @@ knime --launcher.suppressErrors -nosplash -application org.knime.product.KNIME_B
 -workflow.variable=input_string_qccv_parent,QC_9000001,String \
 -workflow.variable=input_string_checksum,b5132b11365e8c26842c09afee2d1631,String \
 -workflow.variable=output_json_folder,/users/pr/qcloud/outgoing/JSON/1809,String \
--workflow.variable=output_json_filename,70fa8350-1b1b-467e-a714-2b293adef295_QC01_b5132b11365e8c26842c09afee2d1631,String
+-workflow.variable=output_json_id,70fa8350-1b1b-467e-a714-2b293adef295_QC01_b5132b11365e8c26842c09afee2d1631,String
 ```
 
 module_parameter_QC_1000928 (MEDIAN IT MS2) (Both Shotgun and SRM)
@@ -88,7 +88,7 @@ knime --launcher.suppressErrors -nosplash -application org.knime.product.KNIME_B
 -workflow.variable=input_string_qccv_parent,QC_9000002,String \
 -workflow.variable=input_string_checksum,b5132b11365e8c26842c09afee2d1631,String \
 -workflow.variable=output_json_folder,/users/pr/qcloud/outgoing/JSON/1809,String \
--workflow.variable=output_json_filename,70fa8350-1b1b-467e-a714-2b293adef295_QC01_b5132b11365e8c26842c09afee2d1631,String
+-workflow.variable=output_json_id,70fa8350-1b1b-467e-a714-2b293adef295_QC01_b5132b11365e8c26842c09afee2d1631,String
 ```
 module_parameter_QC_1001844 (Peptide Area) (Both Shotgun and SRM)
 ```
@@ -101,7 +101,7 @@ knime --launcher.suppressErrors -nosplash -application org.knime.product.KNIME_B
 -workflow.variable=input_string_qccv,QC_1001844,String \
 -workflow.variable=input_string_qccv_parent,QC_1000014,String \
 -workflow.variable=output_json_folder,/users/pr/qcloud/outgoing/JSON/1809,String \
--workflow.variable=output_json_filename,70fa8350-1b1b-467e-a714-2b293adef295_QC01_b5132b11365e8c26842c09afee2d1631,String
+-workflow.variable=output_json_id,70fa8350-1b1b-467e-a714-2b293adef295_QC01_b5132b11365e8c26842c09afee2d1631,String
 ```
 module_parameter_QC_1000014 (Mass accuracy) (Both Shotgun and SRM)
 ```
@@ -114,7 +114,7 @@ knime --launcher.suppressErrors -nosplash -application org.knime.product.KNIME_B
 -workflow.variable=input_string_qccv,QC_1000014,String \
 -workflow.variable=input_string_qccv_parent,QC_1000014,String \
 -workflow.variable=output_json_folder,/users/pr/qcloud/outgoing/JSON/1809,String \
--workflow.variable=output_json_filename,70fa8350-1b1b-467e-a714-2b293adef295_QC01_b5132b11365e8c26842c09afee2d1631,String
+-workflow.variable=output_json_id,70fa8350-1b1b-467e-a714-2b293adef295_QC01_b5132b11365e8c26842c09afee2d1631,String
 ```
 module_parameter_QC_1010086 (Median Fwhm) (Both Shotgun and SRM)
 ```
@@ -127,7 +127,7 @@ knime --launcher.suppressErrors -nosplash -application org.knime.product.KNIME_B
 -workflow.variable=input_string_qccv,QC_1010086,String \
 -workflow.variable=input_string_qccv_parent,QC_1010086,String \
 -workflow.variable=output_json_folder,/users/pr/qcloud/outgoing/JSON/1809,String \
--workflow.variable=output_json_filename,70fa8350-1b1b-467e-a714-2b293adef295_QC01_b5132b11365e8c26842c09afee2d1631,String
+-workflow.variable=output_json_id,70fa8350-1b1b-467e-a714-2b293adef295_QC01_b5132b11365e8c26842c09afee2d1631,String
 ```
 ## STEP 3 - Check peptide JSON files, send to database and move</br> </br> 
 
@@ -136,10 +136,13 @@ module_check_peptides (only for QC_1000014,QC_1001844 and QC_1010086)
 knime --launcher.suppressErrors -nosplash -application org.knime.product.KNIME_BATCH_APPLICATION -reset -nosave \
 -workflowFile="/users/pr/rolivella/mydata/knwf/module_check_peptides.knwf" \
 -workflow.variable=input_csv_file,/users/pr/rolivella/mydata/csv/knime_peptides_final.csv,String \
+-workflow.variable=input_string_qccv,QC_1010086,String \
+-workflow.variable=input_string_checksum,b5132b11365e8c26842c09afee2d1631,String \
 -workflow.variable=input_sample_type,QC01,String \
--workflow.variable=input_json_absolute_path,/users/pr/qcloud/outgoing/JSON/1809/70fa8350-1b1b-467e-a714-2b293adef295_QC01_b5132b11365e8c26842c09afee2d1631_QC_1010086.json,String \
--workflow.variable=output_json_folder,/users/pr/qcloud/outgoing/JSON/1809,String \
--workflow.variable=output_json_filename,70fa8350-1b1b-467e-a714-2b293adef295_QC01_b5132b11365e8c26842c09afee2d1631,String
+-workflow.variable=input_json_folder,/users/pr/qcloud/outgoing/JSON/1809/70fa8350-1b1b-467e-a714-2b293adef295_QC01_b5132b11365e8c26842c09afee2d1631_QC_1010086.json,String \
+-workflow.variable=input_json_file,/users/pr/qcloud/outgoing/JSON/1809/70fa8350-1b1b-467e-a714-2b293adef295_QC01_b5132b11365e8c26842c09afee2d1631_QC_1010086.json,String \
+-workflow.variable=output_json_folder,/users/pr/qcloud/outgoing/JSON/1809/70fa8350-1b1b-467e-a714-2b293adef295_QC01_b5132b11365e8c26842c09afee2d1631_QC_1010086.json,String \
+-workflow.variable=output_json_file,/users/pr/qcloud/outgoing/JSON/1809/70fa8350-1b1b-467e-a714-2b293adef295_QC01_b5132b11365e8c26842c09afee2d1631_QC_1010086.json,String \
 ```
 module_api_conn
 ```
