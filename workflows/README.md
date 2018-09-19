@@ -140,9 +140,9 @@ knime --launcher.suppressErrors -nosplash -application org.knime.product.KNIME_B
 -workflow.variable=input_string_checksum,b5132b11365e8c26842c09afee2d1631,String \
 -workflow.variable=input_sample_type,QC01,String \
 -workflow.variable=input_json_folder,/users/pr/qcloud/outgoing/JSON/1809/70fa8350-1b1b-467e-a714-2b293adef295_QC01_b5132b11365e8c26842c09afee2d1631_QC_1010086.json,String \
--workflow.variable=input_json_file,/users/pr/qcloud/outgoing/JSON/1809/70fa8350-1b1b-467e-a714-2b293adef295_QC01_b5132b11365e8c26842c09afee2d1631_QC_1010086.json,String \
+-workflow.variable=input_json_filename,/users/pr/qcloud/outgoing/JSON/1809/70fa8350-1b1b-467e-a714-2b293adef295_QC01_b5132b11365e8c26842c09afee2d1631_QC_1010086.json,String \
 -workflow.variable=output_json_folder,/users/pr/qcloud/outgoing/JSON/1809/70fa8350-1b1b-467e-a714-2b293adef295_QC01_b5132b11365e8c26842c09afee2d1631_QC_1010086.json,String \
--workflow.variable=output_json_file,/users/pr/qcloud/outgoing/JSON/1809/70fa8350-1b1b-467e-a714-2b293adef295_QC01_b5132b11365e8c26842c09afee2d1631_QC_1010086.json,String \
+-workflow.variable=output_json_filename,/users/pr/qcloud/outgoing/JSON/1809/70fa8350-1b1b-467e-a714-2b293adef295_QC01_b5132b11365e8c26842c09afee2d1631_QC_1010086.json,String \
 ```
 module_api_conn
 ```
