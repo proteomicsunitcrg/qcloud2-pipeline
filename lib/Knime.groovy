@@ -21,10 +21,18 @@
      String chksum    = ''
      String featxml   = ''
      String ojfile    = ''
+     String ojid      = ''
+     String ijfile    = ''
      String stype     = ''
      String extrapars = ''
+     String ifolder = "."
+     String ofolder   = '"."'
      String work      = ''
-
+     String labs      = '' 
+     String utoken    = ''
+     String uifile    = ''
+     String uidata    = ''
+    
 	/* 
 	 *  Sorting bam files with samtools
  	 */	
@@ -40,9 +48,16 @@
     	if (this.chksum) {string +=  "-workflow.variable=input_string_checksum,${this.chksum},String " }
     	if (this.csvpep) {string +=  "-workflow.variable=input_csv_file,${this.csvpep},String " }
     	if (this.featxml) {string +=  "-workflow.variable=input_featurexml_file,${this.featxml},String " }
+    	if (this.ijfile)  {string +=  "-workflow.variable=input_json_filename,${this.ijfile},String " }
     	if (this.stype) {string +=  "-workflow.variable=input_sample_type,${this.stype},String " }
-		string += "-workflow.variable=output_json_folder,\$PWD,String "
+    	if (this.labs) {string +=  "-workflow.variable=input_string_labsystem,${this.labs},String " }
+    	if (this.utoken) {string +=  "-workflow.variable=input_url_token,http://${this.utoken},String " }
+    	if (this.uifile) {string +=  "-workflow.variable=input_url_insert_file,http://${this.uifile},String " }
+    	if (this.uidata) {string +=  "-workflow.variable=input_url_insert_data,http://${this.uidata},String " }
+		string += "-workflow.variable=output_json_folder,${this.ofolder},String "
+		string += "-workflow.variable=input_json_folder,${this.ifolder},String "
     	if (this.ojfile) {string +=  "-workflow.variable=output_json_filename,${this.ojfile},String " }
+    	if (this.ojid) {string +=  "-workflow.variable=output_json_id,${this.ojid},String " }
 		string += "-vmArgs -Xmx${this.mem} -Duser.home=\$PWD"
     	return string
 	}
@@ -53,7 +68,6 @@
 			${cmdline}
     	"""
 	}
-
 
 
 	
