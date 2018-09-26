@@ -106,8 +106,7 @@ checkWFFiles(baseQCPath, [MS2specCount_ID, TotNumOfUniPep_ID, MedianITMS2_ID, Pe
  * Create a channel for mzlfiles files; Temporary for testing purposes only
  */
 Channel
-    .fromPath( params.zipfiles )             
-    .ifEmpty { error "Cannot find any file matching: ${params.zipfiles}" }
+    .watchPath( params.zipfiles )             
     .map { 
         file = it
         id = it.getName()
