@@ -1,0 +1,27 @@
+includeConfig "$baseDir/params.config"
+ 
+
+process {
+     queue='pr-el7,short-sl7'
+     memory='10G'
+     cpus='1'
+     time='6h'
+     scratch = false
+     errorStrategy = 'ignore'
+
+    withLabel: big_mem {
+        memory = '30G'
+    }
+
+	withLabel: little_comp {
+        maxForks = 1
+    }
+
+}
+
+
+process.container = '/software/bi/biocore_tools/git/singularity_conversion/singularity/biocorecrg_qcloud-2018-04-18-3d498069d501.img'
+singularity.enabled = true
+
+
+
