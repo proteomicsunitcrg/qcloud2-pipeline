@@ -519,8 +519,8 @@ json_checked_for_delivery = pep_checked_for_delivery.join(mass_checked_for_deliv
     input:
     file(workflowfile) from api_connectionWF
 
- //   set sample_id, internal_code, checksum, file(mzML_file), file(ms2_spectral), file(uni_peptides), file(uni_prots), file(median_itms2), file("*") from shot_mzML_file_for_delivery.mix(srm_mzML_file_for_delivery).join(ms2_spectral_for_delivery).join(uni_peptides_for_delivery).join(uni_prots_for_delivery).join(median_itms2_for_delivery).join(grouped_json_for_delivery)
-    set sample_id, internal_code, checksum, file(mzML_file), file(median_itms2), file(json1), file(json2), file(json3) from shot_mzML_file_for_delivery.mix(srm_mzML_file_for_delivery).join(median_itms2_for_delivery).join(json_checked_for_delivery)
+    set sample_id, internal_code, checksum, file(mzML_file), file(ms2_spectral), file(uni_peptides), file(uni_prots), file(median_itms2), file(json1), file(json2), file(json3) from shot_mzML_file_for_delivery.mix(srm_mzML_file_for_delivery).join(ms2_spectral_for_delivery).join(uni_peptides_for_delivery).join(uni_prots_for_delivery).join(median_itms2_for_delivery).join(json_checked_for_delivery)
+ //  set sample_id, internal_code, checksum, file(mzML_file), file(median_itms2), file(json1), file(json2), file(json3) from shot_mzML_file_for_delivery.mix(srm_mzML_file_for_delivery).join(median_itms2_for_delivery).join(json_checked_for_delivery)
     val db_host from params.db_host
 
 	script:
