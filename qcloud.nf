@@ -156,7 +156,7 @@ Channel
 process msconvert {
     publishDir  "conversion"
     label 'little_comp'
-   
+  
     tag { "${labsys}_${qcode}_${checksum}" }
 
     input:
@@ -460,12 +460,45 @@ process calc_peptide_area {
 	beforeScript("mkdir tmp")
 
     input:
-    set sample_id, internal_id, checksum, process_id, file(json_file) from pep_area_for_check.mix(mass_json_for_check, median_fwhm_for_check)
+    set sample_id, internal_id, checksum, process_id, file(json_file) from pep_area_for_check
     file(peptideCSV)
     file(workflowfile) from chekPeptidesWF
 
     output:
-    set sample_id, file("tmp/${json_file}") into json_checked_for_delivery
+    set sample_id, file("tmp/${json_file}") into pep_checked_for_delivery
+
+	script:
+	def knime = new Knime(qccv:"QC_${process_id}", wf:workflowfile, chksum:checksum,  csvpep:peptideCSV, stype:internal_id, ijfile:json_file, mem:"${task.memory.mega-5000}m", ofolder:"./tmp", ojfile:"${json_file}")
+	knime.launch()
+}
+
+ process check_fwhm {
+    tag { sample_id }
+	beforeScript("mkdir tmp")
+
+    input:
+    set sample_id, internal_id, checksum, process_id, file(json_file) from mass_json_for_check
+    file(peptideCSV)
+    file(workflowfile) from chekPeptidesWF
+
+    output:
+    set sample_id, file("tmp/${json_file}") into mass_checked_for_delivery
+
+	script:
+	def knime = new Knime(qccv:"QC_${process_id}", wf:workflowfile, chksum:checksum,  csvpep:peptideCSV, stype:internal_id, ijfile:json_file, mem:"${task.memory.mega-5000}m", ofolder:"./tmp", ojfile:"${json_file}")
+	knime.launch()
+}
+ process check_median {
+    tag { sample_id }
+	beforeScript("mkdir tmp")
+
+    input:
+    set sample_id, internal_id, checksum, process_id, file(json_file) from median_fwhm_for_check
+    file(peptideCSV)
+    file(workflowfile) from chekPeptidesWF
+
+    output:
+    set sample_id, file("tmp/${json_file}") into median_checked_for_delivery
 
 	script:
 	def knime = new Knime(qccv:"QC_${process_id}", wf:workflowfile, chksum:checksum,  csvpep:peptideCSV, stype:internal_id, ijfile:json_file, mem:"${task.memory.mega-5000}m", ofolder:"./tmp", ojfile:"${json_file}")
@@ -473,7 +506,7 @@ process calc_peptide_area {
 }
 
 // Group the results from checked json files
-grouped_json_for_delivery = json_checked_for_delivery.groupTuple()
+json_checked_for_delivery = pep_checked_for_delivery.join(mass_checked_for_delivery).join(median_checked_for_delivery)
 
 /*
  * Send data to the database  // join the data based on sample ID and send everything to the DB
@@ -485,14 +518,16 @@ grouped_json_for_delivery = json_checked_for_delivery.groupTuple()
 
     input:
     file(workflowfile) from api_connectionWF
-    set sample_id, internal_code, checksum, file(mzML_file), file(ms2_spectral), file(uni_peptides), file(uni_prots), file(median_itms2), file("*") from shot_mzML_file_for_delivery.mix(srm_mzML_file_for_delivery).join(ms2_spectral_for_delivery).join(uni_peptides_for_delivery).join(uni_prots_for_delivery).join(median_itms2_for_delivery).join(grouped_json_for_delivery)
- //   set sample_id, internal_code, checksum, file(mzML_file), file(median_itms2), file("*") from shot_mzML_file_for_delivery.mix(srm_mzML_file_for_delivery).join(median_itms2_for_delivery).join(grouped_json_for_delivery)
+
+ //   set sample_id, internal_code, checksum, file(mzML_file), file(ms2_spectral), file(uni_peptides), file(uni_prots), file(median_itms2), file("*") from shot_mzML_file_for_delivery.mix(srm_mzML_file_for_delivery).join(ms2_spectral_for_delivery).join(uni_peptides_for_delivery).join(uni_prots_for_delivery).join(median_itms2_for_delivery).join(grouped_json_for_delivery)
+    set sample_id, internal_code, checksum, file(mzML_file), file(median_itms2), file(json1), file(json2), file(json3) from shot_mzML_file_for_delivery.mix(srm_mzML_file_for_delivery).join(median_itms2_for_delivery).join(json_checked_for_delivery)
     val db_host from params.db_host
 
 	script:
     def pieces = sample_id.tokenize( '_' )
     def lab_id = pieces[0]	
     def parent_id = ontology[internal_code]
+
 	def knime = new Knime(wf:workflowfile, chksum:checksum, stype:internal_code, ifolder:".", mzml:mzML_file, labs:lab_id, utoken:"${db_host}/api/auth", uifile:"${db_host}/api/file/QC:${parent_id}", uidata:"${db_host}/api/data/pipeline", mem:"${task.memory.mega-5000}m")
 	knime.launch()
 }
@@ -516,8 +551,8 @@ grouped_json_for_delivery = json_checked_for_delivery.groupTuple()
     def public checkFiles(filePaths) { 
  		for (filePath in filePaths) {
 			checkFile(filePath)	
-	}
-}
+	    }
+    }
      	
     def public checkFile(filePath) { 
   		if (!filePath.exists()) {
