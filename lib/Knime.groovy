@@ -65,6 +65,8 @@
     def public launch() {
 		def cmdline = this.assemble()
    		"""
+   		    mkdir tmpdir
+            export TMPDIR=\$PWD/tmpdir
 			${cmdline}
     	"""
 	}

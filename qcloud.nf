@@ -259,6 +259,8 @@ process run_shotgun {
 
         
        """
+        mkdir tmpdir
+        export TMPDIR=\$PWD/tmpdir
         knime -data \$PWD -clean -consoleLog --launcher.suppressErrors -nosplash -application org.knime.product.KNIME_BATCH_APPLICATION -reset -nosave \
         -workflowFile=${workflowfile} \
         -workflow.variable=input_mzml_file,${mzML_file},String \
@@ -298,7 +300,10 @@ process run_srm {
         set sample_id, internal_code, checksum, file(mzML_file) into srm_mzML_file_for_MedianITMS2, srm_mzML_file_for_delivery 
         
        """
-       knime --launcher.suppressErrors -nosplash -application org.knime.product.KNIME_BATCH_APPLICATION -reset -nosave \
+        mkdir tmpdir
+        export TMPDIR=\$PWD/tmpdir
+
+        knime --launcher.suppressErrors -nosplash -application org.knime.product.KNIME_BATCH_APPLICATION -reset -nosave \
         -workflowFile=${workflowfile} \
         -workflow.variable=input_mzml_file,${mzML_file},String \
         -workflow.variable=input_traml,${srmCSV},String \
@@ -514,7 +519,6 @@ json_checked_for_delivery = pep_checked_for_delivery.join(mass_checked_for_deliv
  
  process sendToDB {
     tag { sample_id }
-    label 'insert_local'
 
     input:
     file(workflowfile) from api_connectionWF
