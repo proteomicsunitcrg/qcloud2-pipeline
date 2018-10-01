@@ -93,10 +93,10 @@ ontology["1000928"] = "9000002"
 ontology["1001844"] = "1001844"
 ontology["1000014"] = "1000014"
 ontology["1010086"] = "1010086"
-ontology["QC01"] = "0000005"
-ontology["QC02"] = "0000002"
-ontology["QCS1"] = "0000005"
-ontology["QCS2"] = "0000002"
+ontology["QC01"] = "0000005" 
+ontology["QC02"] = "0000006" 
+ontology["QCS1"] = "0000005" 
+ontology["QCS2"] = "0000006"
 
 // Check Knime workflow files
 checkWFFiles(baseQCPath, [MS2specCount_ID, TotNumOfUniPep_ID, MedianITMS2_ID, PepArea_ID, MassAccuracy_ID, MedianFwhm_ID])
