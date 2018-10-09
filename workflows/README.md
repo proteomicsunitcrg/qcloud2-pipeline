@@ -103,6 +103,24 @@ knime --launcher.suppressErrors -nosplash -application org.knime.product.KNIME_B
 -workflow.variable=output_json_folder,/users/pr/qcloud/outgoing/JSON/1809,String \
 -workflow.variable=output_json_id,70fa8350-1b1b-467e-a714-2b293adef295_QC01_b5132b11365e8c26842c09afee2d1631,String
 ```
+
+module_parameter_QC_1001844_qc4l (Peptide Area) (for Shotgun QC4L
+```
+knime --launcher.suppressErrors -nosplash -application org.knime.product.KNIME_BATCH_APPLICATION -reset -nosave \
+-workflowFile="/users/pr/rolivella/mydata/knwf/module_parameter_QC_1001844_qc4l.knwf" \
+-workflow.variable=input_csv_file,/users/pr/rolivella/mydata/csv/20180925_isotopologues_complete.csv,String \
+-workflow.variable=input_featurexml_file,/users/pr/rolivella/mydata/featureXML/nf/180928_Q_QC4L_01_01_aliquot1_vial66.featureXML,String \
+-workflow.variable=input_sample_type,QC03,String \
+-workflow.variable=input_string_checksum,b5132b11365e8c26842c09afee2d1631,String \
+-workflow.variable=input_string_qccv,QC_1001844,String \
+-workflow.variable=input_string_qccv_parent,QC_1000014,String \
+-workflow.variable=output_json_folder,/users/pr/rolivella/mydata/json,String \
+-workflow.variable=output_json_id,70fa8350-1b1b-467e-a714-2b293adef295_QC01_b5132b11365e8c26842c09afee2d1631,String \
+-workflow.variable=delta_mass,5,String \
+-workflow.variable=delta_rt,250,String \
+-workflow.variable=charge,2,String
+```
+
 module_parameter_QC_1000014 (Mass accuracy) (Both Shotgun and SRM)
 ```
 knime --launcher.suppressErrors -nosplash -application org.knime.product.KNIME_BATCH_APPLICATION -reset -nosave \
@@ -129,6 +147,7 @@ knime --launcher.suppressErrors -nosplash -application org.knime.product.KNIME_B
 -workflow.variable=output_json_folder,/users/pr/qcloud/outgoing/JSON/1809,String \
 -workflow.variable=output_json_id,70fa8350-1b1b-467e-a714-2b293adef295_QC01_b5132b11365e8c26842c09afee2d1631,String
 ```
+
 ## STEP 3 - Check peptide JSON files, send to database and move</br> </br> 
 
 module_check_peptides (only for QC_1000014,QC_1001844 and QC_1010086)
