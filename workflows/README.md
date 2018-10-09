@@ -104,7 +104,7 @@ knime --launcher.suppressErrors -nosplash -application org.knime.product.KNIME_B
 -workflow.variable=output_json_id,70fa8350-1b1b-467e-a714-2b293adef295_QC01_b5132b11365e8c26842c09afee2d1631,String
 ```
 
-module_parameter_QC_1001844_qc4l (Peptide Area) (for Shotgun QC4L
+module_parameter_QC_1001844_qc4l (Peptide Area) (for Shotgun QC4L)
 ```
 knime --launcher.suppressErrors -nosplash -application org.knime.product.KNIME_BATCH_APPLICATION -reset -nosave \
 -workflowFile="/users/pr/rolivella/mydata/knwf/module_parameter_QC_1001844_qc4l.knwf" \
