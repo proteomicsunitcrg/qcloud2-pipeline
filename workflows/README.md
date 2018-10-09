@@ -157,7 +157,7 @@ knime --launcher.suppressErrors -nosplash -application org.knime.product.KNIME_B
 -workflow.variable=output_json_folder,/users/pr/qcloud/outgoing/JSON/1809,String \
 -workflow.variable=output_json_id,70fa8350-1b1b-467e-a714-2b293adef295_QC01_b5132b11365e8c26842c09afee2d1631,String
 ```
-module_parameter_QC_0000048 (Sum of all Total Ion Current per RT) (Both Shotgun and SRM)
+module_parameter_QC_0000048 (Sum of all Total Ion Current per RT) (Only Shotgun)
 ```
 knime --launcher.suppressErrors -nosplash -application org.knime.product.KNIME_BATCH_APPLICATION -reset -nosave \
 -workflowFile="/users/pr/rolivella/mydata/knwf/module_parameter_QC_0000048.knwf" \
