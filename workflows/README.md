@@ -151,6 +151,7 @@ knime --launcher.suppressErrors -nosplash -application org.knime.product.KNIME_B
 ## STEP 3 - Check peptide JSON files, send to database and move</br> </br> 
 
 module_check_peptides (only for QC_1000014,QC_1001844 and QC_1010086)
+
 ```
 knime --launcher.suppressErrors -nosplash -application org.knime.product.KNIME_BATCH_APPLICATION -reset -nosave \
 -workflowFile="/users/pr/rolivella/mydata/knwf/module_check_peptides.knwf" \
@@ -163,7 +164,21 @@ knime --launcher.suppressErrors -nosplash -application org.knime.product.KNIME_B
 -workflow.variable=output_json_folder,/users/pr/qcloud/outgoing/JSON/1809/70fa8350-1b1b-467e-a714-2b293adef295_QC01_b5132b11365e8c26842c09afee2d1631_QC_1010086.json,String \
 -workflow.variable=output_json_filename,/users/pr/qcloud/outgoing/JSON/1809/70fa8350-1b1b-467e-a714-2b293adef295_QC01_b5132b11365e8c26842c09afee2d1631_QC_1010086.json,String \
 ```
-module_api_conn
+
+module_api_conn 
+
+input_mass_spec_run_date =
+```
+xmllint --xpath 'string(/indexedmzML/mzML/run/@startTimeStamp)' /users/pr/rolivella/mydata/mzML/nf/9d9d9d1b-9d9d-4f1a-9d27-9d2f7635059d_QC03_54c6681460c136b37fce4caadda655ed.mzML
+
+```
+
+input_original_name = 
+
+```
+xmllint --xpath 'string(/indexedmzML/mzML/fileDescription/sourceFileList/sourceFile/@name)' /users/pr/rolivella/mydata/mzML/nf/181004_Q_QC1F_01_04.mzML
+```
+
 ```
 knime --launcher.suppressErrors -nosplash -application org.knime.product.KNIME_BATCH_APPLICATION -reset -nosave \
 -workflowFile="/users/pr/rolivella/mydata/knwf/module_api_conn.knwf" \
@@ -174,6 +189,8 @@ knime --launcher.suppressErrors -nosplash -application org.knime.product.KNIME_B
 -workflow.variable=input_url_token,http://192.168.101.37:8080/api/auth,String \
 -workflow.variable=input_url_insert_file,http://192.168.101.37:8080/api/file/QC:0000005,String \
 -workflow.variable=input_url_insert_data,http://192.168.101.37:8080/api/data/pipeline,String \
--workflow.variable=input_json_folder,/users/pr/qcloud/outgoing/JSON/1809,String
+-workflow.variable=input_json_folder,/users/pr/qcloud/outgoing/JSON/1809,String \ 
+-workflow.variable=input_mass_spec_run_date,$$$input_mass_spec_run_date$$$,String \
+-workflow.variable=input_original_name,$$$input_mass_spec_run_date$$$,String
+
 ```
-All inserted JSONs must be moved to the "processed" folder. 
