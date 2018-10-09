@@ -6,7 +6,7 @@ Remove XML namespace from mzML file:
 ```
 sed -i 's@xmlns="http://psi.hupo.org/ms/mzml"@@g' $file_path
 ```
-Proteomics **SHOTGUN**: </br>
+Proteomics **SHOTGUN** (QC01, QC02 and QC03): </br>
 
 ```
 knime --launcher.suppressErrors -nosplash -application org.knime.product.KNIME_BATCH_APPLICATION -reset -nosave \
