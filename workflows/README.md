@@ -147,6 +147,17 @@ knime --launcher.suppressErrors -nosplash -application org.knime.product.KNIME_B
 -workflow.variable=output_json_folder,/users/pr/qcloud/outgoing/JSON/1809,String \
 -workflow.variable=output_json_id,70fa8350-1b1b-467e-a714-2b293adef295_QC01_b5132b11365e8c26842c09afee2d1631,String
 ```
+module_parameter_QC_0000048 (Sum of all Total Ion Current per RT) (Both Shotgun and SRM)
+```
+knime --launcher.suppressErrors -nosplash -application org.knime.product.KNIME_BATCH_APPLICATION -reset -nosave \
+-workflowFile="/users/pr/rolivella/mydata/knwf/module_parameter_QC_0000048.knwf" \
+-workflow.variable=input_qcml_file,/users/pr/rolivella/mydata/qcML/nf/70fa8350-1b1b-467e-a714-2b293adef295_QC01_b5132b11365e8c26842c09afee2d1631.qcml,String \
+-workflow.variable=input_string_qccv,QC_0000032,String \
+-workflow.variable=input_string_qccv_parent,QC_9000001,String \
+-workflow.variable=input_string_checksum,b5132b11365e8c26842c09afee2d1631,String \
+-workflow.variable=output_json_folder,/users/pr/qcloud/outgoing/JSON/1809,String \
+-workflow.variable=output_json_id,70fa8350-1b1b-467e-a714-2b293adef295_QC01_b5132b11365e8c26842c09afee2d1631,String
+```
 
 ## STEP 3 - Check peptide JSON files, send to database and move</br> </br> 
 
