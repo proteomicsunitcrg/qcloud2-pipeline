@@ -126,9 +126,11 @@ knime --launcher.suppressErrors -nosplash -application org.knime.product.KNIME_B
 -workflow.variable=input_string_qccv_parent,QC_1000014,String \
 -workflow.variable=output_json_folder,/users/pr/rolivella/mydata/json,String \
 -workflow.variable=output_json_id,70fa8350-1b1b-467e-a714-2b293adef295_QC01_b5132b11365e8c26842c09afee2d1631,String \
--workflow.variable=delta_mass,5,String \
--workflow.variable=delta_rt,250,String \
--workflow.variable=charge,2,String
+-workflow.variable=delta_mass,5,double \
+-workflow.variable=delta_rt,250,double \
+-workflow.variable=charge,2,double \
+-workflow.variable=threshold_area,1000000,double
+
 ```
 
 module_parameter_QC_1000014 (Mass accuracy) (Both Shotgun and SRM)
