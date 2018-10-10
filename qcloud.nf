@@ -52,36 +52,54 @@ fastaconfig = file(params.fasta_tab)
 if( !fastaconfig.exists() )  { error "Cannot find any fasta tab file!!!"}
 
 // Output folder
-shotgun_output      = "output/shotgun_output"
-srm_output          = "output/srm_output"
-common_output		= "output/common_output"
+json_output      = "output/json_output"
+
 
 // Files needed
 srmCSV = file("${CSV_folder}/qtrap_bsa.traml")
 peptideCSV = file("${CSV_folder}/knime_peptides_final.csv")
+peptideCSV_C4L = file("${CSV_folder}/knime_peptides_qc4l.csv") 
+
 checkFiles([srmCSV, peptideCSV])
 
-// check for workflow existence
-shotgunWF      = file("${workflowsFolder}/module_workflow_shotgun.knwf")
-srmWF          = file("${workflowsFolder}/module_workflow_srm.knwf")
-chekPeptidesWF = file("${workflowsFolder}/module_check_peptides.knwf")
+/*
+ * check for workflow existence
+ */ 
+
+// QC01/QC02 WF
+shotgunWF            = file("${workflowsFolder}/module_workflow_shotgun.knwf")
+// QCS1/QCS2 WF
+srmWF                = file("${workflowsFolder}/module_workflow_srm.knwf")
+// QC03 WFs
+shotgun_qc4l_cidWF   = file("${workflowsFolder}/module_workflow_qc4l_cid.knwf")
+shotgun_qc4l_hcdWF   = file("${workflowsFolder}/module_workflow_qc4l_hcd.knwf")
+shotgun_qc4l_etcidWF = file("${workflowsFolder}/module_workflow_qc4l_etcid.knwf")
+shotgun_qc4l_ethcdWF = file("${workflowsFolder}/module_workflow_qc4l_ethcd.knwf")
+
+// Common WFs
 chekPeptidesWF = file("${workflowsFolder}/module_check_peptides.knwf")
 api_connectionWF = file("${workflowsFolder}/module_api_conn.knwf")
 
-checkFiles([shotgunWF, srmWF, chekPeptidesWF,api_connectionWF])
+// Check presence of knime's workflow files
+checkFiles([shotgunWF, srmWF, chekPeptidesWF,api_connectionWF, shotgun_qc4l_cidWF, shotgun_qc4l_hcdWF, shotgun_qc4l_etcidWF, shotgun_qc4l_ethcdWF])
 
-baseQCPath     = "${workflowsFolder}/module_parameter_QC_"
-
-// Shotgun QC ID
-MS2specCount_ID		= "0000007" // problem
-TotNumOfUniPep_ID	= "0000031" // problem
-TotNumOfUniProt_ID	= "0000032" // problem
-
-// Common QC
-MedianITMS2_ID      = "1000928"
-PepArea_ID          = "1001844"
-MassAccuracy_ID     = "1000014"
-MedianFwhm_ID       = "1010086"
+// Correspondences between db analysis name, QC_ID and ID ofr db insert
+def Correspondence = [:]
+//MS2specCount
+Correspondence["MS2specCount"] = ["shotgun" : "0000007", "shotgun_qc4l_cid" : "1002001", "shotgun_qc4l_hcd" : "1002009", "shotgun_qc4l_etcid" : "1002017", "shotgun_qc4l_ethcd" : "1002025"]
+//totNumOfUniPep
+Correspondence["totNumOfUniPep"] = ["shotgun" : "0000031", "shotgun_qc4l_cid" : "1002001", "shotgun_qc4l_hcd" : "1002010", "shotgun_qc4l_etcid" : "1002018", "shotgun_qc4l_ethcd": "1002026"] 
+//totNumOfUniProt
+Correspondence["totNumOfUniProt"] = ["shotgun" : "0000032", "shotgun_qc4l_cid" : "1002003", "shotgun_qc4l_hcd" : "1002011", "shotgun_qc4l_etcid" : "1002019", "shotgun_qc4l_ethcd" : "1002027"]
+//medianITMS2
+Correspondence["medianITMS2"] = ["shotgun" : "1000928", "srm" : "???", "shotgun_qc4l_cid" : "1002005", "shotgun_qc4l_hcd" : "1002013", "shotgun_qc4l_etcid" : "1002021", "shotgun_qc4l_ethcd" : "1002029"] 
+//pepArea
+Correspondence["pepArea"] = ["shotgun" : "1001844", "srm" : "???"]
+Correspondence["pepArea_qc4l"] = ["shotgun_qc4l_cid" : "1001844"]
+//massAccuracy
+Correspondence["massAccuracy"] = ["shotgun" : "1000014", "srm" : "???", "shotgun_qc4l_cid" : "1002007", "shotgun_qc4l_hcd" : "1002015", "shotgun_qc4l_etcid" : "1002023", "shotgun_qc4l_ethcd" : "1002031"]
+//medianFwhm
+Correspondence["medianFwhm"] = ["shotgun" : "1010086", "srm" : "???", "shotgun_qc4l_cid" : "1002008", "shotgun_qc4l_hcd" : "1002016", "shotgun_qc4l_etcid" : "1002024", "shotgun_qc4l_ethcd" : "1002032"]
 
 // ontology this has to be retrieved in some way from outside...
 def ontology = [:]
@@ -93,20 +111,53 @@ ontology["1000928"] = "9000002"
 ontology["1001844"] = "1001844"
 ontology["1000014"] = "1000014"
 ontology["1010086"] = "1010086"
-ontology["QC01"] = "0000005" 
-ontology["QC02"] = "0000006" 
-ontology["QCS1"] = "0000005" 
+ontology["1002001"] = "9000001"
+ontology["1002002"] = "9000001"
+ontology["1002003"] = "9000001"
+ontology["1002004"] = "9000001"
+ontology["1002005"] = "9000002"
+ontology["1002007"] = "1002007"
+ontology["1002008"] = "9000003"
+
+ontology["1002009"] = "9000001"
+ontology["1002010"] = "9000001"
+ontology["1002011"] = "9000001"
+ontology["1002012"] = "9000001"
+ontology["1002013"] = "9000002"
+ontology["1002015"] = "1002015"
+ontology["1002016"] = "9000003"
+
+ontology["1002017"] = "9000001"
+ontology["1002018"] = "9000001"
+ontology["1002019"] = "9000001"
+ontology["1002020"] = "9000001"
+ontology["1002021"] = "9000002"
+ontology["1002023"] = "1002023"
+ontology["1002024"] = "9000003"
+
+ontology["1002025"] = "9000001"
+ontology["1002026"] = "9000001"
+ontology["1002027"] = "9000001"
+ontology["1002028"] = "9000001"
+ontology["1002029"] = "9000002"
+ontology["1002031"] = "1002031"
+ontology["1002032"] = "9000003"
+
+ontology["QC01"] = "0000005"
+ontology["QC02"] = "0000006"
+ontology["QC03"] = "0000009" 
+ontology["QCS1"] = "0000005"
 ontology["QCS2"] = "0000006"
 
-// Check Knime workflow files
-checkWFFiles(baseQCPath, [MS2specCount_ID, TotNumOfUniPep_ID, MedianITMS2_ID, PepArea_ID, MassAccuracy_ID, MedianFwhm_ID])
-
+// Check presence of knime's workflow files
+baseQCPath     = "${workflowsFolder}/module_parameter_QC_"
+checkWFFiles(baseQCPath, Correspondence.keySet())
 
 /*
  * Create a channel for mzlfiles files; Temporary for testing purposes only
  */
 Channel
-    .watchPath( params.zipfiles )             
+    .fromPath( params.zipfiles )             
     .map { 
         file = it
         id = it.getName()
@@ -149,12 +200,34 @@ Channel
     }
     .set{qconfig_desc}
 
+
 /*
- * Run msconvert on raw data.
-*/
+ * Run makeblastdb on fasta data
+ */
+
+process makeblastdb {
+    storeDir blastdb_folder
+    afterScript("chmod 777 ${blastdb_folder}")
+    tag { genome_id }
+
+    input:
+    set genome_id, fasta_file, internal_dbfile, file(fasta_path) from fasta_desc
+
+    output:
+    set genome_id, internal_dbfile, file ("*") into blastdbs, blastdbs_d
+    
+    script:
+    """
+     if [ `echo ${fasta_file} | grep 'gz'` ]; then zcat ${fasta_file} > ${internal_dbfile}; else ln -s ${fasta_file} ${internal_dbfile}; fi
+     makeblastdb -dbtype prot -in ${internal_dbfile} -out ${internal_dbfile}
+    """
+}
+
+/*
+ * Run msconvert on raw data. In case QC0S add a parameter
+ */
 
 process msconvert {
-    publishDir  "conversion"
     label 'little_comp'
   
     tag { "${labsys}_${qcode}_${checksum}" }
@@ -171,41 +244,18 @@ process msconvert {
         extrapar = "-a"
     }
     """
-    bash webservice.sh ${extrapar} -l ${labsys} -q ${qcode} -c ${checksum} -r ${zipfile} -i ${params.webdavip} -p ${params.webdavpass} -o ${labsys}_${qcode}_${checksum}.mzML.zip
-    unzip ${labsys}_${qcode}_${checksum}.mzML.zip
+     bash webservice.sh ${extrapar} -l ${labsys} -q ${qcode} -c ${checksum} -r ${zipfile} -i ${params.webdavip} -p ${params.webdavpass} -o ${labsys}_${qcode}_${checksum}.mzML.zip
+     unzip ${labsys}_${qcode}_${checksum}.mzML.zip
     """
 }
-
-
-/*
- * Run makeblastdb on fasta data
-*/
-
-process makeblastdb {
-    publishDir  blastdb_folder
-    tag { genome_id }
-
-    input:
-    set genome_id, fasta_file, internal_dbfile, file(fasta_path) from fasta_desc
-
-    output:
-    set genome_id, internal_dbfile, file ("*") into blastdbs
-    
-    script:
-    """
-        if [ `echo ${fasta_file} | grep 'gz'` ]; then zcat ${fasta_file} > ${internal_dbfile}; else ln -s ${fasta_file} ${internal_dbfile}; fi
-        makeblastdb -dbtype prot -in ${internal_dbfile} -out ${internal_dbfile}
-    """
-}
-
 
 /*
  * Run batch correction on mzl and eventually unzip the input file
  * We remove the string xmlns="http://psi.hupo.org/ms/mzml" since it can causes problem with some executions
-*/
+ */
 
 process correctMzml {
-
+    publishDir "output/correctMzml"
    tag { sample_id }
    
     input:
@@ -221,6 +271,11 @@ process correctMzml {
    """
 }
 
+/*
+ * Cpombine different channels (blast dbs, corrected mzml files) for obtaining the required input 
+ * for the next steps
+ */
+
 input_pipe_withcode_reordered = corrected_mzmlfiles_for_second_step.combine(qconfig_desc,by: 0).map{
   qc_id, sample_id, checksum, file, genome, analysis -> [genome, qc_id, sample_id, file, analysis, checksum]
 }
@@ -229,64 +284,52 @@ input_pipe_complete_first_step = input_pipe_withcode_reordered.combine(blastdbs,
 
 
 input_pipe_complete_first_step
-     .into{ input_pipe_complete_first_step_for_srm; input_pipe_complete_first_step_for_shotgun; debug }
+     .into{ input_pipe_complete_first_step_for_srm; input_pipe_complete_first_step_for_shotgun; input_pipe_complete_first_step_for_shotgun_qc4l_cid; input_pipe_complete_first_step_for_shotgun_qc4l_hcd; input_pipe_complete_first_step_for_shotgun_qc4l_etcid; input_pipe_complete_first_step_for_shotgun_qc4l_ethcd ; debug }
 
-//debug.println()
+
 /*
- * Run shotgun on raw data. 
+ * Run shotgun on raw data (In case QC01 // QC02). 
  * Choose blast_db and fasta file depending on species
  * choose genome depending on QC code in the file name // description etc .
 */
 
-
 process run_shotgun {
-       publishDir shotgun_output       
-       tag { sample_id }
-       
-       label 'big_mem'
-       
-        input:
-        set genome_id, internal_code, sample_id, file(mzML_file), analysis_type, checksum, fasta_file, file ("*") from input_pipe_complete_first_step_for_shotgun
-        file(workflowfile) from shotgunWF
-        
-        when:
-        analysis_type == 'shotgun'
+    publishDir "output/run_shotgun"
 
-        output:
-        set sample_id, internal_code, checksum, file("${sample_id}.featureXML") into shot_featureXMLfiles_for_calc_peptide_area, shot_featureXMLfiles_for_calc_mass_accuracy, shot_featureXMLfiles_for_calc_median_fwhm
-        set sample_id, internal_code, checksum, file(mzML_file) into shot_mzML_file_for_MedianITMS2, shot_mzML_file_for_delivery 
-        set sample_id, internal_code, checksum, file("${sample_id}.qcml") into qcmlfiles_for_MS2_spectral_count, qcmlfiles_for_tot_num_uniq_peptides, qcmlfiles_for_tot_num_uniq_proteins
+    tag { sample_id }
+    
+    label 'big_mem'
+    afterScript "$baseDir/bin/fixQcml.sh"
 
-        
-       """
-        mkdir tmpdir
-        export TMPDIR=\$PWD/tmpdir
-        knime -data \$PWD -clean -consoleLog --launcher.suppressErrors -nosplash -application org.knime.product.KNIME_BATCH_APPLICATION -reset -nosave \
-        -workflowFile=${workflowfile} \
-        -workflow.variable=input_mzml_file,${mzML_file},String \
-        -workflow.variable=output_qcml_file,${sample_id}.qcml,String \
-        -workflow.variable=output_featurexml_file,${sample_id}.featureXML,String \
-        -workflow.variable=output_idxml_file,${sample_id}.idXML,String \
-        -workflow.variable=input_fasta_file,${fasta_file},String \
-        -workflow.variable=input_fasta_psq_file,${fasta_file}.psq,String \
-        -vmArgs -Xmx${task.memory.mega-5000}m -Duser.home=\$PWD;
-        sed s@'xmlns=\"http://psi.hupo.org/ms/mzml\"'@@g ${sample_id}.qcml | sed s@'qcML xmlns=\"https://github.com/qcML/qcml\"'@qcML@g > ${sample_id}.qcml2
-        mv ${sample_id}.qcml2 ${sample_id}.qcml     
-       """
+    input:
+    set genome_id, internal_code, sample_id, file(mzML_file), analysis_type, checksum, fasta_file, file ("*") from input_pipe_complete_first_step_for_shotgun
+    file(workflowfile) from shotgunWF
+    
+    when:
+    analysis_type == 'shotgun'
+
+    output:
+    set sample_id, internal_code, analysis_type, checksum, file("${sample_id}.featureXML") into shot_featureXMLfiles_for_calc_peptide_area, shot_featureXMLfiles_for_calc_mass_accuracy, shot_featureXMLfiles_for_calc_median_fwhm
+    set sample_id, internal_code, analysis_type, checksum, file(mzML_file) into shot_mzML_file_for_MedianITMS2, shot_mzML_file_for_check 
+    set sample_id, internal_code, analysis_type, checksum, file("${sample_id}.qcml") into qcmlfiles_for_MS2_spectral_count, qcmlfiles_for_tot_num_uniq_peptides, qcmlfiles_for_tot_num_uniq_proteins
+
+    script:
+    def knime = new Knime(wf:workflowfile, mem:"${task.memory.mega-5000}m", mzml:mzML_file, oqcml:"${sample_id}.qcml", ofeatxml:"${sample_id}.featureXML", oidxml:"${sample_id}.idXML", fasta:fasta_file, psq:"${fasta_file}.psq")
+    knime.launch()
+            
 }
 
 /*
- * Run srm on raw data. 
+ * Run srm on raw data (In case QC01 // QC02) 
  * Choose blast_db and fasta file depending on species
  * choose genome depending on QC code in the file name // description etc .
  */
 
 process run_srm {
-       publishDir srm_output       
-       tag { sample_id }
+     publishDir "output/run_srm"
+      tag { sample_id }
 
        label 'big_mem'
-    
         input:
         set genome_id, internal_code, sample_id, file(mzML_file), analysis_type, checksum, fasta_file, file ("*") from input_pipe_complete_first_step_for_srm
         file(workflowfile) from srmWF
@@ -296,42 +339,158 @@ process run_srm {
         analysis_type == 'srm'
 
         output:
-        set sample_id, internal_code, checksum, file("${sample_id}.featureXML") into srm_featureXMLfiles_for_calc_peptide_area, srm_featureXMLfiles_for_calc_mass_accuracy, srm_featureXMLfiles_for_calc_median_fwhm
-        set sample_id, internal_code, checksum, file(mzML_file) into srm_mzML_file_for_MedianITMS2, srm_mzML_file_for_delivery 
-        
-       """
-        mkdir tmpdir
-        export TMPDIR=\$PWD/tmpdir
-
-        knime --launcher.suppressErrors -nosplash -application org.knime.product.KNIME_BATCH_APPLICATION -reset -nosave \
-        -workflowFile=${workflowfile} \
-        -workflow.variable=input_mzml_file,${mzML_file},String \
-        -workflow.variable=input_traml,${srmCSV},String \
-        -workflow.variable=output_featurexml_file,${sample_id}.featureXML,String \
-        -vmArgs -Xmx${task.memory.mega-5000}m -Duser.home=\$PWD     
-       """
+        set sample_id, internal_code, analysis_type, checksum, file("${sample_id}.featureXML") into srm_featureXMLfiles_for_calc_peptide_area, srm_featureXMLfiles_for_calc_mass_accuracy, srm_featureXMLfiles_for_calc_median_fwhm
+        set sample_id, internal_code, analysis_type, checksum, file(mzML_file) into srm_mzML_file_for_MedianITMS2, srm_mzML_file_for_check 
+    
+        script:
+        def knime = new Knime(wf:workflowfile, mem:"${task.memory.mega-5000}m", mzml:mzML_file, ofeatxml:"${sample_id}.featureXML", srmCSV:srmCSV)
+        knime.launch()
 }
 
+/*
+ * Run shotgun_qc4l_cid on raw data (In case QC03) 
+ * Choose blast_db and fasta file depending on species
+ * choose genome depending on QC code in the file name // description etc .
+ */
+
+process shotgun_qc4l_cid {
+     publishDir "output/shotgun_qc4l_cid"
+    tag { sample_id }
+    label 'big_mem'
+    
+    afterScript "$baseDir/bin/fixQcml.sh"
+
+    input:
+    set genome_id, internal_code, sample_id, file(mzML_file), analysis_type, checksum, fasta_file, file ("*") from input_pipe_complete_first_step_for_shotgun_qc4l_cid
+    file(workflowfile) from shotgun_qc4l_cidWF
+    
+    when:
+    analysis_type == 'shotgun_qc4l'
+
+    output:
+    set sample_id, internal_code, val("shotgun_qc4l_cid"), checksum, file("${sample_id}.featureXML") into shot_qc4l_cid_featureXMLfiles_for_calc_peptide_area, shot_qc4l_cid_featureXMLfiles_for_calc_mass_accuracy, shot_qc4l_cid_featureXMLfiles_for_calc_median_fwhm
+    set sample_id, internal_code, val("shotgun_qc4l_cid"), checksum, file(mzML_file) into shot_qc4l_cid_mzML_file_for_MedianITMS2, shot_qc4l_cid_mzML_file_for_check 
+    set sample_id, internal_code, val("shotgun_qc4l_cid"), checksum, file("${sample_id}.qcml") into shot_qc4l_cid_qcmlfiles_for_MS2_spectral_count, shot_qc4l_cid_qcmlfiles_for_tot_num_uniq_peptides, shot_qc4l_cid_qcmlfiles_for_tot_num_uniq_proteins
+
+    script:
+    def knime = new Knime(wf:workflowfile, mem:"${task.memory.mega-5000}m", mzml:mzML_file, oqcml:"${sample_id}.qcml", ofeatxml:"${sample_id}.featureXML", oidxml:"${sample_id}.idXML", fasta:fasta_file, psq:"${fasta_file}.psq")
+    knime.launch()
+            
+}
+
+/*
+ * Run shotgun_qc4l_hcd on raw data (In case QC03) 
+ * Choose blast_db and fasta file depending on species
+ * choose genome depending on QC code in the file name // description etc .
+ */
+
+process shotgun_qc4l_hcd {
+     publishDir "output/shotgun_qc4l_hcd"
+    tag { sample_id }
+    
+    label 'big_mem'
+    afterScript "$baseDir/bin/fixQcml.sh"
+
+    input:
+    set genome_id, internal_code, sample_id, file(mzML_file), analysis_type, checksum, fasta_file, file ("*") from input_pipe_complete_first_step_for_shotgun_qc4l_hcd
+    file(workflowfile) from shotgun_qc4l_hcdWF
+    
+    when:
+    analysis_type == 'shotgun_qc4l'
+
+    output:
+    set sample_id, internal_code, val("shotgun_qc4l_hcd"), checksum, file("${sample_id}.featureXML") into shot_qc4l_hcd_featureXMLfiles_for_calc_mass_accuracy, shot_qc4l_hcd_featureXMLfiles_for_calc_median_fwhm
+    set sample_id, internal_code, val("shotgun_qc4l_hcd"), checksum, file(mzML_file) into shot_qc4l_hcd_mzML_file_for_MedianITMS2, shot_qc4l_hcd_mzML_file_for_check 
+    set sample_id, internal_code, val("shotgun_qc4l_hcd"), checksum, file("${sample_id}.qcml") into shot_qc4l_hcd_qcmlfiles_for_MS2_spectral_count, shot_qc4l_hcd_qcmlfiles_for_tot_num_uniq_peptides, shot_qc4l_hcd_qcmlfiles_for_tot_num_uniq_proteins
+
+    script:
+    def knime = new Knime(wf:workflowfile, mem:"${task.memory.mega-5000}m", mzml:mzML_file, oqcml:"${sample_id}.qcml", ofeatxml:"${sample_id}.featureXML", oidxml:"${sample_id}.idXML", fasta:fasta_file, psq:"${fasta_file}.psq")
+    knime.launch()
+            
+}
+
+/*
+ * Run shotgun_qc4l_etcid on raw data (In case QC03) 
+ * Choose blast_db and fasta file depending on species
+ * choose genome depending on QC code in the file name // description etc .
+ */
+
+process shotgun_qc4l_etcid {
+     publishDir "output/shotgun_qc4l_etcid"
+    tag { sample_id }
+    
+    label 'big_mem'
+    afterScript "$baseDir/bin/fixQcml.sh"
+
+    input:
+    set genome_id, internal_code, sample_id, file(mzML_file), analysis_type, checksum, fasta_file, file ("*") from input_pipe_complete_first_step_for_shotgun_qc4l_etcid
+    file(workflowfile) from shotgun_qc4l_etcidWF
+    
+    when:
+    analysis_type == 'shotgun_qc4l'
+
+    output:
+    set sample_id, internal_code, val("shotgun_qc4l_etcid"), checksum, file("${sample_id}.featureXML") into shot_qc4l_etcid_featureXMLfiles_for_calc_mass_accuracy, shot_qc4l_etcid_featureXMLfiles_for_calc_median_fwhm
+    set sample_id, internal_code, val("shotgun_qc4l_etcid"), checksum, file(mzML_file) into shot_qc4l_etcid_mzML_file_for_MedianITMS2, shot_qc4l_etcid_mzML_file_for_check 
+    set sample_id, internal_code, val("shotgun_qc4l_etcid"), checksum, file("${sample_id}.qcml") into shot_qc4l_etcid_qcmlfiles_for_MS2_spectral_count, shot_qc4l_etcid_qcmlfiles_for_tot_num_uniq_peptides, shot_qc4l_etcid_qcmlfiles_for_tot_num_uniq_proteins
+
+    script:
+    def knime = new Knime(wf:workflowfile, mem:"${task.memory.mega-5000}m", mzml:mzML_file, oqcml:"${sample_id}.qcml", ofeatxml:"${sample_id}.featureXML", oidxml:"${sample_id}.idXML", fasta:fasta_file, psq:"${fasta_file}.psq")
+    knime.launch()
+            
+}
+
+/*
+ * Run shotgun_qc4l_ethcd  on raw data (In case QC03) 
+ * Choose blast_db and fasta file depending on species
+ * choose genome depending on QC code in the file name // description etc .
+ */
+
+process shotgun_qc4l_ethcd  {
+     publishDir "output/shotgun_qc4l_ethcd"
+    tag { sample_id }
+    
+    label 'big_mem'
+    afterScript "$baseDir/bin/fixQcml.sh"
+
+    input:
+    set genome_id, internal_code, sample_id, file(mzML_file), analysis_type, checksum, fasta_file, file ("*") from input_pipe_complete_first_step_for_shotgun_qc4l_ethcd 
+    file(workflowfile) from shotgun_qc4l_etcidWF
+    
+    when:
+    analysis_type == 'shotgun_qc4l'
+
+    output:
+    set sample_id, internal_code, val("shotgun_qc4l_ethcd"), checksum, file("${sample_id}.featureXML") into shot_qc4l_ethcd_featureXMLfiles_for_calc_mass_accuracy, shot_qc4l_ethcd_featureXMLfiles_for_calc_median_fwhm
+    set sample_id, internal_code, val("shotgun_qc4l_ethcd"), checksum, file(mzML_file) into shot_qc4l_ethcd_mzML_file_for_MedianITMS2, shot_qc4l_ethcd_mzML_file_for_check 
+    set sample_id, internal_code, val("shotgun_qc4l_ethcd"), checksum, file("${sample_id}.qcml") into shot_qc4l_ethcd_qcmlfiles_for_MS2_spectral_count, shot_qc4l_ethcd_qcmlfiles_for_tot_num_uniq_peptides, shot_qc4l_ethcd_qcmlfiles_for_tot_num_uniq_proteins
+
+    script:
+    def knime = new Knime(wf:workflowfile, mem:"${task.memory.mega-5000}m", mzml:mzML_file, oqcml:"${sample_id}.qcml", ofeatxml:"${sample_id}.featureXML", oidxml:"${sample_id}.idXML", fasta:fasta_file, psq:"${fasta_file}.psq")
+    knime.launch()
+            
+}
 
 /*
  * Run calculation of MS2 spectral count 
  */
 
 process calc_MS2_spectral_count {
-    publishDir shotgun_output
-
-    tag { sample_id }
+    publishDir "output/spec_count"
+    tag { "${sample_id}-${analysis_type}" }
     
     input:
-    set sample_id, internal_code, checksum, file(qcmlfile) from qcmlfiles_for_MS2_spectral_count
-    file(workflowfile) from getWFFile(baseQCPath, MS2specCount_ID)
+    set sample_id, internal_code, val(analysis_type), checksum, file(qcmlfile) from qcmlfiles_for_MS2_spectral_count.mix(shot_qc4l_cid_qcmlfiles_for_MS2_spectral_count, shot_qc4l_hcd_qcmlfiles_for_MS2_spectral_count, shot_qc4l_etcid_qcmlfiles_for_MS2_spectral_count, shot_qc4l_ethcd_qcmlfiles_for_MS2_spectral_count)
+    file(workflowfile) from getWFFile(baseQCPath, "MS2specCount")
 
     output:
-    set sample_id, file("${sample_id}_QC_${MS2specCount_ID}.json") into ms2_spectral_for_delivery
+    set sample_id, file("${sample_id}_QC_${Correspondence['MS2specCount'][analysis_type]}.json") into ms2_spectral_for_delivery
 
-	script:
-	def knime = new Knime(wf:workflowfile, mem:"${task.memory.mega-5000}m", qcml:qcmlfile, qccv:"QC_${MS2specCount_ID}", qccvp:"QC_${ontology[MS2specCount_ID]}", chksum:checksum, ojid:"${sample_id}")
-	knime.launch()
+    script:
+    def analysis_id = Correspondence['MS2specCount'][analysis_type]
+    def ontology_id = ontology[analysis_id]
+    def knime = new Knime(wf:workflowfile, mem:"${task.memory.mega-5000}m", qcml:qcmlfile, qccv:"QC_${analysis_id}", qccvp:"QC_${ontology_id}", chksum:checksum, ojid:"${sample_id}")
+    knime.launch()
 }
 
 /*
@@ -339,130 +498,166 @@ process calc_MS2_spectral_count {
  */
 
 process calc_tot_num_uniq_peptides {
-    publishDir shotgun_output
-
-    tag { sample_id }
+    publishDir "output/uniq_peptides"
+    tag { "${sample_id}-${analysis_type}" }
    
     input:
-    set sample_id, internal_code, checksum, file(qcmlfile) from qcmlfiles_for_tot_num_uniq_peptides
-    file(workflowfile) from getWFFile(baseQCPath, TotNumOfUniPep_ID)
+    set sample_id, internal_code, analysis_type, checksum, file(qcmlfile) from qcmlfiles_for_tot_num_uniq_peptides.mix(shot_qc4l_cid_qcmlfiles_for_tot_num_uniq_peptides, shot_qc4l_hcd_qcmlfiles_for_tot_num_uniq_peptides, shot_qc4l_etcid_qcmlfiles_for_tot_num_uniq_peptides, shot_qc4l_ethcd_qcmlfiles_for_tot_num_uniq_peptides)
+    file(workflowfile) from getWFFile(baseQCPath, "totNumOfUniPep")
 
     output:
-    set sample_id, file("${sample_id}_QC_${TotNumOfUniPep_ID}.json") into uni_peptides_for_delivery
+    set sample_id, file("${sample_id}_QC_${Correspondence['totNumOfUniPep'][analysis_type]}.json") into uni_peptides_for_delivery
 
-	script:
-	def knime = new Knime(wf:workflowfile, mem:"${task.memory.mega-5000}m", qcml:qcmlfile, qccv:"QC_${TotNumOfUniPep_ID}", qccvp:"QC_${ontology[TotNumOfUniPep_ID]}", chksum:checksum, ojid:"${sample_id}")
-	knime.launch()
+    script:
+    def analysis_id = Correspondence['totNumOfUniPep'][analysis_type]
+    def ontology_id = ontology[analysis_id]
+    def knime = new Knime(wf:workflowfile, mem:"${task.memory.mega-5000}m", qcml:qcmlfile, qccv:"QC_${analysis_id}", qccvp:"QC_${ontology_id}", chksum:checksum, ojid:"${sample_id}")
+    knime.launch()
 }
 
 /*
  * Run calculation of total number of uniquely identified proteins
  */
 process calc_tot_num_uniq_proteins {
-
-    tag { sample_id }
+    publishDir "output/uni_proteins"
+    tag { "${sample_id}-${analysis_type}" }
 
     input:
-    set sample_id, internal_code, checksum, file(qcmlfile) from qcmlfiles_for_tot_num_uniq_proteins
-    file(workflowfile) from getWFFile(baseQCPath, TotNumOfUniProt_ID)
+    set sample_id, internal_code, analysis_type, checksum, file(qcmlfile) from qcmlfiles_for_tot_num_uniq_proteins.mix(shot_qc4l_cid_qcmlfiles_for_tot_num_uniq_proteins, shot_qc4l_hcd_qcmlfiles_for_tot_num_uniq_proteins, shot_qc4l_etcid_qcmlfiles_for_tot_num_uniq_proteins, shot_qc4l_ethcd_qcmlfiles_for_tot_num_uniq_proteins)
+    file(workflowfile) from getWFFile(baseQCPath, "totNumOfUniProt")
 
     output:
-    set sample_id, file("${sample_id}_QC_${TotNumOfUniProt_ID}.json") into uni_prots_for_delivery
+    set sample_id, file("${sample_id}_QC_${Correspondence['totNumOfUniProt'][analysis_type]}.json") into uni_prots_for_delivery
 
-	script:
-	def knime = new Knime(wf:workflowfile, mem:"${task.memory.mega-5000}m", qcml:qcmlfile, qccv:"QC_${TotNumOfUniProt_ID}", qccvp:"QC_${ontology[TotNumOfUniProt_ID]}", chksum:checksum, ojid:"${sample_id}")
-	knime.launch()
+    script:
+    def analysis_id = Correspondence['totNumOfUniProt'][analysis_type]
+    def ontology_id = ontology[analysis_id]
+    def knime = new Knime(wf:workflowfile, mem:"${task.memory.mega-5000}m", qcml:qcmlfile, qccv:"QC_${analysis_id}", qccvp:"QC_${ontology_id}", chksum:checksum, ojid:"${sample_id}")
+    knime.launch()
+    
 }
 
 /*
  * Run calculation of median IT MS2
  */
 process calc_median_IT_MS2 {
-
-    tag { sample_id }
+    publishDir "output/median_it"
+    tag { "${sample_id}-${analysis_type}" }
 
     input:
-    set sample_id, internal_code, checksum, file(mzml_file) from shot_mzML_file_for_MedianITMS2.mix(srm_mzML_file_for_MedianITMS2)
-    file(workflowfile) from getWFFile(baseQCPath, MedianITMS2_ID)
+    set sample_id, internal_code, analysis_type, checksum, file(mzml_file) from shot_mzML_file_for_MedianITMS2.mix(srm_mzML_file_for_MedianITMS2, shot_qc4l_cid_mzML_file_for_MedianITMS2, shot_qc4l_hcd_mzML_file_for_MedianITMS2, shot_qc4l_etcid_mzML_file_for_MedianITMS2, shot_qc4l_ethcd_mzML_file_for_MedianITMS2)
+    file(workflowfile) from getWFFile(baseQCPath, "medianITMS2")
 
     output:
-    set sample_id, file("${sample_id}_QC_${MedianITMS2_ID}.json") into median_itms2_for_delivery
+    set sample_id, file("${sample_id}_QC_${Correspondence['medianITMS2'][analysis_type]}.json") into median_itms2_for_delivery
 
-	script:
-	def knime = new Knime(wf:workflowfile, mem:"${task.memory.mega-5000}m", mzml:mzml_file, qccv:"QC_${MedianITMS2_ID}", qccvp:"QC_${ontology[MedianITMS2_ID]}", chksum:checksum, ojid:"${sample_id}")
-	knime.launch()
-	
+    script:
+    def analysis_id = Correspondence['medianITMS2'][analysis_type]
+    def ontology_id = ontology[analysis_id]
+    def knime = new Knime(wf:workflowfile, mem:"${task.memory.mega-5000}m", mzml:mzml_file, qccv:"QC_${analysis_id}", qccvp:"QC_${ontology_id}", chksum:checksum, ojid:"${sample_id}")
+    knime.launch()
+    
 }
 
 /*
  * Run calculation of peptide area
  */
 process calc_peptide_area {
-
-    tag { sample_id }
+    publishDir "output/pep_area"
+    tag { "${sample_id}-${analysis_type}" }
 
     input:
-    set sample_id, internal_code, checksum, file(featxml_file) from shot_featureXMLfiles_for_calc_peptide_area.mix(srm_featureXMLfiles_for_calc_peptide_area)
-	file(peptideCSV)
-    file(workflowfile) from getWFFile(baseQCPath, PepArea_ID)
+    set sample_id, internal_code, analysis_type, checksum, file(featxml_file) from shot_featureXMLfiles_for_calc_peptide_area.mix(srm_featureXMLfiles_for_calc_peptide_area)
+    file(peptideCSV)
+    file(workflowfile) from getWFFile(baseQCPath, "pepArea")
 
     output:
-    set sample_id, internal_code, checksum, PepArea_ID, file("${sample_id}_QC_${PepArea_ID}.json") into pep_area_for_check
+    set sample_id, internal_code, checksum, val("${Correspondence['pepArea'][analysis_type]}"), file("${sample_id}_QC_${Correspondence['pepArea'][analysis_type]}.json") into pep_area_for_check
 
-	script:
-	def knime = new Knime(wf:workflowfile, csvpep:peptideCSV, stype:internal_code, featxml:featxml_file, mem:"${task.memory.mega-5000}m", qccv:"QC_${PepArea_ID}", qccvp:"QC_${ontology[PepArea_ID]}", chksum:checksum, ojid:"${sample_id}")
-	knime.launch()
-	
+    script:
+    def analysis_id = Correspondence['pepArea'][analysis_type]
+    def ontology_id = ontology[analysis_id]
+    def knime = new Knime(wf:workflowfile, csvpep:peptideCSV, stype:internal_code, featxml:featxml_file, mem:"${task.memory.mega-5000}m", qccv:"QC_${analysis_id}", qccvp:"QC_${ontology_id}", chksum:checksum, ojid:"${sample_id}")
+    knime.launch()
+    
 }
- 
+
+/*
+ * Run calculation of peptide area
+ */
+process calc_peptide_area_c4l {
+    publishDir "output/pep_area_c4l"
+    tag { "${sample_id}-${analysis_type}" }
+
+    input:
+    set sample_id, internal_code, analysis_type, checksum, file(featxml_file) from shot_qc4l_cid_featureXMLfiles_for_calc_peptide_area
+    file(peptideCSV_C4L)
+    file(workflowfile) from getWFFile(baseQCPath, "pepArea_qc4l")
+
+    output:
+    set sample_id, file("${sample_id}_QC_${Correspondence['pepArea_qc4l'][analysis_type]}.json") into pep_c4l_for_delivery
+
+    script:
+    def analysis_id = Correspondence['pepArea_qc4l'][analysis_type]
+    def ontology_id = ontology[analysis_id]
+    def knime = new Knime(wf:workflowfile, csvpep:peptideCSV_C4L, stype:internal_code, featxml:featxml_file, mem:"${task.memory.mega-5000}m", qccv:"QC_${analysis_id}", qccvp:"QC_${ontology_id}", chksum:checksum, ojid:"${sample_id}", extrapars:'-workflow.variable=delta_mass,5,double -workflow.variable=delta_rt,250,double -workflow.variable=charge,2,double -workflow.variable=threshold_area,1000000,double')
+    knime.launch()
+    
+}
+
 /*
  * Run calculation of Mass accuracy
  */
  process calc_mass_accuracy {
-
-    tag { sample_id }
+    publishDir "output/calc_mass_accuracy"
+    tag { "${sample_id}-${analysis_type}" }
 
     input:
-    set sample_id, internal_code, checksum, file(featxml_file) from shot_featureXMLfiles_for_calc_mass_accuracy.mix(srm_featureXMLfiles_for_calc_mass_accuracy)
-	file(peptideCSV)
-    file(workflowfile) from getWFFile(baseQCPath, MassAccuracy_ID)
+    set sample_id, internal_code, analysis_type, checksum, file(featxml_file) from shot_featureXMLfiles_for_calc_mass_accuracy.mix(srm_featureXMLfiles_for_calc_mass_accuracy, shot_qc4l_cid_featureXMLfiles_for_calc_mass_accuracy, shot_qc4l_hcd_featureXMLfiles_for_calc_mass_accuracy, shot_qc4l_etcid_featureXMLfiles_for_calc_mass_accuracy, shot_qc4l_ethcd_featureXMLfiles_for_calc_mass_accuracy)
+    file(peptideCSV)
+    file(workflowfile) from getWFFile(baseQCPath, "massAccuracy") 
 
     output:
-    set sample_id, internal_code, checksum, MassAccuracy_ID, file("${sample_id}_QC_${MassAccuracy_ID}.json") into mass_json_for_check
+    set sample_id, internal_code, checksum, val("${Correspondence['massAccuracy'][analysis_type]}"),  file("${sample_id}_QC_${Correspondence['massAccuracy'][analysis_type]}.json") into mass_json_for_check
 
-	script:
-	def knime = new Knime(wf:workflowfile, csvpep:peptideCSV, stype:internal_code, featxml:featxml_file, mem:"${task.memory.mega-5000}m", qccv:"QC_${MassAccuracy_ID}", qccvp:"QC_${ontology[MassAccuracy_ID]}", chksum:checksum, ojid:"${sample_id}")
-	knime.launch()
-	
+    script:
+    def analysis_id = Correspondence['massAccuracy'][analysis_type]
+    def ontology_id = ontology[analysis_id]
+    def knime = new Knime(wf:workflowfile, csvpep:peptideCSV, stype:internal_code, featxml:featxml_file, mem:"${task.memory.mega-5000}m", qccv:"QC_${ontology_id}", qccvp:"QC_${ontology[analysis_type]}", chksum:checksum, ojid:"${sample_id}")
+    knime.launch()
+    
 }
- 
+
 /*
  * Run calculation of Median Fwhm
  */
  process calc_median_fwhm {
-
-    tag { sample_id }
+    publishDir "output/calc_median_fwhm"
+    tag { "${sample_id}-${analysis_type}" }
 
     input:
-    set sample_id, internal_code, checksum, file(featxml_file) from shot_featureXMLfiles_for_calc_median_fwhm.mix(srm_featureXMLfiles_for_calc_median_fwhm)
-	file(peptideCSV)
-    file(workflowfile) from getWFFile(baseQCPath, MedianFwhm_ID)
+    set sample_id, internal_code, analysis_type, checksum, file(featxml_file) from shot_featureXMLfiles_for_calc_median_fwhm.mix(srm_featureXMLfiles_for_calc_median_fwhm, shot_qc4l_cid_featureXMLfiles_for_calc_median_fwhm, shot_qc4l_hcd_featureXMLfiles_for_calc_median_fwhm, shot_qc4l_etcid_featureXMLfiles_for_calc_median_fwhm, shot_qc4l_ethcd_featureXMLfiles_for_calc_median_fwhm)
+    file(peptideCSV)
+    file(workflowfile) from getWFFile(baseQCPath, "medianFwhm") 
 
     output:
-    set sample_id, internal_code, checksum, MedianFwhm_ID, file("${sample_id}_QC_${MedianFwhm_ID}.json") into median_fwhm_for_check
+    set sample_id, internal_code, checksum, val("${Correspondence['medianFwhm'][analysis_type]}"),  file("${sample_id}_QC_${Correspondence['medianFwhm'][analysis_type]}.json") into median_fwhm_for_check
 
-	script:
-	def knime = new Knime(wf:workflowfile, csvpep:peptideCSV, stype:internal_code, featxml:featxml_file, mem:"${task.memory.mega-5000}m", qccv:"QC_${MedianFwhm_ID}", qccvp:"QC_${ontology[MedianFwhm_ID]}", chksum:checksum, ojid:"${sample_id}")
-	knime.launch()
-	
+    script:
+    def analysis_id = Correspondence['medianFwhm'][analysis_type]
+    def ontology_id = ontology[analysis_id]
+    def knime = new Knime(wf:workflowfile, csvpep:peptideCSV, stype:internal_code, featxml:featxml_file, mem:"${task.memory.mega-5000}m", qccv:"QC_${analysis_id}", qccvp:"QC_${ontology_id}", chksum:checksum, ojid:"${sample_id}")
+    knime.launch()
+    
 }
 
 /*
  * Check petide results (appaño)
  */
  process check_peptides {
-    tag { sample_id }
-	beforeScript("mkdir tmp")
+    publishDir "output/check_peptides"
+    tag { "${sample_id}-${process_id}" }
+    beforeScript("mkdir out")
 
     input:
     set sample_id, internal_id, checksum, process_id, file(json_file) from pep_area_for_check
@@ -470,16 +665,19 @@ process calc_peptide_area {
     file(workflowfile) from chekPeptidesWF
 
     output:
-    set sample_id, file("tmp/${json_file}") into pep_checked_for_delivery
+    set sample_id, file("out/${json_file}") into pep_checked_for_delivery
 
-	script:
-	def knime = new Knime(qccv:"QC_${process_id}", wf:workflowfile, chksum:checksum,  csvpep:peptideCSV, stype:internal_id, ijfile:json_file, mem:"${task.memory.mega-5000}m", ofolder:"./tmp", ojfile:"${json_file}")
-	knime.launch()
+    script:
+    def knime = new Knime(qccv:"QC_${process_id}", wf:workflowfile, chksum:checksum, csvpep:peptideCSV, stype:internal_id, ijfile:json_file, mem:"${task.memory.mega-5000}m", ofolder:"./out", ojfile:"${json_file}")
+    knime.launch()
 }
 
+/*
+ * Check fwhm results (appaño)
+ */
  process check_fwhm {
     tag { sample_id }
-	beforeScript("mkdir tmp")
+    beforeScript("mkdir out")
 
     input:
     set sample_id, internal_id, checksum, process_id, file(json_file) from mass_json_for_check
@@ -487,15 +685,19 @@ process calc_peptide_area {
     file(workflowfile) from chekPeptidesWF
 
     output:
-    set sample_id, file("tmp/${json_file}") into mass_checked_for_delivery
+    set sample_id, file("out/${json_file}") into mass_checked_for_delivery
 
-	script:
-	def knime = new Knime(qccv:"QC_${process_id}", wf:workflowfile, chksum:checksum,  csvpep:peptideCSV, stype:internal_id, ijfile:json_file, mem:"${task.memory.mega-5000}m", ofolder:"./tmp", ojfile:"${json_file}")
-	knime.launch()
+    script:
+    def knime = new Knime(qccv:"QC_${process_id}", wf:workflowfile, chksum:checksum,  csvpep:peptideCSV, stype:internal_id, ijfile:json_file, mem:"${task.memory.mega-5000}m", ofolder:"./out", ojfile:"${json_file}")
+    knime.launch()
 }
+
+/*
+ * Check median results (appaño)
+ */
  process check_median {
     tag { sample_id }
-	beforeScript("mkdir tmp")
+    beforeScript("mkdir out")
 
     input:
     set sample_id, internal_id, checksum, process_id, file(json_file) from median_fwhm_for_check
@@ -503,64 +705,65 @@ process calc_peptide_area {
     file(workflowfile) from chekPeptidesWF
 
     output:
-    set sample_id, file("tmp/${json_file}") into median_checked_for_delivery
+    set sample_id, file("out/${json_file}") into median_checked_for_delivery
 
-	script:
-	def knime = new Knime(qccv:"QC_${process_id}", wf:workflowfile, chksum:checksum,  csvpep:peptideCSV, stype:internal_id, ijfile:json_file, mem:"${task.memory.mega-5000}m", ofolder:"./tmp", ojfile:"${json_file}")
-	knime.launch()
+    script:
+    def knime = new Knime(qccv:"QC_${process_id}", wf:workflowfile, chksum:checksum,  csvpep:peptideCSV, stype:internal_id, ijfile:json_file, mem:"${task.memory.mega-5000}m", ofolder:"./out", ojfile:"${json_file}")
+    knime.launch()
 }
 
-// Group the results from checked json files
-json_checked_for_delivery = pep_checked_for_delivery.join(mass_checked_for_delivery).join(median_checked_for_delivery)
+json_checked_for_delivery = pep_checked_for_delivery.mix(pep_c4l_for_delivery).join(mass_checked_for_delivery).join(median_checked_for_delivery)
 
-/*
- * Send data to the database  // join the data based on sample ID and send everything to the DB
- */
- 
- process sendToDB {
+process check_mzML {
     tag { sample_id }
-
+    label 'local'
+    
     input:
-    file(workflowfile) from api_connectionWF
+    set sample_id, internal_id, analysis_type, checksum, file(mzML_file) from shot_mzML_file_for_check.mix(srm_mzML_file_for_check, shot_qc4l_cid_mzML_file_for_check, shot_qc4l_hcd_mzML_file_for_check, shot_qc4l_etcid_mzML_file_for_check, shot_qc4l_ethcd_mzML_file_for_check)
 
-    set sample_id, internal_code, checksum, file(mzML_file), file(ms2_spectral), file(uni_peptides), file(uni_prots), file(median_itms2), file(json1), file(json2), file(json3) from shot_mzML_file_for_delivery.mix(srm_mzML_file_for_delivery).join(ms2_spectral_for_delivery).join(uni_peptides_for_delivery).join(uni_prots_for_delivery).join(median_itms2_for_delivery).join(json_checked_for_delivery)
- //  set sample_id, internal_code, checksum, file(mzML_file), file(median_itms2), file(json1), file(json2), file(json3) from shot_mzML_file_for_delivery.mix(srm_mzML_file_for_delivery).join(median_itms2_for_delivery).join(json_checked_for_delivery)
-    val db_host from params.db_host
+    output:
+    set sample_id, internal_id, analysis_type, checksum, file("${mzML_file}.timestamp"), file("${mzML_file}.filename") into mZML_params_for_delivery
 
-	script:
-    def pieces = sample_id.tokenize( '_' )
-    def lab_id = pieces[0]	
-    def parent_id = ontology[internal_code]
-
-	def knime = new Knime(wf:workflowfile, chksum:checksum, stype:internal_code, ifolder:".", mzml:mzML_file, labs:lab_id, utoken:"${db_host}/api/auth", uifile:"${db_host}/api/file/QC:${parent_id}", uidata:"${db_host}/api/data/pipeline", mem:"${task.memory.mega-5000}m")
-	knime.launch()
+    script:
+    """
+        xmllint --xpath 'string(/indexedmzML/mzML/run/@startTimeStamp)' ${mzML_file} > ${mzML_file}.timestamp
+        xmllint --xpath 'string(/indexedmzML/mzML/fileDescription/sourceFileList/sourceFile/@name)' ${mzML_file} > ${mzML_file}.filename
+    """
 }
 
 
-/*
- Functions
-*/
+mZML_params_for_delivery.map{
+        sample_id , internal_id, analysis_type , checksum, timestamp, filename -> 
+        [sample_id , internal_id, analysis_type , checksum, timestamp.text, filename.text]
+}.println()
 
+
+/*
+ * Functions
+ */
+    
+    
     def public getWFFile(filePrefix, WF_ID) {
-		return file("${filePrefix}${WF_ID}.knwf")
+        return file("${filePrefix}${WF_ID}.knwf")
      }
      
-    def public checkWFFiles(filePrefix, WF_IDs) {
-		for (WF_ID in WF_IDs) {
-			knwfFIle = getWFFile(filePrefix, WF_ID)
-			checkFile(knwfFIle)
-		}
+    def public checkWFFiles(filePrefix, WF_vals) {
+        def WF_IDs = WF_vals.toList().unique()
+        WF_IDs.each() {
+            knwfFIle = getWFFile(filePrefix, it)
+            checkFile(knwfFIle)
+        }
      }
 
     def public checkFiles(filePaths) { 
- 		for (filePath in filePaths) {
-			checkFile(filePath)	
-	    }
+        for (filePath in filePaths) {
+            checkFile(filePath) 
+        }
     }
-     	
+        
     def public checkFile(filePath) { 
-  		if (!filePath.exists()) {
-			error "Cannot find any ${filePath} file!!!"	
-     	}
+        if (!filePath.exists()) {
+            error "Cannot find any ${filePath} file!!!" 
+        }
      }
      
