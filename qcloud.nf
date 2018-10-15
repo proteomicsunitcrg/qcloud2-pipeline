@@ -786,6 +786,9 @@ process calc_tic {
     knime.launch()
 }
 
+/*
+ * Mix the different outputs to a joint channel
+ */
 json_checked_for_delivery = pep_checked_for_delivery.mix(pep_c4l_for_delivery).join(mass_checked_for_delivery, remainder:true).join(median_checked_for_delivery, remainder:true)
 
 process check_mzML {
@@ -805,18 +808,30 @@ process check_mzML {
 }
 
 mZML_params_for_delivery = mZML_params_for_mapping.map{
-        sample_id , internal_id, analysis_type, checksum, timestamp, filename -> 
-        [sample_id , internal_id, analysis_type, checksum, timestamp.text, filename.text]
-}
+        def rawids = it[0].tokenize( '_' )
+        def sample_id = "${rawids[0]}_${rawids[1]}_${rawids[2]}"
+        [sample_id , it[1], it[3], it[4].text, it[5].text]
+}.unique()
 
- 
 jointJsons = ms2_spectral_for_delivery.join(uni_peptides_for_delivery).join(uni_prots_for_delivery).join(median_itms2_for_delivery).join(json_checked_for_delivery)
 
-jsonToBeSent = jointJsons.map{ it -> def l = [it[0]]; l.addAll([it.drop(1)]); return l }
-    
+jsonToBeSent = jointJsons.map{ 
+        def rawids = it[0].tokenize( '_' );
+        def orid = "${rawids[0]}_${rawids[1]}_${rawids[2]}";
+        def l = [orid]; 
+        l.addAll([it.drop(1)]); 
+        return l }.groupTuple()
+
+jsonToBeSentClean = jsonToBeSent.map{
+	def l = it[0]
+	def r = [it.drop(1)].flatten()
+    [l, r]
+}
 
 
-  
+/*
+ * Sent to the DB
+ */
  process sendToDB {
     tag { sample_id }
     label 'local'
@@ -824,8 +839,7 @@ jsonToBeSent = jointJsons.map{ it -> def l = [it[0]]; l.addAll([it.drop(1)]); re
     input:
     file(workflowfile) from api_connectionWF
 
-    set sample_id, internal_code, analysis_type, checksum, timestamp, filename, file("*") from mZML_params_for_delivery.join(jsonToBeSent)
-
+    set sample_id, internal_code, checksum, timestamp, filename, file("*") from mZML_params_for_delivery.join(jsonToBeSentClean)
     val db_host from params.db_host
 
     script:
