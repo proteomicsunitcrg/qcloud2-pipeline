@@ -37,7 +37,9 @@
      String uifile    = ''
      String uidata    = ''
      String srmCSV    = ''
-     String extrapars    = ''
+     String rdate     = ''
+     String oriname   = ''
+     String extrapars = ''
     
 	/* 
 	 *  Sorting bam files with samtools
@@ -70,6 +72,8 @@
     	if (this.oidxml) {string +=  "-workflow.variable=output_idxml_file,${this.oidxml},String " }
     	if (this.ojfile) {string +=  "-workflow.variable=output_json_filename,${this.ojfile},String " }
     	if (this.ojid) {string +=  "-workflow.variable=output_json_id,${this.ojid},String " }
+    	if (this.rdate) {string +=  "-workflow.variable=input_mass_spec_run_date,${this.rdate},String " }
+    	if (this.oriname) {string +=  "-workflow.variable=input_original_name,${this.oriname},String " }    	
     	if (this.extrapars) {string += " ${this.extrapars} " }
 		string += "-vmArgs -Xmx${this.mem} -Duser.home=\$PWD"
     	return string
