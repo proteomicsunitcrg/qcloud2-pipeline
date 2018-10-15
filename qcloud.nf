@@ -790,7 +790,6 @@ json_checked_for_delivery = pep_checked_for_delivery.mix(pep_c4l_for_delivery).j
 
 process check_mzML {
     tag { sample_id }
-    label 'local'
     
     input:
     set sample_id, internal_id, analysis_type, checksum, file(mzML_file) from shot_mzML_file_for_check.mix(srm_mzML_file_for_check, shot_qc4l_cid_mzML_file_for_check, shot_qc4l_hcd_mzML_file_for_check, shot_qc4l_etcid_mzML_file_for_check, shot_qc4l_ethcd_mzML_file_for_check)
@@ -820,6 +819,7 @@ jsonToBeSent = jointJsons.map{ it -> def l = [it[0]]; l.addAll([it.drop(1)]); re
   
  process sendToDB {
     tag { sample_id }
+    label 'local'
 
     input:
     file(workflowfile) from api_connectionWF
