@@ -205,7 +205,6 @@ xmllint --xpath 'string(/indexedmzML/mzML/fileDescription/sourceFileList/sourceF
 ```
 knime --launcher.suppressErrors -nosplash -application org.knime.product.KNIME_BATCH_APPLICATION -reset -nosave \
 -workflowFile="/users/pr/rolivella/mydata/knwf/module_api_conn.knwf" \
--workflow.variable=input_mzml_file,/users/pr/rolivella/mydata/mzML/nf/70fa8350-1b1b-467e-a714-2b293adef295_QC01_b5132b11365e8c26842c09afee2d1631.mzML,String \
 -workflow.variable=input_string_checksum,b5132b11365e8c26842c09afee2d1631,String \
 -workflow.variable=input_string_labsystem,70fa8350-1b1b-467e-a714-2b293adef295,String \
 -workflow.variable=input_sample_type,QC01,String \
@@ -214,6 +213,6 @@ knime --launcher.suppressErrors -nosplash -application org.knime.product.KNIME_B
 -workflow.variable=input_url_insert_data,http://192.168.101.37:8080/api/data/pipeline,String \
 -workflow.variable=input_json_folder,/users/pr/qcloud/outgoing/JSON/1809,String \ 
 -workflow.variable=input_mass_spec_run_date,$$$input_mass_spec_run_date$$$,String \
--workflow.variable=input_original_name,$$$input_mass_spec_run_date$$$,String
+-workflow.variable=input_original_filename,$$$input_mass_spec_run_date$$$,String
 
 ```
