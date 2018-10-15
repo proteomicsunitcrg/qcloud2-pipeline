@@ -88,9 +88,15 @@ def Correspondence = [:]
 //MS2specCount
 Correspondence["MS2specCount"] = ["shotgun" : "0000007", "shotgun_qc4l_cid" : "1002001", "shotgun_qc4l_hcd" : "1002009", "shotgun_qc4l_etcid" : "1002017", "shotgun_qc4l_ethcd" : "1002025"]
 //totNumOfUniPep
-Correspondence["totNumOfUniPep"] = ["shotgun" : "0000031", "shotgun_qc4l_cid" : "1002001", "shotgun_qc4l_hcd" : "1002010", "shotgun_qc4l_etcid" : "1002018", "shotgun_qc4l_ethcd": "1002026"] 
+Correspondence["totNumOfUniPep"] = ["shotgun" : "0000031", "shotgun_qc4l_cid" : "1002002", "shotgun_qc4l_hcd" : "1002010", "shotgun_qc4l_etcid" : "1002018", "shotgun_qc4l_ethcd": "1002026"] 
 //totNumOfUniProt
 Correspondence["totNumOfUniProt"] = ["shotgun" : "0000032", "shotgun_qc4l_cid" : "1002003", "shotgun_qc4l_hcd" : "1002011", "shotgun_qc4l_etcid" : "1002019", "shotgun_qc4l_ethcd" : "1002027"]
+//TotNumOfPsm NEW
+Correspondence["totNumOfPsm"] = ["shotgun" : "0000029", "shotgun_qc4l_cid" : "1002004", "shotgun_qc4l_hcd" : "1002012", "shotgun_qc4l_etcid" : "1002020", "shotgun_qc4l_ethcd" : "1002028"]
+//medianITMS1 NEW
+Correspondence["medianITMS1"] = ["shotgun" : "1000927", "shotgun_qc4l_cid" : "1000933", "shotgun_qc4l_hcd" : "1000934", "shotgun_qc4l_etcid" : "1000935", "shotgun_qc4l_ethcd" : "1000936"]
+//tic NEW
+Correspondence["tic"] = ["shotgun" : "0000048", "shotgun_qc4l_cid" : "1000937", "shotgun_qc4l_hcd" : "1000938", "shotgun_qc4l_etcid" : "1000939", "shotgun_qc4l_ethcd" : "1000940"]
 //medianITMS2
 Correspondence["medianITMS2"] = ["shotgun" : "1000928", "srm" : "???", "shotgun_qc4l_cid" : "1002005", "shotgun_qc4l_hcd" : "1002013", "shotgun_qc4l_etcid" : "1002021", "shotgun_qc4l_ethcd" : "1002029"] 
 //pepArea
@@ -142,6 +148,8 @@ ontology["1002028"] = "9000001"
 ontology["1002029"] = "9000002"
 ontology["1002031"] = "1002031"
 ontology["1002032"] = "9000003"
+ontology["1000927"] = "9000002"
+ontology["0000048"] = "0000048"
 
 ontology["QC01"] = "0000005"
 ontology["QC02"] = "0000006"
@@ -192,11 +200,11 @@ if( !qconfig.exists() )  { error "Cannot find any qconfig tab file!!!"}
 Channel
     .from(qconfig.readLines())
     .map { line ->
-    list = line.split("\t")
-    internal_code = list[0]
-    genome           = list[1]
-    workflow_type    = list[2]
-    [internal_code, genome, workflow_type]
+     list = line.split("\t")
+     internal_code = list[0]
+     genome           = list[1]
+     workflow_type    = list[2]
+     [internal_code, genome, workflow_type]
     }
     .set{qconfig_desc}
 
@@ -310,8 +318,8 @@ process run_shotgun {
 
     output:
     set sample_id, internal_code, analysis_type, checksum, file("${sample_id}.featureXML") into shot_featureXMLfiles_for_calc_peptide_area, shot_featureXMLfiles_for_calc_mass_accuracy, shot_featureXMLfiles_for_calc_median_fwhm
-    set sample_id, internal_code, analysis_type, checksum, file(mzML_file) into shot_mzML_file_for_MedianITMS2, shot_mzML_file_for_check 
-    set sample_id, internal_code, analysis_type, checksum, file("${sample_id}.qcml") into qcmlfiles_for_MS2_spectral_count, qcmlfiles_for_tot_num_uniq_peptides, qcmlfiles_for_tot_num_uniq_proteins
+    set sample_id, internal_code, analysis_type, checksum, file(mzML_file) into shot_mzML_file_for_MedianITMS1, shot_mzML_file_for_MedianITMS2, shot_mzML_file_for_check 
+    set sample_id, internal_code, analysis_type, checksum, file("${sample_id}.qcml") into qcmlfiles_for_MS2_spectral_count, qcmlfiles_for_tot_num_uniq_peptides, qcmlfiles_for_tot_num_uniq_proteins, qcmlfiles_for_tot_num_psm
 
     script:
     def knime = new Knime(wf:workflowfile, mem:"${task.memory.mega-5000}m", mzml:mzML_file, oqcml:"${sample_id}.qcml", ofeatxml:"${sample_id}.featureXML", oidxml:"${sample_id}.idXML", fasta:fasta_file, psq:"${fasta_file}.psq")
@@ -340,7 +348,7 @@ process run_srm {
 
         output:
         set sample_id, internal_code, analysis_type, checksum, file("${sample_id}.featureXML") into srm_featureXMLfiles_for_calc_peptide_area, srm_featureXMLfiles_for_calc_mass_accuracy, srm_featureXMLfiles_for_calc_median_fwhm
-        set sample_id, internal_code, analysis_type, checksum, file(mzML_file) into srm_mzML_file_for_MedianITMS2, srm_mzML_file_for_check 
+        set sample_id, internal_code, analysis_type, checksum, file(mzML_file) into srm_mzML_file_for_MedianITMS1, srm_mzML_file_for_MedianITMS2, srm_mzML_file_for_check 
     
         script:
         def knime = new Knime(wf:workflowfile, mem:"${task.memory.mega-5000}m", mzml:mzML_file, ofeatxml:"${sample_id}.featureXML", srmCSV:srmCSV)
@@ -368,9 +376,9 @@ process shotgun_qc4l_cid {
     analysis_type == 'shotgun_qc4l'
 
     output:
-    set sample_id, internal_code, val("shotgun_qc4l_cid"), checksum, file("${sample_id}.featureXML") into shot_qc4l_cid_featureXMLfiles_for_calc_peptide_area, shot_qc4l_cid_featureXMLfiles_for_calc_mass_accuracy, shot_qc4l_cid_featureXMLfiles_for_calc_median_fwhm
-    set sample_id, internal_code, val("shotgun_qc4l_cid"), checksum, file(mzML_file) into shot_qc4l_cid_mzML_file_for_MedianITMS2, shot_qc4l_cid_mzML_file_for_check 
-    set sample_id, internal_code, val("shotgun_qc4l_cid"), checksum, file("${sample_id}.qcml") into shot_qc4l_cid_qcmlfiles_for_MS2_spectral_count, shot_qc4l_cid_qcmlfiles_for_tot_num_uniq_peptides, shot_qc4l_cid_qcmlfiles_for_tot_num_uniq_proteins
+    set val("${sample_id}_cid"), internal_code, val("shotgun_qc4l_cid"), checksum, file("${sample_id}.featureXML") into shot_qc4l_cid_featureXMLfiles_for_calc_peptide_area, shot_qc4l_cid_featureXMLfiles_for_calc_mass_accuracy, shot_qc4l_cid_featureXMLfiles_for_calc_median_fwhm
+    set val("${sample_id}_cid"), internal_code, val("shotgun_qc4l_cid"), checksum, file(mzML_file) into shot_qc4l_cid_mzML_file_for_MedianITMS1, shot_qc4l_cid_mzML_file_for_MedianITMS2, shot_qc4l_cid_mzML_file_for_check 
+    set val("${sample_id}_cid"), internal_code, val("shotgun_qc4l_cid"), checksum, file("${sample_id}.qcml") into shot_qc4l_cid_qcmlfiles_for_MS2_spectral_count, shot_qc4l_cid_qcmlfiles_for_tot_num_uniq_peptides, shot_qc4l_cid_qcmlfiles_for_tot_num_uniq_proteins, shot_qc4l_cid_qcmlfiles_for_tot_num_psm
 
     script:
     def knime = new Knime(wf:workflowfile, mem:"${task.memory.mega-5000}m", mzml:mzML_file, oqcml:"${sample_id}.qcml", ofeatxml:"${sample_id}.featureXML", oidxml:"${sample_id}.idXML", fasta:fasta_file, psq:"${fasta_file}.psq")
@@ -399,9 +407,9 @@ process shotgun_qc4l_hcd {
     analysis_type == 'shotgun_qc4l'
 
     output:
-    set sample_id, internal_code, val("shotgun_qc4l_hcd"), checksum, file("${sample_id}.featureXML") into shot_qc4l_hcd_featureXMLfiles_for_calc_mass_accuracy, shot_qc4l_hcd_featureXMLfiles_for_calc_median_fwhm
-    set sample_id, internal_code, val("shotgun_qc4l_hcd"), checksum, file(mzML_file) into shot_qc4l_hcd_mzML_file_for_MedianITMS2, shot_qc4l_hcd_mzML_file_for_check 
-    set sample_id, internal_code, val("shotgun_qc4l_hcd"), checksum, file("${sample_id}.qcml") into shot_qc4l_hcd_qcmlfiles_for_MS2_spectral_count, shot_qc4l_hcd_qcmlfiles_for_tot_num_uniq_peptides, shot_qc4l_hcd_qcmlfiles_for_tot_num_uniq_proteins
+    set val("${sample_id}_hcd"), internal_code, val("shotgun_qc4l_hcd"), checksum, file("${sample_id}.featureXML") into shot_qc4l_hcd_featureXMLfiles_for_calc_mass_accuracy, shot_qc4l_hcd_featureXMLfiles_for_calc_median_fwhm
+    set val("${sample_id}_hcd"), internal_code, val("shotgun_qc4l_hcd"), checksum, file(mzML_file) into shot_qc4l_hcd_mzML_file_for_MedianITMS1, shot_qc4l_hcd_mzML_file_for_MedianITMS2, shot_qc4l_hcd_mzML_file_for_check 
+    set val("${sample_id}_hcd"), internal_code, val("shotgun_qc4l_hcd"), checksum, file("${sample_id}.qcml") into shot_qc4l_hcd_qcmlfiles_for_MS2_spectral_count, shot_qc4l_hcd_qcmlfiles_for_tot_num_uniq_peptides, shot_qc4l_hcd_qcmlfiles_for_tot_num_uniq_proteins, shot_qc4l_hcd_qcmlfiles_for_tot_num_psm
 
     script:
     def knime = new Knime(wf:workflowfile, mem:"${task.memory.mega-5000}m", mzml:mzML_file, oqcml:"${sample_id}.qcml", ofeatxml:"${sample_id}.featureXML", oidxml:"${sample_id}.idXML", fasta:fasta_file, psq:"${fasta_file}.psq")
@@ -430,9 +438,9 @@ process shotgun_qc4l_etcid {
     analysis_type == 'shotgun_qc4l'
 
     output:
-    set sample_id, internal_code, val("shotgun_qc4l_etcid"), checksum, file("${sample_id}.featureXML") into shot_qc4l_etcid_featureXMLfiles_for_calc_mass_accuracy, shot_qc4l_etcid_featureXMLfiles_for_calc_median_fwhm
-    set sample_id, internal_code, val("shotgun_qc4l_etcid"), checksum, file(mzML_file) into shot_qc4l_etcid_mzML_file_for_MedianITMS2, shot_qc4l_etcid_mzML_file_for_check 
-    set sample_id, internal_code, val("shotgun_qc4l_etcid"), checksum, file("${sample_id}.qcml") into shot_qc4l_etcid_qcmlfiles_for_MS2_spectral_count, shot_qc4l_etcid_qcmlfiles_for_tot_num_uniq_peptides, shot_qc4l_etcid_qcmlfiles_for_tot_num_uniq_proteins
+    set val("${sample_id}_etcid"), internal_code, val("shotgun_qc4l_etcid"), checksum, file("${sample_id}.featureXML") into shot_qc4l_etcid_featureXMLfiles_for_calc_mass_accuracy, shot_qc4l_etcid_featureXMLfiles_for_calc_median_fwhm
+    set val("${sample_id}_etcid"), internal_code, val("shotgun_qc4l_etcid"), checksum, file(mzML_file) into shot_qc4l_etcid_mzML_file_for_MedianITMS1, shot_qc4l_etcid_mzML_file_for_MedianITMS2, shot_qc4l_etcid_mzML_file_for_check 
+    set val("${sample_id}_etcid"), internal_code, val("shotgun_qc4l_etcid"), checksum, file("${sample_id}.qcml") into shot_qc4l_etcid_qcmlfiles_for_MS2_spectral_count, shot_qc4l_etcid_qcmlfiles_for_tot_num_uniq_peptides, shot_qc4l_etcid_qcmlfiles_for_tot_num_uniq_proteins, shot_qc4l_etcid_qcmlfiles_for_tot_num_psm
 
     script:
     def knime = new Knime(wf:workflowfile, mem:"${task.memory.mega-5000}m", mzml:mzML_file, oqcml:"${sample_id}.qcml", ofeatxml:"${sample_id}.featureXML", oidxml:"${sample_id}.idXML", fasta:fasta_file, psq:"${fasta_file}.psq")
@@ -461,9 +469,9 @@ process shotgun_qc4l_ethcd  {
     analysis_type == 'shotgun_qc4l'
 
     output:
-    set sample_id, internal_code, val("shotgun_qc4l_ethcd"), checksum, file("${sample_id}.featureXML") into shot_qc4l_ethcd_featureXMLfiles_for_calc_mass_accuracy, shot_qc4l_ethcd_featureXMLfiles_for_calc_median_fwhm
-    set sample_id, internal_code, val("shotgun_qc4l_ethcd"), checksum, file(mzML_file) into shot_qc4l_ethcd_mzML_file_for_MedianITMS2, shot_qc4l_ethcd_mzML_file_for_check 
-    set sample_id, internal_code, val("shotgun_qc4l_ethcd"), checksum, file("${sample_id}.qcml") into shot_qc4l_ethcd_qcmlfiles_for_MS2_spectral_count, shot_qc4l_ethcd_qcmlfiles_for_tot_num_uniq_peptides, shot_qc4l_ethcd_qcmlfiles_for_tot_num_uniq_proteins
+    set val("${sample_id}_ethcd"), internal_code, val("shotgun_qc4l_ethcd"), checksum, file("${sample_id}.featureXML") into shot_qc4l_ethcd_featureXMLfiles_for_calc_mass_accuracy, shot_qc4l_ethcd_featureXMLfiles_for_calc_median_fwhm
+    set val("${sample_id}_ethcd"), internal_code, val("shotgun_qc4l_ethcd"), checksum, file(mzML_file) into shot_qc4l_ethcd_mzML_file_for_MedianITMS1, shot_qc4l_ethcd_mzML_file_for_MedianITMS2, shot_qc4l_ethcd_mzML_file_for_check 
+    set val("${sample_id}_ethcd"), internal_code, val("shotgun_qc4l_ethcd"), checksum, file("${sample_id}.qcml") into shot_qc4l_ethcd_qcmlfiles_for_MS2_spectral_count, shot_qc4l_ethcd_qcmlfiles_for_tot_num_uniq_peptides, shot_qc4l_ethcd_qcmlfiles_for_tot_num_uniq_proteins, shot_qc4l_ethcd_qcmlfiles_for_tot_num_psm
 
     script:
     def knime = new Knime(wf:workflowfile, mem:"${task.memory.mega-5000}m", mzml:mzML_file, oqcml:"${sample_id}.qcml", ofeatxml:"${sample_id}.featureXML", oidxml:"${sample_id}.idXML", fasta:fasta_file, psq:"${fasta_file}.psq")
@@ -538,10 +546,54 @@ process calc_tot_num_uniq_proteins {
 }
 
 /*
+ * Run calculation of total number of Peptide Spectral Matches
+ */
+process calc_tot_num_psm {
+    publishDir "output/num_psm"
+    tag { "${sample_id}-${analysis_type}" }
+
+    input:
+    set sample_id, internal_code, analysis_type, checksum, file(qcmlfile) from qcmlfiles_for_tot_num_psm.mix(shot_qc4l_cid_qcmlfiles_for_tot_num_psm, shot_qc4l_hcd_qcmlfiles_for_tot_num_psm, shot_qc4l_etcid_qcmlfiles_for_tot_num_psm, shot_qc4l_ethcd_qcmlfiles_for_tot_num_psm)
+    file(workflowfile) from getWFFile(baseQCPath, "totNumOfPsm")
+
+    output:
+    set sample_id, file("${sample_id}_QC_${Correspondence['totNumOfPsm'][analysis_type]}.json") into tot_psm_for_delivery
+
+    script:
+    def analysis_id = Correspondence['totNumOfPsm'][analysis_type]
+    def ontology_id = ontology[analysis_id]
+    def knime = new Knime(wf:workflowfile, mem:"${task.memory.mega-5000}m", qcml:qcmlfile, qccv:"QC_${analysis_id}", qccvp:"QC_${ontology_id}", chksum:checksum, ojid:"${sample_id}")
+    knime.launch()
+    
+}
+
+/*
+ * Run calculation of median IT MS1
+ */
+process calc_median_IT_MS1 {
+    publishDir "output/median_it1"
+    tag { "${sample_id}-${analysis_type}" }
+
+    input:
+    set sample_id, internal_code, analysis_type, checksum, file(mzml_file) from shot_mzML_file_for_MedianITMS1.mix(srm_mzML_file_for_MedianITMS1, shot_qc4l_cid_mzML_file_for_MedianITMS1, shot_qc4l_hcd_mzML_file_for_MedianITMS1, shot_qc4l_etcid_mzML_file_for_MedianITMS1, shot_qc4l_ethcd_mzML_file_for_MedianITMS1)
+    file(workflowfile) from getWFFile(baseQCPath, "medianITMS1")
+
+    output:
+    set sample_id, file("${sample_id}_QC_${Correspondence['medianITMS1'][analysis_type]}.json") into median_itms1_for_delivery
+
+    script:
+    def analysis_id = Correspondence['medianITMS1'][analysis_type]
+    def ontology_id = ontology[analysis_id]
+    def knime = new Knime(wf:workflowfile, mem:"${task.memory.mega-5000}m", mzml:mzml_file, qccv:"QC_${analysis_id}", qccvp:"QC_${ontology_id}", chksum:checksum, ojid:"${sample_id}")
+    knime.launch()
+    
+}
+
+/*
  * Run calculation of median IT MS2
  */
 process calc_median_IT_MS2 {
-    publishDir "output/median_it"
+    publishDir "output/median_it2"
     tag { "${sample_id}-${analysis_type}" }
 
     input:
@@ -605,6 +657,28 @@ process calc_peptide_area_c4l {
     
 }
 
+/*
+ * Run calculation of Sum of all Total Ion Current per RT
+ 
+process calc_tic {
+    publishDir "output/tic"
+    tag { "${sample_id}-${analysis_type}" }
+
+    input:
+    set sample_id, internal_code, analysis_type, checksum, file(featxml_file) from shot_qc4l_cid_featureXMLfiles_for_calc_peptide_area
+    file(workflowfile) from getWFFile(baseQCPath, "tic")
+
+    output:
+    set sample_id, file("${sample_id}_QC_${Correspondence['tic'][analysis_type]}.json") into tic_for_delivery
+
+    script:
+    def analysis_id = Correspondence['tic'][analysis_type]
+    def ontology_id = ontology[analysis_id]
+    def knime = new Knime(wf:workflowfile, csvpep:peptideCSV_C4L, stype:internal_code, featxml:featxml_file, mem:"${task.memory.mega-5000}m", qccv:"QC_${analysis_id}", qccvp:"QC_${ontology_id}", chksum:checksum, ojid:"${sample_id}", extrapars:'-workflow.variable=delta_mass,5,double -workflow.variable=delta_rt,250,double -workflow.variable=charge,2,double -workflow.variable=threshold_area,1000000,double')
+    knime.launch()   
+}
+ */
+ 
 /*
  * Run calculation of Mass accuracy
  */
@@ -712,7 +786,7 @@ process calc_peptide_area_c4l {
     knime.launch()
 }
 
-json_checked_for_delivery = pep_checked_for_delivery.mix(pep_c4l_for_delivery).join(mass_checked_for_delivery).join(median_checked_for_delivery)
+json_checked_for_delivery = pep_checked_for_delivery.mix(pep_c4l_for_delivery).join(mass_checked_for_delivery, remainder:true).join(median_checked_for_delivery, remainder:true)
 
 process check_mzML {
     tag { sample_id }
@@ -722,7 +796,7 @@ process check_mzML {
     set sample_id, internal_id, analysis_type, checksum, file(mzML_file) from shot_mzML_file_for_check.mix(srm_mzML_file_for_check, shot_qc4l_cid_mzML_file_for_check, shot_qc4l_hcd_mzML_file_for_check, shot_qc4l_etcid_mzML_file_for_check, shot_qc4l_ethcd_mzML_file_for_check)
 
     output:
-    set sample_id, internal_id, analysis_type, checksum, file("${mzML_file}.timestamp"), file("${mzML_file}.filename") into mZML_params_for_delivery
+    set sample_id, internal_id, analysis_type, checksum, file("${mzML_file}.timestamp"), file("${mzML_file}.filename") into mZML_params_for_mapping
 
     script:
     """
@@ -731,11 +805,38 @@ process check_mzML {
     """
 }
 
+mZML_params_for_delivery = mZML_params_for_mapping.map{
+        sample_id , internal_id, analysis_type, checksum, timestamp, filename -> 
+        [sample_id , internal_id, analysis_type, checksum, timestamp.text, filename.text]
+}
 
-mZML_params_for_delivery.map{
-        sample_id , internal_id, analysis_type , checksum, timestamp, filename -> 
-        [sample_id , internal_id, analysis_type , checksum, timestamp.text, filename.text]
-}.println()
+ 
+jointJsons = ms2_spectral_for_delivery.join(uni_peptides_for_delivery).join(uni_prots_for_delivery).join(median_itms2_for_delivery).join(json_checked_for_delivery)
+
+jsonToBeSent = jointJsons.map{ it -> def l = [it[0]]; l.addAll([it.drop(1)]); return l }
+    
+
+
+  
+ process sendToDB {
+    tag { sample_id }
+
+    input:
+    file(workflowfile) from api_connectionWF
+
+    set sample_id, internal_code, analysis_type, checksum, timestamp, filename, file("*") from mZML_params_for_delivery.join(jsonToBeSent)
+
+    val db_host from params.db_host
+
+    script:
+    def pieces = sample_id.tokenize( '_' )
+    def lab_id = pieces[0]  
+    def parent_id = ontology[internal_code]
+
+    def knime = new Knime(wf:workflowfile, rdate:timestamp, oriname:filename, chksum:checksum, stype:internal_code, ifolder:".", labs:lab_id, utoken:"${db_host}/api/auth", uifile:"${db_host}/api/file/QC:${parent_id}", uidata:"${db_host}/api/data/pipeline", mem:"${task.memory.mega-5000}m")
+    knime.launch()
+}
+
 
 
 /*
