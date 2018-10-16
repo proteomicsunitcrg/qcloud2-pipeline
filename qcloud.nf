@@ -759,7 +759,6 @@ jsonToBeSentClean = jsonToBeSent.map{
     [l, r]
 }
 
-jsonToBeSentClean.println()
 /*
  * Sent to the DB
  */
