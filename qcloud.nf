@@ -762,7 +762,7 @@ jsonToBeSentClean = jsonToBeSent.map{
 jsonToBeSentClean.println()
 /*
  * Sent to the DB
- 
+ */
  process sendToDB {
     tag { sample_id }
     label 'local'
