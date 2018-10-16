@@ -96,7 +96,7 @@ checkWFFiles(baseQCPath, Correspondence.keySet())
  * Create a channel for mzlfiles files; Temporary for testing purposes only
  */
 Channel
-    .fromPath( params.zipfiles )             
+    .watchPath( params.zipfiles )             
     .map { 
         file = it
         id = it.getName()
@@ -765,7 +765,7 @@ jsonToBeSentClean.println()
  */
  process sendToDB {
     tag { sample_id }
-    label 'local'
+    //label 'local'
 
     input:
     file(workflowfile) from api_connectionWF
