@@ -47,6 +47,7 @@ fasta_folder        = "$baseDir/fasta"
 blastdb_folder      = "$baseDir/blastdb"
 CSV_folder          = "$baseDir/csv"
 
+
 fastaconfig = file(params.fasta_tab)
 if( !fastaconfig.exists() )  { error "Cannot find any fasta tab file!!!"}
 
@@ -84,6 +85,11 @@ checkFiles([shotgunWF, srmWF, chekPeptidesWF,api_connectionWF, shotgun_qc4l_cidW
 
 // Check presence of knime's workflow files
 baseQCPath     = "${workflowsFolder}/module_parameter_QC_"
+
+def dbindex = new DBindexes()
+def Correspondence = dbindex.getCorrespondence()
+def ontology = dbindex.getOntology()
+
 checkWFFiles(baseQCPath, Correspondence.keySet())
 
 /*
@@ -754,10 +760,9 @@ jsonToBeSentClean = jsonToBeSent.map{
 }
 
 jsonToBeSentClean.println()
-
 /*
  * Sent to the DB
- */
+ 
  process sendToDB {
     tag { sample_id }
     label 'local'
