@@ -338,7 +338,7 @@ process shotgun_qc4l_hcd {
     analysis_type == 'shotgun_qc4l'
 
     output:
-    set val("${sample_id}_hcd"), internal_code, val("shotgun_qc4l_hcd"), checksum, file("${sample_id}.featureXML") into shot_qc4l_hcd_featureXMLfiles_for_calc_mass_accuracy, shot_qc4l_hcd_featureXMLfiles_for_calc_median_fwhm
+    set val("${sample_id}_hcd"), internal_code, val("shotgun_qc4l_hcd"), checksum, file("${sample_id}.featureXML") into shot_qc4l_hcd_featureXMLfiles_for_calc_peptide_area, shot_qc4l_hcd_featureXMLfiles_for_calc_mass_accuracy, shot_qc4l_hcd_featureXMLfiles_for_calc_median_fwhm
     set val("${sample_id}_hcd"), internal_code, val("shotgun_qc4l_hcd"), checksum, file(mzML_file) into shot_qc4l_hcd_mzML_file_for_MedianITMS1, shot_qc4l_hcd_mzML_file_for_MedianITMS2, shot_qc4l_hcd_mzML_file_for_check 
     set val("${sample_id}_hcd"), internal_code, val("shotgun_qc4l_hcd"), checksum, file("${sample_id}.qcml") into shot_qc4l_hcd_qcmlfiles_for_MS2_spectral_count, shot_qc4l_hcd_qcmlfiles_for_tot_num_uniq_peptides, shot_qc4l_hcd_qcmlfiles_for_tot_num_uniq_proteins, shot_qc4l_hcd_qcmlfiles_for_tot_num_psm
 
@@ -369,7 +369,7 @@ process shotgun_qc4l_etcid {
     analysis_type == 'shotgun_qc4l'
 
     output:
-    set val("${sample_id}_etcid"), internal_code, val("shotgun_qc4l_etcid"), checksum, file("${sample_id}.featureXML") into shot_qc4l_etcid_featureXMLfiles_for_calc_mass_accuracy, shot_qc4l_etcid_featureXMLfiles_for_calc_median_fwhm
+    set val("${sample_id}_etcid"), internal_code, val("shotgun_qc4l_etcid"), checksum, file("${sample_id}.featureXML") into shot_qc4l_etcid_featureXMLfiles_for_calc_peptide_area, shot_qc4l_etcid_featureXMLfiles_for_calc_mass_accuracy, shot_qc4l_etcid_featureXMLfiles_for_calc_median_fwhm
     set val("${sample_id}_etcid"), internal_code, val("shotgun_qc4l_etcid"), checksum, file(mzML_file) into shot_qc4l_etcid_mzML_file_for_MedianITMS1, shot_qc4l_etcid_mzML_file_for_MedianITMS2, shot_qc4l_etcid_mzML_file_for_check 
     set val("${sample_id}_etcid"), internal_code, val("shotgun_qc4l_etcid"), checksum, file("${sample_id}.qcml") into shot_qc4l_etcid_qcmlfiles_for_MS2_spectral_count, shot_qc4l_etcid_qcmlfiles_for_tot_num_uniq_peptides, shot_qc4l_etcid_qcmlfiles_for_tot_num_uniq_proteins, shot_qc4l_etcid_qcmlfiles_for_tot_num_psm
 
@@ -400,7 +400,7 @@ process shotgun_qc4l_ethcd  {
     analysis_type == 'shotgun_qc4l'
 
     output:
-    set val("${sample_id}_ethcd"), internal_code, val("shotgun_qc4l_ethcd"), checksum, file("${sample_id}.featureXML") into shot_qc4l_ethcd_featureXMLfiles_for_calc_mass_accuracy, shot_qc4l_ethcd_featureXMLfiles_for_calc_median_fwhm
+    set val("${sample_id}_ethcd"), internal_code, val("shotgun_qc4l_ethcd"), checksum, file("${sample_id}.featureXML") into shot_qc4l_ethcd_featureXMLfiles_for_calc_peptide_area, shot_qc4l_ethcd_featureXMLfiles_for_calc_mass_accuracy, shot_qc4l_ethcd_featureXMLfiles_for_calc_median_fwhm
     set val("${sample_id}_ethcd"), internal_code, val("shotgun_qc4l_ethcd"), checksum, file(mzML_file) into shot_qc4l_ethcd_mzML_file_for_MedianITMS1, shot_qc4l_ethcd_mzML_file_for_MedianITMS2, shot_qc4l_ethcd_mzML_file_for_check 
     set val("${sample_id}_ethcd"), internal_code, val("shotgun_qc4l_ethcd"), checksum, file("${sample_id}.qcml") into shot_qc4l_ethcd_qcmlfiles_for_MS2_spectral_count, shot_qc4l_ethcd_qcmlfiles_for_tot_num_uniq_peptides, shot_qc4l_ethcd_qcmlfiles_for_tot_num_uniq_proteins, shot_qc4l_ethcd_qcmlfiles_for_tot_num_psm
 
@@ -543,7 +543,7 @@ process calc_median_IT_MS2 {
 }
 
 /*
- * Run calculation of peptide area
+ * Run calculation of peptide area (only QC1 and QC2)
  */
 process calc_peptide_area {
     publishDir "output/pep_area"
@@ -566,7 +566,7 @@ process calc_peptide_area {
 }
 
 /*
- * Run calculation of peptide area
+ * Run calculation of peptide area (Only QC3 // cid)
  */
 process calc_peptide_area_c4l {
     publishDir "output/pep_area_c4l"
@@ -585,6 +585,25 @@ process calc_peptide_area_c4l {
     def ontology_id = ontology[analysis_id]
     def knime = new Knime(wf:workflowfile, csvpep:peptideCSV_C4L, stype:internal_code, featxml:featxml_file, mem:"${task.memory.mega-5000}m", qccv:"QC_${analysis_id}", qccvp:"QC_${ontology_id}", chksum:checksum, ojid:"${sample_id}", extrapars:'-workflow.variable=delta_mass,5,double -workflow.variable=delta_rt,250,double -workflow.variable=charge,2,double -workflow.variable=threshold_area,1000000,double')
     knime.launch()
+    
+}
+
+/*
+ * Run calculation of peptide area (Only QC3 // others) WORKAROUND
+ */
+process calc_peptide_area_c4l_fake {
+    tag { "${sample_id}-${analysis_type}" }
+
+    input:
+    set sample_id, internal_code, analysis_type, checksum, file(featxml_file) from shot_qc4l_hcd_featureXMLfiles_for_calc_peptide_area.mix(shot_qc4l_etcid_featureXMLfiles_for_calc_peptide_area, shot_qc4l_ethcd_featureXMLfiles_for_calc_peptide_area)
+
+    output:
+    set sample_id, val(null) into pep_c4l_for_delivery_fake
+
+    script:
+	"""
+	echo "this is a workaround because of a nextflow problem"
+	"""
     
 }
 
@@ -657,7 +676,7 @@ process calc_tic {
 }
 
 /*
- * Check petide results (appaño)
+ * Check petide results 
  */
  process check_peptides {
     publishDir "output/check_peptides"
@@ -678,7 +697,7 @@ process calc_tic {
 }
 
 /*
- * Check fwhm results (appaño)
+ * Check fwhm results 
  */
  process check_fwhm {
     tag { sample_id }
@@ -698,7 +717,7 @@ process calc_tic {
 }
 
 /*
- * Check median results (appaño)
+ * Check median results 
  */
  process check_median {
     tag { sample_id }
@@ -717,11 +736,6 @@ process calc_tic {
     knime.launch()
 }
 
-/*
- * Mix the different outputs to a joint channel
- */
-json_checked_for_delivery = pep_checked_for_delivery.mix(pep_c4l_for_delivery).join(mass_checked_for_delivery, remainder:true).join(median_checked_for_delivery, remainder:true)
-
 process check_mzML {
     tag { sample_id }
     
@@ -738,30 +752,57 @@ process check_mzML {
     """
 }
 
+/*
+ * Reshaping channels
+ */
+
+// mix peptide channels (from QC01, QC02 and QC03 to have for each id a number of results) 
+pep_c4l_all = pep_c4l_for_delivery_fake.mix(pep_c4l_for_delivery, pep_checked_for_delivery)
+// joins channels common to any analysis in a single channel
+jointJsons = ms2_spectral_for_delivery.join(uni_peptides_for_delivery).join(uni_prots_for_delivery).join(median_itms2_for_delivery).join(mass_checked_for_delivery).join(median_checked_for_delivery).join(pep_c4l_all)
+
+// separate this channel depending on QC01-QC02/ QC03
+queueQC12 = Channel.create()
+queueQC03 = Channel.create()
+jointJsons.choice( queueQC03, queueQC12 ) { a -> a =~ /QC03/ ? 0 : 1 }
+
+// group the outputs of QC03 depending on the original id
+queueQC03Grouped = queueQC03.map{ 
+    def rawids = it[0].tokenize( '_' );
+    def orid = "${rawids[0]}_${rawids[1]}_${rawids[2]}";
+    def l = [orid]; 
+    l.addAll([it.drop(1)]); 
+    return l 
+}.groupTuple(size:4)
+
+queueQC03ToBeSent = queueQC03Grouped.map{
+	def id = [it[0]]
+	id.addAll([it.drop(1).flatten()]); 
+	return id
+}
+
+// reshape the QC01-QC02 channel
+queueQC12ToBeSent = queueQC12.map{ 
+    def rawids = it[0].tokenize( '_' );
+    def orid = "${rawids[0]}_${rawids[1]}_${rawids[2]}";
+    def l = [orid]; 
+    l.addAll([it.drop(1)]); 
+    return l 
+}
+
+// mix the QC01-QC02 and QC03 again
+jsonToBeSent = queueQC12ToBeSent.mix(queueQC03ToBeSent)
+
+// reshape the mZML params channel for the submission 
 mZML_params_for_delivery = mZML_params_for_mapping.map{
         def rawids = it[0].tokenize( '_' )
         def sample_id = "${rawids[0]}_${rawids[1]}_${rawids[2]}"
         [sample_id , it[1], it[3], it[4].text, it[5].text]
 }.unique()
 
-jointJsons = ms2_spectral_for_delivery.join(uni_peptides_for_delivery).join(uni_prots_for_delivery).join(median_itms2_for_delivery).join(json_checked_for_delivery)
-
-jsonToBeSent = jointJsons.map{ 
-        def rawids = it[0].tokenize( '_' );
-        def orid = "${rawids[0]}_${rawids[1]}_${rawids[2]}";
-        def l = [orid]; 
-        l.addAll([it.drop(1)]); 
-        return l }.groupTuple()
-
-jsonToBeSentClean = jsonToBeSent.map{
-	def l = it[0]
-	def r = [it.drop(1)].flatten()
-    [l, r]
-}
-
 /*
  * Sent to the DB
- */
+ */ 
  process sendToDB {
     tag { sample_id }
     //label 'local'
@@ -769,7 +810,7 @@ jsonToBeSentClean = jsonToBeSent.map{
     input:
     file(workflowfile) from api_connectionWF
 
-    set sample_id, internal_code, checksum, timestamp, filename, file("*") from mZML_params_for_delivery.join(jsonToBeSentClean)
+    set sample_id, internal_code, checksum, timestamp, filename, file("*") from mZML_params_for_delivery.join(jsonToBeSent)
     val db_host from params.db_host
 
     script:
@@ -781,13 +822,9 @@ jsonToBeSentClean = jsonToBeSent.map{
     knime.launch()
 }
 
-
-
 /*
  * Functions
  */
-    
-    
     def public getWFFile(filePrefix, WF_ID) {
         return file("${filePrefix}${WF_ID}.knwf")
      }
