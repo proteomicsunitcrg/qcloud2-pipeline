@@ -194,7 +194,6 @@ process msconvert {
  */
 
 process correctMzml {
-    publishDir "output/correctMzml"
    tag { sample_id }
    
     input:
@@ -233,7 +232,6 @@ input_pipe_complete_first_step
 */
 
 process run_shotgun {
-    publishDir "output/run_shotgun"
 
     tag { sample_id }
     
@@ -265,7 +263,6 @@ process run_shotgun {
  */
 
 process run_srm {
-     publishDir "output/run_srm"
       tag { sample_id }
 
        label 'big_mem'
@@ -293,7 +290,6 @@ process run_srm {
  */
 
 process shotgun_qc4l_cid {
-     publishDir "output/shotgun_qc4l_cid"
     tag { sample_id }
     label 'big_mem'
     
@@ -324,7 +320,6 @@ process shotgun_qc4l_cid {
  */
 
 process shotgun_qc4l_hcd {
-     publishDir "output/shotgun_qc4l_hcd"
     tag { sample_id }
     
     label 'big_mem'
@@ -355,7 +350,6 @@ process shotgun_qc4l_hcd {
  */
 
 process shotgun_qc4l_etcid {
-     publishDir "output/shotgun_qc4l_etcid"
     tag { sample_id }
     
     label 'big_mem'
@@ -386,7 +380,6 @@ process shotgun_qc4l_etcid {
  */
 
 process shotgun_qc4l_ethcd  {
-     publishDir "output/shotgun_qc4l_ethcd"
     tag { sample_id }
     
     label 'big_mem'
@@ -415,7 +408,6 @@ process shotgun_qc4l_ethcd  {
  */
 
 process calc_MS2_spectral_count {
-    publishDir "output/spec_count"
     tag { "${sample_id}-${analysis_type}" }
     
     input:
@@ -437,7 +429,6 @@ process calc_MS2_spectral_count {
  */
 
 process calc_tot_num_uniq_peptides {
-    publishDir "output/uniq_peptides"
     tag { "${sample_id}-${analysis_type}" }
    
     input:
@@ -458,7 +449,6 @@ process calc_tot_num_uniq_peptides {
  * Run calculation of total number of uniquely identified proteins
  */
 process calc_tot_num_uniq_proteins {
-    publishDir "output/uni_proteins"
     tag { "${sample_id}-${analysis_type}" }
 
     input:
@@ -480,7 +470,6 @@ process calc_tot_num_uniq_proteins {
  * Run calculation of total number of Peptide Spectral Matches
  */
 process calc_tot_num_psm {
-    publishDir "output/num_psm"
     tag { "${sample_id}-${analysis_type}" }
 
     input:
@@ -502,7 +491,6 @@ process calc_tot_num_psm {
  * Run calculation of median IT MS1
  */
 process calc_median_IT_MS1 {
-    publishDir "output/median_it1"
     tag { "${sample_id}-${analysis_type}" }
 
     input:
@@ -524,7 +512,6 @@ process calc_median_IT_MS1 {
  * Run calculation of median IT MS2
  */
 process calc_median_IT_MS2 {
-    publishDir "output/median_it2"
     tag { "${sample_id}-${analysis_type}" }
 
     input:
@@ -546,7 +533,6 @@ process calc_median_IT_MS2 {
  * Run calculation of peptide area (only QC1 and QC2)
  */
 process calc_peptide_area {
-    publishDir "output/pep_area"
     tag { "${sample_id}-${analysis_type}" }
 
     input:
@@ -569,7 +555,6 @@ process calc_peptide_area {
  * Run calculation of peptide area (Only QC3 // cid)
  */
 process calc_peptide_area_c4l {
-    publishDir "output/pep_area_c4l"
     tag { "${sample_id}-${analysis_type}" }
 
     input:
@@ -611,7 +596,6 @@ process calc_peptide_area_c4l_fake {
  * Run calculation of Sum of all Total Ion Current per RT
  
 process calc_tic {
-    publishDir "output/tic"
     tag { "${sample_id}-${analysis_type}" }
 
     input:
@@ -633,7 +617,6 @@ process calc_tic {
  * Run calculation of Mass accuracy
  */
  process calc_mass_accuracy {
-    publishDir "output/calc_mass_accuracy"
     tag { "${sample_id}-${analysis_type}" }
 
     input:
@@ -656,7 +639,6 @@ process calc_tic {
  * Run calculation of Median Fwhm
  */
  process calc_median_fwhm {
-    publishDir "output/calc_median_fwhm"
     tag { "${sample_id}-${analysis_type}" }
 
     input:
@@ -679,7 +661,6 @@ process calc_tic {
  * Check petide results 
  */
  process check_peptides {
-    publishDir "output/check_peptides"
     tag { "${sample_id}-${process_id}" }
     beforeScript("mkdir out")
 
