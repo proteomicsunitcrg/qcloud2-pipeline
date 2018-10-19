@@ -759,7 +759,7 @@ process check_mzML {
 // mix peptide channels (from QC01, QC02 and QC03 to have for each id a number of results) 
 pep_c4l_all = pep_c4l_for_delivery_fake.mix(pep_c4l_for_delivery, pep_checked_for_delivery)
 // joins channels common to any analysis in a single channel
-jointJsons = ms2_spectral_for_delivery.join(uni_peptides_for_delivery).join(uni_prots_for_delivery).join(median_itms2_for_delivery).join(mass_checked_for_delivery).join(median_checked_for_delivery).join(pep_c4l_all)
+jointJsons = ms2_spectral_for_delivery.join(tot_psm_for_delivery).join(uni_peptides_for_delivery).join(uni_prots_for_delivery).join(median_itms2_for_delivery).join(mass_checked_for_delivery).join(median_checked_for_delivery).join(pep_c4l_all)
 
 // separate this channel depending on QC01-QC02/ QC03
 queueQC12 = Channel.create()
