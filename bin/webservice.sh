@@ -3,13 +3,15 @@
 set -euo pipefail
 
 ## Example
-## bash webservice.sh -l b2a401cd-ee09-4a2d-8799-765a237beffa -q QCS1 -c 3d0c7b4ef362c15f878afef700a9afed -r myrawfile.zip -i 127.0.0.1 -p mypasswd -o outcome.zip
+## bash webservice.sh -l b2a401cd-ee09-4a2d-8799-765a237beffa -q QCS1 -c 3d0c7b4ef362c15f878afef700a9afed -r myrawfile.zip -i 127.0.0.1 -p mypasswd -o outcome.zip -t "--mzML"
 
 alt=""
 ext="zip"
 out=""
+opts=""
+optsarg=""
 
-while getopts "ac:i:l:p:q:r:o:" opt; do
+while getopts "ac:i:l:p:q:r:t:o:" opt; do
   case $opt in
     a) alt="&alt"
     ;;
@@ -27,6 +29,8 @@ while getopts "ac:i:l:p:q:r:o:" opt; do
     ;;
     r) rawfile="$OPTARG"
     ;;
+    t) opts="$OPTARG"
+    ;;
     \?) echo "Invalid option -$OPTARG" >&2
     ;;
   esac
@@ -38,10 +42,14 @@ if [ ! -z "${out}" ]; then
     output=${out}
 fi
 
+if [ ! -z "${opts}" ]; then
+    optsarg="&opts="${opts}
+fi
+
 
 curl --user "webdav:${webdavpass}" -T "${rawfile}" "http://${webdavip}/input/${labsys}_${qcode}_${checksum}.${ext}"
 echo "STEP 1"
-curl -X GET "http://${webdavip}/index.php?input=${labsys}_${qcode}_${checksum}.${ext}${alt}&output=${out}"
+curl -X GET "http://${webdavip}/index.php?input=${labsys}_${qcode}_${checksum}.${ext}${alt}${optsarg}&output=${out}"
 echo "STEP 2"
 curl --user "webdav:${webdavpass}" -X GET http://${webdavip}/output/${output} > ${output}
 echo "STEP 3"
