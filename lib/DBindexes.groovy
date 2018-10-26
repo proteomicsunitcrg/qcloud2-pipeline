@@ -30,6 +30,10 @@
 
 	def public getOntology() {
 
+		"shotgun_qc4l_cid" : "1000933",
+		 "shotgun_qc4l_hcd" : "1000934", 
+		 "shotgun_qc4l_etcid" : "1000935", "shotgun_qc4l_ethcd" : "1000936"]
+
 		// ontology this has to be retrieved in some way from outside...
 		def ontology = [:]
 		ontology["0000007"] = "9000001"
@@ -39,7 +43,7 @@
 		ontology["1000928"] = "9000002"
 		ontology["1001844"] = "1001844"
 		ontology["1000014"] = "1000014"
-		ontology["1010086"] = "1010086"
+		ontology["1010086"] = "9000003"
 		ontology["1002001"] = "9000001"
 		ontology["1002002"] = "9000001"
 		ontology["1002003"] = "9000001"
@@ -72,6 +76,11 @@
 		ontology["1002031"] = "1002031"
 		ontology["1002032"] = "9000003"
 		ontology["1000927"] = "9000002"
+		ontology["1000933"] = "9000002"
+		ontology["1000934"] = "9000002"
+		ontology["1000935"] = "9000002"
+		ontology["1000936"] = "9000002"
+
 		ontology["0000048"] = "0000048"
 
 		ontology["QC01"] = "0000005"
