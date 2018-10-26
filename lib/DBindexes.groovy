@@ -30,10 +30,6 @@
 
 	def public getOntology() {
 
-		"shotgun_qc4l_cid" : "1000933",
-		 "shotgun_qc4l_hcd" : "1000934", 
-		 "shotgun_qc4l_etcid" : "1000935", "shotgun_qc4l_ethcd" : "1000936"]
-
 		// ontology this has to be retrieved in some way from outside...
 		def ontology = [:]
 		ontology["0000007"] = "9000001"
