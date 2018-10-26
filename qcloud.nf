@@ -58,9 +58,16 @@ json_output      = "output/json_output"
 // Files needed
 srmCSV = file("${CSV_folder}/qtrap_bsa.traml")
 peptideCSV = file("${CSV_folder}/knime_peptides_final.csv")
-peptideCSV_C4L = file("${CSV_folder}/knime_peptides_qc4l.csv") 
+peptideCSV_C4L = file("${CSV_folder}/knime_peptides_qc4l.csv")
 
-checkFiles([srmCSV, peptideCSV])
+//peptideCSVs
+def peptideCSVs = [:]
+peptideCSVs["QC01"] = "peptide.csv"
+peptideCSVs["QC02"] = "peptide.csv"
+peptideCSVs["QC03"] = "peptide_C4L.csv"
+
+
+checkFiles([srmCSV, peptideCSV, peptideCSV_C4L])
 
 /*
  * check for workflow existence
@@ -181,6 +188,9 @@ process msconvert {
     extrapar = ""
     if (qcode =~'QCS') {
         extrapar = "-a"
+    }
+    if (qcode =~'QC03') {
+        extrapar = "-t \"--mzML\""
     }
     """
      bash webservice.sh ${extrapar} -l ${labsys} -q ${qcode} -c ${checksum} -r ${zipfile} -i ${params.webdavip} -p ${params.webdavpass} -o ${labsys}_${qcode}_${checksum}.mzML.zip
@@ -536,8 +546,9 @@ process calc_peptide_area {
     tag { "${sample_id}-${analysis_type}" }
 
     input:
-    set sample_id, internal_code, analysis_type, checksum, file(featxml_file) from shot_featureXMLfiles_for_calc_peptide_area.mix(srm_featureXMLfiles_for_calc_peptide_area)
-    file(peptideCSV)
+    set sample_id, val(internal_code), analysis_type, checksum, file(featxml_file) from shot_featureXMLfiles_for_calc_peptide_area.mix(srm_featureXMLfiles_for_calc_peptide_area)
+	file ("peptide.csv") from file (peptideCSV)
+	file ("peptide_C4L.csv") from file (peptideCSV_C4L)
     file(workflowfile) from getWFFile(baseQCPath, "pepArea")
 
     output:
@@ -546,7 +557,9 @@ process calc_peptide_area {
     script:
     def analysis_id = Correspondence['pepArea'][analysis_type]
     def ontology_id = ontology[analysis_id]
-    def knime = new Knime(wf:workflowfile, csvpep:peptideCSV, stype:internal_code, featxml:featxml_file, mem:"${task.memory.mega-5000}m", qccv:"QC_${analysis_id}", qccvp:"QC_${ontology_id}", chksum:checksum, ojid:"${sample_id}")
+    def csvfile = peptideCSVs[internal_code]
+
+    def knime = new Knime(wf:workflowfile, csvpep:csvfile, stype:internal_code, featxml:featxml_file, mem:"${task.memory.mega-5000}m", qccv:"QC_${analysis_id}", qccvp:"QC_${ontology_id}", chksum:checksum, ojid:"${sample_id}")
     knime.launch()
     
 }
@@ -559,7 +572,8 @@ process calc_peptide_area_c4l {
 
     input:
     set sample_id, internal_code, analysis_type, checksum, file(featxml_file) from shot_qc4l_cid_featureXMLfiles_for_calc_peptide_area
-    file(peptideCSV_C4L)
+	file ("peptide.csv") from file (peptideCSV)
+	file ("peptide_C4L.csv") from file (peptideCSV_C4L)
     file(workflowfile) from getWFFile(baseQCPath, "pepArea_qc4l")
 
     output:
@@ -568,7 +582,8 @@ process calc_peptide_area_c4l {
     script:
     def analysis_id = Correspondence['pepArea_qc4l'][analysis_type]
     def ontology_id = ontology[analysis_id]
-    def knime = new Knime(wf:workflowfile, csvpep:peptideCSV_C4L, stype:internal_code, featxml:featxml_file, mem:"${task.memory.mega-5000}m", qccv:"QC_${analysis_id}", qccvp:"QC_${ontology_id}", chksum:checksum, ojid:"${sample_id}", extrapars:'-workflow.variable=delta_mass,5,double -workflow.variable=delta_rt,250,double -workflow.variable=charge,2,double -workflow.variable=threshold_area,1000000,double')
+    def csvfile = peptideCSVs[internal_code]
+    def knime = new Knime(wf:workflowfile, csvpep:csvfile, stype:internal_code, featxml:featxml_file, mem:"${task.memory.mega-5000}m", qccv:"QC_${analysis_id}", qccvp:"QC_${ontology_id}", chksum:checksum, ojid:"${sample_id}", extrapars:'-workflow.variable=delta_mass,5,double -workflow.variable=delta_rt,250,double -workflow.variable=charge,2,double -workflow.variable=threshold_area,1000000,double')
     knime.launch()
     
 }
@@ -621,7 +636,8 @@ process calc_tic {
 
     input:
     set sample_id, internal_code, analysis_type, checksum, file(featxml_file) from shot_featureXMLfiles_for_calc_mass_accuracy.mix(srm_featureXMLfiles_for_calc_mass_accuracy, shot_qc4l_cid_featureXMLfiles_for_calc_mass_accuracy, shot_qc4l_hcd_featureXMLfiles_for_calc_mass_accuracy, shot_qc4l_etcid_featureXMLfiles_for_calc_mass_accuracy, shot_qc4l_ethcd_featureXMLfiles_for_calc_mass_accuracy)
-    file(peptideCSV)
+	file ("peptide.csv") from file (peptideCSV)
+	file ("peptide_C4L.csv") from file (peptideCSV_C4L)
     file(workflowfile) from getWFFile(baseQCPath, "massAccuracy") 
 
     output:
@@ -630,7 +646,8 @@ process calc_tic {
     script:
     def analysis_id = Correspondence['massAccuracy'][analysis_type]
     def ontology_id = ontology[analysis_id]
-    def knime = new Knime(wf:workflowfile, csvpep:peptideCSV, stype:internal_code, featxml:featxml_file, mem:"${task.memory.mega-5000}m", qccv:"QC_${ontology_id}", qccvp:"QC_${ontology[analysis_type]}", chksum:checksum, ojid:"${sample_id}")
+    def csvfile = peptideCSVs[internal_code]
+    def knime = new Knime(wf:workflowfile, csvpep:csvfile, stype:internal_code, featxml:featxml_file, mem:"${task.memory.mega-5000}m", qccv:"QC_${ontology_id}", qccvp:"QC_${ontology[analysis_type]}", chksum:checksum, ojid:"${sample_id}")
     knime.launch()
     
 }
@@ -643,7 +660,8 @@ process calc_tic {
 
     input:
     set sample_id, internal_code, analysis_type, checksum, file(featxml_file) from shot_featureXMLfiles_for_calc_median_fwhm.mix(srm_featureXMLfiles_for_calc_median_fwhm, shot_qc4l_cid_featureXMLfiles_for_calc_median_fwhm, shot_qc4l_hcd_featureXMLfiles_for_calc_median_fwhm, shot_qc4l_etcid_featureXMLfiles_for_calc_median_fwhm, shot_qc4l_ethcd_featureXMLfiles_for_calc_median_fwhm)
-    file(peptideCSV)
+	file ("peptide.csv") from file (peptideCSV)
+	file ("peptide_C4L.csv") from file (peptideCSV_C4L)
     file(workflowfile) from getWFFile(baseQCPath, "medianFwhm") 
 
     output:
@@ -652,7 +670,8 @@ process calc_tic {
     script:
     def analysis_id = Correspondence['medianFwhm'][analysis_type]
     def ontology_id = ontology[analysis_id]
-    def knime = new Knime(wf:workflowfile, csvpep:peptideCSV, stype:internal_code, featxml:featxml_file, mem:"${task.memory.mega-5000}m", qccv:"QC_${analysis_id}", qccvp:"QC_${ontology_id}", chksum:checksum, ojid:"${sample_id}")
+    def csvfile = peptideCSVs[internal_code]
+    def knime = new Knime(wf:workflowfile, csvpep:csvfile, stype:internal_code, featxml:featxml_file, mem:"${task.memory.mega-5000}m", qccv:"QC_${analysis_id}", qccvp:"QC_${ontology_id}", chksum:checksum, ojid:"${sample_id}")
     knime.launch()
     
 }
@@ -665,15 +684,39 @@ process calc_tic {
     beforeScript("mkdir out")
 
     input:
-    set sample_id, internal_id, checksum, process_id, file(json_file) from pep_area_for_check
-    file(peptideCSV)
+	file ("peptide.csv") from file (peptideCSV)
+	file ("peptide_C4L.csv") from file (peptideCSV_C4L)
+	set sample_id, internal_code, checksum, process_id, file(json_file) from pep_area_for_check
     file(workflowfile) from chekPeptidesWF
 
     output:
     set sample_id, file("out/${json_file}") into pep_checked_for_delivery
 
     script:
-    def knime = new Knime(qccv:"QC_${process_id}", wf:workflowfile, chksum:checksum, csvpep:peptideCSV, stype:internal_id, ijfile:json_file, mem:"${task.memory.mega-5000}m", ofolder:"./out", ojfile:"${json_file}")
+    def csvfile = peptideCSVs[internal_code]
+    def knime = new Knime(qccv:"QC_${process_id}", wf:workflowfile, chksum:checksum, csvpep:csvfile, stype:internal_code, ijfile:json_file, mem:"${task.memory.mega-5000}m", ofolder:"./out", ojfile:"${json_file}")
+    knime.launch()
+}
+
+/*
+ * Check mass results 
+ */
+ process check_mass {
+    tag { sample_id }
+    beforeScript("mkdir out")
+
+    input:
+    set sample_id, internal_code, checksum, process_id, file(json_file) from mass_json_for_check
+	file ("peptide.csv") from file (peptideCSV)
+	file ("peptide_C4L.csv") from file (peptideCSV_C4L)
+	file(workflowfile) from chekPeptidesWF
+
+    output:
+    set sample_id, file("out/${json_file}") into mass_checked_for_delivery
+
+    script:
+    def csvfile = peptideCSVs[internal_code]
+    def knime = new Knime(qccv:"QC_${process_id}", wf:workflowfile, chksum:checksum,  csvpep:csvfile, stype:internal_code, ijfile:json_file, mem:"${task.memory.mega-5000}m", ofolder:"./out", ojfile:"${json_file}")
     knime.launch()
 }
 
@@ -683,43 +726,25 @@ process calc_tic {
  process check_fwhm {
     tag { sample_id }
     beforeScript("mkdir out")
-
+	
     input:
-    set sample_id, internal_id, checksum, process_id, file(json_file) from mass_json_for_check
-    file(peptideCSV)
-    file(workflowfile) from chekPeptidesWF
-
-    output:
-    set sample_id, file("out/${json_file}") into mass_checked_for_delivery
-
-    script:
-    def knime = new Knime(qccv:"QC_${process_id}", wf:workflowfile, chksum:checksum,  csvpep:peptideCSV, stype:internal_id, ijfile:json_file, mem:"${task.memory.mega-5000}m", ofolder:"./out", ojfile:"${json_file}")
-    knime.launch()
-}
-
-/*
- * Check median results 
- */
- process check_median {
-    tag { sample_id }
-    beforeScript("mkdir out")
-
-    input:
-    set sample_id, internal_id, checksum, process_id, file(json_file) from median_fwhm_for_check
-    file(peptideCSV)
+    set sample_id, internal_code, checksum, process_id, file(json_file) from median_fwhm_for_check
+	file ("peptide.csv") from file (peptideCSV)
+	file ("peptide_C4L.csv") from file (peptideCSV_C4L)
     file(workflowfile) from chekPeptidesWF
 
     output:
     set sample_id, file("out/${json_file}") into median_checked_for_delivery
 
     script:
-    def knime = new Knime(qccv:"QC_${process_id}", wf:workflowfile, chksum:checksum,  csvpep:peptideCSV, stype:internal_id, ijfile:json_file, mem:"${task.memory.mega-5000}m", ofolder:"./out", ojfile:"${json_file}")
+    def csvfile = peptideCSVs[internal_code]
+    def knime = new Knime(qccv:"QC_${process_id}", wf:workflowfile, chksum:checksum,  csvpep:csvfile, stype:internal_code, ijfile:json_file, mem:"${task.memory.mega-5000}m", ofolder:"./out", ojfile:"${json_file}")
     knime.launch()
 }
 
 process check_mzML {
     tag { sample_id }
-    
+	   
     input:
     set sample_id, internal_id, analysis_type, checksum, file(mzML_file) from shot_mzML_file_for_check.mix(srm_mzML_file_for_check, shot_qc4l_cid_mzML_file_for_check, shot_qc4l_hcd_mzML_file_for_check, shot_qc4l_etcid_mzML_file_for_check, shot_qc4l_ethcd_mzML_file_for_check)
 
@@ -740,7 +765,8 @@ process check_mzML {
 // mix peptide channels (from QC01, QC02 and QC03 to have for each id a number of results) 
 pep_c4l_all = pep_c4l_for_delivery_fake.mix(pep_c4l_for_delivery, pep_checked_for_delivery)
 // joins channels common to any analysis in a single channel
-jointJsons = ms2_spectral_for_delivery.join(tot_psm_for_delivery).join(uni_peptides_for_delivery).join(uni_prots_for_delivery).join(median_itms2_for_delivery).join(mass_checked_for_delivery).join(median_checked_for_delivery).join(pep_c4l_all)
+//jointJsons = 
+ms2_spectral_for_delivery.join(tot_psm_for_delivery).join(uni_peptides_for_delivery).join(uni_prots_for_delivery).join(median_itms2_for_delivery).join(mass_checked_for_delivery).join(median_checked_for_delivery).join(median_itms1_for_delivery).join(pep_c4l_all).into{jointJsons; jointJsonsAA}
 
 // separate this channel depending on QC01-QC02/ QC03
 queueQC12 = Channel.create()
@@ -803,9 +829,12 @@ mZML_params_for_delivery = mZML_params_for_mapping.map{
     knime.launch()
 }
 
+
+
 /*
  * Functions
  */
+     
     def public getWFFile(filePrefix, WF_ID) {
         return file("${filePrefix}${WF_ID}.knwf")
      }
