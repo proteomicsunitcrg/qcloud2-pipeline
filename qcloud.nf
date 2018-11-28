@@ -102,6 +102,9 @@ checkWFFiles(baseQCPath, Correspondence.keySet())
 /*
  * Create a channel for mzlfiles files; Temporary for testing purposes only
  */
+ 
+// TODO: add original_id from processing of samples: 181112_Q_QC1F_01_01_9d9d9d1b-9d9d-4f1a-9d27-9d2f7635059d_QC01_0d97b132db1ecedc3b5fdbddec6fba72.zip
+
 Channel
     .watchPath( params.zipfiles )             
     .map { 
@@ -822,10 +825,11 @@ mZML_params_for_delivery = mZML_params_for_mapping.map{
 
     script:
     def pieces = sample_id.tokenize( '_' )
-    def lab_id = pieces[0]  
+    // TODO: add original_id from processing of samples
+    def instrument_id = pieces[0] 
     def parent_id = ontology[internal_code]
 
-    def knime = new Knime(wf:workflowfile, rdate:timestamp, oriname:filename, chksum:checksum, stype:internal_code, ifolder:".", labs:lab_id, utoken:"${db_host}/api/auth", uifile:"${db_host}/api/file/QC:${parent_id}", uidata:"${db_host}/api/data/pipeline", mem:"${task.memory.mega-5000}m")
+    def knime = new Knime(wf:workflowfile, rdate:timestamp, oriname:filename, chksum:checksum, stype:internal_code, ifolder:".", labs:instrument_id, utoken:"${db_host}/api/auth", uifile:"${db_host}/api/file/QC:${parent_id}", uidata:"${db_host}/api/data/pipeline", mem:"${task.memory.mega-5000}m")
     knime.launch()
 }
 
