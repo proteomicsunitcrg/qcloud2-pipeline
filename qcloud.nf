@@ -112,8 +112,8 @@ Channel
         id = it.getName()
         ext = params.zipfiles.tokenize( '/' )
         pieces = id.tokenize( '_' )
-        len = ext[-1].length()
-        [pieces[0..-4].join( '_' ), pieces[-3], pieces[-2], pieces[-1], file]
+        checksum = pieces[-1].replace(".zip", "")
+        [pieces[0..-4].join( '_' ), pieces[-3], pieces[-2], checksum, file]
     }.set { zipfiles }
 
 /*
