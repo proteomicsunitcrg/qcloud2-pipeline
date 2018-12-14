@@ -103,7 +103,7 @@ checkWFFiles(baseQCPath, Correspondence.keySet())
  * Create a channel for mzlfiles files; Temporary for testing purposes only
  */
  
-// TODO: add original_id from processing of samples: 181112_Q_QC1F_01_01_9d9d9d1b-9d9d-4f1a-9d27-9d2f7635059d_QC01_0d97b132db1ecedc3b5fdbddec6fba72.zip
+// Below handles original_id from processing of samples: 181112_Q_QC1F_01_01_9d9d9d1b-9d9d-4f1a-9d27-9d2f7635059d_QC01_0d97b132db1ecedc3b5fdbddec6fba72.zip
 
 Channel
     .watchPath( params.zipfiles )             
@@ -113,7 +113,7 @@ Channel
         ext = params.zipfiles.tokenize( '/' )
         pieces = id.tokenize( '_' )
         len = ext[-1].length()
-        [pieces[0], pieces[1], pieces[2][0..-len], file]
+        [pieces[0..-4].join( '_' ), pieces[-3], pieces[-2], pieces[-1], file]
     }.set { zipfiles }
 
 /*
@@ -182,10 +182,11 @@ process msconvert {
     tag { "${labsys}_${qcode}_${checksum}" }
 
     input:
-    set labsys, qcode, checksum, file(zipfile) from zipfiles
+    set orifile, labsys, qcode, checksum, file(zipfile) from zipfiles
 
     output:
     set val("${labsys}_${qcode}_${checksum}"), qcode, checksum, file("${labsys}_${qcode}_${checksum}.mzML") into mzmlfiles_for_correction
+    set val("${orifile}") into orifile_name
     
     script:
     extrapar = ""
@@ -819,6 +820,7 @@ mZML_params_for_delivery = mZML_params_for_mapping.map{
 
     input:
     file(workflowfile) from api_connectionWF
+    set orifile from orifile_name
 
     set sample_id, internal_code, checksum, timestamp, filename, file("*") from mZML_params_for_delivery.join(jsonToBeSent)
     val db_host from params.db_host
