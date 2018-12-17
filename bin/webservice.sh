@@ -12,7 +12,7 @@ opts=""
 optsarg=""
 orifile=""
 
-while getopts "ac:i:l:p:q:r:t:o:" opt; do
+while getopts "ac:f:i:l:p:q:r:t:o:" opt; do
   case $opt in
     a) alt="&alt"
     ;;
