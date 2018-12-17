@@ -197,7 +197,7 @@ process msconvert {
     }
     """
      mv ${zipfile} ${labsys}_${qcode}_${checksum}.zip
-     bash webservice.sh ${extrapar} -l ${labsys} -q ${qcode} -c ${checksum} -r ${labsys}_${qcode}_${checksum}.zip -i ${params.webdavip} -p ${params.webdavpass} -o ${labsys}_${qcode}_${checksum}.mzML.zip
+     bash webservice.sh ${extrapar} -l ${labsys} -q ${qcode} -c ${checksum} -r ${labsys}_${qcode}_${checksum}.zip -i ${params.webdavip} -f ${orifile} -p ${params.webdavpass} -o ${labsys}_${qcode}_${checksum}.mzML.zip
      unzip ${labsys}_${qcode}_${checksum}.mzML.zip
     """
 }
