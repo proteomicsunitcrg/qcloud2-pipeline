@@ -40,7 +40,7 @@ while getopts "ac:f:i:l:p:q:r:t:o:" opt; do
   esac
 done
 
-output=${labsys}_${qcode}_${checksum}.mzML.${ext}
+output=${labsys}_${qcode}_${checksum}
 
 if [ ! -z "${out}" ]; then
     output=${out}
