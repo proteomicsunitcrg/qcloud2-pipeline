@@ -63,7 +63,7 @@ $router->get('/', function(\Illuminate\Http\Request $request){
                         
                         if ( ! file_exists( $inputdir."/".$altfile ) ) {
                             
-                            $outcome{"return"} = 400;
+                            $outcome{"return"} = 401;
                             $outcome{"output"} = null;
                             
                         } else {
