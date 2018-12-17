@@ -91,6 +91,8 @@ $router->get('/', function(\Illuminate\Http\Request $request){
                         
                         if ( $request->has('output') ) {
                             $outputfile = $request->input('output');
+                        } else {
+                            $outputfile = $outputfile.".mzML";
                         }
                         
                         $command =  env('QCLOUD_EXEC_PATH')." ".$inputdir."/".$proginputfile." ".$opts." --outfile ".$outputfile." -o ".env('QCLOUD_OUTPUT_PATH');
