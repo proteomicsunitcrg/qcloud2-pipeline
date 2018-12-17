@@ -10,12 +10,15 @@ ext="zip"
 out=""
 opts=""
 optsarg=""
+orifile=""
 
 while getopts "ac:i:l:p:q:r:t:o:" opt; do
   case $opt in
     a) alt="&alt"
     ;;
     c) checksum="$OPTARG"
+    ;;
+    f) orifile="$OPTARG"
     ;;
     i) webdavip="$OPTARG"
     ;;
@@ -49,7 +52,7 @@ fi
 
 curl --user "webdav:${webdavpass}" -T "${rawfile}" "http://${webdavip}/input/${labsys}_${qcode}_${checksum}.${ext}"
 echo "STEP 1"
-curl -X GET "http://${webdavip}/index.php?input=${labsys}_${qcode}_${checksum}.${ext}${alt}${optsarg}&output=${out}"
+curl -X GET "http://${webdavip}/index.php?input=${labsys}_${qcode}_${checksum}.${ext}${alt}${optsarg}&output=${out}&orifile=${orifile}"
 echo "STEP 2"
 curl --user "webdav:${webdavpass}" -X GET http://${webdavip}/output/${output} > ${output}
 echo "STEP 3"

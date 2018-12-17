@@ -26,6 +26,12 @@ $router->get('/', function(\Illuminate\Http\Request $request){
                 
                 if ( $res === TRUE ) {
                     
+                    $orifile = "";
+                    
+                    if ( $request->has('orifile') ){
+                        $orifile = $request->input('orifile');
+                    }
+                    
                     $zip->extractTo( $inputdir );
                     $zip->close();
             
@@ -37,7 +43,11 @@ $router->get('/', function(\Illuminate\Http\Request $request){
                         # Here we assume archive is kkk.zip and has kkk.wiff and kkk.wiff.scan
                         $proginputfile = str_replace( ".zip", ".wiff", $inputfile );
                         
-                        $outputfile = str_replace( ".wiff", "", $proginputfile );
+                        if ( $orifile && $orifile != "" ) {
+                            $proginputfile = $orifile."_".$proginputfile;
+                        }
+                        
+                        $outputfile = str_replace( ".zip", "", $inputfile );
                         
                         $altfile = $outputfile.".wiff.scan";
                         
@@ -65,7 +75,11 @@ $router->get('/', function(\Illuminate\Http\Request $request){
                         # Here we assume archive is kkk.zip and has kkk.raw
                         $proginputfile = str_replace( ".zip", ".raw", $inputfile );
                         
-                        $outputfile = str_replace( ".raw", "", $proginputfile );
+                        if ( $orifile && $orifile != "" ) {
+                            $proginputfile = $orifile."_".$proginputfile;
+                        }
+                        
+                        $outputfile = str_replace( ".zip", "", $inputfile );
         
                         $opts = '--32 --mzML --zlib --filter "peakPicking true 1-"';
                         
