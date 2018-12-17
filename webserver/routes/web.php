@@ -51,6 +51,9 @@ $router->get('/', function(\Illuminate\Http\Request $request){
                         
                         $altfile = $outputfile.".wiff.scan";
                         
+                        if ( $orifile && $orifile != "" ) {
+                            $altfile = $orifile."_".$altfile;
+                        }
                         
                         if ( $request->has('output') ) {
                             $outputfile = $request->input('output');
