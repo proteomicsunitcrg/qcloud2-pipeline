@@ -76,7 +76,7 @@ $router->get('/', function(\Illuminate\Http\Request $request){
                             
                         } else {
                             
-                            $command =  env('QCLOUD_EXEC_ALT_PATH')." ".$inputdir."/".$proginputfile." ".$opts." --outfile ".$outputfile." -o ".env('QCLOUD_OUTPUT_PATH');
+                            $command =  env('QCLOUD_EXEC_PATH')." ".$inputdir."/".$proginputfile." ".$opts." --outfile ".$outputfile." -o ".env('QCLOUD_OUTPUT_PATH');
         
                         }
                         
