@@ -7,15 +7,19 @@ set -euo pipefail
 
 alt=""
 ext="zip"
+outext="mzML.zip"
 out=""
 opts=""
 optsarg=""
+orifile=""
 
-while getopts "ac:i:l:p:q:r:t:o:" opt; do
+while getopts "ac:f:i:l:p:q:r:t:o:" opt; do
   case $opt in
     a) alt="&alt"
     ;;
     c) checksum="$OPTARG"
+    ;;
+    f) orifile="$OPTARG"
     ;;
     i) webdavip="$OPTARG"
     ;;
@@ -36,7 +40,7 @@ while getopts "ac:i:l:p:q:r:t:o:" opt; do
   esac
 done
 
-output=${labsys}_${qcode}_${checksum}.mzML.${ext}
+output=${labsys}_${qcode}_${checksum}
 
 if [ ! -z "${out}" ]; then
     output=${out}
@@ -49,10 +53,10 @@ fi
 
 curl --user "webdav:${webdavpass}" -T "${rawfile}" "http://${webdavip}/input/${labsys}_${qcode}_${checksum}.${ext}"
 echo "STEP 1"
-curl -X GET "http://${webdavip}/index.php?input=${labsys}_${qcode}_${checksum}.${ext}${alt}${optsarg}&output=${out}"
+curl -X GET "http://${webdavip}/index.php?input=${labsys}_${qcode}_${checksum}.${ext}${alt}${optsarg}&output=${out}&orifile=${orifile}"
 echo "STEP 2"
-curl --user "webdav:${webdavpass}" -X GET http://${webdavip}/output/${output} > ${output}
+curl --user "webdav:${webdavpass}" -X GET http://${webdavip}/output/${output}.${outext} > ${output}.${outext}
 echo "STEP 3"
-curl --user "webdav:${webdavpass}" -X DELETE http://${webdavip}/output/${output}
+curl --user "webdav:${webdavpass}" -X DELETE http://${webdavip}/output/${output}.${outext}
 echo "STEP 4" 
 curl --user "webdav:${webdavpass}" -X DELETE http://${webdavip}/input/${labsys}_${qcode}_${checksum}.${ext}   

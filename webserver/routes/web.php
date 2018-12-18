@@ -26,6 +26,12 @@ $router->get('/', function(\Illuminate\Http\Request $request){
                 
                 if ( $res === TRUE ) {
                     
+                    $orifile = "";
+                    
+                    if ( $request->has('orifile') ){
+                        $orifile = $request->input('orifile');
+                    }
+                    
                     $zip->extractTo( $inputdir );
                     $zip->close();
             
@@ -37,10 +43,25 @@ $router->get('/', function(\Illuminate\Http\Request $request){
                         # Here we assume archive is kkk.zip and has kkk.wiff and kkk.wiff.scan
                         $proginputfile = str_replace( ".zip", ".wiff", $inputfile );
                         
-                        $outputfile = str_replace( ".wiff", "", $proginputfile );
+                        if ( $orifile && $orifile != "" ) {
+                            $proginputfile = $orifile."_".$proginputfile;
+                        }
+                        
+                        $outputfile = str_replace( ".zip", "", $inputfile );
                         
                         $altfile = $outputfile.".wiff.scan";
                         
+                        if ( $orifile && $orifile != "" ) {
+                            $altfile = $orifile."_".$altfile;
+                        }
+                        
+                        $opts = '--32 --mzML --zlib --filter "peakPicking true 1-"';
+                        
+                        if ( $request->has('opts') ) {
+                            $opts = $request->input('opts');
+                        }
+                        
+                        $outcome{"opts"} = $opts;
                         
                         if ( $request->has('output') ) {
                             $outputfile = $request->input('output');
@@ -50,13 +71,12 @@ $router->get('/', function(\Illuminate\Http\Request $request){
                         
                         if ( ! file_exists( $inputdir."/".$altfile ) ) {
                             
-                            $outcome{"return"} = 400;
+                            $outcome{"return"} = 401;
                             $outcome{"output"} = null;
                             
                         } else {
                             
-                            
-                            $command =  env('QCLOUD_EXEC_ALT_PATH')." --in ".$inputdir."/".$proginputfile." --out ".env('QCLOUD_OUTPUT_PATH')."/".$outputfile;
+                            $command =  env('QCLOUD_EXEC_PATH')." ".$inputdir."/".$proginputfile." ".$opts." --outfile ".$outputfile." -o ".env('QCLOUD_OUTPUT_PATH');
         
                         }
                         
@@ -65,7 +85,11 @@ $router->get('/', function(\Illuminate\Http\Request $request){
                         # Here we assume archive is kkk.zip and has kkk.raw
                         $proginputfile = str_replace( ".zip", ".raw", $inputfile );
                         
-                        $outputfile = str_replace( ".raw", "", $proginputfile );
+                        if ( $orifile && $orifile != "" ) {
+                            $proginputfile = $orifile."_".$proginputfile;
+                        }
+                        
+                        $outputfile = str_replace( ".zip", "", $inputfile );
         
                         $opts = '--32 --mzML --zlib --filter "peakPicking true 1-"';
                         
@@ -77,6 +101,8 @@ $router->get('/', function(\Illuminate\Http\Request $request){
                         
                         if ( $request->has('output') ) {
                             $outputfile = $request->input('output');
+                        } else {
+                            $outputfile = $outputfile.".mzML";
                         }
                         
                         $command =  env('QCLOUD_EXEC_PATH')." ".$inputdir."/".$proginputfile." ".$opts." --outfile ".$outputfile." -o ".env('QCLOUD_OUTPUT_PATH');

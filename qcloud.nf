@@ -103,7 +103,7 @@ checkWFFiles(baseQCPath, Correspondence.keySet())
  * Create a channel for mzlfiles files; Temporary for testing purposes only
  */
  
-// TODO: add original_id from processing of samples: 181112_Q_QC1F_01_01_9d9d9d1b-9d9d-4f1a-9d27-9d2f7635059d_QC01_0d97b132db1ecedc3b5fdbddec6fba72.zip
+// Below handles original_id from processing of samples: 181112_Q_QC1F_01_01_9d9d9d1b-9d9d-4f1a-9d27-9d2f7635059d_QC01_0d97b132db1ecedc3b5fdbddec6fba72.zip
 
 Channel
     .watchPath( params.zipfiles )             
@@ -112,8 +112,8 @@ Channel
         id = it.getName()
         ext = params.zipfiles.tokenize( '/' )
         pieces = id.tokenize( '_' )
-        len = ext[-1].length()
-        [pieces[0], pieces[1], pieces[2][0..-len], file]
+        checksum = pieces[-1].replace(".zip", "")
+        [pieces[0..-4].join( '_' ), pieces[-3], pieces[-2], checksum, file]
     }.set { zipfiles }
 
 /*
@@ -182,10 +182,10 @@ process msconvert {
     tag { "${labsys}_${qcode}_${checksum}" }
 
     input:
-    set labsys, qcode, checksum, file(zipfile) from zipfiles
+    set orifile, labsys, qcode, checksum, file(zipfile) from zipfiles
 
     output:
-    set val("${labsys}_${qcode}_${checksum}"), qcode, checksum, file("${labsys}_${qcode}_${checksum}.mzML") into mzmlfiles_for_correction
+    set val("${labsys}_${qcode}_${checksum}"), qcode, checksum, file("${labsys}_${qcode}_${checksum}.mzML"), val("${orifile}") into mzmlfiles_for_correction, orifile_name
     
     script:
     extrapar = ""
@@ -196,7 +196,8 @@ process msconvert {
         extrapar = "-t \"--mzML\""
     }
     """
-     bash webservice.sh ${extrapar} -l ${labsys} -q ${qcode} -c ${checksum} -r ${zipfile} -i ${params.webdavip} -p ${params.webdavpass} -o ${labsys}_${qcode}_${checksum}.mzML.zip
+     mv ${zipfile} ${labsys}_${qcode}_${checksum}.zip
+     bash webservice.sh ${extrapar} -l ${labsys} -q ${qcode} -c ${checksum} -r ${labsys}_${qcode}_${checksum}.zip -i ${params.webdavip} -f ${orifile} -p ${params.webdavpass} -o ${labsys}_${qcode}_${checksum}
      unzip ${labsys}_${qcode}_${checksum}.mzML.zip
     """
 }
@@ -210,7 +211,7 @@ process correctMzml {
    tag { sample_id }
    
     input:
-    set sample_id, qcode, checksum, file(mzML_file) from (mzmlfiles_for_correction)
+    set sample_id, qcode, checksum, file(mzML_file), orifile from (mzmlfiles_for_correction)
  
     output:
     set qcode, sample_id, checksum, file("${sample_id}.ok.mzML") into corrected_mzmlfiles_for_second_step
@@ -819,6 +820,7 @@ mZML_params_for_delivery = mZML_params_for_mapping.map{
 
     input:
     file(workflowfile) from api_connectionWF
+    set o_sample_id, o_qcode, o_checksum, file(mzML_file), orifile from (orifile_name)
 
     set sample_id, internal_code, checksum, timestamp, filename, file("*") from mZML_params_for_delivery.join(jsonToBeSent)
     val db_host from params.db_host
@@ -829,7 +831,7 @@ mZML_params_for_delivery = mZML_params_for_mapping.map{
     def instrument_id = pieces[0] 
     def parent_id = ontology[internal_code]
 
-    def knime = new Knime(wf:workflowfile, rdate:timestamp, oriname:filename, chksum:checksum, stype:internal_code, ifolder:".", labs:instrument_id, utoken:"${db_host}/api/auth", uifile:"${db_host}/api/file/QC:${parent_id}", uidata:"${db_host}/api/data/pipeline", mem:"${task.memory.mega-5000}m")
+    def knime = new Knime(wf:workflowfile, rdate:timestamp, oriname:orifile, chksum:checksum, stype:internal_code, ifolder:".", labs:instrument_id, utoken:"${db_host}/api/auth", uifile:"${db_host}/api/file/QC:${parent_id}", uidata:"${db_host}/api/data/pipeline", mem:"${task.memory.mega-5000}m")
     knime.launch()
 }
 
