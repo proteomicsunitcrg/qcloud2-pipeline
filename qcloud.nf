@@ -195,9 +195,15 @@ process msconvert {
     if (qcode =~'QC03') {
         extrapar = "-t \"--mzML\""
     }
+
+    webmode = ""
+    if ( params.containsKey( "webmode" ) ) {
+        webmode = "-w "+params.webmode
+    }
+
     """
      mv ${zipfile} ${labsys}_${qcode}_${checksum}.zip
-     bash webservice.sh ${extrapar} -l ${labsys} -q ${qcode} -c ${checksum} -r ${labsys}_${qcode}_${checksum}.zip -i ${params.webdavip} -f ${orifile} -p ${params.webdavpass} -o ${labsys}_${qcode}_${checksum}
+     bash webservice.sh ${extrapar} -l ${labsys} -q ${qcode} -c ${checksum} -r ${labsys}_${qcode}_${checksum}.zip -i ${params.webdavip} -f ${orifile} -p ${params.webdavpass} -o ${labsys}_${qcode}_${checksum} ${webmode}
      unzip ${labsys}_${qcode}_${checksum}.mzML.zip
     """
 }
