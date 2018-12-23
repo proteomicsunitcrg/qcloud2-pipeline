@@ -13,7 +13,7 @@ opts=""
 optsarg=""
 orifile=""
 # Webmode could be dev - for allowing 2 interfaces
-webmode=""
+webmode="index.php"
 
 while getopts "ac:f:i:l:p:q:r:t:o:w:" opt; do
   case $opt in
