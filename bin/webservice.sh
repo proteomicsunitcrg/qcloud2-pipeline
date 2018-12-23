@@ -12,8 +12,10 @@ out=""
 opts=""
 optsarg=""
 orifile=""
+# Webmode could be dev - for allowing 2 interfaces
+webmode=""
 
-while getopts "ac:f:i:l:p:q:r:t:o:" opt; do
+while getopts "ac:f:i:l:p:q:r:t:o:w:" opt; do
   case $opt in
     a) alt="&alt"
     ;;
@@ -35,6 +37,8 @@ while getopts "ac:f:i:l:p:q:r:t:o:" opt; do
     ;;
     t) opts="$OPTARG"
     ;;
+    w) webmode="$OPTARG"
+    ;;
     \?) echo "Invalid option -$OPTARG" >&2
     ;;
   esac
@@ -53,7 +57,7 @@ fi
 
 curl --user "webdav:${webdavpass}" -T "${rawfile}" "http://${webdavip}/input/${labsys}_${qcode}_${checksum}.${ext}"
 echo "STEP 1"
-curl -X GET "http://${webdavip}/index.php?input=${labsys}_${qcode}_${checksum}.${ext}${alt}${optsarg}&output=${out}&orifile=${orifile}"
+curl -X GET "http://${webdavip}/${webmode}?input=${labsys}_${qcode}_${checksum}.${ext}${alt}${optsarg}&output=${out}&orifile=${orifile}"
 echo "STEP 2"
 curl --user "webdav:${webdavpass}" -X GET http://${webdavip}/output/${output}.${outext} > ${output}.${outext}
 echo "STEP 3"
