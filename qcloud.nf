@@ -832,9 +832,6 @@ mZML_params_for_delivery = mZML_params_for_mapping.map{
     set sample_id, internal_code, checksum, timestamp, filename, file("*") from mZML_params_for_delivery.join(jsonToBeSent)
     val db_host from params.db_host
 
-    output:
-    file("*") into output_file
-
     script:
     def pieces = sample_id.tokenize( '_' )
     // TODO: add original_id from processing of samples
@@ -844,13 +841,6 @@ mZML_params_for_delivery = mZML_params_for_mapping.map{
     def knime = new Knime(wf:workflowfile, rdate:timestamp, oriname:orifile, chksum:checksum, stype:internal_code, ifolder:".", labs:instrument_id, utoken:"${db_host}/api/auth", uifile:"${db_host}/api/file/QC:${parent_id}", uidata:"${db_host}/api/data/pipeline", mem:"${task.memory.mega-5000}m")
     knime.launch()
 
-    """
-    echo ${instrument_id} > instrument
-    echo ${timestamp} > timestamp
-    echo ${checksum} > checksum
-    echo ${internal_code} > internal_code
-    echo ${orifile} > orifile
-    """
 }
 
 
