@@ -218,7 +218,7 @@ process correctMzml {
    tag { sample_id }
    
     input:
-    set sample_id, qcode, checksum, file(mzML_file), orifile from (mzmlfiles_for_correction)
+    set sample_id, qcode, checksum, file(mzML_file) from (mzmlfiles_for_correction)
  
     output:
     set qcode, sample_id, checksum, file("${sample_id}.ok.mzML") into corrected_mzmlfiles_for_second_step
