@@ -106,6 +106,7 @@ checkWFFiles(baseQCPath, Correspondence.keySet())
 // Below handles original_id from processing of samples: 181112_Q_QC1F_01_01_9d9d9d1b-9d9d-4f1a-9d27-9d2f7635059d_QC01_0d97b132db1ecedc3b5fdbddec6fba72.zip
 
 Channel
+    //.fromPath( params.zipfiles )             
     .watchPath( params.zipfiles )             
     .map { 
         file = it
@@ -186,7 +187,7 @@ process msconvert {
 
     output:
     set val("${labsys}_${qcode}_${checksum}"), qcode, checksum, file("${labsys}_${qcode}_${checksum}.mzML") into mzmlfiles_for_correction
-    val("${orifile}") into orifile_name
+   // set val("${labsys}_${qcode}_${checksum}"), val("${orifile}") into orifile_name
     
     script:
     extrapar = ""
@@ -818,16 +819,17 @@ mZML_params_for_delivery = mZML_params_for_mapping.map{
         [sample_id , it[1], it[3], it[4].text, it[5].text]
 }.unique()
 
+
+
 /*
  * Sent to the DB
- */ 
+ */
  process sendToDB {
     tag { sample_id }
     //label 'local'
 
     input:
     file(workflowfile) from api_connectionWF
-    val orifile from orifile_name
 
     set sample_id, internal_code, checksum, timestamp, filename, file("*") from mZML_params_for_delivery.join(jsonToBeSent)
     val db_host from params.db_host
@@ -838,7 +840,7 @@ mZML_params_for_delivery = mZML_params_for_mapping.map{
     def instrument_id = pieces[0] 
     def parent_id = ontology[internal_code]
 
-    def knime = new Knime(wf:workflowfile, rdate:timestamp, oriname:orifile, chksum:checksum, stype:internal_code, ifolder:".", labs:instrument_id, utoken:"${db_host}/api/auth", uifile:"${db_host}/api/file/QC:${parent_id}", uidata:"${db_host}/api/data/pipeline", mem:"${task.memory.mega-5000}m")
+    def knime = new Knime(wf:workflowfile, rdate:timestamp, oriname:filename, chksum:checksum, stype:internal_code, ifolder:".", labs:instrument_id, utoken:"${db_host}/api/auth", uifile:"${db_host}/api/file/QC:${parent_id}", uidata:"${db_host}/api/data/pipeline", mem:"${task.memory.mega-5000}m")
     knime.launch()
 
 }
