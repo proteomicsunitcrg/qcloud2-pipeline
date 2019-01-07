@@ -110,8 +110,8 @@ checkWFFiles(baseQCPath, Correspondence.keySet())
 // Below handles original_id from processing of samples: 181112_Q_QC1F_01_01_9d9d9d1b-9d9d-4f1a-9d27-9d2f7635059d_QC01_0d97b132db1ecedc3b5fdbddec6fba72.zip
 
 Channel
-    .fromPath( params.zipfiles )             
-    //.watchPath( params.zipfiles )             
+    //.fromPath( params.zipfiles )             
+    .watchPath( params.zipfiles )             
     .map { 
         file = it
         id = it.getName()
