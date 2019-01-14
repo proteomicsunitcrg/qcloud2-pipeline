@@ -40,6 +40,7 @@
      String rdate     = ''
      String oriname   = ''
      String extrapars = ''
+     String empty_out_file = 'empty.json'
     
 	/* 
 	 *  Sorting bam files with samtools
@@ -84,7 +85,9 @@
    		"""
    		    mkdir tmpdir
             export TMPDIR=\$PWD/tmpdir
-			${cmdline}
+			if ! ${cmdline}; then
+				touch ${this.empty_out_file}
+			fi
     	"""
 	}
 

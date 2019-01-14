@@ -663,9 +663,9 @@ process calc_tic {
     def analysis_id = Correspondence['massAccuracy'][analysis_type]
     def ontology_id = ontology[analysis_id]
     def csvfile = peptideCSVs[internal_code]
-    def knime = new Knime(wf:workflowfile, csvpep:csvfile, stype:internal_code, featxml:featxml_file, mem:"${task.memory.mega-5000}m", qccv:"QC_${ontology_id}", qccvp:"QC_${ontology[analysis_type]}", chksum:checksum, ojid:"${sample_id}")
+    def knime = new Knime(wf:workflowfile, empty_out_file:"${sample_id}_QC_${Correspondence['massAccuracy'][analysis_type]}.json", csvpep:csvfile, stype:internal_code, featxml:featxml_file, mem:"${task.memory.mega-5000}m", qccv:"QC_${analysis_id}", qccvp:"QC_${ontology_id}", chksum:checksum, ojid:"${sample_id}")
     knime.launch()
-    
+
 }
 
 /*
@@ -687,7 +687,7 @@ process calc_tic {
     def analysis_id = Correspondence['medianFwhm'][analysis_type]
     def ontology_id = ontology[analysis_id]
     def csvfile = peptideCSVs[internal_code]
-    def knime = new Knime(wf:workflowfile, csvpep:csvfile, stype:internal_code, featxml:featxml_file, mem:"${task.memory.mega-5000}m", qccv:"QC_${analysis_id}", qccvp:"QC_${ontology_id}", chksum:checksum, ojid:"${sample_id}")
+    def knime = new Knime(wf:workflowfile, empty_out_file:"${sample_id}_QC_${Correspondence['medianFwhm'][analysis_type]}.json", csvpep:csvfile, stype:internal_code, featxml:featxml_file, mem:"${task.memory.mega-5000}m", qccv:"QC_${analysis_id}", qccvp:"QC_${ontology_id}", chksum:checksum, ojid:"${sample_id}")
     knime.launch()
     
 }
@@ -696,7 +696,7 @@ process calc_tic {
  * Check petide results 
  */
  process check_peptides {
-    tag { "${sample_id}-${process_id}" }
+    tag { "${sample_id}-${process_id}-json_file" }
     beforeScript("mkdir out")
 
     input:
@@ -710,7 +710,7 @@ process calc_tic {
 
     script:
     def csvfile = peptideCSVs[internal_code]
-    def knime = new Knime(qccv:"QC_${process_id}", wf:workflowfile, chksum:checksum, csvpep:csvfile, stype:internal_code, ijfile:json_file, mem:"${task.memory.mega-5000}m", ofolder:"./out", ojfile:"${json_file}")
+    def knime = new Knime(qccv:"QC_${process_id}", empty_out_file:"out/${json_file}", wf:workflowfile, chksum:checksum, csvpep:csvfile, stype:internal_code, ijfile:json_file, mem:"${task.memory.mega-5000}m", ofolder:"./out", ojfile:"${json_file}")
     knime.launch()
 }
 
@@ -732,7 +732,7 @@ process calc_tic {
 
     script:
     def csvfile = peptideCSVs[internal_code]
-    def knime = new Knime(qccv:"QC_${process_id}", wf:workflowfile, chksum:checksum,  csvpep:csvfile, stype:internal_code, ijfile:json_file, mem:"${task.memory.mega-5000}m", ofolder:"./out", ojfile:"${json_file}")
+    def knime = new Knime(qccv:"QC_${process_id}", empty_out_file:"out/${json_file}", wf:workflowfile, chksum:checksum,  csvpep:csvfile, stype:internal_code, ijfile:json_file, mem:"${task.memory.mega-5000}m", ofolder:"./out", ojfile:"${json_file}")
     knime.launch()
 }
 
@@ -754,7 +754,7 @@ process calc_tic {
 
     script:
     def csvfile = peptideCSVs[internal_code]
-    def knime = new Knime(qccv:"QC_${process_id}", wf:workflowfile, chksum:checksum,  csvpep:csvfile, stype:internal_code, ijfile:json_file, mem:"${task.memory.mega-5000}m", ofolder:"./out", ojfile:"${json_file}")
+    def knime = new Knime(qccv:"QC_${process_id}", empty_out_file:"out/${json_file}", wf:workflowfile, chksum:checksum,  csvpep:csvfile, stype:internal_code, ijfile:json_file, mem:"${task.memory.mega-5000}m", ofolder:"./out", ojfile:"${json_file}")
     knime.launch()
 }
 
