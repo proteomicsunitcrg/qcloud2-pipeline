@@ -55,12 +55,30 @@ if [ ! -z "${opts}" ]; then
 fi
 
 
+# Transfer compressed input
 curl --user "webdav:${webdavpass}" -T "${rawfile}" "http://${webdavip}/input/${labsys}_${qcode}_${checksum}.${ext}"
+
+# Execute msconvert webservice
 echo "STEP 1"
-curl -X GET "http://${webdavip}/${webmode}?input=${labsys}_${qcode}_${checksum}.${ext}${alt}${optsarg}&output=${out}&orifile=${orifile}"
+curl -X GET "http://${webdavip}/index.php?input=${labsys}_${qcode}_${checksum}.${ext}${alt}${optsarg}&output=${out}&orifile=${orifile}"
+
+# Retrieve output file
 echo "STEP 2"
 curl --user "webdav:${webdavpass}" -X GET http://${webdavip}/output/${output}.${outext} > ${output}.${outext}
+
+# Clean output file
 echo "STEP 3"
 curl --user "webdav:${webdavpass}" -X DELETE http://${webdavip}/output/${output}.${outext}
+
+# Clean packed file
 echo "STEP 4" 
-curl --user "webdav:${webdavpass}" -X DELETE http://${webdavip}/input/${labsys}_${qcode}_${checksum}.${ext}   
+curl --user "webdav:${webdavpass}" -X DELETE http://${webdavip}/input/${labsys}_${qcode}_${checksum}.${ext}
+
+# Clean unpacked files
+echo "STEP 5"
+if [ -z "${alt}" ]; then
+  curl --user "webdav:${webdavpass}" -X DELETE http://${webdavip}/input/${orifile}_${labsys}_${qcode}_${checksum}.raw
+else
+  curl --user "webdav:${webdavpass}" -X DELETE http://${webdavip}/input/${orifile}_${labsys}_${qcode}_${checksum}.wiff
+  curl --user "webdav:${webdavpass}" -X DELETE http://${webdavip}/input/${orifile}_${labsys}_${qcode}_${checksum}.wiff.scan
+fi
