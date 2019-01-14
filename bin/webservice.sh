@@ -75,10 +75,10 @@ echo "STEP 4"
 curl --user "webdav:${webdavpass}" -X DELETE http://${webdavip}/input/${labsys}_${qcode}_${checksum}.${ext}
 
 # Clean unpacked files
-echo "STEP 5"
-if [ -z "${alt}" ]; then
-  curl --user "webdav:${webdavpass}" -X DELETE http://${webdavip}/input/${orifile}_${labsys}_${qcode}_${checksum}.raw
-else
-  curl --user "webdav:${webdavpass}" -X DELETE http://${webdavip}/input/${orifile}_${labsys}_${qcode}_${checksum}.wiff
-  curl --user "webdav:${webdavpass}" -X DELETE http://${webdavip}/input/${orifile}_${labsys}_${qcode}_${checksum}.wiff.scan
-fi
+#echo "STEP 5"
+#if [ -z "${alt}" ]; then
+#  curl --user "webdav:${webdavpass}" -X DELETE http://${webdavip}/input/${orifile}_${labsys}_${qcode}_${checksum}.raw
+#else
+#  curl --user "webdav:${webdavpass}" -X DELETE http://${webdavip}/input/${orifile}_${labsys}_${qcode}_${checksum}.wiff
+#  curl --user "webdav:${webdavpass}" -X DELETE http://${webdavip}/input/${orifile}_${labsys}_${qcode}_${checksum}.wiff.scan
+#fi
