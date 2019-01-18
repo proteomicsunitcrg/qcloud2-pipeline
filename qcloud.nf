@@ -418,7 +418,7 @@ process shotgun_qc4l_ethcd  {
 
     input:
     set genome_id, internal_code, sample_id, file(mzML_file), analysis_type, checksum, fasta_file, file ("*") from input_pipe_complete_first_step_for_shotgun_qc4l_ethcd 
-    file(workflowfile) from shotgun_qc4l_etcidWF
+    file(workflowfile) from shotgun_qc4l_ethcdWF
     
     when:
     analysis_type == 'shotgun_qc4l'
