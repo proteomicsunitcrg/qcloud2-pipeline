@@ -599,7 +599,7 @@ process calc_peptide_area_c4l {
     tag { "${sample_id}-${analysis_type}" }
 
     input:
-    set sample_id, internal_code, analysis_type, checksum, file(featxml_file) from shot_qc4l_cid_featureXMLfiles_for_calc_peptide_area
+    set sample_id, internal_code, analysis_type, checksum, file(featxml_file) from shot_qc4l_hcd_featureXMLfiles_for_calc_peptide_area
 	file ("peptide.csv") from file (peptideCSV)
 	file ("peptide_C4L.csv") from file (peptideCSV_C4L)
     file(workflowfile) from getWFFile(baseQCPath, "pepArea_qc4l")
@@ -624,7 +624,7 @@ process calc_peptide_area_c4l_fake {
     tag { "${sample_id}-${analysis_type}" }
 
     input:
-    set sample_id, internal_code, analysis_type, checksum, file(featxml_file) from shot_qc4l_hcd_featureXMLfiles_for_calc_peptide_area.mix(shot_qc4l_etcid_featureXMLfiles_for_calc_peptide_area, shot_qc4l_ethcd_featureXMLfiles_for_calc_peptide_area)
+    set sample_id, internal_code, analysis_type, checksum, file(featxml_file) from shot_qc4l_cid_featureXMLfiles_for_calc_peptide_area.mix(shot_qc4l_etcid_featureXMLfiles_for_calc_peptide_area, shot_qc4l_ethcd_featureXMLfiles_for_calc_peptide_area)
 
     output:
     set sample_id, val(null) into pep_c4l_for_delivery_fake
