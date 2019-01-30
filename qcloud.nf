@@ -274,7 +274,7 @@ process run_shotgun {
     output:
     set sample_id, internal_code, analysis_type, checksum, file("${sample_id}.featureXML") into shot_featureXMLfiles_for_calc_peptide_area, shot_featureXMLfiles_for_calc_mass_accuracy, shot_featureXMLfiles_for_calc_median_fwhm
     set sample_id, internal_code, analysis_type, checksum, file(mzML_file) into shot_mzML_file_for_MedianITMS1, shot_mzML_file_for_MedianITMS2, shot_mzML_file_for_check 
-    set sample_id, internal_code, analysis_type, checksum, file("${sample_id}.qcml") into qcmlfiles_for_MS2_spectral_count, qcmlfiles_for_tot_num_uniq_peptides, qcmlfiles_for_tot_num_uniq_proteins, qcmlfiles_for_tot_num_psm
+    set sample_id, internal_code, analysis_type, checksum, file("${sample_id}.qcml") into qcmlfiles_for_MS2_spectral_count, qcmlfiles_for_tot_num_uniq_peptides, qcmlfiles_for_tot_num_uniq_proteins, qcmlfiles_for_tot_num_psm, qcmlfiles_for_tic
 
     script:
     def outfiles = "${sample_id}.featureXML ${sample_id}.qcml ${sample_id}.idXML"
@@ -333,7 +333,7 @@ process shotgun_qc4l_cid {
     output:
     set val("${sample_id}_cid"), internal_code, val("shotgun_qc4l_cid"), checksum, file("${sample_id}.featureXML") into shot_qc4l_cid_featureXMLfiles_for_calc_peptide_area, shot_qc4l_cid_featureXMLfiles_for_calc_mass_accuracy, shot_qc4l_cid_featureXMLfiles_for_calc_median_fwhm
     set val("${sample_id}_cid"), internal_code, val("shotgun_qc4l_cid"), checksum, file(mzML_file) into shot_qc4l_cid_mzML_file_for_MedianITMS1, shot_qc4l_cid_mzML_file_for_MedianITMS2, shot_qc4l_cid_mzML_file_for_check 
-    set val("${sample_id}_cid"), internal_code, val("shotgun_qc4l_cid"), checksum, file("${sample_id}.qcml") into shot_qc4l_cid_qcmlfiles_for_MS2_spectral_count, shot_qc4l_cid_qcmlfiles_for_tot_num_uniq_peptides, shot_qc4l_cid_qcmlfiles_for_tot_num_uniq_proteins, shot_qc4l_cid_qcmlfiles_for_tot_num_psm
+    set val("${sample_id}_cid"), internal_code, val("shotgun_qc4l_cid"), checksum, file("${sample_id}.qcml") into shot_qc4l_cid_qcmlfiles_for_MS2_spectral_count, shot_qc4l_cid_qcmlfiles_for_tot_num_uniq_peptides, shot_qc4l_cid_qcmlfiles_for_tot_num_uniq_proteins, shot_qc4l_cid_qcmlfiles_for_tot_num_psm, shot_qc4l_cid_qcmlfiles_for_tic
 
     script:
     def outfiles = "${sample_id}.featureXML ${sample_id}.qcml ${sample_id}.idXML"
@@ -364,7 +364,7 @@ process shotgun_qc4l_hcd {
     output:
     set val("${sample_id}_hcd"), internal_code, val("shotgun_qc4l_hcd"), checksum, file("${sample_id}.featureXML") into shot_qc4l_hcd_featureXMLfiles_for_calc_peptide_area, shot_qc4l_hcd_featureXMLfiles_for_calc_mass_accuracy, shot_qc4l_hcd_featureXMLfiles_for_calc_median_fwhm
     set val("${sample_id}_hcd"), internal_code, val("shotgun_qc4l_hcd"), checksum, file(mzML_file) into shot_qc4l_hcd_mzML_file_for_MedianITMS1, shot_qc4l_hcd_mzML_file_for_MedianITMS2, shot_qc4l_hcd_mzML_file_for_check 
-    set val("${sample_id}_hcd"), internal_code, val("shotgun_qc4l_hcd"), checksum, file("${sample_id}.qcml") into shot_qc4l_hcd_qcmlfiles_for_MS2_spectral_count, shot_qc4l_hcd_qcmlfiles_for_tot_num_uniq_peptides, shot_qc4l_hcd_qcmlfiles_for_tot_num_uniq_proteins, shot_qc4l_hcd_qcmlfiles_for_tot_num_psm
+    set val("${sample_id}_hcd"), internal_code, val("shotgun_qc4l_hcd"), checksum, file("${sample_id}.qcml") into shot_qc4l_hcd_qcmlfiles_for_MS2_spectral_count, shot_qc4l_hcd_qcmlfiles_for_tot_num_uniq_peptides, shot_qc4l_hcd_qcmlfiles_for_tot_num_uniq_proteins, shot_qc4l_hcd_qcmlfiles_for_tot_num_psm, shot_qc4l_hcd_qcmlfiles_for_tic
 
     script:
     def outfiles = "${sample_id}.featureXML ${sample_id}.qcml ${sample_id}.idXML"
@@ -395,7 +395,7 @@ process shotgun_qc4l_etcid {
     output:
     set val("${sample_id}_etcid"), internal_code, val("shotgun_qc4l_etcid"), checksum, file("${sample_id}.featureXML") into shot_qc4l_etcid_featureXMLfiles_for_calc_peptide_area, shot_qc4l_etcid_featureXMLfiles_for_calc_mass_accuracy, shot_qc4l_etcid_featureXMLfiles_for_calc_median_fwhm
     set val("${sample_id}_etcid"), internal_code, val("shotgun_qc4l_etcid"), checksum, file(mzML_file) into shot_qc4l_etcid_mzML_file_for_MedianITMS1, shot_qc4l_etcid_mzML_file_for_MedianITMS2, shot_qc4l_etcid_mzML_file_for_check 
-    set val("${sample_id}_etcid"), internal_code, val("shotgun_qc4l_etcid"), checksum, file("${sample_id}.qcml") into shot_qc4l_etcid_qcmlfiles_for_MS2_spectral_count, shot_qc4l_etcid_qcmlfiles_for_tot_num_uniq_peptides, shot_qc4l_etcid_qcmlfiles_for_tot_num_uniq_proteins, shot_qc4l_etcid_qcmlfiles_for_tot_num_psm
+    set val("${sample_id}_etcid"), internal_code, val("shotgun_qc4l_etcid"), checksum, file("${sample_id}.qcml") into shot_qc4l_etcid_qcmlfiles_for_MS2_spectral_count, shot_qc4l_etcid_qcmlfiles_for_tot_num_uniq_peptides, shot_qc4l_etcid_qcmlfiles_for_tot_num_uniq_proteins, shot_qc4l_etcid_qcmlfiles_for_tot_num_psm, shot_qc4l_etcid_qcmlfiles_for_tic
 
     script:
     def outfiles = "${sample_id}.featureXML ${sample_id}.qcml ${sample_id}.idXML"
@@ -418,7 +418,7 @@ process shotgun_qc4l_ethcd  {
 
     input:
     set genome_id, internal_code, sample_id, file(mzML_file), analysis_type, checksum, fasta_file, file ("*") from input_pipe_complete_first_step_for_shotgun_qc4l_ethcd 
-    file(workflowfile) from shotgun_qc4l_etcidWF
+    file(workflowfile) from shotgun_qc4l_ethcdWF
     
     when:
     analysis_type == 'shotgun_qc4l'
@@ -426,7 +426,7 @@ process shotgun_qc4l_ethcd  {
     output:
     set val("${sample_id}_ethcd"), internal_code, val("shotgun_qc4l_ethcd"), checksum, file("${sample_id}.featureXML") into shot_qc4l_ethcd_featureXMLfiles_for_calc_peptide_area, shot_qc4l_ethcd_featureXMLfiles_for_calc_mass_accuracy, shot_qc4l_ethcd_featureXMLfiles_for_calc_median_fwhm
     set val("${sample_id}_ethcd"), internal_code, val("shotgun_qc4l_ethcd"), checksum, file(mzML_file) into shot_qc4l_ethcd_mzML_file_for_MedianITMS1, shot_qc4l_ethcd_mzML_file_for_MedianITMS2, shot_qc4l_ethcd_mzML_file_for_check 
-    set val("${sample_id}_ethcd"), internal_code, val("shotgun_qc4l_ethcd"), checksum, file("${sample_id}.qcml") into shot_qc4l_ethcd_qcmlfiles_for_MS2_spectral_count, shot_qc4l_ethcd_qcmlfiles_for_tot_num_uniq_peptides, shot_qc4l_ethcd_qcmlfiles_for_tot_num_uniq_proteins, shot_qc4l_ethcd_qcmlfiles_for_tot_num_psm
+    set val("${sample_id}_ethcd"), internal_code, val("shotgun_qc4l_ethcd"), checksum, file("${sample_id}.qcml") into shot_qc4l_ethcd_qcmlfiles_for_MS2_spectral_count, shot_qc4l_ethcd_qcmlfiles_for_tot_num_uniq_peptides, shot_qc4l_ethcd_qcmlfiles_for_tot_num_uniq_proteins, shot_qc4l_ethcd_qcmlfiles_for_tot_num_psm, shot_qc4l_ethcd_qcmlfiles_for_tic
 
     script:
     def outfiles = "${sample_id}.featureXML ${sample_id}.qcml ${sample_id}.idXML"
@@ -599,7 +599,7 @@ process calc_peptide_area_c4l {
     tag { "${sample_id}-${analysis_type}" }
 
     input:
-    set sample_id, internal_code, analysis_type, checksum, file(featxml_file) from shot_qc4l_cid_featureXMLfiles_for_calc_peptide_area
+    set sample_id, internal_code, analysis_type, checksum, file(featxml_file) from shot_qc4l_hcd_featureXMLfiles_for_calc_peptide_area
 	file ("peptide.csv") from file (peptideCSV)
 	file ("peptide_C4L.csv") from file (peptideCSV_C4L)
     file(workflowfile) from getWFFile(baseQCPath, "pepArea_qc4l")
@@ -624,7 +624,7 @@ process calc_peptide_area_c4l_fake {
     tag { "${sample_id}-${analysis_type}" }
 
     input:
-    set sample_id, internal_code, analysis_type, checksum, file(featxml_file) from shot_qc4l_hcd_featureXMLfiles_for_calc_peptide_area.mix(shot_qc4l_etcid_featureXMLfiles_for_calc_peptide_area, shot_qc4l_ethcd_featureXMLfiles_for_calc_peptide_area)
+    set sample_id, internal_code, analysis_type, checksum, file(featxml_file) from shot_qc4l_cid_featureXMLfiles_for_calc_peptide_area.mix(shot_qc4l_etcid_featureXMLfiles_for_calc_peptide_area, shot_qc4l_ethcd_featureXMLfiles_for_calc_peptide_area)
 
     output:
     set sample_id, val(null) into pep_c4l_for_delivery_fake
@@ -638,12 +638,12 @@ process calc_peptide_area_c4l_fake {
 
 /*
  * Run calculation of Sum of all Total Ion Current per RT
- 
+ */
 process calc_tic {
     tag { "${sample_id}-${analysis_type}" }
 
     input:
-    set sample_id, internal_code, analysis_type, checksum, file(featxml_file) from shot_qc4l_cid_featureXMLfiles_for_calc_peptide_area
+    set sample_id, internal_code, val(analysis_type), checksum, file(qcmlfile) from qcmlfiles_for_tic.mix(shot_qc4l_cid_qcmlfiles_for_tic, shot_qc4l_hcd_qcmlfiles_for_tic, shot_qc4l_etcid_qcmlfiles_for_tic, shot_qc4l_ethcd_qcmlfiles_for_tic)
     file(workflowfile) from getWFFile(baseQCPath, "tic")
 
     output:
@@ -653,10 +653,10 @@ process calc_tic {
     def analysis_id = Correspondence['tic'][analysis_type]
     def ontology_id = ontology[analysis_id]
     def outfile = "${sample_id}_QC_${Correspondence['tic'][analysis_type]}.json"
-    def knime = new Knime(wf:workflowfile, empty_out_file:outfile, csvpep:peptideCSV_C4L, stype:internal_code, featxml:featxml_file, mem:"${task.memory.mega-5000}m", qccv:"QC_${analysis_id}", qccvp:"QC_${ontology_id}", chksum:checksum, ojid:"${sample_id}", extrapars:'-workflow.variable=delta_mass,5,double -workflow.variable=delta_rt,250,double -workflow.variable=charge,2,double -workflow.variable=threshold_area,1000000,double')
+    def knime = new Knime(wf:workflowfile, empty_out_file:outfile, qcml:qcmlfile, stype:internal_code, mem:"${task.memory.mega-5000}m", qccv:"QC_${analysis_id}", qccvp:"QC_${ontology_id}", chksum:checksum, ojid:"${sample_id}")
     knime.launch()   
 }
- */
+ 
  
 /*
  * Run calculation of Mass accuracy
@@ -799,9 +799,8 @@ process check_mzML {
 
 // mix peptide channels (from QC01, QC02 and QC03 to have for each id a number of results) 
 pep_c4l_all = pep_c4l_for_delivery_fake.mix(pep_c4l_for_delivery, pep_checked_for_delivery)
-// joins channels common to any analysis in a single channel
-//jointJsons = 
-ms2_spectral_for_delivery.join(tot_psm_for_delivery).join(uni_peptides_for_delivery).join(uni_prots_for_delivery).join(median_itms2_for_delivery).join(mass_checked_for_delivery).join(median_checked_for_delivery).join(median_itms1_for_delivery).join(pep_c4l_all).into{jointJsons; jointJsonsAA}
+// joins channels common to any analysis in a single channel 
+ms2_spectral_for_delivery.join(tic_for_delivery).join(tot_psm_for_delivery).join(uni_peptides_for_delivery).join(uni_prots_for_delivery).join(median_itms2_for_delivery).join(mass_checked_for_delivery).join(median_checked_for_delivery).join(median_itms1_for_delivery).join(pep_c4l_all).into{jointJsons; jointJsonsAA}
 
 // separate this channel depending on QC01-QC02/ QC03
 queueQC12 = Channel.create()
