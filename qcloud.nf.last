@@ -593,7 +593,7 @@ process calc_peptide_area {
 }
 
 /*
- * Run calculation of peptide area (Only QC3 // hcd)
+ * Run calculation of peptide area (Only QC3 // cid)
  */
 process calc_peptide_area_c4l {
     tag { "${sample_id}-${analysis_type}" }
@@ -897,4 +897,3 @@ mZML_params_for_delivery = mZML_params_for_mapping.map{
         }
      }
      
-
