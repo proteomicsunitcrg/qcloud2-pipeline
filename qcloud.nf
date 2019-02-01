@@ -612,7 +612,7 @@ process calc_peptide_area_c4l {
     def ontology_id = ontology[analysis_id]
     def csvfile = peptideCSVs[internal_code]
     def outfile = "${sample_id}_QC_${Correspondence['pepArea_qc4l'][analysis_type]}.json"
-    def knime = new Knime(wf:workflowfile, empty_out_file:outfile, csvpep:csvfile, stype:internal_code, featxml:featxml_file, mem:"${task.memory.mega-5000}m", qccv:"QC_${analysis_id}", qccvp:"QC_${ontology_id}", chksum:checksum, ojid:"${sample_id}", extrapars:'-workflow.variable=delta_mass,5,double -workflow.variable=delta_rt,250,double -workflow.variable=charge,2,double -workflow.variable=threshold_area,1000000,double')
+    def knime = new Knime(wf:workflowfile, empty_out_file:outfile, csvpep:csvfile, stype:internal_code, featxml:featxml_file, mem:"${task.memory.mega-5000}m", qccv:"QC_${analysis_id}", qccvp:"QC_${ontology_id}", chksum:checksum, ojid:"${sample_id}", extrapars:'-workflow.variable=delta_mass,10,double -workflow.variable=delta_rt,250,double -workflow.variable=charge,2,double -workflow.variable=threshold_area,1000000,double')
     knime.launch()
     
 }
