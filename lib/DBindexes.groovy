@@ -19,7 +19,7 @@
 		Correspondence["medianITMS2"] = ["shotgun" : "1000928", "srm" : "???", "shotgun_qc4l_cid" : "1002005", "shotgun_qc4l_hcd" : "1002013", "shotgun_qc4l_etcid" : "1002021", "shotgun_qc4l_ethcd" : "1002029"] 
 		//pepArea
 		Correspondence["pepArea"] = ["shotgun" : "1001844", "srm" : "???"]
-		Correspondence["pepArea_qc4l"] = ["shotgun_qc4l_cid" : "1001844"]
+		Correspondence["pepArea_qc4l"] = ["shotgun_qc4l_hcd" : "1001844"]
 		//massAccuracy
 		Correspondence["massAccuracy"] = ["shotgun" : "1000014", "srm" : "???", "shotgun_qc4l_cid" : "1002007", "shotgun_qc4l_hcd" : "1002015", "shotgun_qc4l_etcid" : "1002023", "shotgun_qc4l_ethcd" : "1002031"]
 		//medianFwhm
