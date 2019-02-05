@@ -59,7 +59,7 @@ OMSSAAdapter (OpenMS 2.3, omssa-2.1.9):
 | Parameter                | Value   | 
 |--------------------------|---------| 
 | precursor_mass_tolerance | 7 ppm   | 
-| fragment_mass_tolerance  | *       | 
+| fragment_mass_tolerance  | (a)     | 
 | min_precursor_charge     | 1       | 
 | max_precursor_charge     | 3       | 
 | fixed_modifications      | []      | 
@@ -68,24 +68,28 @@ OMSSAAdapter (OpenMS 2.3, omssa-2.1.9):
 | enzime                   | Trypsin | 
 | hl                       | 30      | 
 | he                       | 1000    | 
-| i                        | **      | 
+| i                        | (b)     | 
 
 </br></br>
-* 0.5 Da for non QExactive instruments and 0.02 Da for QExactive and Velos. 
-** Comma delimited list of id numbers of ions to search: CID and HCD = 1,4. ETCID and ETHCD 1,4,2,5.
+(a) 0.5 Da for non QExactive instruments and 0.02 Da for QExactive and Velos. 
+(b) Comma delimited list of id numbers of ions to search: CID and HCD = 1,4. ETCID and ETHCD 1,4,2,5.
 </br></br>
 
 FileFilter (OpenMS 2.3): 
 </br></br>
 CID: remove_activation=Electron transfer dissociation, select_activation=Collision-induced dissociation
+</br>
 HCD: QExactive and Velos remove_activation=none, select_activation=none. Non Qexactive, remove_activation=Electron transfer dissociation, select_activation=High-energy collision-induced dissociation
+</br>
 ETCID: select_activation=Electron transfer dissociation, select_activation=Collision-induced dissociation
+</br>
 ETHCD:s elect_activation=Electron transfer dissociation, select_activation=High-energy collision-induced dissociation
 
 </br></br>
 Databases: 
 sp_human_2015_10_contaminants_plus_shuffled.fasta.gz
 </br></br>
+***
 
 ## STEP 1 - Proteomics workflows</br> </br> 
 
