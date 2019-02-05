@@ -72,6 +72,7 @@ OMSSAAdapter (OpenMS 2.3, omssa-2.1.9):
 
 </br></br>
 (a) 0.5 Da for non QExactive instruments and 0.02 Da for QExactive and Velos. 
+</br>
 (b) Comma delimited list of id numbers of ions to search: CID and HCD = 1,4. ETCID and ETHCD 1,4,2,5.
 </br></br>
 
@@ -85,7 +86,7 @@ ETCID: select_activation=Electron transfer dissociation, select_activation=Colli
 </br>
 ETHCD:s elect_activation=Electron transfer dissociation, select_activation=High-energy collision-induced dissociation
 
-</br></br>
+</br>
 Databases: 
 sp_human_2015_10_contaminants_plus_shuffled.fasta.gz
 </br></br>
