@@ -16,7 +16,7 @@
 		//tic NEW
 		Correspondence["tic"] = ["shotgun" : "0000048", "shotgun_qc4l_cid" : "1000937", "shotgun_qc4l_hcd" : "1000938", "shotgun_qc4l_etcid" : "1000939", "shotgun_qc4l_ethcd" : "1000940"]
 		//medianITMS2
-		Correspondence["medianITMS2"] = ["shotgun" : "1000928", "srm" : "???", "shotgun_qc4l_cid" : "1002005", "shotgun_qc4l_hcd" : "1002013", "shotgun_qc4l_etcid" : "1002021", "shotgun_qc4l_ethcd" : "1002029"] 
+		Correspondence["medianITMS2"] = ["shotgun" : "1000928", "shotgun_qc4l_cid" : "1002005", "shotgun_qc4l_hcd" : "1002013", "shotgun_qc4l_etcid" : "1002021", "shotgun_qc4l_ethcd" : "1002029"] 
 		//pepArea
 		Correspondence["pepArea"] = ["shotgun" : "1001844", "srm" : "???"]
 		Correspondence["pepArea_qc4l"] = ["shotgun_qc4l_hcd" : "1001844"]
