@@ -561,7 +561,7 @@ process calc_median_IT_MS2 {
     script:
     def analysis_id = Correspondence['medianITMS2'][analysis_type]
     def ontology_id = ontology[analysis_id]
-    def outfile = "${sample_id}_QC_${Correspondence['pepArea'][analysis_type]}.json"
+    def outfile = "${sample_id}_QC_${Correspondence['medianITMS2'][analysis_type]}.json"
     def knime = new Knime(wf:workflowfile,  empty_out_file:outfile, mem:"${task.memory.mega-5000}m", mzml:mzml_file, qccv:"QC_${analysis_id}", qccvp:"QC_${ontology_id}", chksum:checksum, ojid:"${sample_id}")
     knime.launch()
     
