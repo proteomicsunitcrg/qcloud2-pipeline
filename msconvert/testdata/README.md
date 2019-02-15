@@ -1,3 +1,5 @@
+(at the moment I leave this folder empty of files to decrease project size)
+
 - **ERROR_FILE_completed_but_corrupted.raw** Sample file that was received correctly but is anyway corrupted for some unknown reason.</br> 
 - **ERROR_FILE_incomplete.raw.gz** Sample file that was not received correctly.</br>
 - **OK_file_QC01.raw.** Correct RAW file</br> 
