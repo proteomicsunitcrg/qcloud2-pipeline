@@ -703,8 +703,11 @@ process calc_tic {
     def ontology_id = ontology[analysis_id]
     def csvfile = peptideCSVs[internal_code]
     def outfile = "${sample_id}_QC_${Correspondence['medianFwhm'][analysis_type]}.json"
-    def knime = new Knime(wf:workflowfile, empty_out_file:outfile, csvpep:csvfile, stype:internal_code, featxml:featxml_file, mem:"${task.memory.mega-5000}m", qccv:"QC_${analysis_id}", qccvp:"QC_${ontology_id}", chksum:checksum, ojid:"${sample_id}")
-    knime.launch()
+    """
+    touch ${outfile}
+    """
+    //def knime = new Knime(wf:workflowfile, empty_out_file:outfile, csvpep:csvfile, stype:internal_code, featxml:featxml_file, mem:"${task.memory.mega-5000}m", qccv:"QC_${analysis_id}", qccvp:"QC_${ontology_id}", chksum:checksum, ojid:"${sample_id}")
+    //knime.launch()
     
 }
 
