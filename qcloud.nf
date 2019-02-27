@@ -631,7 +631,7 @@ process calc_peptide_area_c4l_fake {
 
     script:
 	"""
-	echo "this is a workaround because of a nextflow problem"
+	echo "this is a workaround because of a nextflow problem with joining"
 	"""
     
 }
@@ -665,9 +665,8 @@ process calc_tic {
     tag { "${sample_id}-${analysis_type}" }
 
     input:
-    set sample_id, internal_code, analysis_type, checksum, file(featxml_file) from shot_featureXMLfiles_for_calc_mass_accuracy.mix(srm_featureXMLfiles_for_calc_mass_accuracy, shot_qc4l_cid_featureXMLfiles_for_calc_mass_accuracy, shot_qc4l_hcd_featureXMLfiles_for_calc_mass_accuracy, shot_qc4l_etcid_featureXMLfiles_for_calc_mass_accuracy, shot_qc4l_ethcd_featureXMLfiles_for_calc_mass_accuracy)
+    set sample_id, internal_code, analysis_type, checksum, file(featxml_file) from shot_featureXMLfiles_for_calc_mass_accuracy.mix(srm_featureXMLfiles_for_calc_mass_accuracy)
 	file ("peptide.csv") from file (peptideCSV)
-	file ("peptide_C4L.csv") from file (peptideCSV_C4L)
     file(workflowfile) from getWFFile(baseQCPath, "massAccuracy") 
 
     output:
@@ -680,8 +679,50 @@ process calc_tic {
     def outfile = "${sample_id}_QC_${Correspondence['massAccuracy'][analysis_type]}.json"
     def knime = new Knime(wf:workflowfile, empty_out_file:outfile, csvpep:csvfile, stype:internal_code, featxml:featxml_file, mem:"${task.memory.mega-5000}m", qccv:"QC_${analysis_id}", qccvp:"QC_${ontology_id}", chksum:checksum, ojid:"${sample_id}")
     knime.launch()
-
 }
+
+/*
+ * Run calculation of Mass accuracy for Core 4 Life
+ */
+ process calc_mass_accuracy_c4l {
+    tag { "${sample_id}-${analysis_type}" }
+
+    input:
+    set sample_id, internal_code, analysis_type, checksum, file(featxml_file) from shot_qc4l_hcd_featureXMLfiles_for_calc_mass_accuracy
+	file ("peptide_C4L.csv") from file (peptideCSV_C4L)
+    file(workflowfile) from getWFFile(baseQCPath, "massAccuracy_qc4l") 
+
+    output:
+    set sample_id, internal_code, checksum, val("${Correspondence['massAccuracy_qc4l'][analysis_type]}"),  file("${sample_id}_QC_${Correspondence['massAccuracy_qc4l'][analysis_type]}.json") into mass_c4l_json_for_check
+
+    script:
+    def analysis_id = Correspondence['massAccuracy_qc4l'][analysis_type]
+    def ontology_id = ontology[analysis_id]
+    def csvfile = peptideCSVs[internal_code]
+    def outfile = "${sample_id}_QC_${Correspondence['massAccuracy_qc4l'][analysis_type]}.json"
+    def knime = new Knime(wf:workflowfile, empty_out_file:outfile, csvpep:csvfile, stype:internal_code, featxml:featxml_file, mem:"${task.memory.mega-5000}m", qccv:"QC_${analysis_id}", qccvp:"QC_${ontology_id}", chksum:checksum, ojid:"${sample_id}")
+    knime.launch()
+}
+
+/*
+ * Run calculation of Mass accuracy  WORKAROUND
+ */
+process calc_mass_accuracy_c4l_fake {
+    tag { "${sample_id}-${analysis_type}" }
+
+    input:
+    set sample_id, internal_code, analysis_type, checksum, file(featxml_file) from shot_qc4l_cid_featureXMLfiles_for_calc_mass_accuracy.mix(shot_qc4l_etcid_featureXMLfiles_for_calc_mass_accuracy, shot_qc4l_ethcd_featureXMLfiles_for_calc_mass_accuracy)
+
+    output:
+    set sample_id, val(null) into mass_c4l_json_for_delivery_fake
+
+    script:
+	"""
+	echo "this is a workaround because of a nextflow problem with joining"
+	"""
+    
+}
+
 
 /*
  * Run calculation of Median Fwhm
@@ -742,13 +783,13 @@ process calc_tic {
     beforeScript("mkdir out")
 
     input:
-    set sample_id, internal_code, checksum, process_id, file(json_file) from mass_json_for_check
+    set sample_id, internal_code, checksum, process_id, file(json_file) from mass_json_for_check.mix(mass_c4l_json_for_check)
 	file ("peptide.csv") from file (peptideCSV)
 	file ("peptide_C4L.csv") from file (peptideCSV_C4L)
 	file(workflowfile) from chekPeptidesWF
 
     output:
-    set sample_id, file("out/${json_file}") into mass_checked_for_delivery
+    set sample_id, file("out/${json_file}") into mass_checked_for_joining
 
     script:
     def csvfile = peptideCSVs[internal_code]
@@ -802,6 +843,10 @@ process check_mzML {
 
 // mix peptide channels (from QC01, QC02 and QC03 to have for each id a number of results) 
 pep_c4l_all = pep_c4l_for_delivery_fake.mix(pep_c4l_for_delivery, pep_checked_for_delivery)
+// mix mass channels (from QC01, QC02 and QC03 to have for each id a number of results) 
+//mass_checked_for_delivery = mass_checked_for_joining.mix(mass_c4l_json_for_delivery_fake)
+mass_checked_for_delivery = mass_checked_for_joining.mix(mass_c4l_json_for_delivery_fake)
+
 // joins channels common to any analysis in a single channel 
 ms2_spectral_for_delivery.join(tic_for_delivery).join(tot_psm_for_delivery).join(uni_peptides_for_delivery).join(uni_prots_for_delivery).join(median_itms2_for_delivery).join(mass_checked_for_delivery).join(median_checked_for_delivery).join(median_itms1_for_delivery).join(pep_c4l_all).into{jointJsons; jointJsonsAA}
 
@@ -844,13 +889,11 @@ mZML_params_for_delivery = mZML_params_for_mapping.map{
         [sample_id , it[1], it[3], it[4].text, it[5].text]
 }.unique()
 
-
 /*
  * Sent to the DB
- */
+*/
  process sendToDB {
     tag { sample_id }
-    //label 'local'
 
     input:
     file(workflowfile) from api_connectionWF
