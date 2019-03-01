@@ -693,7 +693,7 @@ process calc_tic {
     file(workflowfile) from getWFFile(baseQCPath, "massAccuracy_qc4l") 
 
     output:
-    set sample_id, internal_code, checksum, val("${Correspondence['massAccuracy_qc4l'][analysis_type]}"),  file("${sample_id}_QC_${Correspondence['massAccuracy_qc4l'][analysis_type]}.json") into mass_c4l_json_for_check
+    set sample_id, internal_code, checksum, val("${Correspondence['massAccuracy_qc4l'][analysis_type]}"),  file("${sample_id}_QC_${Correspondence['massAccuracy_qc4l'][analysis_type]}.json") into mass_c4l_json_for_delivery
 
     script:
     def analysis_id = Correspondence['massAccuracy_qc4l'][analysis_type]
@@ -783,7 +783,7 @@ process calc_mass_accuracy_c4l_fake {
     beforeScript("mkdir out")
 
     input:
-    set sample_id, internal_code, checksum, process_id, file(json_file) from mass_json_for_check.mix(mass_c4l_json_for_check)
+    set sample_id, internal_code, checksum, process_id, file(json_file) from mass_json_for_check
 	file ("peptide.csv") from file (peptideCSV)
 	file ("peptide_C4L.csv") from file (peptideCSV_C4L)
 	file(workflowfile) from chekPeptidesWF
@@ -845,7 +845,7 @@ process check_mzML {
 pep_c4l_all = pep_c4l_for_delivery_fake.mix(pep_c4l_for_delivery, pep_checked_for_delivery)
 // mix mass channels (from QC01, QC02 and QC03 to have for each id a number of results) 
 //mass_checked_for_delivery = mass_checked_for_joining.mix(mass_c4l_json_for_delivery_fake)
-mass_checked_for_delivery = mass_checked_for_joining.mix(mass_c4l_json_for_delivery_fake)
+mass_checked_for_delivery = mass_checked_for_joining.mix(mass_c4l_json_for_delivery_fake, mass_c4l_json_for_delivery)
 
 // joins channels common to any analysis in a single channel 
 ms2_spectral_for_delivery.join(tic_for_delivery).join(tot_psm_for_delivery).join(uni_peptides_for_delivery).join(uni_prots_for_delivery).join(median_itms2_for_delivery).join(mass_checked_for_delivery).join(median_checked_for_delivery).join(median_itms1_for_delivery).join(pep_c4l_all).into{jointJsons; jointJsonsAA}
