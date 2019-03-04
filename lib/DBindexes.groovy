@@ -22,7 +22,7 @@
 		Correspondence["pepArea_qc4l"] = ["shotgun_qc4l_hcd" : "1001844"]
 		//massAccuracy
 		Correspondence["massAccuracy"] = ["shotgun" : "1000014", "srm" : "???"]
-		Correspondence["massAccuracy_qc4l"] = ["shotgun_qc4l_hcd" : "1002015"]
+		Correspondence["massAccuracy_qc4l"] = ["shotgun_qc4l_hcd" : "1000014"]
 		//medianFwhm
 		Correspondence["medianFwhm"] = ["shotgun" : "1010086", "srm" : "???", "shotgun_qc4l_cid" : "1002008", "shotgun_qc4l_hcd" : "1002016", "shotgun_qc4l_etcid" : "1002024", "shotgun_qc4l_ethcd" : "1002032"]
 
@@ -39,7 +39,7 @@
 		ontology["0000032"] = "9000001"
 		ontology["1000928"] = "9000002"
 		ontology["1001844"] = "1001844"
-		ontology["1000014"] = "9000004"
+		ontology["1000014"] = "1000014"
 		ontology["1010086"] = "9000003"
 		ontology["1002001"] = "9000001"
 		ontology["1002002"] = "9000001"
