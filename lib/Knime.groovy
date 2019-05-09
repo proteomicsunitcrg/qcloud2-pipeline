@@ -14,6 +14,7 @@
      String wf        = ''
      String mem       = '2G'
      String mzml      = ''
+     String idxml     = ''
      String csvpep    = ''
      String qcml      = ''
      String oqcml     = ''
@@ -52,6 +53,7 @@
     	string +=  "-workflowFile=${this.wf} "
     	if (this.mzml) {string +=  "-workflow.variable=input_mzml_file,${this.mzml},String " }
     	if (this.qcml) {string +=  "-workflow.variable=input_qcml_file,${this.qcml},String " }
+    	if (this.idxml) {string += "-workflow.variable=input_idxml_file,${this.idxml},String " }
     	if (this.srmCSV) {string +=  "-workflow.variable=input_traml,${this.srmCSV},String " }
     	if (this.qccv) {string +=  "-workflow.variable=input_string_qccv,${this.qccv},String " }
     	if (this.qccvp) {string +=  "-workflow.variable=input_string_qccv_parent,${this.qccvp},String " }

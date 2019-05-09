@@ -25,14 +25,22 @@
 		Correspondence["massAccuracy_qc4l"] = ["shotgun_qc4l_hcd" : "1000014"]
 		//medianFwhm
 		Correspondence["medianFwhm"] = ["shotgun" : "1010086", "srm" : "???", "shotgun_qc4l_cid" : "1002008", "shotgun_qc4l_hcd" : "1002016", "shotgun_qc4l_etcid" : "1002024", "shotgun_qc4l_ethcd" : "1002032"]
-
-			return Correspondence
+		//Retention Time 
+		Correspondence["retTime"] = ["shotgun" : "1000894", "srm" : "1000894"]
+		Correspondence["retTime_qc4l"] = ["shotgun_qc4l_cid" : "1000950", "shotgun_qc4l_hcd" : "1000951", "shotgun_qc4l_etcid" : "1000952", "shotgun_qc4l_ethcd" : "1000894"]
+		return Correspondence
 	}
 
 	def public getOntology() {
 
 		// ontology this has to be retrieved in some way from outside...
 		def ontology = [:]
+		ontology["1000894"] = "1000894"
+		ontology["1000950"] = "1000894"
+		ontology["1000951"] = "1000894"
+		ontology["1000952"] = "1000894"
+		ontology["1000953"] = "1000894"
+
 		ontology["0000007"] = "9000001"
 		ontology["0000029"] = "9000001"
 		ontology["0000031"] = "9000001"
