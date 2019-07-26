@@ -27,8 +27,9 @@
 		Correspondence["medianFwhm"] = ["shotgun" : "1010086", "srm" : "???", "shotgun_qc4l_cid" : "1002008", "shotgun_qc4l_hcd" : "1002016", "shotgun_qc4l_etcid" : "1002024", "shotgun_qc4l_ethcd" : "1002032"]
 		//Retention Time 
 		Correspondence["retTime"] = ["shotgun" : "1000894", "srm" : "1000894"]
-		Correspondence["retTime_qc4l"] = ["shotgun_qc4l_cid" : "1000950", "shotgun_qc4l_hcd" : "1000951", "shotgun_qc4l_etcid" : "1000952", "shotgun_qc4l_ethcd" : "1000894"]
-		return Correspondence
+		//Correspondence["retTime_qc4l"] = ["shotgun_qc4l_cid" : "1000950", "shotgun_qc4l_hcd" : "1000951", "shotgun_qc4l_etcid" : "1000952", "shotgun_qc4l_ethcd" : "1000894"]
+		Correspondence["retTime_qc4l"] = ["shotgun_qc4l_hcd" : "1000894"]
+                return Correspondence
 	}
 
 	def public getOntology() {
