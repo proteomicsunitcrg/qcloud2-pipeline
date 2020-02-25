@@ -108,8 +108,8 @@ checkWFFiles(baseQCPath, Correspondence.keySet())
  
 // Below handles original_id from processing of samples: 181112_Q_QC1F_01_01_9d9d9d1b-9d9d-4f1a-9d27-9d2f7635059d_QC01_0d97b132db1ecedc3b5fdbddec6fba72.zip
 
+if (params.watch=="YES") {
 Channel
-    //.fromPath( params.zipfiles )             
     .watchPath( params.zipfiles )             
     .map { 
         file = it
@@ -119,6 +119,18 @@ Channel
         checksum = pieces[-1].replace(".zip", "")
         [pieces[0..-4].join( '_' ), pieces[-3], pieces[-2], checksum, file]
     }.set { zipfiles }
+} else {
+    Channel
+    .fromPath( params.zipfiles )
+    .map { 
+        file = it
+        id = it.getName()
+        ext = params.zipfiles.tokenize( '/' )
+        pieces = id.tokenize( '_' )
+        checksum = pieces[-1].replace(".zip", "")
+        [pieces[0..-4].join( '_' ), pieces[-3], pieces[-2], checksum, file]
+    }.set { zipfiles }
+}
 
 /*
  * Create a channel for fasta files description
@@ -180,9 +192,12 @@ process makeblastdb {
  * Run msconvert on raw data. In case QC0S add a parameter
  */
 
-process msconvert {
-    label 'little_comp'
-  
+/*
+ * Run msconvert on raw data. In case QC0S add a parameter
+ */
+
+process thermofilerawparser {
+    label 'thermoconvert'  
     tag { "${labsys}_${qcode}_${checksum}" }
 
     input:
@@ -190,28 +205,22 @@ process msconvert {
 
     output:
     set val("${labsys}_${qcode}_${checksum}"), qcode, checksum, file("${labsys}_${qcode}_${checksum}.mzML") into mzmlfiles_for_correction
-    //set val("${labsys}_${qcode}_${checksum}"), val("${orifile}") into orifile_name
     
     script:
-    extrapar = ""
-    if (qcode =~'QCS') {
-        extrapar = "-a"
-    }
-    if (qcode =~'QC03') {
-        extrapar = "-t \"--mzML\""
-    }
-
-    webmode = ""
-    if ( params.containsKey( "webmode" ) ) {
-        webmode = "-w "+params.webmode
-    }
-
+    def filename = zipfile.getBaseName()
+	def extens = filename.split('.')
+    if (extens.length == 0) {
+		filename = filename + ".raw"
+	} else if (extens[-1] != "raw" ) {
+		filename = filename + ".raw"
+	}
     """
-     mv ${zipfile} ${labsys}_${qcode}_${checksum}.zip
-     bash webservice.sh ${extrapar} -l ${labsys} -q ${qcode} -c ${checksum} -r ${labsys}_${qcode}_${checksum}.zip -i ${params.webdavip} -f ${orifile} -p ${params.webdavpass} -o ${labsys}_${qcode}_${checksum} ${webmode}
-     unzip ${labsys}_${qcode}_${checksum}.mzML.zip
+    unzip ${zipfile}
+    ThermoRawFileParser -i=${filename} -f=1 -m=0 -o ./
+    mv *.mzML ${labsys}_${qcode}_${checksum}.mzML
+    rm *.raw
     """
-}
+} 
 
 /*
  * Run batch correction on mzl and eventually unzip the input file
@@ -235,7 +244,7 @@ process correctMzml {
 }
 
 /*
- * Cpombine different channels (blast dbs, corrected mzml files) for obtaining the required input 
+ * Combine different channels (blast dbs, corrected mzml files) for obtaining the required input 
  * for the next steps
  */
 
@@ -949,7 +958,7 @@ mZML_params_for_delivery = mZML_params_for_mapping.map{
 
 /*
  * Sent to the DB
- */
+ 
  process sendToDB {
     tag { sample_id }
 
