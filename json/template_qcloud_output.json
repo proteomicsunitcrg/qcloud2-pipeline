@@ -1,0 +1,101 @@
+{
+  "file" : {
+    "checksum" : "checksum"
+  },
+  "data" : [ {
+    "parameter" : {
+      "qCCV" : "QC:1001844"
+    },
+    "values" : [ {
+      "contextSource" : "L(Heavy)A(Heavy)SV(Heavy)SV(Heavy)S(Heavy)R(Heavy)",
+      "value" : "L(Heavy)A(Heavy)SV(Heavy)SV(Heavy)S(Heavy)R(Heavy)ZERO"
+    }, {
+      "contextSource" : "L(Heavy)ASV(Heavy)SV(Heavy)SR(Heavy)",
+      "value" : "L(Heavy)ASV(Heavy)SV(Heavy)SR(Heavy)ZERO"
+    }, {
+      "contextSource" : "LASV(Heavy)SV(Heavy)SR(Heavy)",
+      "value" : "LASV(Heavy)SV(Heavy)SR(Heavy)ZERO"
+    }, {
+      "contextSource" : "LASVSV(Heavy)SR(Heavy)",
+      "value" : "LASVSV(Heavy)SR(Heavy)ZERO"
+    }, {
+      "contextSource" : "LASVSVSR(Heavy)",
+      "value" : "LASVSVSR(Heavy)ZERO"
+    }, {
+      "contextSource" : "L(Heavy)GF(Heavy)TDL(Heavy)F(Heavy)SK(Heavy)",
+      "value" : "L(Heavy)GF(Heavy)TDL(Heavy)F(Heavy)SK(Heavy)ZERO"
+    }, {
+      "contextSource" : "L(Heavy)GFTDL(Heavy)F(Heavy)SK(Heavy)",
+      "value" : "L(Heavy)GFTDL(Heavy)F(Heavy)SK(Heavy)ZERO"
+    }, {
+      "contextSource" : "L(Heavy)GFTDL(Heavy)FSK(Heavy)",
+      "value" : "L(Heavy)GFTDL(Heavy)FSK(Heavy)ZERO"
+    }, {
+      "contextSource" : "L(Heavy)GFTDLFSK(Heavy)",
+      "value" : "L(Heavy)GFTDLFSK(Heavy)ZERO"
+    }, {
+      "contextSource" : "LGFTDLFSK(Heavy)",
+      "value" : "LGFTDLFSK(Heavy)ZERO"
+    }, {
+      "contextSource" : "L(Heavy)L(Heavy)SL(Heavy)GAGEF(Heavy)K(Heavy)",
+      "value" : "L(Heavy)L(Heavy)SL(Heavy)GAGEF(Heavy)K(Heavy)ZERO"
+    }, {
+      "contextSource" : "L(Heavy)L(Heavy)SL(Heavy)GAGEFK(Heavy)",
+      "value" : "L(Heavy)L(Heavy)SL(Heavy)GAGEFK(Heavy)ZERO"
+    }, {
+      "contextSource" : "L(Heavy)L(Heavy)SLGAGEFK(Heavy)",
+      "value" : "L(Heavy)L(Heavy)SLGAGEFK(Heavy)ZERO"
+    }, {
+      "contextSource" : "LLSLGAGEFK(Heavy)",
+      "value" : "LLSLGAGEFK(Heavy)ZERO"
+    }, {
+      "contextSource" : "L(Heavy)LSLGAGEFK(Heavy)",
+      "value" : "L(Heavy)LSLGAGEFK(Heavy)ZERO"
+    }, {
+      "contextSource" : "V(Heavy)T(Heavy)S(Heavy)GST(Heavy)ST(Heavy)SR(Heavy)",
+      "value" : "V(Heavy)T(Heavy)S(Heavy)GST(Heavy)ST(Heavy)SR(Heavy)ZERO"
+    }, {
+      "contextSource" : "V(Heavy)T(Heavy)SGSTST(Heavy)SR(Heavy)",
+      "value" : "V(Heavy)T(Heavy)SGSTST(Heavy)SR(Heavy)ZERO"
+    }, {
+      "contextSource" : "VTSGSTSTSR(Heavy)",
+      "value" : "VTSGSTSTSR(Heavy)ZERO"
+    }, {
+      "contextSource" : "VTSGSTSTSR(Heavy)",
+      "value" : "VTSGSTSTSR(Heavy)ZERO"
+    }, {
+      "contextSource" : "V(Heavy)TSGSTSTSR(Heavy)",
+      "value" : "V(Heavy)TSGSTSTSR(Heavy)ZERO"
+    }, {
+      "contextSource" : "V(Heavy)V(Heavy)GGL(Heavy)V(Heavy)ALR(Heavy)",
+      "value" : "V(Heavy)V(Heavy)GGL(Heavy)V(Heavy)ALR(Heavy)ZERO"
+    }, {
+      "contextSource" : "V(Heavy)V(Heavy)GGLV(Heavy)ALR(Heavy)",
+      "value" : "V(Heavy)V(Heavy)GGLV(Heavy)ALR(Heavy)ZERO"
+    }, {
+      "contextSource" : "V(Heavy)V(Heavy)GGLVALR(Heavy)",
+      "value" : "V(Heavy)V(Heavy)GGLVALR(Heavy)ZERO"
+    }, {
+      "contextSource" : "V(Heavy)VGGLVALR(Heavy)",
+      "value" : "V(Heavy)VGGLVALR(Heavy)ZERO"
+    }, {
+      "contextSource" : "VVGGLVALR(Heavy)",
+      "value" : "VVGGLVALR(Heavy)ZERO"
+    }, {
+      "contextSource" : "YV(Heavy)YV(Heavy)ADV(Heavy)A(Heavy)A(Heavy)K(Heavy)",
+      "value" : "YV(Heavy)YV(Heavy)ADV(Heavy)A(Heavy)A(Heavy)K(Heavy)ZERO"
+    }, {
+      "contextSource" : "YV(Heavy)YV(Heavy)ADV(Heavy)AAK(Heavy)",
+      "value" : "YV(Heavy)YV(Heavy)ADV(Heavy)AAK(Heavy)ZERO"
+    }, {
+      "contextSource" : "YVYV(Heavy)ADV(Heavy)AAK(Heavy)",
+      "value" : "YVYV(Heavy)ADV(Heavy)AAK(Heavy)ZERO"
+    }, {
+      "contextSource" : "YVYVADV(Heavy)AAK(Heavy)",
+      "value" : "YVYVADV(Heavy)AAK(Heavy)ZERO"
+    }, {
+      "contextSource" : "YVYVADVAAK(Heavy)",
+      "value" : "YVYVADVAAK(Heavy)ZERO"
+    } ]
+  } ]
+}

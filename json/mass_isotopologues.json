@@ -1,0 +1,212 @@
+[
+  {
+    "sequence": "YV(Heavy)YV(Heavy)ADV(Heavy)A(Heavy)A(Heavy)K(Heavy)",
+    "mass": 566.83,
+    "refrt": 2017.2,
+    "concentration": 100,
+    "shortname": "YVYVADVAAK"
+  },
+  {
+    "sequence": "YV(Heavy)YV(Heavy)ADV(Heavy)AAK(Heavy)",
+    "mass": 562.8229,
+    "refrt": 2017.8,
+    "concentration": 10,
+    "shortname": "YVYVADVAAK"
+  },
+  {
+    "sequence": "YVYV(Heavy)ADV(Heavy)AAK(Heavy)",
+    "mass": 559.816,
+    "refrt": 1926,
+    "concentration": 1,
+    "shortname": "YVYVADVAAK"
+  },
+  {
+    "sequence": "YVYVADV(Heavy)AAK(Heavy)",
+    "mass": 556.8091,
+    "refrt": 1630.8,
+    "concentration": 0.1,
+    "shortname": "YVYVADVAAK"
+  },
+  {
+    "sequence": "YVYVADVAAK(Heavy)",
+    "mass": 553.8022,
+    "refrt": 2077.8,
+    "concentration": 0.01,
+    "shortname": "YVYVADVAAK"
+  },
+  {
+    "sequence": "L(Heavy)L(Heavy)SL(Heavy)GAGEF(Heavy)K(Heavy)",
+    "mass": 537.3441,
+    "refrt": 2767.2,
+    "concentration": 100,
+    "shortname": "LLSLGAGEFK"
+  },
+  {
+    "sequence": "L(Heavy)L(Heavy)SL(Heavy)GAGEFK(Heavy)",
+    "mass": 532.3305,
+    "refrt": 2767.2,
+    "concentration": 10,
+    "shortname": "LLSLGAGEFK"
+  },
+  {
+    "sequence": "L(Heavy)L(Heavy)SLGAGEFK(Heavy)",
+    "mass": 528.8219,
+    "refrt": 2902.2,
+    "concentration": 1,
+    "shortname": "LLSLGAGEFK"
+  },
+  {
+    "sequence": "L(Heavy)LSLGAGEFK(Heavy)",
+    "mass": 525.3134,
+    "refrt": 3535.2,
+    "concentration": 0.1,
+    "shortname": "LLSLGAGEFK"
+  },
+  {
+    "sequence": "LLSLGAGEFK(Heavy)",
+    "mass": 521.8048,
+    "refrt": 2546.4,
+    "concentration": 0.01,
+    "shortname": "LLSLGAGEFK"
+  },
+  {
+    "sequence": "L(Heavy)GF(Heavy)TDL(Heavy)F(Heavy)SK(Heavy)",
+    "mass": 535.3281,
+    "refrt": 3579.6,
+    "concentration": 100,
+    "shortname": "LGFTDLFSK"
+  },
+  {
+    "sequence": "L(Heavy)GFTDL(Heavy)F(Heavy)SK(Heavy)",
+    "mass": 530.3145,
+    "refrt": 3580.2,
+    "concentration": 10,
+    "shortname": "LGFTDLFSK"
+  },
+  {
+    "sequence": "L(Heavy)GFTDL(Heavy)FSK(Heavy)",
+    "mass": 525.3008,
+    "refrt": 3580.2,
+    "concentration": 1,
+    "shortname": "LGFTDFSK"
+  },
+  {
+    "sequence": "L(Heavy)GFTDLFSK(Heavy)",
+    "mass": 521.7923,
+    "refrt": 2454.6,
+    "concentration": 0.1,
+    "shortname": "LGFTDLFSK"
+  },
+  {
+    "sequence": "LGFTDLFSK(Heavy)",
+    "mass": 518.2837,
+    "refrt": 2200.2,
+    "concentration": 0.01,
+    "shortname": "LGFTDLFSK"
+  },
+  {
+    "sequence": "V(Heavy)T(Heavy)S(Heavy)GST(Heavy)ST(Heavy)SR(Heavy)",
+    "mass": 509.2739,
+    "refrt": 1178.4,
+    "concentration": 100,
+    "shortname": "VTSGSTSTSR"
+  },
+  {
+    "sequence": "V(Heavy)T(Heavy)SGSTST(Heavy)SR(Heavy)",
+    "mass": 504.7651,
+    "refrt": 1821,
+    "concentration": 10,
+    "shortname": "VTSGSTSTSR"
+  },
+  {
+    "sequence": "V(Heavy)T(Heavy)SGSTSTSR(Heavy)",
+    "mass": 502.2599,
+    "refrt": 760.2,
+    "concentration": 1,
+    "shortname": "VTSGSTSTSR"
+  },
+  {
+    "sequence": "V(Heavy)TSGSTSTSR(Heavy)",
+    "mass": 499.7547,
+    "refrt": 3355.8,
+    "concentration": 0.1,
+    "shortname": "VTSGSTSTSR"
+  },
+  {
+    "sequence": "VTSGSTSTSR(Heavy)",
+    "mass": 496.7478,
+    "refrt": 800.4,
+    "concentration": 0.01,
+    "shortname": "VTSGSTSTSR"
+  },
+  {
+    "sequence": "V(Heavy)V(Heavy)GGL(Heavy)V(Heavy)ALR(Heavy)",
+    "mass": 459.8232,
+    "refrt": 2359.2,
+    "concentration": 100,
+    "shortname": "VVGGLVALR"
+  },
+  {
+    "sequence": "V(Heavy)V(Heavy)GGLV(Heavy)ALR(Heavy)",
+    "mass": 456.3147,
+    "refrt": 2360.4,
+    "concentration": 10,
+    "shortname": "VVGGLVALR"
+  },
+  {
+    "sequence": "V(Heavy)V(Heavy)GGLVALR(Heavy)",
+    "mass": 453.3078,
+    "refrt": 2361.6,
+    "concentration": 1,
+    "shortname": "VVGGLVALR"
+  },
+  {
+    "sequence": "V(Heavy)VGGLVALR(Heavy)",
+    "mass": 450.3009,
+    "refrt": 2406,
+    "concentration": 0.1,
+    "shortname": "VVGGLVALR"
+  },
+  {
+    "sequence": "VVGGLVALR(Heavy)",
+    "mass": 447.294,
+    "refrt": 2298.6,
+    "concentration": 0.01,
+    "shortname": "VVGGLVALR"
+  },
+  {
+    "sequence": "L(Heavy)A(Heavy)SV(Heavy)SV(Heavy)S(Heavy)R(Heavy)",
+    "mass": 428.2738,
+    "refrt": 1152,
+    "concentration": 100,
+    "shortname": "LASVSVSR"
+  },
+  {
+    "sequence": "L(Heavy)ASV(Heavy)SV(Heavy)SR(Heavy)",
+    "mass": 424.2667,
+    "refrt": 1152.6,
+    "concentration": 10,
+    "shortname": "LASVSVSR"
+  },
+  {
+    "sequence": "LASV(Heavy)SV(Heavy)SR(Heavy)",
+    "mass": 420.7581,
+    "refrt": 997.8,
+    "concentration": 1,
+    "shortname": "LASVSVSR"
+  },
+  {
+    "sequence": "LASVSV(Heavy)SR(Heavy)",
+    "mass": 417.7512,
+    "refrt": 1903.2,
+    "concentration": 0.1,
+    "shortname": "LASVSVSR"
+  },
+  {
+    "sequence": "LASVSVSR(Heavy)",
+    "mass": 414.7443,
+    "refrt": 1615.2,
+    "concentration": 0.01,
+    "shortname": "LASVSVSR"
+  }
+]

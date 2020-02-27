@@ -49,7 +49,7 @@ workflowsFolder     = "$baseDir/workflows/"
 fasta_folder        = "$baseDir/fasta"
 blastdb_folder      = "$baseDir/blastdb"
 CSV_folder          = "$baseDir/csv"
-
+json_folder			= "$baseDir/json"
 
 fastaconfig = file(params.fasta_tab)
 if( !fastaconfig.exists() )  { error "Cannot find any fasta tab file!!!"}
@@ -57,11 +57,14 @@ if( !fastaconfig.exists() )  { error "Cannot find any fasta tab file!!!"}
 // Output folder
 json_output      = "output/json_output"
 
-
 // Files needed
-srmCSV = file("${CSV_folder}/qtrap_bsa.traml")
-peptideCSV = file("${CSV_folder}/knime_peptides_final.csv")
-peptideCSV_C4L = file("${CSV_folder}/knime_peptides_qc4l.csv")
+srmCSV			= file("${CSV_folder}/qtrap_bsa.traml")
+peptideCSV		= file("${CSV_folder}/knime_peptides_final.csv")
+peptideCSV_C4L	= file("${CSV_folder}/knime_peptides_qc4l.csv")
+masses_C4L		= file("${CSV_folder}/masses.txt")
+mass_isotop		= file("${json_folder}/mass_isotopologues.json")
+temp_qcloud_out	= file("${json_folder}/template_qcloud_output.json")
+fgcz_exe		= file("${baseDir}/bin/fgcz-xic.exe")
 
 //peptideCSVs
 def peptideCSVs = [:]
@@ -100,7 +103,9 @@ def dbindex = new DBindexes()
 def Correspondence = dbindex.getCorrespondence()
 def ontology = dbindex.getOntology()
 
-checkWFFiles(baseQCPath, Correspondence.keySet())
+// Check the presence of each file in the workflow folders.
+// I commented it since we are moving fro knime to NON knime
+// checkWFFiles(baseQCPath, Correspondence.keySet())
 
 /*
  * Create a channel for mzlfiles files; Temporary for testing purposes only
@@ -118,7 +123,7 @@ Channel
         pieces = id.tokenize( '_' )
         checksum = pieces[-1].replace(".zip", "")
         [pieces[0..-4].join( '_' ), pieces[-3], pieces[-2], checksum, file]
-    }.set { zipfiles }
+    }.into { zipfiles; zip_for_calc_peptide_area_c4l }
 } else {
     Channel
     .fromPath( params.zipfiles )
@@ -129,7 +134,7 @@ Channel
         pieces = id.tokenize( '_' )
         checksum = pieces[-1].replace(".zip", "")
         [pieces[0..-4].join( '_' ), pieces[-3], pieces[-2], checksum, file]
-    }.set { zipfiles }
+    }.into { zipfiles; zip_for_calc_peptide_area_c4l }
 }
 
 /*
@@ -341,10 +346,11 @@ process shotgun_qc4l_cid {
     analysis_type == 'shotgun_qc4l'
 
     output:
-    set val("${sample_id}_cid"), internal_code, val("shotgun_qc4l_cid"), checksum into shot_qc4l_cid_featureXMLfiles_for_calc_peptide_area, shot_qc4l_cid_featureXMLfiles_for_calc_mass_accuracy, shot_qc4l_cid_featureXMLfiles_for_calc_median_fwhm 
+    set val("${sample_id}_cid"), internal_code, val("shotgun_qc4l_cid"), checksum , file("${sample_id}.featureXML") into shot_qc4l_cid_featureXMLfiles_for_calc_peptide_area  
     set val("${sample_id}_cid"), internal_code, val("shotgun_qc4l_cid"), checksum, file(mzML_file) into shot_qc4l_cid_mzML_file_for_MedianITMS1, shot_qc4l_cid_mzML_file_for_MedianITMS2, shot_qc4l_cid_mzML_file_for_check 
     set val("${sample_id}_cid"), internal_code, val("shotgun_qc4l_cid"), checksum, file("${sample_id}.qcml") into shot_qc4l_cid_qcmlfiles_for_MS2_spectral_count, shot_qc4l_cid_qcmlfiles_for_tot_num_uniq_peptides, shot_qc4l_cid_qcmlfiles_for_tot_num_uniq_proteins, shot_qc4l_cid_qcmlfiles_for_tot_num_psm, shot_qc4l_cid_qcmlfiles_for_tic
     set val("${sample_id}_cid"), internal_code, val("shotgun_qc4l_cid"), checksum, file("${sample_id}.featureXML"), file("${sample_id}.idXML") into shot_qc4l_cid_featureXMLfiles_for_ret_time
+    set val("${sample_id}_cid"), internal_code, val("shotgun_qc4l_cid"), checksum, file("${sample_id}.featureXML") into shot_qc4l_cid_featureXMLfiles_for_calc_median_fwhm, shot_qc4l_cid_featureXMLfiles_for_calc_mass_accuracy
 
     script:
     def outfiles = "${sample_id}.featureXML ${sample_id}.qcml ${sample_id}.idXML"
@@ -608,32 +614,52 @@ process calc_peptide_area {
 
 /*
  * Run calculation of peptide area (Only QC3 // hcd)
+ * LUCA
  */
+ // appagno
+
 process calc_peptide_area_c4l {
-    tag { "${sample_id}-${analysis_type}" }
+    tag { "${labsys}_${qcode}_${checksum}" }
+    label 'thermoconvert'  
 
     input:
-    set sample_id, internal_code, analysis_type, checksum, file(featxml_file) from shot_qc4l_hcd_featureXMLfiles_for_calc_peptide_area
-	file ("peptide.csv") from file (peptideCSV)
-	file ("peptide_C4L.csv") from file (peptideCSV_C4L)
-    file(workflowfile) from getWFFile(baseQCPath, "pepArea_qc4l")
+    set orifile, labsys, qcode, checksum, file(zipfile) from zip_for_calc_peptide_area_c4l
 
+//    set sample_id, internal_code, analysis_type, checksum, file(featxml_file), file(raw_file) from zip_for_calc_peptide_area_c4l
+//    set val("${sample_id}_hcd"), internal_code, val("shotgun_qc4l_hcd"), checksum, file("${sample_id}.featureXML") into shot_qc4l_hcd_featureXMLfiles_for_calc_peptide_area, shot_qc4l_hcd_featureXMLfiles_for_calc_mass_accuracy, shot_qc4l_hcd_featureXMLfiles_for_calc_median_fwhm
+
+	//file ("peptide.csv") from file (peptideCSV)
+	//file ("peptide_C4L.csv") from file (peptideCSV_C4L)
+    file(workflowfile) from getWFFile(baseQCPath, "pepArea_qc4l", "sh")
+    file(masses_C4L)
+    file(mass_isotop)
+    file(fgcz_exe)
+    file(temp_qcloud_out)
+    
     output:
-    set sample_id, file("${sample_id}_QC_${Correspondence['pepArea_qc4l'][analysis_type]}.json") into pep_c4l_for_delivery
+    set val("${labsys}_${qcode}_${checksum}"), file("${labsys}_${qcode}_${checksum}_QC_${Correspondence['pepArea_qc4l']['shotgun_qc4l_hcd']}.json") into pep_c4l_for_delivery
 
     script:
-    def analysis_id = Correspondence['pepArea_qc4l'][analysis_type]
-    def ontology_id = ontology[analysis_id]
-    def csvfile = peptideCSVs[internal_code]
-    def outfile = "${sample_id}_QC_${Correspondence['pepArea_qc4l'][analysis_type]}.json"
-    def knime = new Knime(wf:workflowfile, empty_out_file:outfile, csvpep:csvfile, stype:internal_code, featxml:featxml_file, mem:"${task.memory.mega-5000}m", qccv:"QC_${analysis_id}", qccvp:"QC_${ontology_id}", chksum:checksum, ojid:"${sample_id}", extrapars:'-workflow.variable=delta_mass,10,double -workflow.variable=delta_rt,250,double -workflow.variable=charge,2,double -workflow.variable=threshold_area,1000000,double')
-    knime.launch()
-    
+    def analysis_id = Correspondence['pepArea_qc4l']['shotgun_qc4l_hcd']
+    def ontology_id = "QC_${ontology[analysis_id]}"
+    def heavy_conc = 100
+    def tolppm = 10
+    def rt_window = 2
+    //def csvfile = peptideCSVs[internal_code]
+    def outfile = "${labsys}_${qcode}_${checksum}_QC_${Correspondence['pepArea_qc4l']['shotgun_qc4l_hcd']}.json"
+    """
+    zcat ${zipfile} > temp.raw
+    touch ${outfile}
+    ./${workflowfile} temp.raw ${checksum} ${masses_C4L} ${mass_isotop} \
+    ${temp_qcloud_out} ${outfile} ${heavy_conc} ${tolppm} ${rt_window} 
+    rm temp.raw
+    """
+
 }
 
 /*
  * Run calculation of peptide area (Only QC3 // others) WORKAROUND
- */
+
 process calc_peptide_area_c4l_fake {
     tag { "${sample_id}-${analysis_type}" }
 
@@ -649,7 +675,7 @@ process calc_peptide_area_c4l_fake {
 	"""
     
 }
-
+ */
 /*
  * Run calculation of Sum of all Total Ion Current per RT
  */
@@ -684,7 +710,8 @@ process calc_retTime {
     file(workflowfile) from getWFFile(baseQCPath, "retTime")
 
     output:
-    set sample_id, internal_code, checksum, val("${Correspondence['retTime'][analysis_type]}"),file("${sample_id}_QC_${Correspondence['retTime'][analysis_type]}.json") into retTime_for_delivery
+    //set sample_id, internal_code, checksum, val("${Correspondence['retTime'][analysis_type]}"),file("${sample_id}_QC_${Correspondence['retTime'][analysis_type]}.json") into retTime_for_delivery
+    set sample_id, file("${sample_id}_QC_${Correspondence['retTime'][analysis_type]}.json") into retTime_for_delivery
 
     script:
     def analysis_id = Correspondence['retTime'][analysis_type]
@@ -704,7 +731,8 @@ process calc_retTime_c4l {
     file(workflowfile) from getWFFile(baseQCPath, "retTime_qc4l") 
 
     output:
-    set sample_id, internal_code, checksum, val("${Correspondence['retTime_qc4l'][analysis_type]}"),file("${sample_id}_QC_${Correspondence['retTime_qc4l'][analysis_type]}.json") into retTime_qc4l_for_delivery
+    //set sample_id, internal_code, checksum, val("${Correspondence['retTime_qc4l'][analysis_type]}"),file("${sample_id}_QC_${Correspondence['retTime_qc4l'][analysis_type]}.json") into retTime_qc4l_for_delivery
+    set sample_id, file("${sample_id}_QC_${Correspondence['retTime_qc4l'][analysis_type]}.json") into retTime_qc4l_for_delivery
 
     script:
     def analysis_id = Correspondence['retTime_qc4l'][analysis_type]
@@ -754,7 +782,8 @@ process calc_retTime_c4l {
     file(workflowfile) from getWFFile(baseQCPath, "massAccuracy_qc4l") 
 
     output:
-    set sample_id, internal_code, checksum, val("${Correspondence['massAccuracy_qc4l'][analysis_type]}"),  file("${sample_id}_QC_${Correspondence['massAccuracy_qc4l'][analysis_type]}.json") into mass_c4l_json_for_delivery
+    //set sample_id, internal_code, checksum, val("${Correspondence['massAccuracy_qc4l'][analysis_type]}"),  file("${sample_id}_QC_${Correspondence['massAccuracy_qc4l'][analysis_type]}.json") into mass_c4l_json_for_delivery
+    set sample_id, file("${sample_id}_QC_${Correspondence['massAccuracy_qc4l'][analysis_type]}.json") into mass_c4l_json_for_delivery
 
     script:
     def analysis_id = Correspondence['massAccuracy_qc4l'][analysis_type]
@@ -779,7 +808,7 @@ process calc_mass_accuracy_c4l_fake {
 
     script:
 	"""
-	echo "this is a workaround because of a nextflow problem with joining"
+	echo "this is a workaround because of a nextflow problem with joining :))"
 	"""
     
 }
@@ -882,6 +911,7 @@ process calc_mass_accuracy_c4l_fake {
     knime.launch()
 }
 
+
 process check_mzML {
     tag { sample_id }
 	   
@@ -893,10 +923,11 @@ process check_mzML {
 
     script:
     """
-        xmllint --xpath 'string(/indexedmzML/mzML/run/@startTimeStamp)' ${mzML_file} > ${mzML_file}.timestamp
-        xmllint --xpath 'string(/indexedmzML/mzML/fileDescription/sourceFileList/sourceFile/@name)' ${mzML_file} > ${mzML_file}.filename
+    xmllint --xpath 'string(/mzML/@id)' ${mzML_file} > ${mzML_file}.filename
+    xmllint --xpath 'string(/mzML/run/@startTimeStamp)' ${mzML_file} > ${mzML_file}.timestamp
     """
 }
+
 
 /*
  * Reshaping channels
@@ -906,13 +937,16 @@ process check_mzML {
 rettime_c4l_all = retTime_for_delivery.mix(retTime_qc4l_for_delivery)
 
 // mix peptide channels (from QC01, QC02 and QC03 to have for each id a number of results) 
-pep_c4l_all = pep_c4l_for_delivery_fake.mix(pep_c4l_for_delivery, pep_checked_for_delivery)
+// pep_c4l_all = pep_c4l_for_delivery_fake.mix(pep_c4l_for_delivery, pep_checked_for_delivery)
 // mix mass channels (from QC01, QC02 and QC03 to have for each id a number of results) 
 //mass_checked_for_delivery = mass_checked_for_joining.mix(mass_c4l_json_for_delivery_fake)
+
+
 mass_checked_for_delivery = mass_checked_for_joining.mix(mass_c4l_json_for_delivery_fake, mass_c4l_json_for_delivery)
 
+
 // joins channels common to any analysis in a single channel 
-ms2_spectral_for_delivery.join(tic_for_delivery).join(tot_psm_for_delivery).join(uni_peptides_for_delivery).join(uni_prots_for_delivery).join(median_itms2_for_delivery).join(mass_checked_for_delivery).join(median_checked_for_delivery).join(median_itms1_for_delivery).join(pep_c4l_all).join(rettime_c4l_all).into{jointJsons; jointJsonsAA}
+ms2_spectral_for_delivery.join(tic_for_delivery).join(tot_psm_for_delivery).join(uni_peptides_for_delivery).join(uni_prots_for_delivery).join(median_itms2_for_delivery).join(mass_checked_for_delivery).join(median_checked_for_delivery).join(median_itms1_for_delivery).join(rettime_c4l_all).into{jointJsons; jointJsonsAA}
 
 //jointJsonsAA.println()
 
@@ -930,11 +964,17 @@ queueQC03Grouped = queueQC03.map{
     return l 
 }.groupTuple(size:4)
 
-queueQC03ToBeSent = queueQC03Grouped.map{
+//pep_c4l_for_delivery
+
+queueQC03ToBeSent = queueQC03Grouped.merge(pep_c4l_for_delivery).map{
 	def id = [it[0]]
 	id.addAll([it.drop(1).flatten()]); 
 	return id
 }
+
+//queueQC03ToBeSent.println()
+
+
 
 // reshape the QC01-QC02 channel
 queueQC12ToBeSent = queueQC12.map{ 
@@ -948,6 +988,7 @@ queueQC12ToBeSent = queueQC12.map{
 // mix the QC01-QC02 and QC03 again
 jsonToBeSent = queueQC12ToBeSent.mix(queueQC03ToBeSent)
 
+   
 // reshape the mZML params channel for the submission 
 mZML_params_for_delivery = mZML_params_for_mapping.map{
         def rawids = it[0].tokenize( '_' )
@@ -958,7 +999,7 @@ mZML_params_for_delivery = mZML_params_for_mapping.map{
 
 /*
  * Sent to the DB
- 
+ */
  process sendToDB {
     tag { sample_id }
 
@@ -973,8 +1014,7 @@ mZML_params_for_delivery = mZML_params_for_mapping.map{
     def instrument_id = pieces[0] 
     def parent_id = ontology[internal_code]
     def filepieces = filename.tokenize( '_' )
-    def orifile = filepieces[0..-4].join( '_' )
-
+    //def orifile = filepieces[0..-4].join( '_' )
    def knime = new Knime(wf:workflowfile, rdate:timestamp, oriname:orifile, chksum:checksum, stype:internal_code, ifolder:".", labs:instrument_id, utoken:"${db_host}/api/auth", uifile:"${db_host}/api/file/QC:${parent_id}", uidata:"${db_host}/api/data/pipeline", mem:"${task.memory.mega-5000}m")
    knime.launch()
 
@@ -986,8 +1026,8 @@ mZML_params_for_delivery = mZML_params_for_mapping.map{
  * Functions
  */
      
-    def public getWFFile(filePrefix, WF_ID) {
-        return file("${filePrefix}${WF_ID}.knwf")
+    def public getWFFile(filePrefix, WF_ID, ext="knwf") {
+        return file("${filePrefix}${WF_ID}.${ext}")
      }
      
     def public checkWFFiles(filePrefix, WF_vals) {
