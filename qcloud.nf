@@ -286,8 +286,8 @@ process run_shotgun {
 
     output:
     set sample_id, internal_code, analysis_type, checksum, file("${sample_id}.featureXML") into shot_featureXMLfiles_for_calc_peptide_area, shot_featureXMLfiles_for_calc_mass_accuracy, shot_featureXMLfiles_for_calc_median_fwhm
-    set sample_id, internal_code, analysis_type, checksum, file(mzML_file) into shot_mzML_file_for_MedianITMS1, shot_mzML_file_for_MedianITMS2, shot_mzML_file_for_check 
-    set sample_id, internal_code, analysis_type, checksum, file("${sample_id}.qcml") into qcmlfiles_for_MS2_spectral_count, qcmlfiles_for_tot_num_uniq_peptides, qcmlfiles_for_tot_num_uniq_proteins, qcmlfiles_for_tot_num_psm, qcmlfiles_for_tic
+    set sample_id, internal_code, analysis_type, checksum, file(mzML_file) into shot_mzML_file_for_MedianITMS1, shot_mzML_file_for_MedianITMS2, shot_mzML_file_for_check, shot_mzML_file_for_tic 
+    set sample_id, internal_code, analysis_type, checksum, file("${sample_id}.qcml") into qcmlfiles_for_MS2_spectral_count, qcmlfiles_for_tot_num_uniq_peptides, qcmlfiles_for_tot_num_uniq_proteins, qcmlfiles_for_tot_num_psm
     set sample_id, internal_code, analysis_type, checksum, file("${sample_id}.featureXML"), file("${sample_id}.idXML") into shot_featureXMLfiles_for_ret_time
 
     script:
@@ -347,8 +347,8 @@ process shotgun_qc4l_cid {
 
     output:
     set val("${sample_id}_cid"), internal_code, val("shotgun_qc4l_cid"), checksum , file("${sample_id}.featureXML") into shot_qc4l_cid_featureXMLfiles_for_calc_peptide_area  
-    set val("${sample_id}_cid"), internal_code, val("shotgun_qc4l_cid"), checksum, file(mzML_file) into shot_qc4l_cid_mzML_file_for_MedianITMS1, shot_qc4l_cid_mzML_file_for_MedianITMS2, shot_qc4l_cid_mzML_file_for_check 
-    set val("${sample_id}_cid"), internal_code, val("shotgun_qc4l_cid"), checksum, file("${sample_id}.qcml") into shot_qc4l_cid_qcmlfiles_for_MS2_spectral_count, shot_qc4l_cid_qcmlfiles_for_tot_num_uniq_peptides, shot_qc4l_cid_qcmlfiles_for_tot_num_uniq_proteins, shot_qc4l_cid_qcmlfiles_for_tot_num_psm, shot_qc4l_cid_qcmlfiles_for_tic
+    set val("${sample_id}_cid"), internal_code, val("shotgun_qc4l_cid"), checksum, file(mzML_file) into shot_qc4l_cid_mzML_file_for_MedianITMS1, shot_qc4l_cid_mzML_file_for_MedianITMS2, shot_qc4l_cid_mzML_file_for_check, shot_qc4l_cid_mzML_file_for_tic
+    set val("${sample_id}_cid"), internal_code, val("shotgun_qc4l_cid"), checksum, file("${sample_id}.qcml") into shot_qc4l_cid_qcmlfiles_for_MS2_spectral_count, shot_qc4l_cid_qcmlfiles_for_tot_num_uniq_peptides, shot_qc4l_cid_qcmlfiles_for_tot_num_uniq_proteins, shot_qc4l_cid_qcmlfiles_for_tot_num_psm
     set val("${sample_id}_cid"), internal_code, val("shotgun_qc4l_cid"), checksum, file("${sample_id}.featureXML"), file("${sample_id}.idXML") into shot_qc4l_cid_featureXMLfiles_for_ret_time
     set val("${sample_id}_cid"), internal_code, val("shotgun_qc4l_cid"), checksum, file("${sample_id}.featureXML") into shot_qc4l_cid_featureXMLfiles_for_calc_median_fwhm, shot_qc4l_cid_featureXMLfiles_for_calc_mass_accuracy
 
@@ -380,8 +380,8 @@ process shotgun_qc4l_hcd {
 
     output:
     set val("${sample_id}_hcd"), internal_code, val("shotgun_qc4l_hcd"), checksum, file("${sample_id}.featureXML") into shot_qc4l_hcd_featureXMLfiles_for_calc_peptide_area, shot_qc4l_hcd_featureXMLfiles_for_calc_mass_accuracy, shot_qc4l_hcd_featureXMLfiles_for_calc_median_fwhm
-    set val("${sample_id}_hcd"), internal_code, val("shotgun_qc4l_hcd"), checksum, file(mzML_file) into shot_qc4l_hcd_mzML_file_for_MedianITMS1, shot_qc4l_hcd_mzML_file_for_MedianITMS2, shot_qc4l_hcd_mzML_file_for_check 
-    set val("${sample_id}_hcd"), internal_code, val("shotgun_qc4l_hcd"), checksum, file("${sample_id}.qcml") into shot_qc4l_hcd_qcmlfiles_for_MS2_spectral_count, shot_qc4l_hcd_qcmlfiles_for_tot_num_uniq_peptides, shot_qc4l_hcd_qcmlfiles_for_tot_num_uniq_proteins, shot_qc4l_hcd_qcmlfiles_for_tot_num_psm, shot_qc4l_hcd_qcmlfiles_for_tic
+    set val("${sample_id}_hcd"), internal_code, val("shotgun_qc4l_hcd"), checksum, file(mzML_file) into shot_qc4l_hcd_mzML_file_for_MedianITMS1, shot_qc4l_hcd_mzML_file_for_MedianITMS2, shot_qc4l_hcd_mzML_file_for_check, shot_qc4l_hcd_mzML_file_for_tic
+    set val("${sample_id}_hcd"), internal_code, val("shotgun_qc4l_hcd"), checksum, file("${sample_id}.qcml") into shot_qc4l_hcd_qcmlfiles_for_MS2_spectral_count, shot_qc4l_hcd_qcmlfiles_for_tot_num_uniq_peptides, shot_qc4l_hcd_qcmlfiles_for_tot_num_uniq_proteins, shot_qc4l_hcd_qcmlfiles_for_tot_num_psm
     set val("${sample_id}_hcd"), internal_code, val("shotgun_qc4l_hcd"), checksum, file("${sample_id}.featureXML"), file("${sample_id}.idXML") into shot_qc4l_hcd_featureXMLfiles_for_ret_time
 
     script:
@@ -412,8 +412,8 @@ process shotgun_qc4l_etcid {
 
     output:
     set val("${sample_id}_etcid"), internal_code, val("shotgun_qc4l_etcid"), checksum, file("${sample_id}.featureXML") into shot_qc4l_etcid_featureXMLfiles_for_calc_peptide_area, shot_qc4l_etcid_featureXMLfiles_for_calc_mass_accuracy, shot_qc4l_etcid_featureXMLfiles_for_calc_median_fwhm
-    set val("${sample_id}_etcid"), internal_code, val("shotgun_qc4l_etcid"), checksum, file(mzML_file) into shot_qc4l_etcid_mzML_file_for_MedianITMS1, shot_qc4l_etcid_mzML_file_for_MedianITMS2, shot_qc4l_etcid_mzML_file_for_check 
-    set val("${sample_id}_etcid"), internal_code, val("shotgun_qc4l_etcid"), checksum, file("${sample_id}.qcml") into shot_qc4l_etcid_qcmlfiles_for_MS2_spectral_count, shot_qc4l_etcid_qcmlfiles_for_tot_num_uniq_peptides, shot_qc4l_etcid_qcmlfiles_for_tot_num_uniq_proteins, shot_qc4l_etcid_qcmlfiles_for_tot_num_psm, shot_qc4l_etcid_qcmlfiles_for_tic
+    set val("${sample_id}_etcid"), internal_code, val("shotgun_qc4l_etcid"), checksum, file(mzML_file) into shot_qc4l_etcid_mzML_file_for_MedianITMS1, shot_qc4l_etcid_mzML_file_for_MedianITMS2, shot_qc4l_etcid_mzML_file_for_check, shot_qc4l_etcid_mzML_file_for_tic 
+    set val("${sample_id}_etcid"), internal_code, val("shotgun_qc4l_etcid"), checksum, file("${sample_id}.qcml") into shot_qc4l_etcid_qcmlfiles_for_MS2_spectral_count, shot_qc4l_etcid_qcmlfiles_for_tot_num_uniq_peptides, shot_qc4l_etcid_qcmlfiles_for_tot_num_uniq_proteins, shot_qc4l_etcid_qcmlfiles_for_tot_num_psm
     set val("${sample_id}_etcid"), internal_code, val("shotgun_qc4l_etcid"), checksum, file("${sample_id}.featureXML"), file("${sample_id}.idXML") into shot_qc4l_etcid_featureXMLfiles_for_ret_time
 
     script:
@@ -444,8 +444,8 @@ process shotgun_qc4l_ethcd  {
 
     output:
     set val("${sample_id}_ethcd"), internal_code, val("shotgun_qc4l_ethcd"), checksum, file("${sample_id}.featureXML") into shot_qc4l_ethcd_featureXMLfiles_for_calc_peptide_area, shot_qc4l_ethcd_featureXMLfiles_for_calc_mass_accuracy, shot_qc4l_ethcd_featureXMLfiles_for_calc_median_fwhm
-    set val("${sample_id}_ethcd"), internal_code, val("shotgun_qc4l_ethcd"), checksum, file(mzML_file) into shot_qc4l_ethcd_mzML_file_for_MedianITMS1, shot_qc4l_ethcd_mzML_file_for_MedianITMS2, shot_qc4l_ethcd_mzML_file_for_check 
-    set val("${sample_id}_ethcd"), internal_code, val("shotgun_qc4l_ethcd"), checksum, file("${sample_id}.qcml") into shot_qc4l_ethcd_qcmlfiles_for_MS2_spectral_count, shot_qc4l_ethcd_qcmlfiles_for_tot_num_uniq_peptides, shot_qc4l_ethcd_qcmlfiles_for_tot_num_uniq_proteins, shot_qc4l_ethcd_qcmlfiles_for_tot_num_psm, shot_qc4l_ethcd_qcmlfiles_for_tic
+    set val("${sample_id}_ethcd"), internal_code, val("shotgun_qc4l_ethcd"), checksum, file(mzML_file) into shot_qc4l_ethcd_mzML_file_for_MedianITMS1, shot_qc4l_ethcd_mzML_file_for_MedianITMS2, shot_qc4l_ethcd_mzML_file_for_check, shot_qc4l_ethcd_mzML_file_for_tic 
+    set val("${sample_id}_ethcd"), internal_code, val("shotgun_qc4l_ethcd"), checksum, file("${sample_id}.qcml") into shot_qc4l_ethcd_qcmlfiles_for_MS2_spectral_count, shot_qc4l_ethcd_qcmlfiles_for_tot_num_uniq_peptides, shot_qc4l_ethcd_qcmlfiles_for_tot_num_uniq_proteins, shot_qc4l_ethcd_qcmlfiles_for_tot_num_psm
     set val("${sample_id}_ethcd"), internal_code, val("shotgun_qc4l_ethcd"), checksum, file("${sample_id}.featureXML"), file("${sample_id}.idXML") into shot_qc4l_ethcid_featureXMLfiles_for_ret_time
 
     script:
@@ -683,7 +683,7 @@ process calc_tic {
     tag { "${sample_id}-${analysis_type}" }
 
     input:
-    set sample_id, internal_code, val(analysis_type), checksum, file(qcmlfile) from qcmlfiles_for_tic.mix(shot_qc4l_cid_qcmlfiles_for_tic, shot_qc4l_hcd_qcmlfiles_for_tic, shot_qc4l_etcid_qcmlfiles_for_tic, shot_qc4l_ethcd_qcmlfiles_for_tic)
+    set sample_id, internal_code, val(analysis_type), checksum, file(mzmlfile) from shot_mzML_file_for_tic.mix(shot_qc4l_cid_mzML_file_for_tic, shot_qc4l_hcd_mzML_file_for_tic, shot_qc4l_etcid_mzML_file_for_tic, shot_qc4l_ethcd_mzML_file_for_tic)
     file(workflowfile) from getWFFile(baseQCPath, "tic")
 
     output:
@@ -693,7 +693,7 @@ process calc_tic {
     def analysis_id = Correspondence['tic'][analysis_type]
     def ontology_id = ontology[analysis_id]
     def outfile = "${sample_id}_QC_${Correspondence['tic'][analysis_type]}.json"
-    def knime = new Knime(wf:workflowfile, empty_out_file:outfile, qcml:qcmlfile, stype:internal_code, mem:"${task.memory.mega-5000}m", qccv:"QC_${analysis_id}", qccvp:"QC_${ontology_id}", chksum:checksum, ojid:"${sample_id}")
+    def knime = new Knime(wf:workflowfile, empty_out_file:outfile, mzml:mzmlfile, stype:internal_code, mem:"${task.memory.mega-5000}m", qccv:"QC_${analysis_id}", qccvp:"QC_${ontology_id}", chksum:checksum, ojid:"${sample_id}")
     knime.launch()   
 }
 
@@ -1051,3 +1051,4 @@ mZML_params_for_delivery = mZML_params_for_mapping.map{
      }
      
 
+                                  
