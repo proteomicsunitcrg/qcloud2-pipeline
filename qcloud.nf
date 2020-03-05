@@ -622,11 +622,12 @@ process calc_peptide_area_c4l {
     tag { "${labsys}_${qcode}_${checksum}" }
     label 'thermoconvert'  
 
+	when:
+    qcode == 'QC03'
+
     input:
     set orifile, labsys, qcode, checksum, file(zipfile) from zip_for_calc_peptide_area_c4l
 
-	when:
-    qcode == 'QC03'
 //    set sample_id, internal_code, analysis_type, checksum, file(featxml_file), file(raw_file) from zip_for_calc_peptide_area_c4l
 //    set val("${sample_id}_hcd"), internal_code, val("shotgun_qc4l_hcd"), checksum, file("${sample_id}.featureXML") into shot_qc4l_hcd_featureXMLfiles_for_calc_peptide_area, shot_qc4l_hcd_featureXMLfiles_for_calc_mass_accuracy, shot_qc4l_hcd_featureXMLfiles_for_calc_median_fwhm
 
