@@ -940,10 +940,9 @@ process check_mzML {
 rettime_c4l_all = retTime_for_delivery.mix(retTime_qc4l_for_delivery)
 
 // mix peptide channels (from QC01, QC02 and QC03 to have for each id a number of results) 
-// pep_c4l_all = pep_c4l_for_delivery_fake.mix(pep_c4l_for_delivery, pep_checked_for_delivery)
+pep_c4l_all = pep_c4l_for_delivery.mix(pep_checked_for_delivery)
 // mix mass channels (from QC01, QC02 and QC03 to have for each id a number of results) 
 //mass_checked_for_delivery = mass_checked_for_joining.mix(mass_c4l_json_for_delivery_fake)
-
 
 mass_checked_for_delivery = mass_checked_for_joining.mix(mass_c4l_json_for_delivery_fake, mass_c4l_json_for_delivery)
 
@@ -967,16 +966,13 @@ queueQC03Grouped = queueQC03.map{
     return l 
 }.groupTuple(size:4)
 
-//pep_c4l_for_delivery
 
-queueQC03ToBeSent = queueQC03Grouped.merge(pep_c4l_for_delivery).map{
+
+queueQC03ToBeSent = queueQC03Grouped.map{
 	def id = [it[0]]
 	id.addAll([it.drop(1).flatten()]); 
 	return id
 }
-
-//queueQC03ToBeSent.println()
-
 
 
 // reshape the QC01-QC02 channel
@@ -988,10 +984,11 @@ queueQC12ToBeSent = queueQC12.map{
     return l 
 }
 
+
 // mix the QC01-QC02 and QC03 again
 jsonToBeSent = queueQC12ToBeSent.mix(queueQC03ToBeSent)
 
-   
+
 // reshape the mZML params channel for the submission 
 mZML_params_for_delivery = mZML_params_for_mapping.map{
         def rawids = it[0].tokenize( '_' )
@@ -999,7 +996,7 @@ mZML_params_for_delivery = mZML_params_for_mapping.map{
         [sample_id , it[1], it[3], it[4].text, it[5].text]
 }.unique()
 
-
+//mZML_params_for_delivery.join(pep_c4l_all).join(jsonToBeSent).println()
 /*
  * Sent to the DB
  */
@@ -1009,7 +1006,7 @@ mZML_params_for_delivery = mZML_params_for_mapping.map{
     input:
     file(workflowfile) from api_connectionWF
 
-    set sample_id, internal_code, checksum, timestamp, filename, file("*") from mZML_params_for_delivery.join(jsonToBeSent)
+    set sample_id, internal_code, checksum, timestamp, filename, file(pepfile), file("*") from mZML_params_for_delivery.join(pep_c4l_all).join(jsonToBeSent)
     val db_host from params.db_host
 
     script:
@@ -1018,8 +1015,11 @@ mZML_params_for_delivery = mZML_params_for_mapping.map{
     def parent_id = ontology[internal_code]
     def filepieces = filename.tokenize( '_' )
     def orifile = filepieces[0..-4].join( '_' )
-    def knime = new Knime(wf:workflowfile, rdate:timestamp, oriname:orifile, chksum:checksum, stype:internal_code, ifolder:".", labs:instrument_id, utoken:"${db_host}/api/auth", uifile:"${db_host}/api/file/QC:${parent_id}", uidata:"${db_host}/api/data/pipeline", mem:"${task.memory.mega-5000}m")
-    knime.launch()
+   """
+   echo ocazz
+   """
+   // def knime = new Knime(wf:workflowfile, rdate:timestamp, oriname:orifile, chksum:checksum, stype:internal_code, ifolder:".", labs:instrument_id, utoken:"${db_host}/api/auth", uifile:"${db_host}/api/file/QC:${parent_id}", uidata:"${db_host}/api/data/pipeline", mem:"${task.memory.mega-5000}m")
+   // knime.launch()
 
 }
 
