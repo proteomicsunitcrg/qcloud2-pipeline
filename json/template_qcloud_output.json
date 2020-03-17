@@ -46,11 +46,11 @@
       "contextSource" : "L(Heavy)L(Heavy)SLGAGEFK(Heavy)",
       "value" : "L(Heavy)L(Heavy)SLGAGEFK(Heavy)ZERO"
     }, {
-      "contextSource" : "LLSLGAGEFK(Heavy)",
-      "value" : "LLSLGAGEFK(Heavy)ZERO"
-    }, {
       "contextSource" : "L(Heavy)LSLGAGEFK(Heavy)",
       "value" : "L(Heavy)LSLGAGEFK(Heavy)ZERO"
+    }, {
+      "contextSource" : "LLSLGAGEFK(Heavy)",
+      "value" : "LLSLGAGEFK(Heavy)ZERO"
     }, {
       "contextSource" : "V(Heavy)T(Heavy)S(Heavy)GST(Heavy)ST(Heavy)SR(Heavy)",
       "value" : "V(Heavy)T(Heavy)S(Heavy)GST(Heavy)ST(Heavy)SR(Heavy)ZERO"
@@ -58,14 +58,14 @@
       "contextSource" : "V(Heavy)T(Heavy)SGSTST(Heavy)SR(Heavy)",
       "value" : "V(Heavy)T(Heavy)SGSTST(Heavy)SR(Heavy)ZERO"
     }, {
-      "contextSource" : "VTSGSTSTSR(Heavy)",
-      "value" : "VTSGSTSTSR(Heavy)ZERO"
-    }, {
-      "contextSource" : "VTSGSTSTSR(Heavy)",
-      "value" : "VTSGSTSTSR(Heavy)ZERO"
+      "contextSource" : "V(Heavy)T(Heavy)SGSTSTSR(Heavy)",
+      "value" : "V(Heavy)T(Heavy)SGSTSTSR(Heavy)ZERO"
     }, {
       "contextSource" : "V(Heavy)TSGSTSTSR(Heavy)",
       "value" : "V(Heavy)TSGSTSTSR(Heavy)ZERO"
+    }, {
+      "contextSource" : "VTSGSTSTSR(Heavy)",
+      "value" : "VTSGSTSTSR(Heavy)ZERO"
     }, {
       "contextSource" : "V(Heavy)V(Heavy)GGL(Heavy)V(Heavy)ALR(Heavy)",
       "value" : "V(Heavy)V(Heavy)GGL(Heavy)V(Heavy)ALR(Heavy)ZERO"
