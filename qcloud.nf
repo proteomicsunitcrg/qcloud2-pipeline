@@ -927,7 +927,8 @@ process check_mzML {
     script:
     """
     xmllint --xpath 'string(/mzML/@id)' ${mzML_file} > ${mzML_file}.filename
-    xmllint --xpath 'string(/mzML/run/@startTimeStamp)' ${mzML_file} > ${mzML_file}.timestamp
+    xmllint --xpath 'string(/mzML/run/@startTimeStamp)' ${mzML_file} > raw_time    
+    cat raw_time | xargs -I{} date -d {} +"%Y-%m-%dT%TZ"  | tr -d '\n' > ${mzML_file}.timestamp
     """
 }
 
