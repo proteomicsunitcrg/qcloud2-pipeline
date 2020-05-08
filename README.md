@@ -9,5 +9,5 @@
 * Install Nextflow.
 * Git clone pipeline: free space 1 GB. 
 * Configure Nextflow: params.config and nextflow.config.
-* Run pipeline: nextflow run qcloud.nf -bg. This will pull all the Singularity images (around 2GB).
+* Run pipeline: nextflow run qcloud.nf -bg. This will pull all the Singularity images (around 2GB). Also chmod -R 770 and change max. mem.
 * Put file in incoming folder with the correct notation (labsysid from QCloud server).
