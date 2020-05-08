@@ -41,6 +41,8 @@
      String rdate     = ''
      String oriname   = ''
      String extrapars = ''
+     String iapiuser  = ''
+     String iapipass  = ''
      String empty_out_file = 'empty.json'
     
 	/* 
@@ -76,7 +78,9 @@
     	if (this.ojfile) {string +=  "-workflow.variable=output_json_filename,${this.ojfile},String " }
     	if (this.ojid) {string +=  "-workflow.variable=output_json_id,${this.ojid},String " }
     	if (this.rdate) {string +=  "-workflow.variable=input_mass_spec_run_date,${this.rdate},String " }
-    	if (this.oriname) {string +=  "-workflow.variable=input_original_filename,${this.oriname},String " }    	
+    	if (this.oriname) {string +=  "-workflow.variable=input_original_filename,${this.oriname},String " }   
+	if (this.iapiuser) {string +=  "-workflow.variable=input_api_user,${this.iapiuser},String " }
+        if (this.iapipass) {string +=  "-workflow.variable=input_api_password,${this.iapipass},String " }
     	if (this.extrapars) {string += " ${this.extrapars} " }
 		string += "-vmArgs -Xmx${this.mem} -Duser.home=\$PWD"
     	return string
