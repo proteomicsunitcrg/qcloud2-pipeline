@@ -1,6 +1,7 @@
 # QCloud local version
 
 
+
 - Project name: Your project’s name is the first thing people will see upon scrolling down to your README, and is included upon creation of your README file.
 
 - Description: A description of your project follows. A good description is clear, short, and to the point. Describe the importance of your project, and what it does.
@@ -28,7 +29,7 @@ How to install QCloud server and pipeline intented for Bionformaticians:
 
 ## Steps to install QCloud server: 
 1. Install `mysql-server`
-2. Create a user: 
+2. Create a user, for instance: 
 ```mysql 
 CREATE USER 'qcloud_user'@'%' IDENTIFIED BY 'password_here';
 GRANT ALL PRIVILEGES ON * . * TO 'qcloud_user'@'%';
@@ -36,7 +37,7 @@ FLUSH PRIVILEGES;
 ```
 3. Download JAR file: https://www.dropbox.com/s/sf259uwyypjyzwb/QCloud2-1.0.19OUTSIDE.jar
 4. Download and edit the sample.yml configuration file: https://www.dropbox.com/s/al25r8kojf7b10z/sample.yml
-    4.1. Update with your database information and credentials:   
+- 4.1. Update with your database information and credentials:   
 ```yml
 datasource:
     ## MYSQL
@@ -45,7 +46,7 @@ datasource:
     password: "password_here"
     driver-class-name: com.mysql.jdbc.Driver
 ```
-    4.2. Update with your preferred smtp server for email sending: 
+- 4.2. Update with your preferred smtp server for email sending: 
 ```yml
   mail:
     default-encoding: UTF-8
@@ -53,14 +54,14 @@ datasource:
     username: user_smtp
     password: password_smtp
 ```
-    4.3. Update with your email:
+- 4.3. Update with your email:
 ```yml
   email:
     address: your@mail.com
 ```
 Note: at this present version the port 8089 is not yet configurable so don't change it. 
 
-5. Execute JAR file: 
+5. Run JAR file: 
 
 ```java
 java -jar /path/to/QCloud2-1.0.19OUTSIDE.jar --spring.config.location=file:///path/to/sample.yml
@@ -68,9 +69,12 @@ java -jar /path/to/QCloud2-1.0.19OUTSIDE.jar --spring.config.location=file:///pa
 
 6. Now [Flyway](https://flywaydb.org/) should automatically migrate and set up the database.
 7. Once the server is up, open http://localhost:8089 in your browser and log in with zeus@admin.eu | dumbpass.
-8. Create a new node, set up users and roles, and add at least one of your mass spectrometers.
-7. Now you should install the QCloud pipeline. 
+8. Now you should create a new labsystem (LC + mass spec). For this, go to Management > Instruments > Lab systems and create a new System Name, add a Mass spectrometer and Liquid chromatographer. If you don't find you specific LC or MS model, you can add it clicking on Administration > Instruments > Manage controlled vocabulary. Just search it by name and enable. 
+9. Once you added a new lab system, you'll be able to see its name at the top-right corner of the QCloud website. If you click it, you'll see something like: 
 
+`http://localhost:8089/application/view/instrument/d2fc2cbf-e632-4f39-ba5a-6f59de0b7c4e`
+
+For the moment, just copy this code "d2fc2cbf-e632-4f39-ba5a-6f59de0b7c4eE becasue we'll use it later at the pipeline installation section. 
 
 ## Steps to install QCloud pipeline: 
 
@@ -81,3 +85,5 @@ java -jar /path/to/QCloud2-1.0.19OUTSIDE.jar --spring.config.location=file:///pa
 * Configure Nextflow: params.config and nextflow.config.
 * Run pipeline: nextflow run qcloud.nf -bg. This will pull all the Singularity images (around 2GB). Also chmod -R 770 and change max. mem.
 * Put file in incoming folder with the correct notation (labsysid from QCloud server).
+
+
