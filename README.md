@@ -1,6 +1,6 @@
 # QCloud Local Version (QLV)
 
-QCloud is a cloud-based system to support proteomics laboratories in daily quality assessment using a user-friendly interface, easy setup, automated data processing and archiving, and unbiased instrument evaluation. https://qcloud.crg.eu
+QCloud is a cloud-based system to support proteomics laboratories in daily quality assessment using a user-friendly interface, easy setup, automated data processing and archiving, and unbiased instrument evaluation. https://qcloud.crg.eu, paper: https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0189209
 
 With this tutorial you'll we able to install all the QCloud system in your local server and HPC Cluster. It has two main parts: 
 
@@ -115,15 +115,24 @@ Where:
         - checksum: the md5sum of the RAW file (not the zipped one). 
         - For instance: `20200514_LUMOS1_d2fc2cbf-e632-4f39-ba5a-6f59de0b7c4e_QC01_c010cb81200806e9113919213772aaa9.zip`
 
-- Credits: 
+## Final steps: 
+
+- To check if the entire QLV is working fine, you should see after some minutes at the QCloud website homepage a list of all the zipped RAW files you moved at the incoming folder of the pipeline.
+- Now you should add the charts you want to be shown for your lab systems. To this, visit the Manage instrument charts > Charts management at the QCloud local website. 
+- Troubleshooting: check JAR and Nexftlow logs. We're working to extend this section.  
+- Now there's a lot of website configuration that you can learn from our videotutorials: 
+    - Getting started as a user: https://www.dropbox.com/s/e2mil82vuccvcox/getting-started-as-user.mp4
+    - Getting started as a lab manager: https://www.dropbox.com/s/5xani1zi7guqez7/getting-started-as-a-lab-manager.mp4
+    - Thresholds and guidesets: https://www.dropbox.com/s/tqn83u22m7fs1tw/threholds-and-guidesets.mp4
+
+## Credits: 
      - QCloud Server was mainly developed by Marc Serret and Roger Olivella. 
      - QCloud Pipeline was mainly developed by Luca Cozzuto, Roger Olivella and Toni Hermoso. 
      - ThermoFileRawParser was mainly developed by Niels Hulstaert (https://github.com/compomics/ThermoRawFileParser#thermorawfileparser). 
      - rawDiag was mainly developed by Christian Panse (https://github.com/fgcz/rawDiag). 
 
-- License: QCloud is under Creative Commons License ‎Attribution-ShareAlike 4.0.
+## License: 
 
-Paper: https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0189209
+QCloud is under Creative Commons License ‎Attribution-ShareAlike 4.0.
 
-
-Last update by @rolivella on 15/05/2020
+#### Last update by @rolivella on 15/05/2020
