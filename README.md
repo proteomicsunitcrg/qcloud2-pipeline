@@ -1,13 +1,22 @@
 # QCloud Local Version (QLV)
 
+QCloud is a cloud-based system to support proteomics laboratories in daily quality assessment using a user-friendly interface, easy setup, automated data processing and archiving, and unbiased instrument evaluation. https://qcloud.crg.eu
+
 With this tutorial you'll we able to install all the QCloud system in your local server and HPC Cluster. It has two main parts: 
 
-1) QCloud Server. 
-2) QCloud Pipeline. 
+1) QCloud Server: installation of the QCloud website as it is in https://qcloud.crg.eu but with administrative permissions and in your local servers. 
+2) QCloud Pipeline: installation of the QCloud pipeline to be run in your preferred HPC system.  
 
 ## Steps to install QCloud Server: 
-1. Install `mysql-server`
-2. Create a user, for instance: 
+
+Software requirements: 
+
+* Java, OpenJDK Runtime Environment (build 1.8.0_91-b14) or later.  
+* mysql-server, 14.14 or later.  
+
+Installation: 
+
+1. Create a QCloud user, for instance: 
 ```mysql 
 CREATE USER 'qcloud_user'@'%' IDENTIFIED BY 'password_here';
 GRANT ALL PRIVILEGES ON * . * TO 'qcloud_user'@'%';
@@ -58,7 +67,6 @@ For the moment, just copy this code "d2fc2cbf-e632-4f39-ba5a-6f59de0b7c4e" becas
 
 Software requirements: 
 
-* Java, OpenJDK Runtime Environment (build 1.8.0_91-b14) or later. 
 * Singularity container, 2.6.1-dist or later. 
 * Nextflow, 20.01.0.5264 or later. 
 
@@ -66,7 +74,7 @@ System requirements:
 
 This pipeline has been tested in the following environment: 
 
-* HPC Cluster running Scientific Linux 7.2. Do not run the pipeline in a desktop PC.
+* HPC Cluster running Scientific Linux 7.2. Do not install it in a desktop PC.
 * At least 3GB free disk space.  
 
 Installation: 
