@@ -126,10 +126,10 @@ Where:
     - Thresholds and guidesets: https://www.dropbox.com/s/tqn83u22m7fs1tw/threholds-and-guidesets.mp4
 
 ## Credits: 
-     - QCloud Server was mainly developed by Marc Serret and Roger Olivella. 
-     - QCloud Pipeline was mainly developed by Luca Cozzuto, Roger Olivella and Toni Hermoso. 
-     - ThermoFileRawParser was mainly developed by Niels Hulstaert (https://github.com/compomics/ThermoRawFileParser#thermorawfileparser). 
-     - rawDiag was mainly developed by Christian Panse (https://github.com/fgcz/rawDiag). 
+- QCloud Server was mainly developed by Marc Serret and Roger Olivella. 
+- QCloud Pipeline was mainly developed by Luca Cozzuto, Roger Olivella and Toni Hermoso. 
+- ThermoFileRawParser was mainly developed by Niels Hulstaert (https://github.com/compomics/ThermoRawFileParser#thermorawfileparser). 
+- rawDiag was mainly developed by Christian Panse (https://github.com/fgcz/rawDiag). 
 
 ## License: 
 
