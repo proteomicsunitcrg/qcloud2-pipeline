@@ -1,33 +1,11 @@
-# QCloud local version
+# QCloud Local Version (QLV)
 
+With this tutorial you'll we able to install all the QCloud system in your local server and HPC Cluster. It has two main parts: 
 
+1) QCloud Server. 
+2) QCloud Pipeline. 
 
-- Project name: Your project’s name is the first thing people will see upon scrolling down to your README, and is included upon creation of your README file.
-
-- Description: A description of your project follows. A good description is clear, short, and to the point. Describe the importance of your project, and what it does.
-
-- Table of Contents: Optionally, include a table of contents in order to allow other people to quickly navigate especially long or detailed READMEs.
-
-- Installation: Installation is the next section in an effective README. Tell other users how to install your project locally. Optionally, include a gif to make the process even more clear for other people.
-
-- Usage: The next section is usage, in which you instruct other people on how to use your project after they’ve installed it. This would also be a good place to include screenshots of your project in action.
-
-- Contributing: Larger projects often have sections on contributing to their project, in which contribution instructions are outlined. Sometimes, this is a separate file. If you have specific contribution preferences, explain them so that other developers know how to best contribute to your work. To learn more about how to help others contribute, check out the guide for setting guidelines for repository contributors.
-
-- Credits: Include a section for credits in order to highlight and link to the authors of your project.
-
-- License: Finally, include a section for the license of your project. For more information on choosing a license, check out GitHub’s licensing guide!
-
-
-
-
-[![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)
-[![Nextflow version](https://img.shields.io/badge/nextflow-%E2%89%A50.31.0-brightgreen.svg)](https://www.nextflow.io/)
-[![Docker Build Status](https://img.shields.io/docker/automated/biocorecrg/qcloud.svg)](https://cloud.docker.com/u/biocorecrg/repository/docker/biocorecrg/qcloud/builds)
-
-How to install QCloud server and pipeline intented for Bionformaticians: 
-
-## Steps to install QCloud server: 
+## Steps to install QCloud Server: 
 1. Install `mysql-server`
 2. Create a user, for instance: 
 ```mysql 
@@ -74,16 +52,68 @@ java -jar /path/to/QCloud2-1.0.19OUTSIDE.jar --spring.config.location=file:///pa
 
 `http://localhost:8089/application/view/instrument/d2fc2cbf-e632-4f39-ba5a-6f59de0b7c4e`
 
-For the moment, just copy this code "d2fc2cbf-e632-4f39-ba5a-6f59de0b7c4eE becasue we'll use it later at the pipeline installation section. 
+For the moment, just copy this code "d2fc2cbf-e632-4f39-ba5a-6f59de0b7c4e" becasue we'll use it later at the pipeline installation section. 
 
 ## Steps to install QCloud pipeline: 
 
-* Install java.
-* Install singularity-container.
-* Install Nextflow.
-* Git clone pipeline: free space 1 GB. 
-* Configure Nextflow: params.config and nextflow.config.
-* Run pipeline: nextflow run qcloud.nf -bg. This will pull all the Singularity images (around 2GB). Also chmod -R 770 and change max. mem.
-* Put file in incoming folder with the correct notation (labsysid from QCloud server).
+Software requirements: 
+
+* Java, OpenJDK Runtime Environment (build 1.8.0_91-b14) or later. 
+* Singularity container, 2.6.1-dist or later. 
+* Nextflow, 20.01.0.5264 or later. 
+
+System requirements: 
+
+This pipeline has been tested in the following environment: 
+
+* HPC Cluster running Scientific Linux 7.2. Do not run the pipeline in a desktop PC.
+* At least 3GB free disk space.  
+
+Installation: 
+
+- `git clone https://github.com/proteomicsunitcrg/qcloud2-pipeline.git` and `chmod -R 770` the created folder. 
+- Set up Nextflow params.config file: 
+```json
+params {
+    qconfig          = "$baseDir/qcloud.config"
+    zipfiles         = "/path/to/pipeline/incoming/*.zip"
+    fasta_tab        = "$baseDir/fasta.tsv"
+    db_host          = "localhost:8089"
+    watch            = "YES"
+    api_user         = "zeus@admin.eu"
+    api_pass         = "dumbpassword"
+}
+```
+Where: 
+- zipfiles: incoming folder where the RAW files (zipped) will be put to be processed by the pipeline. 
+- db_host: QCloud server URL and port. See previous QCloud Server installation section.
+- watch: "YES" if you want the pipeline to be automatically started if a file is moved to `zipfiles` folder. 
+- api_user, api_password: credentals to grant access to the pipeline for accessing the QCloud server database. The passowrd must be the same as the one configured in the Pofile management of the QCloud website. 
+
+- Set up nextflow.config file: modify this file according to your HPC Cluster queues name/s and the memory and CPUs available. 
+
+Usage: 
+
+- To run the pipeline in background mode: `nextflow run -bg qcloud.nf > qcloud.log`. The first time your run this commnad Nextflow will automatically pull the last QCloud container version labeled as `biocorecrg/qcloud:2.1` (1.5GB aprox.). 
+- Once the pipeline is started and the QCloud container pulled, you can copy any RAW file coming from any supported mass spectrometer (see Administration > Instruments > Manage controlled vocabulary section in the QCloud local website installed in the previous section). 
+- All RAW files must be in a specific format to be successfully processed by the QCloud pipeline: 
+    - All files must be zipped with the same name as the RAW file. 
+    - Its name must follow the following convention: `filename_labsysid_QC0X_checksum.zip`, where: 
+        - filename: any filename, for instance "20200514_LUMOS1".
+        - labsysid: is the internal code of the labsystem where the RAW file is coming from (see QCloud Server installation section). 
+        - QC0X: either if it's QC01 (BSA) or QC02 (HeLa). 
+        - checksum: the md5sum of the RAW file (not the zipped one). 
+        - For instance: 20200514_LUMOS1_d2fc2cbf-e632-4f39-ba5a-6f59de0b7c4e_QC01_c010cb81200806e9113919213772aaa9.zip
+
+- Credits: 
+     - QCloud Server was mainly developed by Marc Serret and Roger Olivella. 
+     - QCloud Pipeline was mainly developed by Luca Cozzuto, Roger Olivella and Toni Hermoso. 
+     - ThermoFileRawParser was mainly developed by Niels Hulstaert (https://github.com/compomics/ThermoRawFileParser#thermorawfileparser). 
+     - rawDiag was mainly developed by Christian Panse (https://github.com/fgcz/rawDiag). 
+
+- License: QCloud is under Creative Commons License ‎Attribution-ShareAlike 4.0.
+
+Paper: https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0189209
 
 
+Updated by @rolivella on 15/05/2020
