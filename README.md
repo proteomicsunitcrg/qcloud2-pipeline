@@ -81,7 +81,7 @@ Installation:
 
 - `git clone https://github.com/proteomicsunitcrg/qcloud2-pipeline.git` and `chmod -R 770` the created folder. 
 - Set up Nextflow params.config file: 
-```json
+```
 params {
     qconfig          = "$baseDir/qcloud.config"
     zipfiles         = "/path/to/pipeline/incoming/*.zip"
