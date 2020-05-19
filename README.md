@@ -4,17 +4,23 @@ QCloud is a cloud-based system to support proteomics laboratories in daily quali
 
 With this tutorial you'll we able to install all the QCloud system in your local server and HPC Cluster. It has two main parts: 
 
-1) QCloud Server: installation of the QCloud website as it is in https://qcloud.crg.eu but with administrative permissions and in your local servers. 
-2) QCloud Pipeline: installation of the QCloud pipeline to be run in your preferred HPC system.  
+1) QCloud Website, as it is in https://qcloud.crg.eu but with administrative permissions and intsalled in your local server. 
+2) QCloud Pipeline, to be run in your preferred HPC Cluster.  
 
-## QCloud Server installation: 
+## Global System Requirements: 
+- QCloud Website: 
+    - Desktop PC or VM with Linux/Windows x64 platform. 
+    - Java >= 1.8.  
+    - mysql-server >= 14.14.
+    
+- QCloud pipeline: 
+    - HPC Cluster running CentOS 7. Do not install it in a desktop PC.
+    - Grant access to QCloud Website URL and port from the cluster's queue. For instance, http://your_server_ip:8090 (see QCloud Website Installation section). This is mandatory as it's the pipeline's way to send processed data to the local database through an internal API.   
+    - Singularity container >= 2.6.1.
+    - Nextflow >= 20.01.0.5264.
+    - At least 3GB free disk space.  
 
-### Software requirements: 
-
-* Java, OpenJDK Runtime Environment (build 1.8.0_91-b14) or later.  
-* mysql-server, 14.14 or later.  
-
-### Installation: 
+## QCloud Website Installation: 
 
 1. Create a QCloud user, for instance: 
 ```mysql 
@@ -63,26 +69,12 @@ java -jar /path/to/QCloud2-1.0.19OUTSIDE.jar --spring.config.location=file:///pa
 
 For the moment, just copy this code "d2fc2cbf-e632-4f39-ba5a-6f59de0b7c4e" because we'll use it later at the pipeline installation section. 
 
-## QCloud Pipeline installation: 
+## QCloud Pipeline Installation: 
 
-Should be installed after the QCloud Server. 
+Should be installed AFTER the QCloud Website. 
 
-### Software requirements: 
-
-* Singularity container, 2.6.1-dist or later. 
-* Nextflow, 20.01.0.5264 or later. 
-
-### System requirements: 
-
-This pipeline has been tested in the following environment: 
-
-* HPC Cluster running Scientific Linux 7.2. Do not install it in a desktop PC.
-* At least 3GB free disk space.  
-
-### Installation: 
-
-- `git clone https://github.com/proteomicsunitcrg/qcloud2-pipeline.git`, checkout "local" branch and `chmod -R 770` at the pipeline root folder. 
-- Set up Nextflow params.config file: 
+1. `git clone https://github.com/proteomicsunitcrg/qcloud2-pipeline.git`, checkout "local" branch and `chmod -R 770` at the pipeline root folder. 
+2. Set up Nextflow params.config file: 
 ```
 params {
     qconfig          = "$baseDir/qcloud.config"
@@ -100,9 +92,9 @@ Where:
 - watch: "YES" if you want the pipeline to be automatically started when a file is moved to `zipfiles` folder. 
 - api_user, api_password: credentals to grant access to the pipeline for accessing the QCloud Server database. The password must be the same as the one configured in the Pofile management at the QCloud website. 
 
-- Set up nextflow.config file: modify this file according to your HPC Cluster queues name/s and the memory and CPUs available. 
+3. Set up nextflow.config file: modify this file according to your HPC Cluster queues name/s and the memory and CPUs available. 
 
-### Usage: 
+## QCloud Pipeline Usage: 
 
 - To run the pipeline in background mode: `nextflow run -bg qcloud.nf > qcloud.log`. The first time you run this command Nextflow will automatically pull the last QCloud container version labeled as `biocorecrg/qcloud:2.1` (1.5GB aprox.) and the ThermoRawFileParser container `biocorecrg-thermorawparser-0.2.img` (0.5GB) that converts RAW files to mzML format.
 - Once the pipeline is started and the QCloud container pulled, you can copy any RAW file coming from any supported mass spectrometer (see Administration > Instruments > Manage controlled vocabulary section in the QCloud local website installed in the previous section). 
@@ -115,7 +107,7 @@ Where:
         - checksum: the md5sum of the RAW file (not the zipped one). 
         - For instance: `20200514_LUMOS1_d2fc2cbf-e632-4f39-ba5a-6f59de0b7c4e_QC01_c010cb81200806e9113919213772aaa9.zip`
 
-## Final steps: 
+## Global Final steps: 
 
 - To check if the entire QLV is working fine, you should see after some minutes at the QCloud website homepage a list of all the zipped RAW files you moved at the incoming folder of the pipeline.
 - Now you should add the charts you want to be shown for your lab systems. To this, visit the Manage instrument charts > Charts management at the QCloud local website. 
@@ -133,6 +125,6 @@ Where:
 
 ## License: 
 
-QCloud is under Creative Commons License ‎Attribution-ShareAlike 4.0.
+Pending. 
 
-#### Last update by @rolivella on 15/05/2020
+#### Last update by @rolivella on 19/05/2020
