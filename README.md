@@ -22,14 +22,14 @@ With this tutorial you'll we able to install all the QCloud system in your local
 
 ## QCloud Website Installation: 
 
-1. Create a QCloud user, for instance: 
+1. Create a MySQL QCloud user, for instance: 
 ```mysql 
 CREATE USER 'qcloud_user'@'%' IDENTIFIED BY 'password_here';
 GRANT ALL PRIVILEGES ON * . * TO 'qcloud_user'@'%';
 FLUSH PRIVILEGES;
 ```
 3. Download JAR file: https://www.dropbox.com/s/sf259uwyypjyzwb/QCloud2-1.0.19OUTSIDE.jar
-4. Download and edit the sample.yml configuration file: https://www.dropbox.com/s/al25r8kojf7b10z/sample.yml
+4. Download and edit sample.yml configuration file: https://www.dropbox.com/s/al25r8kojf7b10z/sample.yml
 - 4.1. Update with your database information and credentials:   
 ```yml
 datasource:
@@ -39,7 +39,7 @@ datasource:
     password: "password_here"
     driver-class-name: com.mysql.jdbc.Driver
 ```
-- 4.2. Update with your preferred smtp server for email sending: 
+- 4.2. Update with your preferred smtp server for email sending (optional): 
 ```yml
   mail:
     default-encoding: UTF-8
@@ -61,8 +61,8 @@ java -jar /path/to/QCloud2-1.0.19OUTSIDE.jar --spring.config.location=file:///pa
 ``` 
 
 6. Now [Flyway](https://flywaydb.org/) should automatically create and set up the MySQL database.
-7. Once the server is up, open http://localhost:8089 in your browser (Firefox or Google Chrome) and log in with zeus@admin.eu | dumbpassword. This password can be changed in the Profile managemenet section of the website. 
-8. Now you should create a new labsystem (LC + mass spec). For this, go to Management > Instruments > Lab systems and create a new System Name, add a Mass spectrometer and Liquid chromatographer. If you don't find you specific LC or MS model, you can add it clicking on Administration > Instruments > Manage controlled vocabulary. Just search by name and enable it. 
+7. Once the server is up, open http://localhost:8089 in your browser (Firefox or Google Chrome) and log in with zeus@admin.eu | dumbpassword. This password can be changed in the Profile management website section. 
+8. Now you must create a new labsystem (LC + mass spec). For this, go to Management > Instruments > Lab systems and create a new System Name, add a Mass spectrometer and Liquid chromatographer. If you don't find you specific LC or MS model, you can add it clicking on Administration > Instruments > Manage controlled vocabulary. Just search by name and enable it. 
 9. Once you added a new lab system, you'll be able to see its name at the top-right corner of the QCloud website. If you click it, you'll see in the browser something like: 
 
 `http://localhost:8089/application/view/instrument/d2fc2cbf-e632-4f39-ba5a-6f59de0b7c4e`
@@ -71,7 +71,7 @@ For the moment, just copy this code "d2fc2cbf-e632-4f39-ba5a-6f59de0b7c4e" becau
 
 ## QCloud Pipeline Installation: 
 
-Should be installed AFTER the QCloud Website. 
+Must be installed AFTER QCloud Website. 
 
 1. `git clone https://github.com/proteomicsunitcrg/qcloud2-pipeline.git`, checkout "local" branch and `chmod -R 770` at the pipeline root folder. 
 2. Set up Nextflow params.config file: 
@@ -90,13 +90,13 @@ Where:
 - zipfiles: incoming folder where the RAW files (zipped) will be put to be processed by the pipeline. 
 - db_host: QCloud Server URL and port. See previous QCloud Server installation section.
 - watch: "YES" if you want the pipeline to be automatically started when a file is moved to `zipfiles` folder. 
-- api_user, api_password: credentals to grant access to the pipeline for accessing the QCloud Server database. The password must be the same as the one configured in the Pofile management at the QCloud website. 
+- api_user, api_password: credentals to grant access to the pipeline for accessing the QCloud Server database. The password must be the same as the one configured in the Profile management at the QCloud website. 
 
 3. Set up nextflow.config file: modify this file according to your HPC Cluster queues name/s and the memory and CPUs available. 
 
 ## QCloud Pipeline Usage: 
 
-- To run the pipeline in background mode: `nextflow run -bg qcloud.nf > qcloud.log`. The first time you run this command Nextflow will automatically pull the last QCloud container version labeled as `biocorecrg/qcloud:2.1` (1.5GB aprox.) and the ThermoRawFileParser container `biocorecrg-thermorawparser-0.2.img` (0.5GB) that converts RAW files to mzML format.
+- Run the pipeline in background mode: `nextflow run -bg qcloud.nf > qcloud.log`. The first time you run this command Nextflow will automatically pull the last QCloud container version labeled as `biocorecrg/qcloud:2.1` (1.5GB aprox.) and the ThermoRawFileParser container `biocorecrg-thermorawparser-0.2.img` (0.5GB) that converts RAW files to mzML format.
 - Once the pipeline is started and the QCloud container pulled, you can copy any RAW file coming from any supported mass spectrometer (see Administration > Instruments > Manage controlled vocabulary section in the QCloud local website installed in the previous section). 
 - All RAW files must be in a specific format to be successfully processed by the QCloud Pipeline: 
     - All files must be zipped with the same name as the RAW file. 
@@ -117,11 +117,15 @@ Where:
     - Getting started as a lab manager: https://www.dropbox.com/s/5xani1zi7guqez7/getting-started-as-a-lab-manager.mp4
     - Thresholds and guidesets: https://www.dropbox.com/s/tqn83u22m7fs1tw/threholds-and-guidesets.mp4
 
-## Credits: 
-- QCloud Server was mainly developed by Marc Serret and Roger Olivella. 
-- QCloud Pipeline was mainly developed by Luca Cozzuto, Roger Olivella and Toni Hermoso. 
-- ThermoFileRawParser was mainly developed by Niels Hulstaert (https://github.com/compomics/ThermoRawFileParser#thermorawfileparser). 
-- rawDiag was mainly developed by Christian Panse (https://github.com/fgcz/rawDiag). 
+## Credits (specifically for the bioinformatics part of QCloud): 
+- QCloud Website: Marc Serret, Dani Mancera and Roger Olivella. 
+- QCloud Pipeline: Luca Cozzuto and Roger Olivella. 
+- ThermoFileRawParser: Niels Hulstaert (https://github.com/compomics/ThermoRawFileParser#thermorawfileparser). 
+- rawDiag: Christian Panse (https://github.com/fgcz/rawDiag). 
+
+## Credits (for the entire QCloud project): 
+
+Cristina Chiva, Eva Borràs, Guadalupe Espadas, Olga Pastor, Amanda Solé, Eduard Sabidó.
 
 ## License: 
 
