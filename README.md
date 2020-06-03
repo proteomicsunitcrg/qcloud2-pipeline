@@ -129,6 +129,6 @@ Cristina Chiva, Eva Borràs, Guadalupe Espadas, Olga Pastor, Amanda Solé, Eduar
 
 ## License: 
 
-Pending. 
+ Copyright © 2020 by Center for Genomic Regulation. All rights reserved. 
 
-#### Last update by @rolivella on 19/05/2020
+#### Last update by @rolivella on 03/06/2020
