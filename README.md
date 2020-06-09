@@ -16,10 +16,10 @@ QCloud has been reshaped from scratch to support dozens of instruments and sites
 
 ### Credits (specifically for the bioinformatics part of QCloud):
 
-QCloud Website: Marc Serret, Dani Mancera and Roger Olivella.
-QCloud Pipeline: Luca Cozzuto and Roger Olivella.
-ThermoFileRawParser: Niels Hulstaert (https://github.com/compomics/ThermoRawFileParser#thermorawfileparser).
-rawDiag: Christian Panse (https://github.com/fgcz/rawDiag).
+- QCloud Website: Marc Serret, Dani Mancera and Roger Olivella.
+- QCloud Pipeline: Luca Cozzuto and Roger Olivella.
+- ThermoFileRawParser: Niels Hulstaert (https://github.com/compomics/ThermoRawFileParser#thermorawfileparser).
+- rawDiag: Christian Panse (https://github.com/fgcz/rawDiag).
 
 ### Credits (for the entire QCloud project):
 
