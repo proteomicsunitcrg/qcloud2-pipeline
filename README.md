@@ -126,9 +126,3 @@ Where:
 ## Credits (for the entire QCloud project): 
 
 Cristina Chiva, Eva Borràs, Guadalupe Espadas, Olga Pastor, Amanda Solé, Eduard Sabidó.
-
-## License: 
-
- Copyright © 2020 by Center for Genomic Regulation. All rights reserved. 
-
-#### Last update by @rolivella on 03/06/2020
