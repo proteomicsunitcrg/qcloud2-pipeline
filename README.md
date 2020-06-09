@@ -1,6 +1,6 @@
 ## QCloud2 Quality Control Pipeline
 
-**Warning: for local installation of the QCloud please see the branch "local" of this repo.** 
+**Warning: for local installation of QCloud (pipeline+website) please see "local" branch of this repo.** 
 
 QCloud has been reshaped from scratch to support dozens of instruments and sites. For this we used some new technologies: 
 
