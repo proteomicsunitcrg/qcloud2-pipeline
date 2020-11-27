@@ -4,7 +4,7 @@ QCloud is a cloud-based system to support proteomics laboratories in daily quali
 
 With this tutorial you'll we able to install all the QCloud system in your local server and HPC Cluster. It has two main parts: 
 
-1) QCloud Website, as it is in https://qcloud.crg.eu but with administrative permissions and intsalled in your local server. 
+1) QCloud Website, as it is in https://qcloud.crg.eu but with administrative permissions and installed in your local server. 
 2) QCloud Pipeline, to be run in your preferred HPC Cluster.  
 
 ## Global System Requirements: 
@@ -93,7 +93,7 @@ Where:
 - watch: "YES" if you want the pipeline to be automatically started when a file is moved to `zipfiles` folder. 
 - api_user, api_password: credentals to grant access to the pipeline for accessing the QCloud Server database. The password must be the same as the one configured in the Profile management at the QCloud website. 
 
-3. Set up nextflow.config file: modify this file according to your HPC Cluster queues name/s and the memory and CPUs available. 
+3. Set up nextflow.config file: modify this file according to your HPC Cluster queues name/s and CPUs available. Regarding the memory, leave them as it is in the nextflow.config, i.e. a minimum of 10GB for all the processes except the big_mem with 30 GB.   
 
 ## QCloud Pipeline Usage: 
 
