@@ -25,7 +25,8 @@ With this tutorial you'll we able to install all the QCloud system in your local
 1. Create a MySQL QCloud user, for instance: 
 ```mysql 
 CREATE USER 'qcloud_user'@'%' IDENTIFIED BY 'password_here';
-GRANT ALL PRIVILEGES ON * . * TO 'qcloud_user'@'%';
+CREATE database database_name;
+GRANT ALL PRIVILEGES ON database_name.* TO 'qcloud_user'@'%';
 FLUSH PRIVILEGES;
 ```
 3. Download JAR file: https://www.dropbox.com/s/sf259uwyypjyzwb/QCloud2-1.0.19OUTSIDE.jar
