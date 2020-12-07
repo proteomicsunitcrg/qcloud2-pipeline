@@ -70,6 +70,9 @@ java -jar /path/to/QCloud2-1.0.19OUTSIDE.jar --spring.config.location=file:///pa
 
 For the moment, just copy this code "d2fc2cbf-e632-4f39-ba5a-6f59de0b7c4e" because we'll use it later at the pipeline installation section. 
 
+10. At Category management > Manage categories, add a Mass spectrometer (master category) and a Liquid chromatographer. 
+11. At Manage controlled vocabulary > Controlled vocabulary management, add all the mass spectrometers and liquid cromatographs following this convestions: for MS https://github.com/HUPO-PSI/psi-ms-CV/blob/master/psi-ms.obo and for LC https://github.com/proteomicsunitcrg/cv/blob/master/lc-cv.obo. 
+
 ## QCloud Pipeline Installation: 
 
 Must be installed AFTER QCloud Website. 
