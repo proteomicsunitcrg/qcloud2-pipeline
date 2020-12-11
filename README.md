@@ -70,7 +70,7 @@ java -jar /path/to/QCloud2-1.0.19OUTSIDE.jar --spring.config.location=file:///pa
 
 For the moment, just copy this code "d2fc2cbf-e632-4f39-ba5a-6f59de0b7c4e" because we'll use it later at the pipeline installation section. 
 
-Now you should configure **as an adminsitrator** how the QCloud2 is going to be according to your needs. In parallel to this following section you can start by installed the QCloud2 pipeline (next section).  
+Now you should configure **as an adminsitrator** how the QCloud2 is going to be according to your needs. In parallel you can start installing the QCloud2 pipeline (next section).  
 
 First of all: 
 
