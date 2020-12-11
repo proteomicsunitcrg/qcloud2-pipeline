@@ -80,7 +80,7 @@ First of all:
 - At Data processing > Context sources and INSTRUMENT SAMPLE tab, add all the QC paramters you want to monitor. 
 - At Data processing > Parameters management, add all the parameters that you'll monitorize. For instance, mass accuracy, following this convention: https://github.com/proteomicsunitcrg/cv/blob/master/qc-cv.obo. "Is for" means if it's for a "sample-related parameter level" (like the Total Ion Current, for instance) or "peptide-related parmeter level" like the mass accuracy for a certain peptide. "Data processor" is a post-processing calculation after the data is inserted into the database by the pipeline. Choose "RETENTION-TIME" for computing the RT Drift, "LOG2" for peptide areas and NO_PROCESSOR for the rest
 
-An then: 
+And then: 
 
 - At Instruments > Manage categories, add a Mass spectrometer (master category) and a Liquid chromatographer. 
 - At Instruments > Controlled vocabulary management, add all the mass spectrometers and liquid cromatographs following this conventions: for MS https://github.com/HUPO-PSI/psi-ms-CV/blob/master/psi-ms.obo and for LC https://github.com/proteomicsunitcrg/cv/blob/master/lc-cv.obo. 
