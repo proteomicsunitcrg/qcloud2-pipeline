@@ -55,6 +55,13 @@ datasource:
 ```
 Note: at this present version, port 8089 is not yet configurable so don't change it. 
 
+- 4.3. Update with your email:
+```yml
+qcloud:
+  admin-email: admin.mail@mail.catm
+```
+If first sign email is the same as the admin-mail then the user will be administrator. Also the backend sends an email to the admin-mail when a new lab ans user is added to the QCloud.
+
 5. Run JAR file: 
 
 ```java
