@@ -55,7 +55,7 @@ datasource:
 ```
 Note: at this present version, port 8089 is not yet configurable so don't change it. 
 
-- 4.3. Update with your email:
+- 4.4. And update the admin email: 
 ```yml
 qcloud:
   admin-email: admin.mail@mail.catm
