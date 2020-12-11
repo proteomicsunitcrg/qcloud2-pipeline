@@ -70,8 +70,22 @@ java -jar /path/to/QCloud2-1.0.19OUTSIDE.jar --spring.config.location=file:///pa
 
 For the moment, just copy this code "d2fc2cbf-e632-4f39-ba5a-6f59de0b7c4e" because we'll use it later at the pipeline installation section. 
 
-10. At Category management > Manage categories, add a Mass spectrometer (master category) and a Liquid chromatographer. 
-11. At Manage controlled vocabulary > Controlled vocabulary management, add all the mass spectrometers and liquid cromatographs following this convestions: for MS https://github.com/HUPO-PSI/psi-ms-CV/blob/master/psi-ms.obo and for LC https://github.com/proteomicsunitcrg/cv/blob/master/lc-cv.obo. 
+Now you should configure as an adminsitrator how the QCloud2 is going to be according to your needs. It will take a long time so please be patient: 
+
+First of all: 
+
+a. At Data processing > Sample type categories, add the main sample type categories, for instance QC01 and QC02.  
+b. At Data processing > Sample types, you'll have to tell to the QCloud2 that QC01 is for BSA, and QC02 is for HeLa, following this convention: https://github.com/proteomicsunitcrg/cv/blob/master/qc-cv.obo.
+c. At Data processing > Context sources and PEPTIDES tab, add all the peptides that you want to monitor per each sample type. 
+d. At Data processing > Context sources and INSTRUMENT SAMPLE tab, add all the QC paramters you want to monitor. 
+e. At Data processing > Parameters management, add all the parameters that you'll monitorize. For instance, mass accuracy, following this convention: https://github.com/proteomicsunitcrg/cv/blob/master/qc-cv.obo. "Is for" means if it's for a "sample-related parameter level" (like the Total Ion Current, for instance) or "peptide-related parmeter level" like the mass accuracy for a certain peptide. "Data processor" is a post-processing calculation after the data is inserted into the database by the pipeline. Choose "RETENTION-TIME" for computing the RT Drift, "LOG2" for peptide areas and NO_PROCESSOR for the rest
+
+An then: 
+
+i. At Instruments > Manage categories, add a Mass spectrometer (master category) and a Liquid chromatographer. 
+ii. At Instruments > Controlled vocabulary management, add all the mass spectrometers and liquid cromatographs following this conventions: for MS https://github.com/HUPO-PSI/psi-ms-CV/blob/master/psi-ms.obo and for LC https://github.com/proteomicsunitcrg/cv/blob/master/lc-cv.obo. 
+iii. At Instruments > Manage instrument charts and CHART tab, add all the charts you want to be shown for each instrument and sample type. 
+iV. At Instruments > Manage default views, create all the default views for each sample type. These are the charts that are going to be available at each QC01, QC02 tab. 
 
 ## QCloud Pipeline Installation: 
 
