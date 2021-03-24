@@ -29,9 +29,9 @@ CREATE database database_name;
 GRANT ALL PRIVILEGES ON database_name.* TO 'qcloud_user'@'%';
 FLUSH PRIVILEGES;
 ```
-3. Download JAR file: https://www.dropbox.com/s/7y88l6ox7on31ln/QCloud2-1.0.23LOCAL.jar?dl=0 
-4. Download and edit external_config.yml configuration file: https://www.dropbox.com/s/uj9e51yfo3spvxy/external_config.yml?dl=0
-- 4.1. Update with your database information and credentials:   
+2. Download JAR file: https://www.dropbox.com/s/7y88l6ox7on31ln/QCloud2-1.0.23LOCAL.jar?dl=0 
+3. Download and edit external_config.yml configuration file: https://www.dropbox.com/s/uj9e51yfo3spvxy/external_config.yml?dl=0
+- 3.1. Update with your database information and credentials:   
 ```yml
 datasource:
     ## MYSQL
@@ -40,7 +40,7 @@ datasource:
     password: "password_here"
     driver-class-name: com.mysql.jdbc.Driver
 ```
-- 4.2. Update with your preferred smtp server for email sending (optional): 
+- 3.2. Update with your preferred smtp server for email sending (optional): 
 ```yml
   mail:
     default-encoding: UTF-8
@@ -48,30 +48,30 @@ datasource:
     username: user_smtp
     password: password_smtp
 ```
-- 4.3. Update with your email:
+- 3.3. Update with your email:
 ```yml
   email:
     address: your@mail.com
 ```
 Note: at this present version, port 8089 is not yet configurable so don't change it. 
 
-- 4.4. And update the admin email: 
+- 3.4. And update the admin email: 
 ```yml
 qcloud:
   admin-email: admin.mail@mail.catm
 ```
 If first sign email is the same as the admin-mail then the user will be administrator. Also the backend sends an email to the admin-mail when a new lab ans user is added to the QCloud.
 
-5. Run JAR file: 
+4. Run JAR file: 
 
 ```java
 java -jar /path/to/QCloud2-1.0.23LOCAL --spring.config.location=file:///path/to/external_config.yml
 ``` 
 
-6. Now [Flyway](https://flywaydb.org/) should automatically create and set up the MySQL database.
-7. Once the server is up, open http://localhost:8089 in your browser (Firefox or Google Chrome) and log in with zeus@admin.eu | dumbpassword. This password can be changed in the Profile management website section. 
-8. Now you must create a new labsystem (LC + mass spec). For this, go to Management > Instruments > Lab systems and create a new System Name, add a Mass spectrometer and Liquid chromatographer. If you don't find you specific LC or MS model, you can add it clicking on Administration > Instruments > Manage controlled vocabulary. Just search by name and enable it. 
-9. Once you added a new lab system, you'll be able to see its name at the top-right corner of the QCloud website. If you click it, you'll see in the browser something like: 
+5. Now [Flyway](https://flywaydb.org/) should automatically create and set up the MySQL database.
+6. Once the server is up, open http://localhost:8089 in your browser (Firefox or Google Chrome) and log in with zeus@admin.eu | dumbpassword. This password can be changed in the Profile management website section. 
+7. Now you must create a new labsystem (LC + mass spec). For this, go to Management > Instruments > Lab systems and create a new System Name, add a Mass spectrometer and Liquid chromatographer. If you don't find you specific LC or MS model, you can add it clicking on Administration > Instruments > Manage controlled vocabulary. Just search by name and enable it. 
+8. Once you added a new lab system, you'll be able to see its name at the top-right corner of the QCloud website. If you click it, you'll see in the browser something like: 
 
 `http://localhost:8089/application/view/instrument/d2fc2cbf-e632-4f39-ba5a-6f59de0b7c4e`
 
