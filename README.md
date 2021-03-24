@@ -53,8 +53,6 @@ datasource:
   email:
     address: your@mail.com
 ```
-Note: at this present version, port 8089 is not yet configurable so don't change it. 
-
 - 3.4. And update the admin email: 
 ```yml
 qcloud:
@@ -69,7 +67,7 @@ java -jar /path/to/QCloud2-1.0.23LOCAL --spring.config.location=file:///path/to/
 ``` 
 
 5. Now [Flyway](https://flywaydb.org/) should automatically create and set up the MySQL database.
-6. Once the server is up, open http://localhost:8089 in your browser (Firefox or Google Chrome) and log in with zeus@admin.eu | dumbpassword. This password can be changed in the Profile management website section. 
+6. Once the server is up, open http://localhost:8089 in your browser (Firefox or Google Chrome) and log in with zeus@admin.eu | dumbpassword. This password can be changed in the Profile management website section. Currently the 8089 cannot be changed. But if you're experencing some issue with the localhost, we can change it to your particular server address. To do that please open a new issue in this repository. 
 7. Now you must create a new labsystem (LC + mass spec). For this, go to Management > Instruments > Lab systems and create a new System Name, add a Mass spectrometer and Liquid chromatographer. If you don't find you specific LC or MS model, you can add it clicking on Administration > Instruments > Manage controlled vocabulary. Just search by name and enable it. 
 8. Once you added a new lab system, you'll be able to see its name at the top-right corner of the QCloud website. If you click it, you'll see in the browser something like: 
 
