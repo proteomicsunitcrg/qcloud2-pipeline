@@ -29,8 +29,8 @@ CREATE database database_name;
 GRANT ALL PRIVILEGES ON database_name.* TO 'qcloud_user'@'%';
 FLUSH PRIVILEGES;
 ```
-3. Download JAR file: https://www.dropbox.com/s/sf259uwyypjyzwb/QCloud2-1.0.19OUTSIDE.jar
-4. Download and edit sample.yml configuration file: https://www.dropbox.com/s/al25r8kojf7b10z/sample.yml
+3. Download JAR file: https://www.dropbox.com/s/7y88l6ox7on31ln/QCloud2-1.0.23LOCAL.jar?dl=0 
+4. Download and edit external_config.yml configuration file: 3. Download JAR file: https://www.dropbox.com/s/uj9e51yfo3spvxy/external_config.yml?dl=0
 - 4.1. Update with your database information and credentials:   
 ```yml
 datasource:
@@ -65,7 +65,7 @@ If first sign email is the same as the admin-mail then the user will be administ
 5. Run JAR file: 
 
 ```java
-java -jar /path/to/QCloud2-1.0.19OUTSIDE.jar --spring.config.location=file:///path/to/sample.yml
+java -jar /path/to/QCloud2-1.0.23LOCAL --spring.config.location=file:///path/to/external_config.yml
 ``` 
 
 6. Now [Flyway](https://flywaydb.org/) should automatically create and set up the MySQL database.
