@@ -30,7 +30,7 @@ GRANT ALL PRIVILEGES ON database_name.* TO 'qcloud_user'@'%';
 FLUSH PRIVILEGES;
 ```
 3. Download JAR file: https://www.dropbox.com/s/7y88l6ox7on31ln/QCloud2-1.0.23LOCAL.jar?dl=0 
-4. Download and edit external_config.yml configuration file: 3. Download JAR file: https://www.dropbox.com/s/uj9e51yfo3spvxy/external_config.yml?dl=0
+4. Download and edit external_config.yml configuration file: https://www.dropbox.com/s/uj9e51yfo3spvxy/external_config.yml?dl=0
 - 4.1. Update with your database information and credentials:   
 ```yml
 datasource:
