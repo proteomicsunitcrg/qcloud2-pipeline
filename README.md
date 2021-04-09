@@ -80,10 +80,73 @@ Now you should configure **as an adminsitrator** how the QCloud2 is going to be 
 First of all: 
 
 - At Data processing > Sample type categories, add the main sample type categories, for instance QC01 and QC02.  
+
+| Name |  Complexity | 
+| --------------- | --------------- |  
+|QC01 |	LOW |
+|QC02	| HIGH |
+
 - At Data processing > Sample types, you'll have to tell to the QCloud2 that QC01 is for BSA, and QC02 is for HeLa, following this convention: https://github.com/proteomicsunitcrg/cv/blob/master/qc-cv.obo.
 - At Data processing > Context sources and PEPTIDES tab, add all the peptides that you want to monitor per each sample type. 
+
+For QC01 (BSA):
+
+| Peptide name | Sequence | Abbreviated sequence | Charge | mz | 
+| --------------- | --------------- | --------------- |  --------------- |  --------------- |
+| EAC(Carbamidomethyl)FAVEGPK | EAC(Carbamidomethyl)FAVEGPK | EAC | 2 | 554,261 |
+| EC(Carbamidomethyl)C(Carbamidomethyl)HGDLLEC(Carbamidomethyl)ADDR | EC(Carbamidomethyl)C(Carbamidomethyl)HGDLLEC(Carbamidomethyl)ADDR | ECC | 3 | 583,892 | 
+| EYEATLEEC(Carbamidomethyl)C(Carbamidomethyl)AK | EYEATLEEC(Carbamidomethyl)C(Carbamidomethyl)AK | EYE | 2 | 751,811 | 
+| HLVDEPQNLIK | HLVDEPQNLIK | HLV | 2 | 653,362 | 
+| LVNELTEFAK | LVNELTEFAK | LVN | 2 | 582,319 | 
+| NEC(Carbamidomethyl)FLSHK | NEC(Carbamidomethyl)FLSHK | NEC |  2 | 517,74 | 
+| SLHTLFGDELC(Carbamidomethyl)K | SLHTLFGDELC(Carbamidomethyl)K | SLH | 2 | 710,35 | 
+| TC(Carbamidomethyl)VADESHAGC(Carbamidomethyl)EK | TC(Carbamidomethyl)VADESHAGC(Carbamidomethyl)EK | TCV | 3 | 488,534| 
+| VPQVSTPTLVEVSR | VPQVSTPTLVEVSR | VPQ | 2 | 756,425 | 
+| YIC(Carbamidomethyl)DNQDTISSK | YIC(Carbamidomethyl)DNQDTISSK | YIC | 2 | 756,425 |
+
+For QC02 (HeLa):
+
+| Peptide name | Sequence | Abbreviated sequence | Charge | mz | 
+| --------------- | --------------- | --------------- |  --------------- |  --------------- |
+| DDVAQTDLLQIDPNFGSK | DDVAQTDLLQIDPNFGSK | DDV | 2 | 988,484 | 
+| EAALSTALSEK | EAALSTALSEK | EAA | 2 | 560,298 | 
+| EATTEFSVDAR | EATTEFSVDAR | EAT | 2 | 613,288 | 
+| EQFLDGDGWTSR | EQFLDGDGWTSR | EQF | 2 | 705,818 | 
+| EVSTYIK | EVSTYIK | EVS | 2 | 420,229 | 
+| FAFQAEVNR | FAFQAEVNR | FAF | 2 | 541,275 | 
+| FEELNMDLFR | FEELNMDLFR | FEE | 2 | 657,313 | 
+| LAVDEEENADNNTK | LAVDEEENADNNTK | LAV | 2 | 781,352 | 
+| LGDLYEEEMR | LGDLYEEEMR | LGD | 2 | 627,787 | 
+| NPDDITNEEYGEFYK | NPDDITNEEYGEFYK | NPD | 2 | 917,394 | 
+| RFPGYDSESK | RFPGYDSESK | RFP | 2 | 593,28 |
+| SLADELALVDVLEDK | SLADELALVDVLEDK | SLA | 2 | 815,433 1 
+| STLTDSLVC(Carbamidomethyl)K | STLTDSLVC(Carbamidomethyl)K | STL | 2 | 562,287 | 
+| TPAQFDADELR | TPAQFDADELR | TPA | 2 | 631,804 | 
+| YAEAVTR | YAEAVTR | YAE | 2 | 405,211 | 
+
 - At Data processing > Context sources and INSTRUMENT SAMPLE tab, add all the QC paramters you want to monitor. 
-- At Data processing > Parameters management, add all the parameters that you'll monitorize. For instance, mass accuracy, following this convention: https://github.com/proteomicsunitcrg/cv/blob/master/qc-cv.obo. "Is for" means if it's for a "sample-related parameter level" (like the Total Ion Current, for instance) or "peptide-related parmeter level" like the mass accuracy for a certain peptide. "Data processor" is a post-processing calculation after the data is inserted into the database by the pipeline. Choose "RETENTION-TIME" for computing the RT Drift, "LOG2" for peptide areas and NO_PROCESSOR for the rest
+
+| Name | Abbreviated name | CV | 
+| --------------- | --------------- | --------------- |  
+| Median IT MS1| 	MS1 | 		QC:1000927	| 
+| Median IT MS2	| MS2	| 	QC:1000928	| 
+| Total number of uniquely identified proteins| 	# proteins	| 	QC:0000032	| 
+| Total number of uniquely identified peptides| 	# peptides	| 	QC:0000031	| 
+| MS2 Spectral count| 	MS2 spectral count	| 	QC:0000007	| 
+| Total number of PSM	| # psm		| QC:0000029| 	
+| Retention Time| 	Retention Time	| 	QC:1000894	| 
+| Sum TIC	| Sum TIC| 		QC:0000048| 
+
+- At Data processing > Parameters management, add all the parameters that you'll monitorize. For instance, mass accuracy, following this convention: https://github.com/proteomicsunitcrg/cv/blob/master/qc-cv.obo. "Is for" means if it's for a "sample-related parameter level" (like the Total Ion Current, for instance) or "peptide-related parmeter level" like the mass accuracy for a certain peptide. "Data processor" is a post-processing calculation after the data is inserted into the database by the pipeline. Choose "RETENTION-TIME" for computing the RT Drift, "LOG2" for peptide areas and NO_PROCESSOR for the rest. 
+
+| Name |  CV | 
+| --------------- | --------------- |  
+| Peak area|	QC:1001844	|
+|Mass accuracy|	QC:1000014	|
+|Median IT	|QC:9000002	|
+|Total numbers|	QC:9000001	|
+|Retention time|	QC:1000894	|
+|Total Ion Current|	QC:9000005|
 
 And then: 
 
