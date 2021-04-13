@@ -1,6 +1,6 @@
 # QCloud Local Version (QLV)
 
-QCloud is a cloud-based system to support proteomics laboratories in daily quality assessment using a user-friendly interface, easy setup, automated data processing and archiving, and unbiased instrument evaluation. https://qcloud.crg.eu, paper: https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0189209
+QCloud is a cloud-based system to support proteomics laboratories in daily quality assessment using a user-friendly interface, easy setup, automated data processing and archiving, and unbiased instrument evaluation. https://qcloud.crg.eu, papers: https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0189209 and https://pubs.acs.org/doi/10.1021/acs.jproteome.0c00853#.YFYwlf2PpyE.
 
 With this tutorial you'll we able to install all the QCloud system in your local server and HPC Cluster. It has two main parts: 
 
