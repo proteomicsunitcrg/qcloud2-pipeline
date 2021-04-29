@@ -56,7 +56,7 @@ datasource:
 - 3.4. And update the admin email: 
 ```yml
 qcloud:
-  admin-email: admin.mail@mail.catm
+  admin-email: admin.mail@mail.com
 ```
 If first sign email is the same as the admin-mail then the user will be administrator. Also the backend sends an email to the admin-mail when a new lab ans user is added to the QCloud.
 
@@ -168,7 +168,7 @@ params {
     fasta_tab        = "$baseDir/fasta.tsv"
     db_host          = "localhost:8089"
     watch            = "YES"
-    api_user         = "zeus@admin.eu"
+    api_user         = "admin.mail@mail.com"
     api_pass         = "dumbpassword"
 }
 ```
