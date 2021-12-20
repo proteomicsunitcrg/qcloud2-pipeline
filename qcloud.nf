@@ -123,7 +123,7 @@ Channel
         pieces = id.tokenize( '_' )
         checksum = pieces[-1].replace(".zip", "")
         [pieces[0..-4].join( '_' ), pieces[-3], pieces[-2], checksum, file]
-    }.into { zipfiles; zip_for_calc_peptide_area_c4l }
+    }.into { zipfiles; zip_for_calc_peptide_area_c4l; zip_for_calc_retime_area_c4l }
 } else {
     Channel
     .fromPath( params.zipfiles )
@@ -134,7 +134,7 @@ Channel
         pieces = id.tokenize( '_' )
         checksum = pieces[-1].replace(".zip", "")
         [pieces[0..-4].join( '_' ), pieces[-3], pieces[-2], checksum, file]
-    }.into { zipfiles; zip_for_calc_peptide_area_c4l }
+    }.into { zipfiles; zip_for_calc_peptide_area_c4l; zip_for_calc_retime_area_c4l }
 }
 
 /*
@@ -726,28 +726,55 @@ process calc_retTime {
 }
 
 process calc_retTime_c4l {
+    tag { "${labsys}_${qcode}_${checksum}" }
+    label 'thermoconvert'
+
+    when:
+    qcode == 'QC03'
+
+    input:
+    set orifile, labsys, qcode, checksum, file(zipfile) from zip_for_calc_retime_area_c4l
+    file(workflowfile) from getWFFile(baseQCPath, "retTime_qc4l", "sh")
+    file(masses_C4L)
+    file(mass_isotop)
+    file(fgcz_exe)
+    file(temp_qcloud_out)
+
+    output:
+    set val("${labsys}_${qcode}_${checksum}"), file("${labsys}_${qcode}_${checksum}_QC_${Correspondence['retTime_qc4l']['shotgun_qc4l_hcd']}.json") into retTime_qc4l_for_delivery
+
+    script:
+    def heavy_conc = 100
+    def tolppm = 10
+    def rt_window = 2
+    def outfile = "${labsys}_${qcode}_${checksum}_QC_${Correspondence['pepArea_qc4l']['shotgun_qc4l_hcd']}.json"
+    def outfile_rt = "${labsys}_${qcode}_${checksum}_QC_${Correspondence['retTime_qc4l']['shotgun_qc4l_hcd']}.json"
+    """
+    zcat ${zipfile} > temp.raw
+    touch ${outfile_rt}
+    ./${workflowfile} temp.raw ${checksum} ${masses_C4L} ${mass_isotop} \
+    ${temp_qcloud_out} ${outfile} ${heavy_conc} ${tolppm} ${rt_window} ${outfile_rt}
+    rm temp.raw
+    """
+}
+
+
+process calc_retTime_c4l_fake {
     tag { "${sample_id}-${analysis_type}" }
 
     input:
-    set sample_id, internal_code, analysis_type, checksum, file(featxml_file), file(idxml_file) from shot_qc4l_hcd_featureXMLfiles_for_ret_time.mix(shot_qc4l_cid_featureXMLfiles_for_ret_time, shot_qc4l_etcid_featureXMLfiles_for_ret_time, shot_qc4l_ethcid_featureXMLfiles_for_ret_time)
-	file ("peptide_C4L.csv") from file (peptideCSV_C4L)
-    file(workflowfile) from getWFFile(baseQCPath, "retTime_qc4l") 
+    set sample_id, internal_code, analysis_type, checksum, file(featxml_file) from shot_qc4l_cid_featureXMLfiles_for_calc_peptide_area.mix(shot_qc4l_etcid_featureXMLfiles_for_calc_peptide_area, shot_qc4l_ethcd_featureXMLfiles_for_calc_peptide_area)
 
     output:
-    //set sample_id, internal_code, checksum, val("${Correspondence['retTime_qc4l'][analysis_type]}"),file("${sample_id}_QC_${Correspondence['retTime_qc4l'][analysis_type]}.json") into retTime_qc4l_for_delivery
-    set sample_id, file("${sample_id}_QC_${Correspondence['retTime_qc4l'][analysis_type]}.json") into retTime_qc4l_for_delivery
+    set sample_id, val(null) into pep_c4l_for_delivery_fake
 
     script:
-    def analysis_id = Correspondence['retTime_qc4l'][analysis_type]
-    def ontology_id = ontology[analysis_id]
-    def csvfile = peptideCSVs[internal_code]
-    def outfile = "${sample_id}_QC_${Correspondence['retTime_qc4l'][analysis_type]}.json"
-    def knime = new Knime(wf:workflowfile, empty_out_file:outfile, csvpep:csvfile, stype:internal_code, featxml:featxml_file, mem:"${task.memory.mega-5000}m", qccv:"QC_${analysis_id}", qccvp:"QC_${ontology_id}", chksum:checksum, ojid:"${sample_id}", extrapars:"-workflow.variable=delta_mass,10,double \
--workflow.variable=delta_rt,250,double \
--workflow.variable=charge,2,double \
--workflow.variable=threshold_area,1000000,double")
-    knime.launch()
+        """
+        echo "this is a workaround because of a nextflow problem with joining"
+        """
+
 }
+
 
 
 /*

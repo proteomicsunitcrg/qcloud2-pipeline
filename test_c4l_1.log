@@ -1,0 +1,70 @@
+N E X T F L O W  ~  version 20.01.0
+Launching `qcloud.nf` [sharp_goldstine] - revision: e22f724aad
+BIOCORE@CRG Qcloud - N F  ~  version 2.0
+========================================
+╔═╗ ┌─┐┬  ┌─┐┬ ┬┌┬┐
+║═╬╗│  │  │ ││ │ ││
+╚═╝╚└─┘┴─┘└─┘└─┘─┴┘
+========================================
+zipfiles (input files)            : /users/pr/qcloud/test/incoming/*.zip
+qconfig (config file)             : /nfs/users/pr/qcloud/qcloud2-pipeline-v-1.01/qcloud.config
+fasta_tab (tsv file)              : /nfs/users/pr/qcloud/qcloud2-pipeline-v-1.01/fasta.tsv
+
+[skipping] Stored process > makeblastdb (HELA)
+[skipping] Stored process > makeblastdb (BSA)
+Pulling Singularity image docker://biocorecrg/thermorawparser:0.2 [cache /nfs/users/pr/qcloud/qcloud2-pipeline-v-1.01/singularity/biocorecrg-thermorawparser-0.2.img]
+[8e/a6f27c] Submitted process > calc_peptide_area_c4l (fef21e50-b532-4c0e-9669-852972e28366_QC03_c33c611fca710ce686c0ab821692d2e7)
+[37/a63aae] Submitted process > calc_retTime_c4l (fef21e50-b532-4c0e-9669-852972e28366_QC03_c33c611fca710ce686c0ab821692d2e7)
+[78/345e3e] Submitted process > thermofilerawparser (fef21e50-b532-4c0e-9669-852972e28366_QC03_c33c611fca710ce686c0ab821692d2e7)
+[7c/ddf54a] Submitted process > correctMzml (fef21e50-b532-4c0e-9669-852972e28366_QC03_c33c611fca710ce686c0ab821692d2e7)
+[22/072abe] Submitted process > shotgun_qc4l_hcd (fef21e50-b532-4c0e-9669-852972e28366_QC03_c33c611fca710ce686c0ab821692d2e7)
+[12/982d25] Submitted process > shotgun_qc4l_ethcd (fef21e50-b532-4c0e-9669-852972e28366_QC03_c33c611fca710ce686c0ab821692d2e7)
+[31/0b60a7] Submitted process > shotgun_qc4l_cid (fef21e50-b532-4c0e-9669-852972e28366_QC03_c33c611fca710ce686c0ab821692d2e7)
+[88/bc1899] Submitted process > shotgun_qc4l_etcid (fef21e50-b532-4c0e-9669-852972e28366_QC03_c33c611fca710ce686c0ab821692d2e7)
+[af/f0d87f] Submitted process > check_mzML (fef21e50-b532-4c0e-9669-852972e28366_QC03_c33c611fca710ce686c0ab821692d2e7_ethcd)
+[96/8dfe2a] Submitted process > calc_MS2_spectral_count (fef21e50-b532-4c0e-9669-852972e28366_QC03_c33c611fca710ce686c0ab821692d2e7_ethcd-shotgun_qc4l_ethcd)
+[c3/a97601] Submitted process > calc_tot_num_psm (fef21e50-b532-4c0e-9669-852972e28366_QC03_c33c611fca710ce686c0ab821692d2e7_ethcd-shotgun_qc4l_ethcd)
+[77/502969] Submitted process > calc_retTime_c4l_fake (fef21e50-b532-4c0e-9669-852972e28366_QC03_c33c611fca710ce686c0ab821692d2e7_ethcd-shotgun_qc4l_ethcd)
+[65/525532] Submitted process > calc_tic (fef21e50-b532-4c0e-9669-852972e28366_QC03_c33c611fca710ce686c0ab821692d2e7_ethcd-shotgun_qc4l_ethcd)
+[b1/4b1a59] Submitted process > calc_tot_num_uniq_peptides (fef21e50-b532-4c0e-9669-852972e28366_QC03_c33c611fca710ce686c0ab821692d2e7_ethcd-shotgun_qc4l_ethcd)
+[35/0573fa] Submitted process > calc_median_IT_MS1 (fef21e50-b532-4c0e-9669-852972e28366_QC03_c33c611fca710ce686c0ab821692d2e7_ethcd-shotgun_qc4l_ethcd)
+[09/d44357] Submitted process > calc_mass_accuracy_c4l_fake (fef21e50-b532-4c0e-9669-852972e28366_QC03_c33c611fca710ce686c0ab821692d2e7_ethcd-shotgun_qc4l_ethcd)
+[42/9761d1] Submitted process > calc_median_fwhm (fef21e50-b532-4c0e-9669-852972e28366_QC03_c33c611fca710ce686c0ab821692d2e7_ethcd-shotgun_qc4l_ethcd)
+[03/76222c] Submitted process > calc_median_IT_MS2 (fef21e50-b532-4c0e-9669-852972e28366_QC03_c33c611fca710ce686c0ab821692d2e7_ethcd-shotgun_qc4l_ethcd)
+[b5/f522ce] Submitted process > calc_tot_num_uniq_proteins (fef21e50-b532-4c0e-9669-852972e28366_QC03_c33c611fca710ce686c0ab821692d2e7_ethcd-shotgun_qc4l_ethcd)
+[04/cf8a07] Submitted process > calc_retTime_c4l_fake (fef21e50-b532-4c0e-9669-852972e28366_QC03_c33c611fca710ce686c0ab821692d2e7_cid-shotgun_qc4l_cid)
+[d3/f1607c] Submitted process > calc_tic (fef21e50-b532-4c0e-9669-852972e28366_QC03_c33c611fca710ce686c0ab821692d2e7_cid-shotgun_qc4l_cid)
+[81/64a14e] Submitted process > calc_MS2_spectral_count (fef21e50-b532-4c0e-9669-852972e28366_QC03_c33c611fca710ce686c0ab821692d2e7_cid-shotgun_qc4l_cid)
+[72/ae32e0] Submitted process > calc_median_fwhm (fef21e50-b532-4c0e-9669-852972e28366_QC03_c33c611fca710ce686c0ab821692d2e7_cid-shotgun_qc4l_cid)
+[fb/8697c2] Submitted process > check_mzML (fef21e50-b532-4c0e-9669-852972e28366_QC03_c33c611fca710ce686c0ab821692d2e7_cid)
+[21/58bc34] Submitted process > calc_median_IT_MS1 (fef21e50-b532-4c0e-9669-852972e28366_QC03_c33c611fca710ce686c0ab821692d2e7_cid-shotgun_qc4l_cid)
+[2d/b93b19] Submitted process > calc_median_IT_MS2 (fef21e50-b532-4c0e-9669-852972e28366_QC03_c33c611fca710ce686c0ab821692d2e7_cid-shotgun_qc4l_cid)
+[aa/6c7ad2] Submitted process > calc_tot_num_uniq_peptides (fef21e50-b532-4c0e-9669-852972e28366_QC03_c33c611fca710ce686c0ab821692d2e7_cid-shotgun_qc4l_cid)
+[62/4c9e44] Submitted process > calc_mass_accuracy_c4l_fake (fef21e50-b532-4c0e-9669-852972e28366_QC03_c33c611fca710ce686c0ab821692d2e7_cid-shotgun_qc4l_cid)
+[a6/b198f1] Submitted process > calc_tot_num_psm (fef21e50-b532-4c0e-9669-852972e28366_QC03_c33c611fca710ce686c0ab821692d2e7_cid-shotgun_qc4l_cid)
+[99/cb2b57] Submitted process > calc_tot_num_uniq_proteins (fef21e50-b532-4c0e-9669-852972e28366_QC03_c33c611fca710ce686c0ab821692d2e7_cid-shotgun_qc4l_cid)
+[c0/2ccd04] Submitted process > check_fwhm (fef21e50-b532-4c0e-9669-852972e28366_QC03_c33c611fca710ce686c0ab821692d2e7_ethcd)
+[e1/b03db7] Submitted process > check_fwhm (fef21e50-b532-4c0e-9669-852972e28366_QC03_c33c611fca710ce686c0ab821692d2e7_cid)
+[a6/babc23] Submitted process > calc_tic (fef21e50-b532-4c0e-9669-852972e28366_QC03_c33c611fca710ce686c0ab821692d2e7_hcd-shotgun_qc4l_hcd)
+[ad/4cf000] Submitted process > calc_median_fwhm (fef21e50-b532-4c0e-9669-852972e28366_QC03_c33c611fca710ce686c0ab821692d2e7_hcd-shotgun_qc4l_hcd)
+[41/c7d29b] Submitted process > check_mzML (fef21e50-b532-4c0e-9669-852972e28366_QC03_c33c611fca710ce686c0ab821692d2e7_hcd)
+[e3/d29095] Submitted process > calc_tot_num_uniq_proteins (fef21e50-b532-4c0e-9669-852972e28366_QC03_c33c611fca710ce686c0ab821692d2e7_hcd-shotgun_qc4l_hcd)
+[99/5f9b1e] Submitted process > calc_median_IT_MS1 (fef21e50-b532-4c0e-9669-852972e28366_QC03_c33c611fca710ce686c0ab821692d2e7_hcd-shotgun_qc4l_hcd)
+[12/bfa582] Submitted process > calc_tot_num_psm (fef21e50-b532-4c0e-9669-852972e28366_QC03_c33c611fca710ce686c0ab821692d2e7_hcd-shotgun_qc4l_hcd)
+[44/446d9c] Submitted process > calc_MS2_spectral_count (fef21e50-b532-4c0e-9669-852972e28366_QC03_c33c611fca710ce686c0ab821692d2e7_hcd-shotgun_qc4l_hcd)
+[a2/737845] Submitted process > calc_tot_num_uniq_peptides (fef21e50-b532-4c0e-9669-852972e28366_QC03_c33c611fca710ce686c0ab821692d2e7_hcd-shotgun_qc4l_hcd)
+[28/e1b344] Submitted process > calc_median_IT_MS2 (fef21e50-b532-4c0e-9669-852972e28366_QC03_c33c611fca710ce686c0ab821692d2e7_hcd-shotgun_qc4l_hcd)
+[f1/15663f] Submitted process > calc_mass_accuracy_c4l (fef21e50-b532-4c0e-9669-852972e28366_QC03_c33c611fca710ce686c0ab821692d2e7_hcd-shotgun_qc4l_hcd)
+[dd/7866bc] Submitted process > check_fwhm (fef21e50-b532-4c0e-9669-852972e28366_QC03_c33c611fca710ce686c0ab821692d2e7_hcd)
+[af/9cd2e5] Submitted process > calc_median_IT_MS1 (fef21e50-b532-4c0e-9669-852972e28366_QC03_c33c611fca710ce686c0ab821692d2e7_etcid-shotgun_qc4l_etcid)
+[7b/ab8fa3] Submitted process > calc_retTime_c4l_fake (fef21e50-b532-4c0e-9669-852972e28366_QC03_c33c611fca710ce686c0ab821692d2e7_etcid-shotgun_qc4l_etcid)
+[fd/8c9dba] Submitted process > calc_mass_accuracy_c4l_fake (fef21e50-b532-4c0e-9669-852972e28366_QC03_c33c611fca710ce686c0ab821692d2e7_etcid-shotgun_qc4l_etcid)
+[09/2ee334] Submitted process > calc_median_IT_MS2 (fef21e50-b532-4c0e-9669-852972e28366_QC03_c33c611fca710ce686c0ab821692d2e7_etcid-shotgun_qc4l_etcid)
+[00/3be662] Submitted process > calc_MS2_spectral_count (fef21e50-b532-4c0e-9669-852972e28366_QC03_c33c611fca710ce686c0ab821692d2e7_etcid-shotgun_qc4l_etcid)
+[48/71f5f7] Submitted process > check_mzML (fef21e50-b532-4c0e-9669-852972e28366_QC03_c33c611fca710ce686c0ab821692d2e7_etcid)
+[ae/bab693] Submitted process > calc_median_fwhm (fef21e50-b532-4c0e-9669-852972e28366_QC03_c33c611fca710ce686c0ab821692d2e7_etcid-shotgun_qc4l_etcid)
+[49/30723d] Submitted process > calc_tot_num_uniq_proteins (fef21e50-b532-4c0e-9669-852972e28366_QC03_c33c611fca710ce686c0ab821692d2e7_etcid-shotgun_qc4l_etcid)
+[c5/5588a3] Submitted process > calc_tic (fef21e50-b532-4c0e-9669-852972e28366_QC03_c33c611fca710ce686c0ab821692d2e7_etcid-shotgun_qc4l_etcid)
+[8d/74897b] Submitted process > calc_tot_num_uniq_peptides (fef21e50-b532-4c0e-9669-852972e28366_QC03_c33c611fca710ce686c0ab821692d2e7_etcid-shotgun_qc4l_etcid)
+[cc/2ffc1a] Submitted process > calc_tot_num_psm (fef21e50-b532-4c0e-9669-852972e28366_QC03_c33c611fca710ce686c0ab821692d2e7_etcid-shotgun_qc4l_etcid)
+[3b/7f40fd] Submitted process > check_fwhm (fef21e50-b532-4c0e-9669-852972e28366_QC03_c33c611fca710ce686c0ab821692d2e7_etcid)
