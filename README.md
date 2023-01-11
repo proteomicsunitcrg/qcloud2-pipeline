@@ -5,7 +5,7 @@ QCloud is a cloud-based system to support proteomics laboratories in daily quali
 With this tutorial you'll we able to install all the QCloud system in your local server and HPC Cluster. It has two main parts: 
 
 1) QCloud Website, as it is in https://qcloud.crg.eu but with administrative permissions and installed in your local server. 
-2) QCloud Pipeline, to be run in your preferred HPC Cluster.  
+2) QCloud Pipeline, to be run in your preferred HPC Cluster or high performance PC.  
 
 ## Global System Requirements: 
 - QCloud Website: 
