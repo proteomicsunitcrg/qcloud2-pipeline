@@ -58,7 +58,7 @@ datasource:
 qcloud:
   admin-email: admin.mail@mail.com
 ```
-If first sign email is the same as the admin-mail then the user will be administrator. Also the backend sends an email to the admin-mail when a new lab ans user is added to the QCloud.
+If first sign email is the same as the admin-mail then the user will be administrator. Also the backend sends an email to the admin-mail when a new lab and user is added to the QCloud.
 
 4. Run JAR file: 
 
