@@ -14,7 +14,7 @@ With this tutorial you'll we able to install all the QCloud system in your local
     - mysql-server >= 14.14.
     
 - QCloud Pipeline: 
-    - HPC Cluster running CentOS 7 x64. Do not install it in a desktop PC.
+    - HPC Cluster running CentOS 7 x64 or a high performance PC. 
     - Grant access to QCloud Website URL and port from the cluster's queue. For instance, http://your_server_ip:8090 (see QCloud Website Installation section). This is mandatory as it's the pipeline's way to send processed data to the local database through an internal API.   
     - Singularity container >= 2.6.1.
     - Nextflow >= 20.01.0.5264.
