@@ -113,19 +113,8 @@ def ontology = dbindex.getOntology()
  
 // Below handles original_id from processing of samples: 181112_Q_QC1F_01_01_9d9d9d1b-9d9d-4f1a-9d27-9d2f7635059d_QC01_0d97b132db1ecedc3b5fdbddec6fba72.zip
 
-if (params.watch=="YES") {
+// Removed watchPath when moved to a VM and Slurm 
 Channel
-    .watchPath( params.zipfiles )             
-    .map { 
-        file = it
-        id = it.getName()
-        ext = params.zipfiles.tokenize( '/' )
-        pieces = id.tokenize( '_' )
-        checksum = pieces[-1].replace(".zip", "")
-        [pieces[0..-4].join( '_' ), pieces[-3], pieces[-2], checksum, file]
-    }.into { zipfiles; zip_for_calc_peptide_area_c4l; zip_for_calc_retime_area_c4l }
-} else {
-    Channel
     .fromPath( params.zipfiles )
     .map { 
         file = it
@@ -135,7 +124,6 @@ Channel
         checksum = pieces[-1].replace(".zip", "")
         [pieces[0..-4].join( '_' ), pieces[-3], pieces[-2], checksum, file]
     }.into { zipfiles; zip_for_calc_peptide_area_c4l; zip_for_calc_retime_area_c4l }
-}
 
 /*
  * Create a channel for fasta files description
@@ -726,7 +714,7 @@ process calc_retTime {
 }
 
 process calc_retTime_c4l {
-    tag { "${labsys}_${qcode}_${checksum}" }
+    tag { "${labsys}_${qcode}_${checksum}_hcd" }
     label 'thermoconvert'
 
     when:
@@ -741,19 +729,21 @@ process calc_retTime_c4l {
     file(temp_qcloud_out)
 
     output:
-    set val("${labsys}_${qcode}_${checksum}"), file("${labsys}_${qcode}_${checksum}_QC_${Correspondence['retTime_qc4l']['shotgun_qc4l_hcd']}.json") into retTime_qc4l_for_delivery
+    set val("${labsys}_${qcode}_${checksum}_hcd"), file("${labsys}_${qcode}_${checksum}_hcd_QC_${Correspondence['retTime_qc4l']['shotgun_qc4l_hcd']}.json") into retTime_qc4l_for_delivery
+
 
     script:
     def heavy_conc = 100
     def tolppm = 10
     def rt_window = 2
-    def outfile = "${labsys}_${qcode}_${checksum}_QC_${Correspondence['pepArea_qc4l']['shotgun_qc4l_hcd']}.json"
-    def outfile_rt = "${labsys}_${qcode}_${checksum}_QC_${Correspondence['retTime_qc4l']['shotgun_qc4l_hcd']}.json"
+    def outfile = "${labsys}_${qcode}_${checksum}_hcd_QC_${Correspondence['pepArea_qc4l']['shotgun_qc4l_hcd']}.json"
+    def outfile_rt = "${labsys}_${qcode}_${checksum}_hcd_QC_${Correspondence['retTime_qc4l']['shotgun_qc4l_hcd']}.json"
     """
     zcat ${zipfile} > temp.raw
     touch ${outfile_rt}
     ./${workflowfile} temp.raw ${checksum} ${masses_C4L} ${mass_isotop} \
     ${temp_qcloud_out} ${outfile} ${heavy_conc} ${tolppm} ${rt_window} ${outfile_rt}
+    sed -i 's/1001844/1000894/g' ${outfile_rt}
     rm temp.raw
     """
 }
@@ -766,7 +756,7 @@ process calc_retTime_c4l_fake {
     set sample_id, internal_code, analysis_type, checksum, file(featxml_file) from shot_qc4l_cid_featureXMLfiles_for_calc_peptide_area.mix(shot_qc4l_etcid_featureXMLfiles_for_calc_peptide_area, shot_qc4l_ethcd_featureXMLfiles_for_calc_peptide_area)
 
     output:
-    set sample_id, val(null) into pep_c4l_for_delivery_fake
+    set sample_id, val(null) into retTime_for_delivery_fake
 
     script:
         """
@@ -953,9 +943,10 @@ process check_mzML {
 
     script:
     """
-    xmllint --xpath 'string(/mzML/@id)' ${mzML_file} > ${mzML_file}.filename
-    xmllint --xpath 'string(/mzML/run/@startTimeStamp)' ${mzML_file} > raw_time    
-    cat raw_time | xargs -I{} date -d {} +"%Y-%m-%dT%TZ"  | tr -d '\n' > ${mzML_file}.timestamp
+    grep -m1 -oP '<mzML [^>]*id="\\K[^"]+' ${mzML_file} > ${mzML_file}.filename
+    grep -m1 -oP '<run [^>]*startTimeStamp="\\K[^"]+' ${mzML_file} > raw_time
+    cat raw_time | xargs -I{} date -d {} +"%Y-%m-%dT%TZ" | tr -d '\\n' > ${mzML_file}.timestamp
+    rm -f raw_time
     """
 }
 
@@ -965,20 +956,27 @@ process check_mzML {
  */
 
 // mix retention times
-rettime_c4l_all = retTime_for_delivery.mix(retTime_qc4l_for_delivery)
+retTime_for_delivery.mix(retTime_qc4l_for_delivery).mix(retTime_for_delivery_fake).into{rettime_c4l_all; luca}
 
 // mix peptide channels (from QC01, QC02 and QC03 to have for each id a number of results) 
-pep_c4l_all = pep_c4l_for_delivery.mix(pep_checked_for_delivery)
+pep_c4l_for_delivery.mix(pep_checked_for_delivery).set{pep_c4l_all}
+
+
 // mix mass channels (from QC01, QC02 and QC03 to have for each id a number of results) 
 //mass_checked_for_delivery = mass_checked_for_joining.mix(mass_c4l_json_for_delivery_fake)
 
-mass_checked_for_delivery = mass_checked_for_joining.mix(mass_c4l_json_for_delivery_fake, mass_c4l_json_for_delivery)
-
+mass_checked_for_joining.mix(mass_c4l_json_for_delivery_fake, mass_c4l_json_for_delivery).set{mass_checked_for_delivery}
 
 // joins channels common to any analysis in a single channel 
 ms2_spectral_for_delivery.join(tic_for_delivery).join(tot_psm_for_delivery).join(uni_peptides_for_delivery).join(uni_prots_for_delivery).join(median_itms2_for_delivery).join(mass_checked_for_delivery).join(median_checked_for_delivery).join(median_itms1_for_delivery).join(rettime_c4l_all).into{jointJsons; jointJsonsAA}
 
-//jointJsonsAA.println()
+//jointJsonsAA.view()
+
+
+//.join(median_itms1_for_delivery).join(rettime_c4l_all).into{jointJsons; jointJsonsAA}
+//median_itms1_for_delivery.view()
+//rettime_c4l_all.view()
+
 
 // separate this channel depending on QC01-QC02/ QC03
 queueQC12 = Channel.create()
@@ -1041,8 +1039,7 @@ mZML_params_for_delivery = mZML_params_for_mapping.map{
     def pieces = sample_id.tokenize( '_' )
     def instrument_id = pieces[0] 
     def parent_id = ontology[internal_code]
-    def filepieces = filename.tokenize( '_' )
-    def orifile = filepieces[0..-4].join( '_' )
+    def orifile = filename.contains("___") ? filename.split("___")[0].trim() : filename.trim()
     def knime = new Knime(wf:workflowfile, rdate:timestamp, oriname:orifile, chksum:checksum, stype:internal_code, ifolder:".", labs:instrument_id, utoken:"${db_host}/api/auth", uifile:"${db_host}/api/file/QC:${parent_id}", uidata:"${db_host}/api/data/pipeline", mem:"${task.memory.mega-5000}m")
     knime.launch()
 
@@ -1078,3 +1075,4 @@ mZML_params_for_delivery = mZML_params_for_mapping.map{
         }
      }
      
+
