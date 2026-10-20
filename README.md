@@ -1,4 +1,7 @@
 ## QCloud2 Quality Control Pipeline
+> **Notice (2026-10):** Development of QCloud2 Pipeline has moved to an internal CRG repository (CRG staff only - not accessible from outside).
+> This GitHub repository is **frozen** and kept as a public archive: to download/install a version, see the [Releases](https://github.com/proteomicsunitcrg/qcloud2-pipeline/releases) (clean snapshot per release).
+
 
 **Warning: for local installation of QCloud (pipeline+website) please see "local" branch of this repo.**
 
